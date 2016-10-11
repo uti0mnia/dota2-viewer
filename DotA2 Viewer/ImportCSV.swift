@@ -28,8 +28,7 @@ class CSVImporter {
         do {
             try moc.save()
         } catch {
-            let nserror = error as NSError
-            print("MOC Error: \(nserror.userInfo)")
+            print("MOC Error: \(error.localizedDescription)")
             fatalError("Unable to save MOC at line \(#line) of \(#function)")
         }
     }
@@ -66,7 +65,7 @@ class CSVImporter {
     
     fileprivate func saveHero(_ line: CSwiftV) {
         //create hero MO
-        let hero = NSEntityDescription.insertNewObject(forEntityName: Entity.Hero.rawValue,
+        let hero = NSEntityDescription.insertNewObject(forEntityName: "Hero",
                                                                        into: moc) as! Hero
         var data = line.headers.makeIterator()
         
@@ -78,7 +77,7 @@ class CSVImporter {
         
         //MARK: Primary Stats
         
-        let pStat = NSEntityDescription.insertNewObject(forEntityName: Entity.PrimaryStat.rawValue,
+        let pStat = NSEntityDescription.insertNewObject(forEntityName: "PrimaryStat",
                                                                         into: moc) as! PrimaryStat
         pStat.intelligence = data.next()
         pStat.agility = data.next()
@@ -97,7 +96,7 @@ class CSVImporter {
         var stats = [Stat]()
         for _ in 0..<lvls! {
             //create a new stat
-            let stat = NSEntityDescription.insertNewObject(forEntityName: Entity.Stat.rawValue,
+            let stat = NSEntityDescription.insertNewObject(forEntityName: "Stat",
                                                                            into: moc) as! Stat
             stat.level = data.next()
             stat.hp = data.next()
@@ -119,7 +118,7 @@ class CSVImporter {
         }
         var abilities = [Ability]()
         for _ in 0..<abilityNum! {
-            let ability = NSEntityDescription.insertNewObject(forEntityName: Entity.Ability.rawValue,
+            let ability = NSEntityDescription.insertNewObject(forEntityName: "Ability",
                                                                               into: moc) as! Ability
             ability.name = data.next()
             ability.summary = data.next()
@@ -137,7 +136,7 @@ class CSVImporter {
     }
     
     fileprivate func saveItem(_ line: CSwiftV) {
-        let item = NSEntityDescription.insertNewObject(forEntityName: Entity.Item.rawValue,
+        let item = NSEntityDescription.insertNewObject(forEntityName: "Item",
                                                                        into: moc) as! Item
         var data = line.headers.makeIterator()
         item.name = data.next()
@@ -160,7 +159,7 @@ class CSVImporter {
             if recipes == nil {
                 recipes = [Recipe]()
             }
-            let recipe = NSEntityDescription.insertNewObject(forEntityName: Entity.Recipe.rawValue,
+            let recipe = NSEntityDescription.insertNewObject(forEntityName: "Recipe",
                                                                              into: moc) as! Recipe
             recipe.name = data.next()
             recipe.item = item
@@ -175,7 +174,7 @@ class CSVImporter {
 
 class StreamReader  {
     
-    let encoding : UInt
+    let encoding : String.Encoding
     let chunkSize : Int
     
     var fileHandle : FileHandle!
@@ -183,12 +182,12 @@ class StreamReader  {
     let delimData : Data!
     var atEof : Bool = false
     
-    init?(path: String, delimiter: String = "\n", encoding : UInt = String.Encoding.utf8, chunkSize : Int = 4096) {
+    init?(path: String, delimiter: String = "\n", encoding : String.Encoding = .utf8, chunkSize : Int = 4096) {
         self.chunkSize = chunkSize
         self.encoding = encoding
         
         if let fileHandle = FileHandle(forReadingAtPath: path),
-            let delimData = delimiter.data(using: String.Encoding(rawValue: encoding)),
+            let delimData = delimiter.data(using: encoding),
             let buffer = NSMutableData(capacity: chunkSize)
         {
             self.fileHandle = fileHandle
