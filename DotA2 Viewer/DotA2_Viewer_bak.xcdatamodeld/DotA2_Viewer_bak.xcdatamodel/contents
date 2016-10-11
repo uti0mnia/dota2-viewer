@@ -1,60 +1,60 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11232" systemVersion="16A323" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Ability" syncable="YES">
-        <attribute name="cooldown" optional="YES" syncable="YES"/>
-        <attribute name="data" optional="YES" syncable="YES"/>
-        <attribute name="lore" optional="YES" syncable="YES"/>
-        <attribute name="mana" optional="YES" syncable="YES"/>
-        <attribute name="name" optional="YES" syncable="YES"/>
-        <attribute name="summary" optional="YES" syncable="YES"/>
-        <attribute name="videoURL" optional="YES" syncable="YES"/>
+    <entity name="Ability" representedClassName=".Ability" syncable="YES">
+        <attribute name="cooldown" attributeType="String" syncable="YES"/>
+        <attribute name="data" attributeType="String" syncable="YES"/>
+        <attribute name="lore" attributeType="String" syncable="YES"/>
+        <attribute name="mana" attributeType="String" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="summary" attributeType="String" syncable="YES"/>
+        <attribute name="videoURL" attributeType="String" syncable="YES"/>
         <relationship name="hero" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Hero" inverseName="ability" inverseEntity="Hero" syncable="YES"/>
     </entity>
-    <entity name="Hero" syncable="YES">
-        <attribute name="attackType" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="bio" optional="YES" attributeType="String" syncable="YES"/>
+    <entity name="Hero" representedClassName=".Hero" syncable="YES">
+        <attribute name="attackType" attributeType="String" syncable="YES"/>
+        <attribute name="bio" attributeType="String" syncable="YES"/>
         <attribute name="image" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
-        <attribute name="lore" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="role" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lore" attributeType="String" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="role" attributeType="String" syncable="YES"/>
         <relationship name="ability" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Ability" inverseName="hero" inverseEntity="Ability" syncable="YES"/>
         <relationship name="primaryStat" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="PrimaryStat" inverseName="hero" inverseEntity="PrimaryStat" syncable="YES"/>
         <relationship name="stat" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Stat" inverseName="hero" inverseEntity="Stat" syncable="YES"/>
     </entity>
-    <entity name="Item" syncable="YES">
-        <attribute name="cooldown" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="cost" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="data" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="info" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="lore" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="mana" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="recipe" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Item" inverseName="recipe" inverseEntity="Item" syncable="YES"/>
+    <entity name="Item" representedClassName=".Item" syncable="YES">
+        <attribute name="cooldown" attributeType="String" syncable="YES"/>
+        <attribute name="cost" attributeType="String" syncable="YES"/>
+        <attribute name="data" attributeType="String" syncable="YES"/>
+        <attribute name="id" attributeType="String" syncable="YES"/>
+        <attribute name="info" attributeType="String" syncable="YES"/>
+        <attribute name="lore" attributeType="String" syncable="YES"/>
+        <attribute name="mana" attributeType="String" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="type" attributeType="String" syncable="YES"/>
+        <relationship name="recipe" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Recipe" inverseName="item" inverseEntity="Recipe" syncable="YES"/>
     </entity>
-    <entity name="PrimaryStat" syncable="YES">
-        <attribute name="agility" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="armor" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="damage" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="intelligence" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="speed" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="strength" optional="YES" attributeType="String" syncable="YES"/>
+    <entity name="PrimaryStat" representedClassName=".PrimaryStat" syncable="YES">
+        <attribute name="agility" attributeType="String" syncable="YES"/>
+        <attribute name="armor" attributeType="String" syncable="YES"/>
+        <attribute name="damage" attributeType="String" syncable="YES"/>
+        <attribute name="intelligence" attributeType="String" syncable="YES"/>
+        <attribute name="speed" attributeType="String" syncable="YES"/>
+        <attribute name="strength" attributeType="String" syncable="YES"/>
         <relationship name="hero" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Hero" inverseName="primaryStat" inverseEntity="Hero" syncable="YES"/>
     </entity>
-    <entity name="Recipe" syncable="YES">
-        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="item" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Item" syncable="YES"/>
+    <entity name="Recipe" representedClassName=".Recipe" syncable="YES">
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <relationship name="item" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Item" inverseName="recipe" inverseEntity="Item" syncable="YES"/>
     </entity>
-    <entity name="Stat" syncable="YES">
-        <attribute name="armor" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="attackRange" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="damage" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="hp" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="level" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="mana" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="missleSpeed" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="sight" optional="YES" attributeType="String" syncable="YES"/>
+    <entity name="Stat" representedClassName=".Stat" syncable="YES">
+        <attribute name="armor" attributeType="String" syncable="YES"/>
+        <attribute name="attackRange" attributeType="String" syncable="YES"/>
+        <attribute name="damage" attributeType="String" syncable="YES"/>
+        <attribute name="hp" attributeType="String" syncable="YES"/>
+        <attribute name="level" attributeType="String" syncable="YES"/>
+        <attribute name="mana" attributeType="String" syncable="YES"/>
+        <attribute name="missleSpeed" attributeType="String" syncable="YES"/>
+        <attribute name="sight" attributeType="String" syncable="YES"/>
         <relationship name="hero" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Hero" inverseName="stat" inverseEntity="Hero" syncable="YES"/>
     </entity>
     <elements>

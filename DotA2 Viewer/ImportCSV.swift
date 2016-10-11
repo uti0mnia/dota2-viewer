@@ -16,7 +16,7 @@ class CSVImporter {
         self.moc = moc //initialize context
     }
     
-    fileprivate enum ImportType {
+    private enum ImportType {
         case hero, item
     }
     func importCSV() {
@@ -33,7 +33,7 @@ class CSVImporter {
         }
     }
     
-    fileprivate func parseCSV(_ name: String, type: ImportType) {
+    private func parseCSV(_ name: String, type: ImportType) {
         
         //get the path to the CSV file
         let path = Bundle.main.path(forResource: name, ofType: "csv")
@@ -63,7 +63,7 @@ class CSVImporter {
         }
     }
     
-    fileprivate func saveHero(_ line: CSwiftV) {
+    private func saveHero(_ line: CSwiftV) {
         //create hero MO
         let hero = NSEntityDescription.insertNewObject(forEntityName: "Hero",
                                                                        into: moc) as! Hero
@@ -126,7 +126,7 @@ class CSVImporter {
             ability.mana = data.next()
             ability.cooldown = data.next()
             ability.data = data.next()
-            data.next() //this is the image URL
+            _ = data.next() //this is the image URL
             ability.videoURL = data.next()
             abilities.append(ability)
         }
@@ -135,7 +135,7 @@ class CSVImporter {
         
     }
     
-    fileprivate func saveItem(_ line: CSwiftV) {
+    private func saveItem(_ line: CSwiftV) {
         let item = NSEntityDescription.insertNewObject(forEntityName: "Item",
                                                                        into: moc) as! Item
         var data = line.headers.makeIterator()
@@ -222,7 +222,7 @@ class StreamReader  {
                 atEof = true
                 if buffer.length > 0 {
                     // Buffer contains last line in file (not terminated by delimiter).
-                    let line = NSString(data: buffer as Data, encoding: encoding)
+                    let line = NSString(data: buffer as Data, encoding: String.Encoding.utf8.rawValue)
                     
                     buffer.length = 0
                     return line as String?
@@ -236,7 +236,7 @@ class StreamReader  {
         
         // Convert complete line (excluding the delimiter) to a string:
         let line = NSString(data: buffer.subdata(with: NSMakeRange(0, range.location)),
-                            encoding: encoding)
+                            encoding: String.Encoding.utf8.rawValue)
         // Remove line (and the delimiter) from the buffer:
         buffer.replaceBytes(in: NSMakeRange(0, range.location + range.length), withBytes: nil, length: 0)
         
