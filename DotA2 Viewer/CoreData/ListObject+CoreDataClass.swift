@@ -1,5 +1,5 @@
 //
-//  Hero+CoreDataClass.swift
+//  ListObject+CoreDataClass.swift
 //  DotA2 Viewer
 //
 //  Created by Casey McLewin on 2016-10-15.
@@ -10,6 +10,6 @@ import Foundation
 import CoreData
 
 
-public class Hero: ListObject {
+public class ListObject: NSManagedObject {
 
 }

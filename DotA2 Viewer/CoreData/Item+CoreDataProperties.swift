@@ -2,7 +2,7 @@
 //  Item+CoreDataProperties.swift
 //  DotA2 Viewer
 //
-//  Created by McLewin, Casey on 2016-10-11.
+//  Created by Casey McLewin on 2016-10-15.
 //  Copyright © 2016 self. All rights reserved.
 //
 
@@ -15,15 +15,14 @@ extension Item {
         return NSFetchRequest<Item>(entityName: "Item");
     }
 
-    @NSManaged public var name: String?
-    @NSManaged public var type: String?
-    @NSManaged public var cost: String?
     @NSManaged public var cooldown: String?
-    @NSManaged public var mana: String?
-    @NSManaged public var lore: String?
-    @NSManaged public var info: String?
+    @NSManaged public var cost: String?
     @NSManaged public var data: String?
     @NSManaged public var id: String?
+    @NSManaged public var info: String?
+    @NSManaged public var lore: String?
+    @NSManaged public var mana: String?
+    @NSManaged public var type: String?
     @NSManaged public var recipe: NSSet?
 
 }
