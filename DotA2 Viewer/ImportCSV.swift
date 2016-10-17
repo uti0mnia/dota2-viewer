@@ -128,21 +128,9 @@ class CSVImporter {
             ability.data = data.next()
             _ = data.next() //this is the image URL
             ability.videoURL = data.next()
-            
-            // set image
-            let abilityImageFile = ability.name!.replacingOccurrences(of: " ", with: "_").lowercased()
-            if let img = UIImage(named: abilityImageFile) {
-                ability.image = NSKeyedArchiver.archivedData(withRootObject: UIImageJPEGRepresentation(img, 2.0)) as NSData?
-            }
             abilities.append(ability)
         }
         hero.ability = NSSet(array: abilities)
-        
-        // set the pictures
-        let heroImageFile = hero.name.lowercased() + ".png"
-        if let img = UIImage(named: heroImageFile) {
-            hero.image = NSKeyedArchiver.archivedData(withRootObject: UIImageJPEGRepresentation(img, 2.0)) as NSData?
-        }
         
         
         

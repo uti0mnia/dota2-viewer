@@ -12,8 +12,11 @@ import CoreData
 
 class ObjectListVC: UIViewController {
 	
+	/* Properties */
 	var tableView: UITableView!
 	var collectionView: UICollectionView!
+	fileprivate let itemSegueID = "segueItemDetail"
+	fileprivate let heroSegueID = "segueHeroDetail"
 	
 	var entity: String { get { return "ListObject" } }
     let context = (UIApplication.shared.delegate as! AppDelegate).managedObjectContext
@@ -142,9 +145,9 @@ extension ObjectListVC: UITableViewDelegate, UITableViewDataSource {
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		switch entity {
 		case "Hero":
-			break
+			performSegue(withIdentifier: heroSegueID, sender: nil)
 		case "Item":
-			break
+			performSegue(withIdentifier: itemSegueID, sender: nil)
 		default:
 			break
 		}

@@ -5,10 +5,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Detail-->
         <scene sceneID="LSl-I5-uR2">
             <objects>
-                <viewController id="y82-Wm-lqF" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bh8-30-L9s" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="y82-Wm-lqF" userLabel="Detail" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6tj-VG-U2u"/>
                         <viewControllerLayoutGuide type="bottom" id="khm-1L-kzB"/>
@@ -18,10 +19,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Detail" id="gZp-JN-yp3"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Bh8-30-L9s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-393" y="-85"/>
+            <point key="canvasLocation" x="-393" y="-2"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="bal-0p-ioX">
@@ -29,7 +30,7 @@
                 <splitViewController id="x4X-lN-2P4" sceneMemberID="viewController">
                     <connections>
                         <segue destination="fq2-cu-TWz" kind="relationship" relationship="masterViewController" id="f3j-cP-2Fx"/>
-                        <segue destination="y82-Wm-lqF" kind="relationship" relationship="detailViewController" id="8xw-vz-FPU"/>
+                        <segue destination="y82-Wm-lqF" kind="relationship" relationship="detailViewController" id="dH4-N3-bAw"/>
                     </connections>
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7rj-Xt-Ynt" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -72,7 +73,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j50-in-VgG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1397.5999999999999" y="-1336.2818590704649"/>
+            <point key="canvasLocation" x="1377" y="-586"/>
         </scene>
         <!--Items-->
         <scene sceneID="NEh-08-053">
@@ -91,7 +92,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D2x-XK-Jb0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1397.5999999999999" y="-652.62368815592208"/>
+            <point key="canvasLocation" x="1377" y="-1299"/>
         </scene>
         <!--Item-->
         <scene sceneID="4MX-Xo-hrW">
@@ -110,7 +111,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zau-Zz-43Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="456.80000000000001" y="-653.52323838080963"/>
+            <point key="canvasLocation" x="473" y="-1299"/>
         </scene>
         <!--Heroes-->
         <scene sceneID="QyQ-Dn-b98">
@@ -129,7 +130,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7AG-fK-g8v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="458.39999999999998" y="-1336.2818590704649"/>
+            <point key="canvasLocation" x="474" y="-586"/>
         </scene>
     </scenes>
 </document>
