@@ -9,6 +9,7 @@
 import Foundation
 import CoreData
 
+
 extension Hero {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Hero> {
@@ -16,8 +17,8 @@ extension Hero {
     }
 
     @NSManaged public var attackType: String?
+    @NSManaged public var attribute: String?
     @NSManaged public var bio: String?
-    @NSManaged public var lore: String?
     @NSManaged public var role: String?
     @NSManaged public var ability: NSSet?
     @NSManaged public var primaryStat: PrimaryStat?

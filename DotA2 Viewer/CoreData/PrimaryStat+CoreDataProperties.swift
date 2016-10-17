@@ -8,6 +8,8 @@
 
 import Foundation
 import CoreData
+
+
 extension PrimaryStat {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<PrimaryStat> {

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 import CoreData
 
 class CSVImporter {
@@ -65,8 +66,7 @@ class CSVImporter {
     
     private func saveHero(_ line: CSwiftV) {
         //create hero MO
-        let hero = NSEntityDescription.insertNewObject(forEntityName: "Hero",
-                                                                       into: moc) as! Hero
+        let hero = NSEntityDescription.insertNewObject(forEntityName: "Hero", into: moc) as! Hero
         var data = line.headers.makeIterator()
         
         //load the data
@@ -128,9 +128,22 @@ class CSVImporter {
             ability.data = data.next()
             _ = data.next() //this is the image URL
             ability.videoURL = data.next()
+            
+            // set image
+            let abilityImageFile = ability.name!.replacingOccurrences(of: " ", with: "_").lowercased()
+            if let img = UIImage(named: abilityImageFile) {
+                ability.image = NSKeyedArchiver.archivedData(withRootObject: UIImageJPEGRepresentation(img, 2.0)) as NSData?
+            }
             abilities.append(ability)
         }
         hero.ability = NSSet(array: abilities)
+        
+        // set the pictures
+        let heroImageFile = hero.name.lowercased() + ".png"
+        if let img = UIImage(named: heroImageFile) {
+            hero.image = NSKeyedArchiver.archivedData(withRootObject: UIImageJPEGRepresentation(img, 2.0)) as NSData?
+        }
+        
         
         
     }

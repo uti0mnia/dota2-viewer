@@ -9,6 +9,7 @@
 import Foundation
 import CoreData
 
+
 extension Item {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Item> {
