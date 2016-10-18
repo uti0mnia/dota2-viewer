@@ -10,18 +10,24 @@ import UIKit
 import CoreData
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
 
     var window: UIWindow?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // for importing the CSVs
         if UserDefaults.standard.value(forKey: "hasLaunched") == nil {
             let importer = CSVImporter(managedObjectContext: managedObjectContext)
             importer.importCSV()
             UserDefaults.standard.set(true, forKey: "hasLaunched")
         }
+        
+        // for the split view controller
+        let splitViewController = self.window!.rootViewController as! UISplitViewController
+        splitViewController.delegate = self
         
         return true
     }
@@ -112,6 +118,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
+    
+    // MARK: - UISplitViewControllerDelegate
+    func splitViewController(_ splitViewController: UISplitViewController, showDetail vc: UIViewController, sender: Any?) -> Bool {
+        if splitViewController.isCollapsed {
+            if let master = splitViewController.viewControllers.first as? UITabBarController {
+                if let masterNav = master.selectedViewController as? UINavigationController {
+                    masterNav.pushViewController(vc, animated: true)
+                    return true
+                }
+            }
+        }
+        
+        return false
+    }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
