@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		36268C7F1DAD7F5100B9FF02 /* hero_final.csv in Resources */ = {isa = PBXBuildFile; fileRef = 36268C7D1DAD7F5100B9FF02 /* hero_final.csv */; };
 		36268C801DAD7F5100B9FF02 /* items_final.csv in Resources */ = {isa = PBXBuildFile; fileRef = 36268C7E1DAD7F5100B9FF02 /* items_final.csv */; };
+		367E34E01DB7F9670037FA7B /* CustomTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367E34DF1DB7F9670037FA7B /* CustomTabVC.swift */; };
 		36C0C9621DA6E25800169394 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C0C9611DA6E25800169394 /* AppDelegate.swift */; };
 		36C0C9641DA6E25800169394 /* ObjectiveListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C0C9631DA6E25800169394 /* ObjectiveListVC.swift */; };
 		36C0C9671DA6E25800169394 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36C0C9651DA6E25800169394 /* Main.storyboard */; };
@@ -57,6 +58,7 @@
 /* Begin PBXFileReference section */
 		36268C7D1DAD7F5100B9FF02 /* hero_final.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hero_final.csv; sourceTree = "<group>"; };
 		36268C7E1DAD7F5100B9FF02 /* items_final.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = items_final.csv; sourceTree = "<group>"; };
+		367E34DF1DB7F9670037FA7B /* CustomTabVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabVC.swift; sourceTree = "<group>"; };
 		36C0C95E1DA6E25800169394 /* DotA2 Viewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DotA2 Viewer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		36C0C9611DA6E25800169394 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		36C0C9631DA6E25800169394 /* ObjectiveListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectiveListVC.swift; sourceTree = "<group>"; usesTabs = 1; };
@@ -239,6 +241,7 @@
 		C96B9C491DB3D45E00F656AA /* List */ = {
 			isa = PBXGroup;
 			children = (
+				367E34DF1DB7F9670037FA7B /* CustomTabVC.swift */,
 				36C0C9631DA6E25800169394 /* ObjectiveListVC.swift */,
 				C96B9C3F1DB2C14800F656AA /* HeroListVC.swift */,
 				C96B9C411DB2C1B800F656AA /* ItemListVC.swift */,
@@ -375,6 +378,7 @@
 				C9FEBF5F1DB29B06000CD4FF /* Item+CoreDataProperties.swift in Sources */,
 				C9FEBF661DB29B06000CD4FF /* Hero+CoreDataClass.swift in Sources */,
 				C9FEBF5C1DB29B06000CD4FF /* Recipe+CoreDataClass.swift in Sources */,
+				367E34E01DB7F9670037FA7B /* CustomTabVC.swift in Sources */,
 				C9FEBF5E1DB29B06000CD4FF /* Item+CoreDataClass.swift in Sources */,
 				C9FEBF641DB29B06000CD4FF /* ListObject+CoreDataClass.swift in Sources */,
 				C9FEBF2F1DB299F2000CD4FF /* DotA2_Viewer.xcdatamodeld in Sources */,

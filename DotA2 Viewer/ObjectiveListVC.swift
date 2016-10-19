@@ -143,14 +143,7 @@ extension ObjectListVC: UITableViewDelegate, UITableViewDataSource {
 	}
 	
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		switch entity {
-		case "Hero":
-			performSegue(withIdentifier: heroSegueID, sender: nil)
-		case "Item":
-			performSegue(withIdentifier: itemSegueID, sender: nil)
-		default:
-			break
-		}
+		
 	}
 }
 
