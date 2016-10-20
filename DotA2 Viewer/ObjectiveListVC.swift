@@ -143,7 +143,9 @@ extension ObjectListVC: UITableViewDelegate, UITableViewDataSource {
 	}
 	
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		
+		if let parentVC = self.parent {
+			parentVC.performSegue(withIdentifier: "showDetail", sender: nil)
+		}
 	}
 }
 

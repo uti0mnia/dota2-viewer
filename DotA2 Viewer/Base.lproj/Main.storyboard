@@ -139,6 +139,10 @@
         <scene sceneID="zjP-me-9ZN">
             <objects>
                 <viewController storyboardIdentifier="HeroListVC" id="29n-og-yOj" customClass="HeroListVC" customModule="DotA2_Viewer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3wR-jQ-zKm"/>
+                        <viewControllerLayoutGuide type="bottom" id="3lm-gW-0e5"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ixG-J8-FoS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

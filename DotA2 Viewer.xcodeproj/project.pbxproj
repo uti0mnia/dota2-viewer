@@ -10,6 +10,7 @@
 		36268C7F1DAD7F5100B9FF02 /* hero_final.csv in Resources */ = {isa = PBXBuildFile; fileRef = 36268C7D1DAD7F5100B9FF02 /* hero_final.csv */; };
 		36268C801DAD7F5100B9FF02 /* items_final.csv in Resources */ = {isa = PBXBuildFile; fileRef = 36268C7E1DAD7F5100B9FF02 /* items_final.csv */; };
 		367E34E01DB7F9670037FA7B /* CustomTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367E34DF1DB7F9670037FA7B /* CustomTabVC.swift */; };
+		367E34E21DB92F010037FA7B /* ItemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367E34E11DB92F010037FA7B /* ItemDetailView.swift */; };
 		36C0C9621DA6E25800169394 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C0C9611DA6E25800169394 /* AppDelegate.swift */; };
 		36C0C9641DA6E25800169394 /* ObjectiveListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C0C9631DA6E25800169394 /* ObjectiveListVC.swift */; };
 		36C0C9671DA6E25800169394 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36C0C9651DA6E25800169394 /* Main.storyboard */; };
@@ -59,6 +60,7 @@
 		36268C7D1DAD7F5100B9FF02 /* hero_final.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hero_final.csv; sourceTree = "<group>"; };
 		36268C7E1DAD7F5100B9FF02 /* items_final.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = items_final.csv; sourceTree = "<group>"; };
 		367E34DF1DB7F9670037FA7B /* CustomTabVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabVC.swift; sourceTree = "<group>"; };
+		367E34E11DB92F010037FA7B /* ItemDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailView.swift; sourceTree = "<group>"; };
 		36C0C95E1DA6E25800169394 /* DotA2 Viewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DotA2 Viewer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		36C0C9611DA6E25800169394 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		36C0C9631DA6E25800169394 /* ObjectiveListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectiveListVC.swift; sourceTree = "<group>"; usesTabs = 1; };
@@ -204,6 +206,7 @@
 				36C0C9651DA6E25800169394 /* Main.storyboard */,
 				36FD565B1DA6E5F9007C5A9C /* UITableViewCell */,
 				C93499FE1DB439B5005407BB /* SimpleCVCell.swift */,
+				367E34E11DB92F010037FA7B /* ItemDetailView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -383,6 +386,7 @@
 				C9FEBF641DB29B06000CD4FF /* ListObject+CoreDataClass.swift in Sources */,
 				C9FEBF2F1DB299F2000CD4FF /* DotA2_Viewer.xcdatamodeld in Sources */,
 				C96B9C421DB2C1B800F656AA /* ItemListVC.swift in Sources */,
+				367E34E21DB92F010037FA7B /* ItemDetailView.swift in Sources */,
 				C96B9C461DB3334800F656AA /* HeroDetailVC.swift in Sources */,
 				C9FEBF671DB29B06000CD4FF /* Hero+CoreDataProperties.swift in Sources */,
 				C9FEBF631DB29B06000CD4FF /* PrimaryStat+CoreDataProperties.swift in Sources */,

@@ -46,18 +46,23 @@ class CustomTabVC: UIViewController {
     
     private func configureTabView() {
         tabBar.tintColor = UIColor.red
+        tabBar.selectedItem = tabBar.items?.first
         tabBar.delegate = self
     }
     
     fileprivate func displayContentController(_ controller: UIViewController) {
         self.addChildViewController(controller) // add child VC
         self.containerView.addSubview(controller.view) // add child view
-        controller.view.frame = self.containerView.frame // configure frame
+        controller.view.frame = self.containerView.bounds // configure frame
         controller.didMove(toParentViewController: self) // notify vc
     }
     
     fileprivate func cycleFrom(viewController oldVC: UIViewController, toViewController newVC: UIViewController) {
+        // remove the oldVC's view and itself
+        oldVC.view.removeFromSuperview()
         oldVC.removeFromParentViewController()
+        
+        // display the newVC
         displayContentController(newVC)
     }
     
@@ -81,3 +86,29 @@ extension CustomTabVC: UITabBarDelegate {
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
