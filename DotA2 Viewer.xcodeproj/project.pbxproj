@@ -10,6 +10,21 @@
 		36268C7F1DAD7F5100B9FF02 /* hero_final.csv in Resources */ = {isa = PBXBuildFile; fileRef = 36268C7D1DAD7F5100B9FF02 /* hero_final.csv */; };
 		36268C801DAD7F5100B9FF02 /* items_final.csv in Resources */ = {isa = PBXBuildFile; fileRef = 36268C7E1DAD7F5100B9FF02 /* items_final.csv */; };
 		367E34E01DB7F9670037FA7B /* CustomTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367E34DF1DB7F9670037FA7B /* CustomTabVC.swift */; };
+		367E34E41DB932FE0037FA7B /* ItemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367E34E31DB932FE0037FA7B /* ItemDetailView.swift */; };
+		368F3E881DBA4BA000530014 /* Arcane.png in Resources */ = {isa = PBXBuildFile; fileRef = 368F3E7D1DBA4BA000530014 /* Arcane.png */; };
+		368F3E891DBA4BA000530014 /* Armor.png in Resources */ = {isa = PBXBuildFile; fileRef = 368F3E7E1DBA4BA000530014 /* Armor.png */; };
+		368F3E8A1DBA4BA000530014 /* Arnaments.png in Resources */ = {isa = PBXBuildFile; fileRef = 368F3E7F1DBA4BA000530014 /* Arnaments.png */; };
+		368F3E8B1DBA4BA000530014 /* Artifacts.png in Resources */ = {isa = PBXBuildFile; fileRef = 368F3E801DBA4BA000530014 /* Artifacts.png */; };
+		368F3E8C1DBA4BA000530014 /* Attributes.png in Resources */ = {isa = PBXBuildFile; fileRef = 368F3E811DBA4BA000530014 /* Attributes.png */; };
+		368F3E8D1DBA4BA000530014 /* Caster.png in Resources */ = {isa = PBXBuildFile; fileRef = 368F3E821DBA4BA000530014 /* Caster.png */; };
+		368F3E8E1DBA4BA000530014 /* Common.png in Resources */ = {isa = PBXBuildFile; fileRef = 368F3E831DBA4BA000530014 /* Common.png */; };
+		368F3E8F1DBA4BA000530014 /* Consumables.png in Resources */ = {isa = PBXBuildFile; fileRef = 368F3E841DBA4BA000530014 /* Consumables.png */; };
+		368F3E901DBA4BA000530014 /* Secret.png in Resources */ = {isa = PBXBuildFile; fileRef = 368F3E851DBA4BA000530014 /* Secret.png */; };
+		368F3E911DBA4BA000530014 /* Support.png in Resources */ = {isa = PBXBuildFile; fileRef = 368F3E861DBA4BA000530014 /* Support.png */; };
+		368F3E921DBA4BA000530014 /* Weapons.png in Resources */ = {isa = PBXBuildFile; fileRef = 368F3E871DBA4BA000530014 /* Weapons.png */; };
+		368F3E941DBA664000530014 /* ItemDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 368F3E931DBA664000530014 /* ItemDetailView.xib */; };
+		368F3E971DBA7C0100530014 /* RecipeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368F3E961DBA7C0100530014 /* RecipeButton.swift */; };
+		368F3E991DBA850000530014 /* recipe.png in Resources */ = {isa = PBXBuildFile; fileRef = 368F3E981DBA850000530014 /* recipe.png */; };
 		36C0C9621DA6E25800169394 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C0C9611DA6E25800169394 /* AppDelegate.swift */; };
 		36C0C9641DA6E25800169394 /* ObjectiveListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C0C9631DA6E25800169394 /* ObjectiveListVC.swift */; };
 		36C0C9671DA6E25800169394 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36C0C9651DA6E25800169394 /* Main.storyboard */; };
@@ -26,8 +41,7 @@
 		C93499FF1DB439B5005407BB /* SimpleCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93499FE1DB439B5005407BB /* SimpleCVCell.swift */; };
 		C96B9C401DB2C14800F656AA /* HeroListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96B9C3F1DB2C14800F656AA /* HeroListVC.swift */; };
 		C96B9C421DB2C1B800F656AA /* ItemListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96B9C411DB2C1B800F656AA /* ItemListVC.swift */; };
-		C96B9C461DB3334800F656AA /* HeroDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96B9C451DB3334800F656AA /* HeroDetailVC.swift */; };
-		C96B9C481DB3345400F656AA /* ItemDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96B9C471DB3345400F656AA /* ItemDetailVC.swift */; };
+		C96B9C461DB3334800F656AA /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96B9C451DB3334800F656AA /* DetailVC.swift */; };
 		C9FEBF2F1DB299F2000CD4FF /* DotA2_Viewer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C9FEBF2D1DB299F2000CD4FF /* DotA2_Viewer.xcdatamodeld */; };
 		C9FEBF5A1DB29B06000CD4FF /* Ability+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FEBF4C1DB29B06000CD4FF /* Ability+CoreDataClass.swift */; };
 		C9FEBF5B1DB29B06000CD4FF /* Ability+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FEBF4D1DB29B06000CD4FF /* Ability+CoreDataProperties.swift */; };
@@ -59,6 +73,21 @@
 		36268C7D1DAD7F5100B9FF02 /* hero_final.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hero_final.csv; sourceTree = "<group>"; };
 		36268C7E1DAD7F5100B9FF02 /* items_final.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = items_final.csv; sourceTree = "<group>"; };
 		367E34DF1DB7F9670037FA7B /* CustomTabVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabVC.swift; sourceTree = "<group>"; };
+		367E34E31DB932FE0037FA7B /* ItemDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailView.swift; sourceTree = "<group>"; };
+		368F3E7D1DBA4BA000530014 /* Arcane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Arcane.png; path = images/Arcane.png; sourceTree = "<group>"; };
+		368F3E7E1DBA4BA000530014 /* Armor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Armor.png; path = images/Armor.png; sourceTree = "<group>"; };
+		368F3E7F1DBA4BA000530014 /* Arnaments.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Arnaments.png; path = images/Arnaments.png; sourceTree = "<group>"; };
+		368F3E801DBA4BA000530014 /* Artifacts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Artifacts.png; path = images/Artifacts.png; sourceTree = "<group>"; };
+		368F3E811DBA4BA000530014 /* Attributes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Attributes.png; path = images/Attributes.png; sourceTree = "<group>"; };
+		368F3E821DBA4BA000530014 /* Caster.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Caster.png; path = images/Caster.png; sourceTree = "<group>"; };
+		368F3E831DBA4BA000530014 /* Common.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Common.png; path = images/Common.png; sourceTree = "<group>"; };
+		368F3E841DBA4BA000530014 /* Consumables.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Consumables.png; path = images/Consumables.png; sourceTree = "<group>"; };
+		368F3E851DBA4BA000530014 /* Secret.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Secret.png; path = images/Secret.png; sourceTree = "<group>"; };
+		368F3E861DBA4BA000530014 /* Support.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Support.png; path = images/Support.png; sourceTree = "<group>"; };
+		368F3E871DBA4BA000530014 /* Weapons.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Weapons.png; path = images/Weapons.png; sourceTree = "<group>"; };
+		368F3E931DBA664000530014 /* ItemDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemDetailView.xib; sourceTree = "<group>"; };
+		368F3E961DBA7C0100530014 /* RecipeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeButton.swift; sourceTree = "<group>"; };
+		368F3E981DBA850000530014 /* recipe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = recipe.png; path = images/recipe.png; sourceTree = "<group>"; };
 		36C0C95E1DA6E25800169394 /* DotA2 Viewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DotA2 Viewer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		36C0C9611DA6E25800169394 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		36C0C9631DA6E25800169394 /* ObjectiveListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectiveListVC.swift; sourceTree = "<group>"; usesTabs = 1; };
@@ -79,8 +108,7 @@
 		C93499FE1DB439B5005407BB /* SimpleCVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleCVCell.swift; sourceTree = "<group>"; };
 		C96B9C3F1DB2C14800F656AA /* HeroListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroListVC.swift; sourceTree = "<group>"; };
 		C96B9C411DB2C1B800F656AA /* ItemListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemListVC.swift; sourceTree = "<group>"; };
-		C96B9C451DB3334800F656AA /* HeroDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroDetailVC.swift; sourceTree = "<group>"; };
-		C96B9C471DB3345400F656AA /* ItemDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailVC.swift; sourceTree = "<group>"; };
+		C96B9C451DB3334800F656AA /* DetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
 		C9FEBF2E1DB299F2000CD4FF /* DotA2_Pro.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DotA2_Pro.xcdatamodel; sourceTree = "<group>"; };
 		C9FEBF4C1DB29B06000CD4FF /* Ability+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Ability+CoreDataClass.swift"; path = "CoreData/Ability+CoreDataClass.swift"; sourceTree = "<group>"; };
 		C9FEBF4D1DB29B06000CD4FF /* Ability+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Ability+CoreDataProperties.swift"; path = "CoreData/Ability+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -116,6 +144,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		368F3E951DBA7BEB00530014 /* Detail Views */ = {
+			isa = PBXGroup;
+			children = (
+				367E34E31DB932FE0037FA7B /* ItemDetailView.swift */,
+				368F3E931DBA664000530014 /* ItemDetailView.xib */,
+			);
+			name = "Detail Views";
+			sourceTree = "<group>";
+		};
 		36C0C9551DA6E25800169394 = {
 			isa = PBXGroup;
 			children = (
@@ -158,6 +195,18 @@
 		36CD033A1DB5328F009DB4C7 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				368F3E7D1DBA4BA000530014 /* Arcane.png */,
+				368F3E7E1DBA4BA000530014 /* Armor.png */,
+				368F3E7F1DBA4BA000530014 /* Arnaments.png */,
+				368F3E801DBA4BA000530014 /* Artifacts.png */,
+				368F3E811DBA4BA000530014 /* Attributes.png */,
+				368F3E821DBA4BA000530014 /* Caster.png */,
+				368F3E831DBA4BA000530014 /* Common.png */,
+				368F3E841DBA4BA000530014 /* Consumables.png */,
+				368F3E981DBA850000530014 /* recipe.png */,
+				368F3E851DBA4BA000530014 /* Secret.png */,
+				368F3E861DBA4BA000530014 /* Support.png */,
+				368F3E871DBA4BA000530014 /* Weapons.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -204,6 +253,8 @@
 				36C0C9651DA6E25800169394 /* Main.storyboard */,
 				36FD565B1DA6E5F9007C5A9C /* UITableViewCell */,
 				C93499FE1DB439B5005407BB /* SimpleCVCell.swift */,
+				368F3E951DBA7BEB00530014 /* Detail Views */,
+				368F3E961DBA7C0100530014 /* RecipeButton.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -252,8 +303,7 @@
 		C96B9C4A1DB3D46600F656AA /* Detail */ = {
 			isa = PBXGroup;
 			children = (
-				C96B9C451DB3334800F656AA /* HeroDetailVC.swift */,
-				C96B9C471DB3345400F656AA /* ItemDetailVC.swift */,
+				C96B9C451DB3334800F656AA /* DetailVC.swift */,
 			);
 			name = Detail;
 			sourceTree = "<group>";
@@ -342,14 +392,27 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				368F3E941DBA664000530014 /* ItemDetailView.xib in Resources */,
+				368F3E991DBA850000530014 /* recipe.png in Resources */,
+				368F3E921DBA4BA000530014 /* Weapons.png in Resources */,
 				36FD56541DA6E3F5007C5A9C /* default_icon.png in Resources */,
 				36C0C96F1DA6E25800169394 /* LaunchScreen.storyboard in Resources */,
+				368F3E881DBA4BA000530014 /* Arcane.png in Resources */,
+				368F3E901DBA4BA000530014 /* Secret.png in Resources */,
 				36C0C96C1DA6E25800169394 /* Assets.xcassets in Resources */,
 				36FD56501DA6E3DD007C5A9C /* PrimaryStatCell.xib in Resources */,
+				368F3E8B1DBA4BA000530014 /* Artifacts.png in Resources */,
+				368F3E8A1DBA4BA000530014 /* Arnaments.png in Resources */,
+				368F3E8D1DBA4BA000530014 /* Caster.png in Resources */,
+				368F3E911DBA4BA000530014 /* Support.png in Resources */,
+				368F3E8E1DBA4BA000530014 /* Common.png in Resources */,
+				368F3E891DBA4BA000530014 /* Armor.png in Resources */,
 				36268C801DAD7F5100B9FF02 /* items_final.csv in Resources */,
 				36FD564E1DA6E3DD007C5A9C /* HeroDescriptionCell.xib in Resources */,
 				36268C7F1DAD7F5100B9FF02 /* hero_final.csv in Resources */,
 				36C0C9671DA6E25800169394 /* Main.storyboard in Resources */,
+				368F3E8F1DBA4BA000530014 /* Consumables.png in Resources */,
+				368F3E8C1DBA4BA000530014 /* Attributes.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,10 +443,12 @@
 				C9FEBF5C1DB29B06000CD4FF /* Recipe+CoreDataClass.swift in Sources */,
 				367E34E01DB7F9670037FA7B /* CustomTabVC.swift in Sources */,
 				C9FEBF5E1DB29B06000CD4FF /* Item+CoreDataClass.swift in Sources */,
+				368F3E971DBA7C0100530014 /* RecipeButton.swift in Sources */,
 				C9FEBF641DB29B06000CD4FF /* ListObject+CoreDataClass.swift in Sources */,
 				C9FEBF2F1DB299F2000CD4FF /* DotA2_Viewer.xcdatamodeld in Sources */,
 				C96B9C421DB2C1B800F656AA /* ItemListVC.swift in Sources */,
-				C96B9C461DB3334800F656AA /* HeroDetailVC.swift in Sources */,
+				367E34E41DB932FE0037FA7B /* ItemDetailView.swift in Sources */,
+				C96B9C461DB3334800F656AA /* DetailVC.swift in Sources */,
 				C9FEBF671DB29B06000CD4FF /* Hero+CoreDataProperties.swift in Sources */,
 				C9FEBF631DB29B06000CD4FF /* PrimaryStat+CoreDataProperties.swift in Sources */,
 				C9FEBF5B1DB29B06000CD4FF /* Ability+CoreDataProperties.swift in Sources */,
@@ -392,7 +457,6 @@
 				C96B9C401DB2C14800F656AA /* HeroListVC.swift in Sources */,
 				C9FEBF621DB29B06000CD4FF /* PrimaryStat+CoreDataClass.swift in Sources */,
 				C93499FF1DB439B5005407BB /* SimpleCVCell.swift in Sources */,
-				C96B9C481DB3345400F656AA /* ItemDetailVC.swift in Sources */,
 				36C0C9621DA6E25800169394 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

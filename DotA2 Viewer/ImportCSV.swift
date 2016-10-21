@@ -146,8 +146,8 @@ class CSVImporter {
         item.cooldown = data.next()
         item.mana = data.next()
         item.lore = data.next()
-        item.info = data.next()
-        item.data = data.next()
+        item.ability = data.next()
+        item.detail = data.next()
         item.id = data.next()
         
         //MARK: Recipe
@@ -162,7 +162,7 @@ class CSVImporter {
             }
             let recipe = NSEntityDescription.insertNewObject(forEntityName: "Recipe",
                                                                              into: moc) as! Recipe
-            recipe.name = data.next()
+            recipe.itemID = data.next()
             recipe.item = item
             recipes?.append(recipe)
         }

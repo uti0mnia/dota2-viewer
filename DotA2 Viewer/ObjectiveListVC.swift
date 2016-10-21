@@ -39,8 +39,6 @@ class ObjectListVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 		
-		
-		
 		// configure table view
 		configureTableView()
 		
@@ -58,7 +56,6 @@ class ObjectListVC: UIViewController {
 	private func configureTableView() {
 		tableView = UITableView()
 		tableView.translatesAutoresizingMaskIntoConstraints = false
-		tableView.delegate = self
 		tableView.dataSource = self
 		tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
 		self.view.addSubview(tableView)
@@ -109,7 +106,7 @@ class ObjectListVC: UIViewController {
 }
 
 /* TableView Delegate */
-extension ObjectListVC: UITableViewDelegate, UITableViewDataSource {
+extension ObjectListVC: UITableViewDataSource {
 	
 	// helper functions
 	func configureCell(cell: UITableViewCell, atIndexPath indexPath: IndexPath) {
@@ -142,11 +139,6 @@ extension ObjectListVC: UITableViewDelegate, UITableViewDataSource {
 		
 	}
 	
-	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		if let parentVC = self.parent {
-			parentVC.performSegue(withIdentifier: "showDetail", sender: nil)
-		}
-	}
 }
 
 /* Fetched Results Controller */
