@@ -13,6 +13,7 @@ class CustomTabVC: UIViewController {
     // outlets
     @IBOutlet weak var tabBar: UITabBar!
     @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     // view controllers for content view
     lazy var heroListVC: HeroListVC = {
@@ -34,8 +35,9 @@ class CustomTabVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // configure the table view
+        // configure the UI Elements
         configureTabView()
+        configureSearchBar()
         
         // configure the first container view
         let heroVC = HeroListVC()
@@ -45,9 +47,15 @@ class CustomTabVC: UIViewController {
     
     
     private func configureTabView() {
-        tabBar.tintColor = UIColor.red
-        tabBar.selectedItem = tabBar.items?.first
-        tabBar.delegate = self
+        tabBar.tintColor = UIColor.red // set tint
+        tabBar.selectedItem = tabBar.items?.first // set hero as selected
+        tabBar.delegate = self // set delegate
+    }
+    
+    private func configureSearchBar() {
+        searchBar.tintColor = UIColor.red // set tint
+        searchBar.showsCancelButton = true // show the cancel button
+        toggleSearchBar() // toggle the search bar off
     }
     
     fileprivate func displayContentController(_ controller: UIViewController) {
@@ -55,6 +63,10 @@ class CustomTabVC: UIViewController {
         self.containerView.addSubview(controller.view) // add child view
         controller.view.frame = self.containerView.bounds // configure frame
         controller.didMove(toParentViewController: self) // notify vc
+        
+        if controller is ObjectListVC {
+            searchBar.delegate = (controller as! ObjectListVC) // set the delegate for searching
+        }
     }
     
     fileprivate func cycleFrom(viewController oldVC: UIViewController, toViewController newVC: UIViewController) {
@@ -66,6 +78,14 @@ class CustomTabVC: UIViewController {
         displayContentController(newVC)
     }
     
+    @IBAction func searchButton(_ sender: UIBarButtonItem) {
+        toggleSearchBar() // toggle the search button
+    }
+    
+    func toggleSearchBar() {
+        searchBar.isHidden = !searchBar.isHidden
+        searchBar.text = "" // clears the text (mainly for hiding the search)
+    }
 }
 
 extension CustomTabVC: UITabBarDelegate {
@@ -86,8 +106,6 @@ extension CustomTabVC: UITabBarDelegate {
         }
     }
 }
-
-
 
 
 

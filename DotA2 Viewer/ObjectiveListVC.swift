@@ -212,7 +212,54 @@ extension ObjectListVC: UICollectionViewDelegate, UICollectionViewDelegateFlowLa
 	}
 }
 
-
+extension ObjectListVC: UISearchBarDelegate {
+	// stop editing when cancel/search is pressed
+	func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+		searchBar.resignFirstResponder()
+	}
+	
+	func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+		if let parentVC = self.parent as? CustomTabVC {
+			searchBar.text = "" // clear text
+			parentVC.toggleSearchBar()
+		}
+		searchBar.resignFirstResponder()
+	}
+	
+	func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+		let predicate = NSPredicate(value: true)
+		fetchedResultsController.fetchRequest.predicate = predicate
+		do {
+			try fetchedResultsController.performFetch()
+			tableView.reloadData()
+		} catch {
+			print("Error performing fetch: \(error.localizedDescription)")
+		}
+	}
+	
+	// filtering logic
+	func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+		// create the predicate
+		var predicate: NSPredicate!
+		if searchText == "" {
+			predicate = NSPredicate(value: true)
+		} else {
+			predicate = NSPredicate(format: "name contains[c] %@", searchText)
+		}
+		
+		// set the predicate
+		fetchedResultsController.fetchRequest.predicate = predicate
+		
+		// perform fetch
+		do {
+			try fetchedResultsController.performFetch()
+			tableView.reloadData()
+		} catch {
+			print("Error performing fetch:\(error.localizedDescription)")
+		}
+	}
+	
+}
 
 
 
