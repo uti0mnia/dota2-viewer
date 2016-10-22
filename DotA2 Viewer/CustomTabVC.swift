@@ -61,16 +61,14 @@ class CustomTabVC: UIViewController {
         toggleSearchBar() // toggle the search bar off
     }
     
+    
     fileprivate func displayContentController(_ controller: ObjectListVC) {
         self.addChildViewController(controller) // add child VC
         self.currentChild = controller // set the reference
         self.containerView.addSubview(controller.view) // add child view
         controller.view.frame = self.containerView.bounds // configure frame
         controller.didMove(toParentViewController: self) // notify vc
-        
-        if controller is ObjectListVC {
-            searchBar.delegate = (controller as! ObjectListVC) // set the delegate for searching
-        }
+        controller.tableView.delegate = self // set the delegate for didSelect
     }
     
     fileprivate func cycleFrom(viewController oldVC: UIViewController, toViewController newVC: ObjectListVC) {
@@ -82,8 +80,18 @@ class CustomTabVC: UIViewController {
         displayContentController(newVC)
     }
     
+    
     @IBAction func searchButton(_ sender: UIBarButtonItem) {
         toggleSearchBar() // toggle the search button
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard objectForDetail != nil else { return }
+        if segue.identifier == "showDetail" {
+            if let vc = (segue.destination as? UINavigationController)?.viewControllers.first as? DetailVC {
+                vc.object = objectForDetail
+            }
+        }
     }
     
     func toggleSearchBar() {
@@ -118,6 +126,8 @@ extension CustomTabVC: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: false)
     }
 }
+
+
 
 
 
