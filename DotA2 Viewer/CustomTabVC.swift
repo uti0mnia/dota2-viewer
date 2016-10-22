@@ -15,6 +15,10 @@ class CustomTabVC: UIViewController {
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var searchBar: UISearchBar!
     
+    // variables for keeping track of stuff
+    var objectForDetail: ListObject?
+    var currentChild: ObjectListVC!
+    
     // view controllers for content view
     lazy var heroListVC: HeroListVC = {
         let sb = UIStoryboard(name: "Main", bundle: nil)
@@ -40,8 +44,7 @@ class CustomTabVC: UIViewController {
         configureSearchBar()
         
         // configure the first container view
-        let heroVC = HeroListVC()
-        self.displayContentController(heroVC)
+        self.displayContentController(heroListVC)
         
     }
     
@@ -58,8 +61,9 @@ class CustomTabVC: UIViewController {
         toggleSearchBar() // toggle the search bar off
     }
     
-    fileprivate func displayContentController(_ controller: UIViewController) {
+    fileprivate func displayContentController(_ controller: ObjectListVC) {
         self.addChildViewController(controller) // add child VC
+        self.currentChild = controller // set the reference
         self.containerView.addSubview(controller.view) // add child view
         controller.view.frame = self.containerView.bounds // configure frame
         controller.didMove(toParentViewController: self) // notify vc
@@ -69,7 +73,7 @@ class CustomTabVC: UIViewController {
         }
     }
     
-    fileprivate func cycleFrom(viewController oldVC: UIViewController, toViewController newVC: UIViewController) {
+    fileprivate func cycleFrom(viewController oldVC: UIViewController, toViewController newVC: ObjectListVC) {
         // remove the oldVC's view and itself
         oldVC.view.removeFromSuperview()
         oldVC.removeFromParentViewController()
@@ -104,6 +108,14 @@ extension CustomTabVC: UITabBarDelegate {
         default:
             break
         }
+    }
+}
+
+extension CustomTabVC: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        objectForDetail = currentChild.fetchedResultsController.object(at: indexPath)
+        self.performSegue(withIdentifier: "showDetail", sender: nil)
+        tableView.deselectRow(at: indexPath, animated: false)
     }
 }
 

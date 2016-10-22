@@ -18,9 +18,9 @@ extension Item {
 
     @NSManaged public var cooldown: String?
     @NSManaged public var cost: String?
-    @NSManaged public var data: String?
+    @NSManaged public var detail: String?
     @NSManaged public var id: String?
-    @NSManaged public var info: String?
+    @NSManaged public var ability: String?
     @NSManaged public var lore: String?
     @NSManaged public var mana: String?
     @NSManaged public var type: String?
