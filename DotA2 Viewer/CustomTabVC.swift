@@ -69,6 +69,7 @@ class CustomTabVC: UIViewController {
         controller.view.frame = self.containerView.bounds // configure frame
         controller.didMove(toParentViewController: self) // notify vc
         controller.tableView.delegate = self // set the delegate for didSelect
+        searchBar.delegate = controller
     }
     
     fileprivate func cycleFrom(viewController oldVC: UIViewController, toViewController newVC: ObjectListVC) {
