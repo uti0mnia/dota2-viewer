@@ -17,11 +17,17 @@ class DetailVC: UIViewController {
         super.viewDidLoad()
         
         guard object != nil else { return }
+        configureView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
-        configureView() // confire the view to be hero or items
     }
     
     private func configureView() {
+        // set the nav bar title
+        self.title = object.name
         if object is Item {
             setViewAsItemView()
         }
@@ -31,12 +37,15 @@ class DetailVC: UIViewController {
     }
     
     private func setViewAsItemView() {
+        // init view
         // make sure the object is an Item
         guard object is Item else { return }
         
         let item = object as! Item
         // create the view
-        let view = ItemDetailView(frame: self.view.frame)
+        let view = Bundle.main.loadNibNamed("ItemDetailView", owner: self, options: nil)?.first as! ItemDetailView
+        self.view.addSubview(view)
+        view.frame = self.view.frame
         
         // set up the view
         // the main image
@@ -64,9 +73,9 @@ class DetailVC: UIViewController {
         view.typeImageView.image = item.getTypeImage()
         
         // set the details stack view
-        view.abilityLabel.text = item.ability
-        view.detailLabel.text = item.detail
-        view.loreLabel.text = item.lore
+        view.abilityLabel.text = item.ability?.replacingOccurrences(of: "\\n", with: "\n")
+        view.detailLabel.text = item.detail?.replacingOccurrences(of: "\\n", with: "\n")
+        view.loreLabel.text = item.lore?.replacingOccurrences(of: "\\n", with: "\n")
         
         // refine the view to remove unecessary views
         view.refineView()
@@ -75,7 +84,7 @@ class DetailVC: UIViewController {
     
     @objc fileprivate func recipeButtonPressed(sender: RecipeButton) {
         guard sender.item != nil else { return }
-        swapView(toObject: sender.item!)
+        //swapView(toObject: sender.item!)
     }
     
     fileprivate func swapView(toObject object: ListObject) {

@@ -24,20 +24,28 @@ class ItemDetailView: UIView {
     @IBOutlet weak var loreLabel: UILabel!
     
     
+    
     override init(frame: CGRect) {
         // init the frame
         super.init(frame: frame)
     }
     
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
+        //fatalError("init(coder:) has not been implemented")
     }
     
     func refineView() {
         // meant to remove items from the view if they're empty
-        if recipeStack.subviews.count < 1 { recipeStack.removeFromSuperview() }
-        if manaLabel.text == nil { manaLabel.removeFromSuperview() }
-        if cooldownLabel.text == nil { cooldownLabel.removeFromSuperview() }
+        if recipeStack.arrangedSubviews.count <= 1 { recipeStack.removeFromSuperview() }
+        if manaLabel.text == nil || manaLabel.text == "" { manaLabel.removeFromSuperview() }
+        if cooldownLabel.text == nil || cooldownLabel.text == "" { cooldownLabel.removeFromSuperview() }
+        if abilityLabel.text == nil || abilityLabel.text == "" { cooldownLabel.removeFromSuperview() }
+        if detailLabel.text == nil || detailLabel.text == "" { detailLabel.removeFromSuperview() }
+        if loreLabel.text == nil || loreLabel.text == "" { loreLabel.removeFromSuperview() }
+        
+        // set properties
+        scrollView.alwaysBounceVertical = true
         
     }
     

@@ -13,7 +13,10 @@ class CustomTabVC: UIViewController {
     // outlets
     @IBOutlet weak var tabBar: UITabBar!
     @IBOutlet weak var containerView: UIView!
+    
+    // variables for keeping track of stuff
     var objectForDetail: ListObject?
+    var currentChild: ObjectListVC!
     
     // view controllers for content view
     lazy var heroListVC: HeroListVC = {
@@ -53,10 +56,11 @@ class CustomTabVC: UIViewController {
     
     fileprivate func displayContentController(_ controller: ObjectListVC) {
         self.addChildViewController(controller) // add child VC
-        controller.tableView.delegate = self
+        self.currentChild = controller // set the reference
         self.containerView.addSubview(controller.view) // add child view
         controller.view.frame = self.containerView.bounds // configure frame
         controller.didMove(toParentViewController: self) // notify vc
+        controller.tableView.delegate = self // set the delegate for didSelect
     }
     
     fileprivate func cycleFrom(viewController oldVC: UIViewController, toViewController newVC: ObjectListVC) {
@@ -71,8 +75,8 @@ class CustomTabVC: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard objectForDetail != nil else { return }
         if segue.identifier == "showDetail" {
-            if let vc = self.storyboard?.instantiateViewController(withIdentifier: "DetailVC") as? DetailVC {
-                vc.object = objectForDetail!
+            if let vc = (segue.destination as? UINavigationController)?.viewControllers.first as? DetailVC {
+                vc.object = objectForDetail
             }
         }
     }
@@ -101,6 +105,7 @@ extension CustomTabVC: UITabBarDelegate {
 
 extension CustomTabVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        objectForDetail = currentChild.fetchedResultsController.object(at: indexPath)
         self.performSegue(withIdentifier: "showDetail", sender: nil)
         tableView.deselectRow(at: indexPath, animated: false)
     }
