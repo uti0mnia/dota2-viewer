@@ -170,11 +170,6 @@ class CSVImporter {
             item.recipe = NSSet(array: recipes!)
         }
         
-        // set the item image
-        if let image = UIImage(contentsOfFile: "images/" + item.id!) {
-            item.image = NSKeyedArchiver.archivedData(withRootObject: UIImagePNGRepresentation(image)) as NSData?
-        }
-        
     }
 }
 

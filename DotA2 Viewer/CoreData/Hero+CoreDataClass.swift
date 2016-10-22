@@ -6,10 +6,18 @@
 //  Copyright © 2016 self. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import CoreData
 
 @objc(Hero)
 public class Hero: ListObject {
-
+    override func objectImage() -> UIImage? {
+        let imgName = self.name! + ".png"
+        if let img = UIImage(named: imgName) {
+            return img
+        }
+        
+        print("Failed to create image for hero: \(imgName)")
+        return nil
+    }
 }

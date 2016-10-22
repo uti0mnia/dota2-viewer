@@ -18,7 +18,6 @@ extension Ability {
 
     @NSManaged public var cooldown: String?
     @NSManaged public var data: String?
-    @NSManaged public var image: NSData?
     @NSManaged public var lore: String?
     @NSManaged public var mana: String?
     @NSManaged public var name: String?

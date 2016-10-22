@@ -42,8 +42,7 @@ class CustomTabVC: UIViewController {
         configureTabView()
         
         // configure the first container view
-        let heroVC = HeroListVC()
-        self.displayContentController(heroVC)
+        self.displayContentController(heroListVC)
         
     }
     

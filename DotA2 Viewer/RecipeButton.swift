@@ -64,13 +64,15 @@ class RecipeButton: UIButton {
     private func configureButton() {
         let img: UIImage!
         if item != nil {
-            img = item!.getImage()
+            img = item!.objectImage()
+            self.setImage(img, for: .normal)
         } else {
             img = UIImage(named: "recipe.png") // recipe
             self.isEnabled = false // turn off button
+            self.setImage(img, for: .disabled)
         }
         
-        self.setImage(img, for: .normal)
+//        self.setImage(img, for: .normal)
         self.imageView?.contentMode = .scaleAspectFit
         
     }

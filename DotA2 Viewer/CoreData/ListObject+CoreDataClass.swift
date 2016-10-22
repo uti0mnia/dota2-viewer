@@ -11,12 +11,5 @@ import CoreData
 
 
 public class ListObject: NSManagedObject {
-    func getImage() -> UIImage {
-        guard (self.image != nil) else { return #imageLiteral(resourceName: "default_icon.png") }
-        if let img = NSKeyedUnarchiver.unarchiveObject(with: self.image as! Data) as? UIImage {
-            return img
-        } else {
-            return #imageLiteral(resourceName: "default_icon.png")
-        }
-    }
+    func objectImage() -> UIImage? { return nil }
 }

@@ -26,4 +26,19 @@ public class Item: ListObject {
         return nil
     }
     
+    override func objectImage() -> UIImage? {
+        // make sure id isn't nil
+        guard self.id != nil else { return nil }
+        
+        // create the image
+        let imgName = self.id! + ".png"
+        if let img = UIImage(named: imgName) {
+            return img
+        }
+        
+        print("Failed to create item image: \(imgName)")
+        return nil
+        
+    }
+    
 }

@@ -15,8 +15,7 @@ extension ListObject {
     @nonobjc public class func fetchRequest() -> NSFetchRequest<ListObject> {
         return NSFetchRequest<ListObject>(entityName: "ListObject");
     }
-
-    @NSManaged public var image: NSData?
+    
     @NSManaged public var name: String!
 
 }

@@ -10,92 +10,80 @@ import UIKit
 import CoreData
 
 class DetailVC: UIViewController {
+    // outlets
+    @IBOutlet weak var containerView: UIView!
     
+    // variables for keep track of stuff
     var object: ListObject!
+    var currentChild: UIViewController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // configure the container view
+        containerView.frame = self.view.bounds
         
         guard object != nil else { return }
         configureView()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-    }
-    
     private func configureView() {
-        // set the nav bar title
-        self.title = object.name
-        if object is Item {
-            setViewAsItemView()
-        }
-        if object is Hero {
-            
-        }
-    }
-    
-    private func setViewAsItemView() {
-        // init view
-        // make sure the object is an Item
-        guard object is Item else { return }
-        
-        let item = object as! Item
-        // create the view
-        let view = Bundle.main.loadNibNamed("ItemDetailView", owner: self, options: nil)?.first as! ItemDetailView
-        self.view.addSubview(view)
-        view.frame = self.view.frame
-        
-        // set up the view
-        // the main image
-        view.itemImageView.image = item.getImage()
-        
-        // the recipes
-        if (item.recipe != nil) {
-            // create an array of Recipe to itterate over
-            let recipes = item.recipe!.allObjects as! [Recipe]
-            for recipe in recipes {
-                // create the recipe button
-                let btn = RecipeButton(itemID: recipe.itemID!)
-                btn.addTarget(self, action: #selector(recipeButtonPressed(sender:)), for: .touchUpInside)
-                
-                // add it to the stack view
-                view.recipeStack.addArrangedSubview(btn)
-            }
+        switch object {
+        case is Item:
+            displayContentController(newItemDetailVC())
+        default:
+            break
         }
         
-        // set the info stack view
-        view.costLabel.text = item.cost
-        view.manaLabel.text = item.mana
-        view.cooldownLabel.text = item.cooldown
-        view.typeLabel.text = item.type
-        view.typeImageView.image = item.getTypeImage()
+    }
+    
+    fileprivate func newItemDetailVC() -> ItemDetailVC {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "ItemDetailVC") as! ItemDetailVC
+        vc.del = self
+        return vc
+    }
+    
+    fileprivate func displayContentController(_ controller: ObjectDetailVC) {
+        self.title = object.name // set the nav bar title
+        self.addChildViewController(controller) // add child VC
+        self.containerView.addSubview(controller.view) // add child view
+        controller.object = object // set the controller's object
+        controller.view.frame = self.containerView.bounds // configure frame
+        controller.didMove(toParentViewController: self) // notify vc
         
-        // set the details stack view
-        view.abilityLabel.text = item.ability?.replacingOccurrences(of: "\\n", with: "\n")
-        view.detailLabel.text = item.detail?.replacingOccurrences(of: "\\n", with: "\n")
-        view.loreLabel.text = item.lore?.replacingOccurrences(of: "\\n", with: "\n")
-        
-        // refine the view to remove unecessary views
-        view.refineView()
+        self.currentChild = controller // set the reference
+       
         
     }
     
-    @objc fileprivate func recipeButtonPressed(sender: RecipeButton) {
-        guard sender.item != nil else { return }
-        //swapView(toObject: sender.item!)
+    fileprivate func cycleFrom(viewController oldVC: UIViewController, toViewController newVC: ObjectDetailVC) {
+        // remove the oldVC's view and itself
+        oldVC.view.removeFromSuperview()
+        oldVC.removeFromParentViewController()
+        
+        // display the newVC - made for animations
+        displayContentController(newVC)
     }
-    
-    fileprivate func swapView(toObject object: ListObject) {
-        self.object = object
-        configureView()
-    }
-    
     
 }
 
-
+extension DetailVC: DetailVCDelegate {
+    func didSelectObject(object: ListObject) {
+        // set the object
+        self.object = object
+        
+        // swap out the correct view controller
+        switch object {
+        case is Item:
+            cycleFrom(viewController: currentChild, toViewController: newItemDetailVC())
+        case is Hero:
+            break
+        default:
+            break
+        }
+    }
+}
 
 
 
