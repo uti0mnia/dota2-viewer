@@ -15,9 +15,11 @@ public class Hero: ListObject {
         let imgName = self.name! + ".png"
         if let img = UIImage(named: imgName) {
             return img
+        } else {
+            return #imageLiteral(resourceName: "default_icon.png")
         }
         
-        print("Failed to create image for hero: \(imgName)")
+        //print("Failed to create image for hero: \(imgName)")
         return nil
     }
 }

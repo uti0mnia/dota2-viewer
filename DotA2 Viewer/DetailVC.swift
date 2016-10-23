@@ -31,6 +31,8 @@ class DetailVC: UIViewController {
         switch object {
         case is Item:
             displayContentController(newItemDetailVC())
+        case is Hero:
+            displayContentController(newHeroDetailVC())
         default:
             break
         }
@@ -38,18 +40,24 @@ class DetailVC: UIViewController {
     }
     
     fileprivate func newItemDetailVC() -> ItemDetailVC {
-        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let sb = UIStoryboard(name: "Detail", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "ItemDetailVC") as! ItemDetailVC
         vc.del = self
+        return vc
+    }
+    
+    fileprivate func newHeroDetailVC() -> HeroDetailVC {
+        let sb = UIStoryboard(name: "Detail", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "HeroDetailVC") as! HeroDetailVC
         return vc
     }
     
     fileprivate func displayContentController(_ controller: ObjectDetailVC) {
         self.title = object.name // set the nav bar title
         self.addChildViewController(controller) // add child VC
-        self.containerView.addSubview(controller.view) // add child view
         controller.object = object // set the controller's object
-        controller.view.frame = self.containerView.bounds // configure frame
+        self.containerView.addSubview(controller.view) // add child view
+        controller.view.frame = self.containerView.frame // configure frame
         controller.didMove(toParentViewController: self) // notify vc
         
         self.currentChild = controller // set the reference
@@ -78,7 +86,7 @@ extension DetailVC: DetailVCDelegate {
         case is Item:
             cycleFrom(viewController: currentChild, toViewController: newItemDetailVC())
         case is Hero:
-            break
+            cycleFrom(viewController: currentChild, toViewController: newHeroDetailVC())
         default:
             break
         }

@@ -18,10 +18,4 @@ class ObjectDetailVC: UIViewController {
     var object: ListObject!
     var del: DetailVCDelegate?
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-    
 }
