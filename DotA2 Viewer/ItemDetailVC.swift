@@ -12,13 +12,6 @@ import UIKit
 
 class ItemDetailVC: ObjectDetailVC {
     
-    override var object: ListObject! {
-        didSet {
-            setView()
-            refineView()
-        }
-    }
-    
     /* Outlets */
     /* Properties */
     @IBOutlet weak var scrollView: UIScrollView!
@@ -41,7 +34,8 @@ class ItemDetailVC: ObjectDetailVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        setView()
+        refineView()
     }
     
     fileprivate func setView() {

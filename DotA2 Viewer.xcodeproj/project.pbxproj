@@ -28,7 +28,6 @@
 		C9A6D6401DBC124200580B7B /* HeroBioVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A6D63F1DBC124200580B7B /* HeroBioVC.swift */; };
 		C9A6D6421DBC12B700580B7B /* HeroStatsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A6D6411DBC12B700580B7B /* HeroStatsVC.swift */; };
 		C9A6D6441DBC134500580B7B /* HeroAbilityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A6D6431DBC134500580B7B /* HeroAbilityVC.swift */; };
-		C9A6D6461DBC1BDE00580B7B /* PrimaryStatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A6D6451DBC1BDE00580B7B /* PrimaryStatVC.swift */; };
 		C9A6D6481DBC261A00580B7B /* HeroAllAbilitiesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A6D6471DBC261A00580B7B /* HeroAllAbilitiesVC.swift */; };
 		C9FB59731DBB1114000A0824 /* Abaddon.png in Resources */ = {isa = PBXBuildFile; fileRef = C9FB56741DBB1110000A0824 /* Abaddon.png */; };
 		C9FB59741DBB1114000A0824 /* abyssal_blade.png in Resources */ = {isa = PBXBuildFile; fileRef = C9FB56751DBB1110000A0824 /* abyssal_blade.png */; };
@@ -853,7 +852,6 @@
 		C9A6D63F1DBC124200580B7B /* HeroBioVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroBioVC.swift; sourceTree = "<group>"; };
 		C9A6D6411DBC12B700580B7B /* HeroStatsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroStatsVC.swift; sourceTree = "<group>"; };
 		C9A6D6431DBC134500580B7B /* HeroAbilityVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroAbilityVC.swift; sourceTree = "<group>"; };
-		C9A6D6451DBC1BDE00580B7B /* PrimaryStatVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrimaryStatVC.swift; sourceTree = "<group>"; };
 		C9A6D6471DBC261A00580B7B /* HeroAllAbilitiesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroAllAbilitiesVC.swift; sourceTree = "<group>"; };
 		C9FB56741DBB1110000A0824 /* Abaddon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Abaddon.png; sourceTree = "<group>"; };
 		C9FB56751DBB1110000A0824 /* abyssal_blade.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = abyssal_blade.png; sourceTree = "<group>"; };
@@ -1811,7 +1809,6 @@
 				C9A6D6471DBC261A00580B7B /* HeroAllAbilitiesVC.swift */,
 				C9A6D63F1DBC124200580B7B /* HeroBioVC.swift */,
 				C9A6D6411DBC12B700580B7B /* HeroStatsVC.swift */,
-				C9A6D6451DBC1BDE00580B7B /* PrimaryStatVC.swift */,
 			);
 			name = "Child VCs";
 			sourceTree = "<group>";
@@ -3473,7 +3470,6 @@
 				C9A6D6481DBC261A00580B7B /* HeroAllAbilitiesVC.swift in Sources */,
 				36C0C9641DA6E25800169394 /* ObjectListVC.swift in Sources */,
 				C9FEBF611DB29B06000CD4FF /* Stat+CoreDataProperties.swift in Sources */,
-				C9A6D6461DBC1BDE00580B7B /* PrimaryStatVC.swift in Sources */,
 				C9FEBF601DB29B06000CD4FF /* Stat+CoreDataClass.swift in Sources */,
 				36FD56591DA6E403007C5A9C /* CSwiftV.swift in Sources */,
 				C9FEBF651DB29B06000CD4FF /* ListObject+CoreDataProperties.swift in Sources */,

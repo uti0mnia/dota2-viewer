@@ -14,21 +14,27 @@ private enum SelectedView {
 
 class HeroDetailVC: ObjectDetailVC {
 
+    /* Outlets */
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var heroImage: UIImageView!
     @IBOutlet weak var attackTypeLabel: UILabel!
     @IBOutlet weak var roleLabel: UILabel!
-    @IBOutlet weak var primaryStatContainerView: UIView!
+    @IBOutlet weak var intelligenceLabel: UILabel!
+    @IBOutlet weak var agilityLabel: UILabel!
+    @IBOutlet weak var strengthLabel: UILabel!
+    @IBOutlet weak var damageLabel: UILabel!
+    @IBOutlet weak var speedLabel: UILabel!
+    @IBOutlet weak var armorLabel: UILabel!
     @IBOutlet weak var extraSegmentControl: UISegmentedControl!
     @IBOutlet weak var extraContainerView: UIView!
     
-    // making the VCs
-    lazy var primaryStatVC: PrimaryStatVC = {
-        let sb = UIStoryboard(name: "Detail", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: "PrimaryStatVC") as! PrimaryStatVC
-        return vc
-    }()
-    
+//    // making the VCs
+//    lazy var primaryStatVC: PrimaryStatVC = {
+//        let sb = UIStoryboard(name: "Detail", bundle: nil)
+//        let vc = sb.instantiateViewController(withIdentifier: "PrimaryStatVC") as! PrimaryStatVC
+//        return vc
+//    }()
+//    
     lazy var bioVC: HeroBioVC = {
         let sb = UIStoryboard(name: "Detail", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "HeroBioVC") as! HeroBioVC
@@ -59,7 +65,6 @@ class HeroDetailVC: ObjectDetailVC {
         scrollView.alwaysBounceVertical = true
         
         // set the view up
-        addPrimaryStatView()
         setView()
     }
     
@@ -89,9 +94,9 @@ class HeroDetailVC: ObjectDetailVC {
         heroImage.image = hero.objectImage()
         attackTypeLabel.text = hero.attackType
         roleLabel.text = hero.role
+        setPrimaryStats()
         
         // set child VC's data
-        primaryStatVC.stat = hero.primaryStat
         bioVC.bio = hero.bio
         statsVC.stats = hero.stat?.allObjects as! [Stat]
         abilitiesVC.abilities = hero.ability?.allObjects as! [Ability]
@@ -105,15 +110,23 @@ class HeroDetailVC: ObjectDetailVC {
     
     
     // adds the primary stat view controller as a child and to the container view
-    fileprivate func addPrimaryStatView() {
+    fileprivate func setPrimaryStats() {
         guard object is Hero else { return }
-        
         let hero = object as! Hero
-        self.addChildViewController(primaryStatVC)
-        primaryStatVC.stat = hero.primaryStat
-        self.primaryStatContainerView.addSubview(primaryStatVC.view)
-        self.primaryStatContainerView.sizeToFit()
-        primaryStatVC.didMove(toParentViewController: self)
+        
+        guard hero.primaryStat != nil else { return }
+        let stat = hero.primaryStat!
+        // set values
+        intelligenceLabel.text = stat.intelligence
+        agilityLabel.text = stat.agility
+        strengthLabel.text = stat.strength
+        damageLabel.text = stat.damage
+        speedLabel.text = stat.speed
+        armorLabel.text = stat.armor
+    }
+    
+    override func preferredContentSizeDidChange(forChildContentContainer container: UIContentContainer) {
+        self.extraContainerView.sizeThatFits(container.preferredContentSize)
     }
 
 }
@@ -125,7 +138,7 @@ extension HeroDetailVC {
     fileprivate func displayExtraContentController(_ controller: UIViewController) {
         self.addChildViewController(controller)
         self.extraContainerView.addSubview(controller.view)
-        controller.view.frame = self.extraContainerView.bounds
+        //controller.view.frame = self.extraContainerView.bounds
         controller.didMove(toParentViewController: self)
         
         self.currentExtraVC = controller
