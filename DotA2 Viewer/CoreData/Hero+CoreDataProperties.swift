@@ -22,7 +22,7 @@ extension Hero {
     @NSManaged public var role: String?
     @NSManaged public var ability: NSSet?
     @NSManaged public var primaryStat: PrimaryStat?
-    @NSManaged public var stat: NSSet?
+    @NSManaged public var stat: NSOrderedSet?
 
 }
 

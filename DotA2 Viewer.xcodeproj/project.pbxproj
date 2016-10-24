@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		361B71111DBE9AE500133173 /* HeroAbilityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361B71101DBE9AE500133173 /* HeroAbilityVC.swift */; };
 		36268C7F1DAD7F5100B9FF02 /* hero_final.csv in Resources */ = {isa = PBXBuildFile; fileRef = 36268C7D1DAD7F5100B9FF02 /* hero_final.csv */; };
 		36268C801DAD7F5100B9FF02 /* items_final.csv in Resources */ = {isa = PBXBuildFile; fileRef = 36268C7E1DAD7F5100B9FF02 /* items_final.csv */; };
 		367E34E01DB7F9670037FA7B /* CustomTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367E34DF1DB7F9670037FA7B /* CustomTabVC.swift */; };
@@ -27,7 +28,6 @@
 		C96B9C461DB3334800F656AA /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96B9C451DB3334800F656AA /* DetailVC.swift */; };
 		C9A6D6401DBC124200580B7B /* HeroBioVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A6D63F1DBC124200580B7B /* HeroBioVC.swift */; };
 		C9A6D6421DBC12B700580B7B /* HeroStatsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A6D6411DBC12B700580B7B /* HeroStatsVC.swift */; };
-		C9A6D6441DBC134500580B7B /* HeroAbilityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A6D6431DBC134500580B7B /* HeroAbilityVC.swift */; };
 		C9A6D6481DBC261A00580B7B /* HeroAllAbilitiesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A6D6471DBC261A00580B7B /* HeroAllAbilitiesVC.swift */; };
 		C9A6D64D1DBD25AE00580B7B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A6D64C1DBD25AE00580B7B /* Extensions.swift */; };
 		C9FB59731DBB1114000A0824 /* Abaddon.png in Resources */ = {isa = PBXBuildFile; fileRef = C9FB56741DBB1110000A0824 /* Abaddon.png */; };
@@ -828,6 +828,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		361B71101DBE9AE500133173 /* HeroAbilityVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroAbilityVC.swift; sourceTree = "<group>"; };
 		36268C7D1DAD7F5100B9FF02 /* hero_final.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hero_final.csv; sourceTree = "<group>"; };
 		36268C7E1DAD7F5100B9FF02 /* items_final.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = items_final.csv; sourceTree = "<group>"; };
 		367E34DF1DB7F9670037FA7B /* CustomTabVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabVC.swift; sourceTree = "<group>"; };
@@ -852,7 +853,6 @@
 		C96B9C451DB3334800F656AA /* DetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
 		C9A6D63F1DBC124200580B7B /* HeroBioVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroBioVC.swift; sourceTree = "<group>"; };
 		C9A6D6411DBC12B700580B7B /* HeroStatsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroStatsVC.swift; sourceTree = "<group>"; };
-		C9A6D6431DBC134500580B7B /* HeroAbilityVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroAbilityVC.swift; sourceTree = "<group>"; };
 		C9A6D6471DBC261A00580B7B /* HeroAllAbilitiesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroAllAbilitiesVC.swift; sourceTree = "<group>"; };
 		C9A6D64C1DBD25AE00580B7B /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		C9FB56741DBB1110000A0824 /* Abaddon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Abaddon.png; sourceTree = "<group>"; };
@@ -1808,7 +1808,7 @@
 		C9A6D64B1DBC289300580B7B /* Child VCs */ = {
 			isa = PBXGroup;
 			children = (
-				C9A6D6431DBC134500580B7B /* HeroAbilityVC.swift */,
+				361B71101DBE9AE500133173 /* HeroAbilityVC.swift */,
 				C9A6D6471DBC261A00580B7B /* HeroAllAbilitiesVC.swift */,
 				C9A6D63F1DBC124200580B7B /* HeroBioVC.swift */,
 				C9A6D6411DBC12B700580B7B /* HeroStatsVC.swift */,
@@ -3465,7 +3465,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9A6D6441DBC134500580B7B /* HeroAbilityVC.swift in Sources */,
 				C9FB5C731DBB9239000A0824 /* ItemDetailVC.swift in Sources */,
 				C9FEBF5A1DB29B06000CD4FF /* Ability+CoreDataClass.swift in Sources */,
 				C9FB5C751DBB997C000A0824 /* ObjectDetailVC.swift in Sources */,
@@ -3496,6 +3495,7 @@
 				C9A6D6421DBC12B700580B7B /* HeroStatsVC.swift in Sources */,
 				C9FEBF621DB29B06000CD4FF /* PrimaryStat+CoreDataClass.swift in Sources */,
 				C93499FF1DB439B5005407BB /* SimpleCVCell.swift in Sources */,
+				361B71111DBE9AE500133173 /* HeroAbilityVC.swift in Sources */,
 				C9A6D64D1DBD25AE00580B7B /* Extensions.swift in Sources */,
 				36C0C9621DA6E25800169394 /* AppDelegate.swift in Sources */,
 			);

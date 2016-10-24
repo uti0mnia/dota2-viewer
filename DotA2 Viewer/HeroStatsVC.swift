@@ -28,6 +28,7 @@ class HeroStatsVC: UIViewController {
         super.viewWillAppear(animated)
         
         loadStat(atIndex: 0)
+        segmentLevel.addTarget(self, action: #selector(indexChanged(sender:)), for: .valueChanged)
     }
     
     @objc private func indexChanged(sender: UISegmentedControl) {

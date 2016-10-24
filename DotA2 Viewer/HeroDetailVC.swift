@@ -60,15 +60,10 @@ class HeroDetailVC: ObjectDetailVC {
         // add the segment control
         extraSegmentControl.addTarget(self, action: #selector(didChangeSegment(sender:)), for: .valueChanged)
         
-        //scrollView.alwaysBounceVertical = true
+        scrollView.alwaysBounceVertical = true
         
         // set the view up
         setView()
-        
-        //
-        let lbl = UILabel()
-        lbl.text = "Herooo"
-        fullStackView.addArrangedSubview(lbl)
     }
     
     // handling the extra view at the bottom for Bio/Stats/Abilities
@@ -101,7 +96,7 @@ class HeroDetailVC: ObjectDetailVC {
         
         // set child VC's data
         bioVC.bio = hero.bio
-        statsVC.stats = hero.stat?.allObjects as! [Stat]
+        statsVC.stats = hero.stat?.array as! [Stat]
         abilitiesVC.abilities = hero.ability?.allObjects as! [Ability]
         
         // add default child
@@ -138,7 +133,7 @@ extension HeroDetailVC {
         self.addChildViewController(controller)
         if myView == nil { myView = UIView() } // init view in case
         myView.addSubview(controller.view)
-        myView.sizeToFit()
+        controller.view.setWidth(myView.frame.width)
         fullStackView.addArrangedSubview(myView)
         controller.didMove(toParentViewController: self)
         currentExtraVC = controller

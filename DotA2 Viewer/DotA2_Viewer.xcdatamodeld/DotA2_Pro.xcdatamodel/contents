@@ -17,7 +17,7 @@
         <attribute name="role" attributeType="String" syncable="YES"/>
         <relationship name="ability" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Ability" inverseName="hero" inverseEntity="Ability" syncable="YES"/>
         <relationship name="primaryStat" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PrimaryStat" inverseName="hero" inverseEntity="PrimaryStat" syncable="YES"/>
-        <relationship name="stat" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Stat" inverseName="hero" inverseEntity="Stat" syncable="YES"/>
+        <relationship name="stat" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Stat" inverseName="hero" inverseEntity="Stat" syncable="YES"/>
     </entity>
     <entity name="Item" representedClassName="Item" parentEntity="ListObject" syncable="YES">
         <attribute name="ability" attributeType="String" syncable="YES"/>

@@ -108,7 +108,7 @@ class CSVImporter {
             stat.missleSpeed = data.next()
             stats.append(stat)
         }
-        hero.stat = NSSet(array: stats) //add the stats
+        hero.stat = NSOrderedSet(array: stats) //add the stats
         
         //MARK: Abilities
         
