@@ -16,6 +16,7 @@ class HeroDetailVC: ObjectDetailVC {
 
     /* Outlets */
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var fullStackView: UIStackView!
     @IBOutlet weak var heroImage: UIImageView!
     @IBOutlet weak var attackTypeLabel: UILabel!
     @IBOutlet weak var roleLabel: UILabel!
@@ -26,15 +27,11 @@ class HeroDetailVC: ObjectDetailVC {
     @IBOutlet weak var speedLabel: UILabel!
     @IBOutlet weak var armorLabel: UILabel!
     @IBOutlet weak var extraSegmentControl: UISegmentedControl!
-    @IBOutlet weak var extraContainerView: UIView!
+    @IBOutlet weak var containerView: UIView!
+    
+    var myView: UIView!
     
 //    // making the VCs
-//    lazy var primaryStatVC: PrimaryStatVC = {
-//        let sb = UIStoryboard(name: "Detail", bundle: nil)
-//        let vc = sb.instantiateViewController(withIdentifier: "PrimaryStatVC") as! PrimaryStatVC
-//        return vc
-//    }()
-//    
     lazy var bioVC: HeroBioVC = {
         let sb = UIStoryboard(name: "Detail", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "HeroBioVC") as! HeroBioVC
@@ -56,16 +53,22 @@ class HeroDetailVC: ObjectDetailVC {
     // vars to keep track of things
     var currentExtraVC: UIViewController!
     
+    /* Methods */
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // add the segment control
         extraSegmentControl.addTarget(self, action: #selector(didChangeSegment(sender:)), for: .valueChanged)
         
-        scrollView.alwaysBounceVertical = true
+        //scrollView.alwaysBounceVertical = true
         
         // set the view up
         setView()
+        
+        //
+        let lbl = UILabel()
+        lbl.text = "Herooo"
+        fullStackView.addArrangedSubview(lbl)
     }
     
     // handling the extra view at the bottom for Bio/Stats/Abilities
@@ -102,7 +105,6 @@ class HeroDetailVC: ObjectDetailVC {
         abilitiesVC.abilities = hero.ability?.allObjects as! [Ability]
         
         // add default child
-        currentExtraVC = bioVC
         displayExtraContentController(bioVC)
         
         
@@ -124,30 +126,29 @@ class HeroDetailVC: ObjectDetailVC {
         speedLabel.text = stat.speed
         armorLabel.text = stat.armor
     }
-    
-    override func preferredContentSizeDidChange(forChildContentContainer container: UIContentContainer) {
-        self.extraContainerView.sizeThatFits(container.preferredContentSize)
-    }
 
 }
 
 
 /* UIViewController Child Handling */
 extension HeroDetailVC {
+    
     // displays the given UIViewController's view into the Extra view at the bottin (Bio, Stat or Abilities)
     fileprivate func displayExtraContentController(_ controller: UIViewController) {
         self.addChildViewController(controller)
-        self.extraContainerView.addSubview(controller.view)
-        //controller.view.frame = self.extraContainerView.bounds
+        if myView == nil { myView = UIView() } // init view in case
+        myView.addSubview(controller.view)
+        myView.sizeToFit()
+        fullStackView.addArrangedSubview(myView)
         controller.didMove(toParentViewController: self)
-        
-        self.currentExtraVC = controller
+        currentExtraVC = controller
     }
     
     
     // meant to handle the swapping of the extra VC at the bottom
     fileprivate func swapDetailContainer(from vc1: UIViewController, to vc2: UIViewController) {
         // remove old vc's view and itself
+        fullStackView.removeArrangedSubview(myView)
         vc1.view.removeFromSuperview()
         vc1.removeFromParentViewController()
         

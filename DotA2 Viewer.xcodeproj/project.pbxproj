@@ -29,6 +29,7 @@
 		C9A6D6421DBC12B700580B7B /* HeroStatsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A6D6411DBC12B700580B7B /* HeroStatsVC.swift */; };
 		C9A6D6441DBC134500580B7B /* HeroAbilityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A6D6431DBC134500580B7B /* HeroAbilityVC.swift */; };
 		C9A6D6481DBC261A00580B7B /* HeroAllAbilitiesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A6D6471DBC261A00580B7B /* HeroAllAbilitiesVC.swift */; };
+		C9A6D64D1DBD25AE00580B7B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A6D64C1DBD25AE00580B7B /* Extensions.swift */; };
 		C9FB59731DBB1114000A0824 /* Abaddon.png in Resources */ = {isa = PBXBuildFile; fileRef = C9FB56741DBB1110000A0824 /* Abaddon.png */; };
 		C9FB59741DBB1114000A0824 /* abyssal_blade.png in Resources */ = {isa = PBXBuildFile; fileRef = C9FB56751DBB1110000A0824 /* abyssal_blade.png */; };
 		C9FB59751DBB1114000A0824 /* Acid-spray.png in Resources */ = {isa = PBXBuildFile; fileRef = C9FB56761DBB1110000A0824 /* Acid-spray.png */; };
@@ -853,6 +854,7 @@
 		C9A6D6411DBC12B700580B7B /* HeroStatsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroStatsVC.swift; sourceTree = "<group>"; };
 		C9A6D6431DBC134500580B7B /* HeroAbilityVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroAbilityVC.swift; sourceTree = "<group>"; };
 		C9A6D6471DBC261A00580B7B /* HeroAllAbilitiesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroAllAbilitiesVC.swift; sourceTree = "<group>"; };
+		C9A6D64C1DBD25AE00580B7B /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		C9FB56741DBB1110000A0824 /* Abaddon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Abaddon.png; sourceTree = "<group>"; };
 		C9FB56751DBB1110000A0824 /* abyssal_blade.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = abyssal_blade.png; sourceTree = "<group>"; };
 		C9FB56761DBB1110000A0824 /* Acid-spray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Acid-spray.png"; sourceTree = "<group>"; };
@@ -1749,6 +1751,7 @@
 				36FD56571DA6E403007C5A9C /* CSwiftV.swift */,
 				36FD56581DA6E403007C5A9C /* ImportCSV.swift */,
 				36FD56461DA6E373007C5A9C /* CoreData */,
+				C9A6D64C1DBD25AE00580B7B /* Extensions.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -3493,6 +3496,7 @@
 				C9A6D6421DBC12B700580B7B /* HeroStatsVC.swift in Sources */,
 				C9FEBF621DB29B06000CD4FF /* PrimaryStat+CoreDataClass.swift in Sources */,
 				C93499FF1DB439B5005407BB /* SimpleCVCell.swift in Sources */,
+				C9A6D64D1DBD25AE00580B7B /* Extensions.swift in Sources */,
 				36C0C9621DA6E25800169394 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

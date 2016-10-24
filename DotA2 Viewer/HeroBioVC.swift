@@ -11,7 +11,7 @@ import UIKit
 class HeroBioVC: UIViewController {
     
     
-    @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var text: UILabel!
     var bio: String?
 
     override func viewDidLoad() {
@@ -24,7 +24,7 @@ class HeroBioVC: UIViewController {
         super.viewWillAppear(animated)
         
         guard bio != nil else { return }
-        textView.text = bio!.replacingOccurrences(of: "\\n", with: "\n")
+        text.text = bio!.replacingOccurrences(of: "\\n", with: "\n")
     }
 
 }
