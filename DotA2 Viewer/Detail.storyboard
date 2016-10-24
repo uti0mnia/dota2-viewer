@@ -206,13 +206,18 @@
                                                     </stackView>
                                                 </subviews>
                                             </stackView>
-                                            <segmentedControl opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="NAs-XG-X4M">
-                                                <segments>
-                                                    <segment title="Bio"/>
-                                                    <segment title="Stats"/>
-                                                    <segment title="Abilities"/>
-                                                </segments>
-                                            </segmentedControl>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="6He-nv-NFL">
+                                                <subviews>
+                                                    <segmentedControl opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="NAs-XG-X4M">
+                                                        <segments>
+                                                            <segment title="Bio"/>
+                                                            <segment title="Stats"/>
+                                                            <segment title="Abilities"/>
+                                                        </segments>
+                                                    </segmentedControl>
+                                                </subviews>
+                                                <edgeInsets key="layoutMargins" top="0.0" left="8" bottom="0.0" right="8"/>
+                                            </stackView>
                                         </subviews>
                                     </stackView>
                                 </subviews>
