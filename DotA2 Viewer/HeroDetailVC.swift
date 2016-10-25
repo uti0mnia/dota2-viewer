@@ -15,19 +15,7 @@ private enum SelectedView {
 class HeroDetailVC: ObjectDetailVC {
 
     /* Outlets */
-    @IBOutlet weak var scrollView: UIScrollView!
-//    @IBOutlet weak var fullStackView: UIStackView!
-//    @IBOutlet weak var heroImage: UIImageView!
-//    @IBOutlet weak var attackTypeLabel: UILabel!
-//    @IBOutlet weak var roleLabel: UILabel!
-//    @IBOutlet weak var intelligenceLabel: UILabel!
-//    @IBOutlet weak var agilityLabel: UILabel!
-//    @IBOutlet weak var strengthLabel: UILabel!
-//    @IBOutlet weak var damageLabel: UILabel!
-//    @IBOutlet weak var speedLabel: UILabel!
-//    @IBOutlet weak var armorLabel: UILabel!
-//    @IBOutlet weak var extraSegmentControl: UISegmentedControl!
-    
+    var scrollView: UIScrollView!
     var fullStackView: UIStackView!
     var heroImage: UIImageView!
     var attackTypeLabel: UILabel!
@@ -65,13 +53,15 @@ class HeroDetailVC: ObjectDetailVC {
     /* Methods */
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        setStackView()
         
-        // add the segment control
+        // inits the views programatically
+        setStackView()
+        //scrollView.contentSize = fullStackView.frame.size
+        scrollView.alwaysBounceVertical = true
+        
+        // add the segment control target
         extraSegmentControl.addTarget(self, action: #selector(didChangeSegment(sender:)), for: .valueChanged)
         
-        scrollView.alwaysBounceVertical = true
         
         // set the view up
         setView()
@@ -147,12 +137,58 @@ class HeroDetailVC: ObjectDetailVC {
         armorLabel = UILabel()
         let stackView1 = UIStackView(arrangedSubviews: [intelligenceLabel, agilityLabel, strengthLabel])
         let stackView2 = UIStackView(arrangedSubviews: [damageLabel, speedLabel, armorLabel])
+        stackView1.translatesAutoresizingMaskIntoConstraints = false
+        stackView2.translatesAutoresizingMaskIntoConstraints = false
         stackView1.axis = .vertical
         stackView2.axis = .vertical
         stackView1.alignment = .center
         stackView2.alignment = .center
         stackView1.distribution = .fillEqually
         stackView2.distribution = .fillEqually
+        let pStackView = UIStackView(arrangedSubviews: [stackView1, stackView2])
+        pStackView.axis = .horizontal
+        pStackView.alignment = .center
+        pStackView.distribution = .fillEqually
+        
+        // set up the segment controll
+        extraSegmentControl = UISegmentedControl(items: ["Bio", "Stats", "Abilities"])
+        extraSegmentControl.tintColor = UIColor.red
+        extraSegmentControl.selectedSegmentIndex = 0
+        
+        // set up scroll view
+        scrollView = UIScrollView()
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(scrollView)
+        self.view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[scrollView]|",
+                                                                options: [],
+                                                                metrics: nil,
+                                                                views: ["scrollView": scrollView]))
+        self.view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[scrollView]|",
+                                                                options: [],
+                                                                metrics: nil,
+                                                                views: ["scrollView": scrollView]))
+        
+        
+        // set up the full view
+        fullStackView = UIStackView()
+        fullStackView.translatesAutoresizingMaskIntoConstraints = false
+        fullStackView.axis = .vertical
+        fullStackView.alignment = .fill
+        fullStackView.distribution = .fillProportionally
+        scrollView.addSubview(fullStackView)
+        
+        scrollView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[stackView(==scrollView)]|",
+                                                                    options: .alignAllCenterX,
+                                                                    metrics: nil,
+                                                                    views: ["stackView": fullStackView, "scrollView": scrollView]))
+        scrollView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[stackView]|",
+                                                                    options: [],
+                                                                    metrics: nil,
+                                                                    views: ["stackView": fullStackView]))
+        
+        for i in [heroImage, attackTypeLabel, roleLabel, pStackView, extraSegmentControl] {
+            fullStackView.addArrangedSubview(i)
+        }
         
     }
 
@@ -165,12 +201,15 @@ extension HeroDetailVC {
     // displays the given UIViewController's view into the Extra view at the bottin (Bio, Stat or Abilities)
     fileprivate func displayExtraContentController(_ controller: UIViewController) {
         let myView = UIView()
+        myView.heightAnchor.constraint(equalToConstant: controller.view.frame.height).isActive = true
         fullStackView.addArrangedSubview(myView)
         self.addChildViewController(controller)
         myView.addSubview(controller.view)
         controller.view.frame = myView.bounds
         controller.didMove(toParentViewController: self)
         currentExtraVC = controller
+        
+        //scrollView.contentSize = fullStackView.frame.size
     }
     
     

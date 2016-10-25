@@ -148,20 +148,8 @@
                     <view key="view" contentMode="scaleToFill" id="cRd-Ro-8WE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0ws-Pn-pyc"/>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="0ws-Pn-pyc" firstAttribute="top" secondItem="cRd-Ro-8WE" secondAttribute="top" id="ASu-zo-TqN"/>
-                            <constraint firstAttribute="trailing" secondItem="0ws-Pn-pyc" secondAttribute="trailing" id="gjQ-QO-Z73"/>
-                            <constraint firstItem="0ws-Pn-pyc" firstAttribute="leading" secondItem="cRd-Ro-8WE" secondAttribute="leading" id="p7t-9s-E9b"/>
-                            <constraint firstAttribute="bottom" secondItem="0ws-Pn-pyc" secondAttribute="bottom" id="uaq-MA-AP9"/>
-                        </constraints>
                     </view>
-                    <connections>
-                        <outlet property="scrollView" destination="0ws-Pn-pyc" id="VPD-Nw-oSX"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LUw-UR-9Qs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

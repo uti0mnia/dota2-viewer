@@ -10,6 +10,7 @@
 		361B71111DBE9AE500133173 /* HeroAbilityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361B71101DBE9AE500133173 /* HeroAbilityVC.swift */; };
 		36268C7F1DAD7F5100B9FF02 /* hero_final.csv in Resources */ = {isa = PBXBuildFile; fileRef = 36268C7D1DAD7F5100B9FF02 /* hero_final.csv */; };
 		36268C801DAD7F5100B9FF02 /* items_final.csv in Resources */ = {isa = PBXBuildFile; fileRef = 36268C7E1DAD7F5100B9FF02 /* items_final.csv */; };
+		362A7ED41DBFBEF700BFC9BA /* HeroDetailStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362A7ED31DBFBEF700BFC9BA /* HeroDetailStackView.swift */; };
 		367E34E01DB7F9670037FA7B /* CustomTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367E34DF1DB7F9670037FA7B /* CustomTabVC.swift */; };
 		368F3E971DBA7C0100530014 /* RecipeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368F3E961DBA7C0100530014 /* RecipeButton.swift */; };
 		36C0C9621DA6E25800169394 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C0C9611DA6E25800169394 /* AppDelegate.swift */; };
@@ -831,6 +832,7 @@
 		361B71101DBE9AE500133173 /* HeroAbilityVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroAbilityVC.swift; sourceTree = "<group>"; };
 		36268C7D1DAD7F5100B9FF02 /* hero_final.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hero_final.csv; sourceTree = "<group>"; };
 		36268C7E1DAD7F5100B9FF02 /* items_final.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = items_final.csv; sourceTree = "<group>"; };
+		362A7ED31DBFBEF700BFC9BA /* HeroDetailStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroDetailStackView.swift; sourceTree = "<group>"; };
 		367E34DF1DB7F9670037FA7B /* CustomTabVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabVC.swift; sourceTree = "<group>"; };
 		368F3E961DBA7C0100530014 /* RecipeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeButton.swift; sourceTree = "<group>"; };
 		36C0C95E1DA6E25800169394 /* DotA2 Viewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DotA2 Viewer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1739,6 +1741,7 @@
 			isa = PBXGroup;
 			children = (
 				C9A6D63E1DBC11D200580B7B /* Storyboards */,
+				362A7ED31DBFBEF700BFC9BA /* HeroDetailStackView.swift */,
 				C93499FE1DB439B5005407BB /* SimpleCVCell.swift */,
 				368F3E961DBA7C0100530014 /* RecipeButton.swift */,
 			);
@@ -3491,6 +3494,7 @@
 				C9FEBF5B1DB29B06000CD4FF /* Ability+CoreDataProperties.swift in Sources */,
 				C9FEBF5D1DB29B06000CD4FF /* Recipe+CoreDataProperties.swift in Sources */,
 				36FD565A1DA6E403007C5A9C /* ImportCSV.swift in Sources */,
+				362A7ED41DBFBEF700BFC9BA /* HeroDetailStackView.swift in Sources */,
 				C96B9C401DB2C14800F656AA /* HeroListVC.swift in Sources */,
 				C9A6D6421DBC12B700580B7B /* HeroStatsVC.swift in Sources */,
 				C9FEBF621DB29B06000CD4FF /* PrimaryStat+CoreDataClass.swift in Sources */,
