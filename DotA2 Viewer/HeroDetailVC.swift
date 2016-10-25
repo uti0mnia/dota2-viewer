@@ -27,11 +27,8 @@ class HeroDetailVC: ObjectDetailVC {
     @IBOutlet weak var speedLabel: UILabel!
     @IBOutlet weak var armorLabel: UILabel!
     @IBOutlet weak var extraSegmentControl: UISegmentedControl!
-    @IBOutlet weak var containerView: UIView!
     
-    var myView: UIView!
-    
-//    // making the VCs
+    // making the VCs
     lazy var bioVC: HeroBioVC = {
         let sb = UIStoryboard(name: "Detail", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "HeroBioVC") as! HeroBioVC
@@ -130,11 +127,11 @@ extension HeroDetailVC {
     
     // displays the given UIViewController's view into the Extra view at the bottin (Bio, Stat or Abilities)
     fileprivate func displayExtraContentController(_ controller: UIViewController) {
-        self.addChildViewController(controller)
-        if myView == nil { myView = UIView() } // init view in case
-        myView.addSubview(controller.view)
-        controller.view.setWidth(myView.frame.width)
+        let myView = UIView()
         fullStackView.addArrangedSubview(myView)
+        self.addChildViewController(controller)
+        myView.addSubview(controller.view)
+        controller.view.frame = myView.bounds
         controller.didMove(toParentViewController: self)
         currentExtraVC = controller
     }
@@ -143,7 +140,7 @@ extension HeroDetailVC {
     // meant to handle the swapping of the extra VC at the bottom
     fileprivate func swapDetailContainer(from vc1: UIViewController, to vc2: UIViewController) {
         // remove old vc's view and itself
-        fullStackView.removeArrangedSubview(myView)
+        fullStackView.removeArrangedSubview(fullStackView.arrangedSubviews.last!)
         vc1.view.removeFromSuperview()
         vc1.removeFromParentViewController()
         

@@ -151,7 +151,7 @@
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0ws-Pn-pyc">
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="CL5-bc-aNx">
+                                    <stackView opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" axis="vertical" distribution="equalCentering" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="CL5-bc-aNx">
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3ao-OE-mtk"/>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x7z-Aq-9nl">
@@ -164,7 +164,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="V6C-ij-4Gf">
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="V6C-ij-4Gf">
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="wMh-nN-waH">
                                                         <subviews>
@@ -280,6 +280,9 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="7Ca-pv-In6" secondAttribute="bottom" id="atT-fO-t1s"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -391,12 +394,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Zeg-jJ-wFS">
-                                <frame key="frameInset" width="375" height="185"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="Zeg-jJ-wFS"/>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Zeg-jJ-wFS" firstAttribute="leading" secondItem="wfi-P2-aVe" secondAttribute="leading" id="5gW-8q-P4o"/>
+                            <constraint firstItem="Zeg-jJ-wFS" firstAttribute="centerY" secondItem="wfi-P2-aVe" secondAttribute="centerY" id="NiG-Oy-9CY"/>
+                            <constraint firstAttribute="trailing" secondItem="Zeg-jJ-wFS" secondAttribute="trailing" id="dfD-A6-Pgb"/>
+                            <constraint firstItem="Zeg-jJ-wFS" firstAttribute="top" secondItem="wfi-P2-aVe" secondAttribute="top" id="nv1-iy-h1F"/>
+                            <constraint firstItem="Zeg-jJ-wFS" firstAttribute="centerX" secondItem="wfi-P2-aVe" secondAttribute="centerX" id="xSz-RG-T2G"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="stackView" destination="Zeg-jJ-wFS" id="6nj-19-dHn"/>

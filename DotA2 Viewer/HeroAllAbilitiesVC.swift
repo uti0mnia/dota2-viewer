@@ -47,6 +47,7 @@ class HeroAllAbilitiesVC: UIViewController {
             let vc = createHeroAbilityVC()
             add(controller: vc, withAbility: ability, toView: view)
         }
+        
     }
 
 }

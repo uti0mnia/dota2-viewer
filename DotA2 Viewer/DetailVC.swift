@@ -57,7 +57,7 @@ class DetailVC: UIViewController {
         self.addChildViewController(controller) // add child VC
         controller.object = object // set the controller's object
         self.containerView.addSubview(controller.view) // add child view
-        controller.view.frame = self.containerView.frame // configure frame
+        controller.view.frame = self.containerView.bounds // configure frame
         controller.didMove(toParentViewController: self) // notify vc
         
         self.currentChild = controller // set the reference
