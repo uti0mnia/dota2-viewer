@@ -16,17 +16,29 @@ class HeroDetailVC: ObjectDetailVC {
 
     /* Outlets */
     @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var fullStackView: UIStackView!
-    @IBOutlet weak var heroImage: UIImageView!
-    @IBOutlet weak var attackTypeLabel: UILabel!
-    @IBOutlet weak var roleLabel: UILabel!
-    @IBOutlet weak var intelligenceLabel: UILabel!
-    @IBOutlet weak var agilityLabel: UILabel!
-    @IBOutlet weak var strengthLabel: UILabel!
-    @IBOutlet weak var damageLabel: UILabel!
-    @IBOutlet weak var speedLabel: UILabel!
-    @IBOutlet weak var armorLabel: UILabel!
-    @IBOutlet weak var extraSegmentControl: UISegmentedControl!
+//    @IBOutlet weak var fullStackView: UIStackView!
+//    @IBOutlet weak var heroImage: UIImageView!
+//    @IBOutlet weak var attackTypeLabel: UILabel!
+//    @IBOutlet weak var roleLabel: UILabel!
+//    @IBOutlet weak var intelligenceLabel: UILabel!
+//    @IBOutlet weak var agilityLabel: UILabel!
+//    @IBOutlet weak var strengthLabel: UILabel!
+//    @IBOutlet weak var damageLabel: UILabel!
+//    @IBOutlet weak var speedLabel: UILabel!
+//    @IBOutlet weak var armorLabel: UILabel!
+//    @IBOutlet weak var extraSegmentControl: UISegmentedControl!
+    
+    var fullStackView: UIStackView!
+    var heroImage: UIImageView!
+    var attackTypeLabel: UILabel!
+    var roleLabel: UILabel!
+    var intelligenceLabel: UILabel!
+    var agilityLabel: UILabel!
+    var strengthLabel: UILabel!
+    var damageLabel: UILabel!
+    var speedLabel: UILabel!
+    var armorLabel: UILabel!
+    var extraSegmentControl: UISegmentedControl!
     
     // making the VCs
     lazy var bioVC: HeroBioVC = {
@@ -54,6 +66,8 @@ class HeroDetailVC: ObjectDetailVC {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setStackView()
+        
         // add the segment control
         extraSegmentControl.addTarget(self, action: #selector(didChangeSegment(sender:)), for: .valueChanged)
         
@@ -117,6 +131,29 @@ class HeroDetailVC: ObjectDetailVC {
         damageLabel.text = stat.damage
         speedLabel.text = stat.speed
         armorLabel.text = stat.armor
+    }
+    
+    fileprivate func setStackView() {
+        heroImage = UIImageView()
+        attackTypeLabel = UILabel()
+        roleLabel = UILabel()
+        
+        // set the primary stats stack view
+        intelligenceLabel = UILabel()
+        agilityLabel = UILabel()
+        strengthLabel = UILabel()
+        damageLabel = UILabel()
+        speedLabel = UILabel()
+        armorLabel = UILabel()
+        let stackView1 = UIStackView(arrangedSubviews: [intelligenceLabel, agilityLabel, strengthLabel])
+        let stackView2 = UIStackView(arrangedSubviews: [damageLabel, speedLabel, armorLabel])
+        stackView1.axis = .vertical
+        stackView2.axis = .vertical
+        stackView1.alignment = .center
+        stackView2.alignment = .center
+        stackView1.distribution = .fillEqually
+        stackView2.distribution = .fillEqually
+        
     }
 
 }
