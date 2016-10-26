@@ -16,17 +16,7 @@ class HeroDetailVC: ObjectDetailVC {
 
     /* Outlets */
     var scrollView: UIScrollView!
-    var fullStackView: UIStackView!
-    var heroImage: UIImageView!
-    var attackTypeLabel: UILabel!
-    var roleLabel: UILabel!
-    var intelligenceLabel: UILabel!
-    var agilityLabel: UILabel!
-    var strengthLabel: UILabel!
-    var damageLabel: UILabel!
-    var speedLabel: UILabel!
-    var armorLabel: UILabel!
-    var extraSegmentControl: UISegmentedControl!
+    var fullStackView: HeroDetailStackView!
     
     // making the VCs
     lazy var bioVC: HeroBioVC = {
@@ -55,12 +45,13 @@ class HeroDetailVC: ObjectDetailVC {
         super.viewDidLoad()
         
         // inits the views programatically
-        setStackView()
+        initViews()
+        
         //scrollView.contentSize = fullStackView.frame.size
         scrollView.alwaysBounceVertical = true
         
         // add the segment control target
-        extraSegmentControl.addTarget(self, action: #selector(didChangeSegment(sender:)), for: .valueChanged)
+        fullStackView.extraSegmentControl.addTarget(self, action: #selector(didChangeSegment(sender:)), for: .valueChanged)
         
         
         // set the view up
@@ -90,9 +81,9 @@ class HeroDetailVC: ObjectDetailVC {
         
         // set self's displays
         self.title = hero.name
-        heroImage.image = hero.objectImage()
-        attackTypeLabel.text = hero.attackType
-        roleLabel.text = hero.role
+        fullStackView.heroImage.image = hero.objectImage()
+        fullStackView.attackTypeLabel.text = hero.attackType
+        fullStackView.roleLabel.text = hero.role
         setPrimaryStats()
         
         // set child VC's data
@@ -115,45 +106,15 @@ class HeroDetailVC: ObjectDetailVC {
         guard hero.primaryStat != nil else { return }
         let stat = hero.primaryStat!
         // set values
-        intelligenceLabel.text = stat.intelligence
-        agilityLabel.text = stat.agility
-        strengthLabel.text = stat.strength
-        damageLabel.text = stat.damage
-        speedLabel.text = stat.speed
-        armorLabel.text = stat.armor
+        fullStackView.intelligenceLabel.text = stat.intelligence
+        fullStackView.agilityLabel.text = stat.agility
+        fullStackView.strengthLabel.text = stat.strength
+        fullStackView.damageLabel.text = stat.damage
+        fullStackView.speedLabel.text = stat.speed
+        fullStackView.armorLabel.text = stat.armor
     }
     
-    fileprivate func setStackView() {
-        heroImage = UIImageView()
-        attackTypeLabel = UILabel()
-        roleLabel = UILabel()
-        
-        // set the primary stats stack view
-        intelligenceLabel = UILabel()
-        agilityLabel = UILabel()
-        strengthLabel = UILabel()
-        damageLabel = UILabel()
-        speedLabel = UILabel()
-        armorLabel = UILabel()
-        let stackView1 = UIStackView(arrangedSubviews: [intelligenceLabel, agilityLabel, strengthLabel])
-        let stackView2 = UIStackView(arrangedSubviews: [damageLabel, speedLabel, armorLabel])
-        stackView1.translatesAutoresizingMaskIntoConstraints = false
-        stackView2.translatesAutoresizingMaskIntoConstraints = false
-        stackView1.axis = .vertical
-        stackView2.axis = .vertical
-        stackView1.alignment = .center
-        stackView2.alignment = .center
-        stackView1.distribution = .fillEqually
-        stackView2.distribution = .fillEqually
-        let pStackView = UIStackView(arrangedSubviews: [stackView1, stackView2])
-        pStackView.axis = .horizontal
-        pStackView.alignment = .center
-        pStackView.distribution = .fillEqually
-        
-        // set up the segment controll
-        extraSegmentControl = UISegmentedControl(items: ["Bio", "Stats", "Abilities"])
-        extraSegmentControl.tintColor = UIColor.red
-        extraSegmentControl.selectedSegmentIndex = 0
+    fileprivate func initViews() {
         
         // set up scroll view
         scrollView = UIScrollView()
@@ -170,11 +131,9 @@ class HeroDetailVC: ObjectDetailVC {
         
         
         // set up the full view
-        fullStackView = UIStackView()
+        fullStackView = HeroDetailStackView()
+        fullStackView.setStack()
         fullStackView.translatesAutoresizingMaskIntoConstraints = false
-        fullStackView.axis = .vertical
-        fullStackView.alignment = .fill
-        fullStackView.distribution = .fillProportionally
         scrollView.addSubview(fullStackView)
         
         scrollView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[stackView(==scrollView)]|",
@@ -186,9 +145,6 @@ class HeroDetailVC: ObjectDetailVC {
                                                                     metrics: nil,
                                                                     views: ["stackView": fullStackView]))
         
-        for i in [heroImage, attackTypeLabel, roleLabel, pStackView, extraSegmentControl] {
-            fullStackView.addArrangedSubview(i)
-        }
         
     }
 
@@ -209,7 +165,6 @@ extension HeroDetailVC {
         controller.didMove(toParentViewController: self)
         currentExtraVC = controller
         
-        //scrollView.contentSize = fullStackView.frame.size
     }
     
     

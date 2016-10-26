@@ -27,6 +27,7 @@
 		C96B9C401DB2C14800F656AA /* HeroListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96B9C3F1DB2C14800F656AA /* HeroListVC.swift */; };
 		C96B9C421DB2C1B800F656AA /* ItemListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96B9C411DB2C1B800F656AA /* ItemListVC.swift */; };
 		C96B9C461DB3334800F656AA /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96B9C451DB3334800F656AA /* DetailVC.swift */; };
+		C97710FF1DC04E340083FBD7 /* AbilitiesStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97710FE1DC04E340083FBD7 /* AbilitiesStackView.swift */; };
 		C9A6D6401DBC124200580B7B /* HeroBioVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A6D63F1DBC124200580B7B /* HeroBioVC.swift */; };
 		C9A6D6421DBC12B700580B7B /* HeroStatsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A6D6411DBC12B700580B7B /* HeroStatsVC.swift */; };
 		C9A6D6481DBC261A00580B7B /* HeroAllAbilitiesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A6D6471DBC261A00580B7B /* HeroAllAbilitiesVC.swift */; };
@@ -853,6 +854,7 @@
 		C96B9C3F1DB2C14800F656AA /* HeroListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroListVC.swift; sourceTree = "<group>"; };
 		C96B9C411DB2C1B800F656AA /* ItemListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemListVC.swift; sourceTree = "<group>"; };
 		C96B9C451DB3334800F656AA /* DetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
+		C97710FE1DC04E340083FBD7 /* AbilitiesStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbilitiesStackView.swift; sourceTree = "<group>"; };
 		C9A6D63F1DBC124200580B7B /* HeroBioVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroBioVC.swift; sourceTree = "<group>"; };
 		C9A6D6411DBC12B700580B7B /* HeroStatsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroStatsVC.swift; sourceTree = "<group>"; };
 		C9A6D6471DBC261A00580B7B /* HeroAllAbilitiesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroAllAbilitiesVC.swift; sourceTree = "<group>"; };
@@ -1741,6 +1743,7 @@
 			isa = PBXGroup;
 			children = (
 				C9A6D63E1DBC11D200580B7B /* Storyboards */,
+				C97710FE1DC04E340083FBD7 /* AbilitiesStackView.swift */,
 				362A7ED31DBFBEF700BFC9BA /* HeroDetailStackView.swift */,
 				C93499FE1DB439B5005407BB /* SimpleCVCell.swift */,
 				368F3E961DBA7C0100530014 /* RecipeButton.swift */,
@@ -3477,6 +3480,7 @@
 				C9FEBF611DB29B06000CD4FF /* Stat+CoreDataProperties.swift in Sources */,
 				C9FEBF601DB29B06000CD4FF /* Stat+CoreDataClass.swift in Sources */,
 				36FD56591DA6E403007C5A9C /* CSwiftV.swift in Sources */,
+				C97710FF1DC04E340083FBD7 /* AbilitiesStackView.swift in Sources */,
 				C9FEBF651DB29B06000CD4FF /* ListObject+CoreDataProperties.swift in Sources */,
 				C9FEBF5F1DB29B06000CD4FF /* Item+CoreDataProperties.swift in Sources */,
 				C9FEBF661DB29B06000CD4FF /* Hero+CoreDataClass.swift in Sources */,

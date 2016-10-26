@@ -10,6 +10,7 @@ import UIKit
 
 class HeroAbilityVC: UIViewController {
     
+    @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var descriptionLabel: UILabel!
@@ -22,6 +23,11 @@ class HeroAbilityVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("View did load")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         setView()
     }
@@ -32,7 +38,7 @@ class HeroAbilityVC: UIViewController {
         
         nameLabel.text = ability.name
         imageView.image = ability.getImage()
-        descriptionLabel.text = ability.description
+        descriptionLabel.text = ability.summary
         dataLabel.text = ability.data
         manaLabel.text = ability.mana
         cooldownLabel.text = ability.cooldown

@@ -16,7 +16,11 @@ class HeroAllAbilitiesVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
         setAbilities()
     }
     
@@ -28,10 +32,9 @@ class HeroAllAbilitiesVC: UIViewController {
     
     private func add(controller: HeroAbilityVC, withAbility ability: Ability, toView view: UIView) {
         self.addChildViewController(controller)
-        view.addSubview(controller.view)
-        controller.ability = ability
-        controller.view.frame = view.bounds
         controller.didMove(toParentViewController: self)
+        controller.ability = ability
+        print("did move")
         
     }
     

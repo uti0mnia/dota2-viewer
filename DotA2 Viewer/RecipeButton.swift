@@ -72,7 +72,6 @@ class RecipeButton: UIButton {
             self.setImage(img, for: .disabled)
         }
         
-//        self.setImage(img, for: .normal)
         self.imageView?.contentMode = .scaleAspectFit
         
     }
