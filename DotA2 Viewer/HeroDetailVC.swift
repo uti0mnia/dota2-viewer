@@ -37,8 +37,23 @@ class HeroDetailVC: ObjectDetailVC {
         return vc
     }()
     
+    lazy var abilitiesStackView: AbilitiesStackView = {
+        let sv = AbilitiesStackView()
+        return sv
+    }()
+    
+    lazy var bioStackView: HeroBioStackView = {
+        let sv = HeroBioStackView()
+        return sv
+    }()
+    
+    lazy var statsStackView: StatsStackView = {
+        let sv = StatsStackView()
+        return sv
+    }()
+    
     // vars to keep track of things
-    var currentExtraVC: UIViewController!
+    var currentExtraSV: UIStackView!
     
     /* Methods */
     override func viewDidLoad() {
@@ -63,11 +78,12 @@ class HeroDetailVC: ObjectDetailVC {
         
         switch sender.selectedSegmentIndex {
         case 0:
-            swapDetailContainer(from: currentExtraVC, to: bioVC)
+            swapDetailContainer(from: currentExtraSV, to: bioStackView)
         case 1:
-            swapDetailContainer(from: currentExtraVC, to: statsVC)
+            swapDetailContainer(from: currentExtraSV, to: statsStackView)
+            break
         case 2:
-            swapDetailContainer(from: currentExtraVC, to: abilitiesVC)
+            swapDetailContainer(from: currentExtraSV, to: abilitiesStackView)
         default:
             break
         }
@@ -87,12 +103,23 @@ class HeroDetailVC: ObjectDetailVC {
         setPrimaryStats()
         
         // set child VC's data
-        bioVC.bio = hero.bio
-        statsVC.stats = hero.stat?.array as! [Stat]
-        abilitiesVC.abilities = hero.ability?.allObjects as! [Ability]
+//        bioVC.bio = hero.bio
+        bioStackView.setStack()
+        bioStackView.bioLabel.text = hero.bio?.replacingOccurrences(of: "--", with: " ").replacingOccurrences(of: "\\n", with: "\n")// TODO: Fix this nonsense
+        
+//        statsVC.stats = hero.stat?.array as! [Stat]
+        statsStackView.stats = hero.stat?.array as! [Stat]
+        statsStackView.setStack()
+        
+        //abilitiesVC.abilities = hero.ability?.allObjects as! [Ability]
+        abilitiesStackView.abilities = hero.ability?.allObjects as! [Ability]
+        abilitiesStackView.setStack()
+        
         
         // add default child
-        displayExtraContentController(bioVC)
+        //displayExtraContentController(bioVC)
+        currentExtraSV = bioStackView
+        fullStackView.addArrangedSubview(bioStackView)
         
         
     }
@@ -163,21 +190,18 @@ extension HeroDetailVC {
         myView.addSubview(controller.view)
         controller.view.frame = myView.bounds
         controller.didMove(toParentViewController: self)
-        currentExtraVC = controller
         
     }
     
     
     // meant to handle the swapping of the extra VC at the bottom
-    fileprivate func swapDetailContainer(from vc1: UIViewController, to vc2: UIViewController) {
-        // remove old vc's view and itself
-        fullStackView.removeArrangedSubview(fullStackView.arrangedSubviews.last!)
-        vc1.view.removeFromSuperview()
-        vc1.removeFromParentViewController()
-        
-        //display the new vc
-        displayExtraContentController(vc2)
-        
+    fileprivate func swapDetailContainer(from sv1: UIStackView, to sv2: UIStackView) {
+//        sv1.isHidden = true
+//        sv2.isHidden = false
+//        currentExtraSV = sv2
+        sv1.removeFromSuperview()
+        fullStackView.addArrangedSubview(sv2)
+        currentExtraSV = sv2
     }
 }
 

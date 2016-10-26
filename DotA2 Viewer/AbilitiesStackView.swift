@@ -2,7 +2,7 @@
 //  AbilitiesStackView.swift
 //  DotA2 Viewer
 //
-//  Created by Casey McLewin on 2016-10-25.
+//  Created by McLewin, Casey on 2016-10-26.
 //  Copyright © 2016 self. All rights reserved.
 //
 
@@ -10,34 +10,36 @@ import UIKit
 
 class AbilitiesStackView: UIStackView {
 
-    var image: UIImageView!
-    var descriptionLabel: UILabel!
-    var dataLabel: UILabel!
-    var manaLabel: UILabel!
-    var cooldownLabel: UILabel!
-    var youtubeButton: UIButton!
-    var loreLabel: UILabel!
+    var abilities: [Ability]!
     
     func setStack() {
-        image = UIImageView()
-        descriptionLabel = UILabel()
-        dataLabel = UILabel()
+        // make sure abilities isn't nil
+        guard abilities != nil else { print("abilities nil..."); return }
         
-        // stack view for mana/cooldown label
-        manaLabel = UILabel()
-        cooldownLabel = UILabel()
-        let stackView = UIStackView(arrangedSubviews: [manaLabel, cooldownLabel])
-        stackView.alignment = .fill
-        stackView.axis = .horizontal
-        stackView.distribution = .fillEqually
-        
-        youtubeButton = UIButton(type: .custom)
-        youtubeButton.setTitle("YouTube", for: .normal)
-        loreLabel = UILabel()
-        
-        for i in [image, descriptionLabel, dataLabel, stackView, youtubeButton, loreLabel] {
-            self.addArrangedSubview(i)
+        // set up one AbilityStackView per ability
+        for ability in abilities {
+            let stack = AbilityStackView()
+            stack.setStack()
+            
+            // set its views
+            stack.cooldownLabel.text = ability.cooldown
+            stack.dataLabel.text = ability.data?.replacingOccurrences(of: ",", with: "\n") // it is how it's saved... TODO: Change CSV Files
+            stack.descriptionLabel.text = ability.summary
+            stack.image.image = ability.getImage()
+            stack.loreLabel.text = ability.lore
+            stack.manaLabel.text = ability.mana
+            stack.name.text = ability.name
+            
+            // add it to self
+            self.addArrangedSubview(stack)
         }
+        
+        self.alignment = .fill
+        self.axis = .vertical
+        self.distribution = .fill
+        self.spacing = 8
+        
+        
     }
 
 }

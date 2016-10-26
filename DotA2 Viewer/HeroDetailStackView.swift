@@ -26,7 +26,7 @@ class HeroDetailStackView: UIStackView {
         heroImage = UIImageView()
         attackTypeLabel = UILabel()
         attackTypeLabel.textAlignment = .center
-        roleLabel = UILabel()
+        roleLabel = MultiLineLabel()
         roleLabel.textAlignment = .center
         
         // set the primary stats stack view
