@@ -26,7 +26,9 @@ class AbilityStackView: UIStackView {
         // set the image stack view so that the image isn't distorted
         image = UIImageView()
         let imgStackView = UIStackView(arrangedSubviews: [image])
+        imgStackView.axis = .vertical
         imgStackView.alignment = .center
+        imgStackView.distribution = .fill
         
         // set the labels
         descriptionLabel = MultiLineLabel()
@@ -40,7 +42,7 @@ class AbilityStackView: UIStackView {
         stackView.axis = .horizontal
         stackView.distribution = .fill
         
-        youtubeButton = UIButton(type: .custom)
+        youtubeButton = UIButton(type: .system)
         youtubeButton.setTitle("YouTube", for: .normal)
         loreLabel = MultiLineLabel()
         
@@ -50,7 +52,7 @@ class AbilityStackView: UIStackView {
         self.distribution = .fill
         self.spacing = 6
         
-        for i in [name, image, descriptionLabel, dataLabel, stackView, youtubeButton, loreLabel] {
+        for i in [name, imgStackView, descriptionLabel, dataLabel, stackView, youtubeButton, loreLabel] as [UIView] {
             self.addArrangedSubview(i)
         }
         

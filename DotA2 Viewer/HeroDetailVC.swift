@@ -106,7 +106,7 @@ class HeroDetailVC: ObjectDetailVC {
         statsStackView.stats = hero.stat?.array as! [Stat]
         statsStackView.setStack()
         
-        abilitiesStackView.abilities = hero.ability?.allObjects as! [Ability]
+        abilitiesStackView.abilities = hero.ability?.array as! [Ability]
         abilitiesStackView.setStack()
         
         
@@ -161,7 +161,7 @@ class HeroDetailVC: ObjectDetailVC {
                                                                     options: .alignAllCenterX,
                                                                     metrics: nil,
                                                                     views: ["stackView": fullStackView, "scrollView": scrollView]))
-        scrollView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[stackView]|",
+        scrollView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-[stackView]-|",
                                                                     options: [],
                                                                     metrics: nil,
                                                                     views: ["stackView": fullStackView]))

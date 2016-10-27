@@ -130,7 +130,7 @@ class CSVImporter {
             ability.videoURL = data.next()
             abilities.append(ability)
         }
-        hero.ability = NSSet(array: abilities)
+        hero.ability = NSOrderedSet(array: abilities)
         
         
         

@@ -125,6 +125,8 @@ extension CustomTabVC: UITableViewDelegate {
         objectForDetail = currentChild.fetchedResultsController.object(at: indexPath)
         self.performSegue(withIdentifier: "showDetail", sender: nil)
         tableView.deselectRow(at: indexPath, animated: false)
+        searchBar.text = ""
+        searchBar.resignFirstResponder()
     }
 }
 

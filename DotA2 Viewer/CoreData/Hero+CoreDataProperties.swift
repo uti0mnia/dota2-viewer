@@ -20,7 +20,7 @@ extension Hero {
     @NSManaged public var attribute: String?
     @NSManaged public var bio: String?
     @NSManaged public var role: String?
-    @NSManaged public var ability: NSSet?
+    @NSManaged public var ability: NSOrderedSet?
     @NSManaged public var primaryStat: PrimaryStat?
     @NSManaged public var stat: NSOrderedSet?
 

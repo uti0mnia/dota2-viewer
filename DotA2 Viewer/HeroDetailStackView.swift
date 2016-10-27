@@ -24,6 +24,11 @@ class HeroDetailStackView: UIStackView {
     func setStack() {
         // set the top values
         heroImage = UIImageView()
+        let imgSV = UIStackView(arrangedSubviews: [heroImage])
+        imgSV.axis = .vertical
+        imgSV.alignment = .center
+        imgSV.distribution = .fill
+        
         attackTypeLabel = UILabel()
         attackTypeLabel.textAlignment = .center
         roleLabel = MultiLineLabel()
@@ -57,7 +62,7 @@ class HeroDetailStackView: UIStackView {
         extraSegmentControl.selectedSegmentIndex = 0
         
         // add the views to the stack vie
-        for i in [heroImage, attackTypeLabel, roleLabel, pStackView, extraSegmentControl] {
+        for i in [imgSV, attackTypeLabel, roleLabel, pStackView, extraSegmentControl] as [UIView] {
             self.addArrangedSubview(i)
         }
         

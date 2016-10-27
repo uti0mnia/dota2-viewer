@@ -15,7 +15,7 @@ public class Ability: NSManagedObject {
         // make sure name isn't nil
         guard self.name != nil else { return nil }
         
-        let imgName = self.name!.lowercased().replacingOccurrences(of: " ", with: "-").capitalized
+        let imgName = self.name!.lowercased().replacingOccurrences(of: " ", with: "-").capitalizingFirstLetter()
         if let img = UIImage(named: imgName) {
             return img
         }

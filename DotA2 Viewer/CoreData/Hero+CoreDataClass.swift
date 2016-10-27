@@ -20,6 +20,6 @@ public class Hero: ListObject {
         }
         
         //print("Failed to create image for hero: \(imgName)")
-        return nil
+        //return nil
     }
 }
