@@ -28,7 +28,7 @@ class ObjectListVC: UIViewController {
         let frc = NSFetchedResultsController(
             fetchRequest: fetchRequest,
             managedObjectContext: self.context,
-            sectionNameKeyPath: nil,
+            sectionNameKeyPath: "firstLetter", // for the indexing
             cacheName: nil)
         
         frc.delegate = self
@@ -116,7 +116,7 @@ extension ObjectListVC: UITableViewDataSource {
 	}
 	
 	// delegate methods
-	func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+	func numberOfSections(in tableView: UITableView) -> Int {
 		if let sections = fetchedResultsController.sections {
 			return sections.count
 		}
@@ -130,6 +130,10 @@ extension ObjectListVC: UITableViewDataSource {
 		}
 		
 		return 0
+	}
+	
+	func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+		return fetchedResultsController.sectionIndexTitles
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

@@ -12,4 +12,10 @@ import CoreData
 
 public class ListObject: NSManagedObject {
     func objectImage() -> UIImage? { return nil }
+    func firstLetter() -> String {
+        self.willAccessValue(forKey: "firstLetter")
+        let firstLetter = self.name.substring(to: self.name.index(after: self.name.startIndex)).uppercased()
+        self.didAccessValue(forKey: "firstLetter")
+        return firstLetter
+    }
 }
