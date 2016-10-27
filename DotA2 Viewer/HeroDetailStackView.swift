@@ -65,7 +65,7 @@ class HeroDetailStackView: UIStackView {
         // settings
         self.axis = .vertical
         self.alignment = .fill
-        self.distribution = .fillProportionally
+        self.distribution = .fill
         self.spacing = 8
         self.layoutMargins = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 8)
         self.isLayoutMarginsRelativeArrangement = true

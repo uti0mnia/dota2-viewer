@@ -19,23 +19,23 @@ class HeroDetailVC: ObjectDetailVC {
     var fullStackView: HeroDetailStackView!
     
     // making the VCs
-    lazy var bioVC: HeroBioVC = {
-        let sb = UIStoryboard(name: "Detail", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: "HeroBioVC") as! HeroBioVC
-        return vc
-    }()
-    
-    lazy var statsVC: HeroStatsVC = {
-        let sb = UIStoryboard(name: "Detail", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: "HeroStatsVC") as! HeroStatsVC
-        return vc
-    }()
-    
-    lazy var abilitiesVC: HeroAllAbilitiesVC = {
-        let sb = UIStoryboard(name: "Detail", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: "HeroAllAbilitiesVC") as! HeroAllAbilitiesVC
-        return vc
-    }()
+//    lazy var bioVC: HeroBioVC = {
+//        let sb = UIStoryboard(name: "Detail", bundle: nil)
+//        let vc = sb.instantiateViewController(withIdentifier: "HeroBioVC") as! HeroBioVC
+//        return vc
+//    }()
+//    
+//    lazy var statsVC: HeroStatsVC = {
+//        let sb = UIStoryboard(name: "Detail", bundle: nil)
+//        let vc = sb.instantiateViewController(withIdentifier: "HeroStatsVC") as! HeroStatsVC
+//        return vc
+//    }()
+//    
+//    lazy var abilitiesVC: HeroAllAbilitiesVC = {
+//        let sb = UIStoryboard(name: "Detail", bundle: nil)
+//        let vc = sb.instantiateViewController(withIdentifier: "HeroAllAbilitiesVC") as! HeroAllAbilitiesVC
+//        return vc
+//    }()
     
     lazy var abilitiesStackView: AbilitiesStackView = {
         let sv = AbilitiesStackView()
@@ -61,9 +61,6 @@ class HeroDetailVC: ObjectDetailVC {
         
         // inits the views programatically
         initViews()
-        
-        //scrollView.contentSize = fullStackView.frame.size
-        scrollView.alwaysBounceVertical = true
         
         // add the segment control target
         fullStackView.extraSegmentControl.addTarget(self, action: #selector(didChangeSegment(sender:)), for: .valueChanged)
@@ -102,22 +99,18 @@ class HeroDetailVC: ObjectDetailVC {
         fullStackView.roleLabel.text = hero.role
         setPrimaryStats()
         
-        // set child VC's data
-//        bioVC.bio = hero.bio
+        // set extra stack view data
         bioStackView.setStack()
         bioStackView.bioLabel.text = hero.bio?.replacingOccurrences(of: "--", with: " ").replacingOccurrences(of: "\\n", with: "\n")// TODO: Fix this nonsense
         
-//        statsVC.stats = hero.stat?.array as! [Stat]
         statsStackView.stats = hero.stat?.array as! [Stat]
         statsStackView.setStack()
         
-        //abilitiesVC.abilities = hero.ability?.allObjects as! [Ability]
         abilitiesStackView.abilities = hero.ability?.allObjects as! [Ability]
         abilitiesStackView.setStack()
         
         
         // add default child
-        //displayExtraContentController(bioVC)
         currentExtraSV = bioStackView
         fullStackView.addArrangedSubview(bioStackView)
         
@@ -146,6 +139,7 @@ class HeroDetailVC: ObjectDetailVC {
         // set up scroll view
         scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.alwaysBounceVertical = true
         self.view.addSubview(scrollView)
         self.view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[scrollView]|",
                                                                 options: [],
@@ -180,25 +174,8 @@ class HeroDetailVC: ObjectDetailVC {
 
 /* UIViewController Child Handling */
 extension HeroDetailVC {
-    
-    // displays the given UIViewController's view into the Extra view at the bottin (Bio, Stat or Abilities)
-    fileprivate func displayExtraContentController(_ controller: UIViewController) {
-        let myView = UIView()
-        myView.heightAnchor.constraint(equalToConstant: controller.view.frame.height).isActive = true
-        fullStackView.addArrangedSubview(myView)
-        self.addChildViewController(controller)
-        myView.addSubview(controller.view)
-        controller.view.frame = myView.bounds
-        controller.didMove(toParentViewController: self)
-        
-    }
-    
-    
     // meant to handle the swapping of the extra VC at the bottom
     fileprivate func swapDetailContainer(from sv1: UIStackView, to sv2: UIStackView) {
-//        sv1.isHidden = true
-//        sv2.isHidden = false
-//        currentExtraSV = sv2
         sv1.removeFromSuperview()
         fullStackView.addArrangedSubview(sv2)
         currentExtraSV = sv2
