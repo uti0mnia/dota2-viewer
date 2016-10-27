@@ -9,12 +9,17 @@
 import UIKit
 
 class HeroBioStackView: UIStackView {
-
-    var bioLabel: UILabel!
+    
+    var bio: String!
     
     func setStack() {
-        bioLabel = MultiLineLabel()
+        guard bio != nil else { return }
         
+        // the bio info
+        let bioLabel = MultiLineLabel()
+        bioLabel.text = bio
+        
+        // for the stack view
         self.addArrangedSubview(bioLabel)
         self.axis = .vertical
         self.alignment = .fill

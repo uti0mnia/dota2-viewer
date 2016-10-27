@@ -17,38 +17,32 @@ class HeroDetailVC: ObjectDetailVC {
     /* Outlets */
     var scrollView: UIScrollView!
     var fullStackView: HeroDetailStackView!
-    
-    // making the VCs
-//    lazy var bioVC: HeroBioVC = {
-//        let sb = UIStoryboard(name: "Detail", bundle: nil)
-//        let vc = sb.instantiateViewController(withIdentifier: "HeroBioVC") as! HeroBioVC
-//        return vc
-//    }()
-//    
-//    lazy var statsVC: HeroStatsVC = {
-//        let sb = UIStoryboard(name: "Detail", bundle: nil)
-//        let vc = sb.instantiateViewController(withIdentifier: "HeroStatsVC") as! HeroStatsVC
-//        return vc
-//    }()
-//    
-//    lazy var abilitiesVC: HeroAllAbilitiesVC = {
-//        let sb = UIStoryboard(name: "Detail", bundle: nil)
-//        let vc = sb.instantiateViewController(withIdentifier: "HeroAllAbilitiesVC") as! HeroAllAbilitiesVC
-//        return vc
-//    }()
-    
-    lazy var abilitiesStackView: AbilitiesStackView = {
+
+    // extra views
+    lazy var abilitiesStackView: AbilitiesStackView = { [unowned self] in
         let sv = AbilitiesStackView()
+        guard self.object is Hero else { return sv }
+        let hero = self.object as! Hero
+        sv.abilities = hero.ability?.array as! [Ability]
+        sv.setStack()
         return sv
     }()
     
-    lazy var bioStackView: HeroBioStackView = {
+    lazy var bioStackView: HeroBioStackView = {[unowned self] in
         let sv = HeroBioStackView()
+        guard self.object is Hero else { return sv }
+        let hero = self.object as! Hero
+        sv.bio = hero.bio?.replacingOccurrences(of: "--", with: " ").replacingOccurrences(of: "\\n", with: "\n") // fix this shit
+        sv.setStack()
         return sv
     }()
     
-    lazy var statsStackView: StatsStackView = {
+    lazy var statsStackView: StatsStackView = {[unowned self] in
         let sv = StatsStackView()
+        guard self.object is Hero else { return sv }
+        let hero = self.object as! Hero
+        sv.stats = hero.stat?.array as! [Stat]
+        sv.setStack()
         return sv
     }()
     
@@ -99,21 +93,10 @@ class HeroDetailVC: ObjectDetailVC {
         fullStackView.roleLabel.text = hero.role
         setPrimaryStats()
         
-        // set extra stack view data
-        bioStackView.setStack()
-        bioStackView.bioLabel.text = hero.bio?.replacingOccurrences(of: "--", with: " ").replacingOccurrences(of: "\\n", with: "\n")// TODO: Fix this nonsense
-        
-        statsStackView.stats = hero.stat?.array as! [Stat]
-        statsStackView.setStack()
-        
-        abilitiesStackView.abilities = hero.ability?.array as! [Ability]
-        abilitiesStackView.setStack()
-        
         
         // add default child
         currentExtraSV = bioStackView
         fullStackView.addArrangedSubview(bioStackView)
-        
         
     }
     
@@ -176,9 +159,19 @@ class HeroDetailVC: ObjectDetailVC {
 extension HeroDetailVC {
     // meant to handle the swapping of the extra VC at the bottom
     fileprivate func swapDetailContainer(from sv1: UIStackView, to sv2: UIStackView) {
-        sv1.removeFromSuperview()
-        fullStackView.addArrangedSubview(sv2)
-        currentExtraSV = sv2
+        // do async because if abilities is a big view there's a small delay in showing it - should make better for older devices as well
+        DispatchQueue.main.async {
+            //block the segment view in case
+            self.fullStackView.extraSegmentControl.isEnabled = false
+            
+            // do work
+            sv1.removeFromSuperview()
+            self.fullStackView.addArrangedSubview(sv2)
+            self.currentExtraSV = sv2
+            
+            // unblock it
+            self.fullStackView.extraSegmentControl.isEnabled = true
+        }
     }
 }
 
