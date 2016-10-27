@@ -36,11 +36,13 @@ class AbilityStackView: UIStackView {
         
         // stack view for mana/cooldown label
         manaLabel = UILabel()
+        manaLabel.textAlignment = .center
         cooldownLabel = UILabel()
+        cooldownLabel.textAlignment = .center
         let stackView = UIStackView(arrangedSubviews: [manaLabel, cooldownLabel])
         stackView.alignment = .fill
         stackView.axis = .horizontal
-        stackView.distribution = .fill
+        stackView.distribution = .fillEqually
         
         youtubeButton = UIButton(type: .system)
         youtubeButton.setTitle("YouTube", for: .normal)
