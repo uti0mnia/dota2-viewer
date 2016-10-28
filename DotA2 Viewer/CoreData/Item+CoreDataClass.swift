@@ -31,7 +31,7 @@ public class Item: ListObject {
         guard self.id != nil else { return nil }
         
         // create the image
-        let imgName = self.id! + ".png"
+        let imgName = self.id! + "_item" + ".png"
         if let img = UIImage(named: imgName) {
             return img
         }

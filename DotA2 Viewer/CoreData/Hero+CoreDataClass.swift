@@ -12,14 +12,12 @@ import CoreData
 @objc(Hero)
 public class Hero: ListObject {
     override func objectImage() -> UIImage? {
-        let imgName = self.name! + ".png"
+        let imgName = self.name!.replacingOccurrences(of: " ", with: "-") + "_hero" + ".png"
         if let img = UIImage(named: imgName) {
             return img
         } else {
+            print("Failed to create image for hero: \(imgName)")
             return #imageLiteral(resourceName: "default_icon.png")
         }
-        
-        //print("Failed to create image for hero: \(imgName)")
-        //return nil
     }
 }
