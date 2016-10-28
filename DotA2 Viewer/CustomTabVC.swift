@@ -10,7 +10,7 @@ import UIKit
 
 class CustomTabVC: UIViewController {
     // constants
-    let kAnimateTime: TimeInterval = 0.7
+    let kAnimateTime: TimeInterval = 0.6
     
     // outlets
     @IBOutlet weak var tabBar: UITabBar!
@@ -48,6 +48,9 @@ class CustomTabVC: UIViewController {
     
     var searchBarButton: UIBarButtonItem!
     
+    
+    /* Methods */
+    // superclass methods
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -60,6 +63,7 @@ class CustomTabVC: UIViewController {
         self.displayContentController(heroListVC)
         
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -75,6 +79,16 @@ class CustomTabVC: UIViewController {
     }
     
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard objectForDetail != nil else { return }
+        if segue.identifier == "showDetail" {
+            if let vc = (segue.destination as? UINavigationController)?.viewControllers.first as? DetailVC {
+                vc.object = objectForDetail
+            }
+        }
+    }
+    
+    // view settings
     private func configureTabView() {
         tabBar.tintColor = UIColor.red // set tint
         tabBar.selectedItem = tabBar.items?.first // set hero as selected
@@ -82,6 +96,7 @@ class CustomTabVC: UIViewController {
     }
     
     
+    // view control flow
     fileprivate func displayContentController(_ controller: ObjectListVC) {
         self.addChildViewController(controller) // add child VC
         self.currentChild = controller // set the reference
@@ -108,27 +123,20 @@ class CustomTabVC: UIViewController {
     }
     
     
+    // search functionality
     @IBAction func searchButton(_ sender: UIBarButtonItem) {
         showSearchBar()
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard objectForDetail != nil else { return }
-        if segue.identifier == "showDetail" {
-            if let vc = (segue.destination as? UINavigationController)?.viewControllers.first as? DetailVC {
-                vc.object = objectForDetail
-            }
-        }
     }
     
     func showSearchBar() {
         navigationItem.titleView = searchBar
         searchBar.alpha = 0
         navigationItem.setRightBarButton(nil, animated: true)
-        UIView.animate(withDuration: kAnimateTime) {
+        UIView.animate(withDuration: kAnimateTime, animations: {
+            self.searchBar.alpha = 1
+        }, completion: { _ in
             self.searchBar.becomeFirstResponder()
-            self.searchBar.alpha = 1.0
-        }
+        })
     }
     
     func hideSearchBar() {
