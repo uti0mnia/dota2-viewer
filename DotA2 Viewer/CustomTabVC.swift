@@ -93,12 +93,18 @@ class CustomTabVC: UIViewController {
     }
     
     fileprivate func cycleFrom(viewController oldVC: UIViewController, toViewController newVC: ObjectListVC) {
-        // remove the oldVC's view and itself
-        oldVC.view.removeFromSuperview()
-        oldVC.removeFromParentViewController()
-        
         // display the newVC
         displayContentController(newVC)
+        newVC.view.alpha = 0
+        UIView.animate(withDuration: kAnimateTime, animations: {
+            newVC.view.alpha = 1
+            oldVC.view.alpha = 0
+        }, completion: { _ in
+            // remove the oldVC's view and itself
+            oldVC.view.removeFromSuperview()
+            oldVC.removeFromParentViewController()
+        })
+        
     }
     
     
