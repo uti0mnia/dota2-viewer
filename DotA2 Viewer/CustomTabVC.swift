@@ -172,6 +172,7 @@ extension CustomTabVC: UITabBarDelegate {
     }
 }
 
+/* Tableview delegate */
 extension CustomTabVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         objectForDetail = currentChild.fetchedResultsController.object(at: indexPath)
@@ -181,6 +182,7 @@ extension CustomTabVC: UITableViewDelegate {
     }
 }
 
+/* Keyboard Handling */
 extension CustomTabVC {
     func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
