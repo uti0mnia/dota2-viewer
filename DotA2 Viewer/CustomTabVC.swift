@@ -9,11 +9,12 @@
 import UIKit
 
 class CustomTabVC: UIViewController {
+    // constants
+    let kAnimateTime: TimeInterval = 0.7
     
     // outlets
     @IBOutlet weak var tabBar: UITabBar!
     @IBOutlet weak var containerView: UIView!
-    @IBOutlet weak var searchBar: UISearchBar!
     
     // variables for keeping track of stuff
     var objectForDetail: ListObject?
@@ -36,12 +37,24 @@ class CustomTabVC: UIViewController {
         
     }()
     
+    lazy var searchBar: UISearchBar = {
+        let sb = UISearchBar()
+        sb.tintColor = UIColor.red
+        sb.showsCancelButton = true
+        sb.searchBarStyle = .minimal
+        sb.showsCancelButton = true
+        return sb
+    }()
+    
+    var searchBarButton: UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // configure the UI Elements
+        navigationItem.title = "Heroes"
+        searchBarButton = navigationItem.rightBarButtonItem // the search button
         configureTabView()
-        configureSearchBar()
         
         // configure the first container view
         self.displayContentController(heroListVC)
@@ -53,12 +66,6 @@ class CustomTabVC: UIViewController {
         tabBar.tintColor = UIColor.red // set tint
         tabBar.selectedItem = tabBar.items?.first // set hero as selected
         tabBar.delegate = self // set delegate
-    }
-    
-    private func configureSearchBar() {
-        searchBar.tintColor = UIColor.red // set tint
-        searchBar.showsCancelButton = true // show the cancel button
-        toggleSearchBar() // toggle the search bar off
     }
     
     
@@ -83,7 +90,7 @@ class CustomTabVC: UIViewController {
     
     
     @IBAction func searchButton(_ sender: UIBarButtonItem) {
-        toggleSearchBar() // toggle the search button
+        showSearchBar()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -95,22 +102,40 @@ class CustomTabVC: UIViewController {
         }
     }
     
-    func toggleSearchBar() {
-        searchBar.isHidden = !searchBar.isHidden
-        searchBar.text = "" // clears the text (mainly for hiding the search)
+    func showSearchBar() {
+        navigationItem.titleView = searchBar
+        searchBar.alpha = 0
+        navigationItem.setRightBarButton(nil, animated: true)
+        UIView.animate(withDuration: kAnimateTime) {
+            self.searchBar.alpha = 1.0
+            self.searchBar.becomeFirstResponder()
+        }
+    }
+    
+    func hideSearchBar() {
+        UIView.animate(withDuration: kAnimateTime, animations: {
+            self.navigationItem.titleView?.alpha = 0
+            self.searchBar.resignFirstResponder()
+            }, completion: { _ in
+            self.navigationItem.titleView = nil
+            self.navigationItem.setRightBarButton(self.searchBarButton, animated: true)
+        })
     }
 }
 
+/* Tab bar delegate */
 extension CustomTabVC: UITabBarDelegate {
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         switch item.title! {
         case "Hero":
             if let currentVC = self.childViewControllers.first {
+                navigationItem.title = "Heroes"
                 cycleFrom(viewController: currentVC, toViewController: heroListVC)
             }
             
         case "Item":
             if let currentVC = self.childViewControllers.first {
+                navigationItem.title = "Items"
                 cycleFrom(viewController: currentVC, toViewController: itemListVC)
             }
             

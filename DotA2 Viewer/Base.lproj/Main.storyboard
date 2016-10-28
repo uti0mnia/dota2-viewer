@@ -69,20 +69,14 @@
                                 </items>
                             </tabBar>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gmd-cZ-2wR"/>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="t1K-Le-Ebs">
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="gmd-cZ-2wR" firstAttribute="leading" secondItem="8t3-Dw-i4L" secondAttribute="leading" id="2R0-Eg-jcG"/>
-                            <constraint firstItem="t1K-Le-Ebs" firstAttribute="trailing" secondItem="gmd-cZ-2wR" secondAttribute="trailing" id="CED-W6-HMk"/>
+                            <constraint firstItem="gmd-cZ-2wR" firstAttribute="top" secondItem="lSp-vm-6Vb" secondAttribute="bottom" id="BKn-PU-qUT"/>
                             <constraint firstItem="8t3-Dw-i4L" firstAttribute="leading" secondItem="2lC-T3-oy4" secondAttribute="leading" id="CuD-SI-7Fx"/>
-                            <constraint firstItem="t1K-Le-Ebs" firstAttribute="top" secondItem="lSp-vm-6Vb" secondAttribute="bottom" id="Y8p-lR-76E"/>
                             <constraint firstItem="gmd-cZ-2wR" firstAttribute="bottom" secondItem="8t3-Dw-i4L" secondAttribute="top" id="ZGP-rP-Ab8"/>
                             <constraint firstItem="8t3-Dw-i4L" firstAttribute="bottom" secondItem="WO6-Zn-fWE" secondAttribute="top" id="ZbR-Yy-vmk"/>
-                            <constraint firstItem="t1K-Le-Ebs" firstAttribute="leading" secondItem="gmd-cZ-2wR" secondAttribute="leading" id="eKo-qG-Xtc"/>
-                            <constraint firstItem="gmd-cZ-2wR" firstAttribute="top" secondItem="t1K-Le-Ebs" secondAttribute="bottom" id="gmp-KC-4ZT"/>
                             <constraint firstItem="gmd-cZ-2wR" firstAttribute="trailing" secondItem="8t3-Dw-i4L" secondAttribute="trailing" id="iib-Oo-5s1"/>
                             <constraint firstAttribute="trailing" secondItem="8t3-Dw-i4L" secondAttribute="trailing" id="jhd-9z-XCB"/>
                         </constraints>
@@ -97,7 +91,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="containerView" destination="gmd-cZ-2wR" id="bgT-Mm-3BD"/>
-                        <outlet property="searchBar" destination="t1K-Le-Ebs" id="jVc-kJ-jrc"/>
                         <outlet property="tabBar" destination="8t3-Dw-i4L" id="Ssb-Rn-biN"/>
                         <segue destination="0xi-1T-PpC" kind="showDetail" identifier="showDetail" id="XL8-BY-o5U"/>
                     </connections>

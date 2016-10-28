@@ -217,9 +217,8 @@ extension ObjectListVC: UISearchBarDelegate {
 	func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
 		if let parentVC = self.parent as? CustomTabVC {
 			searchBar.text = "" // clear text
-			parentVC.toggleSearchBar()
+			parentVC.hideSearchBar()
 		}
-		searchBar.resignFirstResponder()
 	}
 	
 	func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
