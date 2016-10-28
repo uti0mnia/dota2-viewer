@@ -60,6 +60,19 @@ class CustomTabVC: UIViewController {
         self.displayContentController(heroListVC)
         
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // nsnotification
+        NotificationCenter.default.addObserver(self, selector: #selector(CustomTabVC.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(CustomTabVC.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        NotificationCenter.default.removeObserver(self)
+    }
     
     
     private func configureTabView() {
@@ -107,8 +120,8 @@ class CustomTabVC: UIViewController {
         searchBar.alpha = 0
         navigationItem.setRightBarButton(nil, animated: true)
         UIView.animate(withDuration: kAnimateTime) {
-            self.searchBar.alpha = 1.0
             self.searchBar.becomeFirstResponder()
+            self.searchBar.alpha = 1.0
         }
     }
     
@@ -150,11 +163,30 @@ extension CustomTabVC: UITableViewDelegate {
         objectForDetail = currentChild.fetchedResultsController.object(at: indexPath)
         self.performSegue(withIdentifier: "showDetail", sender: nil)
         tableView.deselectRow(at: indexPath, animated: false)
-        searchBar.text = ""
-        searchBar.resignFirstResponder()
+        hideSearchBar()
     }
 }
 
+extension CustomTabVC {
+    func keyboardWillShow(notification: NSNotification) {
+        // this guard satement is a bug called with custom keybaords (calls it 2-3 times)
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            let offset = keyboardSize.height
+            if self.view.frame.height != UIScreen.main.bounds.height {
+                print("s")
+                self.view.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height - offset)
+            }
+        }
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.height != UIScreen.main.bounds.height {
+                self.view.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: UIScreen.main.bounds.height)
+            }
+        }
+    }
+}
 
 
 

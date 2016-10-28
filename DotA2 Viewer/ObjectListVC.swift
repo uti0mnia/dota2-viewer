@@ -55,6 +55,7 @@ class ObjectListVC: UIViewController {
 	
 	private func configureTableView() {
 		tableView = UITableView()
+		tableView.sectionIndexColor = UIColor.red
 		tableView.translatesAutoresizingMaskIntoConstraints = false
 		tableView.dataSource = self
 		tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
