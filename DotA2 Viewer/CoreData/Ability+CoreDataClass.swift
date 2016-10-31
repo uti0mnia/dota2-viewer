@@ -13,9 +13,9 @@ import CoreData
 public class Ability: NSManagedObject {
     func getImage() -> UIImage? {
         // make sure name isn't nil
-        guard self.name != nil else { return nil }
+        guard self.name != nil && self.hero != nil else { return nil }
         
-        let imgName = self.name!.replacingOccurrences(of: " ", with: "-") + "_ability"
+        let imgName = self.name!.replacingOccurrences(of: " ", with: "-") + "_" + self.hero!.name!
         if let img = UIImage(named: imgName) {
             return img
         }
