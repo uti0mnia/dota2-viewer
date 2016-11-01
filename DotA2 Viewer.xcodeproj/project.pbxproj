@@ -788,6 +788,7 @@
 		36C0C96C1DA6E25800169394 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36C0C96B1DA6E25800169394 /* Assets.xcassets */; };
 		36C0C96F1DA6E25800169394 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36C0C96D1DA6E25800169394 /* LaunchScreen.storyboard */; };
 		36C0C97A1DA6E25800169394 /* DotA2_ViewerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C0C9791DA6E25800169394 /* DotA2_ViewerTests.swift */; };
+		36C7DF241DC8F2C800251705 /* RSSFeedHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C7DF231DC8F2C800251705 /* RSSFeedHelper.swift */; };
 		36FD56541DA6E3F5007C5A9C /* default_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 36FD56511DA6E3F5007C5A9C /* default_icon.png */; };
 		36FD56591DA6E403007C5A9C /* CSwiftV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FD56571DA6E403007C5A9C /* CSwiftV.swift */; };
 		36FD565A1DA6E403007C5A9C /* ImportCSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FD56581DA6E403007C5A9C /* ImportCSV.swift */; };
@@ -1617,6 +1618,7 @@
 		36C0C9751DA6E25800169394 /* DotA2 ViewerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DotA2 ViewerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		36C0C9791DA6E25800169394 /* DotA2_ViewerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotA2_ViewerTests.swift; sourceTree = "<group>"; };
 		36C0C97B1DA6E25800169394 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		36C7DF231DC8F2C800251705 /* RSSFeedHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSSFeedHelper.swift; sourceTree = "<group>"; };
 		36FD56511DA6E3F5007C5A9C /* default_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default_icon.png; sourceTree = "<group>"; };
 		36FD56571DA6E403007C5A9C /* CSwiftV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSwiftV.swift; sourceTree = "<group>"; };
 		36FD56581DA6E403007C5A9C /* ImportCSV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImportCSV.swift; sourceTree = "<group>"; };
@@ -1744,6 +1746,15 @@
 			path = "DotA2 ViewerTests";
 			sourceTree = "<group>";
 		};
+		36C7DF221DC8F2B500251705 /* CSV */ = {
+			isa = PBXGroup;
+			children = (
+				36FD56571DA6E403007C5A9C /* CSwiftV.swift */,
+				36FD56581DA6E403007C5A9C /* ImportCSV.swift */,
+			);
+			name = CSV;
+			sourceTree = "<group>";
+		};
 		36FD56451DA6E36C007C5A9C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -1794,10 +1805,10 @@
 		36FD56481DA6E3BF007C5A9C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				36FD56571DA6E403007C5A9C /* CSwiftV.swift */,
-				36FD56581DA6E403007C5A9C /* ImportCSV.swift */,
+				36C7DF221DC8F2B500251705 /* CSV */,
 				36FD56461DA6E373007C5A9C /* CoreData */,
 				C9A6D64C1DBD25AE00580B7B /* Extensions.swift */,
+				36C7DF231DC8F2C800251705 /* RSSFeedHelper.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -3541,6 +3552,7 @@
 				362A7ED41DBFBEF700BFC9BA /* HeroDetailStackView.swift in Sources */,
 				C96B9C401DB2C14800F656AA /* HeroListVC.swift in Sources */,
 				C9A6D6421DBC12B700580B7B /* HeroStatsVC.swift in Sources */,
+				36C7DF241DC8F2C800251705 /* RSSFeedHelper.swift in Sources */,
 				C9FEBF621DB29B06000CD4FF /* PrimaryStat+CoreDataClass.swift in Sources */,
 				C93499FF1DB439B5005407BB /* SimpleCVCell.swift in Sources */,
 				361B71111DBE9AE500133173 /* HeroAbilityVC.swift in Sources */,

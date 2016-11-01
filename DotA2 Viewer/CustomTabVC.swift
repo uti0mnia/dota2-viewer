@@ -48,7 +48,6 @@ class CustomTabVC: UIViewController {
     
     var searchBarButton: UIBarButtonItem!
     
-    
     /* Methods */
     // superclass methods
     override func viewDidLoad() {
@@ -63,6 +62,7 @@ class CustomTabVC: UIViewController {
         self.displayContentController(heroListVC)
         
     }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
