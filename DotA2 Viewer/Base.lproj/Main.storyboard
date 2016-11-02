@@ -17,14 +17,14 @@
                         <viewControllerLayoutGuide type="bottom" id="bdm-5m-Ymp"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ctq-VA-4zB">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LU9-dX-xkW">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                             </containerView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.36227080352622915" green="0.36606691802902558" blue="0.36963649611398963" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="LU9-dX-xkW" firstAttribute="top" secondItem="71q-ul-khF" secondAttribute="bottom" id="RDw-fE-I1N"/>
                             <constraint firstAttribute="trailing" secondItem="LU9-dX-xkW" secondAttribute="trailing" id="fhL-Ds-Q4R"/>
@@ -63,11 +63,11 @@
                         <viewControllerLayoutGuide type="bottom" id="WO6-Zn-fWE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="2lC-T3-oy4">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8t3-Dw-i4L">
-                                <rect key="frame" x="0.0" y="618" width="375" height="49"/>
+                                <rect key="frame" x="0.0" y="554" width="375" height="49"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <items>
                                     <tabBarItem title="Hero" id="p32-gu-1Ia"/>
@@ -75,7 +75,7 @@
                                 </items>
                             </tabBar>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gmd-cZ-2wR">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -131,7 +131,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9FL-AS-YTq" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Heroes" id="NUl-ZW-oRZ"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="RnW-Iu-fm3">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="RnW-Iu-fm3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.87139734455958551" green="0.03687937124292797" blue="0.051371898444097563" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -150,7 +150,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0xi-1T-PpC" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="w5g-ZC-18e">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="w5g-ZC-18e">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -183,6 +183,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="XL8-BY-o5U"/>
+        <segue reference="EJx-rH-Ec0"/>
     </inferredMetricsTieBreakers>
 </document>

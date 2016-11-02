@@ -28,6 +28,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         // for the split view controller
         let splitViewController = self.window!.rootViewController as! UISplitViewController
         splitViewController.delegate = self
+        // for some reason iOS gets confused if it's not async..
+        DispatchQueue.main.async {
+            //splitViewController.preferredDisplayMode = .primaryOverlay // on ipad the master is opened by default
+        }
         
         return true
     }
@@ -120,17 +124,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     }
     
     // MARK: - UISplitViewControllerDelegate
-    func splitViewController(_ splitViewController: UISplitViewController, showDetail vc: UIViewController, sender: Any?) -> Bool {
-        if splitViewController.isCollapsed {
-            if let master = splitViewController.viewControllers.first as? UITabBarController {
-                if let masterNav = master.selectedViewController as? UINavigationController {
-                    masterNav.pushViewController(vc, animated: true)
-                    return true
-                }
-            }
-        }
-        
-        return false
+    func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
+        return true
     }
 
 }

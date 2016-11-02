@@ -782,6 +782,17 @@
 		367E34E01DB7F9670037FA7B /* CustomTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367E34DF1DB7F9670037FA7B /* CustomTabVC.swift */; };
 		368F3E971DBA7C0100530014 /* RecipeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368F3E961DBA7C0100530014 /* RecipeButton.swift */; };
 		36A2921E1DCA479F006E96A8 /* MyTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A2921D1DCA479F006E96A8 /* MyTableVC.swift */; };
+		36A2922C1DCA51CC006E96A8 /* Arcane.png in Resources */ = {isa = PBXBuildFile; fileRef = 36A292211DCA51CC006E96A8 /* Arcane.png */; };
+		36A2922D1DCA51CC006E96A8 /* Arnaments.png in Resources */ = {isa = PBXBuildFile; fileRef = 36A292221DCA51CC006E96A8 /* Arnaments.png */; };
+		36A2922E1DCA51CC006E96A8 /* Armor.png in Resources */ = {isa = PBXBuildFile; fileRef = 36A292231DCA51CC006E96A8 /* Armor.png */; };
+		36A2922F1DCA51CC006E96A8 /* Artifacts.png in Resources */ = {isa = PBXBuildFile; fileRef = 36A292241DCA51CC006E96A8 /* Artifacts.png */; };
+		36A292301DCA51CC006E96A8 /* Attributes.png in Resources */ = {isa = PBXBuildFile; fileRef = 36A292251DCA51CC006E96A8 /* Attributes.png */; };
+		36A292311DCA51CC006E96A8 /* Caster.png in Resources */ = {isa = PBXBuildFile; fileRef = 36A292261DCA51CC006E96A8 /* Caster.png */; };
+		36A292321DCA51CC006E96A8 /* Common.png in Resources */ = {isa = PBXBuildFile; fileRef = 36A292271DCA51CC006E96A8 /* Common.png */; };
+		36A292331DCA51CC006E96A8 /* Consumables.png in Resources */ = {isa = PBXBuildFile; fileRef = 36A292281DCA51CC006E96A8 /* Consumables.png */; };
+		36A292341DCA51CC006E96A8 /* Secret.png in Resources */ = {isa = PBXBuildFile; fileRef = 36A292291DCA51CC006E96A8 /* Secret.png */; };
+		36A292351DCA51CC006E96A8 /* Support.png in Resources */ = {isa = PBXBuildFile; fileRef = 36A2922A1DCA51CC006E96A8 /* Support.png */; };
+		36A292361DCA51CC006E96A8 /* Weapons.png in Resources */ = {isa = PBXBuildFile; fileRef = 36A2922B1DCA51CC006E96A8 /* Weapons.png */; };
 		36C0C9621DA6E25800169394 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C0C9611DA6E25800169394 /* AppDelegate.swift */; };
 		36C0C9641DA6E25800169394 /* ObjectListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C0C9631DA6E25800169394 /* ObjectListVC.swift */; };
 		36C0C9671DA6E25800169394 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36C0C9651DA6E25800169394 /* Main.storyboard */; };
@@ -1609,6 +1620,17 @@
 		367E34DF1DB7F9670037FA7B /* CustomTabVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabVC.swift; sourceTree = "<group>"; };
 		368F3E961DBA7C0100530014 /* RecipeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeButton.swift; sourceTree = "<group>"; };
 		36A2921D1DCA479F006E96A8 /* MyTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTableVC.swift; sourceTree = "<group>"; };
+		36A292211DCA51CC006E96A8 /* Arcane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Arcane.png; path = images/Arcane.png; sourceTree = "<group>"; };
+		36A292221DCA51CC006E96A8 /* Arnaments.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Arnaments.png; path = images/Arnaments.png; sourceTree = "<group>"; };
+		36A292231DCA51CC006E96A8 /* Armor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Armor.png; path = images/Armor.png; sourceTree = "<group>"; };
+		36A292241DCA51CC006E96A8 /* Artifacts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Artifacts.png; path = images/Artifacts.png; sourceTree = "<group>"; };
+		36A292251DCA51CC006E96A8 /* Attributes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Attributes.png; path = images/Attributes.png; sourceTree = "<group>"; };
+		36A292261DCA51CC006E96A8 /* Caster.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Caster.png; path = images/Caster.png; sourceTree = "<group>"; };
+		36A292271DCA51CC006E96A8 /* Common.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Common.png; path = images/Common.png; sourceTree = "<group>"; };
+		36A292281DCA51CC006E96A8 /* Consumables.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Consumables.png; path = images/Consumables.png; sourceTree = "<group>"; };
+		36A292291DCA51CC006E96A8 /* Secret.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Secret.png; path = images/Secret.png; sourceTree = "<group>"; };
+		36A2922A1DCA51CC006E96A8 /* Support.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Support.png; path = images/Support.png; sourceTree = "<group>"; };
+		36A2922B1DCA51CC006E96A8 /* Weapons.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Weapons.png; path = images/Weapons.png; sourceTree = "<group>"; };
 		36C0C95E1DA6E25800169394 /* DotA2 Viewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DotA2 Viewer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		36C0C9611DA6E25800169394 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		36C0C9631DA6E25800169394 /* ObjectListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectListVC.swift; sourceTree = "<group>"; usesTabs = 1; };
@@ -1718,172 +1740,7 @@
 			name = "Object Lists";
 			sourceTree = "<group>";
 		};
-		36C0C9551DA6E25800169394 = {
-			isa = PBXGroup;
-			children = (
-				36C0C9601DA6E25800169394 /* DotA2 Viewer */,
-				36C0C9781DA6E25800169394 /* DotA2 ViewerTests */,
-				36C0C95F1DA6E25800169394 /* Products */,
-			);
-			sourceTree = "<group>";
-		};
-		36C0C95F1DA6E25800169394 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				36C0C95E1DA6E25800169394 /* DotA2 Viewer.app */,
-				36C0C9751DA6E25800169394 /* DotA2 ViewerTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		36C0C9601DA6E25800169394 /* DotA2 Viewer */ = {
-			isa = PBXGroup;
-			children = (
-				36FD565C1DA6E606007C5A9C /* Controller */,
-				36FD56481DA6E3BF007C5A9C /* Model */,
-				36FD56471DA6E3B6007C5A9C /* View */,
-				36FD56451DA6E36C007C5A9C /* Supporting Files */,
-				C9FB56731DBB1110000A0824 /* images */,
-			);
-			path = "DotA2 Viewer";
-			sourceTree = "<group>";
-		};
-		36C0C9781DA6E25800169394 /* DotA2 ViewerTests */ = {
-			isa = PBXGroup;
-			children = (
-				36C0C9791DA6E25800169394 /* DotA2_ViewerTests.swift */,
-				36C0C97B1DA6E25800169394 /* Info.plist */,
-			);
-			path = "DotA2 ViewerTests";
-			sourceTree = "<group>";
-		};
-		36C7DF221DC8F2B500251705 /* CSV */ = {
-			isa = PBXGroup;
-			children = (
-				36FD56571DA6E403007C5A9C /* CSwiftV.swift */,
-				36FD56581DA6E403007C5A9C /* ImportCSV.swift */,
-			);
-			name = CSV;
-			sourceTree = "<group>";
-		};
-		36FD56451DA6E36C007C5A9C /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				36268C7D1DAD7F5100B9FF02 /* hero_final.csv */,
-				36268C7E1DAD7F5100B9FF02 /* items_final.csv */,
-				36FD56511DA6E3F5007C5A9C /* default_icon.png */,
-				36C0C9611DA6E25800169394 /* AppDelegate.swift */,
-				36C0C96B1DA6E25800169394 /* Assets.xcassets */,
-				36C0C96D1DA6E25800169394 /* LaunchScreen.storyboard */,
-				36C0C9701DA6E25800169394 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		36FD56461DA6E373007C5A9C /* CoreData */ = {
-			isa = PBXGroup;
-			children = (
-				C9FEBF4C1DB29B06000CD4FF /* Ability+CoreDataClass.swift */,
-				C9FEBF4D1DB29B06000CD4FF /* Ability+CoreDataProperties.swift */,
-				C9FEBF581DB29B06000CD4FF /* Hero+CoreDataClass.swift */,
-				C9FEBF591DB29B06000CD4FF /* Hero+CoreDataProperties.swift */,
-				C9FEBF501DB29B06000CD4FF /* Item+CoreDataClass.swift */,
-				C9FEBF511DB29B06000CD4FF /* Item+CoreDataProperties.swift */,
-				C9FEBF561DB29B06000CD4FF /* ListObject+CoreDataClass.swift */,
-				C9FEBF571DB29B06000CD4FF /* ListObject+CoreDataProperties.swift */,
-				C9FEBF541DB29B06000CD4FF /* PrimaryStat+CoreDataClass.swift */,
-				C9FEBF551DB29B06000CD4FF /* PrimaryStat+CoreDataProperties.swift */,
-				C9FEBF4E1DB29B06000CD4FF /* Recipe+CoreDataClass.swift */,
-				C9FEBF4F1DB29B06000CD4FF /* Recipe+CoreDataProperties.swift */,
-				C9FEBF521DB29B06000CD4FF /* Stat+CoreDataClass.swift */,
-				C9FEBF531DB29B06000CD4FF /* Stat+CoreDataProperties.swift */,
-				C9FEBF2D1DB299F2000CD4FF /* DotA2_Viewer.xcdatamodeld */,
-			);
-			name = CoreData;
-			sourceTree = "<group>";
-		};
-		36FD56471DA6E3B6007C5A9C /* View */ = {
-			isa = PBXGroup;
-			children = (
-				C9A6D63E1DBC11D200580B7B /* Storyboards */,
-				364A6A5C1DC1190B00FBE163 /* Hero Views */,
-				364A6A5F1DC1192E00FBE163 /* General */,
-				364A6A5E1DC1192600FBE163 /* Item Views */,
-			);
-			name = View;
-			sourceTree = "<group>";
-		};
-		36FD56481DA6E3BF007C5A9C /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				36C7DF221DC8F2B500251705 /* CSV */,
-				36FD56461DA6E373007C5A9C /* CoreData */,
-				C9A6D64C1DBD25AE00580B7B /* Extensions.swift */,
-				36C7DF231DC8F2C800251705 /* RSSFeedHelper.swift */,
-			);
-			name = Model;
-			sourceTree = "<group>";
-		};
-		36FD565C1DA6E606007C5A9C /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				367E34DF1DB7F9670037FA7B /* CustomTabVC.swift */,
-				C96B9C491DB3D45E00F656AA /* List */,
-				C96B9C4A1DB3D46600F656AA /* Detail */,
-			);
-			name = Controller;
-			sourceTree = "<group>";
-		};
-		C96B9C491DB3D45E00F656AA /* List */ = {
-			isa = PBXGroup;
-			children = (
-				36A2921D1DCA479F006E96A8 /* MyTableVC.swift */,
-				36A2921F1DCA4AA5006E96A8 /* Object Lists */,
-			);
-			name = List;
-			sourceTree = "<group>";
-		};
-		C96B9C4A1DB3D46600F656AA /* Detail */ = {
-			isa = PBXGroup;
-			children = (
-				C96B9C451DB3334800F656AA /* DetailVC.swift */,
-				C9FB5C741DBB997C000A0824 /* ObjectDetailVC.swift */,
-				C9FB5C721DBB9239000A0824 /* ItemDetailVC.swift */,
-				C9A6D63D1DBBE63900580B7B /* Hero Detail VCs */,
-			);
-			name = Detail;
-			sourceTree = "<group>";
-		};
-		C9A6D63D1DBBE63900580B7B /* Hero Detail VCs */ = {
-			isa = PBXGroup;
-			children = (
-				C9FB5C761DBBC116000A0824 /* HeroDetailVC.swift */,
-				C9A6D64B1DBC289300580B7B /* Child VCs */,
-			);
-			name = "Hero Detail VCs";
-			sourceTree = "<group>";
-		};
-		C9A6D63E1DBC11D200580B7B /* Storyboards */ = {
-			isa = PBXGroup;
-			children = (
-				36C0C9651DA6E25800169394 /* Main.storyboard */,
-				C966E6411DBBC74700C0692C /* Detail.storyboard */,
-			);
-			name = Storyboards;
-			sourceTree = "<group>";
-		};
-		C9A6D64B1DBC289300580B7B /* Child VCs */ = {
-			isa = PBXGroup;
-			children = (
-				361B71101DBE9AE500133173 /* HeroAbilityVC.swift */,
-				C9A6D6471DBC261A00580B7B /* HeroAllAbilitiesVC.swift */,
-				C9A6D63F1DBC124200580B7B /* HeroBioVC.swift */,
-				C9A6D6411DBC12B700580B7B /* HeroStatsVC.swift */,
-			);
-			name = "Child VCs";
-			sourceTree = "<group>";
-		};
-		C9FB56731DBB1110000A0824 /* images */ = {
+		36A292201DCA5199006E96A8 /* Hero/Items */ = {
 			isa = PBXGroup;
 			children = (
 				3640C0301DC7B17000965652 /* Abaddon_hero.png */,
@@ -2652,6 +2509,199 @@
 				3640C3291DC7B17400965652 /* yasha_item.png */,
 				3640C32A1DC7B17400965652 /* Zeus_hero.png */,
 			);
+			name = Hero/Items;
+			sourceTree = "<group>";
+		};
+		36A292371DCA51D1006E96A8 /* Item Category */ = {
+			isa = PBXGroup;
+			children = (
+				36A292211DCA51CC006E96A8 /* Arcane.png */,
+				36A292221DCA51CC006E96A8 /* Arnaments.png */,
+				36A292231DCA51CC006E96A8 /* Armor.png */,
+				36A292241DCA51CC006E96A8 /* Artifacts.png */,
+				36A292251DCA51CC006E96A8 /* Attributes.png */,
+				36A292261DCA51CC006E96A8 /* Caster.png */,
+				36A292271DCA51CC006E96A8 /* Common.png */,
+				36A292281DCA51CC006E96A8 /* Consumables.png */,
+				36A292291DCA51CC006E96A8 /* Secret.png */,
+				36A2922A1DCA51CC006E96A8 /* Support.png */,
+				36A2922B1DCA51CC006E96A8 /* Weapons.png */,
+			);
+			name = "Item Category";
+			path = ..;
+			sourceTree = "<group>";
+		};
+		36C0C9551DA6E25800169394 = {
+			isa = PBXGroup;
+			children = (
+				36C0C9601DA6E25800169394 /* DotA2 Viewer */,
+				36C0C9781DA6E25800169394 /* DotA2 ViewerTests */,
+				36C0C95F1DA6E25800169394 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		36C0C95F1DA6E25800169394 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				36C0C95E1DA6E25800169394 /* DotA2 Viewer.app */,
+				36C0C9751DA6E25800169394 /* DotA2 ViewerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		36C0C9601DA6E25800169394 /* DotA2 Viewer */ = {
+			isa = PBXGroup;
+			children = (
+				36FD565C1DA6E606007C5A9C /* Controller */,
+				36FD56481DA6E3BF007C5A9C /* Model */,
+				36FD56471DA6E3B6007C5A9C /* View */,
+				36FD56451DA6E36C007C5A9C /* Supporting Files */,
+				C9FB56731DBB1110000A0824 /* images */,
+			);
+			path = "DotA2 Viewer";
+			sourceTree = "<group>";
+		};
+		36C0C9781DA6E25800169394 /* DotA2 ViewerTests */ = {
+			isa = PBXGroup;
+			children = (
+				36C0C9791DA6E25800169394 /* DotA2_ViewerTests.swift */,
+				36C0C97B1DA6E25800169394 /* Info.plist */,
+			);
+			path = "DotA2 ViewerTests";
+			sourceTree = "<group>";
+		};
+		36C7DF221DC8F2B500251705 /* CSV */ = {
+			isa = PBXGroup;
+			children = (
+				36FD56571DA6E403007C5A9C /* CSwiftV.swift */,
+				36FD56581DA6E403007C5A9C /* ImportCSV.swift */,
+			);
+			name = CSV;
+			sourceTree = "<group>";
+		};
+		36FD56451DA6E36C007C5A9C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				36268C7D1DAD7F5100B9FF02 /* hero_final.csv */,
+				36268C7E1DAD7F5100B9FF02 /* items_final.csv */,
+				36FD56511DA6E3F5007C5A9C /* default_icon.png */,
+				36C0C9611DA6E25800169394 /* AppDelegate.swift */,
+				36C0C96B1DA6E25800169394 /* Assets.xcassets */,
+				36C0C96D1DA6E25800169394 /* LaunchScreen.storyboard */,
+				36C0C9701DA6E25800169394 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		36FD56461DA6E373007C5A9C /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				C9FEBF4C1DB29B06000CD4FF /* Ability+CoreDataClass.swift */,
+				C9FEBF4D1DB29B06000CD4FF /* Ability+CoreDataProperties.swift */,
+				C9FEBF581DB29B06000CD4FF /* Hero+CoreDataClass.swift */,
+				C9FEBF591DB29B06000CD4FF /* Hero+CoreDataProperties.swift */,
+				C9FEBF501DB29B06000CD4FF /* Item+CoreDataClass.swift */,
+				C9FEBF511DB29B06000CD4FF /* Item+CoreDataProperties.swift */,
+				C9FEBF561DB29B06000CD4FF /* ListObject+CoreDataClass.swift */,
+				C9FEBF571DB29B06000CD4FF /* ListObject+CoreDataProperties.swift */,
+				C9FEBF541DB29B06000CD4FF /* PrimaryStat+CoreDataClass.swift */,
+				C9FEBF551DB29B06000CD4FF /* PrimaryStat+CoreDataProperties.swift */,
+				C9FEBF4E1DB29B06000CD4FF /* Recipe+CoreDataClass.swift */,
+				C9FEBF4F1DB29B06000CD4FF /* Recipe+CoreDataProperties.swift */,
+				C9FEBF521DB29B06000CD4FF /* Stat+CoreDataClass.swift */,
+				C9FEBF531DB29B06000CD4FF /* Stat+CoreDataProperties.swift */,
+				C9FEBF2D1DB299F2000CD4FF /* DotA2_Viewer.xcdatamodeld */,
+			);
+			name = CoreData;
+			sourceTree = "<group>";
+		};
+		36FD56471DA6E3B6007C5A9C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C9A6D63E1DBC11D200580B7B /* Storyboards */,
+				364A6A5C1DC1190B00FBE163 /* Hero Views */,
+				364A6A5F1DC1192E00FBE163 /* General */,
+				364A6A5E1DC1192600FBE163 /* Item Views */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		36FD56481DA6E3BF007C5A9C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				36C7DF221DC8F2B500251705 /* CSV */,
+				36FD56461DA6E373007C5A9C /* CoreData */,
+				C9A6D64C1DBD25AE00580B7B /* Extensions.swift */,
+				36C7DF231DC8F2C800251705 /* RSSFeedHelper.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		36FD565C1DA6E606007C5A9C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				367E34DF1DB7F9670037FA7B /* CustomTabVC.swift */,
+				C96B9C491DB3D45E00F656AA /* List */,
+				C96B9C4A1DB3D46600F656AA /* Detail */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		C96B9C491DB3D45E00F656AA /* List */ = {
+			isa = PBXGroup;
+			children = (
+				36A2921D1DCA479F006E96A8 /* MyTableVC.swift */,
+				36A2921F1DCA4AA5006E96A8 /* Object Lists */,
+			);
+			name = List;
+			sourceTree = "<group>";
+		};
+		C96B9C4A1DB3D46600F656AA /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				C96B9C451DB3334800F656AA /* DetailVC.swift */,
+				C9FB5C741DBB997C000A0824 /* ObjectDetailVC.swift */,
+				C9FB5C721DBB9239000A0824 /* ItemDetailVC.swift */,
+				C9A6D63D1DBBE63900580B7B /* Hero Detail VCs */,
+			);
+			name = Detail;
+			sourceTree = "<group>";
+		};
+		C9A6D63D1DBBE63900580B7B /* Hero Detail VCs */ = {
+			isa = PBXGroup;
+			children = (
+				C9FB5C761DBBC116000A0824 /* HeroDetailVC.swift */,
+				C9A6D64B1DBC289300580B7B /* Child VCs */,
+			);
+			name = "Hero Detail VCs";
+			sourceTree = "<group>";
+		};
+		C9A6D63E1DBC11D200580B7B /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				36C0C9651DA6E25800169394 /* Main.storyboard */,
+				C966E6411DBBC74700C0692C /* Detail.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		C9A6D64B1DBC289300580B7B /* Child VCs */ = {
+			isa = PBXGroup;
+			children = (
+				361B71101DBE9AE500133173 /* HeroAbilityVC.swift */,
+				C9A6D6471DBC261A00580B7B /* HeroAllAbilitiesVC.swift */,
+				C9A6D63F1DBC124200580B7B /* HeroBioVC.swift */,
+				C9A6D6411DBC12B700580B7B /* HeroStatsVC.swift */,
+			);
+			name = "Child VCs";
+			sourceTree = "<group>";
+		};
+		C9FB56731DBB1110000A0824 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				36A292371DCA51D1006E96A8 /* Item Category */,
+				36A292201DCA5199006E96A8 /* Hero/Items */,
+			);
 			path = images;
 			sourceTree = "<group>";
 		};
@@ -2795,6 +2845,7 @@
 				3640C4921DC7B17400965652 /* Lightning-Storm_Leshrac.png in Resources */,
 				3640C5CB1DC7B17500965652 /* Thunder-Clap_Brewmaster.png in Resources */,
 				3640C3E11DC7B17400965652 /* Earth-Splitter_Elder Titan.png in Resources */,
+				36A292301DCA51CC006E96A8 /* Attributes.png in Resources */,
 				3640C4A31DC7B17400965652 /* Magnetize_Earth Spirit.png in Resources */,
 				3640C4001DC7B17400965652 /* Ethereal-Jaunt_Puck.png in Resources */,
 				3640C5071DC7B17500965652 /* Poison-Touch_Dazzle.png in Resources */,
@@ -2851,6 +2902,7 @@
 				3640C45F1DC7B17400965652 /* Ice-Armor_Lich.png in Resources */,
 				3640C6181DC7B17500965652 /* Wild-Axes_Beastmaster.png in Resources */,
 				3640C4501DC7B17400965652 /* helm_of_the_dominator_item.png in Resources */,
+				36A292351DCA51CC006E96A8 /* Support.png in Resources */,
 				3640C36E1DC7B17400965652 /* Blur_Phantom Assassin.png in Resources */,
 				3640C5201DC7B17500965652 /* Rabid_Lone Druid.png in Resources */,
 				3640C47B1DC7B17400965652 /* Juxtapose_Phantom Lancer.png in Resources */,
@@ -3022,6 +3074,7 @@
 				3640C4701DC7B17400965652 /* Insatiable-Hunger_Broodmother.png in Resources */,
 				3640C40A1DC7B17400965652 /* Fate's-Edict_Oracle.png in Resources */,
 				3640C3811DC7B17400965652 /* Burrowstrike_Sand King.png in Resources */,
+				36A292361DCA51CC006E96A8 /* Weapons.png in Resources */,
 				3640C3931DC7B17400965652 /* Chen_hero.png in Resources */,
 				3640C4181DC7B17400965652 /* Flame-Guard_Ember Spirit.png in Resources */,
 				3640C3E31DC7B17400965652 /* Earthshaker_hero.png in Resources */,
@@ -3094,6 +3147,7 @@
 				3640C3D21DC7B17400965652 /* Dragon-Blood_Dragon Knight.png in Resources */,
 				3640C6041DC7B17500965652 /* Void_Night Stalker.png in Resources */,
 				3640C4261DC7B17400965652 /* Frost-Arrows_Drow Ranger.png in Resources */,
+				36A2922C1DCA51CC006E96A8 /* Arcane.png in Resources */,
 				3640C60A1DC7B17500965652 /* Waning-Rift_Puck.png in Resources */,
 				3640C5E41DC7B17500965652 /* Tricks-of-the-Trade_Riki.png in Resources */,
 				3640C4581DC7B17400965652 /* Howl_Lycan.png in Resources */,
@@ -3218,6 +3272,7 @@
 				3640C60B1DC7B17500965652 /* Warcry_Sven.png in Resources */,
 				3640C56C1DC7B17500965652 /* sheepstick_item.png in Resources */,
 				3640C5841DC7B17500965652 /* Song-of-the-Siren_Naga Siren.png in Resources */,
+				36A292331DCA51CC006E96A8 /* Consumables.png in Resources */,
 				3640C37B1DC7B17400965652 /* Bristleback_hero.png in Resources */,
 				3640C5E31DC7B17500965652 /* Treant-Protector_hero.png in Resources */,
 				3640C5811DC7B17500965652 /* Snowball_Tusk.png in Resources */,
@@ -3231,6 +3286,7 @@
 				3640C4BF1DC7B17500965652 /* mithril_hammer_item.png in Resources */,
 				3640C5CA1DC7B17500965652 /* Thirst_Bloodseeker.png in Resources */,
 				3640C3B51DC7B17400965652 /* Dark-Seer_hero.png in Resources */,
+				36A292321DCA51CC006E96A8 /* Common.png in Resources */,
 				3640C5DB1DC7B17500965652 /* Tornado_Invoker.png in Resources */,
 				3640C3481DC7B17400965652 /* Astral-Spirit_Elder Titan.png in Resources */,
 				3640C3961DC7B17400965652 /* circlet_item.png in Resources */,
@@ -3271,6 +3327,7 @@
 				3640C4161DC7B17400965652 /* Fissure_Earthshaker.png in Resources */,
 				3640C5AB1DC7B17500965652 /* Stone-Gaze_Medusa.png in Resources */,
 				3640C3EE1DC7B17400965652 /* EMP_Invoker.png in Resources */,
+				36A2922E1DCA51CC006E96A8 /* Armor.png in Resources */,
 				3640C5501DC7B17500965652 /* Sadist_Necrophos.png in Resources */,
 				3640C3CB1DC7B17400965652 /* Disruptor_hero.png in Resources */,
 				3640C6191DC7B17500965652 /* wind_lace_item.png in Resources */,
@@ -3290,6 +3347,7 @@
 				3640C5461DC7B17500965652 /* robe_item.png in Resources */,
 				3640C5BF1DC7B17500965652 /* tango_item.png in Resources */,
 				3640C4051DC7B17400965652 /* Faceless-Void_hero.png in Resources */,
+				36A2922F1DCA51CC006E96A8 /* Artifacts.png in Resources */,
 				3640C5C21DC7B17500965652 /* Telekinesis-Land_Rubick.png in Resources */,
 				3640C33E1DC7B17400965652 /* Arcane-Aura_Crystal Maiden.png in Resources */,
 				3640C5131DC7B17500965652 /* Psi-Blades_Templar Assassin.png in Resources */,
@@ -3324,6 +3382,7 @@
 				3640C4271DC7B17400965652 /* Frost-Blast_Lich.png in Resources */,
 				3640C48E1DC7B17400965652 /* lifesteal_item.png in Resources */,
 				3640C4491DC7B17400965652 /* Headshot_Sniper.png in Resources */,
+				36A2922D1DCA51CC006E96A8 /* Arnaments.png in Resources */,
 				3640C5931DC7B17500965652 /* Spiked-Carapace_Nyx Assassin.png in Resources */,
 				3640C5601DC7B17500965652 /* Shadow-Demon_hero.png in Resources */,
 				3640C5101DC7B17500965652 /* Press-The-Attack_Legion Commander.png in Resources */,
@@ -3395,6 +3454,7 @@
 				3640C4E01DC7B17500965652 /* null_talisman_item.png in Resources */,
 				3640C4EE1DC7B17500965652 /* Overcharge_Io.png in Resources */,
 				3640C56F1DC7B17500965652 /* Shrapnel_Sniper.png in Resources */,
+				36A292341DCA51CC006E96A8 /* Secret.png in Resources */,
 				3640C5781DC7B17500965652 /* Skywrath-Mage_hero.png in Resources */,
 				3640C3B81DC7B17400965652 /* Deafening-Blast_Invoker.png in Resources */,
 				3640C3351DC7B17400965652 /* Anchor-Smash_Tidehunter.png in Resources */,
@@ -3476,6 +3536,7 @@
 				3640C3781DC7B17400965652 /* Breathe-Fire_Dragon Knight.png in Resources */,
 				3640C43C1DC7B17400965652 /* greater_crit_item.png in Resources */,
 				3640C6121DC7B17500965652 /* Weave_Dazzle.png in Resources */,
+				36A292311DCA51CC006E96A8 /* Caster.png in Resources */,
 				3640C6291DC7B33000965652 /* Bounty-Hunter_hero.png in Resources */,
 				3640C3FE1DC7B17400965652 /* Ether-Shock_Shadow Shaman.png in Resources */,
 				3640C3671DC7B17400965652 /* Blink-Strike_Riki.png in Resources */,

@@ -81,6 +81,7 @@ class CustomTabVC: UIViewController {
         if segue.identifier == "showDetail" {
             if let vc = (segue.destination as? UINavigationController)?.viewControllers.first as? DetailVC {
                 vc.object = objectForDetail
+                //vc.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem
             }
         }
     }
