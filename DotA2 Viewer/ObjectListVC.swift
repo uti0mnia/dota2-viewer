@@ -10,10 +10,9 @@ import UIKit
 import CoreData
 //TODO: make a collection view
 
-class ObjectListVC: UIViewController {
+class ObjectListVC: MyTableVC {
 	
 	/* Properties */
-	var tableView: UITableView!
 	var collectionView: UICollectionView!
 	fileprivate let itemSegueID = "segueItemDetail"
 	fileprivate let heroSegueID = "segueHeroDetail"
@@ -40,7 +39,7 @@ class ObjectListVC: UIViewController {
         super.viewDidLoad()
 		
 		// configure table view
-		configureTableView()
+		tableView.dataSource = self
 		
 		// frc
 		do {
@@ -52,30 +51,6 @@ class ObjectListVC: UIViewController {
 	
 	/* Mehtods */
 	// private methods
-	
-	private func configureTableView() {
-		tableView = UITableView()
-		tableView.sectionIndexColor = UIColor.red
-		tableView.translatesAutoresizingMaskIntoConstraints = false
-		tableView.dataSource = self
-		tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-		self.view.addSubview(tableView)
-		
-		// constraints
-		let views: [String: Any] = ["tableView": tableView]
-		var constrainsts = [NSLayoutConstraint]()
-		let hlayout = NSLayoutConstraint.constraints(withVisualFormat: "H:|[tableView]|",
-		                                             options: [],
-		                                             metrics: nil,
-		                                             views: views)
-		let vlayout = NSLayoutConstraint.constraints(withVisualFormat: "V:|[tableView]|",
-		                                             options: [],
-		                                             metrics: nil,
-		                                             views: views)
-		constrainsts += hlayout
-		constrainsts += vlayout
-		NSLayoutConstraint.activate(constrainsts)
-	}
 	
 	private func configureCollectionView() {
 		let layout = UICollectionViewFlowLayout()

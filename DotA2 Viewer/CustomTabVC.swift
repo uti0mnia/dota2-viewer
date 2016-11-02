@@ -10,7 +10,7 @@ import UIKit
 
 class CustomTabVC: UIViewController {
     // constants
-    let kAnimateTime: TimeInterval = 0.6
+    let kAnimateTime: TimeInterval = 0.3
     
     // outlets
     @IBOutlet weak var tabBar: UITabBar!
@@ -18,13 +18,12 @@ class CustomTabVC: UIViewController {
     
     // variables for keeping track of stuff
     var objectForDetail: ListObject?
-    var currentChild: ObjectListVC!
+    var currentChild: MyTableVC!
     
     // view controllers for content view
     lazy var heroListVC: HeroListVC = {
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "HeroListVC") as! HeroListVC
-        self.displayContentController(vc)
         return vc
         
     }()
@@ -32,7 +31,6 @@ class CustomTabVC: UIViewController {
     lazy var itemListVC: ItemListVC = {
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "ItemListVC") as! ItemListVC
-        self.displayContentController(vc)
         return vc
         
     }()
@@ -59,10 +57,9 @@ class CustomTabVC: UIViewController {
         configureTabView()
         
         // configure the first container view
-        self.displayContentController(heroListVC)
+        displayContentController(heroListVC)
         
     }
-    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -97,17 +94,19 @@ class CustomTabVC: UIViewController {
     
     
     // view control flow
-    fileprivate func displayContentController(_ controller: ObjectListVC) {
+    fileprivate func displayContentController(_ controller: MyTableVC) {
         self.addChildViewController(controller) // add child VC
         self.currentChild = controller // set the reference
         self.containerView.addSubview(controller.view) // add child view
         controller.view.frame = self.containerView.bounds // configure frame
         controller.didMove(toParentViewController: self) // notify vc
-        controller.tableView.delegate = self // set the delegate for didSelect
-        searchBar.delegate = controller
+        if controller is ObjectListVC {
+            (controller as! ObjectListVC).tableView.delegate = self // set the delegate for didSelect
+            searchBar.delegate = (controller as! ObjectListVC)
+        }
     }
     
-    fileprivate func cycleFrom(viewController oldVC: UIViewController, toViewController newVC: ObjectListVC) {
+    fileprivate func cycleFrom(viewController oldVC: UIViewController, toViewController newVC: MyTableVC) {
         // display the newVC
         displayContentController(newVC)
         newVC.view.alpha = 0
@@ -165,7 +164,7 @@ extension CustomTabVC: UITabBarDelegate {
                 navigationItem.title = "Items"
                 cycleFrom(viewController: currentVC, toViewController: itemListVC)
             }
-            
+        
         default:
             break
         }
@@ -175,10 +174,15 @@ extension CustomTabVC: UITabBarDelegate {
 /* Tableview delegate */
 extension CustomTabVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        objectForDetail = currentChild.fetchedResultsController.object(at: indexPath)
-        self.performSegue(withIdentifier: "showDetail", sender: nil)
-        tableView.deselectRow(at: indexPath, animated: false)
-        hideSearchBar()
+        switch currentChild {
+        case is ObjectListVC:
+            objectForDetail = (currentChild as! ObjectListVC).fetchedResultsController.object(at: indexPath)
+            self.performSegue(withIdentifier: "showDetail", sender: nil)
+            tableView.deselectRow(at: indexPath, animated: false)
+            hideSearchBar()
+        default:
+            break
+        }
     }
 }
 

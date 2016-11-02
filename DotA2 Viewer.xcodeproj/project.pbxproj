@@ -774,7 +774,6 @@
 		3640C6231DC7B17500965652 /* X-Marks-the-Spot_Kunkka.png in Resources */ = {isa = PBXBuildFile; fileRef = 3640C3281DC7B17400965652 /* X-Marks-the-Spot_Kunkka.png */; };
 		3640C6241DC7B17500965652 /* yasha_item.png in Resources */ = {isa = PBXBuildFile; fileRef = 3640C3291DC7B17400965652 /* yasha_item.png */; };
 		3640C6251DC7B17500965652 /* Zeus_hero.png in Resources */ = {isa = PBXBuildFile; fileRef = 3640C32A1DC7B17400965652 /* Zeus_hero.png */; };
-		3640C6271DC7B2F800965652 /* boots_item.png in Resources */ = {isa = PBXBuildFile; fileRef = 3640C6261DC7B2F800965652 /* boots_item.png */; };
 		3640C6291DC7B33000965652 /* Bounty-Hunter_hero.png in Resources */ = {isa = PBXBuildFile; fileRef = 3640C6281DC7B33000965652 /* Bounty-Hunter_hero.png */; };
 		364A6A571DC10E1100FBE163 /* AbilitiesStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364A6A561DC10E1100FBE163 /* AbilitiesStackView.swift */; };
 		364A6A591DC1136300FBE163 /* MultiLineLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364A6A581DC1136300FBE163 /* MultiLineLabel.swift */; };
@@ -782,6 +781,7 @@
 		364A6A611DC142C200FBE163 /* StatsStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364A6A601DC142C200FBE163 /* StatsStackView.swift */; };
 		367E34E01DB7F9670037FA7B /* CustomTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367E34DF1DB7F9670037FA7B /* CustomTabVC.swift */; };
 		368F3E971DBA7C0100530014 /* RecipeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368F3E961DBA7C0100530014 /* RecipeButton.swift */; };
+		36A2921E1DCA479F006E96A8 /* MyTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A2921D1DCA479F006E96A8 /* MyTableVC.swift */; };
 		36C0C9621DA6E25800169394 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C0C9611DA6E25800169394 /* AppDelegate.swift */; };
 		36C0C9641DA6E25800169394 /* ObjectListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C0C9631DA6E25800169394 /* ObjectListVC.swift */; };
 		36C0C9671DA6E25800169394 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36C0C9651DA6E25800169394 /* Main.storyboard */; };
@@ -1608,6 +1608,7 @@
 		364A6A601DC142C200FBE163 /* StatsStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsStackView.swift; sourceTree = "<group>"; };
 		367E34DF1DB7F9670037FA7B /* CustomTabVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabVC.swift; sourceTree = "<group>"; };
 		368F3E961DBA7C0100530014 /* RecipeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeButton.swift; sourceTree = "<group>"; };
+		36A2921D1DCA479F006E96A8 /* MyTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTableVC.swift; sourceTree = "<group>"; };
 		36C0C95E1DA6E25800169394 /* DotA2 Viewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DotA2 Viewer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		36C0C9611DA6E25800169394 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		36C0C9631DA6E25800169394 /* ObjectListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectListVC.swift; sourceTree = "<group>"; usesTabs = 1; };
@@ -1705,6 +1706,16 @@
 				364A6A581DC1136300FBE163 /* MultiLineLabel.swift */,
 			);
 			name = General;
+			sourceTree = "<group>";
+		};
+		36A2921F1DCA4AA5006E96A8 /* Object Lists */ = {
+			isa = PBXGroup;
+			children = (
+				36C0C9631DA6E25800169394 /* ObjectListVC.swift */,
+				C96B9C3F1DB2C14800F656AA /* HeroListVC.swift */,
+				C96B9C411DB2C1B800F656AA /* ItemListVC.swift */,
+			);
+			name = "Object Lists";
 			sourceTree = "<group>";
 		};
 		36C0C9551DA6E25800169394 = {
@@ -1816,6 +1827,7 @@
 		36FD565C1DA6E606007C5A9C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				367E34DF1DB7F9670037FA7B /* CustomTabVC.swift */,
 				C96B9C491DB3D45E00F656AA /* List */,
 				C96B9C4A1DB3D46600F656AA /* Detail */,
 			);
@@ -1825,10 +1837,8 @@
 		C96B9C491DB3D45E00F656AA /* List */ = {
 			isa = PBXGroup;
 			children = (
-				367E34DF1DB7F9670037FA7B /* CustomTabVC.swift */,
-				36C0C9631DA6E25800169394 /* ObjectListVC.swift */,
-				C96B9C3F1DB2C14800F656AA /* HeroListVC.swift */,
-				C96B9C411DB2C1B800F656AA /* ItemListVC.swift */,
+				36A2921D1DCA479F006E96A8 /* MyTableVC.swift */,
+				36A2921F1DCA4AA5006E96A8 /* Object Lists */,
 			);
 			name = List;
 			sourceTree = "<group>";
@@ -2690,7 +2700,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = self;
 				TargetAttributes = {
 					36C0C95D1DA6E25800169394 = {
@@ -3216,7 +3226,6 @@
 				3640C3B21DC7B17400965652 /* dagon_item.png in Resources */,
 				3640C5FA1DC7B17500965652 /* Vengeance-Aura_Vengeful Spirit.png in Resources */,
 				3640C49B1DC7B17400965652 /* Lunar-Blessing_Luna.png in Resources */,
-				3640C6271DC7B2F800965652 /* boots_item.png in Resources */,
 				3640C5261DC7B17500965652 /* Reactive-Armor_Timbersaw.png in Resources */,
 				3640C5CC1DC7B17500965652 /* Thunder-Strike_Disruptor.png in Resources */,
 				3640C4BF1DC7B17500965652 /* mithril_hammer_item.png in Resources */,
@@ -3529,6 +3538,7 @@
 				C9FEBF611DB29B06000CD4FF /* Stat+CoreDataProperties.swift in Sources */,
 				C9FEBF601DB29B06000CD4FF /* Stat+CoreDataClass.swift in Sources */,
 				36FD56591DA6E403007C5A9C /* CSwiftV.swift in Sources */,
+				36A2921E1DCA479F006E96A8 /* MyTableVC.swift in Sources */,
 				C97710FF1DC04E340083FBD7 /* AbilityStackView.swift in Sources */,
 				C9FEBF651DB29B06000CD4FF /* ListObject+CoreDataProperties.swift in Sources */,
 				C9FEBF5F1DB29B06000CD4FF /* Item+CoreDataProperties.swift in Sources */,
@@ -3617,6 +3627,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -3667,6 +3678,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;

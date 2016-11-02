@@ -139,7 +139,6 @@ class HeroDetailVC: ObjectDetailVC {
         fullStackView.setStack()
         fullStackView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.addSubview(fullStackView)
-        
         scrollView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[stackView(==scrollView)]|",
                                                                     options: .alignAllCenterX,
                                                                     metrics: nil,
