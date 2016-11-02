@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         splitViewController.delegate = self
         // for some reason iOS gets confused if it's not async..
         DispatchQueue.main.async {
-            //splitViewController.preferredDisplayMode = .primaryOverlay // on ipad the master is opened by default
+            splitViewController.preferredDisplayMode = .allVisible // on ipad the master is opened by default
         }
         
         return true
@@ -127,7 +127,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
         return true
     }
-
+    
+    
 }
 
 

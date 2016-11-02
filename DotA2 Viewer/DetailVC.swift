@@ -25,6 +25,10 @@ class DetailVC: UIViewController {
         
         guard object != nil else { return }
         configureView()
+        
+        // configure back button
+        self.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem
+        self.navigationItem.leftItemsSupplementBackButton = true
     }
     
     private func configureView() {
