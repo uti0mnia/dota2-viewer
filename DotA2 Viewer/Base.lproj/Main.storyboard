@@ -74,18 +74,11 @@
                                     <tabBarItem title="Item" id="QT3-DC-HO0"/>
                                 </items>
                             </tabBar>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gmd-cZ-2wR">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
-                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="gmd-cZ-2wR" firstAttribute="leading" secondItem="8t3-Dw-i4L" secondAttribute="leading" id="2R0-Eg-jcG"/>
-                            <constraint firstItem="gmd-cZ-2wR" firstAttribute="top" secondItem="lSp-vm-6Vb" secondAttribute="bottom" id="BKn-PU-qUT"/>
                             <constraint firstItem="8t3-Dw-i4L" firstAttribute="leading" secondItem="2lC-T3-oy4" secondAttribute="leading" id="CuD-SI-7Fx"/>
-                            <constraint firstItem="gmd-cZ-2wR" firstAttribute="bottom" secondItem="8t3-Dw-i4L" secondAttribute="top" id="ZGP-rP-Ab8"/>
                             <constraint firstItem="8t3-Dw-i4L" firstAttribute="bottom" secondItem="WO6-Zn-fWE" secondAttribute="top" id="ZbR-Yy-vmk"/>
-                            <constraint firstItem="gmd-cZ-2wR" firstAttribute="trailing" secondItem="8t3-Dw-i4L" secondAttribute="trailing" id="iib-Oo-5s1"/>
                             <constraint firstAttribute="trailing" secondItem="8t3-Dw-i4L" secondAttribute="trailing" id="jhd-9z-XCB"/>
                         </constraints>
                     </view>
@@ -98,7 +91,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="containerView" destination="gmd-cZ-2wR" id="bgT-Mm-3BD"/>
                         <outlet property="tabBar" destination="8t3-Dw-i4L" id="Ssb-Rn-biN"/>
                         <segue destination="0xi-1T-PpC" kind="showDetail" identifier="showDetail" id="XL8-BY-o5U"/>
                     </connections>
@@ -131,7 +123,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9FL-AS-YTq" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Heroes" id="NUl-ZW-oRZ"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="RnW-Iu-fm3">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="RnW-Iu-fm3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.87139734455958551" green="0.03687937124292797" blue="0.051371898444097563" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -150,7 +142,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0xi-1T-PpC" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="w5g-ZC-18e">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="w5g-ZC-18e">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.88532221502590669" green="0.0" blue="0.16688224116154954" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

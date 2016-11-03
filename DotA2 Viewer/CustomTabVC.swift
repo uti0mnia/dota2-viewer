@@ -14,7 +14,11 @@ class CustomTabVC: UIViewController {
     
     // outlets
     @IBOutlet weak var tabBar: UITabBar!
-    @IBOutlet weak var containerView: UIView!
+    var containerView: UIView = {
+        let v = UIView()
+        v.translatesAutoresizingMaskIntoConstraints = false
+        return v
+    }()
     
     // variables for keeping track of stuff
     var objectForDetail: ListObject?
@@ -49,6 +53,22 @@ class CustomTabVC: UIViewController {
     // superclass methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // configure container view
+        self.view.addSubview(containerView)
+        // set the constraints
+        let h = NSLayoutConstraint.constraints(withVisualFormat: "V:[top][view][tab]",
+                                               options: [],
+                                               metrics: nil,
+                                               views: ["top": self.topLayoutGuide,
+                                                       "view": containerView,
+                                                       "tab": self.tabBar])
+        let v = NSLayoutConstraint.constraints(withVisualFormat: "H:|[view]|",
+                                               options: [],
+                                               metrics: nil,
+                                               views: ["view": containerView])
+        
+        self.view.addConstraints(h + v)
         
         // configure the UI Elements
         navigationItem.title = "Heroes"
