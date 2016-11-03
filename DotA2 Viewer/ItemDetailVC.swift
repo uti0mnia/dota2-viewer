@@ -90,6 +90,7 @@ class ItemDetailVC: ObjectDetailVC {
         
         // set properties
         scrollView.alwaysBounceVertical = true
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
         
     }
 }

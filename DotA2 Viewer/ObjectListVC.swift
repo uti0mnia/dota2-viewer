@@ -77,6 +77,18 @@ class ObjectListVC: MyTableVC {
 		NSLayoutConstraint.activate(constrainsts)
 	}
 	
+	func clearFilter() {
+		// reset the frc
+		let predicate = NSPredicate(value: true)
+		fetchedResultsController.fetchRequest.predicate = predicate
+		do {
+			try fetchedResultsController.performFetch()
+			tableView.reloadData()
+		} catch {
+			print("Error performing fetch: \(error.localizedDescription)")
+		}
+	}
+	
 	
 
 }
@@ -193,18 +205,11 @@ extension ObjectListVC: UISearchBarDelegate {
 	func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
 		if let parentVC = self.parent as? CustomTabVC {
 			searchBar.text = "" // clear text
+			
+			clearFilter()
+			
+			// hide the search bar
 			parentVC.hideSearchBar()
-		}
-	}
-	
-	func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-		let predicate = NSPredicate(value: true)
-		fetchedResultsController.fetchRequest.predicate = predicate
-		do {
-			try fetchedResultsController.performFetch()
-			tableView.reloadData()
-		} catch {
-			print("Error performing fetch: \(error.localizedDescription)")
 		}
 	}
 	

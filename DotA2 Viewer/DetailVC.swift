@@ -26,7 +26,7 @@ class DetailVC: UIViewController {
         guard object != nil else { return }
         configureView()
         
-        // configure back button
+        // configure resize button (for ipad and Plus-landscape)
         self.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem
         self.navigationItem.leftItemsSupplementBackButton = true
     }

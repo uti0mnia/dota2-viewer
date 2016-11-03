@@ -38,7 +38,6 @@ class CustomTabVC: UIViewController {
     lazy var searchBar: UISearchBar = {
         let sb = UISearchBar()
         sb.tintColor = UIColor.red
-        sb.showsCancelButton = true
         sb.searchBarStyle = .minimal
         sb.showsCancelButton = true
         return sb
@@ -65,7 +64,7 @@ class CustomTabVC: UIViewController {
         super.viewWillAppear(animated)
         
         // nsnotification
-        NotificationCenter.default.addObserver(self, selector: #selector(CustomTabVC.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(CustomTabVC.keyboardWillShow), name: NSNotification.Name.UIKeyboardDidShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(CustomTabVC.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
@@ -134,7 +133,7 @@ class CustomTabVC: UIViewController {
         navigationItem.setRightBarButton(nil, animated: true)
         UIView.animate(withDuration: kAnimateTime, animations: {
             self.searchBar.alpha = 1
-        }, completion: { _ in
+        }, completion: {_ in
             self.searchBar.becomeFirstResponder()
         })
     }
@@ -177,9 +176,20 @@ extension CustomTabVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch currentChild {
         case is ObjectListVC:
+            // get the item/hero select
             objectForDetail = (currentChild as! ObjectListVC).fetchedResultsController.object(at: indexPath)
+            
+            // perform the segue
             self.performSegue(withIdentifier: "showDetail", sender: nil)
+            
+            // clear the selection
             tableView.deselectRow(at: indexPath, animated: false)
+            
+            // clear the search
+            searchBar.text = ""
+            (currentChild as! ObjectListVC).clearFilter()
+            
+            // hide the search bar
             hideSearchBar()
         default:
             break
@@ -191,12 +201,15 @@ extension CustomTabVC: UITableViewDelegate {
 extension CustomTabVC {
     func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-            self.view.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: UIScreen.main.bounds.height - keyboardSize.height)
+            // shrink the size of the screen so the keyboard doesn't block anything (except the tab view)
+            let offset = keyboardSize.height - tabBar.frame.height
+            self.view.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: UIScreen.main.bounds.height - offset)
         }
     }
     
     func keyboardWillHide(notification: NSNotification) {
         if self.view.frame.height != UIScreen.main.bounds.height {
+            // change the height of the view to the size of the available space
             self.view.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: UIScreen.main.bounds.height)
         }
     }
