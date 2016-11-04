@@ -16,12 +16,12 @@
                         <viewControllerLayoutGuide type="top" id="71q-ul-khF"/>
                         <viewControllerLayoutGuide type="bottom" id="bdm-5m-Ymp"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Ctq-VA-4zB">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <view key="view" contentMode="scaleToFill" misplaced="YES" id="Ctq-VA-4zB">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LU9-dX-xkW">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" red="0.36227080352622915" green="0.36606691802902558" blue="0.36963649611398963" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -32,6 +32,7 @@
                             <constraint firstItem="bdm-5m-Ymp" firstAttribute="top" secondItem="LU9-dX-xkW" secondAttribute="bottom" id="wVx-N7-rXT"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" id="ssI-vz-wRY"/>
                     <connections>
                         <outlet property="containerView" destination="LU9-dX-xkW" id="qYO-yv-78Q"/>
@@ -62,8 +63,8 @@
                         <viewControllerLayoutGuide type="top" id="lSp-vm-6Vb"/>
                         <viewControllerLayoutGuide type="bottom" id="WO6-Zn-fWE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="2lC-T3-oy4">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <view key="view" contentMode="scaleToFill" misplaced="YES" id="2lC-T3-oy4">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8t3-Dw-i4L">
@@ -82,6 +83,7 @@
                             <constraint firstAttribute="trailing" secondItem="8t3-Dw-i4L" secondAttribute="trailing" id="jhd-9z-XCB"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="Master" id="ZbA-zi-RVb">
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="AdG-vF-bVg">
                             <color key="tintColor" red="1" green="0.080182865994246288" blue="0.032913104229188028" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
