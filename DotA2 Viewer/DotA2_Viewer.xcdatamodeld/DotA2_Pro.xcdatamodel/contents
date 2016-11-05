@@ -3,7 +3,6 @@
     <entity name="Ability" representedClassName="Ability" syncable="YES">
         <attribute name="cooldown" attributeType="String" syncable="YES"/>
         <attribute name="data" attributeType="String" syncable="YES"/>
-        <attribute name="image" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
         <attribute name="lore" attributeType="String" syncable="YES"/>
         <attribute name="mana" attributeType="String" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
@@ -11,29 +10,28 @@
         <attribute name="videoURL" attributeType="String" syncable="YES"/>
         <relationship name="hero" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Hero" inverseName="ability" inverseEntity="Hero" syncable="YES"/>
     </entity>
-    <entity name="Hero" representedClassName="Hero" syncable="YES">
+    <entity name="Hero" representedClassName="Hero" parentEntity="ListObject" syncable="YES">
         <attribute name="attackType" attributeType="String" syncable="YES"/>
         <attribute name="attribute" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="bio" attributeType="String" syncable="YES"/>
-        <attribute name="image" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
-        <attribute name="name" attributeType="String" syncable="YES"/>
         <attribute name="role" attributeType="String" syncable="YES"/>
-        <relationship name="ability" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Ability" inverseName="hero" inverseEntity="Ability" syncable="YES"/>
+        <relationship name="ability" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Ability" inverseName="hero" inverseEntity="Ability" syncable="YES"/>
         <relationship name="primaryStat" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PrimaryStat" inverseName="hero" inverseEntity="PrimaryStat" syncable="YES"/>
-        <relationship name="stat" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Stat" inverseName="hero" inverseEntity="Stat" syncable="YES"/>
+        <relationship name="stat" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Stat" inverseName="hero" inverseEntity="Stat" syncable="YES"/>
     </entity>
-    <entity name="Item" representedClassName="Item" syncable="YES">
+    <entity name="Item" representedClassName="Item" parentEntity="ListObject" syncable="YES">
+        <attribute name="ability" attributeType="String" syncable="YES"/>
         <attribute name="cooldown" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="cost" attributeType="String" syncable="YES"/>
-        <attribute name="data" attributeType="String" syncable="YES"/>
+        <attribute name="detail" attributeType="String" syncable="YES"/>
         <attribute name="id" attributeType="String" syncable="YES"/>
-        <attribute name="image" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
-        <attribute name="info" attributeType="String" syncable="YES"/>
         <attribute name="lore" attributeType="String" syncable="YES"/>
         <attribute name="mana" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="name" attributeType="String" syncable="YES"/>
         <attribute name="type" attributeType="String" syncable="YES"/>
         <relationship name="recipe" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Recipe" inverseName="item" inverseEntity="Recipe" syncable="YES"/>
+    </entity>
+    <entity name="ListObject" representedClassName=".ListObject" isAbstract="YES" syncable="YES">
+        <attribute name="name" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="PrimaryStat" representedClassName="PrimaryStat" syncable="YES">
         <attribute name="agility" attributeType="String" syncable="YES"/>
@@ -45,7 +43,7 @@
         <relationship name="hero" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Hero" inverseName="primaryStat" inverseEntity="Hero" syncable="YES"/>
     </entity>
     <entity name="Recipe" representedClassName="Recipe" syncable="YES">
-        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="itemID" attributeType="String" syncable="YES"/>
         <relationship name="item" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Item" inverseName="recipe" inverseEntity="Item" syncable="YES"/>
     </entity>
     <entity name="Stat" representedClassName="Stat" syncable="YES">
@@ -60,11 +58,12 @@
         <relationship name="hero" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Hero" inverseName="stat" inverseEntity="Hero" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Ability" positionX="-36" positionY="-441" width="128" height="180"/>
-        <element name="Hero" positionX="-333" positionY="-162" width="128" height="178"/>
-        <element name="Item" positionX="-333" positionY="99" width="128" height="208"/>
+        <element name="Ability" positionX="-36" positionY="-441" width="128" height="165"/>
+        <element name="Hero" positionX="-333" positionY="-162" width="128" height="150"/>
+        <element name="Item" positionX="-333" positionY="99" width="128" height="180"/>
+        <element name="ListObject" positionX="-162" positionY="-279" width="128" height="60"/>
         <element name="PrimaryStat" positionX="-20" positionY="-234" width="128" height="148"/>
-        <element name="Recipe" positionX="-29" positionY="219" width="128" height="73"/>
+        <element name="Recipe" positionX="-29" positionY="219" width="128" height="75"/>
         <element name="Stat" positionX="-9" positionY="-54" width="128" height="178"/>
     </elements>
 </model>

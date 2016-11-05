@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 import CoreData
 
 class CSVImporter {
@@ -65,8 +66,7 @@ class CSVImporter {
     
     private func saveHero(_ line: CSwiftV) {
         //create hero MO
-        let hero = NSEntityDescription.insertNewObject(forEntityName: "Hero",
-                                                                       into: moc) as! Hero
+        let hero = NSEntityDescription.insertNewObject(forEntityName: "Hero", into: moc) as! Hero
         var data = line.headers.makeIterator()
         
         //load the data
@@ -108,7 +108,7 @@ class CSVImporter {
             stat.missleSpeed = data.next()
             stats.append(stat)
         }
-        hero.stat = NSSet(array: stats) //add the stats
+        hero.stat = NSOrderedSet(array: stats) //add the stats
         
         //MARK: Abilities
         
@@ -130,7 +130,8 @@ class CSVImporter {
             ability.videoURL = data.next()
             abilities.append(ability)
         }
-        hero.ability = NSSet(array: abilities)
+        hero.ability = NSOrderedSet(array: abilities)
+        
         
         
     }
@@ -145,8 +146,8 @@ class CSVImporter {
         item.cooldown = data.next()
         item.mana = data.next()
         item.lore = data.next()
-        item.info = data.next()
-        item.data = data.next()
+        item.ability = data.next()
+        item.detail = data.next()
         item.id = data.next()
         
         //MARK: Recipe
@@ -161,7 +162,7 @@ class CSVImporter {
             }
             let recipe = NSEntityDescription.insertNewObject(forEntityName: "Recipe",
                                                                              into: moc) as! Recipe
-            recipe.name = data.next()
+            recipe.itemID = data.next()
             recipe.item = item
             recipes?.append(recipe)
         }

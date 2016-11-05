@@ -2,12 +2,13 @@
 //  Hero+CoreDataProperties.swift
 //  DotA2 Viewer
 //
-//  Created by McLewin, Casey on 2016-10-11.
+//  Created by Casey McLewin on 2016-10-15.
 //  Copyright © 2016 self. All rights reserved.
 //
 
 import Foundation
 import CoreData
+
 
 extension Hero {
 
@@ -15,32 +16,13 @@ extension Hero {
         return NSFetchRequest<Hero>(entityName: "Hero");
     }
 
-    @NSManaged public var name: String?
-    @NSManaged public var role: String?
     @NSManaged public var attackType: String?
-    @NSManaged public var image: NSData?
-    @NSManaged public var lore: String?
+    @NSManaged public var attribute: String?
     @NSManaged public var bio: String?
+    @NSManaged public var role: String?
+    @NSManaged public var ability: NSOrderedSet?
     @NSManaged public var primaryStat: PrimaryStat?
-    @NSManaged public var stat: NSSet?
-    @NSManaged public var ability: NSSet?
-
-}
-
-// MARK: Generated accessors for stat
-extension Hero {
-
-    @objc(addStatObject:)
-    @NSManaged public func addToStat(_ value: Stat)
-
-    @objc(removeStatObject:)
-    @NSManaged public func removeFromStat(_ value: Stat)
-
-    @objc(addStat:)
-    @NSManaged public func addToStat(_ values: NSSet)
-
-    @objc(removeStat:)
-    @NSManaged public func removeFromStat(_ values: NSSet)
+    @NSManaged public var stat: NSOrderedSet?
 
 }
 
@@ -58,5 +40,22 @@ extension Hero {
 
     @objc(removeAbility:)
     @NSManaged public func removeFromAbility(_ values: NSSet)
+
+}
+
+// MARK: Generated accessors for stat
+extension Hero {
+
+    @objc(addStatObject:)
+    @NSManaged public func addToStat(_ value: Stat)
+
+    @objc(removeStatObject:)
+    @NSManaged public func removeFromStat(_ value: Stat)
+
+    @objc(addStat:)
+    @NSManaged public func addToStat(_ values: NSSet)
+
+    @objc(removeStat:)
+    @NSManaged public func removeFromStat(_ values: NSSet)
 
 }
