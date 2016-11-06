@@ -43,10 +43,17 @@ class CustomTabVC: UIViewController {
         let sb = UISearchBar()
         sb.tintColor = UIColor.red
         sb.searchBarStyle = .minimal
-        sb.showsCancelButton = true
+        sb.showsCancelButton = false
         return sb
     }()
     
+    // on iPad the cancel button doesn't show so this is a work around
+    lazy var cancelButton: UIBarButtonItem = {
+        let btn = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(CustomTabVC.searchBarCancel))
+        return btn
+    }()
+    
+    // TODO: Make this button programmatically
     var searchBarButton: UIBarButtonItem!
     
     /* Methods */
@@ -57,18 +64,18 @@ class CustomTabVC: UIViewController {
         // configure container view
         self.view.addSubview(containerView)
         // set the constraints
-        let h = NSLayoutConstraint.constraints(withVisualFormat: "V:[top][view][tab]",
+        let horz = NSLayoutConstraint.constraints(withVisualFormat: "V:[top][view][tab]",
                                                options: [],
                                                metrics: nil,
                                                views: ["top": self.topLayoutGuide,
                                                        "view": containerView,
                                                        "tab": self.tabBar])
-        let v = NSLayoutConstraint.constraints(withVisualFormat: "H:|[view]|",
+        let vert = NSLayoutConstraint.constraints(withVisualFormat: "H:|[view]|",
                                                options: [],
                                                metrics: nil,
                                                views: ["view": containerView])
         
-        self.view.addConstraints(h + v)
+        self.view.addConstraints(horz + vert)
         
         // configure the UI Elements
         navigationItem.title = "Heroes"
@@ -148,24 +155,37 @@ class CustomTabVC: UIViewController {
     }
     
     func showSearchBar() {
-        navigationItem.titleView = searchBar
+        // set the navigation title view to be the search bar and hide the search bar
+        self.navigationItem.titleView = searchBar
         searchBar.alpha = 0
-        navigationItem.setRightBarButton(nil, animated: true)
         UIView.animate(withDuration: kAnimateTime, animations: {
+            // slowly display the search bar
             self.searchBar.alpha = 1
         }, completion: {_ in
+            // show the cancel button and make the search bar the first responder
+            self.navigationItem.setRightBarButton(self.cancelButton, animated: true)
             self.searchBar.becomeFirstResponder()
         })
     }
     
     func hideSearchBar() {
-        UIView.animate(withDuration: kAnimateTime, animations: {
+        UIView.animate(withDuration: kAnimateTime,
+                       animations: {
+            // hide the search bar and resign its first responder status
             self.navigationItem.titleView?.alpha = 0
             self.searchBar.resignFirstResponder()
-            }, completion: { _ in
-            self.navigationItem.titleView = nil
-            self.navigationItem.setRightBarButton(self.searchBarButton, animated: true)
+        },
+                       completion: { _ in
+                // set the title view to nil and reset the search button
+                self.navigationItem.titleView = nil
+                self.navigationItem.setRightBarButton(self.searchBarButton, animated: true)
         })
+    }
+    
+    func searchBarCancel() {
+        if let child = currentChild as? ObjectListVC {
+            child.cancelButtonPressed()
+        }
     }
 }
 
@@ -174,12 +194,14 @@ extension CustomTabVC: UITabBarDelegate {
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         switch item.title! {
         case "Hero":
+            guard currentChild is ItemListVC else { return }
             if let currentVC = self.childViewControllers.first {
                 navigationItem.title = "Heroes"
                 cycleFrom(viewController: currentVC, toViewController: heroListVC)
             }
             
         case "Item":
+            guard currentChild is HeroListVC else { return }
             if let currentVC = self.childViewControllers.first {
                 navigationItem.title = "Items"
                 cycleFrom(viewController: currentVC, toViewController: itemListVC)
@@ -222,15 +244,19 @@ extension CustomTabVC {
     func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             // shrink the size of the screen so the keyboard doesn't block anything (except the tab view)
-            let offset = keyboardSize.height - tabBar.frame.height
-            self.view.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: UIScreen.main.bounds.height - offset)
+            let x = self.view.frame.origin.x
+            let y = self.view.frame.origin.y
+            let offset = keyboardSize.height - tabBar.frame.height + y
+            self.view.frame = CGRect(x: x, y: y, width: self.view.frame.width, height: UIScreen.main.bounds.height - offset)
         }
     }
     
     func keyboardWillHide(notification: NSNotification) {
         if self.view.frame.height != UIScreen.main.bounds.height {
             // change the height of the view to the size of the available space
-            self.view.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: UIScreen.main.bounds.height)
+            let x = self.view.frame.origin.x
+            let y = self.view.frame.origin.y
+            self.view.frame = CGRect(x: x, y: y, width: self.view.frame.width, height: UIScreen.main.bounds.height)
         }
     }
 }

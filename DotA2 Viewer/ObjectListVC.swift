@@ -14,8 +14,6 @@ class ObjectListVC: MyTableVC {
 	
 	/* Properties */
 	var collectionView: UICollectionView!
-	fileprivate let itemSegueID = "segueItemDetail"
-	fileprivate let heroSegueID = "segueHeroDetail"
 	
 	var entity: String { get { return "ListObject" } }
     let context = (UIApplication.shared.delegate as! AppDelegate).managedObjectContext
@@ -200,6 +198,17 @@ extension ObjectListVC: UISearchBarDelegate {
 	// stop editing when cancel/search is pressed
 	func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
 		searchBar.resignFirstResponder()
+	}
+	
+	func cancelButtonPressed() {
+		if let parentVC = self.parent as? CustomTabVC {
+			parentVC.searchBar.text = "" // clear text
+			
+			clearFilter()
+			
+			// hide the search bar
+			parentVC.hideSearchBar()
+		}
 	}
 	
 	func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
