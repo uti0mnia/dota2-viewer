@@ -38,6 +38,8 @@ class ObjectListVC: MyTableVC {
 		
 		// configure table view
 		tableView.dataSource = self
+		tableView.register(UINib(nibName: "ObjectCell", bundle: nil), forCellReuseIdentifier: "objectCell")
+		tableView.rowHeight = 60
 		
 		// frc
 		do {
@@ -95,10 +97,12 @@ class ObjectListVC: MyTableVC {
 extension ObjectListVC: UITableViewDataSource {
 	
 	// helper functions
-	func configureCell(cell: UITableViewCell, atIndexPath indexPath: IndexPath) {
+	func configureCell(cell: ObjectCell, atIndexPath indexPath: IndexPath) {
 		let obj = fetchedResultsController.object(at: indexPath)
-		cell.imageView?.image = obj.objectImage()
-		cell.textLabel?.text = obj.name
+		cell.objectName.text = obj.name
+		
+		// set the image
+		cell.objectImageView.image = obj.objectImage()
 	}
 	
 	// delegate methods
@@ -123,7 +127,7 @@ extension ObjectListVC: UITableViewDataSource {
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+		let cell = tableView.dequeueReusableCell(withIdentifier: "objectCell", for: indexPath) as! ObjectCell
 		configureCell(cell: cell, atIndexPath: indexPath)
 		return cell
 		
@@ -145,8 +149,8 @@ extension ObjectListVC: NSFetchedResultsControllerDelegate {
 	                newIndexPath: IndexPath?) {
 		switch type {
 		case .move:
-			let cell = tableView.cellForRow(at: indexPath!)
-			configureCell(cell: cell!, atIndexPath: indexPath!)
+			let cell = tableView.cellForRow(at: indexPath!) as! ObjectCell
+			configureCell(cell: cell, atIndexPath: indexPath!)
 			tableView.reloadRows(at: [indexPath!], with: .fade)
 		case .insert:
 			tableView.insertRows(at: [newIndexPath!], with: .fade)

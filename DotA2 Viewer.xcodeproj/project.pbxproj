@@ -813,6 +813,8 @@
 		C9A6D6421DBC12B700580B7B /* HeroStatsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A6D6411DBC12B700580B7B /* HeroStatsVC.swift */; };
 		C9A6D6481DBC261A00580B7B /* HeroAllAbilitiesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A6D6471DBC261A00580B7B /* HeroAllAbilitiesVC.swift */; };
 		C9A6D64D1DBD25AE00580B7B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A6D64C1DBD25AE00580B7B /* Extensions.swift */; };
+		C9C3FCD01DCFF26200FD7339 /* ObjectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C3FCCE1DCFF26200FD7339 /* ObjectCell.swift */; };
+		C9C3FCD11DCFF26200FD7339 /* ObjectCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9C3FCCF1DCFF26200FD7339 /* ObjectCell.xib */; };
 		C9FB5C731DBB9239000A0824 /* ItemDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FB5C721DBB9239000A0824 /* ItemDetailVC.swift */; };
 		C9FB5C751DBB997C000A0824 /* ObjectDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FB5C741DBB997C000A0824 /* ObjectDetailVC.swift */; };
 		C9FB5C771DBBC116000A0824 /* HeroDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FB5C761DBBC116000A0824 /* HeroDetailVC.swift */; };
@@ -1655,6 +1657,8 @@
 		C9A6D6411DBC12B700580B7B /* HeroStatsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroStatsVC.swift; sourceTree = "<group>"; };
 		C9A6D6471DBC261A00580B7B /* HeroAllAbilitiesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroAllAbilitiesVC.swift; sourceTree = "<group>"; };
 		C9A6D64C1DBD25AE00580B7B /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		C9C3FCCE1DCFF26200FD7339 /* ObjectCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectCell.swift; sourceTree = "<group>"; };
+		C9C3FCCF1DCFF26200FD7339 /* ObjectCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ObjectCell.xib; sourceTree = "<group>"; };
 		C9FB5C721DBB9239000A0824 /* ItemDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailVC.swift; sourceTree = "<group>"; };
 		C9FB5C741DBB997C000A0824 /* ObjectDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectDetailVC.swift; sourceTree = "<group>"; };
 		C9FB5C761DBBC116000A0824 /* HeroDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroDetailVC.swift; sourceTree = "<group>"; };
@@ -2622,6 +2626,8 @@
 				364A6A5C1DC1190B00FBE163 /* Hero Views */,
 				364A6A5F1DC1192E00FBE163 /* General */,
 				364A6A5E1DC1192600FBE163 /* Item Views */,
+				C9C3FCCE1DCFF26200FD7339 /* ObjectCell.swift */,
+				C9C3FCCF1DCFF26200FD7339 /* ObjectCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -3014,6 +3020,7 @@
 				3640C40F1DC7B17400965652 /* Fiery-Soul_Lina.png in Resources */,
 				3640C3D01DC7B17400965652 /* Double-Edge_Centaur Warrunner.png in Resources */,
 				3640C37C1DC7B17400965652 /* broadsword_item.png in Resources */,
+				C9C3FCD11DCFF26200FD7339 /* ObjectCell.xib in Resources */,
 				3640C55F1DC7B17500965652 /* Shadow-Dance_Slark.png in Resources */,
 				3640C4CA1DC7B17500965652 /* Mortal-Strike_Wraith King.png in Resources */,
 				3640C5E71DC7B17500965652 /* Tusk_hero.png in Resources */,
@@ -3620,6 +3627,7 @@
 				C9FEBF5B1DB29B06000CD4FF /* Ability+CoreDataProperties.swift in Sources */,
 				C9FEBF5D1DB29B06000CD4FF /* Recipe+CoreDataProperties.swift in Sources */,
 				36FD565A1DA6E403007C5A9C /* ImportCSV.swift in Sources */,
+				C9C3FCD01DCFF26200FD7339 /* ObjectCell.swift in Sources */,
 				362A7ED41DBFBEF700BFC9BA /* HeroDetailStackView.swift in Sources */,
 				C96B9C401DB2C14800F656AA /* HeroListVC.swift in Sources */,
 				C9A6D6421DBC12B700580B7B /* HeroStatsVC.swift in Sources */,
