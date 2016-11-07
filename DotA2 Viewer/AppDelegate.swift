@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import ChameleonFramework
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
@@ -32,6 +33,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         DispatchQueue.main.async {
             splitViewController.preferredDisplayMode = .allVisible // on ipad the master is opened by default
         }
+        
+        Chameleon.setGlobalThemeUsingPrimaryColor(UIColor.flatBlack(), withSecondaryColor: UIColor.flatWhite(), andContentStyle: .contrast)
         
         return true
     }
