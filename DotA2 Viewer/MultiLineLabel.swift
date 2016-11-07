@@ -8,12 +8,16 @@
 
 import UIKit
 
-class MultiLineLabel: UILabel {
+class MultiLineLabel: DAMainLabel {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         self.numberOfLines = 0
+    }
+    
+    convenience init() {
+        self.init(frame: CGRect())
     }
     
     required init?(coder aDecoder: NSCoder) {
