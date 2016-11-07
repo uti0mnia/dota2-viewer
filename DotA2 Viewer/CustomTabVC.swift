@@ -256,7 +256,8 @@ extension CustomTabVC {
             // change the height of the view to the size of the available space
             let x = self.view.frame.origin.x
             let y = self.view.frame.origin.y
-            self.view.frame = CGRect(x: x, y: y, width: self.view.frame.width, height: UIScreen.main.bounds.height)
+            let height = UIScreen.main.bounds.height - y
+            self.view.frame = CGRect(x: x, y: y, width: self.view.frame.width, height: height)
         }
     }
 }
