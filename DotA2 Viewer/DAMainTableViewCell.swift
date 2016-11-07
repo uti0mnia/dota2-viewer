@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DAObjectCell: UITableViewCell {
+class DAMainTableViewCell: UITableViewCell {
     
     var objectImageView: DACircleImageView = {
         let img = DACircleImageView()
@@ -31,9 +31,9 @@ class DAObjectCell: UITableViewCell {
         self.contentView.addSubview(objectName)
         
         // set the layout
-        let viewConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:|[img]-(10)-[label]|",
+        let viewConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:|[img]-sp-[label]|",
                                                              options: .alignAllCenterY,
-                                                             metrics: nil,
+                                                             metrics: ["sp": kTableViewCellImageSpace],
                                                              views: ["img": objectImageView, "label": objectName])
         
         let v1 = NSLayoutConstraint.constraints(withVisualFormat: "V:|-(2)-[img]-(2)-|",

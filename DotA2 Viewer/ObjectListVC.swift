@@ -38,8 +38,7 @@ class ObjectListVC: MyTableVC {
 		
 		// configure table view
 		tableView.dataSource = self
-		tableView.register(DAObjectCell.self, forCellReuseIdentifier: "objectCell")
-		tableView.rowHeight = 60
+		tableView.register(DAMainTableViewCell.self, forCellReuseIdentifier: "objectCell")
 		
 		// frc
 		do {
@@ -97,7 +96,7 @@ class ObjectListVC: MyTableVC {
 extension ObjectListVC: UITableViewDataSource {
 	
 	// helper functions
-	func configureCell(cell: DAObjectCell, atIndexPath indexPath: IndexPath) {
+	func configureCell(cell: DAMainTableViewCell, atIndexPath indexPath: IndexPath) {
 		let obj = fetchedResultsController.object(at: indexPath)
 		cell.objectName.text = obj.name
 		
@@ -128,7 +127,7 @@ extension ObjectListVC: UITableViewDataSource {
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCell(withIdentifier: "objectCell", for: indexPath) as! DAObjectCell
+		let cell = tableView.dequeueReusableCell(withIdentifier: "objectCell", for: indexPath) as! DAMainTableViewCell
 		configureCell(cell: cell, atIndexPath: indexPath)
 		return cell
 		
@@ -150,7 +149,7 @@ extension ObjectListVC: NSFetchedResultsControllerDelegate {
 	                newIndexPath: IndexPath?) {
 		switch type {
 		case .move:
-			let cell = tableView.cellForRow(at: indexPath!) as! DAObjectCell
+			let cell = tableView.cellForRow(at: indexPath!) as! DAMainTableViewCell
 			configureCell(cell: cell, atIndexPath: indexPath!)
 			tableView.reloadRows(at: [indexPath!], with: .fade)
 		case .insert:
