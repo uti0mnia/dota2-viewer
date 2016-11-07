@@ -13,7 +13,18 @@ class CustomTabVC: DAUIViewController {
     let kAnimateTime: TimeInterval = 0.3
     
     // outlets
-    @IBOutlet weak var tabBar: UITabBar!
+    lazy var tabBar: DATabBar = {
+        let tb = DATabBar()
+        tb.translatesAutoresizingMaskIntoConstraints = false
+        let hero = UITabBarItem(title: "Heroes", image: nil, selectedImage: nil)
+        let item = UITabBarItem(title: "Items", image: nil, selectedImage: nil)
+        tb.setItems([hero, item], animated: true)
+        tb.selectedItem = hero
+        tb.delegate = self
+        return tb
+    }()
+    
+    
     var containerView: UIView = {
         let v = UIView()
         v.translatesAutoresizingMaskIntoConstraints = false
@@ -63,24 +74,28 @@ class CustomTabVC: DAUIViewController {
         
         // configure container view
         self.view.addSubview(containerView)
+        self.view.addSubview(tabBar)
         // set the constraints
-        let horz = NSLayoutConstraint.constraints(withVisualFormat: "V:[top][view][tab]",
+        let horz = NSLayoutConstraint.constraints(withVisualFormat: "V:[top][view][tab]|",
                                                options: [],
                                                metrics: nil,
-                                               views: ["top": self.topLayoutGuide,
+                                               views: ["top": topLayoutGuide,
                                                        "view": containerView,
-                                                       "tab": self.tabBar])
+                                                       "tab": tabBar])
         let vert = NSLayoutConstraint.constraints(withVisualFormat: "H:|[view]|",
                                                options: [],
                                                metrics: nil,
                                                views: ["view": containerView])
+        let vert2 = NSLayoutConstraint.constraints(withVisualFormat: "H:|[tab]|",
+                                                   options: [],
+                                                   metrics: nil,
+                                                   views: ["tab": tabBar])
         
-        self.view.addConstraints(horz + vert)
+        self.view.addConstraints(horz + vert + vert2)
         
         // configure the UI Elements
         navigationItem.title = "Heroes"
-        searchBarButton = navigationItem.rightBarButtonItem // the search button
-        configureTabView()
+        searchBarButton = navigationItem.rightBarButtonItem! // the search button
         
         // configure the first container view
         displayContentController(heroListVC)
@@ -110,13 +125,6 @@ class CustomTabVC: DAUIViewController {
                 //vc.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem
             }
         }
-    }
-    
-    // view settings
-    private func configureTabView() {
-        tabBar.tintColor = UIColor.red // set tint
-        tabBar.selectedItem = tabBar.items?.first // set hero as selected
-        tabBar.delegate = self // set delegate
     }
     
     
@@ -193,14 +201,14 @@ class CustomTabVC: DAUIViewController {
 extension CustomTabVC: UITabBarDelegate {
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         switch item.title! {
-        case "Hero":
+        case "Heroes":
             guard currentChild is ItemListVC else { return }
             if let currentVC = self.childViewControllers.first {
                 navigationItem.title = "Heroes"
                 cycleFrom(viewController: currentVC, toViewController: heroListVC)
             }
             
-        case "Item":
+        case "Items":
             guard currentChild is HeroListVC else { return }
             if let currentVC = self.childViewControllers.first {
                 navigationItem.title = "Items"

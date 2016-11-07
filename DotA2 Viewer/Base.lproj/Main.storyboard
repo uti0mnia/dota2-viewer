@@ -11,17 +11,17 @@
         <!--DetailVC-->
         <scene sceneID="EZB-Ee-Ng9">
             <objects>
-                <viewController storyboardIdentifier="DetailVC" id="ifV-oI-FyM" customClass="DetailVC" customModule="DotA2_Viewer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailVC" id="ifV-oI-FyM" customClass="DetailVC" customModule="DotA2_Assistant" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="71q-ul-khF"/>
                         <viewControllerLayoutGuide type="bottom" id="bdm-5m-Ymp"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" misplaced="YES" id="Ctq-VA-4zB">
+                    <view key="view" contentMode="scaleToFill" id="Ctq-VA-4zB">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LU9-dX-xkW">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" red="0.36227080352622915" green="0.36606691802902558" blue="0.36963649611398963" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -58,30 +58,15 @@
         <!--Master-->
         <scene sceneID="9S5-hT-qey">
             <objects>
-                <viewController id="pNF-lp-DZt" customClass="CustomTabVC" customModule="DotA2_Viewer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="pNF-lp-DZt" customClass="CustomTabVC" customModule="DotA2_Assistant" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lSp-vm-6Vb"/>
                         <viewControllerLayoutGuide type="bottom" id="WO6-Zn-fWE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" misplaced="YES" id="2lC-T3-oy4">
+                    <view key="view" contentMode="scaleToFill" id="2lC-T3-oy4">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8t3-Dw-i4L">
-                                <rect key="frame" x="0.0" y="618" width="375" height="49"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <items>
-                                    <tabBarItem title="Hero" id="p32-gu-1Ia"/>
-                                    <tabBarItem title="Item" id="QT3-DC-HO0"/>
-                                </items>
-                            </tabBar>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="8t3-Dw-i4L" firstAttribute="leading" secondItem="2lC-T3-oy4" secondAttribute="leading" id="CuD-SI-7Fx"/>
-                            <constraint firstItem="8t3-Dw-i4L" firstAttribute="bottom" secondItem="WO6-Zn-fWE" secondAttribute="top" id="ZbR-Yy-vmk"/>
-                            <constraint firstAttribute="trailing" secondItem="8t3-Dw-i4L" secondAttribute="trailing" id="jhd-9z-XCB"/>
-                        </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="Master" id="ZbA-zi-RVb">
@@ -93,7 +78,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="tabBar" destination="8t3-Dw-i4L" id="Ssb-Rn-biN"/>
                         <segue destination="0xi-1T-PpC" kind="showDetail" identifier="showDetail" id="XL8-BY-o5U"/>
                     </connections>
                 </viewController>
@@ -104,7 +88,7 @@
         <!--Item ListVC-->
         <scene sceneID="IKn-Dh-FVQ">
             <objects>
-                <viewController storyboardIdentifier="ItemListVC" id="lby-KB-nZt" customClass="ItemListVC" customModule="DotA2_Viewer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ItemListVC" id="lby-KB-nZt" customClass="ItemListVC" customModule="DotA2_Assistant" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qaA-tt-T3Y"/>
                         <viewControllerLayoutGuide type="bottom" id="6dO-WT-GCO"/>
@@ -161,7 +145,7 @@
         <!--Hero ListVC-->
         <scene sceneID="zjP-me-9ZN">
             <objects>
-                <viewController storyboardIdentifier="HeroListVC" id="29n-og-yOj" customClass="HeroListVC" customModule="DotA2_Viewer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HeroListVC" id="29n-og-yOj" customClass="HeroListVC" customModule="DotA2_Assistant" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3wR-jQ-zKm"/>
                         <viewControllerLayoutGuide type="bottom" id="3lm-gW-0e5"/>
