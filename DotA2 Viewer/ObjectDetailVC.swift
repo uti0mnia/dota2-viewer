@@ -13,7 +13,7 @@ protocol DetailVCDelegate {
 }
 
 
-class ObjectDetailVC: UIViewController {
+class ObjectDetailVC: DAUIViewController {
 
     var object: ListObject!
     var del: DetailVCDelegate?

@@ -38,7 +38,7 @@ class ObjectListVC: MyTableVC {
 		
 		// configure table view
 		tableView.dataSource = self
-		tableView.register(UINib(nibName: "ObjectCell", bundle: nil), forCellReuseIdentifier: "objectCell")
+		tableView.register(DAObjectCell.self, forCellReuseIdentifier: "objectCell")
 		tableView.rowHeight = 60
 		
 		// frc
@@ -97,7 +97,7 @@ class ObjectListVC: MyTableVC {
 extension ObjectListVC: UITableViewDataSource {
 	
 	// helper functions
-	func configureCell(cell: ObjectCell, atIndexPath indexPath: IndexPath) {
+	func configureCell(cell: DAObjectCell, atIndexPath indexPath: IndexPath) {
 		let obj = fetchedResultsController.object(at: indexPath)
 		cell.objectName.text = obj.name
 		
@@ -128,7 +128,7 @@ extension ObjectListVC: UITableViewDataSource {
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCell(withIdentifier: "objectCell", for: indexPath) as! ObjectCell
+		let cell = tableView.dequeueReusableCell(withIdentifier: "objectCell", for: indexPath) as! DAObjectCell
 		configureCell(cell: cell, atIndexPath: indexPath)
 		return cell
 		
@@ -150,7 +150,7 @@ extension ObjectListVC: NSFetchedResultsControllerDelegate {
 	                newIndexPath: IndexPath?) {
 		switch type {
 		case .move:
-			let cell = tableView.cellForRow(at: indexPath!) as! ObjectCell
+			let cell = tableView.cellForRow(at: indexPath!) as! DAObjectCell
 			configureCell(cell: cell, atIndexPath: indexPath!)
 			tableView.reloadRows(at: [indexPath!], with: .fade)
 		case .insert:
@@ -168,7 +168,7 @@ extension ObjectListVC: NSFetchedResultsControllerDelegate {
 	}
 }
 
-/* CollectionView Delegate */
+/* CollectionView Delegate  TODO*/
 extension ObjectListVC: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
 	func configure(cell: SimpleCVCell, atIndexPath indexPath: IndexPath) {
 		let obj = fetchedResultsController.object(at: indexPath)
@@ -208,17 +208,6 @@ extension ObjectListVC: UISearchBarDelegate {
 	func cancelButtonPressed() {
 		if let parentVC = self.parent as? CustomTabVC {
 			parentVC.searchBar.text = "" // clear text
-			
-			clearFilter()
-			
-			// hide the search bar
-			parentVC.hideSearchBar()
-		}
-	}
-	
-	func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-		if let parentVC = self.parent as? CustomTabVC {
-			searchBar.text = "" // clear text
 			
 			clearFilter()
 			

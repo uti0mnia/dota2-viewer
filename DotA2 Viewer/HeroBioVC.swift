@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HeroBioVC: UIViewController {
+class HeroBioVC: DAUIViewController {
     
     
     @IBOutlet weak var text: UITextView!

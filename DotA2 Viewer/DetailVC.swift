@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class DetailVC: UIViewController {
+class DetailVC: DAUIViewController {
     // outlets
     @IBOutlet weak var containerView: UIView!
     

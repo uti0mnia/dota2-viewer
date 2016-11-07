@@ -10,10 +10,10 @@ import UIKit
 
 
 // this VC is meant to have a tableview that can be controlled by the CustomTabVC
-class MyTableVC: UIViewController {
+class MyTableVC: DAUIViewController {
 
-    lazy var tableView: UITableView = {
-        let tv = UITableView()
+    lazy var tableView: DAMainTabelView = {
+        let tv = DAMainTabelView()
         tv.sectionIndexColor = UIColor.red
         tv.translatesAutoresizingMaskIntoConstraints = false
         tv.register(UITableViewCell.self, forCellReuseIdentifier: "cell")

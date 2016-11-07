@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CustomTabVC: UIViewController {
+class CustomTabVC: DAUIViewController {
     // constants
     let kAnimateTime: TimeInterval = 0.3
     

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HeroStatsVC: UIViewController {
+class HeroStatsVC: DAUIViewController {
 
     // outlets
     @IBOutlet weak var stackView: UIStackView!

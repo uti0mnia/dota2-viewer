@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HeroAbilityVC: UIViewController {
+class HeroAbilityVC: DAUIViewController {
     
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var nameLabel: UILabel!

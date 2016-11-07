@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HeroAllAbilitiesVC: UIViewController {
+class HeroAllAbilitiesVC: DAUIViewController {
 
     @IBOutlet weak var stackView: UIStackView!
     var abilities: [Ability]!
