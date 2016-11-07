@@ -33,12 +33,20 @@ class ObjectListVC: MyTableVC {
         return frc
     }()
 	
+	/* Methods */
     override func viewDidLoad() {
         super.viewDidLoad()
 		
 		// configure table view
 		tableView.dataSource = self
 		tableView.register(DAMainTableViewCell.self, forCellReuseIdentifier: "objectCell")
+		
+		// configure force touch
+		if let parent = self.parent as? CustomTabVC {
+			print("registered parent")
+			registerForPreviewing(with: parent, sourceView: self.tableView)
+		}
+		
 		
 		// frc
 		do {
@@ -95,7 +103,7 @@ class ObjectListVC: MyTableVC {
 /* TableView Delegate */
 extension ObjectListVC: UITableViewDataSource {
 	
-	// helper functions
+	/* Helper Functions */
 	func configureCell(cell: DAMainTableViewCell, atIndexPath indexPath: IndexPath) {
 		let obj = fetchedResultsController.object(at: indexPath)
 		cell.objectName.text = obj.name
@@ -105,7 +113,7 @@ extension ObjectListVC: UITableViewDataSource {
 		cell.objectImageView.sizeToFit()
 	}
 	
-	// delegate methods
+	/* Delegate Methods */
 	func numberOfSections(in tableView: UITableView) -> Int {
 		if let sections = fetchedResultsController.sections {
 			return sections.count
@@ -238,8 +246,6 @@ extension ObjectListVC: UISearchBarDelegate {
 	}
 	
 }
-
-
 
 
 

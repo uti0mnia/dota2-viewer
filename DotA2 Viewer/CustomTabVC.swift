@@ -223,6 +223,16 @@ extension CustomTabVC: UITabBarDelegate {
 
 /* Tableview delegate */
 extension CustomTabVC: UITableViewDelegate {
+    func viewController(for indexPath: IndexPath) -> UIViewController {
+        // create the vc
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "DetailVC") as! DetailVC
+        
+        // settings
+        vc.object = (currentChild as! ObjectListVC).fetchedResultsController.object(at: indexPath)
+        
+        return vc
+    }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch currentChild {
         case is ObjectListVC:
@@ -270,6 +280,24 @@ extension CustomTabVC {
     }
 }
 
+extension CustomTabVC: UIViewControllerPreviewingDelegate {
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        // make sure our child is an ObjectListVC
+        guard let child = currentChild as? ObjectListVC else { return nil }
+        
+        if let indexPath = child.tableView.indexPathForRow(at: location) {
+            // this will blur everything else
+            previewingContext.sourceRect = child.tableView.rectForRow(at: indexPath)
+            return viewController(for: indexPath)
+        }
+        
+        return nil
+    }
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+        self.showDetailViewController(viewControllerToCommit, sender: nil)
+    }
+}
 
 
 
