@@ -780,6 +780,12 @@
 		364A6A591DC1136300FBE163 /* MultiLineLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364A6A581DC1136300FBE163 /* MultiLineLabel.swift */; };
 		364A6A5B1DC118A400FBE163 /* HeroBioStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364A6A5A1DC118A400FBE163 /* HeroBioStackView.swift */; };
 		364A6A611DC142C200FBE163 /* StatsStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364A6A601DC142C200FBE163 /* StatsStackView.swift */; };
+		366A8A091DD0F4F3000406BF /* DAMainLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366A8A081DD0F4F3000406BF /* DAMainLabel.swift */; };
+		366A8A0C1DD0F87F000406BF /* DAObjectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366A8A0B1DD0F87F000406BF /* DAObjectCell.swift */; };
+		366A8A0E1DD0F993000406BF /* DACircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366A8A0D1DD0F993000406BF /* DACircleImageView.swift */; };
+		366A8A101DD100A8000406BF /* DAMainTabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366A8A0F1DD100A8000406BF /* DAMainTabelView.swift */; };
+		366A8A121DD1029F000406BF /* DAUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366A8A111DD1029F000406BF /* DAUIViewController.swift */; };
+		366A8A161DD103F1000406BF /* DATabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366A8A151DD103F1000406BF /* DATabBar.swift */; };
 		367E34E01DB7F9670037FA7B /* CustomTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367E34DF1DB7F9670037FA7B /* CustomTabVC.swift */; };
 		368F3E971DBA7C0100530014 /* RecipeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368F3E961DBA7C0100530014 /* RecipeButton.swift */; };
 		36A2921E1DCA479F006E96A8 /* MyTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A2921D1DCA479F006E96A8 /* MyTableVC.swift */; };
@@ -814,8 +820,6 @@
 		C9A6D6421DBC12B700580B7B /* HeroStatsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A6D6411DBC12B700580B7B /* HeroStatsVC.swift */; };
 		C9A6D6481DBC261A00580B7B /* HeroAllAbilitiesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A6D6471DBC261A00580B7B /* HeroAllAbilitiesVC.swift */; };
 		C9A6D64D1DBD25AE00580B7B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A6D64C1DBD25AE00580B7B /* Extensions.swift */; };
-		C9C3FCD01DCFF26200FD7339 /* ObjectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C3FCCE1DCFF26200FD7339 /* ObjectCell.swift */; };
-		C9C3FCD11DCFF26200FD7339 /* ObjectCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9C3FCCF1DCFF26200FD7339 /* ObjectCell.xib */; };
 		C9FB5C731DBB9239000A0824 /* ItemDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FB5C721DBB9239000A0824 /* ItemDetailVC.swift */; };
 		C9FB5C751DBB997C000A0824 /* ObjectDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FB5C741DBB997C000A0824 /* ObjectDetailVC.swift */; };
 		C9FB5C771DBBC116000A0824 /* HeroDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FB5C761DBBC116000A0824 /* HeroDetailVC.swift */; };
@@ -1621,6 +1625,13 @@
 		364A6A581DC1136300FBE163 /* MultiLineLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiLineLabel.swift; sourceTree = "<group>"; };
 		364A6A5A1DC118A400FBE163 /* HeroBioStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroBioStackView.swift; sourceTree = "<group>"; };
 		364A6A601DC142C200FBE163 /* StatsStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsStackView.swift; sourceTree = "<group>"; };
+		366A8A081DD0F4F3000406BF /* DAMainLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAMainLabel.swift; sourceTree = "<group>"; };
+		366A8A0A1DD0F59C000406BF /* Trajan Pro Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Trajan Pro Regular.ttf"; sourceTree = "<group>"; };
+		366A8A0B1DD0F87F000406BF /* DAObjectCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAObjectCell.swift; sourceTree = "<group>"; };
+		366A8A0D1DD0F993000406BF /* DACircleImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DACircleImageView.swift; sourceTree = "<group>"; };
+		366A8A0F1DD100A8000406BF /* DAMainTabelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAMainTabelView.swift; sourceTree = "<group>"; };
+		366A8A111DD1029F000406BF /* DAUIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAUIViewController.swift; sourceTree = "<group>"; };
+		366A8A151DD103F1000406BF /* DATabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DATabBar.swift; sourceTree = "<group>"; };
 		367E34DF1DB7F9670037FA7B /* CustomTabVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabVC.swift; sourceTree = "<group>"; };
 		368F3E961DBA7C0100530014 /* RecipeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeButton.swift; sourceTree = "<group>"; };
 		36A2921D1DCA479F006E96A8 /* MyTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTableVC.swift; sourceTree = "<group>"; };
@@ -1663,8 +1674,6 @@
 		C9A6D6411DBC12B700580B7B /* HeroStatsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroStatsVC.swift; sourceTree = "<group>"; };
 		C9A6D6471DBC261A00580B7B /* HeroAllAbilitiesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroAllAbilitiesVC.swift; sourceTree = "<group>"; };
 		C9A6D64C1DBD25AE00580B7B /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		C9C3FCCE1DCFF26200FD7339 /* ObjectCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectCell.swift; sourceTree = "<group>"; };
-		C9C3FCCF1DCFF26200FD7339 /* ObjectCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ObjectCell.xib; sourceTree = "<group>"; };
 		C9FB5C721DBB9239000A0824 /* ItemDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailVC.swift; sourceTree = "<group>"; };
 		C9FB5C741DBB997C000A0824 /* ObjectDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectDetailVC.swift; sourceTree = "<group>"; };
 		C9FB5C761DBBC116000A0824 /* HeroDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroDetailVC.swift; sourceTree = "<group>"; };
@@ -1758,6 +1767,12 @@
 		364A6A5F1DC1192E00FBE163 /* General */ = {
 			isa = PBXGroup;
 			children = (
+				366A8A0D1DD0F993000406BF /* DACircleImageView.swift */,
+				366A8A0B1DD0F87F000406BF /* DAObjectCell.swift */,
+				366A8A0F1DD100A8000406BF /* DAMainTabelView.swift */,
+				366A8A081DD0F4F3000406BF /* DAMainLabel.swift */,
+				366A8A151DD103F1000406BF /* DATabBar.swift */,
+				366A8A111DD1029F000406BF /* DAUIViewController.swift */,
 				C93499FE1DB439B5005407BB /* SimpleCVCell.swift */,
 				364A6A581DC1136300FBE163 /* MultiLineLabel.swift */,
 			);
@@ -2618,6 +2633,7 @@
 		36FD56451DA6E36C007C5A9C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				366A8A0A1DD0F59C000406BF /* Trajan Pro Regular.ttf */,
 				36268C7D1DAD7F5100B9FF02 /* hero_final.csv */,
 				36268C7E1DAD7F5100B9FF02 /* items_final.csv */,
 				36FD56511DA6E3F5007C5A9C /* default_icon.png */,
@@ -2656,10 +2672,8 @@
 			children = (
 				C9A6D63E1DBC11D200580B7B /* Storyboards */,
 				364A6A5C1DC1190B00FBE163 /* Hero Views */,
-				364A6A5F1DC1192E00FBE163 /* General */,
 				364A6A5E1DC1192600FBE163 /* Item Views */,
-				C9C3FCCE1DCFF26200FD7339 /* ObjectCell.swift */,
-				C9C3FCCF1DCFF26200FD7339 /* ObjectCell.xib */,
+				364A6A5F1DC1192E00FBE163 /* General */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -3058,7 +3072,6 @@
 				3640C40F1DC7B17400965652 /* Fiery-Soul_Lina.png in Resources */,
 				3640C3D01DC7B17400965652 /* Double-Edge_Centaur Warrunner.png in Resources */,
 				3640C37C1DC7B17400965652 /* broadsword_item.png in Resources */,
-				C9C3FCD11DCFF26200FD7339 /* ObjectCell.xib in Resources */,
 				3640C55F1DC7B17500965652 /* Shadow-Dance_Slark.png in Resources */,
 				3640C4CA1DC7B17500965652 /* Mortal-Strike_Wraith King.png in Resources */,
 				3640C5E71DC7B17500965652 /* Tusk_hero.png in Resources */,
@@ -3726,6 +3739,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				366A8A101DD100A8000406BF /* DAMainTabelView.swift in Sources */,
+				366A8A091DD0F4F3000406BF /* DAMainLabel.swift in Sources */,
 				C9FB5C731DBB9239000A0824 /* ItemDetailVC.swift in Sources */,
 				C9FEBF5A1DB29B06000CD4FF /* Ability+CoreDataClass.swift in Sources */,
 				364A6A5B1DC118A400FBE163 /* HeroBioStackView.swift in Sources */,
@@ -3743,13 +3758,16 @@
 				C9FEBF5F1DB29B06000CD4FF /* Item+CoreDataProperties.swift in Sources */,
 				364A6A591DC1136300FBE163 /* MultiLineLabel.swift in Sources */,
 				C9FEBF661DB29B06000CD4FF /* Hero+CoreDataClass.swift in Sources */,
+				366A8A161DD103F1000406BF /* DATabBar.swift in Sources */,
 				C9FEBF5C1DB29B06000CD4FF /* Recipe+CoreDataClass.swift in Sources */,
 				367E34E01DB7F9670037FA7B /* CustomTabVC.swift in Sources */,
+				366A8A121DD1029F000406BF /* DAUIViewController.swift in Sources */,
 				C9FEBF5E1DB29B06000CD4FF /* Item+CoreDataClass.swift in Sources */,
 				368F3E971DBA7C0100530014 /* RecipeButton.swift in Sources */,
 				C9FEBF641DB29B06000CD4FF /* ListObject+CoreDataClass.swift in Sources */,
 				364A6A571DC10E1100FBE163 /* AbilitiesStackView.swift in Sources */,
 				C9FEBF2F1DB299F2000CD4FF /* DotA2_Viewer.xcdatamodeld in Sources */,
+				366A8A0C1DD0F87F000406BF /* DAObjectCell.swift in Sources */,
 				C9A6D6401DBC124200580B7B /* HeroBioVC.swift in Sources */,
 				C96B9C421DB2C1B800F656AA /* ItemListVC.swift in Sources */,
 				C96B9C461DB3334800F656AA /* DetailVC.swift in Sources */,
@@ -3758,7 +3776,6 @@
 				C9FEBF5B1DB29B06000CD4FF /* Ability+CoreDataProperties.swift in Sources */,
 				C9FEBF5D1DB29B06000CD4FF /* Recipe+CoreDataProperties.swift in Sources */,
 				36FD565A1DA6E403007C5A9C /* ImportCSV.swift in Sources */,
-				C9C3FCD01DCFF26200FD7339 /* ObjectCell.swift in Sources */,
 				362A7ED41DBFBEF700BFC9BA /* HeroDetailStackView.swift in Sources */,
 				C96B9C401DB2C14800F656AA /* HeroListVC.swift in Sources */,
 				C9A6D6421DBC12B700580B7B /* HeroStatsVC.swift in Sources */,
@@ -3766,6 +3783,7 @@
 				C9FEBF621DB29B06000CD4FF /* PrimaryStat+CoreDataClass.swift in Sources */,
 				C93499FF1DB439B5005407BB /* SimpleCVCell.swift in Sources */,
 				361B71111DBE9AE500133173 /* HeroAbilityVC.swift in Sources */,
+				366A8A0E1DD0F993000406BF /* DACircleImageView.swift in Sources */,
 				C9A6D64D1DBD25AE00580B7B /* Extensions.swift in Sources */,
 				36C0C9621DA6E25800169394 /* AppDelegate.swift in Sources */,
 			);
