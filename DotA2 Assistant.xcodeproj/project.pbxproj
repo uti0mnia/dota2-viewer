@@ -1633,14 +1633,14 @@
 		36A292291DCA51CC006E96A8 /* Secret shop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Secret shop.png"; path = "images/Secret shop.png"; sourceTree = "<group>"; };
 		36A2922A1DCA51CC006E96A8 /* Support.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Support.png; path = images/Support.png; sourceTree = "<group>"; };
 		36A2922B1DCA51CC006E96A8 /* Weapons.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Weapons.png; path = images/Weapons.png; sourceTree = "<group>"; };
-		36C0C95E1DA6E25800169394 /* DotA2 Viewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DotA2 Viewer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		36C0C95E1DA6E25800169394 /* DotA2 Assistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DotA2 Assistant.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		36C0C9611DA6E25800169394 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		36C0C9631DA6E25800169394 /* ObjectListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectListVC.swift; sourceTree = "<group>"; usesTabs = 1; };
 		36C0C9661DA6E25800169394 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		36C0C96B1DA6E25800169394 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		36C0C96E1DA6E25800169394 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		36C0C9701DA6E25800169394 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		36C0C9751DA6E25800169394 /* DotA2 ViewerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DotA2 ViewerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		36C0C9751DA6E25800169394 /* DotA2 AssistantTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DotA2 AssistantTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		36C0C9791DA6E25800169394 /* DotA2_ViewerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotA2_ViewerTests.swift; sourceTree = "<group>"; };
 		36C0C97B1DA6E25800169394 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		36C7DF231DC8F2C800251705 /* RSSFeedHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSSFeedHelper.swift; sourceTree = "<group>"; };
@@ -2547,8 +2547,8 @@
 		36C0C95F1DA6E25800169394 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				36C0C95E1DA6E25800169394 /* DotA2 Viewer.app */,
-				36C0C9751DA6E25800169394 /* DotA2 ViewerTests.xctest */,
+				36C0C95E1DA6E25800169394 /* DotA2 Assistant.app */,
+				36C0C9751DA6E25800169394 /* DotA2 AssistantTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -2714,9 +2714,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		36C0C95D1DA6E25800169394 /* DotA2 Viewer */ = {
+		36C0C95D1DA6E25800169394 /* DotA2 Assistant */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 36C0C97E1DA6E25800169394 /* Build configuration list for PBXNativeTarget "DotA2 Viewer" */;
+			buildConfigurationList = 36C0C97E1DA6E25800169394 /* Build configuration list for PBXNativeTarget "DotA2 Assistant" */;
 			buildPhases = (
 				36C0C95A1DA6E25800169394 /* Sources */,
 				36C0C95B1DA6E25800169394 /* Frameworks */,
@@ -2726,14 +2726,14 @@
 			);
 			dependencies = (
 			);
-			name = "DotA2 Viewer";
+			name = "DotA2 Assistant";
 			productName = "DotA2 Viewer";
-			productReference = 36C0C95E1DA6E25800169394 /* DotA2 Viewer.app */;
+			productReference = 36C0C95E1DA6E25800169394 /* DotA2 Assistant.app */;
 			productType = "com.apple.product-type.application";
 		};
-		36C0C9741DA6E25800169394 /* DotA2 ViewerTests */ = {
+		36C0C9741DA6E25800169394 /* DotA2 AssistantTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 36C0C9811DA6E25800169394 /* Build configuration list for PBXNativeTarget "DotA2 ViewerTests" */;
+			buildConfigurationList = 36C0C9811DA6E25800169394 /* Build configuration list for PBXNativeTarget "DotA2 AssistantTests" */;
 			buildPhases = (
 				36C0C9711DA6E25800169394 /* Sources */,
 				36C0C9721DA6E25800169394 /* Frameworks */,
@@ -2744,9 +2744,9 @@
 			dependencies = (
 				36C0C9771DA6E25800169394 /* PBXTargetDependency */,
 			);
-			name = "DotA2 ViewerTests";
+			name = "DotA2 AssistantTests";
 			productName = "DotA2 ViewerTests";
-			productReference = 36C0C9751DA6E25800169394 /* DotA2 ViewerTests.xctest */;
+			productReference = 36C0C9751DA6E25800169394 /* DotA2 AssistantTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -2771,7 +2771,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 36C0C9591DA6E25800169394 /* Build configuration list for PBXProject "DotA2 Viewer" */;
+			buildConfigurationList = 36C0C9591DA6E25800169394 /* Build configuration list for PBXProject "DotA2 Assistant" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -2784,8 +2784,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				36C0C95D1DA6E25800169394 /* DotA2 Viewer */,
-				36C0C9741DA6E25800169394 /* DotA2 ViewerTests */,
+				36C0C95D1DA6E25800169394 /* DotA2 Assistant */,
+				36C0C9741DA6E25800169394 /* DotA2 AssistantTests */,
 			);
 		};
 /* End PBXProject section */
@@ -3653,7 +3653,7 @@
 /* Begin PBXTargetDependency section */
 		36C0C9771DA6E25800169394 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 36C0C95D1DA6E25800169394 /* DotA2 Viewer */;
+			target = 36C0C95D1DA6E25800169394 /* DotA2 Assistant */;
 			targetProxy = 36C0C9761DA6E25800169394 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -3811,7 +3811,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "uti0mnia.DotA2-ViewerTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DotA2 Viewer.app/DotA2 Viewer";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DotA2 Assistant.app/DotA2 Assistant";
 			};
 			name = Debug;
 		};
@@ -3825,14 +3825,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "uti0mnia.DotA2-ViewerTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DotA2 Viewer.app/DotA2 Viewer";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DotA2 Assistant.app/DotA2 Assistant";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		36C0C9591DA6E25800169394 /* Build configuration list for PBXProject "DotA2 Viewer" */ = {
+		36C0C9591DA6E25800169394 /* Build configuration list for PBXProject "DotA2 Assistant" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				36C0C97C1DA6E25800169394 /* Debug */,
@@ -3841,7 +3841,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		36C0C97E1DA6E25800169394 /* Build configuration list for PBXNativeTarget "DotA2 Viewer" */ = {
+		36C0C97E1DA6E25800169394 /* Build configuration list for PBXNativeTarget "DotA2 Assistant" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				36C0C97F1DA6E25800169394 /* Debug */,
@@ -3850,7 +3850,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		36C0C9811DA6E25800169394 /* Build configuration list for PBXNativeTarget "DotA2 ViewerTests" */ = {
+		36C0C9811DA6E25800169394 /* Build configuration list for PBXNativeTarget "DotA2 AssistantTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				36C0C9821DA6E25800169394 /* Debug */,
