@@ -103,6 +103,7 @@ extension ObjectListVC: UITableViewDataSource {
 		
 		// set the image
 		cell.objectImageView.image = obj.objectImage()
+		cell.objectImageView.sizeToFit()
 	}
 	
 	// delegate methods

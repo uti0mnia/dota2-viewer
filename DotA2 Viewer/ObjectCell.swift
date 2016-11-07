@@ -23,7 +23,7 @@ class ObjectCell: UITableViewCell {
         objectImageView.clipsToBounds = true
         
         // set the contour to be white
-        objectImageView.layer.borderWidth = 3
+        objectImageView.layer.borderWidth = -3
         objectImageView.layer.borderColor = UIColor.white.cgColor
     }
     
