@@ -16,8 +16,8 @@ class CustomTabVC: DAUIViewController {
     lazy var tabBar: DATabBar = {
         let tb = DATabBar()
         tb.translatesAutoresizingMaskIntoConstraints = false
-        let hero = UITabBarItem(title: "Heroes", image: nil, selectedImage: nil)
-        let item = UITabBarItem(title: "Items", image: nil, selectedImage: nil)
+        let hero = UITabBarItem(title: "Heroes", image: #imageLiteral(resourceName: "Heroes"), selectedImage: #imageLiteral(resourceName: "Heroes"))
+        let item = UITabBarItem(title: "Items", image: #imageLiteral(resourceName: "Shop"), selectedImage: #imageLiteral(resourceName: "Shop"))
         tb.setItems([hero, item], animated: true)
         tb.selectedItem = hero
         tb.delegate = self

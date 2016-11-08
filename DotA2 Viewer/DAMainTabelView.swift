@@ -22,7 +22,7 @@ class DAMainTabelView: UITableView {
         self.rowHeight = 60
         
         // settings
-        self.separatorInset = UIEdgeInsetsMake(0, self.rowHeight + kTableViewCellImageSpace, 0, 0)
+        self.separatorInset = UIEdgeInsetsMake(0, self.rowHeight + kTableViewCellImageSpaceR + kTableViewCellImageSpaceL, 0, 0)
     }
     
     

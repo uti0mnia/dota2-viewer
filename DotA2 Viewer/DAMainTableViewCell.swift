@@ -31,9 +31,9 @@ class DAMainTableViewCell: UITableViewCell {
         self.contentView.addSubview(objectName)
         
         // set the layout
-        let viewConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:|[img]-sp-[label]|",
+        let viewConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:|-spl-[img]-spr-[label]|",
                                                              options: .alignAllCenterY,
-                                                             metrics: ["sp": kTableViewCellImageSpace],
+                                                             metrics: ["spl": kTableViewCellImageSpaceL, "spr": kTableViewCellImageSpaceR],
                                                              views: ["img": objectImageView, "label": objectName])
         
         let v1 = NSLayoutConstraint.constraints(withVisualFormat: "V:|-(2)-[img]-(2)-|",
@@ -54,6 +54,7 @@ class DAMainTableViewCell: UITableViewCell {
         
         // set the colours
         self.backgroundColor = UIColor.clear
+        self.selectionStyle = .none
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -61,3 +62,36 @@ class DAMainTableViewCell: UITableViewCell {
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

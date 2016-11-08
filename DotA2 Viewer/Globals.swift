@@ -8,4 +8,5 @@
 
 import UIKit
 
-let kTableViewCellImageSpace: CGFloat = 10
+let kTableViewCellImageSpaceR: CGFloat = 10
+let kTableViewCellImageSpaceL: CGFloat = 8

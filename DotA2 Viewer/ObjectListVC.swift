@@ -43,7 +43,6 @@ class ObjectListVC: MyTableVC {
 		
 		// configure force touch
 		if let parent = self.parent as? CustomTabVC {
-			print("registered parent")
 			registerForPreviewing(with: parent, sourceView: self.tableView)
 		}
 		
