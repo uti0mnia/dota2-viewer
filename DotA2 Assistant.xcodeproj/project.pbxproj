@@ -811,6 +811,8 @@
 		36FD56591DA6E403007C5A9C /* CSwiftV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FD56571DA6E403007C5A9C /* CSwiftV.swift */; };
 		36FD565A1DA6E403007C5A9C /* ImportCSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FD56581DA6E403007C5A9C /* ImportCSV.swift */; };
 		C9172C181DD13F9100DCF88F /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9172C171DD13F9100DCF88F /* Globals.swift */; };
+		C9172C1F1DD1758C00DCF88F /* Trajan Pro Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 366A8A0A1DD0F59C000406BF /* Trajan Pro Regular.ttf */; };
+		C9172C211DD176BA00DCF88F /* dota2-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = C9172C201DD176BA00DCF88F /* dota2-logo.png */; };
 		C93499FF1DB439B5005407BB /* SimpleCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93499FE1DB439B5005407BB /* SimpleCVCell.swift */; };
 		C966E6421DBBC74700C0692C /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C966E6411DBBC74700C0692C /* Detail.storyboard */; };
 		C96B9C401DB2C14800F656AA /* HeroListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96B9C3F1DB2C14800F656AA /* HeroListVC.swift */; };
@@ -1666,6 +1668,7 @@
 		860C63C4F37CD7891AF00E52 /* Pods-DotA2 Assistant.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DotA2 Assistant.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DotA2 Assistant/Pods-DotA2 Assistant.debug.xcconfig"; sourceTree = "<group>"; };
 		98F87ADCA1FE546C146D14EF /* Pods_DotA2_Assistant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DotA2_Assistant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9172C171DD13F9100DCF88F /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
+		C9172C201DD176BA00DCF88F /* dota2-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dota2-logo.png"; sourceTree = "<group>"; };
 		C93499FE1DB439B5005407BB /* SimpleCVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleCVCell.swift; sourceTree = "<group>"; };
 		C966E6411DBBC74700C0692C /* Detail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
 		C96B9C3F1DB2C14800F656AA /* HeroListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroListVC.swift; sourceTree = "<group>"; };
@@ -2641,6 +2644,7 @@
 				36FD56511DA6E3F5007C5A9C /* default_icon.png */,
 				36C0C9611DA6E25800169394 /* AppDelegate.swift */,
 				36C0C96B1DA6E25800169394 /* Assets.xcassets */,
+				C9172C201DD176BA00DCF88F /* dota2-logo.png */,
 				36C0C96D1DA6E25800169394 /* LaunchScreen.storyboard */,
 				36C0C9701DA6E25800169394 /* Info.plist */,
 			);
@@ -3003,6 +3007,7 @@
 				3640C4411DC7B17400965652 /* Guardian-Angel_Omniknight.png in Resources */,
 				3640C5531DC7B17500965652 /* sange_and_yasha_item.png in Resources */,
 				3640C5E01DC7B17500965652 /* tranquil_boots_item.png in Resources */,
+				C9172C211DD176BA00DCF88F /* dota2-logo.png in Resources */,
 				3640C5271DC7B17500965652 /* Reality_Spectre.png in Resources */,
 				3640C5161DC7B17500965652 /* Pudge_hero.png in Resources */,
 				3640C4201DC7B17400965652 /* Focus-Fire_Windranger.png in Resources */,
@@ -3414,6 +3419,7 @@
 				3640C5131DC7B17500965652 /* Psi-Blades_Templar Assassin.png in Resources */,
 				3640C4A81DC7B17400965652 /* Mana-Burn_Nyx Assassin.png in Resources */,
 				3640C4241DC7B17400965652 /* Fortune's-End_Oracle.png in Resources */,
+				C9172C1F1DD1758C00DCF88F /* Trajan Pro Regular.ttf in Resources */,
 				3640C50B1DC7B17500965652 /* power_treads_item.png in Resources */,
 				3640C4AD1DC7B17400965652 /* manta_item.png in Resources */,
 				3640C3331DC7B17400965652 /* Alchemist_hero.png in Resources */,

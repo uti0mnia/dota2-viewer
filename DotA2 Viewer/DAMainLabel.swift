@@ -18,7 +18,7 @@ class DAMainLabel: UILabel {
         self.textColor = UIColor.flatWhite()
         
         // set the font
-        self.font = UIFont(name: "Trajan Pro Regular", size: 17)
+        self.font = UIFont(name: "TrajanPro-Regular", size: 16)
     }
     
     convenience init() {
