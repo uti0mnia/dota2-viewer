@@ -1,23 +1,21 @@
 //
-//  DAMainLabel.swift
+//  DAMainCellLabel.swift
 //  DotA2 Assistant
 //
-//  Created by McLewin, Casey on 2016-11-07.
+//  Created by McLewin, Casey on 2016-11-08.
 //  Copyright © 2016 self. All rights reserved.
 //
 
 import UIKit
-import ChameleonFramework
 
-class DAMainLabel: UILabel {
-    
+class DAMainCellLabel: DAMainLabel {
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        // set the text colour
-        self.textColor = UIColor.flatWhite()
         
-        self.font = kRadiance
+        // set the font
+        self.font = kDotaFontLarge
     }
     
     convenience init() {

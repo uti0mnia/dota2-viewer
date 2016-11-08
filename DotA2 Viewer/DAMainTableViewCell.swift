@@ -16,8 +16,8 @@ class DAMainTableViewCell: UITableViewCell {
         return img
     }()
     
-    var objectName: DAMainLabel = {
-        let lbl = DAMainLabel()
+    var objectName: DAMainCellLabel = {
+        let lbl = DAMainCellLabel()
         lbl.translatesAutoresizingMaskIntoConstraints = false
         return lbl
     }()

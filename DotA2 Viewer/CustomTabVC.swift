@@ -21,6 +21,7 @@ class CustomTabVC: DAUIViewController {
         tb.setItems([hero, item], animated: true)
         tb.selectedItem = hero
         tb.delegate = self
+        UITabBarItem.appearance().setTitleTextAttributes([NSFontAttributeName: kDotaFontSmall], for: .normal)
         return tb
     }()
     

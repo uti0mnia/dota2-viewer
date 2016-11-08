@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		01EF5848F67B9D68AD107BB2 /* Pods_DotA2_Assistant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98F87ADCA1FE546C146D14EF /* Pods_DotA2_Assistant.framework */; };
 		361B71111DBE9AE500133173 /* HeroAbilityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361B71101DBE9AE500133173 /* HeroAbilityVC.swift */; };
-		36268C7F1DAD7F5100B9FF02 /* hero_final.csv in Resources */ = {isa = PBXBuildFile; fileRef = 36268C7D1DAD7F5100B9FF02 /* hero_final.csv */; };
 		36268C801DAD7F5100B9FF02 /* items_final.csv in Resources */ = {isa = PBXBuildFile; fileRef = 36268C7E1DAD7F5100B9FF02 /* items_final.csv */; };
 		362A7ED41DBFBEF700BFC9BA /* HeroDetailStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362A7ED31DBFBEF700BFC9BA /* HeroDetailStackView.swift */; };
 		3640C32B1DC7B17400965652 /* Abaddon_hero.png in Resources */ = {isa = PBXBuildFile; fileRef = 3640C0301DC7B17000965652 /* Abaddon_hero.png */; };
@@ -786,6 +785,10 @@
 		366A8A101DD100A8000406BF /* DAMainTabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366A8A0F1DD100A8000406BF /* DAMainTabelView.swift */; };
 		366A8A121DD1029F000406BF /* DAUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366A8A111DD1029F000406BF /* DAUIViewController.swift */; };
 		366A8A161DD103F1000406BF /* DATabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366A8A151DD103F1000406BF /* DATabBar.swift */; };
+		366A8A201DD2463C000406BF /* hero_final.csv in Resources */ = {isa = PBXBuildFile; fileRef = 366A8A1F1DD2463C000406BF /* hero_final.csv */; };
+		366A8A221DD24B71000406BF /* DAMainCellLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366A8A211DD24B71000406BF /* DAMainCellLabel.swift */; };
+		366A8A261DD24E8E000406BF /* radiance-semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 366A8A231DD24DB4000406BF /* radiance-semibold.ttf */; };
+		366A8A271DD24E99000406BF /* radiance.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 366A8A241DD24DB4000406BF /* radiance.ttf */; };
 		367E34E01DB7F9670037FA7B /* CustomTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367E34DF1DB7F9670037FA7B /* CustomTabVC.swift */; };
 		368F3E971DBA7C0100530014 /* RecipeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368F3E961DBA7C0100530014 /* RecipeButton.swift */; };
 		36A2921E1DCA479F006E96A8 /* MyTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A2921D1DCA479F006E96A8 /* MyTableVC.swift */; };
@@ -856,7 +859,6 @@
 
 /* Begin PBXFileReference section */
 		361B71101DBE9AE500133173 /* HeroAbilityVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroAbilityVC.swift; sourceTree = "<group>"; };
-		36268C7D1DAD7F5100B9FF02 /* hero_final.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hero_final.csv; sourceTree = "<group>"; };
 		36268C7E1DAD7F5100B9FF02 /* items_final.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = items_final.csv; sourceTree = "<group>"; };
 		362A7ED31DBFBEF700BFC9BA /* HeroDetailStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroDetailStackView.swift; sourceTree = "<group>"; };
 		3640C0301DC7B17000965652 /* Abaddon_hero.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Abaddon_hero.png; sourceTree = "<group>"; };
@@ -1635,6 +1637,10 @@
 		366A8A0F1DD100A8000406BF /* DAMainTabelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAMainTabelView.swift; sourceTree = "<group>"; };
 		366A8A111DD1029F000406BF /* DAUIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAUIViewController.swift; sourceTree = "<group>"; };
 		366A8A151DD103F1000406BF /* DATabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DATabBar.swift; sourceTree = "<group>"; };
+		366A8A1F1DD2463C000406BF /* hero_final.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hero_final.csv; sourceTree = "<group>"; };
+		366A8A211DD24B71000406BF /* DAMainCellLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAMainCellLabel.swift; sourceTree = "<group>"; };
+		366A8A231DD24DB4000406BF /* radiance-semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "radiance-semibold.ttf"; sourceTree = "<group>"; };
+		366A8A241DD24DB4000406BF /* radiance.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = radiance.ttf; sourceTree = "<group>"; };
 		367E34DF1DB7F9670037FA7B /* CustomTabVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabVC.swift; sourceTree = "<group>"; };
 		368F3E961DBA7C0100530014 /* RecipeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeButton.swift; sourceTree = "<group>"; };
 		36A2921D1DCA479F006E96A8 /* MyTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTableVC.swift; sourceTree = "<group>"; };
@@ -1776,12 +1782,23 @@
 				366A8A0B1DD0F87F000406BF /* DAMainTableViewCell.swift */,
 				366A8A0F1DD100A8000406BF /* DAMainTabelView.swift */,
 				366A8A081DD0F4F3000406BF /* DAMainLabel.swift */,
+				366A8A211DD24B71000406BF /* DAMainCellLabel.swift */,
 				366A8A151DD103F1000406BF /* DATabBar.swift */,
 				366A8A111DD1029F000406BF /* DAUIViewController.swift */,
 				C93499FE1DB439B5005407BB /* SimpleCVCell.swift */,
 				364A6A581DC1136300FBE163 /* MultiLineLabel.swift */,
 			);
 			name = General;
+			sourceTree = "<group>";
+		};
+		366A8A251DD24DB9000406BF /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				366A8A231DD24DB4000406BF /* radiance-semibold.ttf */,
+				366A8A241DD24DB4000406BF /* radiance.ttf */,
+				366A8A0A1DD0F59C000406BF /* Trajan Pro Regular.ttf */,
+			);
+			name = Fonts;
 			sourceTree = "<group>";
 		};
 		36A2921F1DCA4AA5006E96A8 /* Object Lists */ = {
@@ -2638,8 +2655,8 @@
 		36FD56451DA6E36C007C5A9C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				366A8A0A1DD0F59C000406BF /* Trajan Pro Regular.ttf */,
-				36268C7D1DAD7F5100B9FF02 /* hero_final.csv */,
+				366A8A251DD24DB9000406BF /* Fonts */,
+				366A8A1F1DD2463C000406BF /* hero_final.csv */,
 				36268C7E1DAD7F5100B9FF02 /* items_final.csv */,
 				36FD56511DA6E3F5007C5A9C /* default_icon.png */,
 				36C0C9611DA6E25800169394 /* AppDelegate.swift */,
@@ -2854,6 +2871,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				366A8A271DD24E99000406BF /* radiance.ttf in Resources */,
+				366A8A261DD24E8E000406BF /* radiance-semibold.ttf in Resources */,
 				3640C4661DC7B17400965652 /* Illuminate_Keeper of the Light.png in Resources */,
 				3640C3B41DC7B17400965652 /* Dark-Rift_Underlord.png in Resources */,
 				3640C36A1DC7B17400965652 /* Bloodrage_Bloodseeker.png in Resources */,
@@ -3259,7 +3278,6 @@
 				3640C4A11DC7B17400965652 /* Magic-Missile_Vengeful Spirit.png in Resources */,
 				3640C3D71DC7B17400965652 /* Drow-Ranger_hero.png in Resources */,
 				3640C46C1DC7B17400965652 /* Infest_Lifestealer.png in Resources */,
-				36268C7F1DAD7F5100B9FF02 /* hero_final.csv in Resources */,
 				3640C44F1DC7B17400965652 /* helm_of_iron_will_item.png in Resources */,
 				3640C3BC1DC7B17400965652 /* Death-Ward_Witch Doctor.png in Resources */,
 				3640C4FC1DC7B17500965652 /* Phase-Shift_Puck.png in Resources */,
@@ -3574,6 +3592,7 @@
 				3640C4651DC7B17400965652 /* Ignite_Ogre Magi.png in Resources */,
 				3640C47A1DC7B17400965652 /* Juggernaut_hero.png in Resources */,
 				3640C3A51DC7B17400965652 /* Corrosive-Skin_Viper.png in Resources */,
+				366A8A201DD2463C000406BF /* hero_final.csv in Resources */,
 				3640C5ED1DC7B17500965652 /* Unrefined-Fireblast_Ogre Magi.png in Resources */,
 				3640C3471DC7B17400965652 /* Astral-Imprisonment_Outworld Devourer.png in Resources */,
 				3640C4F51DC7B17500965652 /* pers_item.png in Resources */,
@@ -3755,6 +3774,7 @@
 				364A6A5B1DC118A400FBE163 /* HeroBioStackView.swift in Sources */,
 				364A6A611DC142C200FBE163 /* StatsStackView.swift in Sources */,
 				C9FB5C751DBB997C000A0824 /* ObjectDetailVC.swift in Sources */,
+				366A8A221DD24B71000406BF /* DAMainCellLabel.swift in Sources */,
 				C9FB5C771DBBC116000A0824 /* HeroDetailVC.swift in Sources */,
 				C9A6D6481DBC261A00580B7B /* HeroAllAbilitiesVC.swift in Sources */,
 				36C0C9641DA6E25800169394 /* ObjectListVC.swift in Sources */,
