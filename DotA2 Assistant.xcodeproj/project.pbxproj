@@ -818,6 +818,8 @@
 		C9172C211DD176BA00DCF88F /* dota2-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = C9172C201DD176BA00DCF88F /* dota2-logo.png */; };
 		C93499FF1DB439B5005407BB /* SimpleCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93499FE1DB439B5005407BB /* SimpleCVCell.swift */; };
 		C966E6421DBBC74700C0692C /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C966E6411DBBC74700C0692C /* Detail.storyboard */; };
+		C967E6C91DD4182700DC0DBC /* hero_primary_attributes.csv in Resources */ = {isa = PBXBuildFile; fileRef = C967E6C71DD4182700DC0DBC /* hero_primary_attributes.csv */; };
+		C967E6CA1DD4182700DC0DBC /* hero_stats.csv in Resources */ = {isa = PBXBuildFile; fileRef = C967E6C81DD4182700DC0DBC /* hero_stats.csv */; };
 		C96B9C401DB2C14800F656AA /* HeroListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96B9C3F1DB2C14800F656AA /* HeroListVC.swift */; };
 		C96B9C421DB2C1B800F656AA /* ItemListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96B9C411DB2C1B800F656AA /* ItemListVC.swift */; };
 		C96B9C461DB3334800F656AA /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96B9C451DB3334800F656AA /* DetailVC.swift */; };
@@ -859,7 +861,7 @@
 
 /* Begin PBXFileReference section */
 		361B71101DBE9AE500133173 /* HeroAbilityVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroAbilityVC.swift; sourceTree = "<group>"; };
-		36268C7E1DAD7F5100B9FF02 /* items_final.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = items_final.csv; sourceTree = "<group>"; };
+		36268C7E1DAD7F5100B9FF02 /* items_final.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = items_final.csv; path = CSVs/items_final.csv; sourceTree = "<group>"; };
 		362A7ED31DBFBEF700BFC9BA /* HeroDetailStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroDetailStackView.swift; sourceTree = "<group>"; };
 		3640C0301DC7B17000965652 /* Abaddon_hero.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Abaddon_hero.png; sourceTree = "<group>"; };
 		3640C0311DC7B17000965652 /* abyssal_blade_item.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = abyssal_blade_item.png; sourceTree = "<group>"; };
@@ -1637,7 +1639,7 @@
 		366A8A0F1DD100A8000406BF /* DAMainTabelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAMainTabelView.swift; sourceTree = "<group>"; };
 		366A8A111DD1029F000406BF /* DAUIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAUIViewController.swift; sourceTree = "<group>"; };
 		366A8A151DD103F1000406BF /* DATabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DATabBar.swift; sourceTree = "<group>"; };
-		366A8A1F1DD2463C000406BF /* hero_final.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hero_final.csv; sourceTree = "<group>"; };
+		366A8A1F1DD2463C000406BF /* hero_final.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = hero_final.csv; path = CSVs/hero_final.csv; sourceTree = "<group>"; };
 		366A8A211DD24B71000406BF /* DAMainCellLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAMainCellLabel.swift; sourceTree = "<group>"; };
 		366A8A231DD24DB4000406BF /* radiance-semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "radiance-semibold.ttf"; sourceTree = "<group>"; };
 		366A8A241DD24DB4000406BF /* radiance.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = radiance.ttf; sourceTree = "<group>"; };
@@ -1677,6 +1679,8 @@
 		C9172C201DD176BA00DCF88F /* dota2-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dota2-logo.png"; sourceTree = "<group>"; };
 		C93499FE1DB439B5005407BB /* SimpleCVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleCVCell.swift; sourceTree = "<group>"; };
 		C966E6411DBBC74700C0692C /* Detail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
+		C967E6C71DD4182700DC0DBC /* hero_primary_attributes.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = hero_primary_attributes.csv; path = CSVs/hero_primary_attributes.csv; sourceTree = "<group>"; };
+		C967E6C81DD4182700DC0DBC /* hero_stats.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = hero_stats.csv; path = CSVs/hero_stats.csv; sourceTree = "<group>"; };
 		C96B9C3F1DB2C14800F656AA /* HeroListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroListVC.swift; sourceTree = "<group>"; };
 		C96B9C411DB2C1B800F656AA /* ItemListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemListVC.swift; sourceTree = "<group>"; };
 		C96B9C451DB3334800F656AA /* DetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
@@ -2655,9 +2659,8 @@
 		36FD56451DA6E36C007C5A9C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C967E6CB1DD4182F00DC0DBC /* CSVs */,
 				366A8A251DD24DB9000406BF /* Fonts */,
-				366A8A1F1DD2463C000406BF /* hero_final.csv */,
-				36268C7E1DAD7F5100B9FF02 /* items_final.csv */,
 				36FD56511DA6E3F5007C5A9C /* default_icon.png */,
 				36C0C9611DA6E25800169394 /* AppDelegate.swift */,
 				36C0C96B1DA6E25800169394 /* Assets.xcassets */,
@@ -2721,6 +2724,17 @@
 				C96B9C4A1DB3D46600F656AA /* Detail */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		C967E6CB1DD4182F00DC0DBC /* CSVs */ = {
+			isa = PBXGroup;
+			children = (
+				C967E6C71DD4182700DC0DBC /* hero_primary_attributes.csv */,
+				C967E6C81DD4182700DC0DBC /* hero_stats.csv */,
+				366A8A1F1DD2463C000406BF /* hero_final.csv */,
+				36268C7E1DAD7F5100B9FF02 /* items_final.csv */,
+			);
+			name = CSVs;
 			sourceTree = "<group>";
 		};
 		C96B9C491DB3D45E00F656AA /* List */ = {
@@ -3239,6 +3253,7 @@
 				3640C4E41DC7B17500965652 /* octarine_core_item.png in Resources */,
 				3640C3731DC7B17400965652 /* Boulder-Smash_Earth Spirit.png in Resources */,
 				3640C3A21DC7B17400965652 /* Consume_Lifestealer.png in Resources */,
+				C967E6C91DD4182700DC0DBC /* hero_primary_attributes.csv in Resources */,
 				3640C46F1DC7B17400965652 /* Inner-Vitality_Huskar.png in Resources */,
 				3640C6101DC7B17500965652 /* Wave-of-Terror_Vengeful Spirit.png in Resources */,
 				3640C4E51DC7B17500965652 /* ogre_axe_item.png in Resources */,
@@ -3494,6 +3509,7 @@
 				3640C4561DC7B17400965652 /* Hoof-Stomp_Centaur Warrunner.png in Resources */,
 				3640C5F41DC7B17500965652 /* Ursa_hero.png in Resources */,
 				3640C4B61DC7B17400965652 /* Meepo_hero.png in Resources */,
+				C967E6CA1DD4182700DC0DBC /* hero_stats.csv in Resources */,
 				3640C4CB1DC7B17500965652 /* Multicast_Ogre Magi.png in Resources */,
 				3640C4A61DC7B17400965652 /* Malefice_Enigma.png in Resources */,
 				3640C5091DC7B17500965652 /* poor_mans_shield_item.png in Resources */,

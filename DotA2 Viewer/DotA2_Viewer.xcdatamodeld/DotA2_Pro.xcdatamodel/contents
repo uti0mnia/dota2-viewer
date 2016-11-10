@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11232" systemVersion="16A323" minimumToolsVersion="Xcode 7.3" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11542" systemVersion="16B2657" minimumToolsVersion="Xcode 7.3" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
     <entity name="Ability" representedClassName="Ability" syncable="YES">
         <attribute name="cooldown" attributeType="String" syncable="YES"/>
         <attribute name="data" attributeType="String" syncable="YES"/>
@@ -10,14 +10,20 @@
         <attribute name="videoURL" attributeType="String" syncable="YES"/>
         <relationship name="hero" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Hero" inverseName="ability" inverseEntity="Hero" syncable="YES"/>
     </entity>
+    <entity name="Attribute" syncable="YES">
+        <attribute name="base" attributeType="Decimal" syncable="YES"/>
+        <attribute name="increment" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <relationship name="hero" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Hero" inverseName="attributes" inverseEntity="Hero" syncable="YES"/>
+    </entity>
     <entity name="Hero" representedClassName="Hero" parentEntity="ListObject" syncable="YES">
-        <attribute name="attackType" attributeType="String" syncable="YES"/>
-        <attribute name="attribute" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="bio" attributeType="String" syncable="YES"/>
-        <attribute name="role" attributeType="String" syncable="YES"/>
+        <attribute name="attackType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="bio" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="primary_attribute" optional="YES" attributeType="Integer 16" minValueString="0" maxValueString="2" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="role" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="ability" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Ability" inverseName="hero" inverseEntity="Ability" syncable="YES"/>
-        <relationship name="primaryStat" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PrimaryStat" inverseName="hero" inverseEntity="PrimaryStat" syncable="YES"/>
-        <relationship name="stat" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Stat" inverseName="hero" inverseEntity="Stat" syncable="YES"/>
+        <relationship name="attributes" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Attribute" inverseName="hero" inverseEntity="Attribute" syncable="YES"/>
+        <relationship name="stats" optional="YES" maxCount="1" deletionRule="Nullify" ordered="YES" destinationEntity="Stats" inverseName="hero" inverseEntity="Stats" syncable="YES"/>
     </entity>
     <entity name="Item" representedClassName="Item" parentEntity="ListObject" syncable="YES">
         <attribute name="ability" attributeType="String" syncable="YES"/>
@@ -33,37 +39,33 @@
     <entity name="ListObject" representedClassName=".ListObject" isAbstract="YES" syncable="YES">
         <attribute name="name" attributeType="String" syncable="YES"/>
     </entity>
-    <entity name="PrimaryStat" representedClassName="PrimaryStat" syncable="YES">
-        <attribute name="agility" attributeType="String" syncable="YES"/>
-        <attribute name="armor" attributeType="String" syncable="YES"/>
-        <attribute name="damage" attributeType="String" syncable="YES"/>
-        <attribute name="intelligence" attributeType="String" syncable="YES"/>
-        <attribute name="speed" attributeType="String" syncable="YES"/>
-        <attribute name="strength" attributeType="String" syncable="YES"/>
-        <relationship name="hero" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Hero" inverseName="primaryStat" inverseEntity="Hero" syncable="YES"/>
-    </entity>
     <entity name="Recipe" representedClassName="Recipe" syncable="YES">
         <attribute name="itemID" attributeType="String" syncable="YES"/>
         <relationship name="item" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Item" inverseName="recipe" inverseEntity="Item" syncable="YES"/>
     </entity>
-    <entity name="Stat" representedClassName="Stat" syncable="YES">
-        <attribute name="armor" attributeType="String" syncable="YES"/>
-        <attribute name="attackRange" attributeType="String" syncable="YES"/>
-        <attribute name="damage" attributeType="String" syncable="YES"/>
-        <attribute name="hp" attributeType="String" syncable="YES"/>
-        <attribute name="level" attributeType="String" syncable="YES"/>
-        <attribute name="mana" attributeType="String" syncable="YES"/>
-        <attribute name="missleSpeed" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="sight" attributeType="String" syncable="YES"/>
-        <relationship name="hero" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Hero" inverseName="stat" inverseEntity="Hero" syncable="YES"/>
+    <entity name="Stats" representedClassName="Stats" syncable="YES">
+        <attribute name="armor" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="attackAnimation" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="attackRange" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="damage" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="hp" optional="YES" attributeType="Integer 16" defaultValueString="200" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="hpRegen" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="magicResistance" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="mana" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="manaRegen" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="projectileSpeed" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="speed" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="spellDamage" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="vision" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="hero" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Hero" inverseName="stats" inverseEntity="Hero" syncable="YES"/>
     </entity>
     <elements>
         <element name="Ability" positionX="-36" positionY="-441" width="128" height="165"/>
         <element name="Hero" positionX="-333" positionY="-162" width="128" height="150"/>
         <element name="Item" positionX="-333" positionY="99" width="128" height="180"/>
         <element name="ListObject" positionX="-162" positionY="-279" width="128" height="60"/>
-        <element name="PrimaryStat" positionX="-20" positionY="-234" width="128" height="148"/>
         <element name="Recipe" positionX="-29" positionY="219" width="128" height="75"/>
-        <element name="Stat" positionX="-9" positionY="-54" width="128" height="178"/>
+        <element name="Stats" positionX="-9" positionY="-54" width="128" height="255"/>
+        <element name="Attribute" positionX="-171" positionY="-288" width="128" height="105"/>
     </elements>
 </model>
