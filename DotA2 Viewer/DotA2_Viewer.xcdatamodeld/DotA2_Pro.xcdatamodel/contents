@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11542" systemVersion="16B2657" minimumToolsVersion="Xcode 7.3" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11542" systemVersion="16B2657" minimumToolsVersion="Xcode 7.3" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
     <entity name="Ability" representedClassName="Ability" syncable="YES">
         <attribute name="cooldown" attributeType="String" syncable="YES"/>
         <attribute name="data" attributeType="String" syncable="YES"/>
@@ -47,13 +47,13 @@
         <attribute name="armor" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
         <attribute name="attackAnimation" attributeType="String" syncable="YES"/>
         <attribute name="attackRange" attributeType="Decimal" defaultValueString="0" syncable="YES"/>
-        <attribute name="damage" attributeType="String" syncable="YES"/>
+        <attribute name="damage" attributeType="Binary" syncable="YES"/>
         <attribute name="hp" attributeType="Decimal" defaultValueString="200" syncable="YES"/>
         <attribute name="hpRegen" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
         <attribute name="magicResistance" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
         <attribute name="mana" attributeType="Decimal" defaultValueString="0" syncable="YES"/>
         <attribute name="manaRegen" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
-        <attribute name="projectileSpeed" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="projectileSpeed" attributeType="String" syncable="YES"/>
         <attribute name="speed" attributeType="Decimal" defaultValueString="0" syncable="YES"/>
         <attribute name="spellDamage" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
         <attribute name="vision" attributeType="String" syncable="YES"/>

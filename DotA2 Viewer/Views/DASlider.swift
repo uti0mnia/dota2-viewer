@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol DASliderDelegate {
+    func slider(_ slider: DASlider, didUpdateTo value: Int)
+}
+
 class DASlider: UISlider {
 
     fileprivate let numbers = 1...25
@@ -16,9 +20,16 @@ class DASlider: UISlider {
             return numbers.count
         }
     }
+    fileprivate var oldValue: Int?
     
     
-    override init(frame: CGRect) {
+    var delegate: DASliderDelegate?
+    
+    init(frame: CGRect, initialLevel lvl: Int) {
+        // make sure level isn't outside of range
+        var level = lvl > 25 ? 25 : lvl
+        level = lvl < 1 ? 1 : level
+        
         super.init(frame: frame)
         
         // set the properties
@@ -26,14 +37,14 @@ class DASlider: UISlider {
         self.maximumTrackTintColor = UIColor.flatWhite()
         self.thumbTintColor = UIColor.flatBlack()
         self.setValue(1, animated: false)
-        self.minimumValue = 1
+        self.minimumValue = Float(level)
         self.maximumValue = Float(numberOfSteps)
         self.addTarget(self, action: #selector(DASlider.valueChanged(_:)), for: .valueChanged)
         
     }
     
-    convenience init() {
-        self.init(frame: CGRect())
+    convenience init(initialLevel level: Int = 1) {
+        self.init(frame: CGRect(), initialLevel: level)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -44,6 +55,29 @@ class DASlider: UISlider {
         let idx = Int(self.value + 0.5)
         self.setValue(Float(idx), animated: false)
         
+        // for the delegate method
+        if oldValue != idx {
+            oldValue = idx
+            delegate?.slider(self, didUpdateTo: idx)
+        }
+        
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

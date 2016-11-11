@@ -65,6 +65,19 @@ class CSVImporter {
     }
     
     private func saveHero(_ line: CSwiftV) {
+        
+        /*
+         * This helper function gets creates a DamageRange object from a string (in the form of '<Int>-<Int>'
+         */
+        func toDamageRange(string: String?) -> DamageRange? {
+            guard let dmgStr = string else {
+                return nil
+            }
+            
+            let dmgArray = dmgStr.components(separatedBy: "-")
+            return DamageRange(min: NSDecimalNumber(string: dmgArray[0]).intValue, max: NSDecimalNumber(string: dmgArray[1]).intValue)
+        }
+        
         //create hero MO
         let hero = NSEntityDescription.insertNewObject(forEntityName: "Hero", into: moc) as! Hero
         var data = line.headers.makeIterator()
@@ -137,13 +150,13 @@ class CSVImporter {
         stats.hpRegen = NSDecimalNumber(string: data.next())
         stats.mana = NSDecimalNumber(string: data.next())
         stats.manaRegen = NSDecimalNumber(string: data.next())
-        stats.damage = data.next()
+        stats.damage = DamageRange.to(data: toDamageRange(string: data.next()) ?? DamageRange(min: 0, max: 0))
         stats.armor = NSDecimalNumber(string: data.next())
         stats.spellDamage = NSDecimalNumber(string: data.next())
         stats.attackAnimation = data.next()
         stats.magicResistance = NSDecimalNumber(string: data.next())
         stats.attackRange = NSDecimalNumber(string: data.next())
-        stats.projectileSpeed = NSDecimalNumber(string: data.next())
+        stats.projectileSpeed = data.next()
         stats.vision = data.next()
         stats.speed = NSDecimalNumber(string: data.next())
         

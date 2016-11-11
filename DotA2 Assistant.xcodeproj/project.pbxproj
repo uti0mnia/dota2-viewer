@@ -811,6 +811,7 @@
 		36FD56541DA6E3F5007C5A9C /* default_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 36FD56511DA6E3F5007C5A9C /* default_icon.png */; };
 		36FD56591DA6E403007C5A9C /* CSwiftV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FD56571DA6E403007C5A9C /* CSwiftV.swift */; };
 		36FD565A1DA6E403007C5A9C /* ImportCSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FD56581DA6E403007C5A9C /* ImportCSV.swift */; };
+		C90A558D1DD608D600A6E6F6 /* AttributesStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90A558C1DD608D600A6E6F6 /* AttributesStackView.swift */; };
 		C9172C181DD13F9100DCF88F /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9172C171DD13F9100DCF88F /* Globals.swift */; };
 		C9172C1F1DD1758C00DCF88F /* Trajan Pro Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 366A8A0A1DD0F59C000406BF /* Trajan Pro Regular.ttf */; };
 		C9172C211DD176BA00DCF88F /* dota2-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = C9172C201DD176BA00DCF88F /* dota2-logo.png */; };
@@ -831,11 +832,19 @@
 		C94A26CE1DD54D3500D9B054 /* Recipe+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94A26C01DD54D3500D9B054 /* Recipe+CoreDataClass.swift */; };
 		C94A26CF1DD54D3500D9B054 /* Recipe+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94A26C11DD54D3500D9B054 /* Recipe+CoreDataProperties.swift */; };
 		C94A26D21DD5593F00D9B054 /* DASlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94A26D11DD5593F00D9B054 /* DASlider.swift */; };
+		C95753C71DD57FCF005C9F75 /* agility_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C95753C11DD57FCF005C9F75 /* agility_icon.png */; };
+		C95753C81DD57FCF005C9F75 /* armor_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C95753C21DD57FCF005C9F75 /* armor_icon.png */; };
+		C95753C91DD57FCF005C9F75 /* damage_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C95753C31DD57FCF005C9F75 /* damage_icon.png */; };
+		C95753CA1DD57FCF005C9F75 /* intelligence_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C95753C41DD57FCF005C9F75 /* intelligence_icon.png */; };
+		C95753CB1DD57FCF005C9F75 /* speed_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C95753C51DD57FCF005C9F75 /* speed_icon.png */; };
+		C95753CC1DD57FCF005C9F75 /* strength_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C95753C61DD57FCF005C9F75 /* strength_icon.png */; };
 		C966E6421DBBC74700C0692C /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C966E6411DBBC74700C0692C /* Detail.storyboard */; };
 		C96B9C401DB2C14800F656AA /* HeroListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96B9C3F1DB2C14800F656AA /* HeroListVC.swift */; };
 		C96B9C421DB2C1B800F656AA /* ItemListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96B9C411DB2C1B800F656AA /* ItemListVC.swift */; };
 		C96B9C461DB3334800F656AA /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96B9C451DB3334800F656AA /* DetailVC.swift */; };
 		C97710FF1DC04E340083FBD7 /* AbilityStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97710FE1DC04E340083FBD7 /* AbilityStackView.swift */; };
+		C97991691DD6255A0081454C /* AttributeSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97991681DD6255A0081454C /* AttributeSet.swift */; };
+		C979916B1DD632D10081454C /* DamageRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = C979916A1DD632D10081454C /* DamageRange.swift */; };
 		C9A6D6401DBC124200580B7B /* HeroBioVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A6D63F1DBC124200580B7B /* HeroBioVC.swift */; };
 		C9A6D6421DBC12B700580B7B /* HeroStatsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A6D6411DBC12B700580B7B /* HeroStatsVC.swift */; };
 		C9A6D6481DBC261A00580B7B /* HeroAllAbilitiesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A6D6471DBC261A00580B7B /* HeroAllAbilitiesVC.swift */; };
@@ -1658,6 +1667,7 @@
 		764636FE62A54B2886530601 /* Pods-DotA2 AssistantTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DotA2 AssistantTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DotA2 AssistantTests/Pods-DotA2 AssistantTests.debug.xcconfig"; sourceTree = "<group>"; };
 		860C63C4F37CD7891AF00E52 /* Pods-DotA2 Assistant.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DotA2 Assistant.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DotA2 Assistant/Pods-DotA2 Assistant.debug.xcconfig"; sourceTree = "<group>"; };
 		98F87ADCA1FE546C146D14EF /* Pods_DotA2_Assistant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DotA2_Assistant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C90A558C1DD608D600A6E6F6 /* AttributesStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributesStackView.swift; sourceTree = "<group>"; };
 		C9172C171DD13F9100DCF88F /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		C9172C201DD176BA00DCF88F /* dota2-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dota2-logo.png"; sourceTree = "<group>"; };
 		C93499FE1DB439B5005407BB /* SimpleCVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleCVCell.swift; sourceTree = "<group>"; };
@@ -1678,11 +1688,19 @@
 		C94A26C11DD54D3500D9B054 /* Recipe+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Recipe+CoreDataProperties.swift"; path = "CoreData/Recipe+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C94A26D01DD550EF00D9B054 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = SOURCE_ROOT; };
 		C94A26D11DD5593F00D9B054 /* DASlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DASlider.swift; path = Views/DASlider.swift; sourceTree = "<group>"; };
+		C95753C11DD57FCF005C9F75 /* agility_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = agility_icon.png; sourceTree = "<group>"; };
+		C95753C21DD57FCF005C9F75 /* armor_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = armor_icon.png; sourceTree = "<group>"; };
+		C95753C31DD57FCF005C9F75 /* damage_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = damage_icon.png; sourceTree = "<group>"; };
+		C95753C41DD57FCF005C9F75 /* intelligence_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = intelligence_icon.png; sourceTree = "<group>"; };
+		C95753C51DD57FCF005C9F75 /* speed_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = speed_icon.png; sourceTree = "<group>"; };
+		C95753C61DD57FCF005C9F75 /* strength_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = strength_icon.png; sourceTree = "<group>"; };
 		C966E6411DBBC74700C0692C /* Detail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
 		C96B9C3F1DB2C14800F656AA /* HeroListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroListVC.swift; sourceTree = "<group>"; };
 		C96B9C411DB2C1B800F656AA /* ItemListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemListVC.swift; sourceTree = "<group>"; };
 		C96B9C451DB3334800F656AA /* DetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
 		C97710FE1DC04E340083FBD7 /* AbilityStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbilityStackView.swift; sourceTree = "<group>"; };
+		C97991681DD6255A0081454C /* AttributeSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributeSet.swift; sourceTree = "<group>"; };
+		C979916A1DD632D10081454C /* DamageRange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DamageRange.swift; sourceTree = "<group>"; };
 		C9A6D63F1DBC124200580B7B /* HeroBioVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroBioVC.swift; sourceTree = "<group>"; };
 		C9A6D6411DBC12B700580B7B /* HeroStatsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroStatsVC.swift; sourceTree = "<group>"; };
 		C9A6D6471DBC261A00580B7B /* HeroAllAbilitiesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroAllAbilitiesVC.swift; sourceTree = "<group>"; };
@@ -1740,6 +1758,7 @@
 			children = (
 				C97710FE1DC04E340083FBD7 /* AbilityStackView.swift */,
 				364A6A561DC10E1100FBE163 /* AbilitiesStackView.swift */,
+				C90A558C1DD608D600A6E6F6 /* AttributesStackView.swift */,
 				362A7ED31DBFBEF700BFC9BA /* HeroDetailStackView.swift */,
 				364A6A5A1DC118A400FBE163 /* HeroBioStackView.swift */,
 				364A6A601DC142C200FBE163 /* StatsStackView.swift */,
@@ -2676,9 +2695,11 @@
 			children = (
 				36C7DF221DC8F2B500251705 /* CSV */,
 				36FD56461DA6E373007C5A9C /* CoreData */,
+				C97991681DD6255A0081454C /* AttributeSet.swift */,
+				C979916A1DD632D10081454C /* DamageRange.swift */,
 				C9A6D64C1DBD25AE00580B7B /* Extensions.swift */,
-				36C7DF231DC8F2C800251705 /* RSSFeedHelper.swift */,
 				C9172C171DD13F9100DCF88F /* Globals.swift */,
+				36C7DF231DC8F2C800251705 /* RSSFeedHelper.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -2754,6 +2775,12 @@
 		C9FB56731DBB1110000A0824 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				C95753C11DD57FCF005C9F75 /* agility_icon.png */,
+				C95753C21DD57FCF005C9F75 /* armor_icon.png */,
+				C95753C31DD57FCF005C9F75 /* damage_icon.png */,
+				C95753C41DD57FCF005C9F75 /* intelligence_icon.png */,
+				C95753C51DD57FCF005C9F75 /* speed_icon.png */,
+				C95753C61DD57FCF005C9F75 /* strength_icon.png */,
 				36A292371DCA51D1006E96A8 /* Item Category */,
 				36A292201DCA5199006E96A8 /* Hero/Items */,
 			);
@@ -2950,6 +2977,7 @@
 				3640C3BF1DC7B17400965652 /* Degen-Aura_Omniknight.png in Resources */,
 				3640C61F1DC7B17500965652 /* wraith_band_item.png in Resources */,
 				3640C3691DC7B17400965652 /* Bloodlust_Ogre Magi.png in Resources */,
+				C95753C71DD57FCF005C9F75 /* agility_icon.png in Resources */,
 				3640C5401DC7B17500965652 /* ring_of_aquila_item.png in Resources */,
 				3640C6021DC7B17500965652 /* vitality_booster_item.png in Resources */,
 				3640C3A81DC7B17400965652 /* courier_item.png in Resources */,
@@ -3023,6 +3051,7 @@
 				3640C4631DC7B17400965652 /* Ice-Vortex_Ancient Apparition.png in Resources */,
 				3640C50E1DC7B17500965652 /* Precision-Aura_Drow Ranger.png in Resources */,
 				3640C4C41DC7B17500965652 /* Moon-Glaive_Luna.png in Resources */,
+				C95753CA1DD57FCF005C9F75 /* intelligence_icon.png in Resources */,
 				3640C58F1DC7B17500965652 /* Spectre_hero.png in Resources */,
 				3640C4D71DC7B17500965652 /* Necrophos_hero.png in Resources */,
 				3640C4751DC7B17400965652 /* Ion-Shell_Dark Seer.png in Resources */,
@@ -3160,6 +3189,7 @@
 				3640C3911DC7B17400965652 /* Charge-of-Darkness_Spirit Breaker.png in Resources */,
 				3640C4F81DC7B17500965652 /* Phantom-Lancer_hero.png in Resources */,
 				3640C3F61DC7B17400965652 /* energy_booster_item.png in Resources */,
+				C95753CC1DD57FCF005C9F75 /* strength_icon.png in Resources */,
 				3640C4B51DC7B17400965652 /* Medusa_hero.png in Resources */,
 				3640C5DF1DC7B17500965652 /* Track_Bounty Hunter.png in Resources */,
 				3640C4321DC7B17400965652 /* Ghostship_Kunkka.png in Resources */,
@@ -3180,6 +3210,7 @@
 				3640C6001DC7B17500965652 /* Visage_hero.png in Resources */,
 				3640C4981DC7B17400965652 /* lotus_orb_item.png in Resources */,
 				3640C3A31DC7B17400965652 /* Control_Lifestealer.png in Resources */,
+				C95753C81DD57FCF005C9F75 /* armor_icon.png in Resources */,
 				3640C4C71DC7B17500965652 /* Morph-(Strength-Gain)_Morphling.png in Resources */,
 				3640C5D01DC7B17500965652 /* Timber-Chain_Timbersaw.png in Resources */,
 				3640C3D21DC7B17400965652 /* Dragon-Blood_Dragon Knight.png in Resources */,
@@ -3382,6 +3413,7 @@
 				3640C4D21DC7B17500965652 /* Nature's-Call_Nature's Prophet.png in Resources */,
 				3640C3431DC7B17400965652 /* armlet_item.png in Resources */,
 				3640C5461DC7B17500965652 /* robe_item.png in Resources */,
+				C95753C91DD57FCF005C9F75 /* damage_icon.png in Resources */,
 				3640C5BF1DC7B17500965652 /* tango_item.png in Resources */,
 				3640C4051DC7B17400965652 /* Faceless-Void_hero.png in Resources */,
 				36A2922F1DCA51CC006E96A8 /* Artifacts.png in Resources */,
@@ -3560,6 +3592,7 @@
 				3640C3AC1DC7B17400965652 /* Crypt-Swarm_Death Prophet.png in Resources */,
 				3640C53B1DC7B17500965652 /* Return_Kunkka.png in Resources */,
 				3640C3621DC7B17400965652 /* blight_stone_item.png in Resources */,
+				C95753CB1DD57FCF005C9F75 /* speed_icon.png in Resources */,
 				3640C4421DC7B17400965652 /* Gush_Tidehunter.png in Resources */,
 				3640C4B41DC7B17400965652 /* medallion_of_courage_item.png in Resources */,
 				3640C5031DC7B17500965652 /* point_booster_item.png in Resources */,
@@ -3691,7 +3724,9 @@
 				368F3E971DBA7C0100530014 /* RecipeButton.swift in Sources */,
 				364A6A571DC10E1100FBE163 /* AbilitiesStackView.swift in Sources */,
 				C9FEBF2F1DB299F2000CD4FF /* DotA2_Viewer.xcdatamodeld in Sources */,
+				C90A558D1DD608D600A6E6F6 /* AttributesStackView.swift in Sources */,
 				366A8A0C1DD0F87F000406BF /* DAMainTableViewCell.swift in Sources */,
+				C979916B1DD632D10081454C /* DamageRange.swift in Sources */,
 				C9A6D6401DBC124200580B7B /* HeroBioVC.swift in Sources */,
 				C94A26CB1DD54D3500D9B054 /* Item+CoreDataProperties.swift in Sources */,
 				C96B9C421DB2C1B800F656AA /* ItemListVC.swift in Sources */,
@@ -3715,6 +3750,7 @@
 				366A8A0E1DD0F993000406BF /* DACircleImageView.swift in Sources */,
 				C9A6D64D1DBD25AE00580B7B /* Extensions.swift in Sources */,
 				36C0C9621DA6E25800169394 /* AppDelegate.swift in Sources */,
+				C97991691DD6255A0081454C /* AttributeSet.swift in Sources */,
 				C94A26C51DD54D3500D9B054 /* ListObject+CoreDataProperties.swift in Sources */,
 				C94A26D21DD5593F00D9B054 /* DASlider.swift in Sources */,
 			);

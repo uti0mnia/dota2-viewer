@@ -2,8 +2,10 @@
 
 import UIKit
 
-for i in 0..<3 {
-    print(i)
+enum MyEnum: String {
+    case one = "1", two
 }
 
-print(NSDecimalNumber(string: "7"))
+print(MyEnum.two.rawValue)
+
+print(NSDecimalNumber(string: " 3 ").intValue)
