@@ -1,9 +1,9 @@
 //
 //  Hero+CoreDataProperties.swift
-//  DotA2 Viewer
+//  
 //
-//  Created by Casey McLewin on 2016-10-15.
-//  Copyright © 2016 self. All rights reserved.
+//  Created by Casey McLewin on 2016-11-10.
+//
 //
 
 import Foundation
@@ -17,17 +17,35 @@ extension Hero {
     }
 
     @NSManaged public var attackType: String?
-    @NSManaged public var attribute: String?
     @NSManaged public var bio: String?
+    @NSManaged public var primary_attribute: NSNumber?
     @NSManaged public var role: String?
     @NSManaged public var ability: NSOrderedSet?
-    @NSManaged public var primaryStat: PrimaryStat?
-    @NSManaged public var stat: NSOrderedSet?
+    @NSManaged public var attributes: NSSet?
+    @NSManaged public var stats: Stats?
 
 }
 
 // MARK: Generated accessors for ability
 extension Hero {
+
+    @objc(insertObject:inAbilityAtIndex:)
+    @NSManaged public func insertIntoAbility(_ value: Ability, at idx: Int)
+
+    @objc(removeObjectFromAbilityAtIndex:)
+    @NSManaged public func removeFromAbility(at idx: Int)
+
+    @objc(insertAbility:atIndexes:)
+    @NSManaged public func insertIntoAbility(_ values: [Ability], at indexes: NSIndexSet)
+
+    @objc(removeAbilityAtIndexes:)
+    @NSManaged public func removeFromAbility(at indexes: NSIndexSet)
+
+    @objc(replaceObjectInAbilityAtIndex:withObject:)
+    @NSManaged public func replaceAbility(at idx: Int, with value: Ability)
+
+    @objc(replaceAbilityAtIndexes:withAbility:)
+    @NSManaged public func replaceAbility(at indexes: NSIndexSet, with values: [Ability])
 
     @objc(addAbilityObject:)
     @NSManaged public func addToAbility(_ value: Ability)
@@ -36,26 +54,26 @@ extension Hero {
     @NSManaged public func removeFromAbility(_ value: Ability)
 
     @objc(addAbility:)
-    @NSManaged public func addToAbility(_ values: NSSet)
+    @NSManaged public func addToAbility(_ values: NSOrderedSet)
 
     @objc(removeAbility:)
-    @NSManaged public func removeFromAbility(_ values: NSSet)
+    @NSManaged public func removeFromAbility(_ values: NSOrderedSet)
 
 }
 
-// MARK: Generated accessors for stat
+// MARK: Generated accessors for attributes
 extension Hero {
 
-    @objc(addStatObject:)
-    @NSManaged public func addToStat(_ value: Stat)
+    @objc(addAttributesObject:)
+    @NSManaged public func addToAttributes(_ value: Attribute)
 
-    @objc(removeStatObject:)
-    @NSManaged public func removeFromStat(_ value: Stat)
+    @objc(removeAttributesObject:)
+    @NSManaged public func removeFromAttributes(_ value: Attribute)
 
-    @objc(addStat:)
-    @NSManaged public func addToStat(_ values: NSSet)
+    @objc(addAttributes:)
+    @NSManaged public func addToAttributes(_ values: NSSet)
 
-    @objc(removeStat:)
-    @NSManaged public func removeFromStat(_ values: NSSet)
+    @objc(removeAttributes:)
+    @NSManaged public func removeFromAttributes(_ values: NSSet)
 
 }

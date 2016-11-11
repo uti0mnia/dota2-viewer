@@ -1,21 +1,15 @@
 //
 //  ListObject+CoreDataClass.swift
-//  DotA2 Viewer
+//  
 //
-//  Created by Casey McLewin on 2016-10-15.
-//  Copyright © 2016 self. All rights reserved.
+//  Created by Casey McLewin on 2016-11-10.
+//
 //
 
-import UIKit
+import Foundation
 import CoreData
 
 
 public class ListObject: NSManagedObject {
-    func objectImage() -> UIImage? { return nil }
-    func firstLetter() -> String {
-        self.willAccessValue(forKey: "firstLetter")
-        let firstLetter = self.name.substring(to: self.name.index(after: self.name.startIndex)).uppercased()
-        self.didAccessValue(forKey: "firstLetter")
-        return firstLetter
-    }
+
 }
