@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -11,7 +11,7 @@
         <!--Item DetailVC-->
         <scene sceneID="e73-Xz-6xH">
             <objects>
-                <viewController storyboardIdentifier="ItemDetailVC" id="1sy-JS-GQs" customClass="ItemDetailVC" customModule="DotA2_Viewer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ItemDetailVC" id="1sy-JS-GQs" customClass="ItemDetailVC" customModule="DotA2_Assistant" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qDh-ku-t6i"/>
                         <viewControllerLayoutGuide type="bottom" id="Fvv-jC-gHA"/>
@@ -161,7 +161,7 @@
         <!--Hero DetailVC-->
         <scene sceneID="quM-wr-u9f">
             <objects>
-                <viewController storyboardIdentifier="HeroDetailVC" id="kGf-UL-4lh" customClass="HeroDetailVC" customModule="DotA2_Viewer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HeroDetailVC" id="kGf-UL-4lh" customClass="HeroDetailVC" customModule="DotA2_Assistant" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eDx-kz-2eE"/>
                         <viewControllerLayoutGuide type="bottom" id="oLm-1q-goT"/>
@@ -179,7 +179,7 @@
         <!--Hero BioVC-->
         <scene sceneID="ccv-ST-vaT">
             <objects>
-                <viewController storyboardIdentifier="HeroBioVC" id="51v-D7-2Me" customClass="HeroBioVC" customModule="DotA2_Viewer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HeroBioVC" id="51v-D7-2Me" customClass="HeroBioVC" customModule="DotA2_Assistant" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="C06-sj-hvS"/>
                         <viewControllerLayoutGuide type="bottom" id="15Z-u9-BQf"/>
@@ -222,7 +222,7 @@
         <!--Hero StatsVC-->
         <scene sceneID="Esw-t4-neG">
             <objects>
-                <viewController storyboardIdentifier="HeroStatsVC" id="K3u-2b-Oed" customClass="HeroStatsVC" customModule="DotA2_Viewer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HeroStatsVC" id="K3u-2b-Oed" customClass="HeroStatsVC" customModule="DotA2_Assistant" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qDi-gg-4iK"/>
                         <viewControllerLayoutGuide type="bottom" id="DjQ-dy-tz3"/>
@@ -314,7 +314,7 @@
         <!--Hero All AbilitiesVC-->
         <scene sceneID="pxb-hw-Fmo">
             <objects>
-                <viewController storyboardIdentifier="HeroAllAbilitiesVC" id="sRJ-7j-f9V" customClass="HeroAllAbilitiesVC" customModule="DotA2_Viewer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HeroAllAbilitiesVC" id="sRJ-7j-f9V" customClass="HeroAllAbilitiesVC" customModule="DotA2_Assistant" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Bog-wW-d3B"/>
                         <viewControllerLayoutGuide type="bottom" id="sZI-3V-Sab"/>
@@ -347,7 +347,7 @@
         <!--Hero AbilityVC-->
         <scene sceneID="nlh-SG-T9y">
             <objects>
-                <viewController storyboardIdentifier="HeroAbilityVC" id="Ajk-T3-JUc" customClass="HeroAbilityVC" customModule="DotA2_Viewer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HeroAbilityVC" id="Ajk-T3-JUc" customClass="HeroAbilityVC" customModule="DotA2_Assistant" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WQF-kH-Hrw"/>
                         <viewControllerLayoutGuide type="bottom" id="hOb-5p-HOs"/>

@@ -69,46 +69,39 @@ class CSVImporter {
         let hero = NSEntityDescription.insertNewObject(forEntityName: "Hero", into: moc) as! Hero
         var data = line.headers.makeIterator()
         
-        //load the data
+        //load the hero data
         hero.name = data.next()
+        hero.primary_attribute = data.next()
         hero.attackType = data.next()
         hero.role = data.next()
         hero.bio = data.next()
         
-        //MARK: Primary Stats
         
-        let pStat = NSEntityDescription.insertNewObject(forEntityName: "PrimaryStat",
-                                                                        into: moc) as! PrimaryStat
-        pStat.intelligence = data.next()
-        pStat.agility = data.next()
-        pStat.strength = data.next()
-        pStat.damage = data.next()
-        pStat.speed = data.next()
-        pStat.armor = data.next()
-        hero.primaryStat = pStat //link the hero with its primary stats
+        //MARK: Attributes - there are 3 of them
         
-        //MARK: Stats
-        
-        let lvls = Int(data.next()!)
-        guard lvls != nil else {
-            fatalError("Couldn't convert to int for # of levels for \(line) ")
+        var attributes = [Attribute]()
+        var attributeNames = ["Intelligence", "Agility", "Strength"]
+        for name in attributeNames {
+            // create the managed object
+            let attribute = NSEntityDescription.insertNewObject(forEntityName: "Attribute", into: moc) as! Attribute
+            
+            // the name
+            attribute.name = name
+            
+            // get the data
+            let str: String = data.next()! // the attribute is saved as '<Num> + <Num>' so we need to split it
+            let split = str.components(separatedBy: " + ") // we now have [base, increment] as strings
+            attribute.base = NSDecimalNumber(string: split[0])
+            attribute.increment = NSDecimalNumber(string: split[1])
+            attribute.hero = hero
+            
+            attributes.append(attribute)
         }
-        var stats = [Stat]()
-        for _ in 0..<lvls! {
-            //create a new stat
-            let stat = NSEntityDescription.insertNewObject(forEntityName: "Stat",
-                                                                           into: moc) as! Stat
-            stat.level = data.next()
-            stat.hp = data.next()
-            stat.mana = data.next()
-            stat.damage = data.next()
-            stat.armor = data.next()
-            stat.sight = data.next()
-            stat.attackRange = data.next()
-            stat.missleSpeed = data.next()
-            stats.append(stat)
-        }
-        hero.stat = NSOrderedSet(array: stats) //add the stats
+        
+        // create the hero's attributes
+        hero.attributes = NSSet(array: attributes)
+        
+        
         
         //MARK: Abilities
         
@@ -118,8 +111,10 @@ class CSVImporter {
         }
         var abilities = [Ability]()
         for _ in 0..<abilityNum! {
-            let ability = NSEntityDescription.insertNewObject(forEntityName: "Ability",
-                                                                              into: moc) as! Ability
+            // create the managed object
+            let ability = NSEntityDescription.insertNewObject(forEntityName: "Ability", into: moc) as! Ability
+            
+            // add it's attributes
             ability.name = data.next()
             ability.summary = data.next()
             ability.lore = data.next()
@@ -130,8 +125,27 @@ class CSVImporter {
             ability.videoURL = data.next()
             abilities.append(ability)
         }
+        
+        // add to hero's abilities
         hero.ability = NSOrderedSet(array: abilities)
         
+        
+        //MARK: Stats
+        
+        let stats = NSEntityDescription.insertNewObject(forEntityName: "Stats", into: moc) as! Stats
+        stats.hp = NSDecimalNumber(string: data.next())
+        stats.hpRegen = NSDecimalNumber(string: data.next())
+        stats.mana = NSDecimalNumber(string: data.next())
+        stats.manaRegen = NSDecimalNumber(string: data.next())
+        stats.damage = data.next()
+        stats.armor = NSDecimalNumber(string: data.next())
+        stats.spellDamage = NSDecimalNumber(string: data.next())
+        stats.attackAnimation = data.next()
+        stats.magicResistance = NSDecimalNumber(string: data.next())
+        stats.attackRange = NSDecimalNumber(string: data.next())
+        stats.projectileSpeed = NSDecimalNumber(string: data.next())
+        stats.vision = data.next()
+        stats.speed = NSDecimalNumber(string: data.next())
         
         
     }

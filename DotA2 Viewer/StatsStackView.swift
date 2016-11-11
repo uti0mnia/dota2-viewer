@@ -11,7 +11,7 @@ import UIKit
 class StatsStackView: UIStackView {
 
     // outlets
-    var segmentLevel: UISegmentedControl!
+    var slider: DASlider!
     var hpLabel: UILabel!
     var manaLabel: UILabel!
     var damageLabel: UILabel!
@@ -21,13 +21,11 @@ class StatsStackView: UIStackView {
     var missleSpeedLabel: UILabel!
     
     // properties
-    var stats: [Stat]!
+    var stats: Stats!
     
     func setStack() {
         // configure the views
-        segmentLevel = UISegmentedControl(items: ["Level 1", "Level 15", "Level 25"])
-        segmentLevel.selectedSegmentIndex = 0
-        segmentLevel.tintColor = UIColor.red
+        slider = DASlider()
         
         hpLabel = UILabel()
         manaLabel = UILabel()
@@ -37,7 +35,7 @@ class StatsStackView: UIStackView {
         attackRangeLabel = UILabel()
         missleSpeedLabel = UILabel()
         
-        for i in [segmentLevel, hpLabel, manaLabel, damageLabel, armorLabel, sightLabel, attackRangeLabel, missleSpeedLabel] as [UIView] {
+        for i in [slider, hpLabel, manaLabel, damageLabel, armorLabel, sightLabel, attackRangeLabel, missleSpeedLabel] as [UIView] {
             self.addArrangedSubview(i)
         }
         

@@ -830,6 +830,7 @@
 		C94A26CD1DD54D3500D9B054 /* Stats+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94A26BF1DD54D3500D9B054 /* Stats+CoreDataProperties.swift */; };
 		C94A26CE1DD54D3500D9B054 /* Recipe+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94A26C01DD54D3500D9B054 /* Recipe+CoreDataClass.swift */; };
 		C94A26CF1DD54D3500D9B054 /* Recipe+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94A26C11DD54D3500D9B054 /* Recipe+CoreDataProperties.swift */; };
+		C94A26D21DD5593F00D9B054 /* DASlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94A26D11DD5593F00D9B054 /* DASlider.swift */; };
 		C966E6421DBBC74700C0692C /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C966E6411DBBC74700C0692C /* Detail.storyboard */; };
 		C96B9C401DB2C14800F656AA /* HeroListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96B9C3F1DB2C14800F656AA /* HeroListVC.swift */; };
 		C96B9C421DB2C1B800F656AA /* ItemListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96B9C411DB2C1B800F656AA /* ItemListVC.swift */; };
@@ -1675,6 +1676,8 @@
 		C94A26BF1DD54D3500D9B054 /* Stats+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Stats+CoreDataProperties.swift"; path = "CoreData/Stats+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C94A26C01DD54D3500D9B054 /* Recipe+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Recipe+CoreDataClass.swift"; path = "CoreData/Recipe+CoreDataClass.swift"; sourceTree = "<group>"; };
 		C94A26C11DD54D3500D9B054 /* Recipe+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Recipe+CoreDataProperties.swift"; path = "CoreData/Recipe+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C94A26D01DD550EF00D9B054 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = SOURCE_ROOT; };
+		C94A26D11DD5593F00D9B054 /* DASlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DASlider.swift; path = Views/DASlider.swift; sourceTree = "<group>"; };
 		C966E6411DBBC74700C0692C /* Detail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
 		C96B9C3F1DB2C14800F656AA /* HeroListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroListVC.swift; sourceTree = "<group>"; };
 		C96B9C411DB2C1B800F656AA /* ItemListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemListVC.swift; sourceTree = "<group>"; };
@@ -1760,6 +1763,7 @@
 				366A8A0F1DD100A8000406BF /* DAMainTabelView.swift */,
 				366A8A081DD0F4F3000406BF /* DAMainLabel.swift */,
 				366A8A211DD24B71000406BF /* DAMainCellLabel.swift */,
+				C94A26D11DD5593F00D9B054 /* DASlider.swift */,
 				366A8A151DD103F1000406BF /* DATabBar.swift */,
 				366A8A111DD1029F000406BF /* DAUIViewController.swift */,
 				C93499FE1DB439B5005407BB /* SimpleCVCell.swift */,
@@ -2582,6 +2586,7 @@
 		36C0C9551DA6E25800169394 = {
 			isa = PBXGroup;
 			children = (
+				C94A26D01DD550EF00D9B054 /* MyPlayground.playground */,
 				36C0C9601DA6E25800169394 /* DotA2 Viewer */,
 				36C0C95F1DA6E25800169394 /* Products */,
 				22C21E0D20AB14E1F4B87B6D /* Pods */,
@@ -3711,6 +3716,7 @@
 				C9A6D64D1DBD25AE00580B7B /* Extensions.swift in Sources */,
 				36C0C9621DA6E25800169394 /* AppDelegate.swift in Sources */,
 				C94A26C51DD54D3500D9B054 /* ListObject+CoreDataProperties.swift in Sources */,
+				C94A26D21DD5593F00D9B054 /* DASlider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

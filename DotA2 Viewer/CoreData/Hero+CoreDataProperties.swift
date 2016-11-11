@@ -18,7 +18,7 @@ extension Hero {
 
     @NSManaged public var attackType: String!
     @NSManaged public var bio: String!
-    @NSManaged public var primary_attribute: NSNumber!
+    @NSManaged public var primary_attribute: String!
     @NSManaged public var role: String!
     @NSManaged public var ability: NSOrderedSet!
     @NSManaged public var attributes: NSSet!
