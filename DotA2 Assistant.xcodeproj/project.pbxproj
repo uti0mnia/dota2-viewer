@@ -785,7 +785,6 @@
 		366A8A101DD100A8000406BF /* DAMainTabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366A8A0F1DD100A8000406BF /* DAMainTabelView.swift */; };
 		366A8A121DD1029F000406BF /* DAUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366A8A111DD1029F000406BF /* DAUIViewController.swift */; };
 		366A8A161DD103F1000406BF /* DATabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366A8A151DD103F1000406BF /* DATabBar.swift */; };
-		366A8A201DD2463C000406BF /* hero_final.csv in Resources */ = {isa = PBXBuildFile; fileRef = 366A8A1F1DD2463C000406BF /* hero_final.csv */; };
 		366A8A221DD24B71000406BF /* DAMainCellLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366A8A211DD24B71000406BF /* DAMainCellLabel.swift */; };
 		366A8A261DD24E8E000406BF /* radiance-semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 366A8A231DD24DB4000406BF /* radiance-semibold.ttf */; };
 		366A8A271DD24E99000406BF /* radiance.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 366A8A241DD24DB4000406BF /* radiance.ttf */; };
@@ -808,7 +807,6 @@
 		36C0C9671DA6E25800169394 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36C0C9651DA6E25800169394 /* Main.storyboard */; };
 		36C0C96C1DA6E25800169394 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36C0C96B1DA6E25800169394 /* Assets.xcassets */; };
 		36C0C96F1DA6E25800169394 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36C0C96D1DA6E25800169394 /* LaunchScreen.storyboard */; };
-		36C0C97A1DA6E25800169394 /* DotA2_ViewerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C0C9791DA6E25800169394 /* DotA2_ViewerTests.swift */; };
 		36C7DF241DC8F2C800251705 /* RSSFeedHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C7DF231DC8F2C800251705 /* RSSFeedHelper.swift */; };
 		36FD56541DA6E3F5007C5A9C /* default_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 36FD56511DA6E3F5007C5A9C /* default_icon.png */; };
 		36FD56591DA6E403007C5A9C /* CSwiftV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FD56571DA6E403007C5A9C /* CSwiftV.swift */; };
@@ -817,9 +815,22 @@
 		C9172C1F1DD1758C00DCF88F /* Trajan Pro Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 366A8A0A1DD0F59C000406BF /* Trajan Pro Regular.ttf */; };
 		C9172C211DD176BA00DCF88F /* dota2-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = C9172C201DD176BA00DCF88F /* dota2-logo.png */; };
 		C93499FF1DB439B5005407BB /* SimpleCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93499FE1DB439B5005407BB /* SimpleCVCell.swift */; };
+		C94A26AB1DD5494200D9B054 /* hero.csv in Resources */ = {isa = PBXBuildFile; fileRef = C94A26AA1DD5494200D9B054 /* hero.csv */; };
+		C94A26C21DD54D3500D9B054 /* Attribute+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94A26B41DD54D3500D9B054 /* Attribute+CoreDataClass.swift */; };
+		C94A26C31DD54D3500D9B054 /* Attribute+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94A26B51DD54D3500D9B054 /* Attribute+CoreDataProperties.swift */; };
+		C94A26C41DD54D3500D9B054 /* ListObject+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94A26B61DD54D3500D9B054 /* ListObject+CoreDataClass.swift */; };
+		C94A26C51DD54D3500D9B054 /* ListObject+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94A26B71DD54D3500D9B054 /* ListObject+CoreDataProperties.swift */; };
+		C94A26C61DD54D3500D9B054 /* Hero+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94A26B81DD54D3500D9B054 /* Hero+CoreDataClass.swift */; };
+		C94A26C71DD54D3500D9B054 /* Hero+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94A26B91DD54D3500D9B054 /* Hero+CoreDataProperties.swift */; };
+		C94A26C81DD54D3500D9B054 /* Ability+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94A26BA1DD54D3500D9B054 /* Ability+CoreDataClass.swift */; };
+		C94A26C91DD54D3500D9B054 /* Ability+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94A26BB1DD54D3500D9B054 /* Ability+CoreDataProperties.swift */; };
+		C94A26CA1DD54D3500D9B054 /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94A26BC1DD54D3500D9B054 /* Item+CoreDataClass.swift */; };
+		C94A26CB1DD54D3500D9B054 /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94A26BD1DD54D3500D9B054 /* Item+CoreDataProperties.swift */; };
+		C94A26CC1DD54D3500D9B054 /* Stats+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94A26BE1DD54D3500D9B054 /* Stats+CoreDataClass.swift */; };
+		C94A26CD1DD54D3500D9B054 /* Stats+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94A26BF1DD54D3500D9B054 /* Stats+CoreDataProperties.swift */; };
+		C94A26CE1DD54D3500D9B054 /* Recipe+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94A26C01DD54D3500D9B054 /* Recipe+CoreDataClass.swift */; };
+		C94A26CF1DD54D3500D9B054 /* Recipe+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94A26C11DD54D3500D9B054 /* Recipe+CoreDataProperties.swift */; };
 		C966E6421DBBC74700C0692C /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C966E6411DBBC74700C0692C /* Detail.storyboard */; };
-		C967E6C91DD4182700DC0DBC /* hero_primary_attributes.csv in Resources */ = {isa = PBXBuildFile; fileRef = C967E6C71DD4182700DC0DBC /* hero_primary_attributes.csv */; };
-		C967E6CA1DD4182700DC0DBC /* hero_stats.csv in Resources */ = {isa = PBXBuildFile; fileRef = C967E6C81DD4182700DC0DBC /* hero_stats.csv */; };
 		C96B9C401DB2C14800F656AA /* HeroListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96B9C3F1DB2C14800F656AA /* HeroListVC.swift */; };
 		C96B9C421DB2C1B800F656AA /* ItemListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96B9C411DB2C1B800F656AA /* ItemListVC.swift */; };
 		C96B9C461DB3334800F656AA /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96B9C451DB3334800F656AA /* DetailVC.swift */; };
@@ -832,32 +843,7 @@
 		C9FB5C751DBB997C000A0824 /* ObjectDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FB5C741DBB997C000A0824 /* ObjectDetailVC.swift */; };
 		C9FB5C771DBBC116000A0824 /* HeroDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FB5C761DBBC116000A0824 /* HeroDetailVC.swift */; };
 		C9FEBF2F1DB299F2000CD4FF /* DotA2_Viewer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C9FEBF2D1DB299F2000CD4FF /* DotA2_Viewer.xcdatamodeld */; };
-		C9FEBF5A1DB29B06000CD4FF /* Ability+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FEBF4C1DB29B06000CD4FF /* Ability+CoreDataClass.swift */; };
-		C9FEBF5B1DB29B06000CD4FF /* Ability+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FEBF4D1DB29B06000CD4FF /* Ability+CoreDataProperties.swift */; };
-		C9FEBF5C1DB29B06000CD4FF /* Recipe+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FEBF4E1DB29B06000CD4FF /* Recipe+CoreDataClass.swift */; };
-		C9FEBF5D1DB29B06000CD4FF /* Recipe+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FEBF4F1DB29B06000CD4FF /* Recipe+CoreDataProperties.swift */; };
-		C9FEBF5E1DB29B06000CD4FF /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FEBF501DB29B06000CD4FF /* Item+CoreDataClass.swift */; };
-		C9FEBF5F1DB29B06000CD4FF /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FEBF511DB29B06000CD4FF /* Item+CoreDataProperties.swift */; };
-		C9FEBF601DB29B06000CD4FF /* Stat+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FEBF521DB29B06000CD4FF /* Stat+CoreDataClass.swift */; };
-		C9FEBF611DB29B06000CD4FF /* Stat+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FEBF531DB29B06000CD4FF /* Stat+CoreDataProperties.swift */; };
-		C9FEBF621DB29B06000CD4FF /* PrimaryStat+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FEBF541DB29B06000CD4FF /* PrimaryStat+CoreDataClass.swift */; };
-		C9FEBF631DB29B06000CD4FF /* PrimaryStat+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FEBF551DB29B06000CD4FF /* PrimaryStat+CoreDataProperties.swift */; };
-		C9FEBF641DB29B06000CD4FF /* ListObject+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FEBF561DB29B06000CD4FF /* ListObject+CoreDataClass.swift */; };
-		C9FEBF651DB29B06000CD4FF /* ListObject+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FEBF571DB29B06000CD4FF /* ListObject+CoreDataProperties.swift */; };
-		C9FEBF661DB29B06000CD4FF /* Hero+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FEBF581DB29B06000CD4FF /* Hero+CoreDataClass.swift */; };
-		C9FEBF671DB29B06000CD4FF /* Hero+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FEBF591DB29B06000CD4FF /* Hero+CoreDataProperties.swift */; };
-		D1E54A38F4FF9A7234EACC49 /* Pods_DotA2_AssistantTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDB9AA602964BD3E72F453D3 /* Pods_DotA2_AssistantTests.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		36C0C9761DA6E25800169394 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 36C0C9561DA6E25800169394 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 36C0C95D1DA6E25800169394;
-			remoteInfo = "DotA2 Viewer";
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		361B71101DBE9AE500133173 /* HeroAbilityVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroAbilityVC.swift; sourceTree = "<group>"; };
@@ -1633,16 +1619,15 @@
 		364A6A5A1DC118A400FBE163 /* HeroBioStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroBioStackView.swift; sourceTree = "<group>"; };
 		364A6A601DC142C200FBE163 /* StatsStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsStackView.swift; sourceTree = "<group>"; };
 		366A8A081DD0F4F3000406BF /* DAMainLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAMainLabel.swift; sourceTree = "<group>"; };
-		366A8A0A1DD0F59C000406BF /* Trajan Pro Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Trajan Pro Regular.ttf"; sourceTree = "<group>"; };
+		366A8A0A1DD0F59C000406BF /* Trajan Pro Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Trajan Pro Regular.ttf"; path = "Fonts/Trajan Pro Regular.ttf"; sourceTree = "<group>"; };
 		366A8A0B1DD0F87F000406BF /* DAMainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAMainTableViewCell.swift; sourceTree = "<group>"; };
 		366A8A0D1DD0F993000406BF /* DACircleImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DACircleImageView.swift; sourceTree = "<group>"; };
 		366A8A0F1DD100A8000406BF /* DAMainTabelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAMainTabelView.swift; sourceTree = "<group>"; };
 		366A8A111DD1029F000406BF /* DAUIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAUIViewController.swift; sourceTree = "<group>"; };
 		366A8A151DD103F1000406BF /* DATabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DATabBar.swift; sourceTree = "<group>"; };
-		366A8A1F1DD2463C000406BF /* hero_final.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = hero_final.csv; path = CSVs/hero_final.csv; sourceTree = "<group>"; };
 		366A8A211DD24B71000406BF /* DAMainCellLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAMainCellLabel.swift; sourceTree = "<group>"; };
-		366A8A231DD24DB4000406BF /* radiance-semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "radiance-semibold.ttf"; sourceTree = "<group>"; };
-		366A8A241DD24DB4000406BF /* radiance.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = radiance.ttf; sourceTree = "<group>"; };
+		366A8A231DD24DB4000406BF /* radiance-semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "radiance-semibold.ttf"; path = "Fonts/radiance-semibold.ttf"; sourceTree = "<group>"; };
+		366A8A241DD24DB4000406BF /* radiance.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = radiance.ttf; path = Fonts/radiance.ttf; sourceTree = "<group>"; };
 		367E34DF1DB7F9670037FA7B /* CustomTabVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabVC.swift; sourceTree = "<group>"; };
 		368F3E961DBA7C0100530014 /* RecipeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeButton.swift; sourceTree = "<group>"; };
 		36A2921D1DCA479F006E96A8 /* MyTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTableVC.swift; sourceTree = "<group>"; };
@@ -1664,9 +1649,6 @@
 		36C0C96B1DA6E25800169394 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		36C0C96E1DA6E25800169394 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		36C0C9701DA6E25800169394 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		36C0C9751DA6E25800169394 /* DotA2 AssistantTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DotA2 AssistantTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		36C0C9791DA6E25800169394 /* DotA2_ViewerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotA2_ViewerTests.swift; sourceTree = "<group>"; };
-		36C0C97B1DA6E25800169394 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		36C7DF231DC8F2C800251705 /* RSSFeedHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSSFeedHelper.swift; sourceTree = "<group>"; };
 		36FD56511DA6E3F5007C5A9C /* default_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default_icon.png; sourceTree = "<group>"; };
 		36FD56571DA6E403007C5A9C /* CSwiftV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSwiftV.swift; sourceTree = "<group>"; };
@@ -1678,9 +1660,22 @@
 		C9172C171DD13F9100DCF88F /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		C9172C201DD176BA00DCF88F /* dota2-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dota2-logo.png"; sourceTree = "<group>"; };
 		C93499FE1DB439B5005407BB /* SimpleCVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleCVCell.swift; sourceTree = "<group>"; };
+		C94A26AA1DD5494200D9B054 /* hero.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = hero.csv; path = CSVs/hero.csv; sourceTree = "<group>"; };
+		C94A26B41DD54D3500D9B054 /* Attribute+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Attribute+CoreDataClass.swift"; path = "CoreData/Attribute+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C94A26B51DD54D3500D9B054 /* Attribute+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Attribute+CoreDataProperties.swift"; path = "CoreData/Attribute+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C94A26B61DD54D3500D9B054 /* ListObject+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ListObject+CoreDataClass.swift"; path = "CoreData/ListObject+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C94A26B71DD54D3500D9B054 /* ListObject+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ListObject+CoreDataProperties.swift"; path = "CoreData/ListObject+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C94A26B81DD54D3500D9B054 /* Hero+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Hero+CoreDataClass.swift"; path = "CoreData/Hero+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C94A26B91DD54D3500D9B054 /* Hero+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Hero+CoreDataProperties.swift"; path = "CoreData/Hero+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C94A26BA1DD54D3500D9B054 /* Ability+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Ability+CoreDataClass.swift"; path = "CoreData/Ability+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C94A26BB1DD54D3500D9B054 /* Ability+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Ability+CoreDataProperties.swift"; path = "CoreData/Ability+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C94A26BC1DD54D3500D9B054 /* Item+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Item+CoreDataClass.swift"; path = "CoreData/Item+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C94A26BD1DD54D3500D9B054 /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Item+CoreDataProperties.swift"; path = "CoreData/Item+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C94A26BE1DD54D3500D9B054 /* Stats+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Stats+CoreDataClass.swift"; path = "CoreData/Stats+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C94A26BF1DD54D3500D9B054 /* Stats+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Stats+CoreDataProperties.swift"; path = "CoreData/Stats+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C94A26C01DD54D3500D9B054 /* Recipe+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Recipe+CoreDataClass.swift"; path = "CoreData/Recipe+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C94A26C11DD54D3500D9B054 /* Recipe+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Recipe+CoreDataProperties.swift"; path = "CoreData/Recipe+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C966E6411DBBC74700C0692C /* Detail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
-		C967E6C71DD4182700DC0DBC /* hero_primary_attributes.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = hero_primary_attributes.csv; path = CSVs/hero_primary_attributes.csv; sourceTree = "<group>"; };
-		C967E6C81DD4182700DC0DBC /* hero_stats.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = hero_stats.csv; path = CSVs/hero_stats.csv; sourceTree = "<group>"; };
 		C96B9C3F1DB2C14800F656AA /* HeroListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroListVC.swift; sourceTree = "<group>"; };
 		C96B9C411DB2C1B800F656AA /* ItemListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemListVC.swift; sourceTree = "<group>"; };
 		C96B9C451DB3334800F656AA /* DetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
@@ -1693,20 +1688,6 @@
 		C9FB5C741DBB997C000A0824 /* ObjectDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectDetailVC.swift; sourceTree = "<group>"; };
 		C9FB5C761DBBC116000A0824 /* HeroDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroDetailVC.swift; sourceTree = "<group>"; };
 		C9FEBF2E1DB299F2000CD4FF /* DotA2_Pro.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DotA2_Pro.xcdatamodel; sourceTree = "<group>"; };
-		C9FEBF4C1DB29B06000CD4FF /* Ability+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Ability+CoreDataClass.swift"; path = "CoreData/Ability+CoreDataClass.swift"; sourceTree = "<group>"; };
-		C9FEBF4D1DB29B06000CD4FF /* Ability+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Ability+CoreDataProperties.swift"; path = "CoreData/Ability+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		C9FEBF4E1DB29B06000CD4FF /* Recipe+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Recipe+CoreDataClass.swift"; path = "CoreData/Recipe+CoreDataClass.swift"; sourceTree = "<group>"; };
-		C9FEBF4F1DB29B06000CD4FF /* Recipe+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Recipe+CoreDataProperties.swift"; path = "CoreData/Recipe+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		C9FEBF501DB29B06000CD4FF /* Item+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Item+CoreDataClass.swift"; path = "CoreData/Item+CoreDataClass.swift"; sourceTree = "<group>"; };
-		C9FEBF511DB29B06000CD4FF /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Item+CoreDataProperties.swift"; path = "CoreData/Item+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		C9FEBF521DB29B06000CD4FF /* Stat+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Stat+CoreDataClass.swift"; path = "CoreData/Stat+CoreDataClass.swift"; sourceTree = "<group>"; };
-		C9FEBF531DB29B06000CD4FF /* Stat+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Stat+CoreDataProperties.swift"; path = "CoreData/Stat+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		C9FEBF541DB29B06000CD4FF /* PrimaryStat+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "PrimaryStat+CoreDataClass.swift"; path = "CoreData/PrimaryStat+CoreDataClass.swift"; sourceTree = "<group>"; };
-		C9FEBF551DB29B06000CD4FF /* PrimaryStat+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "PrimaryStat+CoreDataProperties.swift"; path = "CoreData/PrimaryStat+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		C9FEBF561DB29B06000CD4FF /* ListObject+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ListObject+CoreDataClass.swift"; path = "CoreData/ListObject+CoreDataClass.swift"; sourceTree = "<group>"; };
-		C9FEBF571DB29B06000CD4FF /* ListObject+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ListObject+CoreDataProperties.swift"; path = "CoreData/ListObject+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		C9FEBF581DB29B06000CD4FF /* Hero+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Hero+CoreDataClass.swift"; path = "CoreData/Hero+CoreDataClass.swift"; sourceTree = "<group>"; };
-		C9FEBF591DB29B06000CD4FF /* Hero+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Hero+CoreDataProperties.swift"; path = "CoreData/Hero+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D901BAFFD7186DCAB66C34BB /* Pods-DotA2 Assistant.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DotA2 Assistant.release.xcconfig"; path = "Pods/Target Support Files/Pods-DotA2 Assistant/Pods-DotA2 Assistant.release.xcconfig"; sourceTree = "<group>"; };
 		DDB9AA602964BD3E72F453D3 /* Pods_DotA2_AssistantTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DotA2_AssistantTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -1717,14 +1698,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				01EF5848F67B9D68AD107BB2 /* Pods_DotA2_Assistant.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		36C0C9721DA6E25800169394 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D1E54A38F4FF9A7234EACC49 /* Pods_DotA2_AssistantTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2610,7 +2583,6 @@
 			isa = PBXGroup;
 			children = (
 				36C0C9601DA6E25800169394 /* DotA2 Viewer */,
-				36C0C9781DA6E25800169394 /* DotA2 ViewerTests */,
 				36C0C95F1DA6E25800169394 /* Products */,
 				22C21E0D20AB14E1F4B87B6D /* Pods */,
 				2D3FB4BF79AE4D53B0E27E90 /* Frameworks */,
@@ -2621,7 +2593,6 @@
 			isa = PBXGroup;
 			children = (
 				36C0C95E1DA6E25800169394 /* DotA2 Assistant.app */,
-				36C0C9751DA6E25800169394 /* DotA2 AssistantTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -2636,15 +2607,6 @@
 				C9FB56731DBB1110000A0824 /* images */,
 			);
 			path = "DotA2 Viewer";
-			sourceTree = "<group>";
-		};
-		36C0C9781DA6E25800169394 /* DotA2 ViewerTests */ = {
-			isa = PBXGroup;
-			children = (
-				36C0C9791DA6E25800169394 /* DotA2_ViewerTests.swift */,
-				36C0C97B1DA6E25800169394 /* Info.plist */,
-			);
-			path = "DotA2 ViewerTests";
 			sourceTree = "<group>";
 		};
 		36C7DF221DC8F2B500251705 /* CSV */ = {
@@ -2674,20 +2636,20 @@
 		36FD56461DA6E373007C5A9C /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				C9FEBF4C1DB29B06000CD4FF /* Ability+CoreDataClass.swift */,
-				C9FEBF4D1DB29B06000CD4FF /* Ability+CoreDataProperties.swift */,
-				C9FEBF581DB29B06000CD4FF /* Hero+CoreDataClass.swift */,
-				C9FEBF591DB29B06000CD4FF /* Hero+CoreDataProperties.swift */,
-				C9FEBF501DB29B06000CD4FF /* Item+CoreDataClass.swift */,
-				C9FEBF511DB29B06000CD4FF /* Item+CoreDataProperties.swift */,
-				C9FEBF561DB29B06000CD4FF /* ListObject+CoreDataClass.swift */,
-				C9FEBF571DB29B06000CD4FF /* ListObject+CoreDataProperties.swift */,
-				C9FEBF541DB29B06000CD4FF /* PrimaryStat+CoreDataClass.swift */,
-				C9FEBF551DB29B06000CD4FF /* PrimaryStat+CoreDataProperties.swift */,
-				C9FEBF4E1DB29B06000CD4FF /* Recipe+CoreDataClass.swift */,
-				C9FEBF4F1DB29B06000CD4FF /* Recipe+CoreDataProperties.swift */,
-				C9FEBF521DB29B06000CD4FF /* Stat+CoreDataClass.swift */,
-				C9FEBF531DB29B06000CD4FF /* Stat+CoreDataProperties.swift */,
+				C94A26B41DD54D3500D9B054 /* Attribute+CoreDataClass.swift */,
+				C94A26B51DD54D3500D9B054 /* Attribute+CoreDataProperties.swift */,
+				C94A26B61DD54D3500D9B054 /* ListObject+CoreDataClass.swift */,
+				C94A26B71DD54D3500D9B054 /* ListObject+CoreDataProperties.swift */,
+				C94A26B81DD54D3500D9B054 /* Hero+CoreDataClass.swift */,
+				C94A26B91DD54D3500D9B054 /* Hero+CoreDataProperties.swift */,
+				C94A26BA1DD54D3500D9B054 /* Ability+CoreDataClass.swift */,
+				C94A26BB1DD54D3500D9B054 /* Ability+CoreDataProperties.swift */,
+				C94A26BC1DD54D3500D9B054 /* Item+CoreDataClass.swift */,
+				C94A26BD1DD54D3500D9B054 /* Item+CoreDataProperties.swift */,
+				C94A26BE1DD54D3500D9B054 /* Stats+CoreDataClass.swift */,
+				C94A26BF1DD54D3500D9B054 /* Stats+CoreDataProperties.swift */,
+				C94A26C01DD54D3500D9B054 /* Recipe+CoreDataClass.swift */,
+				C94A26C11DD54D3500D9B054 /* Recipe+CoreDataProperties.swift */,
 				C9FEBF2D1DB299F2000CD4FF /* DotA2_Viewer.xcdatamodeld */,
 			);
 			name = CoreData;
@@ -2729,9 +2691,7 @@
 		C967E6CB1DD4182F00DC0DBC /* CSVs */ = {
 			isa = PBXGroup;
 			children = (
-				C967E6C71DD4182700DC0DBC /* hero_primary_attributes.csv */,
-				C967E6C81DD4182700DC0DBC /* hero_stats.csv */,
-				366A8A1F1DD2463C000406BF /* hero_final.csv */,
+				C94A26AA1DD5494200D9B054 /* hero.csv */,
 				36268C7E1DAD7F5100B9FF02 /* items_final.csv */,
 			);
 			name = CSVs;
@@ -2818,27 +2778,6 @@
 			productReference = 36C0C95E1DA6E25800169394 /* DotA2 Assistant.app */;
 			productType = "com.apple.product-type.application";
 		};
-		36C0C9741DA6E25800169394 /* DotA2 AssistantTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 36C0C9811DA6E25800169394 /* Build configuration list for PBXNativeTarget "DotA2 AssistantTests" */;
-			buildPhases = (
-				431EC1AAEB5433D19650BCBC /* [CP] Check Pods Manifest.lock */,
-				36C0C9711DA6E25800169394 /* Sources */,
-				36C0C9721DA6E25800169394 /* Frameworks */,
-				36C0C9731DA6E25800169394 /* Resources */,
-				078307EFEF9C217E0487B0C4 /* [CP] Embed Pods Frameworks */,
-				70B0E62971EE216B2EC96446 /* [CP] Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				36C0C9771DA6E25800169394 /* PBXTargetDependency */,
-			);
-			name = "DotA2 AssistantTests";
-			productName = "DotA2 ViewerTests";
-			productReference = 36C0C9751DA6E25800169394 /* DotA2 AssistantTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -2853,11 +2792,6 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = Y3RP73GH99;
 						ProvisioningStyle = Automatic;
-					};
-					36C0C9741DA6E25800169394 = {
-						CreatedOnToolsVersion = 8.0;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 36C0C95D1DA6E25800169394;
 					};
 				};
 			};
@@ -2875,7 +2809,6 @@
 			projectRoot = "";
 			targets = (
 				36C0C95D1DA6E25800169394 /* DotA2 Assistant */,
-				36C0C9741DA6E25800169394 /* DotA2 AssistantTests */,
 			);
 		};
 /* End PBXProject section */
@@ -3151,6 +3084,7 @@
 				3640C5AA1DC7B17500965652 /* Stifling-Dagger_Phantom Assassin.png in Resources */,
 				3640C3AE1DC7B17400965652 /* Crystal-Nova_Crystal Maiden.png in Resources */,
 				3640C4EF1DC7B17500965652 /* Overgrowth_Treant Protector.png in Resources */,
+				C94A26AB1DD5494200D9B054 /* hero.csv in Resources */,
 				3640C41E1DC7B17400965652 /* Flux_Arc Warden.png in Resources */,
 				3640C4F31DC7B17500965652 /* Paralyzing-Cask_Witch Doctor.png in Resources */,
 				3640C35D1DC7B17400965652 /* blade_mail_item.png in Resources */,
@@ -3253,7 +3187,6 @@
 				3640C4E41DC7B17500965652 /* octarine_core_item.png in Resources */,
 				3640C3731DC7B17400965652 /* Boulder-Smash_Earth Spirit.png in Resources */,
 				3640C3A21DC7B17400965652 /* Consume_Lifestealer.png in Resources */,
-				C967E6C91DD4182700DC0DBC /* hero_primary_attributes.csv in Resources */,
 				3640C46F1DC7B17400965652 /* Inner-Vitality_Huskar.png in Resources */,
 				3640C6101DC7B17500965652 /* Wave-of-Terror_Vengeful Spirit.png in Resources */,
 				3640C4E51DC7B17500965652 /* ogre_axe_item.png in Resources */,
@@ -3509,7 +3442,6 @@
 				3640C4561DC7B17400965652 /* Hoof-Stomp_Centaur Warrunner.png in Resources */,
 				3640C5F41DC7B17500965652 /* Ursa_hero.png in Resources */,
 				3640C4B61DC7B17400965652 /* Meepo_hero.png in Resources */,
-				C967E6CA1DD4182700DC0DBC /* hero_stats.csv in Resources */,
 				3640C4CB1DC7B17500965652 /* Multicast_Ogre Magi.png in Resources */,
 				3640C4A61DC7B17400965652 /* Malefice_Enigma.png in Resources */,
 				3640C5091DC7B17500965652 /* poor_mans_shield_item.png in Resources */,
@@ -3608,7 +3540,6 @@
 				3640C4651DC7B17400965652 /* Ignite_Ogre Magi.png in Resources */,
 				3640C47A1DC7B17400965652 /* Juggernaut_hero.png in Resources */,
 				3640C3A51DC7B17400965652 /* Corrosive-Skin_Viper.png in Resources */,
-				366A8A201DD2463C000406BF /* hero_final.csv in Resources */,
 				3640C5ED1DC7B17500965652 /* Unrefined-Fireblast_Ogre Magi.png in Resources */,
 				3640C3471DC7B17400965652 /* Astral-Imprisonment_Outworld Devourer.png in Resources */,
 				3640C4F51DC7B17500965652 /* pers_item.png in Resources */,
@@ -3676,31 +3607,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		36C0C9731DA6E25800169394 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		078307EFEF9C217E0487B0C4 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DotA2 AssistantTests/Pods-DotA2 AssistantTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		147169DAE0240E904BCB8FC0 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -3714,36 +3623,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DotA2 Assistant/Pods-DotA2 Assistant-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		431EC1AAEB5433D19650BCBC /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		70B0E62971EE216B2EC96446 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DotA2 AssistantTests/Pods-DotA2 AssistantTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8EBBB99596AFDB9EC8F1E7BE /* [CP] Check Pods Manifest.lock */ = {
@@ -3785,73 +3664,57 @@
 			files = (
 				366A8A101DD100A8000406BF /* DAMainTabelView.swift in Sources */,
 				366A8A091DD0F4F3000406BF /* DAMainLabel.swift in Sources */,
+				C94A26C41DD54D3500D9B054 /* ListObject+CoreDataClass.swift in Sources */,
 				C9FB5C731DBB9239000A0824 /* ItemDetailVC.swift in Sources */,
-				C9FEBF5A1DB29B06000CD4FF /* Ability+CoreDataClass.swift in Sources */,
 				364A6A5B1DC118A400FBE163 /* HeroBioStackView.swift in Sources */,
 				364A6A611DC142C200FBE163 /* StatsStackView.swift in Sources */,
 				C9FB5C751DBB997C000A0824 /* ObjectDetailVC.swift in Sources */,
+				C94A26CF1DD54D3500D9B054 /* Recipe+CoreDataProperties.swift in Sources */,
 				366A8A221DD24B71000406BF /* DAMainCellLabel.swift in Sources */,
 				C9FB5C771DBBC116000A0824 /* HeroDetailVC.swift in Sources */,
 				C9A6D6481DBC261A00580B7B /* HeroAllAbilitiesVC.swift in Sources */,
 				36C0C9641DA6E25800169394 /* ObjectListVC.swift in Sources */,
-				C9FEBF611DB29B06000CD4FF /* Stat+CoreDataProperties.swift in Sources */,
-				C9FEBF601DB29B06000CD4FF /* Stat+CoreDataClass.swift in Sources */,
 				36FD56591DA6E403007C5A9C /* CSwiftV.swift in Sources */,
 				36A2921E1DCA479F006E96A8 /* MyTableVC.swift in Sources */,
+				C94A26C71DD54D3500D9B054 /* Hero+CoreDataProperties.swift in Sources */,
 				C97710FF1DC04E340083FBD7 /* AbilityStackView.swift in Sources */,
-				C9FEBF651DB29B06000CD4FF /* ListObject+CoreDataProperties.swift in Sources */,
-				C9FEBF5F1DB29B06000CD4FF /* Item+CoreDataProperties.swift in Sources */,
 				364A6A591DC1136300FBE163 /* MultiLineLabel.swift in Sources */,
-				C9FEBF661DB29B06000CD4FF /* Hero+CoreDataClass.swift in Sources */,
 				366A8A161DD103F1000406BF /* DATabBar.swift in Sources */,
-				C9FEBF5C1DB29B06000CD4FF /* Recipe+CoreDataClass.swift in Sources */,
+				C94A26CE1DD54D3500D9B054 /* Recipe+CoreDataClass.swift in Sources */,
 				367E34E01DB7F9670037FA7B /* CustomTabVC.swift in Sources */,
 				366A8A121DD1029F000406BF /* DAUIViewController.swift in Sources */,
-				C9FEBF5E1DB29B06000CD4FF /* Item+CoreDataClass.swift in Sources */,
 				368F3E971DBA7C0100530014 /* RecipeButton.swift in Sources */,
-				C9FEBF641DB29B06000CD4FF /* ListObject+CoreDataClass.swift in Sources */,
 				364A6A571DC10E1100FBE163 /* AbilitiesStackView.swift in Sources */,
 				C9FEBF2F1DB299F2000CD4FF /* DotA2_Viewer.xcdatamodeld in Sources */,
 				366A8A0C1DD0F87F000406BF /* DAMainTableViewCell.swift in Sources */,
 				C9A6D6401DBC124200580B7B /* HeroBioVC.swift in Sources */,
+				C94A26CB1DD54D3500D9B054 /* Item+CoreDataProperties.swift in Sources */,
 				C96B9C421DB2C1B800F656AA /* ItemListVC.swift in Sources */,
 				C96B9C461DB3334800F656AA /* DetailVC.swift in Sources */,
-				C9FEBF671DB29B06000CD4FF /* Hero+CoreDataProperties.swift in Sources */,
-				C9FEBF631DB29B06000CD4FF /* PrimaryStat+CoreDataProperties.swift in Sources */,
-				C9FEBF5B1DB29B06000CD4FF /* Ability+CoreDataProperties.swift in Sources */,
-				C9FEBF5D1DB29B06000CD4FF /* Recipe+CoreDataProperties.swift in Sources */,
 				36FD565A1DA6E403007C5A9C /* ImportCSV.swift in Sources */,
 				C9172C181DD13F9100DCF88F /* Globals.swift in Sources */,
+				C94A26C31DD54D3500D9B054 /* Attribute+CoreDataProperties.swift in Sources */,
 				362A7ED41DBFBEF700BFC9BA /* HeroDetailStackView.swift in Sources */,
+				C94A26C61DD54D3500D9B054 /* Hero+CoreDataClass.swift in Sources */,
 				C96B9C401DB2C14800F656AA /* HeroListVC.swift in Sources */,
+				C94A26CC1DD54D3500D9B054 /* Stats+CoreDataClass.swift in Sources */,
 				C9A6D6421DBC12B700580B7B /* HeroStatsVC.swift in Sources */,
 				36C7DF241DC8F2C800251705 /* RSSFeedHelper.swift in Sources */,
-				C9FEBF621DB29B06000CD4FF /* PrimaryStat+CoreDataClass.swift in Sources */,
+				C94A26C91DD54D3500D9B054 /* Ability+CoreDataProperties.swift in Sources */,
+				C94A26CD1DD54D3500D9B054 /* Stats+CoreDataProperties.swift in Sources */,
 				C93499FF1DB439B5005407BB /* SimpleCVCell.swift in Sources */,
 				361B71111DBE9AE500133173 /* HeroAbilityVC.swift in Sources */,
+				C94A26C81DD54D3500D9B054 /* Ability+CoreDataClass.swift in Sources */,
+				C94A26CA1DD54D3500D9B054 /* Item+CoreDataClass.swift in Sources */,
+				C94A26C21DD54D3500D9B054 /* Attribute+CoreDataClass.swift in Sources */,
 				366A8A0E1DD0F993000406BF /* DACircleImageView.swift in Sources */,
 				C9A6D64D1DBD25AE00580B7B /* Extensions.swift in Sources */,
 				36C0C9621DA6E25800169394 /* AppDelegate.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		36C0C9711DA6E25800169394 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				36C0C97A1DA6E25800169394 /* DotA2_ViewerTests.swift in Sources */,
+				C94A26C51DD54D3500D9B054 /* ListObject+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		36C0C9771DA6E25800169394 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 36C0C95D1DA6E25800169394 /* DotA2 Assistant */;
-			targetProxy = 36C0C9761DA6E25800169394 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		36C0C9651DA6E25800169394 /* Main.storyboard */ = {
@@ -3998,36 +3861,6 @@
 			};
 			name = Release;
 		};
-		36C0C9821DA6E25800169394 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 764636FE62A54B2886530601 /* Pods-DotA2 AssistantTests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = "DotA2 ViewerTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "uti0mnia.DotA2-ViewerTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DotA2 Assistant.app/DotA2 Assistant";
-			};
-			name = Debug;
-		};
-		36C0C9831DA6E25800169394 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 710727F3EF55AB028C23DD78 /* Pods-DotA2 AssistantTests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = "DotA2 ViewerTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "uti0mnia.DotA2-ViewerTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DotA2 Assistant.app/DotA2 Assistant";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -4045,15 +3878,6 @@
 			buildConfigurations = (
 				36C0C97F1DA6E25800169394 /* Debug */,
 				36C0C9801DA6E25800169394 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		36C0C9811DA6E25800169394 /* Build configuration list for PBXNativeTarget "DotA2 AssistantTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				36C0C9821DA6E25800169394 /* Debug */,
-				36C0C9831DA6E25800169394 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

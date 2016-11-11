@@ -16,13 +16,13 @@ extension Hero {
         return NSFetchRequest<Hero>(entityName: "Hero");
     }
 
-    @NSManaged public var attackType: String?
-    @NSManaged public var bio: String?
-    @NSManaged public var primary_attribute: NSNumber?
-    @NSManaged public var role: String?
-    @NSManaged public var ability: NSOrderedSet?
-    @NSManaged public var attributes: NSSet?
-    @NSManaged public var stats: Stats?
+    @NSManaged public var attackType: String!
+    @NSManaged public var bio: String!
+    @NSManaged public var primary_attribute: NSNumber!
+    @NSManaged public var role: String!
+    @NSManaged public var ability: NSOrderedSet!
+    @NSManaged public var attributes: NSSet!
+    @NSManaged public var stats: Stats!
 
 }
 

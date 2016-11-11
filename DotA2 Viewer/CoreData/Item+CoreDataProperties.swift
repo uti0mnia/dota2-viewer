@@ -16,15 +16,15 @@ extension Item {
         return NSFetchRequest<Item>(entityName: "Item");
     }
 
-    @NSManaged public var ability: String?
-    @NSManaged public var cooldown: String?
-    @NSManaged public var cost: String?
-    @NSManaged public var detail: String?
-    @NSManaged public var id: String?
-    @NSManaged public var lore: String?
-    @NSManaged public var mana: String?
-    @NSManaged public var type: String?
-    @NSManaged public var recipe: NSSet?
+    @NSManaged public var ability: String!
+    @NSManaged public var cooldown: String!
+    @NSManaged public var cost: String!
+    @NSManaged public var detail: String!
+    @NSManaged public var id: String!
+    @NSManaged public var lore: String!
+    @NSManaged public var mana: String!
+    @NSManaged public var type: String!
+    @NSManaged public var recipe: NSSet!
 
 }
 

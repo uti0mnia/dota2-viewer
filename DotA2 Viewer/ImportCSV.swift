@@ -22,7 +22,7 @@ class CSVImporter {
     }
     func importCSV() {
         //parse the CSVs
-        parseCSV("hero_final", type: .hero)
+        parseCSV("hero", type: .hero)
         parseCSV("items_final", type: .item)
         
         //save the context

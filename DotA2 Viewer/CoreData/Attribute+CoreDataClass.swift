@@ -2,7 +2,7 @@
 //  Attribute+CoreDataClass.swift
 //  
 //
-//  Created by Casey McLewin on 2016-11-10.
+//  Created by Casey McLewin on 2016-11-09.
 //
 //
 

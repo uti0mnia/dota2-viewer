@@ -16,6 +16,6 @@ extension ListObject {
         return NSFetchRequest<ListObject>(entityName: "ListObject");
     }
 
-    @NSManaged public var name: String?
+    @NSManaged public var name: String!
 
 }

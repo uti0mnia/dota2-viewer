@@ -16,9 +16,9 @@ extension Attribute {
         return NSFetchRequest<Attribute>(entityName: "Attribute");
     }
 
-    @NSManaged public var base: NSDecimalNumber?
-    @NSManaged public var increment: NSDecimalNumber?
-    @NSManaged public var name: String?
-    @NSManaged public var hero: Hero?
-
+    @NSManaged public var base: NSDecimalNumber!
+    @NSManaged public var increment: NSDecimalNumber!
+    @NSManaged public var name: String!
+    @NSManaged public var hero: Hero!
+    
 }
