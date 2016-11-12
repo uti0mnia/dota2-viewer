@@ -32,16 +32,10 @@ extension String {
 }
 
 extension UIStackView {
-    func addOptionalArragedSubviews(views: [UIView?]) {
+    func addArrangedSubviews(views: [UIView?]) {
         for view in views {
             if view == nil { continue }
             self.addArrangedSubview(view!)
-        }
-    }
-    
-    func addArrangedSubviews(views: [UIView]) {
-        for view in views {
-            self.addArrangedSubview(view)
         }
     }
 }

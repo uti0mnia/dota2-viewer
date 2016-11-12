@@ -25,7 +25,7 @@ class DASlider: UISlider {
     
     var delegate: DASliderDelegate?
     
-    init(frame: CGRect, initialLevel lvl: Int) {
+    init(frame: CGRect, initialLevel lvl: Int = 1) {
         // make sure level isn't outside of range
         var level = lvl > 25 ? 25 : lvl
         level = lvl < 1 ? 1 : level
@@ -35,7 +35,7 @@ class DASlider: UISlider {
         // set the properties
         self.minimumTrackTintColor = UIColor.flatRed()
         self.maximumTrackTintColor = UIColor.flatWhite()
-        self.thumbTintColor = UIColor.flatBlack()
+        self.thumbTintColor = UIColor.flatBlue()
         self.setValue(1, animated: false)
         self.minimumValue = Float(level)
         self.maximumValue = Float(numberOfSteps)

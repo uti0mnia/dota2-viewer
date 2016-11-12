@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import SafariServices
 
 class DetailVC: DAUIViewController {
     // outlets
@@ -57,7 +58,10 @@ class DetailVC: DAUIViewController {
     }
     
     fileprivate func displayContentController(_ controller: ObjectDetailVC) {
-        self.title = object.name // set the nav bar title
+        let titleView = DAMainLabel(style: .title)
+        titleView.text = object.name
+        titleView.sizeToFit()
+        self.navigationItem.titleView = titleView
         self.addChildViewController(controller) // add child VC
         controller.object = object // set the controller's object
         self.containerView.addSubview(controller.view) // add child view
@@ -78,6 +82,7 @@ class DetailVC: DAUIViewController {
         displayContentController(newVC)
     }
     
+    
 }
 
 extension DetailVC: DetailVCDelegate {
@@ -94,6 +99,12 @@ extension DetailVC: DetailVCDelegate {
         default:
             break
         }
+    }
+}
+
+extension DetailVC: SFSafariViewControllerDelegate {
+    func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
+        print("finished")
     }
 }
 

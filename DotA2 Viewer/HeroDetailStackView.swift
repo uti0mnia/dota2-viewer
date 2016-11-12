@@ -11,8 +11,8 @@ import UIKit
 class HeroDetailStackView: UIStackView {
     /* Properties */
     var heroImage: UIImageView!
-    var attackTypeLabel: UILabel!
-    var roleLabel: UILabel!
+    var attackTypeLabel: DAMainLabel!
+    var roleLabel: MultiLineLabel!
     var statsStackView: StatsStackView!
     var extraSegmentControl: UISegmentedControl!
     
@@ -24,7 +24,7 @@ class HeroDetailStackView: UIStackView {
         imgSV.alignment = .center
         imgSV.distribution = .fill
         
-        attackTypeLabel = UILabel()
+        attackTypeLabel = DAMainLabel()
         attackTypeLabel.textAlignment = .center
         roleLabel = MultiLineLabel()
         roleLabel.textAlignment = .center
@@ -33,22 +33,25 @@ class HeroDetailStackView: UIStackView {
         statsStackView = StatsStackView(attributeSet: set, stats: stats)
         
         // set up the segment controll
-        extraSegmentControl = UISegmentedControl(items: ["Bio", "Stats", "Abilities"])
+        extraSegmentControl = UISegmentedControl(items: ["Bio", "Abilities"])
         extraSegmentControl.tintColor = UIColor.red
         extraSegmentControl.selectedSegmentIndex = 0
         
         
         super.init(frame: CGRect())
         
-        self.addArrangedSubviews(views: [heroImage, attackTypeLabel, roleLabel, statsStackView, extraSegmentControl])
+        self.addArrangedSubviews(views: [imgSV, attackTypeLabel, roleLabel, statsStackView, extraSegmentControl])
         
         // settings
         self.axis = .vertical
         self.alignment = .fill
         self.distribution = .fill
-        self.spacing = 8
-        self.layoutMargins = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 8)
-        self.isLayoutMarginsRelativeArrangement = true
+        self.layoutMargins = UIEdgeInsetsMake(0, 20, 0, 20)
+        self.spacing = 16
 
+    }
+    
+    required init(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }

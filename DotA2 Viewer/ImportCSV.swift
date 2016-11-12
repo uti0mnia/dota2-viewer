@@ -30,6 +30,7 @@ class CSVImporter {
             try moc.save()
         } catch {
             print("MOC Error: \(error.localizedDescription)")
+            print("User Info: \((error as NSError).userInfo)")
             fatalError("Unable to save MOC at line \(#line) of \(#function)")
         }
     }
@@ -69,13 +70,16 @@ class CSVImporter {
         /*
          * This helper function gets creates a DamageRange object from a string (in the form of '<Int>-<Int>'
          */
-        func toDamageRange(string: String?) -> DamageRange? {
+        func parseDamage(string: String?) -> Damage? {
             guard let dmgStr = string else {
                 return nil
             }
             
             let dmgArray = dmgStr.components(separatedBy: "-")
-            return DamageRange(min: NSDecimalNumber(string: dmgArray[0]).intValue, max: NSDecimalNumber(string: dmgArray[1]).intValue)
+            let damage = NSEntityDescription.insertNewObject(forEntityName: "Damage", into: moc) as! Damage
+            damage.min = NSDecimalNumber(string: dmgArray[0]).intValue as NSNumber
+            damage.max = NSDecimalNumber(string: dmgArray[1]).intValue as NSNumber
+            return damage
         }
         
         //create hero MO
@@ -84,7 +88,7 @@ class CSVImporter {
         
         //load the hero data
         hero.name = data.next()
-        hero.primary_attribute = data.next()
+        hero.primaryAttribute = data.next()
         hero.attackType = data.next()
         hero.role = data.next()
         hero.bio = data.next()
@@ -93,7 +97,7 @@ class CSVImporter {
         //MARK: Attributes - there are 3 of them
         
         var attributes = [Attribute]()
-        var attributeNames = ["Intelligence", "Agility", "Strength"]
+        let attributeNames = ["Intelligence", "Agility", "Strength"]
         for name in attributeNames {
             // create the managed object
             let attribute = NSEntityDescription.insertNewObject(forEntityName: "Attribute", into: moc) as! Attribute
@@ -112,7 +116,7 @@ class CSVImporter {
         }
         
         // create the hero's attributes
-        hero.attributes = NSSet(array: attributes)
+        hero.attributes = NSOrderedSet(array: attributes)
         
         
         
@@ -137,6 +141,7 @@ class CSVImporter {
             _ = data.next() //this is the image URL
             ability.videoURL = data.next()
             abilities.append(ability)
+            ability.hero = hero
         }
         
         // add to hero's abilities
@@ -150,7 +155,7 @@ class CSVImporter {
         stats.hpRegen = NSDecimalNumber(string: data.next())
         stats.mana = NSDecimalNumber(string: data.next())
         stats.manaRegen = NSDecimalNumber(string: data.next())
-        stats.damage = DamageRange.to(data: toDamageRange(string: data.next()) ?? DamageRange(min: 0, max: 0))
+        stats.damage = parseDamage(string: data.next())
         stats.armor = NSDecimalNumber(string: data.next())
         stats.spellDamage = NSDecimalNumber(string: data.next())
         stats.attackAnimation = data.next()
@@ -159,7 +164,11 @@ class CSVImporter {
         stats.projectileSpeed = data.next()
         stats.vision = data.next()
         stats.speed = NSDecimalNumber(string: data.next())
+        stats.hero = hero
         
+        print(hero.name)
+        print(stats)
+        hero.stats = stats
         
     }
     

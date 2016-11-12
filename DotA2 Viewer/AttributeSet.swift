@@ -24,4 +24,11 @@ struct AttributeSet {
     func isPrimaryAttribute(name: AttributeName) -> Bool{
         return name == primary
     }
+    
+    init(hero: Hero) {
+        self.intelligence = hero.attributes[0] as! Attribute
+        self.agility = hero.attributes[1] as! Attribute
+        self.strength = hero.attributes[2] as! Attribute
+        self.primary = AttributeName(rawValue: hero.primaryAttribute)!
+    }
 }

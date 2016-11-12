@@ -60,7 +60,7 @@ class AttributesStackView: UIStackView {
             self.axis = .horizontal
             self.alignment = .fill
             self.distribution = .fillProportionally
-            self.spacing = 4
+            self.spacing = 12
             
 
         }
@@ -82,6 +82,7 @@ class AttributesStackView: UIStackView {
     var intelligence: Attribute!
     var agility: Attribute!
     var strength: Attribute!
+    private let space: CGFloat = 8
     
     init(frame: CGRect, attributeSet set: AttributeSet) {
         // properties
@@ -104,9 +105,9 @@ class AttributesStackView: UIStackView {
         
         // set properties
         self.axis = .horizontal
-        self.alignment = .fill
-        self.distribution = .fillEqually
-        self.spacing = 8
+        self.alignment = .center
+        self.distribution = .equalSpacing
+        self.spacing = space
         
     }
     

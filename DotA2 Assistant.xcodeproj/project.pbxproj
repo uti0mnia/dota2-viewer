@@ -832,6 +832,10 @@
 		C94A26CE1DD54D3500D9B054 /* Recipe+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94A26C01DD54D3500D9B054 /* Recipe+CoreDataClass.swift */; };
 		C94A26CF1DD54D3500D9B054 /* Recipe+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94A26C11DD54D3500D9B054 /* Recipe+CoreDataProperties.swift */; };
 		C94A26D21DD5593F00D9B054 /* DASlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94A26D11DD5593F00D9B054 /* DASlider.swift */; };
+		C94CAB5D1DD79D7000971BC5 /* Damage+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94CAB5B1DD79D7000971BC5 /* Damage+CoreDataClass.swift */; };
+		C94CAB5E1DD79D7000971BC5 /* Damage+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94CAB5C1DD79D7000971BC5 /* Damage+CoreDataProperties.swift */; };
+		C94CAB621DD7AEA300971BC5 /* DAYouTubeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94CAB611DD7AEA300971BC5 /* DAYouTubeButton.swift */; };
+		C94CAB641DD7CD4F00971BC5 /* DASearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94CAB631DD7CD4F00971BC5 /* DASearchBar.swift */; };
 		C95753C71DD57FCF005C9F75 /* agility_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C95753C11DD57FCF005C9F75 /* agility_icon.png */; };
 		C95753C81DD57FCF005C9F75 /* armor_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C95753C21DD57FCF005C9F75 /* armor_icon.png */; };
 		C95753C91DD57FCF005C9F75 /* damage_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C95753C31DD57FCF005C9F75 /* damage_icon.png */; };
@@ -844,9 +848,7 @@
 		C96B9C461DB3334800F656AA /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96B9C451DB3334800F656AA /* DetailVC.swift */; };
 		C97710FF1DC04E340083FBD7 /* AbilityStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97710FE1DC04E340083FBD7 /* AbilityStackView.swift */; };
 		C97991691DD6255A0081454C /* AttributeSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97991681DD6255A0081454C /* AttributeSet.swift */; };
-		C979916B1DD632D10081454C /* DamageRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = C979916A1DD632D10081454C /* DamageRange.swift */; };
 		C9A6D6401DBC124200580B7B /* HeroBioVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A6D63F1DBC124200580B7B /* HeroBioVC.swift */; };
-		C9A6D6421DBC12B700580B7B /* HeroStatsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A6D6411DBC12B700580B7B /* HeroStatsVC.swift */; };
 		C9A6D6481DBC261A00580B7B /* HeroAllAbilitiesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A6D6471DBC261A00580B7B /* HeroAllAbilitiesVC.swift */; };
 		C9A6D64D1DBD25AE00580B7B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A6D64C1DBD25AE00580B7B /* Extensions.swift */; };
 		C9FB5C731DBB9239000A0824 /* ItemDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FB5C721DBB9239000A0824 /* ItemDetailVC.swift */; };
@@ -1686,8 +1688,11 @@
 		C94A26BF1DD54D3500D9B054 /* Stats+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Stats+CoreDataProperties.swift"; path = "CoreData/Stats+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C94A26C01DD54D3500D9B054 /* Recipe+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Recipe+CoreDataClass.swift"; path = "CoreData/Recipe+CoreDataClass.swift"; sourceTree = "<group>"; };
 		C94A26C11DD54D3500D9B054 /* Recipe+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Recipe+CoreDataProperties.swift"; path = "CoreData/Recipe+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		C94A26D01DD550EF00D9B054 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = SOURCE_ROOT; };
 		C94A26D11DD5593F00D9B054 /* DASlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DASlider.swift; path = Views/DASlider.swift; sourceTree = "<group>"; };
+		C94CAB5B1DD79D7000971BC5 /* Damage+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Damage+CoreDataClass.swift"; path = "../Damage+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C94CAB5C1DD79D7000971BC5 /* Damage+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Damage+CoreDataProperties.swift"; path = "../Damage+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C94CAB611DD7AEA300971BC5 /* DAYouTubeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAYouTubeButton.swift; sourceTree = "<group>"; };
+		C94CAB631DD7CD4F00971BC5 /* DASearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DASearchBar.swift; sourceTree = "<group>"; };
 		C95753C11DD57FCF005C9F75 /* agility_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = agility_icon.png; sourceTree = "<group>"; };
 		C95753C21DD57FCF005C9F75 /* armor_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = armor_icon.png; sourceTree = "<group>"; };
 		C95753C31DD57FCF005C9F75 /* damage_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = damage_icon.png; sourceTree = "<group>"; };
@@ -1700,9 +1705,7 @@
 		C96B9C451DB3334800F656AA /* DetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
 		C97710FE1DC04E340083FBD7 /* AbilityStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbilityStackView.swift; sourceTree = "<group>"; };
 		C97991681DD6255A0081454C /* AttributeSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributeSet.swift; sourceTree = "<group>"; };
-		C979916A1DD632D10081454C /* DamageRange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DamageRange.swift; sourceTree = "<group>"; };
 		C9A6D63F1DBC124200580B7B /* HeroBioVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroBioVC.swift; sourceTree = "<group>"; };
-		C9A6D6411DBC12B700580B7B /* HeroStatsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroStatsVC.swift; sourceTree = "<group>"; };
 		C9A6D6471DBC261A00580B7B /* HeroAllAbilitiesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroAllAbilitiesVC.swift; sourceTree = "<group>"; };
 		C9A6D64C1DBD25AE00580B7B /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		C9FB5C721DBB9239000A0824 /* ItemDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailVC.swift; sourceTree = "<group>"; };
@@ -1748,14 +1751,6 @@
 		364A6A5C1DC1190B00FBE163 /* Hero Views */ = {
 			isa = PBXGroup;
 			children = (
-				364A6A5D1DC1191700FBE163 /* Hero Details */,
-			);
-			name = "Hero Views";
-			sourceTree = "<group>";
-		};
-		364A6A5D1DC1191700FBE163 /* Hero Details */ = {
-			isa = PBXGroup;
-			children = (
 				C97710FE1DC04E340083FBD7 /* AbilityStackView.swift */,
 				364A6A561DC10E1100FBE163 /* AbilitiesStackView.swift */,
 				C90A558C1DD608D600A6E6F6 /* AttributesStackView.swift */,
@@ -1763,7 +1758,7 @@
 				364A6A5A1DC118A400FBE163 /* HeroBioStackView.swift */,
 				364A6A601DC142C200FBE163 /* StatsStackView.swift */,
 			);
-			name = "Hero Details";
+			name = "Hero Views";
 			sourceTree = "<group>";
 		};
 		364A6A5E1DC1192600FBE163 /* Item Views */ = {
@@ -1787,6 +1782,8 @@
 				366A8A111DD1029F000406BF /* DAUIViewController.swift */,
 				C93499FE1DB439B5005407BB /* SimpleCVCell.swift */,
 				364A6A581DC1136300FBE163 /* MultiLineLabel.swift */,
+				C94CAB611DD7AEA300971BC5 /* DAYouTubeButton.swift */,
+				C94CAB631DD7CD4F00971BC5 /* DASearchBar.swift */,
 			);
 			name = General;
 			sourceTree = "<group>";
@@ -2605,7 +2602,6 @@
 		36C0C9551DA6E25800169394 = {
 			isa = PBXGroup;
 			children = (
-				C94A26D01DD550EF00D9B054 /* MyPlayground.playground */,
 				36C0C9601DA6E25800169394 /* DotA2 Viewer */,
 				36C0C95F1DA6E25800169394 /* Products */,
 				22C21E0D20AB14E1F4B87B6D /* Pods */,
@@ -2660,20 +2656,22 @@
 		36FD56461DA6E373007C5A9C /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				C94A26B41DD54D3500D9B054 /* Attribute+CoreDataClass.swift */,
-				C94A26B51DD54D3500D9B054 /* Attribute+CoreDataProperties.swift */,
-				C94A26B61DD54D3500D9B054 /* ListObject+CoreDataClass.swift */,
-				C94A26B71DD54D3500D9B054 /* ListObject+CoreDataProperties.swift */,
-				C94A26B81DD54D3500D9B054 /* Hero+CoreDataClass.swift */,
-				C94A26B91DD54D3500D9B054 /* Hero+CoreDataProperties.swift */,
 				C94A26BA1DD54D3500D9B054 /* Ability+CoreDataClass.swift */,
 				C94A26BB1DD54D3500D9B054 /* Ability+CoreDataProperties.swift */,
+				C94A26B41DD54D3500D9B054 /* Attribute+CoreDataClass.swift */,
+				C94A26B51DD54D3500D9B054 /* Attribute+CoreDataProperties.swift */,
+				C94CAB5B1DD79D7000971BC5 /* Damage+CoreDataClass.swift */,
+				C94CAB5C1DD79D7000971BC5 /* Damage+CoreDataProperties.swift */,
+				C94A26B81DD54D3500D9B054 /* Hero+CoreDataClass.swift */,
+				C94A26B91DD54D3500D9B054 /* Hero+CoreDataProperties.swift */,
 				C94A26BC1DD54D3500D9B054 /* Item+CoreDataClass.swift */,
 				C94A26BD1DD54D3500D9B054 /* Item+CoreDataProperties.swift */,
-				C94A26BE1DD54D3500D9B054 /* Stats+CoreDataClass.swift */,
-				C94A26BF1DD54D3500D9B054 /* Stats+CoreDataProperties.swift */,
+				C94A26B61DD54D3500D9B054 /* ListObject+CoreDataClass.swift */,
+				C94A26B71DD54D3500D9B054 /* ListObject+CoreDataProperties.swift */,
 				C94A26C01DD54D3500D9B054 /* Recipe+CoreDataClass.swift */,
 				C94A26C11DD54D3500D9B054 /* Recipe+CoreDataProperties.swift */,
+				C94A26BE1DD54D3500D9B054 /* Stats+CoreDataClass.swift */,
+				C94A26BF1DD54D3500D9B054 /* Stats+CoreDataProperties.swift */,
 				C9FEBF2D1DB299F2000CD4FF /* DotA2_Viewer.xcdatamodeld */,
 			);
 			name = CoreData;
@@ -2696,7 +2694,6 @@
 				36C7DF221DC8F2B500251705 /* CSV */,
 				36FD56461DA6E373007C5A9C /* CoreData */,
 				C97991681DD6255A0081454C /* AttributeSet.swift */,
-				C979916A1DD632D10081454C /* DamageRange.swift */,
 				C9A6D64C1DBD25AE00580B7B /* Extensions.swift */,
 				C9172C171DD13F9100DCF88F /* Globals.swift */,
 				36C7DF231DC8F2C800251705 /* RSSFeedHelper.swift */,
@@ -2767,7 +2764,6 @@
 				361B71101DBE9AE500133173 /* HeroAbilityVC.swift */,
 				C9A6D6471DBC261A00580B7B /* HeroAllAbilitiesVC.swift */,
 				C9A6D63F1DBC124200580B7B /* HeroBioVC.swift */,
-				C9A6D6411DBC12B700580B7B /* HeroStatsVC.swift */,
 			);
 			name = "Child VCs";
 			sourceTree = "<group>";
@@ -3708,6 +3704,7 @@
 				364A6A611DC142C200FBE163 /* StatsStackView.swift in Sources */,
 				C9FB5C751DBB997C000A0824 /* ObjectDetailVC.swift in Sources */,
 				C94A26CF1DD54D3500D9B054 /* Recipe+CoreDataProperties.swift in Sources */,
+				C94CAB5E1DD79D7000971BC5 /* Damage+CoreDataProperties.swift in Sources */,
 				366A8A221DD24B71000406BF /* DAMainCellLabel.swift in Sources */,
 				C9FB5C771DBBC116000A0824 /* HeroDetailVC.swift in Sources */,
 				C9A6D6481DBC261A00580B7B /* HeroAllAbilitiesVC.swift in Sources */,
@@ -3715,6 +3712,7 @@
 				36FD56591DA6E403007C5A9C /* CSwiftV.swift in Sources */,
 				36A2921E1DCA479F006E96A8 /* MyTableVC.swift in Sources */,
 				C94A26C71DD54D3500D9B054 /* Hero+CoreDataProperties.swift in Sources */,
+				C94CAB621DD7AEA300971BC5 /* DAYouTubeButton.swift in Sources */,
 				C97710FF1DC04E340083FBD7 /* AbilityStackView.swift in Sources */,
 				364A6A591DC1136300FBE163 /* MultiLineLabel.swift in Sources */,
 				366A8A161DD103F1000406BF /* DATabBar.swift in Sources */,
@@ -3726,7 +3724,6 @@
 				C9FEBF2F1DB299F2000CD4FF /* DotA2_Viewer.xcdatamodeld in Sources */,
 				C90A558D1DD608D600A6E6F6 /* AttributesStackView.swift in Sources */,
 				366A8A0C1DD0F87F000406BF /* DAMainTableViewCell.swift in Sources */,
-				C979916B1DD632D10081454C /* DamageRange.swift in Sources */,
 				C9A6D6401DBC124200580B7B /* HeroBioVC.swift in Sources */,
 				C94A26CB1DD54D3500D9B054 /* Item+CoreDataProperties.swift in Sources */,
 				C96B9C421DB2C1B800F656AA /* ItemListVC.swift in Sources */,
@@ -3737,8 +3734,8 @@
 				362A7ED41DBFBEF700BFC9BA /* HeroDetailStackView.swift in Sources */,
 				C94A26C61DD54D3500D9B054 /* Hero+CoreDataClass.swift in Sources */,
 				C96B9C401DB2C14800F656AA /* HeroListVC.swift in Sources */,
+				C94CAB5D1DD79D7000971BC5 /* Damage+CoreDataClass.swift in Sources */,
 				C94A26CC1DD54D3500D9B054 /* Stats+CoreDataClass.swift in Sources */,
-				C9A6D6421DBC12B700580B7B /* HeroStatsVC.swift in Sources */,
 				36C7DF241DC8F2C800251705 /* RSSFeedHelper.swift in Sources */,
 				C94A26C91DD54D3500D9B054 /* Ability+CoreDataProperties.swift in Sources */,
 				C94A26CD1DD54D3500D9B054 /* Stats+CoreDataProperties.swift in Sources */,
@@ -3746,6 +3743,7 @@
 				361B71111DBE9AE500133173 /* HeroAbilityVC.swift in Sources */,
 				C94A26C81DD54D3500D9B054 /* Ability+CoreDataClass.swift in Sources */,
 				C94A26CA1DD54D3500D9B054 /* Item+CoreDataClass.swift in Sources */,
+				C94CAB641DD7CD4F00971BC5 /* DASearchBar.swift in Sources */,
 				C94A26C21DD54D3500D9B054 /* Attribute+CoreDataClass.swift in Sources */,
 				366A8A0E1DD0F993000406BF /* DACircleImageView.swift in Sources */,
 				C9A6D64D1DBD25AE00580B7B /* Extensions.swift in Sources */,
@@ -3822,6 +3820,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = Dota2_Assistant;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -3866,6 +3865,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = Dota2_Assistant;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";

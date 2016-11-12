@@ -25,6 +25,20 @@ class CustomTabVC: DAUIViewController {
         return tb
     }()
     
+    lazy var heroTitle: DAMainLabel = {
+        let label = DAMainLabel(style: .title)
+        label.text = "Heroes"
+        label.sizeToFit()
+        return label
+    }()
+    
+    lazy var itemTitle: DAMainLabel = {
+        let label = DAMainLabel(style: .title)
+        label.text = "Items"
+        label.sizeToFit()
+        return label
+    }()
+    
     
     var containerView: UIView = {
         let v = UIView()
@@ -51,11 +65,8 @@ class CustomTabVC: DAUIViewController {
         
     }()
     
-    lazy var searchBar: UISearchBar = {
-        let sb = UISearchBar()
-        sb.tintColor = UIColor.red
-        sb.searchBarStyle = .minimal
-        sb.showsCancelButton = false
+    lazy var searchBar: DASearchBar = {
+        let sb = DASearchBar()
         return sb
     }()
     
@@ -95,7 +106,7 @@ class CustomTabVC: DAUIViewController {
         self.view.addConstraints(horz + vert + vert2)
         
         // configure the UI Elements
-        navigationItem.title = "Heroes"
+        navigationItem.titleView = heroTitle
         searchBarButton = navigationItem.rightBarButtonItem! // the search button
         
         // configure the first container view
@@ -109,6 +120,19 @@ class CustomTabVC: DAUIViewController {
         // nsnotification
         NotificationCenter.default.addObserver(self, selector: #selector(CustomTabVC.keyboardWillShow), name: NSNotification.Name.UIKeyboardDidShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(CustomTabVC.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        // set the title view
+        switch tabBar.selectedItem!.title! {
+        case "Heroes":
+            self.navigationItem.titleView = heroTitle
+        default:
+            self.navigationItem.titleView = itemTitle
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -123,7 +147,6 @@ class CustomTabVC: DAUIViewController {
         if segue.identifier == "showDetail" {
             if let vc = (segue.destination as? UINavigationController)?.viewControllers.first as? DetailVC {
                 vc.object = objectForDetail
-                //vc.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem
             }
         }
     }
@@ -205,14 +228,14 @@ extension CustomTabVC: UITabBarDelegate {
         case "Heroes":
             guard currentChild is ItemListVC else { return }
             if let currentVC = self.childViewControllers.first {
-                navigationItem.title = "Heroes"
+                navigationItem.titleView = heroTitle
                 cycleFrom(viewController: currentVC, toViewController: heroListVC)
             }
             
         case "Items":
             guard currentChild is HeroListVC else { return }
             if let currentVC = self.childViewControllers.first {
-                navigationItem.title = "Items"
+                navigationItem.titleView = itemTitle
                 cycleFrom(viewController: currentVC, toViewController: itemListVC)
             }
         

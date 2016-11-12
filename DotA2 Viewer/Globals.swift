@@ -16,8 +16,8 @@ let kRadiance = UIFont(name: "Radiance", size: 18)!
 
 // stats
 var kHPGain: NSNumber { get { return 20 } }
-var kHPRegenGain: NSNumber { get { return 0.3 } }
+var kHPRegenGain: NSNumber { get { return 0.03 } }
 var kManaGain: NSNumber { get { return 12 } }
-var kManaRegenGain: NSNumber { get { return 0.4 } }
+var kManaRegenGain: NSNumber { get { return 0.04 } }
 var kSpellDamageGain: NSNumber { get { return 0.0625 } }
 var kArmourGain: NSNumber { get { return NSNumber(floatLiteral: 1/7) } }

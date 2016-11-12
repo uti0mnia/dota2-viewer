@@ -19,7 +19,6 @@ extension Stats {
     @NSManaged public var armor: NSDecimalNumber!
     @NSManaged public var attackAnimation: String!
     @NSManaged public var attackRange: NSDecimalNumber!
-    @NSManaged public var damage: Data!
     @NSManaged public var hp: NSDecimalNumber!
     @NSManaged public var hpRegen: NSDecimalNumber!
     @NSManaged public var magicResistance: NSDecimalNumber!
@@ -30,5 +29,6 @@ extension Stats {
     @NSManaged public var spellDamage: NSDecimalNumber!
     @NSManaged public var vision: String!
     @NSManaged public var hero: Hero!
+    @NSManaged public var damage: Damage!
 
 }

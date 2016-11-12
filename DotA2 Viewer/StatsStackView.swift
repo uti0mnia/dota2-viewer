@@ -22,6 +22,8 @@ class StatsStackView: UIStackView {
                 
                 super.init(frame: CGRect())
                 
+                self.addArrangedSubviews(views: [left, right])
+                
                 // StackView properties
                 self.axis = .horizontal
                 self.alignment = .fill
@@ -48,31 +50,12 @@ class StatsStackView: UIStackView {
             
             // set views
             hpStack = DoubleStackView(left: DAMainLabel(), right: DAMainLabel())
-            hpStack.left.text = String(format: "%.0f", stats.hp)
-            hpStack.right.text = String(format: "%.0f", stats.hpRegen)
-            
             manaStack = DoubleStackView(left: DAMainLabel(), right: DAMainLabel())
-            manaStack.left.text = String(format: "%.0f", stats.mana)
-            manaStack.right.text = String(format: "%.0f", stats.manaRegen)
-            
             spellStack = DoubleStackView(left: DAMainLabel(), right: DAMainLabel())
-            spellStack.left.text = String(format: "%.0f", stats.spellDamage)
-            spellStack.right.text = String(format: "%.0f", stats.magicResistance)
-            
             damageStack = DoubleStackView(left: DAMainLabel(), right: DAMainLabel())
-            damageStack.left.text = stats.damage
-            damageStack.right.text = String(format: "%.0f", stats.armor)
-            
             attackStack = DoubleStackView(left: DAMainLabel(), right: DAMainLabel())
-            attackStack.left.text = stats.attackAnimation
-            attackStack.right.text = String(format: "%.0f", stats.attackRange)
-            
             speedStack = DoubleStackView(left: DAMainLabel(), right: DAMainLabel())
-            speedStack.left.text = String(format: "%.0f", stats.speed)
-            speedStack.right.text = stats.projectileSpeed
-            
             visionLabel = DAMainLabel()
-            visionLabel.text = stats.vision
             
             // initialize self
             super.init(frame: CGRect())
@@ -148,21 +131,19 @@ class StatsStackView: UIStackView {
         return base + currentInteligence * kSpellDamageGain.doubleValue
         }
     }
-    var damage: DamageRange { get {
-        let data = stats.damage
-        // make sure we can get a damage range out of the data
-        guard let dmgRng = DamageRange.from(data: data!) else {
-            print("Problem with damage range")
-            return DamageRange(min: 0, max: 0)
+    var damage: (Int, Int) { get {
+        guard let base = stats.damage else {
+            print("Problem getting damage")
+            return (0,0)
         }
         
         // return a new damage range with increased stats
-        let min = dmgRng.min + Int(currentStrength)
-        let max = dmgRng.max + Int(currentStrength)
-        return DamageRange(min: min, max: max)
+        let min = base.min.intValue + Int(currentStrength)
+        let max = base.max.intValue + Int(currentStrength)
+        return (min, max)
         }
     }
-    var armour: Double { get {
+    var armor: Double { get {
         let base = stats.armor.doubleValue
         return base + currentAgility * kArmourGain.doubleValue
         }
@@ -179,14 +160,14 @@ class StatsStackView: UIStackView {
         super.init(frame: frame)
         
         // configure the views
-        levelLabel = DAMainLabel()
+        levelLabel = DAMainLabel(style: .large)
         slider = DASlider()
         slider.delegate = self
         attributesSV = AttributesStackView(attributeSet: set)
         microStatsView = MicroStatsStackView(stats: stats)
         visionLabel = DAMainLabel()
         
-        self.addArrangedSubviews(views: [levelLabel, slider, attributesSV, microStatsView])
+        self.addArrangedSubviews(views: [levelLabel, slider, attributesSV, microStatsView, visionLabel])
         
         // configure self
         self.axis = .vertical
@@ -225,15 +206,15 @@ class StatsStackView: UIStackView {
         microStatsView.hpStack.right.text = String(format: "HP Regen: %.2f", hpRegen)
         microStatsView.manaStack.left.text = "Mana: \(mana)"
         microStatsView.manaStack.right.text = String(format: "Mana Regen: %.2f", manaRegen)
-        microStatsView.spellStack.left.text = String(format: "Spell Damage: %@%.2f", ["%", spellDamage])
-        microStatsView.spellStack.right.text = String(format: "Magic Resistant: %@%.2f", ["%", stats.magicResistance])
-        microStatsView.damageStack.left.text = "Damage: \(damage.min)-\(damage.max)"
-        microStatsView.damageStack.right.text = String(format: "Armour: %.2f", armour)
-        microStatsView.attackStack.left.text = "Attack Animation: \(stats.attackAnimation)s"
+        microStatsView.spellStack.left.text = String(format: "Spell Damage: %@%.1f", "%", spellDamage)
+        microStatsView.spellStack.right.text = String(format: "Magic Resistant: %@%i", "%", stats.magicResistance.intValue)
+        microStatsView.damageStack.left.text = "Damage: \(damage.0)-\(damage.1)"
+        microStatsView.damageStack.right.text = String(format: "Armor: %.1f", armor)
+        microStatsView.attackStack.left.text = "Attack Animation: \(stats.attackAnimation!)s"
         microStatsView.attackStack.right.text = "Attack Range: \(stats.attackRange.intValue)"
         microStatsView.speedStack.left.text = "Speed: \(stats.speed.intValue)"
-        microStatsView.speedStack.right.text = "Projectile Speed: \(stats.projectileSpeed)"
-        visionLabel.text = "Vision \(stats.vision) (day/night)"
+        microStatsView.speedStack.right.text = "Projectile Speed: \(stats.projectileSpeed!)"
+        visionLabel.text = "Vision \(stats.vision!)"
         
     }
     

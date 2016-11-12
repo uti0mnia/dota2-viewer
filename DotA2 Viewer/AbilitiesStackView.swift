@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class AbilitiesStackView: UIStackView {
 
@@ -18,8 +19,8 @@ class AbilitiesStackView: UIStackView {
         
         // set up one AbilityStackView per ability
         for ability in abilities {
-            let stack = AbilityStackView()
-            stack.setStack()
+            let url = URL(string: ability.videoURL.replacingOccurrences(of: "www", with: "m"))
+            let stack = AbilityStackView(url: url)
             
             // set its views
             stack.cooldownLabel.text = ability.cooldown
@@ -30,6 +31,9 @@ class AbilitiesStackView: UIStackView {
             stack.manaLabel.text = ability.mana
             stack.name.text = ability.name
             
+            // set up the youtube button
+            stack.youtubeButton?.addTarget(self, action: #selector(AbilitiesStackView.openYoutubeButton(_:)), for: .touchUpInside)
+            
             // add it to self
             self.addArrangedSubview(stack)
         }
@@ -39,7 +43,11 @@ class AbilitiesStackView: UIStackView {
         self.distribution = .fill
         self.spacing = 8
         
-        
+    }
+    
+    @objc func openYoutubeButton(_ sender: DAYouTubeButton) {
+        let svc = SFSafariViewController(url: sender.url)
+        UIApplication.shared.keyWindow?.rootViewController?.present(svc, animated: true, completion: nil)
     }
 
 }
