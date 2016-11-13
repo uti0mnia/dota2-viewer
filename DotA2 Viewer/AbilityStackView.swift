@@ -17,7 +17,7 @@ class AbilityStackView: UIStackView {
     var manaLabel: UILabel!
     var cooldownLabel: UILabel!
     var youtubeButton: DAYouTubeButton?
-    var loreLabel: UILabel!
+    var loreLabel: DALoreLabel!
     
     init(frame: CGRect, url: URL?) {
         name = DAMainLabel(style: .xlarge)
@@ -43,7 +43,7 @@ class AbilityStackView: UIStackView {
         stackView.alignment = .fill
         stackView.axis = .horizontal
         stackView.distribution = .fillEqually
-        loreLabel = MultiLineLabel(style: .xsmall)
+        loreLabel = DALoreLabel()
         
         if url != nil {
             //youtubeButton = DAYouTubeButton(url: url!)

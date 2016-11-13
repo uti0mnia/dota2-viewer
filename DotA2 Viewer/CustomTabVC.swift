@@ -39,6 +39,12 @@ class CustomTabVC: DAUIViewController {
         return label
     }()
     
+    var titleView: DAMainLabel! {
+        didSet {
+            self.navigationItem.titleView = titleView
+        }
+    }
+    
     
     var containerView: UIView = {
         let v = UIView()
@@ -106,11 +112,16 @@ class CustomTabVC: DAUIViewController {
         self.view.addConstraints(horz + vert + vert2)
         
         // configure the UI Elements
-        navigationItem.titleView = heroTitle
+        titleView = heroTitle
         searchBarButton = navigationItem.rightBarButtonItem! // the search button
         
         // configure the first container view
         displayContentController(heroListVC)
+        
+        // hide the back button when pushing
+        let btn = UIBarButtonItem()
+        btn.title = ""
+        navigationItem.backBarButtonItem = btn
         
     }
     
@@ -129,9 +140,9 @@ class CustomTabVC: DAUIViewController {
         // set the title view
         switch tabBar.selectedItem!.title! {
         case "Heroes":
-            self.navigationItem.titleView = heroTitle
+            titleView = heroTitle
         default:
-            self.navigationItem.titleView = itemTitle
+            titleView = itemTitle
         }
     }
     
@@ -141,26 +152,21 @@ class CustomTabVC: DAUIViewController {
         NotificationCenter.default.removeObserver(self)
     }
     
-    
-    func moveToDetail() {
-        guard objectForDetail != nil else { return }
-        
-        // init the vc
-        let sb = UIStoryboard(name: "Main", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: "DetailVC") as! DetailVC
-        
-        // set the object
-        vc.object = objectForDetail
-        
-        // move to the vc
-        self.showDetailViewController(vc, sender: nil)
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard objectForDetail != nil else { return }
         if segue.identifier == "showDetail" {
             if let vc = (segue.destination as? UINavigationController)?.viewControllers.first as? DetailVC {
                 vc.object = objectForDetail
+            }
+            // hide search bar if present
+            if self.navigationItem.titleView != titleView {
+                // clear the search
+                searchBar.text = ""
+                (currentChild as! ObjectListVC).clearFilter()
+                
+                // hide the search bar
+                hideSearchBar()
+                
             }
         }
     }
@@ -223,7 +229,7 @@ class CustomTabVC: DAUIViewController {
         },
                        completion: { _ in
                 // set the title view to nil and reset the search button
-                self.navigationItem.titleView = nil
+                self.navigationItem.titleView = self.titleView
                 self.navigationItem.setRightBarButton(self.searchBarButton, animated: true)
         })
     }
@@ -242,14 +248,14 @@ extension CustomTabVC: UITabBarDelegate {
         case "Heroes":
             guard currentChild is ItemListVC else { return }
             if let currentVC = self.childViewControllers.first {
-                navigationItem.titleView = heroTitle
+                titleView = heroTitle
                 cycleFrom(viewController: currentVC, toViewController: heroListVC)
             }
             
         case "Items":
             guard currentChild is HeroListVC else { return }
             if let currentVC = self.childViewControllers.first {
-                navigationItem.titleView = itemTitle
+                titleView = itemTitle
                 cycleFrom(viewController: currentVC, toViewController: itemListVC)
             }
         
@@ -276,20 +282,13 @@ extension CustomTabVC: UITableViewDelegate {
         case is ObjectListVC:
             // get the item/hero select
             objectForDetail = (currentChild as! ObjectListVC).fetchedResultsController.object(at: indexPath)
-            
-            // clear the search
-            searchBar.text = ""
-            (currentChild as! ObjectListVC).clearFilter()
-            
-            // hide the search bar
-            hideSearchBar()
-            
+
+            // perform the segue
+            performSegue(withIdentifier: "showDetail", sender: nil)
             
             // clear the selection
             tableView.deselectRow(at: indexPath, animated: false)
             
-            // perform the segue
-            moveToDetail()
             
         default:
             break
@@ -335,7 +334,7 @@ extension CustomTabVC: UIViewControllerPreviewingDelegate {
     }
     
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
-        self.showDetailViewController(viewControllerToCommit, sender: nil)
+        performSegue(withIdentifier: "showDetail", sender: nil)
     }
 }
 

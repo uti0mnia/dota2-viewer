@@ -21,7 +21,12 @@ class DAMainLabel: UILabel {
         // set the text colour
         self.textColor = UIColor.flatWhite()
         
+        // the font
         self.font = UIFont(name: kRadiance.fontName, size: style.rawValue)
+        
+        // make sure the text fits
+        self.adjustsFontSizeToFitWidth = true
+        self.minimumScaleFactor = 0.5
     }
     
     convenience init(style: DAMainLabelStyle = .medium) {

@@ -77,6 +77,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="0xi-1T-PpC" kind="showDetail" identifier="showDetail" id="Eb3-np-PG4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j50-in-VgG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -158,4 +161,7 @@
             <point key="canvasLocation" x="393" y="-4283"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Eb3-np-PG4"/>
+    </inferredMetricsTieBreakers>
 </document>
