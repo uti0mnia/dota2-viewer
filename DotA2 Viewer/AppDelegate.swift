@@ -37,14 +37,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         Chameleon.setGlobalThemeUsingPrimaryColor(UIColor.flatBlack(), withSecondaryColor: UIColor.flatWhite(), andContentStyle: .contrast)
         
         
-        for family: String in UIFont.familyNames
-        {
-            print("\(family)")
-            for names: String in UIFont.fontNames(forFamilyName: family)
-            {
-                print("== \(names)")
-            }
-        }
+//        for family: String in UIFont.familyNames
+//        {
+//            print("\(family)")
+//            for names: String in UIFont.fontNames(forFamilyName: family)
+//            {
+//                print("== \(names)")
+//            }
+//        }
         
         return true
     }

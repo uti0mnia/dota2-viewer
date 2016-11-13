@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -11,7 +11,7 @@
         <!--Item DetailVC-->
         <scene sceneID="e73-Xz-6xH">
             <objects>
-                <viewController storyboardIdentifier="ItemDetailVC" id="1sy-JS-GQs" customClass="ItemDetailVC" customModule="DotA2_Viewer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ItemDetailVC" id="1sy-JS-GQs" customClass="ItemDetailVC" customModule="DotA2_Assistant" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qDh-ku-t6i"/>
                         <viewControllerLayoutGuide type="bottom" id="Fvv-jC-gHA"/>
@@ -161,7 +161,7 @@
         <!--Hero DetailVC-->
         <scene sceneID="quM-wr-u9f">
             <objects>
-                <viewController storyboardIdentifier="HeroDetailVC" id="kGf-UL-4lh" customClass="HeroDetailVC" customModule="DotA2_Viewer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HeroDetailVC" id="kGf-UL-4lh" customClass="HeroDetailVC" customModule="DotA2_Assistant" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eDx-kz-2eE"/>
                         <viewControllerLayoutGuide type="bottom" id="oLm-1q-goT"/>
@@ -179,7 +179,7 @@
         <!--Hero BioVC-->
         <scene sceneID="ccv-ST-vaT">
             <objects>
-                <viewController storyboardIdentifier="HeroBioVC" id="51v-D7-2Me" customClass="HeroBioVC" customModule="DotA2_Viewer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HeroBioVC" id="51v-D7-2Me" customClass="HeroBioVC" customModule="DotA2_Assistant" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="C06-sj-hvS"/>
                         <viewControllerLayoutGuide type="bottom" id="15Z-u9-BQf"/>
@@ -219,102 +219,10 @@
             </objects>
             <point key="canvasLocation" x="417" y="-2378"/>
         </scene>
-        <!--Hero StatsVC-->
-        <scene sceneID="Esw-t4-neG">
-            <objects>
-                <viewController storyboardIdentifier="HeroStatsVC" id="K3u-2b-Oed" customClass="HeroStatsVC" customModule="DotA2_Viewer" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="qDi-gg-4iK"/>
-                        <viewControllerLayoutGuide type="bottom" id="DjQ-dy-tz3"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Oxj-M6-nE1">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="tg5-eC-bzJ">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="248.5"/>
-                                <subviews>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="8rI-ch-pGh">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="29"/>
-                                        <segments>
-                                            <segment title="Level 1"/>
-                                            <segment title="Level 15"/>
-                                            <segment title="Level 25"/>
-                                        </segments>
-                                        <color key="tintColor" red="0.8038981541450777" green="0.076293976974529415" blue="0.12587700777553598" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </segmentedControl>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hit Points" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WgO-FW-0kN">
-                                        <rect key="frame" x="0.0" y="39" width="375" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mana" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LkD-2R-Ou9">
-                                        <rect key="frame" x="0.0" y="70.5" width="375" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Damage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Uc-rN-XeB">
-                                        <rect key="frame" x="0.0" y="102" width="375" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Armor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9dB-U0-e9Y">
-                                        <rect key="frame" x="0.0" y="133.5" width="375" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sight Range" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HRX-79-B9a">
-                                        <rect key="frame" x="0.0" y="165" width="375" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Attack Range" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0f3-7E-XxW">
-                                        <rect key="frame" x="0.0" y="196.5" width="375" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Missle Speed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zz9-xq-I7i">
-                                        <rect key="frame" x="0.0" y="228" width="375" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="tg5-eC-bzJ" firstAttribute="leading" secondItem="Oxj-M6-nE1" secondAttribute="leading" id="MW1-GK-Gzb"/>
-                            <constraint firstAttribute="trailing" secondItem="tg5-eC-bzJ" secondAttribute="trailing" id="Of0-hq-3yq"/>
-                            <constraint firstItem="tg5-eC-bzJ" firstAttribute="top" secondItem="Oxj-M6-nE1" secondAttribute="top" id="nQT-s9-w0X"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="armorLabel" destination="9dB-U0-e9Y" id="xgr-Dk-cPz"/>
-                        <outlet property="attackRangeLabel" destination="0f3-7E-XxW" id="IFW-a6-ST9"/>
-                        <outlet property="damageLabel" destination="8Uc-rN-XeB" id="gwI-PZ-ZVA"/>
-                        <outlet property="hpLabel" destination="WgO-FW-0kN" id="tU2-AK-UrP"/>
-                        <outlet property="manaLabel" destination="LkD-2R-Ou9" id="noQ-Yq-ITu"/>
-                        <outlet property="missleSpeedLabel" destination="zz9-xq-I7i" id="IPn-9o-G5Q"/>
-                        <outlet property="segmentLevel" destination="8rI-ch-pGh" id="5gv-fr-BpT"/>
-                        <outlet property="sightLabel" destination="HRX-79-B9a" id="chj-sK-AQ2"/>
-                        <outlet property="stackView" destination="tg5-eC-bzJ" id="ONi-Zk-3fy"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dV6-aS-KZe" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1212" y="-2378"/>
-        </scene>
         <!--Hero All AbilitiesVC-->
         <scene sceneID="pxb-hw-Fmo">
             <objects>
-                <viewController storyboardIdentifier="HeroAllAbilitiesVC" id="sRJ-7j-f9V" customClass="HeroAllAbilitiesVC" customModule="DotA2_Viewer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HeroAllAbilitiesVC" id="sRJ-7j-f9V" customClass="HeroAllAbilitiesVC" customModule="DotA2_Assistant" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Bog-wW-d3B"/>
                         <viewControllerLayoutGuide type="bottom" id="sZI-3V-Sab"/>
@@ -347,7 +255,7 @@
         <!--Hero AbilityVC-->
         <scene sceneID="nlh-SG-T9y">
             <objects>
-                <viewController storyboardIdentifier="HeroAbilityVC" id="Ajk-T3-JUc" customClass="HeroAbilityVC" customModule="DotA2_Viewer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HeroAbilityVC" id="Ajk-T3-JUc" customClass="HeroAbilityVC" customModule="DotA2_Assistant" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WQF-kH-Hrw"/>
                         <viewControllerLayoutGuide type="bottom" id="hOb-5p-HOs"/>

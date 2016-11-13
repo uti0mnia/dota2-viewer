@@ -9,19 +9,23 @@
 import UIKit
 import ChameleonFramework
 
+enum DAMainLabelStyle: CGFloat {
+    case xsmall = 12, small = 15, medium = 18, large = 24, xlarge = 30, title = 38
+}
+
 class DAMainLabel: UILabel {
     
-    override init(frame: CGRect) {
+    init(frame: CGRect, style: DAMainLabelStyle = .medium) {
         super.init(frame: frame)
         
         // set the text colour
         self.textColor = UIColor.flatWhite()
         
-        self.font = kRadiance
+        self.font = UIFont(name: kRadiance.fontName, size: style.rawValue)
     }
     
-    convenience init() {
-        self.init(frame: CGRect())
+    convenience init(style: DAMainLabelStyle = .medium) {
+        self.init(frame: CGRect(), style: style)
         
     }
     

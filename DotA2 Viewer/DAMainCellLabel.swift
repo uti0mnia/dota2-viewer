@@ -10,7 +10,7 @@ import UIKit
 
 class DAMainCellLabel: DAMainLabel {
 
-    override init(frame: CGRect) {
+    init(frame: CGRect) {
         super.init(frame: frame)
         
         

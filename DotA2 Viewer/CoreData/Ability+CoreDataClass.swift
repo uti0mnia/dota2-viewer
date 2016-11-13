@@ -20,7 +20,7 @@ public class Ability: NSManagedObject {
             return img
         }
         
-        print("Failed to create image for ability: \(imgName)")
+        print("Failed to create image for ability: \(imgName)") 
         return nil
     }
 }

@@ -10,14 +10,14 @@ import UIKit
 
 class MultiLineLabel: DAMainLabel {
 
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    override init(frame: CGRect, style: DAMainLabelStyle = .medium) {
+        super.init(frame: frame, style: style)
         
         self.numberOfLines = 0
     }
     
-    convenience init() {
-        self.init(frame: CGRect())
+    convenience init(style: DAMainLabelStyle = .medium) {
+        self.init(frame: CGRect(), style: style)
     }
     
     required init?(coder aDecoder: NSCoder) {

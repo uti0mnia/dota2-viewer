@@ -17,31 +17,26 @@ class HeroDetailVC: ObjectDetailVC {
     /* Outlets */
     var scrollView: UIScrollView!
     var fullStackView: HeroDetailStackView!
+    
+    /* variables */
+    // this if hero is nil, then nothing in the view controller will be accessing it because it will be blocked off in viewDidLoad
+    private var hero: Hero? {
+        get {
+            return object as? Hero
+        }
+    }
 
     // extra views
     lazy var abilitiesStackView: AbilitiesStackView = { [unowned self] in
         let sv = AbilitiesStackView()
-        guard self.object is Hero else { return sv }
-        let hero = self.object as! Hero
-        sv.abilities = hero.ability?.array as! [Ability]
+        sv.abilities = self.hero?.ability?.array as! [Ability]
         sv.setStack()
         return sv
     }()
     
     lazy var bioStackView: HeroBioStackView = {[unowned self] in
         let sv = HeroBioStackView()
-        guard self.object is Hero else { return sv }
-        let hero = self.object as! Hero
-        sv.bio = hero.bio?.replacingOccurrences(of: "--", with: " ").replacingOccurrences(of: "\\n", with: "\n") // fix this shit
-        sv.setStack()
-        return sv
-    }()
-    
-    lazy var statsStackView: StatsStackView = {[unowned self] in
-        let sv = StatsStackView()
-        guard self.object is Hero else { return sv }
-        let hero = self.object as! Hero
-        sv.stats = hero.stat?.array as! [Stat]
+        sv.bio = self.hero?.bio?.replacingOccurrences(of: "--", with: " ").replacingOccurrences(of: "\\n", with: "\n") // fix this shit
         sv.setStack()
         return sv
     }()
@@ -52,6 +47,11 @@ class HeroDetailVC: ObjectDetailVC {
     /* Methods */
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // make sure hero isn't nil
+        guard hero != nil else {
+            return
+        }
         
         // inits the views programatically
         initViews()
@@ -71,9 +71,6 @@ class HeroDetailVC: ObjectDetailVC {
         case 0:
             swapDetailContainer(from: currentExtraSV, to: bioStackView)
         case 1:
-            swapDetailContainer(from: currentExtraSV, to: statsStackView)
-            break
-        case 2:
             swapDetailContainer(from: currentExtraSV, to: abilitiesStackView)
         default:
             break
@@ -82,16 +79,10 @@ class HeroDetailVC: ObjectDetailVC {
     
     // sets the view of self
     fileprivate func setView() {
-        guard object is Hero else { return }
-        
-        let hero = object as! Hero
-        
         // set self's displays
-        self.title = hero.name
-        fullStackView.heroImage.image = hero.objectImage()
-        fullStackView.attackTypeLabel.text = hero.attackType
-        fullStackView.roleLabel.text = hero.role
-        setPrimaryStats()
+        fullStackView.heroImage.image = hero?.objectImage()
+        fullStackView.attackTypeLabel.text = hero?.attackType
+        fullStackView.roleLabel.text = hero?.role
         
         
         // add default child
@@ -99,24 +90,7 @@ class HeroDetailVC: ObjectDetailVC {
         fullStackView.addArrangedSubview(bioStackView)
         
     }
-    
-    
-    // adds the primary stat view controller as a child and to the container view
-    fileprivate func setPrimaryStats() {
-        guard object is Hero else { return }
-        let hero = object as! Hero
-        
-        guard hero.primaryStat != nil else { return }
-        let stat = hero.primaryStat!
-        // set values
-        fullStackView.intelligenceLabel.text = stat.intelligence
-        fullStackView.agilityLabel.text = stat.agility
-        fullStackView.strengthLabel.text = stat.strength
-        fullStackView.damageLabel.text = stat.damage
-        fullStackView.speedLabel.text = stat.speed
-        fullStackView.armorLabel.text = stat.armor
-    }
-    
+
     fileprivate func initViews() {
         
         // set up scroll view
@@ -135,9 +109,11 @@ class HeroDetailVC: ObjectDetailVC {
         
         
         // set up the full view
-        fullStackView = HeroDetailStackView()
-        fullStackView.setStack()
+        let attributeSet = AttributeSet(hero: hero!)
+        fullStackView = HeroDetailStackView(attributeSet: attributeSet, stats: hero!.stats)
         fullStackView.translatesAutoresizingMaskIntoConstraints = false
+        fullStackView.layoutMargins = UIEdgeInsetsMake(0, 8, 0, 8)
+        fullStackView.isLayoutMarginsRelativeArrangement = true
         scrollView.addSubview(fullStackView)
         scrollView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[stackView(==scrollView)]|",
                                                                     options: .alignAllCenterX,
@@ -148,6 +124,10 @@ class HeroDetailVC: ObjectDetailVC {
                                                                     metrics: nil,
                                                                     views: ["stackView": fullStackView]))
         
+        
+    }
+    
+    func open(url: URL) {
         
     }
 
