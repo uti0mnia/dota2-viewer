@@ -142,6 +142,20 @@ class CustomTabVC: DAUIViewController {
     }
     
     
+    func moveToDetail() {
+        guard objectForDetail != nil else { return }
+        
+        // init the vc
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "DetailVC") as! DetailVC
+        
+        // set the object
+        vc.object = objectForDetail
+        
+        // move to the vc
+        self.showDetailViewController(vc, sender: nil)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard objectForDetail != nil else { return }
         if segue.identifier == "showDetail" {
@@ -263,18 +277,20 @@ extension CustomTabVC: UITableViewDelegate {
             // get the item/hero select
             objectForDetail = (currentChild as! ObjectListVC).fetchedResultsController.object(at: indexPath)
             
-            // perform the segue
-            self.performSegue(withIdentifier: "showDetail", sender: nil)
-            
-            // clear the selection
-            tableView.deselectRow(at: indexPath, animated: false)
-            
             // clear the search
             searchBar.text = ""
             (currentChild as! ObjectListVC).clearFilter()
             
             // hide the search bar
             hideSearchBar()
+            
+            
+            // clear the selection
+            tableView.deselectRow(at: indexPath, animated: false)
+            
+            // perform the segue
+            moveToDetail()
+            
         default:
             break
         }
