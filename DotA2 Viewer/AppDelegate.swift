@@ -20,6 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        // for firebase
+        FIRApp.configure()
+        
         // for importing the CSVs
         if UserDefaults.standard.value(forKey: "hasLaunched") == nil {
             let importer = CSVImporter(managedObjectContext: managedObjectContext)
@@ -36,16 +39,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         }
         
         Chameleon.setGlobalThemeUsingPrimaryColor(UIColor.flatBlack(), withSecondaryColor: UIColor.flatWhite(), andContentStyle: .contrast)
-        
-        
-        for family: String in UIFont.familyNames
-        {
-            print("\(family)")
-            for names: String in UIFont.fontNames(forFamilyName: family)
-            {
-                print("== \(names)")
-            }
-        }
         
         return true
     }
