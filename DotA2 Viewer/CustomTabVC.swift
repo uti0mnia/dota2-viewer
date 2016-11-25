@@ -334,7 +334,7 @@ extension CustomTabVC: UIViewControllerPreviewingDelegate {
     }
     
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
-        performSegue(withIdentifier: "showDetail", sender: nil)
+        self.showDetailViewController(viewControllerToCommit, sender: nil)
     }
 }
 

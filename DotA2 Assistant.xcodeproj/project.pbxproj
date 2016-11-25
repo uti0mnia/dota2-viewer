@@ -812,6 +812,7 @@
 		36FD56591DA6E403007C5A9C /* CSwiftV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FD56571DA6E403007C5A9C /* CSwiftV.swift */; };
 		36FD565A1DA6E403007C5A9C /* ImportCSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FD56581DA6E403007C5A9C /* ImportCSV.swift */; };
 		C90A558D1DD608D600A6E6F6 /* AttributesStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90A558C1DD608D600A6E6F6 /* AttributesStackView.swift */; };
+		C91470401DD916D5002A042C /* recipe.png in Resources */ = {isa = PBXBuildFile; fileRef = C914703F1DD916D5002A042C /* recipe.png */; };
 		C9172C181DD13F9100DCF88F /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9172C171DD13F9100DCF88F /* Globals.swift */; };
 		C9172C1F1DD1758C00DCF88F /* Trajan Pro Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 366A8A0A1DD0F59C000406BF /* Trajan Pro Regular.ttf */; };
 		C9172C211DD176BA00DCF88F /* dota2-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = C9172C201DD176BA00DCF88F /* dota2-logo.png */; };
@@ -1671,6 +1672,7 @@
 		860C63C4F37CD7891AF00E52 /* Pods-DotA2 Assistant.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DotA2 Assistant.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DotA2 Assistant/Pods-DotA2 Assistant.debug.xcconfig"; sourceTree = "<group>"; };
 		98F87ADCA1FE546C146D14EF /* Pods_DotA2_Assistant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DotA2_Assistant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C90A558C1DD608D600A6E6F6 /* AttributesStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributesStackView.swift; sourceTree = "<group>"; };
+		C914703F1DD916D5002A042C /* recipe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = recipe.png; sourceTree = "<group>"; };
 		C9172C171DD13F9100DCF88F /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		C9172C201DD176BA00DCF88F /* dota2-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dota2-logo.png"; sourceTree = "<group>"; };
 		C922FA8A1DD8AD27007B76F8 /* DALoreLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DALoreLabel.swift; sourceTree = "<group>"; };
@@ -2774,6 +2776,7 @@
 		C9FB56731DBB1110000A0824 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				C914703F1DD916D5002A042C /* recipe.png */,
 				C95753C11DD57FCF005C9F75 /* agility_icon.png */,
 				C95753C21DD57FCF005C9F75 /* armor_icon.png */,
 				C95753C31DD57FCF005C9F75 /* damage_icon.png */,
@@ -3305,6 +3308,7 @@
 				3640C38A1DC7B17400965652 /* Chakra-Magic_Keeper of the Light.png in Resources */,
 				3640C56A1DC7B17500965652 /* Shallow-Grave_Dazzle.png in Resources */,
 				3640C4761DC7B17400965652 /* iron_talon_item.png in Resources */,
+				C91470401DD916D5002A042C /* recipe.png in Resources */,
 				3640C5FD1DC7B17500965652 /* Venomous-Gale_Venomancer.png in Resources */,
 				3640C5291DC7B17500965652 /* Reaper's-Scythe_Necrophos.png in Resources */,
 				3640C54E1DC7B17500965652 /* Sacred-Arrow_Mirana.png in Resources */,
