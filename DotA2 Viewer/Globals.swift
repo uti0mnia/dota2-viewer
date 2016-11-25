@@ -10,8 +10,8 @@ import UIKit
 
 let kTableViewCellImageSpaceR: CGFloat = 10
 let kTableViewCellImageSpaceL: CGFloat = 8
-let kDotaFontLarge = UIFont(name: "TrajanPro-Regular", size: 16)!
-let kDotaFontSmall = UIFont(name: "TrajanPro-Regular", size: 10)!
+let kDotaFontLarge = UIFont(name: "OptimusPrincepsSemiBold", size: 16)!
+let kDotaFontSmall = UIFont(name: "OptimusPrinceps", size: 10)!
 let kRadiance = UIFont(name: "Radiance", size: 18)!
 
 // stats

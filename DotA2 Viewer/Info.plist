@@ -4,9 +4,10 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
+		<string>OptimusPrincepsSemiBold.ttf</string>
 		<string>radiance-semibold.ttf</string>
 		<string>radiance.ttf</string>
-		<string>Trajan Pro Regular.ttf</string>
+		<string>OptimusPrinceps.ttf</string>
 	</array>
 	<key>NSAppTransportSecurity</key>
 	<dict>
