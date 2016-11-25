@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0810"
+   LastUpgradeVersion = "0700"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "85B27BDBEE84D324D7E10373C0AFF075"
+               BlueprintIdentifier = "ABA9B63D6E1DCF4B80406639FC1FCE66"
                BuildableName = "Pods_DotA2_Assistant.framework"
                BlueprintName = "Pods-DotA2 Assistant"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "85B27BDBEE84D324D7E10373C0AFF075"
+            BlueprintIdentifier = "ABA9B63D6E1DCF4B80406639FC1FCE66"
             BuildableName = "Pods_DotA2_Assistant.framework"
             BlueprintName = "Pods-DotA2 Assistant"
             ReferencedContainer = "container:Pods.xcodeproj">
@@ -60,15 +60,6 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "85B27BDBEE84D324D7E10373C0AFF075"
-            BuildableName = "Pods_DotA2_Assistant.framework"
-            BlueprintName = "Pods-DotA2 Assistant"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

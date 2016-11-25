@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>973399983993-u0arn3k441ejmtjblrft8e0fkdh3ll5l.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.973399983993-u0arn3k441ejmtjblrft8e0fkdh3ll5l</string>
+	<key>API_KEY</key>
+	<string>AIzaSyD-SzPSbXVQPpkG2Ix4_dLMDi9--cbXkKg</string>
+	<key>GCM_SENDER_ID</key>
+	<string>973399983993</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.uti0mnia.DotA2-Viewer</string>
+	<key>PROJECT_ID</key>
+	<string>dota2-assistant</string>
+	<key>STORAGE_BUCKET</key>
+	<string>dota2-assistant.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:973399983993:ios:c4946c93a9b3a0be</string>
+	<key>DATABASE_URL</key>
+	<string>https://dota2-assistant.firebaseio.com</string>
+</dict>
+</plist>

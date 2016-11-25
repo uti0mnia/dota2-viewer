@@ -851,6 +851,9 @@
 		C97991691DD6255A0081454C /* AttributeSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97991681DD6255A0081454C /* AttributeSet.swift */; };
 		C999EA081DE7D1C10036AF47 /* OptimusPrinceps.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C999EA061DE7D1C10036AF47 /* OptimusPrinceps.ttf */; };
 		C999EA091DE7D1C10036AF47 /* OptimusPrincepsSemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C999EA071DE7D1C10036AF47 /* OptimusPrincepsSemiBold.ttf */; };
+		C999EA0C1DE7D5090036AF47 /* abilities_fixed.json in Resources */ = {isa = PBXBuildFile; fileRef = C999EA0A1DE7D5090036AF47 /* abilities_fixed.json */; };
+		C999EA0D1DE7D5090036AF47 /* items_fixed.json in Resources */ = {isa = PBXBuildFile; fileRef = C999EA0B1DE7D5090036AF47 /* items_fixed.json */; };
+		C999EA0F1DE7DF680036AF47 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C999EA0E1DE7DF680036AF47 /* GoogleService-Info.plist */; };
 		C9A6D6401DBC124200580B7B /* HeroBioVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A6D63F1DBC124200580B7B /* HeroBioVC.swift */; };
 		C9A6D6481DBC261A00580B7B /* HeroAllAbilitiesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A6D6471DBC261A00580B7B /* HeroAllAbilitiesVC.swift */; };
 		C9A6D64D1DBD25AE00580B7B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A6D64C1DBD25AE00580B7B /* Extensions.swift */; };
@@ -1711,6 +1714,9 @@
 		C97991681DD6255A0081454C /* AttributeSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributeSet.swift; sourceTree = "<group>"; };
 		C999EA061DE7D1C10036AF47 /* OptimusPrinceps.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = OptimusPrinceps.ttf; path = Fonts/OptimusPrinceps.ttf; sourceTree = "<group>"; };
 		C999EA071DE7D1C10036AF47 /* OptimusPrincepsSemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = OptimusPrincepsSemiBold.ttf; path = Fonts/OptimusPrincepsSemiBold.ttf; sourceTree = "<group>"; };
+		C999EA0A1DE7D5090036AF47 /* abilities_fixed.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = abilities_fixed.json; sourceTree = "<group>"; };
+		C999EA0B1DE7D5090036AF47 /* items_fixed.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = items_fixed.json; sourceTree = "<group>"; };
+		C999EA0E1DE7DF680036AF47 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		C9A6D63F1DBC124200580B7B /* HeroBioVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroBioVC.swift; sourceTree = "<group>"; };
 		C9A6D6471DBC261A00580B7B /* HeroAllAbilitiesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroAllAbilitiesVC.swift; sourceTree = "<group>"; };
 		C9A6D64C1DBD25AE00580B7B /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -2657,6 +2663,7 @@
 				C9172C201DD176BA00DCF88F /* dota2-logo.png */,
 				36C0C96D1DA6E25800169394 /* LaunchScreen.storyboard */,
 				36C0C9701DA6E25800169394 /* Info.plist */,
+				C999EA0E1DE7DF680036AF47 /* GoogleService-Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -2722,6 +2729,8 @@
 		C967E6CB1DD4182F00DC0DBC /* CSVs */ = {
 			isa = PBXGroup;
 			children = (
+				C999EA0A1DE7D5090036AF47 /* abilities_fixed.json */,
+				C999EA0B1DE7D5090036AF47 /* items_fixed.json */,
 				C94A26AA1DD5494200D9B054 /* hero.csv */,
 				36268C7E1DAD7F5100B9FF02 /* items_final.csv */,
 			);
@@ -3258,6 +3267,7 @@
 				3640C58B1DC7B17500965652 /* Soul-Rip_Undying.png in Resources */,
 				3640C4831DC7B17400965652 /* Last-Word_Silencer.png in Resources */,
 				3640C5D81DC7B17500965652 /* Toggle-Movement_Phoenix.png in Resources */,
+				C999EA0C1DE7D5090036AF47 /* abilities_fixed.json in Resources */,
 				3640C4D41DC7B17500965652 /* Nature's-Prophet_hero.png in Resources */,
 				3640C4DA1DC7B17500965652 /* Nether-Swap_Vengeful Spirit.png in Resources */,
 				3640C4971DC7B17400965652 /* Lone-Druid_hero.png in Resources */,
@@ -3379,6 +3389,7 @@
 				3640C3501DC7B17400965652 /* Batrider_hero.png in Resources */,
 				3640C5BD1DC7B17500965652 /* Take-Aim_Sniper.png in Resources */,
 				3640C5AC1DC7B17500965652 /* Stone-Remnant_Earth Spirit.png in Resources */,
+				C999EA0D1DE7D5090036AF47 /* items_fixed.json in Resources */,
 				3640C3C31DC7B17400965652 /* Desolate_Spectre.png in Resources */,
 				3640C4351DC7B17400965652 /* Glimpse_Disruptor.png in Resources */,
 				3640C5571DC7B17500965652 /* Savage-Roar_Lone Druid.png in Resources */,
@@ -3459,6 +3470,7 @@
 				3640C4271DC7B17400965652 /* Frost-Blast_Lich.png in Resources */,
 				3640C48E1DC7B17400965652 /* lifesteal_item.png in Resources */,
 				3640C4491DC7B17400965652 /* Headshot_Sniper.png in Resources */,
+				C999EA0F1DE7DF680036AF47 /* GoogleService-Info.plist in Resources */,
 				36A2922D1DCA51CC006E96A8 /* Arnaments.png in Resources */,
 				3640C5931DC7B17500965652 /* Spiked-Carapace_Nyx Assassin.png in Resources */,
 				3640C5601DC7B17500965652 /* Shadow-Demon_hero.png in Resources */,
@@ -3894,7 +3906,7 @@
 				INFOPLIST_FILE = "DotA2 Viewer/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "uti0mnia.DotA2-Viewer";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.uti0mnia.DotA2-Viewer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -3909,7 +3921,7 @@
 				INFOPLIST_FILE = "DotA2 Viewer/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "uti0mnia.DotA2-Viewer";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.uti0mnia.DotA2-Viewer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
