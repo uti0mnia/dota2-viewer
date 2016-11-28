@@ -9,6 +9,6 @@
 import Foundation
 import Firebase
 
-class FirebaseExport {
+class FirebaseImport {
     
 }

@@ -854,7 +854,7 @@
 		C999EA0C1DE7D5090036AF47 /* abilities_fixed.json in Resources */ = {isa = PBXBuildFile; fileRef = C999EA0A1DE7D5090036AF47 /* abilities_fixed.json */; };
 		C999EA0D1DE7D5090036AF47 /* items_fixed.json in Resources */ = {isa = PBXBuildFile; fileRef = C999EA0B1DE7D5090036AF47 /* items_fixed.json */; };
 		C999EA0F1DE7DF680036AF47 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C999EA0E1DE7DF680036AF47 /* GoogleService-Info.plist */; };
-		C999EA111DE7E3CB0036AF47 /* FirebaseExport.swift in Sources */ = {isa = PBXBuildFile; fileRef = C999EA101DE7E3CB0036AF47 /* FirebaseExport.swift */; };
+		C999EA111DE7E3CB0036AF47 /* FirebaseImport.swift in Sources */ = {isa = PBXBuildFile; fileRef = C999EA101DE7E3CB0036AF47 /* FirebaseImport.swift */; };
 		C9A6D6401DBC124200580B7B /* HeroBioVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A6D63F1DBC124200580B7B /* HeroBioVC.swift */; };
 		C9A6D6481DBC261A00580B7B /* HeroAllAbilitiesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A6D6471DBC261A00580B7B /* HeroAllAbilitiesVC.swift */; };
 		C9A6D64D1DBD25AE00580B7B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A6D64C1DBD25AE00580B7B /* Extensions.swift */; };
@@ -1718,7 +1718,7 @@
 		C999EA0A1DE7D5090036AF47 /* abilities_fixed.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = abilities_fixed.json; sourceTree = "<group>"; };
 		C999EA0B1DE7D5090036AF47 /* items_fixed.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = items_fixed.json; sourceTree = "<group>"; };
 		C999EA0E1DE7DF680036AF47 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
-		C999EA101DE7E3CB0036AF47 /* FirebaseExport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseExport.swift; sourceTree = "<group>"; };
+		C999EA101DE7E3CB0036AF47 /* FirebaseImport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseImport.swift; sourceTree = "<group>"; };
 		C9A6D63F1DBC124200580B7B /* HeroBioVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroBioVC.swift; sourceTree = "<group>"; };
 		C9A6D6471DBC261A00580B7B /* HeroAllAbilitiesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroAllAbilitiesVC.swift; sourceTree = "<group>"; };
 		C9A6D64C1DBD25AE00580B7B /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -2714,7 +2714,7 @@
 				C9A6D64C1DBD25AE00580B7B /* Extensions.swift */,
 				C9172C171DD13F9100DCF88F /* Globals.swift */,
 				36C7DF231DC8F2C800251705 /* RSSFeedHelper.swift */,
-				C999EA101DE7E3CB0036AF47 /* FirebaseExport.swift */,
+				C999EA101DE7E3CB0036AF47 /* FirebaseImport.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -3737,7 +3737,7 @@
 				C9A6D6481DBC261A00580B7B /* HeroAllAbilitiesVC.swift in Sources */,
 				36C0C9641DA6E25800169394 /* ObjectListVC.swift in Sources */,
 				36FD56591DA6E403007C5A9C /* CSwiftV.swift in Sources */,
-				C999EA111DE7E3CB0036AF47 /* FirebaseExport.swift in Sources */,
+				C999EA111DE7E3CB0036AF47 /* FirebaseImport.swift in Sources */,
 				36A2921E1DCA479F006E96A8 /* MyTableVC.swift in Sources */,
 				C94A26C71DD54D3500D9B054 /* Hero+CoreDataProperties.swift in Sources */,
 				C94CAB621DD7AEA300971BC5 /* DAYouTubeButton.swift in Sources */,
