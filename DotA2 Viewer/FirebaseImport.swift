@@ -8,7 +8,22 @@
 
 import Foundation
 import Firebase
+import CoreData
 
-class FirebaseImport {
-    
+struct FirebaseImport {
+    //The function that is meant to pull the entire database (for first download)
+    static func importAll() {
+        // create a firebase reference
+        let ref = ["heroes": FIRDatabase.database().reference(withPath: "hero"),
+                   "items": FIRDatabase.database().reference(withPath: "item")
+        ]
+        
+//        ref["heroes"]?.observe(.value, with: {snapshot in
+//            print(snapshot.value)
+//        })
+        ref["items"]?.observe(.value, with: {snapshot in
+            print(snapshot.value)
+        })
+        
+    }
 }

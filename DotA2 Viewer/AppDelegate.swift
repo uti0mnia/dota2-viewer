@@ -22,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         
         // for firebase
         FIRApp.configure()
+        FirebaseImport.importAll()
         
         // for importing the CSVs
         if UserDefaults.standard.value(forKey: "hasLaunched") == nil {

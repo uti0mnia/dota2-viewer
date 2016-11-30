@@ -7,5 +7,6 @@ target 'DotA2 Assistant' do
   use_frameworks!
   pod 'ChameleonFramework'
   pod 'Firebase/Core'
+  pod 'Firebase/Database'
 
 end

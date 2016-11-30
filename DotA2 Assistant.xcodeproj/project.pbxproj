@@ -818,23 +818,7 @@
 		C922FA8B1DD8AD27007B76F8 /* DALoreLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C922FA8A1DD8AD27007B76F8 /* DALoreLabel.swift */; };
 		C93499FF1DB439B5005407BB /* SimpleCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93499FE1DB439B5005407BB /* SimpleCVCell.swift */; };
 		C94A26AB1DD5494200D9B054 /* hero.csv in Resources */ = {isa = PBXBuildFile; fileRef = C94A26AA1DD5494200D9B054 /* hero.csv */; };
-		C94A26C21DD54D3500D9B054 /* Attribute+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94A26B41DD54D3500D9B054 /* Attribute+CoreDataClass.swift */; };
-		C94A26C31DD54D3500D9B054 /* Attribute+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94A26B51DD54D3500D9B054 /* Attribute+CoreDataProperties.swift */; };
-		C94A26C41DD54D3500D9B054 /* ListObject+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94A26B61DD54D3500D9B054 /* ListObject+CoreDataClass.swift */; };
-		C94A26C51DD54D3500D9B054 /* ListObject+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94A26B71DD54D3500D9B054 /* ListObject+CoreDataProperties.swift */; };
-		C94A26C61DD54D3500D9B054 /* Hero+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94A26B81DD54D3500D9B054 /* Hero+CoreDataClass.swift */; };
-		C94A26C71DD54D3500D9B054 /* Hero+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94A26B91DD54D3500D9B054 /* Hero+CoreDataProperties.swift */; };
-		C94A26C81DD54D3500D9B054 /* Ability+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94A26BA1DD54D3500D9B054 /* Ability+CoreDataClass.swift */; };
-		C94A26C91DD54D3500D9B054 /* Ability+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94A26BB1DD54D3500D9B054 /* Ability+CoreDataProperties.swift */; };
-		C94A26CA1DD54D3500D9B054 /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94A26BC1DD54D3500D9B054 /* Item+CoreDataClass.swift */; };
-		C94A26CB1DD54D3500D9B054 /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94A26BD1DD54D3500D9B054 /* Item+CoreDataProperties.swift */; };
-		C94A26CC1DD54D3500D9B054 /* Stats+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94A26BE1DD54D3500D9B054 /* Stats+CoreDataClass.swift */; };
-		C94A26CD1DD54D3500D9B054 /* Stats+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94A26BF1DD54D3500D9B054 /* Stats+CoreDataProperties.swift */; };
-		C94A26CE1DD54D3500D9B054 /* Recipe+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94A26C01DD54D3500D9B054 /* Recipe+CoreDataClass.swift */; };
-		C94A26CF1DD54D3500D9B054 /* Recipe+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94A26C11DD54D3500D9B054 /* Recipe+CoreDataProperties.swift */; };
 		C94A26D21DD5593F00D9B054 /* DASlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94A26D11DD5593F00D9B054 /* DASlider.swift */; };
-		C94CAB5D1DD79D7000971BC5 /* Damage+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94CAB5B1DD79D7000971BC5 /* Damage+CoreDataClass.swift */; };
-		C94CAB5E1DD79D7000971BC5 /* Damage+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94CAB5C1DD79D7000971BC5 /* Damage+CoreDataProperties.swift */; };
 		C94CAB621DD7AEA300971BC5 /* DAYouTubeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94CAB611DD7AEA300971BC5 /* DAYouTubeButton.swift */; };
 		C94CAB641DD7CD4F00971BC5 /* DASearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94CAB631DD7CD4F00971BC5 /* DASearchBar.swift */; };
 		C95753C71DD57FCF005C9F75 /* agility_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C95753C11DD57FCF005C9F75 /* agility_icon.png */; };
@@ -1682,23 +1666,7 @@
 		C922FA8A1DD8AD27007B76F8 /* DALoreLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DALoreLabel.swift; sourceTree = "<group>"; };
 		C93499FE1DB439B5005407BB /* SimpleCVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleCVCell.swift; sourceTree = "<group>"; };
 		C94A26AA1DD5494200D9B054 /* hero.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = hero.csv; path = CSVs/hero.csv; sourceTree = "<group>"; };
-		C94A26B41DD54D3500D9B054 /* Attribute+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Attribute+CoreDataClass.swift"; path = "CoreData/Attribute+CoreDataClass.swift"; sourceTree = "<group>"; };
-		C94A26B51DD54D3500D9B054 /* Attribute+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Attribute+CoreDataProperties.swift"; path = "CoreData/Attribute+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		C94A26B61DD54D3500D9B054 /* ListObject+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ListObject+CoreDataClass.swift"; path = "CoreData/ListObject+CoreDataClass.swift"; sourceTree = "<group>"; };
-		C94A26B71DD54D3500D9B054 /* ListObject+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ListObject+CoreDataProperties.swift"; path = "CoreData/ListObject+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		C94A26B81DD54D3500D9B054 /* Hero+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Hero+CoreDataClass.swift"; path = "CoreData/Hero+CoreDataClass.swift"; sourceTree = "<group>"; };
-		C94A26B91DD54D3500D9B054 /* Hero+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Hero+CoreDataProperties.swift"; path = "CoreData/Hero+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		C94A26BA1DD54D3500D9B054 /* Ability+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Ability+CoreDataClass.swift"; path = "CoreData/Ability+CoreDataClass.swift"; sourceTree = "<group>"; };
-		C94A26BB1DD54D3500D9B054 /* Ability+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Ability+CoreDataProperties.swift"; path = "CoreData/Ability+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		C94A26BC1DD54D3500D9B054 /* Item+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Item+CoreDataClass.swift"; path = "CoreData/Item+CoreDataClass.swift"; sourceTree = "<group>"; };
-		C94A26BD1DD54D3500D9B054 /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Item+CoreDataProperties.swift"; path = "CoreData/Item+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		C94A26BE1DD54D3500D9B054 /* Stats+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Stats+CoreDataClass.swift"; path = "CoreData/Stats+CoreDataClass.swift"; sourceTree = "<group>"; };
-		C94A26BF1DD54D3500D9B054 /* Stats+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Stats+CoreDataProperties.swift"; path = "CoreData/Stats+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		C94A26C01DD54D3500D9B054 /* Recipe+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Recipe+CoreDataClass.swift"; path = "CoreData/Recipe+CoreDataClass.swift"; sourceTree = "<group>"; };
-		C94A26C11DD54D3500D9B054 /* Recipe+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Recipe+CoreDataProperties.swift"; path = "CoreData/Recipe+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C94A26D11DD5593F00D9B054 /* DASlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DASlider.swift; path = Views/DASlider.swift; sourceTree = "<group>"; };
-		C94CAB5B1DD79D7000971BC5 /* Damage+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Damage+CoreDataClass.swift"; path = "../Damage+CoreDataClass.swift"; sourceTree = "<group>"; };
-		C94CAB5C1DD79D7000971BC5 /* Damage+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Damage+CoreDataProperties.swift"; path = "../Damage+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C94CAB611DD7AEA300971BC5 /* DAYouTubeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAYouTubeButton.swift; sourceTree = "<group>"; };
 		C94CAB631DD7CD4F00971BC5 /* DASearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DASearchBar.swift; sourceTree = "<group>"; };
 		C95753C11DD57FCF005C9F75 /* agility_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = agility_icon.png; sourceTree = "<group>"; };
@@ -1711,6 +1679,7 @@
 		C96B9C3F1DB2C14800F656AA /* HeroListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroListVC.swift; sourceTree = "<group>"; };
 		C96B9C411DB2C1B800F656AA /* ItemListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemListVC.swift; sourceTree = "<group>"; };
 		C96B9C451DB3334800F656AA /* DetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
+		C96EA1111DEE622800259AEF /* DotA2 Assistant.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = "DotA2 Assistant.entitlements"; path = "../DotA2 Assistant.entitlements"; sourceTree = "<group>"; };
 		C97710FE1DC04E340083FBD7 /* AbilityStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbilityStackView.swift; sourceTree = "<group>"; };
 		C97991681DD6255A0081454C /* AttributeSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributeSet.swift; sourceTree = "<group>"; };
 		C999EA061DE7D1C10036AF47 /* OptimusPrinceps.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = OptimusPrinceps.ttf; path = Fonts/OptimusPrinceps.ttf; sourceTree = "<group>"; };
@@ -2657,6 +2626,7 @@
 		36FD56451DA6E36C007C5A9C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C96EA1111DEE622800259AEF /* DotA2 Assistant.entitlements */,
 				C967E6CB1DD4182F00DC0DBC /* CSVs */,
 				366A8A251DD24DB9000406BF /* Fonts */,
 				36FD56511DA6E3F5007C5A9C /* default_icon.png */,
@@ -2673,22 +2643,6 @@
 		36FD56461DA6E373007C5A9C /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				C94A26BA1DD54D3500D9B054 /* Ability+CoreDataClass.swift */,
-				C94A26BB1DD54D3500D9B054 /* Ability+CoreDataProperties.swift */,
-				C94A26B41DD54D3500D9B054 /* Attribute+CoreDataClass.swift */,
-				C94A26B51DD54D3500D9B054 /* Attribute+CoreDataProperties.swift */,
-				C94CAB5B1DD79D7000971BC5 /* Damage+CoreDataClass.swift */,
-				C94CAB5C1DD79D7000971BC5 /* Damage+CoreDataProperties.swift */,
-				C94A26B81DD54D3500D9B054 /* Hero+CoreDataClass.swift */,
-				C94A26B91DD54D3500D9B054 /* Hero+CoreDataProperties.swift */,
-				C94A26BC1DD54D3500D9B054 /* Item+CoreDataClass.swift */,
-				C94A26BD1DD54D3500D9B054 /* Item+CoreDataProperties.swift */,
-				C94A26B61DD54D3500D9B054 /* ListObject+CoreDataClass.swift */,
-				C94A26B71DD54D3500D9B054 /* ListObject+CoreDataProperties.swift */,
-				C94A26C01DD54D3500D9B054 /* Recipe+CoreDataClass.swift */,
-				C94A26C11DD54D3500D9B054 /* Recipe+CoreDataProperties.swift */,
-				C94A26BE1DD54D3500D9B054 /* Stats+CoreDataClass.swift */,
-				C94A26BF1DD54D3500D9B054 /* Stats+CoreDataProperties.swift */,
 				C9FEBF2D1DB299F2000CD4FF /* DotA2_Viewer.xcdatamodeld */,
 			);
 			name = CoreData;
@@ -2841,6 +2795,11 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = Y3RP73GH99;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -3724,13 +3683,10 @@
 			files = (
 				366A8A101DD100A8000406BF /* DAMainTabelView.swift in Sources */,
 				366A8A091DD0F4F3000406BF /* DAMainLabel.swift in Sources */,
-				C94A26C41DD54D3500D9B054 /* ListObject+CoreDataClass.swift in Sources */,
 				C9FB5C731DBB9239000A0824 /* ItemDetailVC.swift in Sources */,
 				364A6A5B1DC118A400FBE163 /* HeroBioStackView.swift in Sources */,
 				364A6A611DC142C200FBE163 /* StatsStackView.swift in Sources */,
 				C9FB5C751DBB997C000A0824 /* ObjectDetailVC.swift in Sources */,
-				C94A26CF1DD54D3500D9B054 /* Recipe+CoreDataProperties.swift in Sources */,
-				C94CAB5E1DD79D7000971BC5 /* Damage+CoreDataProperties.swift in Sources */,
 				366A8A221DD24B71000406BF /* DAMainCellLabel.swift in Sources */,
 				C9FB5C771DBBC116000A0824 /* HeroDetailVC.swift in Sources */,
 				C922FA8B1DD8AD27007B76F8 /* DALoreLabel.swift in Sources */,
@@ -3739,12 +3695,10 @@
 				36FD56591DA6E403007C5A9C /* CSwiftV.swift in Sources */,
 				C999EA111DE7E3CB0036AF47 /* FirebaseImport.swift in Sources */,
 				36A2921E1DCA479F006E96A8 /* MyTableVC.swift in Sources */,
-				C94A26C71DD54D3500D9B054 /* Hero+CoreDataProperties.swift in Sources */,
 				C94CAB621DD7AEA300971BC5 /* DAYouTubeButton.swift in Sources */,
 				C97710FF1DC04E340083FBD7 /* AbilityStackView.swift in Sources */,
 				364A6A591DC1136300FBE163 /* MultiLineLabel.swift in Sources */,
 				366A8A161DD103F1000406BF /* DATabBar.swift in Sources */,
-				C94A26CE1DD54D3500D9B054 /* Recipe+CoreDataClass.swift in Sources */,
 				367E34E01DB7F9670037FA7B /* CustomTabVC.swift in Sources */,
 				366A8A121DD1029F000406BF /* DAUIViewController.swift in Sources */,
 				368F3E971DBA7C0100530014 /* RecipeButton.swift in Sources */,
@@ -3753,31 +3707,20 @@
 				C90A558D1DD608D600A6E6F6 /* AttributesStackView.swift in Sources */,
 				366A8A0C1DD0F87F000406BF /* DAMainTableViewCell.swift in Sources */,
 				C9A6D6401DBC124200580B7B /* HeroBioVC.swift in Sources */,
-				C94A26CB1DD54D3500D9B054 /* Item+CoreDataProperties.swift in Sources */,
 				C96B9C421DB2C1B800F656AA /* ItemListVC.swift in Sources */,
 				C96B9C461DB3334800F656AA /* DetailVC.swift in Sources */,
 				36FD565A1DA6E403007C5A9C /* ImportCSV.swift in Sources */,
 				C9172C181DD13F9100DCF88F /* Globals.swift in Sources */,
-				C94A26C31DD54D3500D9B054 /* Attribute+CoreDataProperties.swift in Sources */,
 				362A7ED41DBFBEF700BFC9BA /* HeroDetailStackView.swift in Sources */,
-				C94A26C61DD54D3500D9B054 /* Hero+CoreDataClass.swift in Sources */,
 				C96B9C401DB2C14800F656AA /* HeroListVC.swift in Sources */,
-				C94CAB5D1DD79D7000971BC5 /* Damage+CoreDataClass.swift in Sources */,
-				C94A26CC1DD54D3500D9B054 /* Stats+CoreDataClass.swift in Sources */,
 				36C7DF241DC8F2C800251705 /* RSSFeedHelper.swift in Sources */,
-				C94A26C91DD54D3500D9B054 /* Ability+CoreDataProperties.swift in Sources */,
-				C94A26CD1DD54D3500D9B054 /* Stats+CoreDataProperties.swift in Sources */,
 				C93499FF1DB439B5005407BB /* SimpleCVCell.swift in Sources */,
 				361B71111DBE9AE500133173 /* HeroAbilityVC.swift in Sources */,
-				C94A26C81DD54D3500D9B054 /* Ability+CoreDataClass.swift in Sources */,
-				C94A26CA1DD54D3500D9B054 /* Item+CoreDataClass.swift in Sources */,
 				C94CAB641DD7CD4F00971BC5 /* DASearchBar.swift in Sources */,
-				C94A26C21DD54D3500D9B054 /* Attribute+CoreDataClass.swift in Sources */,
 				366A8A0E1DD0F993000406BF /* DACircleImageView.swift in Sources */,
 				C9A6D64D1DBD25AE00580B7B /* Extensions.swift in Sources */,
 				36C0C9621DA6E25800169394 /* AppDelegate.swift in Sources */,
 				C97991691DD6255A0081454C /* AttributeSet.swift in Sources */,
-				C94A26C51DD54D3500D9B054 /* ListObject+CoreDataProperties.swift in Sources */,
 				C94A26D21DD5593F00D9B054 /* DASlider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -3906,6 +3849,7 @@
 			baseConfigurationReference = 860C63C4F37CD7891AF00E52 /* Pods-DotA2 Assistant.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "DotA2 Assistant.entitlements";
 				DEVELOPMENT_TEAM = Y3RP73GH99;
 				INFOPLIST_FILE = "DotA2 Viewer/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -3921,6 +3865,7 @@
 			baseConfigurationReference = D901BAFFD7186DCAB66C34BB /* Pods-DotA2 Assistant.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "DotA2 Assistant.entitlements";
 				DEVELOPMENT_TEAM = Y3RP73GH99;
 				INFOPLIST_FILE = "DotA2 Viewer/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
