@@ -45,7 +45,7 @@ class ItemDetailVC: ObjectDetailVC {
         let item = object as! Item
         // set up the view
         // the main image
-        self.itemImageView.image = item.objectImage()
+        self.itemImageView.image = item.getImage()
         
         // the recipes
         if (item.recipe != nil) {

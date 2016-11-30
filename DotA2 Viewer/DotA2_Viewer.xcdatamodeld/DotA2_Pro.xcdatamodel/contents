@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11542" systemVersion="16B2555" minimumToolsVersion="Xcode 7.3" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11542" systemVersion="16B2657" minimumToolsVersion="Xcode 7.3" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Ability" representedClassName="Ability" syncable="YES">
         <attribute name="cooldown" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="image" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
         <attribute name="mana" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
         <relationship name="abilitySpecial" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="ArrayValue" inverseName="abilitySpecial" inverseEntity="ArrayValue" syncable="YES"/>
@@ -11,11 +12,10 @@
         <relationship name="modifiers" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="ArrayValue" inverseName="abilityModifiers" inverseEntity="ArrayValue" syncable="YES"/>
         <relationship name="notes" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Note" inverseName="ability" inverseEntity="Note" syncable="YES"/>
     </entity>
-    <entity name="ArrayValue" syncable="YES">
+    <entity name="ArrayValue" representedClassName="ArrayValue" syncable="YES">
         <attribute name="value" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="abilityData" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Ability" inverseName="data" inverseEntity="Ability" syncable="YES"/>
         <relationship name="abilityModifiers" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Ability" inverseName="modifiers" inverseEntity="Ability" syncable="YES"/>
-        <relationship name="abilityNotes" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Ability" syncable="YES"/>
         <relationship name="abilitySpecial" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Ability" inverseName="abilitySpecial" inverseEntity="Ability" syncable="YES"/>
         <relationship name="heroRoles" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Hero" inverseName="roles" inverseEntity="Hero" syncable="YES"/>
         <relationship name="itemAdditionalInfo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Item" inverseName="additionalInfo" inverseEntity="Item" syncable="YES"/>
@@ -28,7 +28,7 @@
         <attribute name="name" attributeType="String" syncable="YES"/>
         <relationship name="hero" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Hero" inverseName="attribute" inverseEntity="Hero" syncable="YES"/>
     </entity>
-    <entity name="BaseStat" syncable="YES">
+    <entity name="BaseStat" representedClassName="BaseStat" syncable="YES">
         <attribute name="armor" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
         <attribute name="attackPerS" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
         <attribute name="hp" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
@@ -61,15 +61,16 @@
         <relationship name="additionalInfo" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="ArrayValue" inverseName="itemAdditionalInfo" inverseEntity="ArrayValue" syncable="YES"/>
         <relationship name="details" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="ItemDetail" inverseName="item" inverseEntity="ItemDetail" syncable="YES"/>
     </entity>
-    <entity name="ItemDetail" syncable="YES">
+    <entity name="ItemDetail" representedClassName="ItemDetail" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="item" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Item" inverseName="details" inverseEntity="Item" syncable="YES"/>
         <relationship name="value" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="ArrayValue" inverseName="itemDetail" inverseEntity="ArrayValue" syncable="YES"/>
     </entity>
     <entity name="ListObject" representedClassName=".ListObject" isAbstract="YES" syncable="YES">
+        <attribute name="image" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
     </entity>
-    <entity name="MiscStat" syncable="YES">
+    <entity name="MiscStat" representedClassName="MiscStat" syncable="YES">
         <attribute name="attackAnimation" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="attackRange" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
         <attribute name="attackTime" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
@@ -82,22 +83,22 @@
         <attribute name="visionRange" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="hero" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Hero" inverseName="miscStats" inverseEntity="Hero" syncable="YES"/>
     </entity>
-    <entity name="Note" syncable="YES">
+    <entity name="Note" representedClassName="Note" syncable="YES">
         <attribute name="note" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="ability" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Ability" inverseName="notes" inverseEntity="Ability" syncable="YES"/>
         <relationship name="subnote" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="Note" inverseName="subnote" inverseEntity="Note" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Ability" positionX="-299" positionY="-288" width="128" height="178"/>
-        <element name="ArrayValue" positionX="90" positionY="-316" width="128" height="163"/>
+        <element name="Ability" positionX="-299" positionY="-288" width="128" height="195"/>
+        <element name="ArrayValue" positionX="90" positionY="-316" width="128" height="150"/>
         <element name="Attribute" positionX="-416" positionY="108" width="128" height="120"/>
         <element name="BaseStat" positionX="18" positionY="18" width="128" height="180"/>
         <element name="Damage" positionX="205" positionY="108" width="128" height="90"/>
         <element name="Hero" positionX="-522" positionY="-159" width="128" height="150"/>
         <element name="Item" positionX="-504" positionY="-423" width="128" height="133"/>
-        <element name="ItemDetail" positionX="-110" positionY="-459" width="128" height="88"/>
-        <element name="ListObject" positionX="-684" positionY="-258" width="128" height="60"/>
+        <element name="ItemDetail" positionX="-110" positionY="-459" width="128" height="90"/>
+        <element name="ListObject" positionX="-684" positionY="-258" width="128" height="75"/>
         <element name="MiscStat" positionX="-135" positionY="-48" width="128" height="210"/>
-        <element name="Note" positionX="187" positionY="-88" width="128" height="88"/>
+        <element name="Note" positionX="187" positionY="-88" width="128" height="90"/>
     </elements>
 </model>

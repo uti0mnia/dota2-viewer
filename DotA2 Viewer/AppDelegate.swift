@@ -24,13 +24,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         FIRApp.configure()
         FirebaseImport.importAll()
         
-        // for importing the CSVs
-        if UserDefaults.standard.value(forKey: "hasLaunched") == nil {
-            let importer = CSVImporter(managedObjectContext: managedObjectContext)
-            importer.importCSV()
-            UserDefaults.standard.set(true, forKey: "hasLaunched")
-        }
-        
         // for the split view controller
         let splitViewController = self.window!.rootViewController as! UISplitViewController
         splitViewController.delegate = self
