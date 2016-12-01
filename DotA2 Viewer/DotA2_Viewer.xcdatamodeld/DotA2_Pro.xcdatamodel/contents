@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11542" systemVersion="16B2657" minimumToolsVersion="Xcode 7.3" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11542" systemVersion="16B2657" minimumToolsVersion="Xcode 7.3" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
     <entity name="Ability" representedClassName="Ability" syncable="YES">
-        <attribute name="cooldown" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="cooldown" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="image" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
-        <attribute name="mana" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="mana" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
         <relationship name="abilitySpecial" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="ArrayValue" inverseName="abilitySpecial" inverseEntity="ArrayValue" syncable="YES"/>
         <relationship name="data" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="ArrayValue" inverseName="abilityData" inverseEntity="ArrayValue" syncable="YES"/>
-        <relationship name="hero" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Hero" inverseName="ability" inverseEntity="Hero" syncable="YES"/>
+        <relationship name="hero" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Hero" inverseName="abilities" inverseEntity="Hero" syncable="YES"/>
         <relationship name="item" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Item" inverseName="abilities" inverseEntity="Item" syncable="YES"/>
         <relationship name="modifiers" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="ArrayValue" inverseName="abilityModifiers" inverseEntity="ArrayValue" syncable="YES"/>
         <relationship name="notes" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Note" inverseName="ability" inverseEntity="Note" syncable="YES"/>
@@ -17,7 +17,7 @@
         <relationship name="abilityData" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Ability" inverseName="data" inverseEntity="Ability" syncable="YES"/>
         <relationship name="abilityModifiers" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Ability" inverseName="modifiers" inverseEntity="Ability" syncable="YES"/>
         <relationship name="abilitySpecial" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Ability" inverseName="abilitySpecial" inverseEntity="Ability" syncable="YES"/>
-        <relationship name="heroRoles" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Hero" inverseName="roles" inverseEntity="Hero" syncable="YES"/>
+        <relationship name="heroRole" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Hero" inverseName="roles" inverseEntity="Hero" syncable="YES"/>
         <relationship name="itemAdditionalInfo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Item" inverseName="additionalInfo" inverseEntity="Item" syncable="YES"/>
         <relationship name="itemDetail" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ItemDetail" inverseName="value" inverseEntity="ItemDetail" syncable="YES"/>
     </entity>
@@ -40,18 +40,18 @@
         <relationship name="hero" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Hero" inverseName="baseStats" inverseEntity="Hero" syncable="YES"/>
     </entity>
     <entity name="Damage" representedClassName="Damage" syncable="YES">
-        <attribute name="max" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="min" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="max" attributeType="Decimal" defaultValueString="0" syncable="YES"/>
+        <attribute name="min" attributeType="Decimal" defaultValueString="0" syncable="YES"/>
         <relationship name="stats" maxCount="1" deletionRule="Nullify" destinationEntity="BaseStat" inverseName="damage" inverseEntity="BaseStat" syncable="YES"/>
     </entity>
     <entity name="Hero" representedClassName="Hero" parentEntity="ListObject" syncable="YES">
         <attribute name="lore" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="summary" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="ability" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="Ability" inverseName="hero" inverseEntity="Ability" syncable="YES"/>
+        <relationship name="abilities" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="Ability" inverseName="hero" inverseEntity="Ability" syncable="YES"/>
         <relationship name="attribute" optional="YES" toMany="YES" maxCount="3" deletionRule="Cascade" destinationEntity="Attribute" inverseName="hero" inverseEntity="Attribute" syncable="YES"/>
         <relationship name="baseStats" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BaseStat" inverseName="hero" inverseEntity="BaseStat" syncable="YES"/>
         <relationship name="miscStats" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MiscStat" inverseName="hero" inverseEntity="MiscStat" syncable="YES"/>
-        <relationship name="roles" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="ArrayValue" inverseName="heroRoles" inverseEntity="ArrayValue" syncable="YES"/>
+        <relationship name="roles" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="ArrayValue" inverseName="heroRole" inverseEntity="ArrayValue" syncable="YES"/>
     </entity>
     <entity name="Item" representedClassName="Item" parentEntity="ListObject" syncable="YES">
         <attribute name="cost" attributeType="String" syncable="YES"/>

@@ -14,10 +14,17 @@ class DACircleImageView: UIImageView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        self.configure()
+    }
+    
+    convenience init() {
+        self.init(frame: CGRect())
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
         
-        // set the contour to be white
-        self.layer.borderWidth = 1
-        self.layer.borderColor = UIColor.flatWhite().cgColor
+        self.configure()
     }
     
     override func layoutSubviews() {
@@ -28,12 +35,10 @@ class DACircleImageView: UIImageView {
         self.clipsToBounds = true
     }
     
-    convenience init() {
-        self.init(frame: CGRect())
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    func configure() {
+        // set the contour to be white
+        self.layer.borderWidth = 1
+        self.layer.borderColor = UIColor.flatWhite().cgColor
     }
 
 }

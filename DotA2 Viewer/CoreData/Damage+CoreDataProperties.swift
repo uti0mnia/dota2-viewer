@@ -16,8 +16,8 @@ extension Damage {
         return NSFetchRequest<Damage>(entityName: "Damage");
     }
 
-    @NSManaged public var max: NSNumber?
-    @NSManaged public var min: NSNumber?
+    @NSManaged public var max: NSDecimalNumber?
+    @NSManaged public var min: NSDecimalNumber?
     @NSManaged public var stats: BaseStat?
 
 }

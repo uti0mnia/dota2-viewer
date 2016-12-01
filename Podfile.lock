@@ -26,11 +26,13 @@ PODS:
   - GoogleToolboxForMac/Defines (2.1.0)
   - GoogleToolboxForMac/NSData+zlib (2.1.0):
     - GoogleToolboxForMac/Defines (= 2.1.0)
+  - MBProgressHUD (1.0.0)
 
 DEPENDENCIES:
   - ChameleonFramework
   - Firebase/Core
   - Firebase/Database
+  - MBProgressHUD (~> 1.0.0)
 
 SPEC CHECKSUMS:
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
@@ -42,7 +44,8 @@ SPEC CHECKSUMS:
   GoogleInterchangeUtilities: d5bc4d88d5b661ab72f9d70c58d02ca8c27ad1f7
   GoogleSymbolUtilities: 631ee17048aa5e9ab133470d768ea997a5ef9b96
   GoogleToolboxForMac: 2b2596cbb7186865e98cadf2b1e262d851c2b168
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
 
-PODFILE CHECKSUM: 6b98196bd2e8f05bf65e0fb28579a22cca3908f4
+PODFILE CHECKSUM: 0a459ac62a1a7363490d1a5e4a356f7cad79a7ec
 
 COCOAPODS: 1.1.1

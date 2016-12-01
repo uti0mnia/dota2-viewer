@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         
         // for firebase
         FIRApp.configure()
-        FirebaseImport.importAll()
+        FirebaseImport.importAll(toMOC: self.managedObjectContext)
         
         // for the split view controller
         let splitViewController = self.window!.rootViewController as! UISplitViewController

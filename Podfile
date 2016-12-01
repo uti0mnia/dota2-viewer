@@ -8,5 +8,6 @@ target 'DotA2 Assistant' do
   pod 'ChameleonFramework'
   pod 'Firebase/Core'
   pod 'Firebase/Database'
+  pod 'MBProgressHUD', '~> 1.0.0'
 
 end

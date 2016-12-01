@@ -16,8 +16,8 @@ extension Ability {
         return NSFetchRequest<Ability>(entityName: "Ability");
     }
 
-    @NSManaged public var cooldown: NSDecimalNumber?
-    @NSManaged public var mana: NSNumber?
+    @NSManaged public var cooldown: String?
+    @NSManaged public var mana: String?
     @NSManaged public var name: String?
     @NSManaged public var image: NSData?
     @NSManaged public var abilitySpecial: NSSet?

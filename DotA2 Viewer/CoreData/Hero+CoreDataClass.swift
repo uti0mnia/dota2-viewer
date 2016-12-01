@@ -8,8 +8,8 @@
 
 import Foundation
 import CoreData
+import FirebaseDatabase
 
 @objc(Hero)
 public class Hero: ListObject {
-
 }

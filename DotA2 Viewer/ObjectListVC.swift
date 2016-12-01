@@ -108,7 +108,7 @@ extension ObjectListVC: UITableViewDataSource {
 		cell.objectName.text = obj.name
 		
 		// set the image
-		cell.objectImageView.image = obj.objectImage()
+		cell.objectImageView.image = obj.getImage()
 		cell.objectImageView.sizeToFit()
 	}
 	
@@ -178,7 +178,7 @@ extension ObjectListVC: NSFetchedResultsControllerDelegate {
 extension ObjectListVC: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
 	func configure(cell: SimpleCVCell, atIndexPath indexPath: IndexPath) {
 		let obj = fetchedResultsController.object(at: indexPath)
-		cell.simpleView.imageView.image = obj.objectImage()
+		cell.simpleView.imageView.image = obj.getImage()
 		cell.simpleView.textLabel.text = obj.name
 	}
 	

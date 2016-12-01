@@ -18,7 +18,7 @@ extension Hero {
 
     @NSManaged public var lore: String?
     @NSManaged public var summary: String?
-    @NSManaged public var ability: NSOrderedSet?
+    @NSManaged public var abilities: NSOrderedSet?
     @NSManaged public var attribute: NSSet?
     @NSManaged public var baseStats: BaseStat?
     @NSManaged public var miscStats: MiscStat?

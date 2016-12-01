@@ -20,7 +20,7 @@ extension ArrayValue {
     @NSManaged public var abilityData: Ability?
     @NSManaged public var abilityModifiers: Ability?
     @NSManaged public var abilitySpecial: Ability?
-    @NSManaged public var heroRoles: Hero?
+    @NSManaged public var heroRole: Hero?
     @NSManaged public var itemAdditionalInfo: Item?
     @NSManaged public var itemDetail: ItemDetail?
 
