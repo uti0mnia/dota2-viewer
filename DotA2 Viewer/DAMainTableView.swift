@@ -9,10 +9,31 @@
 import UIKit
 import ChameleonFramework
 
-class DAMainTabelView: UITableView {
+class DAMainTableView: UITableView {
 
+    var searchBar: UISearchBar!
+    
     override init(frame: CGRect, style: UITableViewStyle) {
         super.init(frame: frame, style: style)
+        self.commonInit()
+    }
+    
+    
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        self.commonInit()
+    }
+    
+    fileprivate func commonInit() {
+        // set the search bar
+        self.searchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: 44))
+        searchBar.searchBarStyle = .minimal
+        searchBar.showsCancelButton = true
+        searchBar.sizeToFit()
+        (searchBar.value(forKey: "searchField") as? UITextField)?.textColor = UIColor.flatWhite()
+        self.tableHeaderView = searchBar
+        
         
         // set the colour
         self.backgroundColor = UIColor.flatBlack()
@@ -23,12 +44,6 @@ class DAMainTabelView: UITableView {
         
         // settings
         self.separatorInset = UIEdgeInsetsMake(0, self.rowHeight + kTableViewCellImageSpaceR + kTableViewCellImageSpaceL, 0, 0)
-    }
-    
-    
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 
 }

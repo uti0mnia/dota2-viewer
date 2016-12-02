@@ -11,6 +11,6 @@ import CoreData
 
 class ItemListVC: ObjectListVC {
     
-    override var entity: String { get { return "Item" } }
+//    override var entity: String { get { return "Item" } }
     
 }

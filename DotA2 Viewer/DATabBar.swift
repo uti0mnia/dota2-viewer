@@ -8,15 +8,12 @@
 
 import UIKit
 
+@IBDesignable
 class DATabBar: UITabBar {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        // set the colour
-        self.barTintColor = UIColor.flatBlack()
-        self.isTranslucent = false
-        self.tintColor = UIColor.flatRed()
+        self.commonInit()
     }
     
     convenience init() {
@@ -24,8 +21,15 @@ class DATabBar: UITabBar {
     }
     
     required init?(coder aDecoder: NSCoder) {
-        fatalError("coder wasn't implemented")
-        
+        super.init(coder: aDecoder)
+        self.commonInit()
+    }
+    
+    fileprivate func commonInit() {
+        // set the colour
+        self.barTintColor = UIColor.flatBlack()
+        self.isTranslucent = false
+        self.tintColor = UIColor.flatRed()
     }
 
     

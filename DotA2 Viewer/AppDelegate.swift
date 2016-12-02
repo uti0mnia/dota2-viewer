@@ -24,6 +24,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         // for firebase
         FIRApp.configure()
         
+        if UserDefaults.standard.value(forKey: "firstRun") == nil {
+            Import.JSONImport.initialImport(inMOC: managedObjectContext)
+            UserDefaults.standard.set(true, forKey: "firstRun")
+        }
+        
         // for the split view controller
         let splitViewController = self.window!.rootViewController as! UISplitViewController
         splitViewController.delegate = self
