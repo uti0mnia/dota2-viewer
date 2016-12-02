@@ -3,15 +3,34 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "static FirebaseImport.(importAll(toMOC : NSManagedObjectContext) -&gt; ()).(closure #1):FirebaseImport.swift">
-      </ContextState>
-      <ContextState
          contextName = "static FirebaseImport.insertItem(from : FIRDataSnapshot, inContext : NSManagedObjectContext) -&gt; ():FirebaseImport.swift">
          <PersistentStrings>
             <PersistentString
                value = "item[&quot;Bonus&quot;]">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "static Import.JSONImport.initialImport(inMOC : NSManagedObjectContext) -&gt; ():FirebaseImport.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "json[&quot;hero&quot;].dictionaryValue">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "static Import.insertHero(from : (String, JSON), inContext : NSManagedObjectContext) -&gt; ():FirebaseImport.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "snapshotValue[&quot;base_stats&quot;][&quot;mana_regen&quot;].string">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "static FirebaseImport.(importAll(toMOC : NSManagedObjectContext) -&gt; ()).(closure #1):FirebaseImport.swift">
+      </ContextState>
+      <ContextState
+         contextName = "static Import.JSONImport.initialImport() -&gt; ():FirebaseImport.swift">
       </ContextState>
    </ContextStates>
 </VariablesViewState>

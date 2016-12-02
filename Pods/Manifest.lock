@@ -27,12 +27,14 @@ PODS:
   - GoogleToolboxForMac/NSData+zlib (2.1.0):
     - GoogleToolboxForMac/Defines (= 2.1.0)
   - MBProgressHUD (1.0.0)
+  - SwiftyJSON (3.1.1)
 
 DEPENDENCIES:
   - ChameleonFramework
   - Firebase/Core
   - Firebase/Database
   - MBProgressHUD (~> 1.0.0)
+  - SwiftyJSON
 
 SPEC CHECKSUMS:
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
@@ -45,7 +47,8 @@ SPEC CHECKSUMS:
   GoogleSymbolUtilities: 631ee17048aa5e9ab133470d768ea997a5ef9b96
   GoogleToolboxForMac: 2b2596cbb7186865e98cadf2b1e262d851c2b168
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
+  SwiftyJSON: f0be2e604f83e8405a624e9f891898bf6ed4e019
 
-PODFILE CHECKSUM: 0a459ac62a1a7363490d1a5e4a356f7cad79a7ec
+PODFILE CHECKSUM: cdca93d25319d07fa0117f8b02d732b0a73d3f16
 
 COCOAPODS: 1.1.1

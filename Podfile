@@ -9,5 +9,5 @@ target 'DotA2 Assistant' do
   pod 'Firebase/Core'
   pod 'Firebase/Database'
   pod 'MBProgressHUD', '~> 1.0.0'
-
+  pod 'SwiftyJSON'
 end

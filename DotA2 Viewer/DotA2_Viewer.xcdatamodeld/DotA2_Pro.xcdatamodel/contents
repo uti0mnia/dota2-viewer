@@ -24,7 +24,7 @@
     <entity name="Attribute" representedClassName="Attribute" syncable="YES">
         <attribute name="base" attributeType="Decimal" syncable="YES"/>
         <attribute name="increment" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
-        <attribute name="isPrimary" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="isPrimary" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
         <relationship name="hero" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Hero" inverseName="attribute" inverseEntity="Hero" syncable="YES"/>
     </entity>
