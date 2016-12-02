@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>DotA2 Assistant.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 		<key>DotA2 Viewer.xcscheme</key>
 		<dict>
 			<key>orderHint</key>

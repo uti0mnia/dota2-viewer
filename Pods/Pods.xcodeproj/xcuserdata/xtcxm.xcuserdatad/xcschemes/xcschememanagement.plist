@@ -8,16 +8,37 @@
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>GoogleToolboxForMac.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
+		<key>MBProgressHUD.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>6</integer>
 		</dict>
 		<key>Pods-DotA2 Assistant.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>4</integer>
 		</dict>
 		<key>Pods-DotA2 AssistantTests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>5</integer>
+		</dict>
+		<key>SwiftyJSON.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>7</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -27,7 +48,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>41FA54D12162DAD51D02FC58A2CD5034</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>49340EFB47E3959DFBB5A5C1D12F4E69</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>757F963ABB8B2AA727957F234A8E8FB7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -48,6 +79,11 @@
 			<true/>
 		</dict>
 		<key>ABA9B63D6E1DCF4B80406639FC1FCE66</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C729A96427A967B43F362345DE1437D8</key>
 		<dict>
 			<key>primary</key>
 			<true/>

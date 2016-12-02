@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import ChameleonFramework
+import MBProgressHUD
 import Firebase
 
 @UIApplicationMain
@@ -22,7 +23,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         
         // for firebase
         FIRApp.configure()
-        Import.JSONImport.initialImport(inMOC: self.managedObjectContext)
         
         // for the split view controller
         let splitViewController = self.window!.rootViewController as! UISplitViewController

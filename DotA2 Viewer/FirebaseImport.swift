@@ -148,6 +148,7 @@ struct Import {
         for attr in attributes {
             let val = snapshotValue["attributes"][attr]
             let attribute = NSEntityDescription.insertNewObject(forEntityName: "Attribute", into: moc) as! Attribute
+            attribute.name = attr
             attribute.base = NSDecimalNumber(string: val["base"].string)
             attribute.increment = NSDecimalNumber(string: val["increment"].string)
             attribute.isPrimary = NSDecimalNumber(value: val["primary"].int!)
@@ -286,13 +287,11 @@ struct Import {
                     // import each hero
                     for hero in json["hero"].dictionaryValue {
                         Import.insertHero(from: hero, inContext: moc)
-                        try moc.save()
                     }
                     
                     // import each item
                     for item in json["item"].dictionaryValue {
                         Import.insertItem(from: item, inContext: moc)
-                        try moc.save()
                     }
                     
                 } else {
@@ -300,6 +299,14 @@ struct Import {
                 }
             } catch {
                 print("Error reading file dota2.json: \(error.localizedDescription)")
+            }
+            
+            if moc.hasChanges {
+                do {
+                    try moc.save()
+                } catch {
+                    print("Error saving moc: \(error.localizedDescription)")
+                }
             }
         }
     }

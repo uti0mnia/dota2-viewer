@@ -85,8 +85,7 @@ class CustomTabVC: DAUIViewController {
     // TODO: Make this button programmatically
     var searchBarButton: UIBarButtonItem!
     
-    /* Methods */
-    // superclass methods
+    // MARK - Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         

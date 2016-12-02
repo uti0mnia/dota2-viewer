@@ -218,7 +218,6 @@
 				366A8A211DD24B71000406BF /* DAMainCellLabel.swift */,
 				C94A26D11DD5593F00D9B054 /* DASlider.swift */,
 				366A8A151DD103F1000406BF /* DATabBar.swift */,
-				366A8A111DD1029F000406BF /* DAUIViewController.swift */,
 				C93499FE1DB439B5005407BB /* SimpleCVCell.swift */,
 				364A6A581DC1136300FBE163 /* MultiLineLabel.swift */,
 				C94CAB611DD7AEA300971BC5 /* DAYouTubeButton.swift */,
@@ -348,7 +347,7 @@
 		36FD56471DA6E3B6007C5A9C /* View */ = {
 			isa = PBXGroup;
 			children = (
-				C9A6D63E1DBC11D200580B7B /* Storyboards */,
+				36C0C9651DA6E25800169394 /* Main.storyboard */,
 				364A6A5F1DC1192E00FBE163 /* General */,
 			);
 			name = View;
@@ -369,9 +368,10 @@
 		36FD565C1DA6E606007C5A9C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				366A8A111DD1029F000406BF /* DAUIViewController.swift */,
 				367E34DF1DB7F9670037FA7B /* CustomTabVC.swift */,
+				C96B9C451DB3334800F656AA /* DetailVC.swift */,
 				C96B9C491DB3D45E00F656AA /* List */,
-				C96B9C4A1DB3D46600F656AA /* Detail */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -396,22 +396,6 @@
 				36A2921F1DCA4AA5006E96A8 /* Object Lists */,
 			);
 			name = List;
-			sourceTree = "<group>";
-		};
-		C96B9C4A1DB3D46600F656AA /* Detail */ = {
-			isa = PBXGroup;
-			children = (
-				C96B9C451DB3334800F656AA /* DetailVC.swift */,
-			);
-			name = Detail;
-			sourceTree = "<group>";
-		};
-		C9A6D63E1DBC11D200580B7B /* Storyboards */ = {
-			isa = PBXGroup;
-			children = (
-				36C0C9651DA6E25800169394 /* Main.storyboard */,
-			);
-			name = Storyboards;
 			sourceTree = "<group>";
 		};
 		C9FB56731DBB1110000A0824 /* images */ = {
