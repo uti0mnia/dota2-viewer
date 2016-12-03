@@ -15,6 +15,7 @@ protocol DASliderDelegate {
 class DASlider: UISlider {
 
     fileprivate let numbers = 1...25
+    fileprivate var initialLevel = 1
     fileprivate var numberOfSteps: Int {
         get {
             return numbers.count
@@ -29,17 +30,11 @@ class DASlider: UISlider {
         // make sure level isn't outside of range
         var level = lvl > 25 ? 25 : lvl
         level = lvl < 1 ? 1 : level
+        self.initialLevel = level
         
         super.init(frame: frame)
         
-        // set the properties
-        self.minimumTrackTintColor = UIColor.flatRed()
-        self.maximumTrackTintColor = UIColor.flatWhite()
-        self.thumbTintColor = UIColor.flatBlue()
-        self.setValue(1, animated: false)
-        self.minimumValue = Float(level)
-        self.maximumValue = Float(numberOfSteps)
-        self.addTarget(self, action: #selector(DASlider.valueChanged(_:)), for: .valueChanged)
+        commonInit()
         
     }
     
@@ -48,7 +43,19 @@ class DASlider: UISlider {
     }
     
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
+        commonInit()
+    }
+    
+    fileprivate func commonInit() {
+        // set the properties
+        self.minimumTrackTintColor = UIColor.flatRed()
+        self.maximumTrackTintColor = UIColor.flatWhite()
+        self.thumbTintColor = UIColor.flatBlue()
+        self.setValue(1, animated: false)
+        self.minimumValue = Float(numbers.first!)
+        self.maximumValue = Float(numbers.last!)
+        self.addTarget(self, action: #selector(DASlider.valueChanged(_:)), for: .valueChanged)
     }
     
     @objc fileprivate func valueChanged(_ sender: UISlider) {

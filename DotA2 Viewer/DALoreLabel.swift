@@ -8,12 +8,11 @@
 
 import UIKit
 
-class DALoreLabel: MultiLineLabel {
+class DALoreLabel: DAMultiLineLabel {
 
     init(frame: CGRect) {
         super.init(frame: frame, style: .small)
-        
-        self.textColor = UIColor.flatGray()
+        commonInit()
     }
     
     convenience init() {
@@ -22,6 +21,11 @@ class DALoreLabel: MultiLineLabel {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        commonInit()
+    }
+    
+    fileprivate func commonInit() {
+        self.textColor = UIColor.flatGray()
     }
 
 }

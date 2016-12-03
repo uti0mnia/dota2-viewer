@@ -13,8 +13,7 @@ class DACircleImageView: UIImageView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        self.configure()
+        commonInit()
     }
     
     convenience init() {
@@ -23,8 +22,7 @@ class DACircleImageView: UIImageView {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        
-        self.configure()
+        commonInit()
     }
     
     override func layoutSubviews() {
@@ -35,7 +33,7 @@ class DACircleImageView: UIImageView {
         self.clipsToBounds = true
     }
     
-    func configure() {
+    func commonInit() {
         // set the contour to be white
         self.layer.borderWidth = 1
         self.layer.borderColor = UIColor.flatWhite().cgColor

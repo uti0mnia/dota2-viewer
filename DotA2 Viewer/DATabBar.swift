@@ -8,7 +8,6 @@
 
 import UIKit
 
-@IBDesignable
 class DATabBar: UITabBar {
 
     override init(frame: CGRect) {
@@ -30,8 +29,8 @@ class DATabBar: UITabBar {
         self.barTintColor = UIColor.flatBlack()
         self.isTranslucent = false
         self.tintColor = UIColor.flatRed()
+        for item in self.items ?? [] {
+            item.setTitleTextAttributes([NSFontAttributeName: kDotaFontSmall], for: .normal)
+        }
     }
-
-    
-    
 }

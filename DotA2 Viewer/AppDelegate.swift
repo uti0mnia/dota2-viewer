@@ -37,7 +37,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
             splitViewController.preferredDisplayMode = .allVisible // on ipad the master is opened by default
         }
         
-        Chameleon.setGlobalThemeUsingPrimaryColor(UIColor.flatBlack(), withSecondaryColor: UIColor.flatWhite(), andContentStyle: .contrast)
         
         return true
     }

@@ -12,10 +12,7 @@ class DAMainCellLabel: DAMainLabel {
 
     init(frame: CGRect) {
         super.init(frame: frame)
-        
-        
-        // set the font
-        self.font = kDotaFontLarge
+        commonInit()
     }
     
     convenience init() {
@@ -24,7 +21,16 @@ class DAMainCellLabel: DAMainLabel {
     }
     
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
+        commonInit()
+    }
+    
+    
+    
+    fileprivate func commonInit() {
+        self.textColor = UIColor.flatLime()
+        // set the font
+        self.font = kDotaFontLarge
     }
 
 }

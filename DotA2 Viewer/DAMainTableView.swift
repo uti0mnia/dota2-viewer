@@ -11,7 +11,7 @@ import ChameleonFramework
 
 class DAMainTableView: UITableView {
 
-    var searchBar: UISearchBar!
+    var searchBar: DASearchBar!
     
     override init(frame: CGRect, style: UITableViewStyle) {
         super.init(frame: frame, style: style)
@@ -27,11 +27,7 @@ class DAMainTableView: UITableView {
     
     fileprivate func commonInit() {
         // set the search bar
-        self.searchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: 44))
-        searchBar.searchBarStyle = .minimal
-        searchBar.showsCancelButton = true
-        searchBar.sizeToFit()
-        (searchBar.value(forKey: "searchField") as? UITextField)?.textColor = UIColor.flatWhite()
+        searchBar = DASearchBar(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: 44))
         self.tableHeaderView = searchBar
         
         

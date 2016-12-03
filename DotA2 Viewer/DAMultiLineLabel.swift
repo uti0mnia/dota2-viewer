@@ -8,12 +8,11 @@
 
 import UIKit
 
-class MultiLineLabel: DAMainLabel {
+class DAMultiLineLabel: DAMainLabel {
 
     override init(frame: CGRect, style: DAMainLabelStyle = .medium) {
         super.init(frame: frame, style: style)
-        
-        self.numberOfLines = 0
+        commonInit()
     }
     
     convenience init(style: DAMainLabelStyle = .medium) {
@@ -21,6 +20,11 @@ class MultiLineLabel: DAMainLabel {
     }
     
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
+        commonInit()
+    }
+    
+    fileprivate func commonInit() {
+        self.numberOfLines = 0
     }
 }

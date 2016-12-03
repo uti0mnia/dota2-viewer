@@ -25,7 +25,15 @@ class DAMainTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
+        self.commonInit()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        self.commonInit()
+    }
+    
+    fileprivate func commonInit() {
         // add the views
         self.contentView.addSubview(objectImageView)
         self.contentView.addSubview(objectName)
@@ -42,9 +50,9 @@ class DAMainTableViewCell: UITableViewCell {
                                                 views: ["img": objectImageView])
         
         let v2 = NSLayoutConstraint.constraints(withVisualFormat: "V:|[label]|",
-                                               options: [],
-                                               metrics: nil,
-                                               views: ["label": objectName])
+                                                options: [],
+                                                metrics: nil,
+                                                views: ["label": objectName])
         
         self.contentView.addConstraints(viewConstraints + v1 + v2)
         
@@ -54,11 +62,8 @@ class DAMainTableViewCell: UITableViewCell {
         
         // set the colours
         self.backgroundColor = UIColor.clear
-        self.selectionStyle = .none
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        self.selectionStyle = .gray
+        objectName.textColor = UIColor.flatMint()
     }
 
 }

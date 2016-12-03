@@ -18,13 +18,7 @@ class DASearchBar: UISearchBar {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        // set up style
-        self.backgroundColor = UIColor.clear
-        self.textField?.textColor = UIColor.flatWhite()
-        self.tintColor = UIColor.flatWhite()
-        self.searchBarStyle = .minimal
-        self.showsCancelButton = false
+        commonInit()
     }
     
     convenience init() {
@@ -32,6 +26,15 @@ class DASearchBar: UISearchBar {
     }
     
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
+        commonInit()
+    }
+    
+    fileprivate func commonInit() {
+        // set up style
+        self.backgroundColor = UIColor.clear
+        self.textField?.textColor = UIColor.flatWhite()
+        self.tintColor = UIColor.flatWhite()
+        self.searchBarStyle = .minimal
     }
 }

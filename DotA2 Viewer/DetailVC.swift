@@ -12,16 +12,12 @@ import SafariServices
 
 class DetailVC: DAUIViewController {
     // MARK - Outlets
-    @IBOutlet weak var containerView: UIView!
     
     // MARK - Properties
     var object: ListObject!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // configure the container view
-        containerView.frame = self.view.bounds
         
         guard object != nil else { return }
         

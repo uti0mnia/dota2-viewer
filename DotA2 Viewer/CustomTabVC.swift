@@ -16,7 +16,7 @@ class CustomTabVC: DAUIViewController {
     @IBOutlet weak var tabBar: DATabBar!
     
     // MARK - Properties
-    fileprivate var titleView: DAMainLabel! { didSet { self.navigationItem.titleView = titleView } }
+    fileprivate var titleView: DAMainLabel!
     fileprivate var selectedObject: ListObject!
     
     // MARK - Core Data
@@ -36,7 +36,7 @@ class CustomTabVC: DAUIViewController {
                 let frc = NSFetchedResultsController(
                     fetchRequest: fetchRequest,
                     managedObjectContext: self.context,
-                    sectionNameKeyPath: nil, // for the indexing
+                    sectionNameKeyPath: "firstLetter", // for the indexing
                     cacheName: nil)
                 
                 frc.delegate = self
@@ -49,6 +49,11 @@ class CustomTabVC: DAUIViewController {
     fileprivate var entity = "Hero" {
         didSet {
             _fetchedResultsController = nil
+            do {
+                try fetchedResultsController.performFetch()
+            } catch {
+                print("Error performing fetch: \(error.localizedDescription)")
+            }
             tableView.reloadData()
         }
     }
@@ -58,24 +63,25 @@ class CustomTabVC: DAUIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // loggin
-        let fetch = NSFetchRequest<ListObject>(entityName: "Hero")
-        do {
-            let entities = try context.fetch(fetch)
-            print("ENTITIES: \(entities.count)")
-        } catch {
-            print("error: \(error.localizedDescription)")
-        }
-        
         // configure the UI Elements
+        tabBar.selectedItem = tabBar.items?.first!
+        
         titleView = DAMainLabel(style: .title)
         titleView.text = tabBar.selectedItem?.title
         titleView.sizeToFit()
+        self.navigationItem.titleView = titleView
         
         // hide the back button when pushing
         let btn = UIBarButtonItem()
         btn.title = ""
         navigationItem.backBarButtonItem = btn
+        
+        // perform the fetch
+        do {
+            try fetchedResultsController.performFetch()
+        } catch {
+            print("Error performing fetch: \(error.localizedDescription)")
+        }
         
     }
     
@@ -116,7 +122,7 @@ class CustomTabVC: DAUIViewController {
     }
 }
 
-/* Tab bar delegate */
+// MARK - Tabbar Methods
 extension CustomTabVC: UITabBarDelegate {
     /* This function handles the selection of the tab bar item */
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
@@ -125,16 +131,18 @@ extension CustomTabVC: UITabBarDelegate {
         if item.title! == "Heroes" {
             if entity != "Hero" {
                 entity = "Hero"
+                titleView.text = "Heroes"
             }
         } else {
             if entity != "Item" {
                 entity = "Item"
+                titleView.text = "Items"
             }
         }
     }
 }
 
-/* Tableview delegate */
+// MARK - TableView Methods
 extension CustomTabVC: UITableViewDelegate, UITableViewDataSource {
     /* helper function to configure the cell */
     fileprivate func configure(cell: DAMainTableViewCell, atIndexPath indexPath: IndexPath) {
@@ -150,8 +158,7 @@ extension CustomTabVC: UITableViewDelegate, UITableViewDataSource {
     
     /* lets tableview know how many rows are in the section */
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return fetchedResultsController.sections?[section].numberOfObjects ?? 0
-        return fetchedResultsController.fetchedObjects?.count ?? 0
+        return fetchedResultsController.sections?[section].numberOfObjects ?? 0
     }
     
     /* sets the index titles for the tableview index */
@@ -161,7 +168,7 @@ extension CustomTabVC: UITableViewDelegate, UITableViewDataSource {
     
     /* configures the cell at the given index path */
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "objectCell", for: indexPath) as! DAMainTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! DAMainTableViewCell
         configure(cell: cell, atIndexPath: indexPath)
         return cell
     }
@@ -173,7 +180,7 @@ extension CustomTabVC: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-/* Keyboard Handling */
+// MARK - Keyboard handling
 extension CustomTabVC {
     /* fixes tableview height when the keyboard will appear */
     func keyboardWillShow(notification: NSNotification) {
@@ -206,6 +213,7 @@ extension CustomTabVC: UIViewControllerPreviewingDelegate {
     }
 }
 
+// MARK - NSFRC Del
 extension CustomTabVC: NSFetchedResultsControllerDelegate {
     /* this function is called when the NSFRC will be chaing its context */
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
@@ -237,6 +245,32 @@ extension CustomTabVC: NSFetchedResultsControllerDelegate {
         tableView.endUpdates()
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
