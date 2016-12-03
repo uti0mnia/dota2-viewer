@@ -2,7 +2,7 @@
 //  Ability+CoreDataProperties.swift
 //  
 //
-//  Created by Casey McLewin on 2016-11-30.
+//  Created by Casey McLewin on 2016-12-03.
 //
 //
 
@@ -17,15 +17,17 @@ extension Ability {
     }
 
     @NSManaged public var cooldown: String?
+    @NSManaged public var image: NSData?
     @NSManaged public var mana: String?
     @NSManaged public var name: String?
-    @NSManaged public var image: NSData?
+    @NSManaged public var summary: String?
     @NSManaged public var abilitySpecial: NSSet?
     @NSManaged public var data: NSSet?
     @NSManaged public var hero: Hero?
     @NSManaged public var item: Item?
     @NSManaged public var modifiers: NSSet?
     @NSManaged public var notes: NSSet?
+    @NSManaged public var type: NSSet?
 
 }
 
@@ -94,5 +96,22 @@ extension Ability {
 
     @objc(removeNotes:)
     @NSManaged public func removeFromNotes(_ values: NSSet)
+
+}
+
+// MARK: Generated accessors for type
+extension Ability {
+
+    @objc(addTypeObject:)
+    @NSManaged public func addToType(_ value: AbilityType)
+
+    @objc(removeTypeObject:)
+    @NSManaged public func removeFromType(_ value: AbilityType)
+
+    @objc(addType:)
+    @NSManaged public func addToType(_ values: NSSet)
+
+    @objc(removeType:)
+    @NSManaged public func removeFromType(_ values: NSSet)
 
 }

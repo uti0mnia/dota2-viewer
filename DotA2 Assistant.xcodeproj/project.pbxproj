@@ -40,6 +40,8 @@
 		C9172C181DD13F9100DCF88F /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9172C171DD13F9100DCF88F /* Globals.swift */; };
 		C9172C211DD176BA00DCF88F /* dota2-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = C9172C201DD176BA00DCF88F /* dota2-logo.png */; };
 		C922FA8B1DD8AD27007B76F8 /* DALoreLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C922FA8A1DD8AD27007B76F8 /* DALoreLabel.swift */; };
+		C930281D1DF33FF4005EA297 /* AbilityType+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C930281B1DF33FF4005EA297 /* AbilityType+CoreDataClass.swift */; };
+		C930281E1DF33FF4005EA297 /* AbilityType+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C930281C1DF33FF4005EA297 /* AbilityType+CoreDataProperties.swift */; };
 		C94A26D21DD5593F00D9B054 /* DASlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94A26D11DD5593F00D9B054 /* DASlider.swift */; };
 		C94CAB641DD7CD4F00971BC5 /* DASearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94CAB631DD7CD4F00971BC5 /* DASearchBar.swift */; };
 		C94F03A21DEF91D3000E60CE /* ArrayValue+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94F038C1DEF91D3000E60CE /* ArrayValue+CoreDataClass.swift */; };
@@ -76,7 +78,7 @@
 		C999EA081DE7D1C10036AF47 /* OptimusPrinceps.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C999EA061DE7D1C10036AF47 /* OptimusPrinceps.ttf */; };
 		C999EA091DE7D1C10036AF47 /* OptimusPrincepsSemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C999EA071DE7D1C10036AF47 /* OptimusPrincepsSemiBold.ttf */; };
 		C999EA0F1DE7DF680036AF47 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C999EA0E1DE7DF680036AF47 /* GoogleService-Info.plist */; };
-		C999EA111DE7E3CB0036AF47 /* FirebaseImport.swift in Sources */ = {isa = PBXBuildFile; fileRef = C999EA101DE7E3CB0036AF47 /* FirebaseImport.swift */; };
+		C999EA111DE7E3CB0036AF47 /* Import.swift in Sources */ = {isa = PBXBuildFile; fileRef = C999EA101DE7E3CB0036AF47 /* Import.swift */; };
 		C9A6D64D1DBD25AE00580B7B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A6D64C1DBD25AE00580B7B /* Extensions.swift */; };
 		C9FEBF2F1DB299F2000CD4FF /* DotA2_Viewer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C9FEBF2D1DB299F2000CD4FF /* DotA2_Viewer.xcdatamodeld */; };
 /* End PBXBuildFile section */
@@ -120,6 +122,8 @@
 		C9172C171DD13F9100DCF88F /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		C9172C201DD176BA00DCF88F /* dota2-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dota2-logo.png"; sourceTree = "<group>"; };
 		C922FA8A1DD8AD27007B76F8 /* DALoreLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DALoreLabel.swift; sourceTree = "<group>"; };
+		C930281B1DF33FF4005EA297 /* AbilityType+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "AbilityType+CoreDataClass.swift"; path = "CoreData/AbilityType+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C930281C1DF33FF4005EA297 /* AbilityType+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "AbilityType+CoreDataProperties.swift"; path = "CoreData/AbilityType+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C94A26D11DD5593F00D9B054 /* DASlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DASlider.swift; path = Views/DASlider.swift; sourceTree = "<group>"; };
 		C94CAB631DD7CD4F00971BC5 /* DASearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DASearchBar.swift; sourceTree = "<group>"; };
 		C94F038C1DEF91D3000E60CE /* ArrayValue+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ArrayValue+CoreDataClass.swift"; path = "CoreData/ArrayValue+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -158,7 +162,7 @@
 		C999EA061DE7D1C10036AF47 /* OptimusPrinceps.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = OptimusPrinceps.ttf; path = Fonts/OptimusPrinceps.ttf; sourceTree = "<group>"; };
 		C999EA071DE7D1C10036AF47 /* OptimusPrincepsSemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = OptimusPrincepsSemiBold.ttf; path = Fonts/OptimusPrincepsSemiBold.ttf; sourceTree = "<group>"; };
 		C999EA0E1DE7DF680036AF47 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
-		C999EA101DE7E3CB0036AF47 /* FirebaseImport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseImport.swift; sourceTree = "<group>"; };
+		C999EA101DE7E3CB0036AF47 /* Import.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Import.swift; sourceTree = "<group>"; };
 		C9A6D64C1DBD25AE00580B7B /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		C9FEBF2E1DB299F2000CD4FF /* DotA2_Pro.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DotA2_Pro.xcdatamodel; sourceTree = "<group>"; };
 		D901BAFFD7186DCAB66C34BB /* Pods-DotA2 Assistant.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DotA2 Assistant.release.xcconfig"; path = "Pods/Target Support Files/Pods-DotA2 Assistant/Pods-DotA2 Assistant.release.xcconfig"; sourceTree = "<group>"; };
@@ -296,10 +300,12 @@
 		36FD56461DA6E373007C5A9C /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				C94F038C1DEF91D3000E60CE /* ArrayValue+CoreDataClass.swift */,
-				C94F038D1DEF91D3000E60CE /* ArrayValue+CoreDataProperties.swift */,
 				C94F038E1DEF91D3000E60CE /* Ability+CoreDataClass.swift */,
 				C94F038F1DEF91D3000E60CE /* Ability+CoreDataProperties.swift */,
+				C930281B1DF33FF4005EA297 /* AbilityType+CoreDataClass.swift */,
+				C930281C1DF33FF4005EA297 /* AbilityType+CoreDataProperties.swift */,
+				C94F038C1DEF91D3000E60CE /* ArrayValue+CoreDataClass.swift */,
+				C94F038D1DEF91D3000E60CE /* ArrayValue+CoreDataProperties.swift */,
 				C94F03901DEF91D3000E60CE /* Attribute+CoreDataClass.swift */,
 				C94F03911DEF91D3000E60CE /* Attribute+CoreDataProperties.swift */,
 				C94F03921DEF91D3000E60CE /* BaseStat+CoreDataClass.swift */,
@@ -339,7 +345,7 @@
 				C9A6D64C1DBD25AE00580B7B /* Extensions.swift */,
 				C9172C171DD13F9100DCF88F /* Globals.swift */,
 				36C7DF231DC8F2C800251705 /* RSSFeedHelper.swift */,
-				C999EA101DE7E3CB0036AF47 /* FirebaseImport.swift */,
+				C999EA101DE7E3CB0036AF47 /* Import.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -538,7 +544,7 @@
 				366A8A091DD0F4F3000406BF /* DAMainLabel.swift in Sources */,
 				366A8A221DD24B71000406BF /* DAMainCellLabel.swift in Sources */,
 				C922FA8B1DD8AD27007B76F8 /* DALoreLabel.swift in Sources */,
-				C999EA111DE7E3CB0036AF47 /* FirebaseImport.swift in Sources */,
+				C999EA111DE7E3CB0036AF47 /* Import.swift in Sources */,
 				C94F03B51DEF91D3000E60CE /* ItemDetail+CoreDataProperties.swift in Sources */,
 				C94F03A91DEF91D3000E60CE /* BaseStat+CoreDataProperties.swift in Sources */,
 				C94F03B71DEF91D3000E60CE /* Damage+CoreDataProperties.swift in Sources */,
@@ -561,10 +567,12 @@
 				C96B9C461DB3334800F656AA /* DetailVC.swift in Sources */,
 				C94F03AB1DEF91D3000E60CE /* Hero+CoreDataProperties.swift in Sources */,
 				C9172C181DD13F9100DCF88F /* Globals.swift in Sources */,
+				C930281D1DF33FF4005EA297 /* AbilityType+CoreDataClass.swift in Sources */,
 				C94F03A81DEF91D3000E60CE /* BaseStat+CoreDataClass.swift in Sources */,
 				C94F03A31DEF91D3000E60CE /* ArrayValue+CoreDataProperties.swift in Sources */,
 				C94F03AD1DEF91D3000E60CE /* Item+CoreDataProperties.swift in Sources */,
 				36C7DF241DC8F2C800251705 /* RSSFeedHelper.swift in Sources */,
+				C930281E1DF33FF4005EA297 /* AbilityType+CoreDataProperties.swift in Sources */,
 				C94CAB641DD7CD4F00971BC5 /* DASearchBar.swift in Sources */,
 				C94F03B01DEF91D3000E60CE /* ListObject+CoreDataClass.swift in Sources */,
 				C94F03B31DEF91D3000E60CE /* Note+CoreDataProperties.swift in Sources */,
