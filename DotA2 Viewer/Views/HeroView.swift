@@ -23,7 +23,7 @@ class HeroView: UIView {
     
     
     // MARK - Properties
-    fileprivate let nibName = "ImageLabelView"
+    fileprivate let nibName = "HeroView"
     fileprivate var view: UIView!
     
     override init(frame: CGRect) {

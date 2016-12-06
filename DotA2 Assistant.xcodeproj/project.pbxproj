@@ -86,7 +86,6 @@
 		C95753CB1DD57FCF005C9F75 /* speed_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C95753C51DD57FCF005C9F75 /* speed_icon.png */; };
 		C95753CC1DD57FCF005C9F75 /* strength_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C95753C61DD57FCF005C9F75 /* strength_icon.png */; };
 		C96B1F3B1DF0F08E00226D1E /* dota2.json in Resources */ = {isa = PBXBuildFile; fileRef = C96B1F3A1DF0F08E00226D1E /* dota2.json */; };
-		C96B9C461DB3334800F656AA /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96B9C451DB3334800F656AA /* DetailVC.swift */; };
 		C96EBB601DF244EF00D6FFD0 /* DANavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96EBB5F1DF244EF00D6FFD0 /* DANavigationController.swift */; };
 		C999EA081DE7D1C10036AF47 /* OptimusPrinceps.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C999EA061DE7D1C10036AF47 /* OptimusPrinceps.ttf */; };
 		C999EA091DE7D1C10036AF47 /* OptimusPrincepsSemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C999EA071DE7D1C10036AF47 /* OptimusPrincepsSemiBold.ttf */; };
@@ -182,7 +181,6 @@
 		C95753C51DD57FCF005C9F75 /* speed_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = speed_icon.png; sourceTree = "<group>"; };
 		C95753C61DD57FCF005C9F75 /* strength_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = strength_icon.png; sourceTree = "<group>"; };
 		C96B1F3A1DF0F08E00226D1E /* dota2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dota2.json; sourceTree = "<group>"; };
-		C96B9C451DB3334800F656AA /* DetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
 		C96EA1111DEE622800259AEF /* DotA2 Assistant.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = "DotA2 Assistant.entitlements"; path = "../DotA2 Assistant.entitlements"; sourceTree = "<group>"; };
 		C96EBB5F1DF244EF00D6FFD0 /* DANavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DANavigationController.swift; sourceTree = "<group>"; };
 		C999EA061DE7D1C10036AF47 /* OptimusPrinceps.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = OptimusPrinceps.ttf; path = Fonts/OptimusPrinceps.ttf; sourceTree = "<group>"; };
@@ -386,7 +384,6 @@
 			children = (
 				366A8A111DD1029F000406BF /* DAUIViewController.swift */,
 				367E34DF1DB7F9670037FA7B /* CustomTabVC.swift */,
-				C96B9C451DB3334800F656AA /* DetailVC.swift */,
 				C93028381DF3629F005EA297 /* HeroDetailVC.swift */,
 			);
 			name = Controller;
@@ -621,7 +618,6 @@
 				C94F03B41DEF91D3000E60CE /* ItemDetail+CoreDataClass.swift in Sources */,
 				C94F03A61DEF91D3000E60CE /* Attribute+CoreDataClass.swift in Sources */,
 				C94F03B61DEF91D3000E60CE /* Damage+CoreDataClass.swift in Sources */,
-				C96B9C461DB3334800F656AA /* DetailVC.swift in Sources */,
 				C94F03AB1DEF91D3000E60CE /* Hero+CoreDataProperties.swift in Sources */,
 				C9172C181DD13F9100DCF88F /* Globals.swift in Sources */,
 				C930281D1DF33FF4005EA297 /* AbilityType+CoreDataClass.swift in Sources */,

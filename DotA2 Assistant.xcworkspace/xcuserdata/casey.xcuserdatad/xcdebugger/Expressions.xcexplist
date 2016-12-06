@@ -11,6 +11,14 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "HeroDetailVC.setup() -&gt; ():HeroDetailVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "hero.roles">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "static Import.JSONImport.initialImport(inMOC : NSManagedObjectContext) -&gt; ():FirebaseImport.swift">
          <PersistentStrings>
             <PersistentString

@@ -99,26 +99,22 @@ class CustomTabVC: DAUIViewController {
         NotificationCenter.default.removeObserver(self)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // make sure we have a selected item
-        guard selectedObject != nil else {
-            return
-        }
-        
-        // the showDetail segues
-        if segue.identifier == "showDetail" {
-            if let vc = (segue.destination as? UINavigationController)?.viewControllers.first as? DetailVC {
-                vc.object = selectedObject
-            }
-            tableView.searchBar.text = ""
-        }
-    }
-    
     
     /* Handles the user input when selecting the search button (scroll to search bar and  */
     @IBAction func searchButton(_ sender: UIBarButtonItem) {
         tableView.setContentOffset(CGPoint.zero, animated: true)
         tableView.searchBar.becomeFirstResponder()
+    }
+    
+    /* Handles the segue to a detail vc (item/hero) */
+    fileprivate func moveToDetail(for object: ListObject) {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        
+        if let hero = object as? Hero {
+            let vc = sb.instantiateViewController(withIdentifier: "HeroDetailVC") as! HeroDetailVC
+            vc.hero = hero
+            showDetailViewController(vc, sender: nil)
+        }
     }
 }
 
@@ -177,6 +173,7 @@ extension CustomTabVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let obj = fetchedResultsController.object(at: indexPath)
         tableView.deselectRow(at: indexPath, animated: true)
+        moveToDetail(for: obj)
     }
 }
 

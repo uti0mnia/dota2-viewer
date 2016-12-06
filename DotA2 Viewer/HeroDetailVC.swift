@@ -8,30 +8,32 @@
 
 import UIKit
 
-class HeroDetailVC: DetailVC {
+class HeroDetailVC: DAUIViewController {
     // MARK - Outlets
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var heroView: HeroView!
     
+    // MARK - Properties
+    var hero: Hero!
+    
     // MARK - Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        guard hero != nil else {
+            return
+        }
         
         setup()
     }
     
     
     /* This function sets up the data to be displayed */
-    fileprivate func setup() {
-        // make sure we have a hero to display
-        guard let hero = object as? Hero else {
-            return
-        }
-        
+    fileprivate func setup() {        
         heroView.imageView.image = hero.getImage()
         heroView.attackTypeLabel.text = (hero.miscStats?.projectileSpeed ?? "" == "Instant") ? "Melee" : "Ranged"
-        heroView.rolesLabel.text = (hero.roles!.allObjects as! [String]).joined(separator: ", ")
+        heroView.rolesLabel.text = (hero.roles!.allObjects as! [ArrayValue]).map({ $0.value ?? "" }).joined(separator: ", ")
         heroView.levelLabel.text = "Level 1"
         let attributes = hero.attribute?.allObjects as! [Attribute]
         let views = [heroView.attribute1View, heroView.attribute2View, heroView.attribute3View]

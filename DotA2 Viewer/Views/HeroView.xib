@@ -35,64 +35,65 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="445"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="euv-Sc-ccO">
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="euv-Sc-ccO">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="445"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ksr-b0-Wut">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="223"/>
+                            <rect key="frame" x="8" y="8" width="359" height="229"/>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Attack Type" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WP5-1E-Qh3">
-                            <rect key="frame" x="0.0" y="231" width="375" height="22.5"/>
+                            <rect key="frame" x="137.5" y="245" width="100.5" height="19"/>
                             <fontDescription key="fontDescription" name="Radiance-Semibold" family="Radiance-Semibold" pointSize="19"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Roles" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zff-DJ-7O5">
-                            <rect key="frame" x="0.0" y="261.5" width="375" height="22.5"/>
+                            <rect key="frame" x="167" y="272" width="41.5" height="19"/>
                             <fontDescription key="fontDescription" name="Radiance" family="Radiance" pointSize="19"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Ap6-Vc-rAL">
-                            <rect key="frame" x="0.0" y="292" width="375" height="30"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Ap6-Vc-rAL">
+                            <rect key="frame" x="8" y="299" width="359" height="30"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Kj-WO-5gE">
-                                    <rect key="frame" x="0.0" y="0.0" width="44" height="30"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" horizontalCompressionResistancePriority="751" text="Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Kj-WO-5gE">
+                                    <rect key="frame" x="0.0" y="0.0" width="32" height="30"/>
                                     <fontDescription key="fontDescription" name="Radiance" family="Radiance" pointSize="19"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="99P-t2-JW9">
-                                    <rect key="frame" x="50" y="0.0" width="327" height="31"/>
+                                <slider opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="752" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="99P-t2-JW9">
+                                    <rect key="frame" x="38" y="0.0" width="323" height="31"/>
                                 </slider>
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="FlT-H9-6AB">
-                            <rect key="frame" x="0.0" y="330" width="375" height="99"/>
+                            <rect key="frame" x="8" y="337" width="359" height="84"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RAm-p3-XWG" customClass="AttributeView" customModule="DotA2_Assistant" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="119.5" height="99"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="114.5" height="84"/>
                                     <color key="backgroundColor" red="1" green="0.69808751582852258" blue="0.61536220393243746" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pDF-Go-qVa" customClass="AttributeView" customModule="DotA2_Assistant" customModuleProvider="target">
-                                    <rect key="frame" x="127.5" y="0.0" width="120" height="99"/>
+                                    <rect key="frame" x="122.5" y="0.0" width="114" height="84"/>
                                     <color key="backgroundColor" red="1" green="0.69808751579999995" blue="0.61536220389999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lle-HL-hOo" customClass="AttributeView" customModule="DotA2_Assistant" customModuleProvider="target">
-                                    <rect key="frame" x="255.5" y="0.0" width="119.5" height="99"/>
+                                    <rect key="frame" x="244.5" y="0.0" width="114.5" height="84"/>
                                     <color key="backgroundColor" red="1" green="0.69808751579999995" blue="0.61536220389999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </view>
                             </subviews>
                         </stackView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ayk-0R-nsf" customClass="BaseStatsView" customModule="DotA2_Assistant" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="437" width="375" height="0.0"/>
+                            <rect key="frame" x="8" y="429" width="359" height="0.0"/>
                             <color key="backgroundColor" red="1" green="0.21211797737650628" blue="0.76077910497935264" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lMZ-v5-q9c" customClass="MiscStatsView" customModule="DotA2_Assistant" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="445" width="375" height="0.0"/>
+                            <rect key="frame" x="8" y="437" width="359" height="0.0"/>
                             <color key="backgroundColor" red="0.46772014353327795" green="1" blue="0.45252230328942511" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </view>
                     </subviews>
+                    <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                 </stackView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
