@@ -11,8 +11,6 @@ import CoreData
 import SafariServices
 
 class DetailVC: DAUIViewController {
-    // MARK - Outlets
-    
     // MARK - Properties
     var object: ListObject!
     
@@ -24,6 +22,7 @@ class DetailVC: DAUIViewController {
         // configure resize button (for ipad and Plus-landscape)
         self.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem
         self.navigationItem.leftItemsSupplementBackButton = true
+        
     }
     
 }

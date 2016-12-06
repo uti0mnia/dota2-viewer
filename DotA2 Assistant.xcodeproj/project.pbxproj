@@ -42,6 +42,19 @@
 		C922FA8B1DD8AD27007B76F8 /* DALoreLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C922FA8A1DD8AD27007B76F8 /* DALoreLabel.swift */; };
 		C930281D1DF33FF4005EA297 /* AbilityType+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C930281B1DF33FF4005EA297 /* AbilityType+CoreDataClass.swift */; };
 		C930281E1DF33FF4005EA297 /* AbilityType+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C930281C1DF33FF4005EA297 /* AbilityType+CoreDataProperties.swift */; };
+		C93028201DF346E1005EA297 /* AbilityView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C930281F1DF346E1005EA297 /* AbilityView.xib */; };
+		C93028221DF34D4C005EA297 /* ImageLabelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C93028211DF34D4C005EA297 /* ImageLabelView.xib */; };
+		C93028241DF34E35005EA297 /* ImageLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93028231DF34E35005EA297 /* ImageLabelView.swift */; };
+		C93028261DF3515A005EA297 /* AbilityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93028251DF3515A005EA297 /* AbilityView.swift */; };
+		C93028281DF3544E005EA297 /* HeroView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C93028271DF3544E005EA297 /* HeroView.xib */; };
+		C930282A1DF3567B005EA297 /* AttributeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C93028291DF3567B005EA297 /* AttributeView.xib */; };
+		C930282C1DF356F5005EA297 /* AttributeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C930282B1DF356F5005EA297 /* AttributeView.swift */; };
+		C930282E1DF3577E005EA297 /* BaseStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C930282D1DF3577E005EA297 /* BaseStatsView.swift */; };
+		C93028301DF3579E005EA297 /* BaseStatsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C930282F1DF3579E005EA297 /* BaseStatsView.xib */; };
+		C93028321DF35B3B005EA297 /* MiscStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93028311DF35B3B005EA297 /* MiscStatsView.swift */; };
+		C93028341DF35B6F005EA297 /* MiscStatsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C93028331DF35B6F005EA297 /* MiscStatsView.xib */; };
+		C93028361DF360BF005EA297 /* HeroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93028351DF360BF005EA297 /* HeroView.swift */; };
+		C93028391DF3629F005EA297 /* HeroDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93028381DF3629F005EA297 /* HeroDetailVC.swift */; };
 		C94A26D21DD5593F00D9B054 /* DASlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94A26D11DD5593F00D9B054 /* DASlider.swift */; };
 		C94CAB641DD7CD4F00971BC5 /* DASearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94CAB631DD7CD4F00971BC5 /* DASearchBar.swift */; };
 		C94F03A21DEF91D3000E60CE /* ArrayValue+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94F038C1DEF91D3000E60CE /* ArrayValue+CoreDataClass.swift */; };
@@ -124,6 +137,19 @@
 		C922FA8A1DD8AD27007B76F8 /* DALoreLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DALoreLabel.swift; sourceTree = "<group>"; };
 		C930281B1DF33FF4005EA297 /* AbilityType+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "AbilityType+CoreDataClass.swift"; path = "CoreData/AbilityType+CoreDataClass.swift"; sourceTree = "<group>"; };
 		C930281C1DF33FF4005EA297 /* AbilityType+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "AbilityType+CoreDataProperties.swift"; path = "CoreData/AbilityType+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C930281F1DF346E1005EA297 /* AbilityView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AbilityView.xib; path = Views/AbilityView.xib; sourceTree = "<group>"; };
+		C93028211DF34D4C005EA297 /* ImageLabelView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ImageLabelView.xib; path = Views/ImageLabelView.xib; sourceTree = "<group>"; };
+		C93028231DF34E35005EA297 /* ImageLabelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageLabelView.swift; path = Views/ImageLabelView.swift; sourceTree = "<group>"; };
+		C93028251DF3515A005EA297 /* AbilityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AbilityView.swift; path = Views/AbilityView.swift; sourceTree = "<group>"; };
+		C93028271DF3544E005EA297 /* HeroView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HeroView.xib; path = Views/HeroView.xib; sourceTree = "<group>"; };
+		C93028291DF3567B005EA297 /* AttributeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AttributeView.xib; path = Views/AttributeView.xib; sourceTree = "<group>"; };
+		C930282B1DF356F5005EA297 /* AttributeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AttributeView.swift; path = Views/AttributeView.swift; sourceTree = "<group>"; };
+		C930282D1DF3577E005EA297 /* BaseStatsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseStatsView.swift; path = Views/BaseStatsView.swift; sourceTree = "<group>"; };
+		C930282F1DF3579E005EA297 /* BaseStatsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BaseStatsView.xib; path = Views/BaseStatsView.xib; sourceTree = "<group>"; };
+		C93028311DF35B3B005EA297 /* MiscStatsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MiscStatsView.swift; path = Views/MiscStatsView.swift; sourceTree = "<group>"; };
+		C93028331DF35B6F005EA297 /* MiscStatsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MiscStatsView.xib; path = Views/MiscStatsView.xib; sourceTree = "<group>"; };
+		C93028351DF360BF005EA297 /* HeroView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HeroView.swift; path = Views/HeroView.swift; sourceTree = "<group>"; };
+		C93028381DF3629F005EA297 /* HeroDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroDetailVC.swift; sourceTree = "<group>"; };
 		C94A26D11DD5593F00D9B054 /* DASlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DASlider.swift; path = Views/DASlider.swift; sourceTree = "<group>"; };
 		C94CAB631DD7CD4F00971BC5 /* DASearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DASearchBar.swift; sourceTree = "<group>"; };
 		C94F038C1DEF91D3000E60CE /* ArrayValue+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ArrayValue+CoreDataClass.swift"; path = "CoreData/ArrayValue+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -334,6 +360,11 @@
 			children = (
 				36C0C9651DA6E25800169394 /* Main.storyboard */,
 				364A6A5F1DC1192E00FBE163 /* General */,
+				C93028251DF3515A005EA297 /* AbilityView.swift */,
+				C930281F1DF346E1005EA297 /* AbilityView.xib */,
+				C93028231DF34E35005EA297 /* ImageLabelView.swift */,
+				C93028211DF34D4C005EA297 /* ImageLabelView.xib */,
+				C93028371DF36164005EA297 /* Hero */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -356,8 +387,24 @@
 				366A8A111DD1029F000406BF /* DAUIViewController.swift */,
 				367E34DF1DB7F9670037FA7B /* CustomTabVC.swift */,
 				C96B9C451DB3334800F656AA /* DetailVC.swift */,
+				C93028381DF3629F005EA297 /* HeroDetailVC.swift */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		C93028371DF36164005EA297 /* Hero */ = {
+			isa = PBXGroup;
+			children = (
+				C930282B1DF356F5005EA297 /* AttributeView.swift */,
+				C93028291DF3567B005EA297 /* AttributeView.xib */,
+				C930282D1DF3577E005EA297 /* BaseStatsView.swift */,
+				C930282F1DF3579E005EA297 /* BaseStatsView.xib */,
+				C93028351DF360BF005EA297 /* HeroView.swift */,
+				C93028271DF3544E005EA297 /* HeroView.xib */,
+				C93028311DF35B3B005EA297 /* MiscStatsView.swift */,
+				C93028331DF35B6F005EA297 /* MiscStatsView.xib */,
+			);
+			name = Hero;
 			sourceTree = "<group>";
 		};
 		C94F03B81DEF9464000E60CE /* Hero Images */ = {
@@ -451,11 +498,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C930282A1DF3567B005EA297 /* AttributeView.xib in Resources */,
+				C93028201DF346E1005EA297 /* AbilityView.xib in Resources */,
 				C999EA081DE7D1C10036AF47 /* OptimusPrinceps.ttf in Resources */,
 				C999EA091DE7D1C10036AF47 /* OptimusPrincepsSemiBold.ttf in Resources */,
 				366A8A271DD24E99000406BF /* radiance.ttf in Resources */,
 				366A8A261DD24E8E000406BF /* radiance-semibold.ttf in Resources */,
 				36FD56541DA6E3F5007C5A9C /* default_icon.png in Resources */,
+				C93028281DF3544E005EA297 /* HeroView.xib in Resources */,
+				C93028341DF35B6F005EA297 /* MiscStatsView.xib in Resources */,
+				C93028301DF3579E005EA297 /* BaseStatsView.xib in Resources */,
 				36C0C96F1DA6E25800169394 /* LaunchScreen.storyboard in Resources */,
 				36C0C96C1DA6E25800169394 /* Assets.xcassets in Resources */,
 				36A292301DCA51CC006E96A8 /* Attributes.png in Resources */,
@@ -479,6 +531,7 @@
 				36C0C9671DA6E25800169394 /* Main.storyboard in Resources */,
 				36A292341DCA51CC006E96A8 /* Secret shop.png in Resources */,
 				C95753CB1DD57FCF005C9F75 /* speed_icon.png in Resources */,
+				C93028221DF34D4C005EA297 /* ImageLabelView.xib in Resources */,
 				36A292311DCA51CC006E96A8 /* Caster.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -541,18 +594,22 @@
 				C96EBB601DF244EF00D6FFD0 /* DANavigationController.swift in Sources */,
 				366A8A101DD100A8000406BF /* DAMainTableView.swift in Sources */,
 				C94F03A21DEF91D3000E60CE /* ArrayValue+CoreDataClass.swift in Sources */,
+				C930282E1DF3577E005EA297 /* BaseStatsView.swift in Sources */,
 				366A8A091DD0F4F3000406BF /* DAMainLabel.swift in Sources */,
 				366A8A221DD24B71000406BF /* DAMainCellLabel.swift in Sources */,
 				C922FA8B1DD8AD27007B76F8 /* DALoreLabel.swift in Sources */,
 				C999EA111DE7E3CB0036AF47 /* Import.swift in Sources */,
+				C930282C1DF356F5005EA297 /* AttributeView.swift in Sources */,
 				C94F03B51DEF91D3000E60CE /* ItemDetail+CoreDataProperties.swift in Sources */,
 				C94F03A91DEF91D3000E60CE /* BaseStat+CoreDataProperties.swift in Sources */,
 				C94F03B71DEF91D3000E60CE /* Damage+CoreDataProperties.swift in Sources */,
 				364A6A591DC1136300FBE163 /* DAMultiLineLabel.swift in Sources */,
 				C94F03AE1DEF91D3000E60CE /* MiscStat+CoreDataClass.swift in Sources */,
 				366A8A161DD103F1000406BF /* DATabBar.swift in Sources */,
+				C93028261DF3515A005EA297 /* AbilityView.swift in Sources */,
 				C94F03B21DEF91D3000E60CE /* Note+CoreDataClass.swift in Sources */,
 				367E34E01DB7F9670037FA7B /* CustomTabVC.swift in Sources */,
+				C93028391DF3629F005EA297 /* HeroDetailVC.swift in Sources */,
 				C94F03A71DEF91D3000E60CE /* Attribute+CoreDataProperties.swift in Sources */,
 				366A8A121DD1029F000406BF /* DAUIViewController.swift in Sources */,
 				C94F03B11DEF91D3000E60CE /* ListObject+CoreDataProperties.swift in Sources */,
@@ -569,14 +626,17 @@
 				C9172C181DD13F9100DCF88F /* Globals.swift in Sources */,
 				C930281D1DF33FF4005EA297 /* AbilityType+CoreDataClass.swift in Sources */,
 				C94F03A81DEF91D3000E60CE /* BaseStat+CoreDataClass.swift in Sources */,
+				C93028361DF360BF005EA297 /* HeroView.swift in Sources */,
 				C94F03A31DEF91D3000E60CE /* ArrayValue+CoreDataProperties.swift in Sources */,
 				C94F03AD1DEF91D3000E60CE /* Item+CoreDataProperties.swift in Sources */,
 				36C7DF241DC8F2C800251705 /* RSSFeedHelper.swift in Sources */,
 				C930281E1DF33FF4005EA297 /* AbilityType+CoreDataProperties.swift in Sources */,
 				C94CAB641DD7CD4F00971BC5 /* DASearchBar.swift in Sources */,
+				C93028241DF34E35005EA297 /* ImageLabelView.swift in Sources */,
 				C94F03B01DEF91D3000E60CE /* ListObject+CoreDataClass.swift in Sources */,
 				C94F03B31DEF91D3000E60CE /* Note+CoreDataProperties.swift in Sources */,
 				366A8A0E1DD0F993000406BF /* DACircleImageView.swift in Sources */,
+				C93028321DF35B3B005EA297 /* MiscStatsView.swift in Sources */,
 				C9A6D64D1DBD25AE00580B7B /* Extensions.swift in Sources */,
 				36C0C9621DA6E25800169394 /* AppDelegate.swift in Sources */,
 				C94F03A51DEF91D3000E60CE /* Ability+CoreDataProperties.swift in Sources */,

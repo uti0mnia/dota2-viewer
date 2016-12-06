@@ -28,6 +28,58 @@
             </objects>
             <point key="canvasLocation" x="-655.20000000000005" y="-3149.7751124437782"/>
         </scene>
+        <!--Hero DetailVC-->
+        <scene sceneID="F3e-kg-pKd">
+            <objects>
+                <viewController id="kQF-xL-o66" customClass="HeroDetailVC" customModule="DotA2_Assistant" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZS3-LY-WRL"/>
+                        <viewControllerLayoutGuide type="bottom" id="dMo-AC-Pvy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2MR-UI-Wax">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fb5-4i-jIY">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="TIb-9O-SCy">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WVG-sC-IQv" customClass="HeroView" customModule="DotA2_Assistant" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="TIb-9O-SCy" firstAttribute="leading" secondItem="Fb5-4i-jIY" secondAttribute="leading" id="26A-h4-7yz"/>
+                                    <constraint firstAttribute="trailing" secondItem="TIb-9O-SCy" secondAttribute="trailing" id="6ga-Oo-2Hd"/>
+                                    <constraint firstItem="TIb-9O-SCy" firstAttribute="width" secondItem="Fb5-4i-jIY" secondAttribute="width" id="Hs1-hY-HnR"/>
+                                    <constraint firstItem="TIb-9O-SCy" firstAttribute="top" secondItem="Fb5-4i-jIY" secondAttribute="top" id="Lrk-5m-gBm"/>
+                                    <constraint firstAttribute="bottom" secondItem="TIb-9O-SCy" secondAttribute="bottom" id="f8Y-LY-sBP"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Fb5-4i-jIY" secondAttribute="trailing" id="9Rd-PI-Sbc"/>
+                            <constraint firstItem="Fb5-4i-jIY" firstAttribute="top" secondItem="2MR-UI-Wax" secondAttribute="top" id="NiH-ip-Mde"/>
+                            <constraint firstAttribute="bottom" secondItem="Fb5-4i-jIY" secondAttribute="bottom" id="QME-oo-W9F"/>
+                            <constraint firstItem="Fb5-4i-jIY" firstAttribute="leading" secondItem="2MR-UI-Wax" secondAttribute="leading" id="ZS1-tU-A6j"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="heroView" destination="WVG-sC-IQv" id="U6w-BS-AYW"/>
+                        <outlet property="scrollView" destination="Fb5-4i-jIY" id="8om-rg-ahN"/>
+                        <outlet property="stackView" destination="TIb-9O-SCy" id="VI9-GJ-3i3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hgI-fr-V5F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="93.599999999999994" y="-3152.4737631184412"/>
+        </scene>
         <!--Split View Controller-->
         <scene sceneID="UHe-h5-DLc">
             <objects>
@@ -119,7 +171,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9FL-AS-YTq" customClass="DANavigationController" customModule="DotA2_Assistant" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Heroes" id="NUl-ZW-oRZ"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="RnW-Iu-fm3">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="RnW-Iu-fm3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.87139734455958551" green="0.03687937124292797" blue="0.051371898444097563" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -138,7 +190,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0xi-1T-PpC" customClass="DANavigationController" customModule="DotA2_Assistant" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="w5g-ZC-18e">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="w5g-ZC-18e">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.88532221502590669" green="0.0" blue="0.16688224116154954" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

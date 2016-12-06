@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="radiance.ttf">
+            <string>Radiance</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BaseStatsView" customModule="DotA2_Assistant" customModuleProvider="target">
+            <connections>
+                <outlet property="armorLabel" destination="J6n-0o-9hG" id="E1p-vh-lc6"/>
+                <outlet property="attackPerSLabel" destination="9zw-Tf-JUm" id="kuZ-5x-HJP"/>
+                <outlet property="damageLabel" destination="Jkg-29-sRU" id="BXd-Ve-nTI"/>
+                <outlet property="hpLabel" destination="nZc-xz-gSL" id="I9P-fy-wiX"/>
+                <outlet property="manaLabel" destination="3Lg-gh-BJf" id="EAE-h7-Lvi"/>
+                <outlet property="spellDmgLabel" destination="Gin-sl-BMY" id="3eI-r8-MY3"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="310" height="145"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="iWP-tk-OJV">
+                    <rect key="frame" x="0.0" y="0.0" width="310" height="145"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hp" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nZc-xz-gSL">
+                            <rect key="frame" x="8" y="8" width="294" height="28"/>
+                            <color key="backgroundColor" red="0.29485434065530103" green="0.66547033629441632" blue="0.15667271607616828" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" name="Radiance" family="Radiance" pointSize="19"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="mana" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Lg-gh-BJf">
+                            <rect key="frame" x="8" y="44" width="294" height="27"/>
+                            <color key="backgroundColor" red="0.053957145372099294" green="0.6066852037138748" blue="0.87273953045685282" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" name="Radiance" family="Radiance" pointSize="19"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Uu6-il-3Hi">
+                            <rect key="frame" x="8" y="79" width="294" height="58"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="V8k-uI-1GN">
+                                    <rect key="frame" x="0.0" y="0.0" width="147" height="58"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="damage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jkg-29-sRU">
+                                            <rect key="frame" x="43" y="0.0" width="62" height="25"/>
+                                            <fontDescription key="fontDescription" name="Radiance" family="Radiance" pointSize="19"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="armor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J6n-0o-9hG">
+                                            <rect key="frame" x="50" y="33" width="47" height="25"/>
+                                            <fontDescription key="fontDescription" name="Radiance" family="Radiance" pointSize="19"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Z8t-mc-a9x">
+                                    <rect key="frame" x="147" y="0.0" width="147" height="58"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="attack per s" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9zw-Tf-JUm">
+                                            <rect key="frame" x="28" y="0.0" width="91" height="25"/>
+                                            <fontDescription key="fontDescription" name="Radiance" family="Radiance" pointSize="19"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="spell damage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gin-sl-BMY">
+                                            <rect key="frame" x="23" y="33" width="101" height="25"/>
+                                            <fontDescription key="fontDescription" name="Radiance" family="Radiance" pointSize="19"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="iWP-tk-OJV" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="4HH-rC-yCO"/>
+                <constraint firstAttribute="trailing" secondItem="iWP-tk-OJV" secondAttribute="trailing" id="CIk-Wv-wjF"/>
+                <constraint firstItem="iWP-tk-OJV" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="GOC-pP-l4e"/>
+                <constraint firstAttribute="bottom" secondItem="iWP-tk-OJV" secondAttribute="bottom" id="NRI-6i-qpC"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="4" y="-199.5"/>
+        </view>
+    </objects>
+</document>

@@ -19,7 +19,6 @@ extension MiscStat {
     @NSManaged public var attackAnimation: String?
     @NSManaged public var attackRange: NSDecimalNumber?
     @NSManaged public var attackTime: NSDecimalNumber?
-    @NSManaged public var attribute: NSDecimalNumber?
     @NSManaged public var collisionSize: NSDecimalNumber?
     @NSManaged public var magicResistance: NSDecimalNumber?
     @NSManaged public var movementSpeed: NSDecimalNumber?

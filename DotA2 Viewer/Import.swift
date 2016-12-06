@@ -26,6 +26,7 @@ struct Import {
             ability.name = name
             ability.cooldown = obj[name]["Cooldown"].string
             ability.mana = obj[name]["Mana"].string
+            ability.summary = obj[name]["description"].string
             
             // get the specials
             var abilitySpecials = [ArrayValue]()
@@ -61,6 +62,25 @@ struct Import {
                 let notes = createNote(from: obj[name]["notes"].arrayValue, inContext: moc, notes: [Note]())
                 ability.notes = NSSet(array: notes)
             }
+            
+            // get the ability types
+            var types = [AbilityType]()
+            // iterate through each dictionary values
+            for type in obj[name]["types"].dictionaryValue {
+                // create the ability type (has type and [ArrayValue]()
+                let abilityType = NSEntityDescription.insertNewObject(forEntityName: "AbilityType", into: moc) as! AbilityType
+                var typeValues = [ArrayValue]()
+                // get each values for that type
+                for value in type.value.arrayValue {
+                    let arrayValue = NSEntityDescription.insertNewObject(forEntityName: "ArrayValue", into: moc) as! ArrayValue
+                    arrayValue.value = value.string
+                    typeValues.append(arrayValue)
+                }
+                abilityType.type = type.key
+                abilityType.value = NSSet(array: typeValues)
+                types.append(abilityType)
+            }
+            ability.type = NSSet(array: types)
             
             heroAbilities.append(ability)
         }
