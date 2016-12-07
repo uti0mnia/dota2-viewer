@@ -19,6 +19,7 @@
 		366A8A261DD24E8E000406BF /* radiance-semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 366A8A231DD24DB4000406BF /* radiance-semibold.ttf */; };
 		366A8A271DD24E99000406BF /* radiance.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 366A8A241DD24DB4000406BF /* radiance.ttf */; };
 		367E34E01DB7F9670037FA7B /* CustomTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367E34DF1DB7F9670037FA7B /* CustomTabVC.swift */; };
+		368D1BB31DF8815D00314648 /* HeroDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368D1BB21DF8815D00314648 /* HeroDetailModel.swift */; };
 		36A2922C1DCA51CC006E96A8 /* Arcane.png in Resources */ = {isa = PBXBuildFile; fileRef = 36A292211DCA51CC006E96A8 /* Arcane.png */; };
 		36A2922D1DCA51CC006E96A8 /* Arnaments.png in Resources */ = {isa = PBXBuildFile; fileRef = 36A292221DCA51CC006E96A8 /* Arnaments.png */; };
 		36A2922E1DCA51CC006E96A8 /* Armor.png in Resources */ = {isa = PBXBuildFile; fileRef = 36A292231DCA51CC006E96A8 /* Armor.png */; };
@@ -107,6 +108,7 @@
 		366A8A231DD24DB4000406BF /* radiance-semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "radiance-semibold.ttf"; path = "Fonts/radiance-semibold.ttf"; sourceTree = "<group>"; };
 		366A8A241DD24DB4000406BF /* radiance.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = radiance.ttf; path = Fonts/radiance.ttf; sourceTree = "<group>"; };
 		367E34DF1DB7F9670037FA7B /* CustomTabVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabVC.swift; sourceTree = "<group>"; };
+		368D1BB21DF8815D00314648 /* HeroDetailModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroDetailModel.swift; sourceTree = "<group>"; };
 		36A292211DCA51CC006E96A8 /* Arcane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Arcane.png; path = images/Arcane.png; sourceTree = "<group>"; };
 		36A292221DCA51CC006E96A8 /* Arnaments.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Arnaments.png; path = images/Arnaments.png; sourceTree = "<group>"; };
 		36A292231DCA51CC006E96A8 /* Armor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Armor.png; path = images/Armor.png; sourceTree = "<group>"; };
@@ -375,6 +377,7 @@
 				C9172C171DD13F9100DCF88F /* Globals.swift */,
 				36C7DF231DC8F2C800251705 /* RSSFeedHelper.swift */,
 				C999EA101DE7E3CB0036AF47 /* Import.swift */,
+				368D1BB21DF8815D00314648 /* HeroDetailModel.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -605,6 +608,7 @@
 				366A8A161DD103F1000406BF /* DATabBar.swift in Sources */,
 				C93028261DF3515A005EA297 /* AbilityView.swift in Sources */,
 				C94F03B21DEF91D3000E60CE /* Note+CoreDataClass.swift in Sources */,
+				368D1BB31DF8815D00314648 /* HeroDetailModel.swift in Sources */,
 				367E34E01DB7F9670037FA7B /* CustomTabVC.swift in Sources */,
 				C93028391DF3629F005EA297 /* HeroDetailVC.swift in Sources */,
 				C94F03A71DEF91D3000E60CE /* Attribute+CoreDataProperties.swift in Sources */,

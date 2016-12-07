@@ -34,7 +34,7 @@ class DASlider: UISlider {
         
         super.init(frame: frame)
         
-        commonInit()
+        setup()
         
     }
     
@@ -42,16 +42,17 @@ class DASlider: UISlider {
         self.init(frame: CGRect(), initialLevel: level)
     }
     
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        commonInit()
+        setup()
     }
     
-    fileprivate func commonInit() {
+    fileprivate func setup() {
         // set the properties
         self.minimumTrackTintColor = UIColor.flatRed()
         self.maximumTrackTintColor = UIColor.flatWhite()
-        self.thumbTintColor = UIColor.flatBlue()
+        self.thumbTintColor = UIColor.black
         self.setValue(1, animated: false)
         self.minimumValue = Float(numbers.first!)
         self.maximumValue = Float(numbers.last!)

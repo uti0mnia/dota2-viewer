@@ -41,11 +41,8 @@ extension UIStackView {
 }
 
 extension Int {    
-    var nsDecimalValue: NSDecimalNumber {
-        get {
-            return NSDecimalNumber(value: self)
-        }
-    }
+    var nsDecimalValue: NSDecimalNumber { get { return NSDecimalNumber(value: self) } }
+    var doubleValue: Double { get { return Double(self) } }
 }
 
 

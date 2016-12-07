@@ -243,7 +243,6 @@ struct Import {
     }
     
     struct FirebaseImport {
-        
         /* The function that is meant to pull the entire database (DO NOT USE) */
         static func importAll(toMOC moc: NSManagedObjectContext) {
 //            // create a dispatch group so we know when we're done

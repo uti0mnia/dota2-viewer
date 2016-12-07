@@ -39,6 +39,7 @@ class MiscStatsView: UIView {
         self.view = UINib(nibName: self.nibName, bundle: bundle).instantiate(withOwner: self, options: nil)[0] as! UIView
         self.view.frame = bounds
         self.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        self.addSubview(view)
         
     }
 

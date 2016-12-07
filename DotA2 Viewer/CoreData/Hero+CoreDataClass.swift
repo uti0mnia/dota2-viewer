@@ -12,4 +12,5 @@ import FirebaseDatabase
 
 @objc(Hero)
 public class Hero: ListObject {
+    
 }

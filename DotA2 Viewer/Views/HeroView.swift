@@ -14,7 +14,7 @@ class HeroView: UIView {
     @IBOutlet weak var attackTypeLabel: UILabel!
     @IBOutlet weak var rolesLabel: UILabel!
     @IBOutlet weak var levelLabel: UILabel!
-    @IBOutlet weak var slider: UISlider!
+    @IBOutlet weak var slider: DASlider!
     @IBOutlet weak var attribute1View: AttributeView!
     @IBOutlet weak var attribute2View: AttributeView!
     @IBOutlet weak var attribute3View: AttributeView!
@@ -42,6 +42,40 @@ class HeroView: UIView {
         self.view.frame = bounds
         self.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.addSubview(view)
+        
+        // config the view
+        
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
