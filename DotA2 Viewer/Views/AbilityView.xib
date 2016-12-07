@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="radiance-semibold.ttf">
+            <string>Radiance-Semibold</string>
+        </array>
+        <array key="radiance.ttf">
+            <string>Radiance</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AbilityView" customModule="DotA2_Assistant" customModuleProvider="target">
+            <connections>
+                <outlet property="cooldown" destination="LWI-69-0yh" id="eeQ-Ft-MZP"/>
+                <outlet property="dataLabel" destination="tjy-cK-Zjh" id="xdu-4A-I0e"/>
+                <outlet property="expandButton" destination="WZ7-0H-GjU" id="NhX-Np-Z6R"/>
+                <outlet property="imageView" destination="zH5-wq-k22" id="nhU-ml-hK4"/>
+                <outlet property="mana" destination="Y4e-Q4-mvz" id="PbY-av-whh"/>
+                <outlet property="modifiersLabel" destination="llR-ff-cfM" id="zPU-y5-aod"/>
+                <outlet property="nameLabel" destination="57i-qr-g4Q" id="a6Z-J0-wav"/>
+                <outlet property="notesLabel" destination="INE-yC-YS7" id="NwS-Sb-YZT"/>
+                <outlet property="summaryLabel" destination="WBr-PZ-ZgK" id="CTS-19-27K"/>
+                <outlet property="topStack" destination="wmd-df-CKA" id="0Xp-Mj-YCF"/>
+                <outlet property="typesLabel" destination="YGo-fK-32s" id="9vR-Qy-i92"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="411" height="391"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wmd-df-CKA">
+                    <rect key="frame" x="0.0" y="0.0" width="411" height="33"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="57i-qr-g4Q">
+                            <rect key="frame" x="0.0" y="0.0" width="411" height="33"/>
+                            <fontDescription key="fontDescription" name="Radiance-Semibold" family="Radiance-Semibold" pointSize="33"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="HzA-P7-m6n">
+                    <rect key="frame" x="0.0" y="41" width="411" height="145"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zH5-wq-k22">
+                            <rect key="frame" x="0.0" y="0.0" width="126" height="145"/>
+                        </imageView>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="5ID-ae-6Ut">
+                            <rect key="frame" x="134" y="0.0" width="277" height="145"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LWI-69-0yh" customClass="ImageLabelView" customModule="DotA2_Assistant" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="277" height="60"/>
+                                    <color key="backgroundColor" red="1" green="0.78038632102319427" blue="0.61332230019919298" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y4e-Q4-mvz" customClass="ImageLabelView" customModule="DotA2_Assistant" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="68" width="277" height="50"/>
+                                    <color key="backgroundColor" red="0.84280756188077044" green="1" blue="0.50317644841737841" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </view>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Types" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YGo-fK-32s">
+                                    <rect key="frame" x="0.0" y="126" width="277" height="19"/>
+                                    <fontDescription key="fontDescription" name="Radiance" family="Radiance" pointSize="19"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                </stackView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Summary" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WBr-PZ-ZgK">
+                    <rect key="frame" x="0.0" y="194" width="411" height="19"/>
+                    <fontDescription key="fontDescription" name="Radiance" family="Radiance" pointSize="19"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tjy-cK-Zjh">
+                    <rect key="frame" x="0.0" y="221" width="411" height="19"/>
+                    <fontDescription key="fontDescription" name="Radiance" family="Radiance" pointSize="19"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Modifiers" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="llR-ff-cfM">
+                    <rect key="frame" x="0.0" y="248" width="411" height="19"/>
+                    <fontDescription key="fontDescription" name="Radiance" family="Radiance" pointSize="19"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notes" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8nY-dD-69W">
+                    <rect key="frame" x="0.0" y="275" width="46.5" height="32"/>
+                    <fontDescription key="fontDescription" name="Radiance" family="Radiance" pointSize="19"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WZ7-0H-GjU">
+                    <rect key="frame" x="54.5" y="275" width="58" height="32"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                    <state key="normal" title="Expand"/>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All Notes (expandable)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="INE-yC-YS7">
+                    <rect key="frame" x="0.0" y="307" width="411" height="19"/>
+                    <fontDescription key="fontDescription" name="Radiance" family="Radiance" pointSize="19"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="tjy-cK-Zjh" firstAttribute="top" secondItem="WBr-PZ-ZgK" secondAttribute="bottom" constant="8" id="2Ab-T3-2tp"/>
+                <constraint firstItem="WZ7-0H-GjU" firstAttribute="leading" secondItem="8nY-dD-69W" secondAttribute="trailing" constant="8" id="3Mc-CH-zAs"/>
+                <constraint firstItem="llR-ff-cfM" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="4fU-5k-DmY"/>
+                <constraint firstAttribute="trailing" secondItem="tjy-cK-Zjh" secondAttribute="trailing" id="92u-Zw-pMK"/>
+                <constraint firstItem="WZ7-0H-GjU" firstAttribute="height" secondItem="8nY-dD-69W" secondAttribute="height" id="BLH-En-eiq"/>
+                <constraint firstItem="HzA-P7-m6n" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Et5-sf-ULW"/>
+                <constraint firstAttribute="trailing" secondItem="wmd-df-CKA" secondAttribute="trailing" id="FhO-kB-S6k"/>
+                <constraint firstItem="WBr-PZ-ZgK" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Gym-Oi-qnN"/>
+                <constraint firstItem="8nY-dD-69W" firstAttribute="top" secondItem="llR-ff-cfM" secondAttribute="bottom" constant="8" id="Hhl-bI-alM"/>
+                <constraint firstItem="INE-yC-YS7" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="JRd-to-j0O"/>
+                <constraint firstItem="INE-yC-YS7" firstAttribute="top" secondItem="WZ7-0H-GjU" secondAttribute="bottom" id="KCU-8l-cMw"/>
+                <constraint firstItem="8nY-dD-69W" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="OF5-c2-GnY"/>
+                <constraint firstAttribute="trailing" secondItem="INE-yC-YS7" secondAttribute="trailing" id="Odo-3M-FgA"/>
+                <constraint firstAttribute="trailing" secondItem="WBr-PZ-ZgK" secondAttribute="trailing" id="UXr-8n-JAD"/>
+                <constraint firstAttribute="trailing" secondItem="llR-ff-cfM" secondAttribute="trailing" id="cug-yb-xVg"/>
+                <constraint firstItem="llR-ff-cfM" firstAttribute="top" secondItem="tjy-cK-Zjh" secondAttribute="bottom" constant="8" id="eDD-ZG-byE"/>
+                <constraint firstItem="WZ7-0H-GjU" firstAttribute="top" secondItem="llR-ff-cfM" secondAttribute="bottom" constant="8" id="fAM-g7-nve"/>
+                <constraint firstItem="WBr-PZ-ZgK" firstAttribute="top" secondItem="HzA-P7-m6n" secondAttribute="bottom" constant="8" id="oOF-aM-SrM"/>
+                <constraint firstItem="HzA-P7-m6n" firstAttribute="top" secondItem="wmd-df-CKA" secondAttribute="bottom" constant="8" id="r4g-q6-YmT"/>
+                <constraint firstItem="wmd-df-CKA" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="roI-io-1RU"/>
+                <constraint firstAttribute="trailing" secondItem="HzA-P7-m6n" secondAttribute="trailing" id="u4r-Mq-1ZZ"/>
+                <constraint firstItem="wmd-df-CKA" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="vmg-ck-3kB"/>
+                <constraint firstItem="tjy-cK-Zjh" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="weZ-FT-gMp"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-70.5" y="-203.5"/>
+        </view>
+    </objects>
+</document>

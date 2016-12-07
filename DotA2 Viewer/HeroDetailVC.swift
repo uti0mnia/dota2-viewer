@@ -42,9 +42,12 @@ class HeroDetailVC: DAUIViewController {
             views[i]?.incrementLabel.text = "\(attributes[i].increment!)"
             views[i]?.currentValue.text = String(format: "%.0f", attributes[i].base!.doubleValue + attributes[i].increment!.doubleValue)
         }
-        
-        
-        
+        heroView.baseStatsView.armorLabel.text = String(format: "%.0f", hero.baseStats?.armor ?? 0)
+        heroView.baseStatsView.hpLabel.text = String(format: "%.0f + %.1f", hero.baseStats?.hp ?? 0, hero.baseStats?.hpRegen ?? 0)
+        heroView.baseStatsView.manaLabel.text = String(format: "%.0f + %.1f", hero.baseStats?.mana ?? 0, hero.baseStats?.manaRegen ?? 0)
+        heroView.baseStatsView.damageLabel.text = String(format: "%.0f-%.0f", hero.baseStats?.damage?.min ?? 0, hero.baseStats?.damage?.max ?? 0)
+        heroView.baseStatsView.attackPerSLabel.text = String(format: "%.0f", hero.baseStats?.attackPerS ?? 0)
+        heroView.baseStatsView.spellDmgLabel.text = String(format: "%.0f", hero.baseStats?.spellDamage ?? 0)
         
     }
 
