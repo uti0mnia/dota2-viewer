@@ -33,8 +33,16 @@ class AbilityModel {
             return types
         }
     }
-    
-    
+    var typesPrettyPrint: String {
+        get {
+            var print = ""
+            for (key, value) in types {
+                print += "\(key)\n\(value.joined(separator: "/"))\n"
+            }
+            print.remove(at: print.endIndex) // without the last \n
+            return print
+        }
+    }
     
     init(ability: Ability) {
         self._ability = ability

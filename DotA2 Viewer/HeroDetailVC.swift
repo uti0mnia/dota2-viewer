@@ -52,10 +52,14 @@ class HeroDetailVC: DAUIViewController {
     
     /* This function sets up the data to be displayed */
     fileprivate func setup() {
+        // register the cells
         tableView.register(UINib(nibName: "HeroMainCell", bundle: nil), forCellReuseIdentifier: cellIdentifiers[0])
         tableView.register(UINib(nibName: "HeroStatsCell", bundle: nil), forCellReuseIdentifier: cellIdentifiers[1])
         tableView.register(UINib(nibName: "DACollapsibleLabelCell", bundle: nil), forCellReuseIdentifier: cellIdentifiers[2])
-        tableView.tableFooterView = UIView()
+        tableView.register(UINib(nibName: "AbilityCell", bundle: nil), forCellReuseIdentifier: cellIdentifiers[3])
+        
+        // setup table view
+        tableView.tableFooterView = UIView() // empty the footers
         tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableViewAutomaticDimension
     }
@@ -105,7 +109,7 @@ extension HeroDetailVC: UITableViewDelegate, UITableViewDataSource {
             return
         }
         
-        if let cell = cell as? HeroStatsCell {
+        else if let cell = cell as? HeroStatsCell {
             // ** Base Stats
             cell.baseStatsView.armorLabel.text = String(format: "%.2f", model.armor)
             cell.baseStatsView.hpLabel.text = String(format: "%.0f + %.1f", model.hp, model.hpRegen)
@@ -127,17 +131,29 @@ extension HeroDetailVC: UITableViewDelegate, UITableViewDataSource {
             return
         }
         
-        if let cell = cell as? DACollapsibleLabelCell {
+        else if let cell = cell as? DACollapsibleLabelCell {
             if indexPath.row == 2 {
                 cell.descriptionLabel.text = "Bio"
                 cell.collapsibleTextLabel.text = model.bio
             }
         }
+        
+        else if let cell = cell as? AbilityCell {
+            let ability = model.abilities[indexPath.row - 3]
+            cell.nameLabel.text = ability.name
+            cell.abilityImageView.image = ability.image
+            cell.cooldownLabel.text = ability.cooldown
+            cell.manaLabel.text = ability.mana
+            
+            
+        }
+        
+        
     }
     
     /* lets the tableview know how many cells to display */
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 3 + model.abilities.count
     }
     
     /* lets the tableview know what cell to display */
