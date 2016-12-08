@@ -39,9 +39,36 @@ class BaseStatsView: UIView {
         self.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.addSubview(view)
         
-        // set the hp/mana label layers
-        hpLabel.layer.cornerRadius = 10
-        manaLabel.layer.cornerRadius = 10
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

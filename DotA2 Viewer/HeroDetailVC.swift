@@ -41,6 +41,8 @@ class HeroDetailVC: DAUIViewController {
         tableView.endUpdates()
     }
     
+    
+    /* configure the navigation bar */
     fileprivate func setNavBar() {// set title
         let title = DAMainLabel(style: .xlarge)
         title.text = hero.name!
@@ -48,18 +50,17 @@ class HeroDetailVC: DAUIViewController {
         self.navigationItem.titleView = title
     }
     
-    
     /* This function sets up the data to be displayed */
     fileprivate func setup() {
         tableView.register(UINib(nibName: "HeroMainCell", bundle: nil), forCellReuseIdentifier: cellIdentifiers[0])
         tableView.register(UINib(nibName: "HeroStatsCell", bundle: nil), forCellReuseIdentifier: cellIdentifiers[1])
-        tableView.register(UINib(nibName: "HeroBioCell", bundle: nil), forCellReuseIdentifier: cellIdentifiers[2])
+        tableView.register(UINib(nibName: "DACollapsibleLabelCell", bundle: nil), forCellReuseIdentifier: cellIdentifiers[2])
         tableView.tableFooterView = UIView()
         tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableViewAutomaticDimension
     }
     
-    
+    /* This fuctions reloads the labels in the cells that are level dependent */
     fileprivate func reloadLevel() {
         if let cell = tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? HeroMainCell {
             cell.levelLabel.text = "Level \(model.level)"
@@ -126,8 +127,11 @@ extension HeroDetailVC: UITableViewDelegate, UITableViewDataSource {
             return
         }
         
-        if let cell = cell as? HeroBioCell {
-            cell.bioLabel.text = model.bio
+        if let cell = cell as? DACollapsibleLabelCell {
+            if indexPath.row == 2 {
+                cell.descriptionLabel.text = "Bio"
+                cell.collapsibleTextLabel.text = model.bio
+            }
         }
     }
     
@@ -145,10 +149,14 @@ extension HeroDetailVC: UITableViewDelegate, UITableViewDataSource {
     
     /* function that handles the selection of a cell */
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let cell = tableView.cellForRow(at: indexPath) as? ExpandableCellProtocol {
-            cell.toggle()
-            tableView.beginUpdates()
-            tableView.endUpdates()
+        let cell = tableView.cellForRow(at: indexPath)
+        if let expandableCell = cell as? ExpandableCellProtocol {
+            UIView.animate(withDuration: 0.2) {
+                expandableCell.toggle()
+                cell?.contentView.layoutIfNeeded()
+                tableView.beginUpdates()
+                tableView.endUpdates()
+            }
         }
     }
     

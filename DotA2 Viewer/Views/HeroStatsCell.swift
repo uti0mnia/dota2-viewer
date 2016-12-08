@@ -16,7 +16,6 @@ class HeroStatsCell: UITableViewCell, ExpandableCellProtocol {
     
     // MARK - Properties
     var isExpanded: Bool = false
-    fileprivate var children: [UIView]!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,8 +25,8 @@ class HeroStatsCell: UITableViewCell, ExpandableCellProtocol {
     
     /* This function is to toggle what the uistackview holds */
     func toggle() {
-        baseStatsView.isHidden = !baseStatsView.isHidden
-        miscStatsView.isHidden = !miscStatsView.isHidden
+        baseStatsView.isHidden = !isExpanded
+        miscStatsView.isHidden = !isExpanded
         isExpanded = !isExpanded
     }
 }

@@ -20,6 +20,11 @@
 		366A8A271DD24E99000406BF /* radiance.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 366A8A241DD24DB4000406BF /* radiance.ttf */; };
 		367E34E01DB7F9670037FA7B /* CustomTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367E34DF1DB7F9670037FA7B /* CustomTabVC.swift */; };
 		368D1BB31DF8815D00314648 /* HeroDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368D1BB21DF8815D00314648 /* HeroDetailModel.swift */; };
+		368D1BB61DF9BD6D00314648 /* DACollapsibleLabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368D1BB41DF9BD6D00314648 /* DACollapsibleLabelCell.swift */; };
+		368D1BB71DF9BD6D00314648 /* DACollapsibleLabelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 368D1BB51DF9BD6D00314648 /* DACollapsibleLabelCell.xib */; };
+		368D1BBC1DF9C7C500314648 /* AbilityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368D1BBA1DF9C7C500314648 /* AbilityCell.swift */; };
+		368D1BBD1DF9C7C500314648 /* AbilityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 368D1BBB1DF9C7C500314648 /* AbilityCell.xib */; };
+		368D1BC11DF9E50D00314648 /* AbilityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368D1BC01DF9E50D00314648 /* AbilityModel.swift */; };
 		36A2922C1DCA51CC006E96A8 /* Arcane.png in Resources */ = {isa = PBXBuildFile; fileRef = 36A292211DCA51CC006E96A8 /* Arcane.png */; };
 		36A2922D1DCA51CC006E96A8 /* Arnaments.png in Resources */ = {isa = PBXBuildFile; fileRef = 36A292221DCA51CC006E96A8 /* Arnaments.png */; };
 		36A2922E1DCA51CC006E96A8 /* Armor.png in Resources */ = {isa = PBXBuildFile; fileRef = 36A292231DCA51CC006E96A8 /* Armor.png */; };
@@ -87,8 +92,6 @@
 		C98F86571DF8D5D5002FD602 /* ExpandableCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98F86561DF8D5D5002FD602 /* ExpandableCellProtocol.swift */; };
 		C98F865A1DF8E4A7002FD602 /* ImageLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98F86581DF8E4A7002FD602 /* ImageLabelView.swift */; };
 		C98F865B1DF8E4A7002FD602 /* ImageLabelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C98F86591DF8E4A7002FD602 /* ImageLabelView.xib */; };
-		C98F865E1DF8F87E002FD602 /* HeroBioCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98F865C1DF8F87E002FD602 /* HeroBioCell.swift */; };
-		C98F865F1DF8F87E002FD602 /* HeroBioCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C98F865D1DF8F87E002FD602 /* HeroBioCell.xib */; };
 		C999EA081DE7D1C10036AF47 /* OptimusPrinceps.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C999EA061DE7D1C10036AF47 /* OptimusPrinceps.ttf */; };
 		C999EA091DE7D1C10036AF47 /* OptimusPrincepsSemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C999EA071DE7D1C10036AF47 /* OptimusPrincepsSemiBold.ttf */; };
 		C999EA0F1DE7DF680036AF47 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C999EA0E1DE7DF680036AF47 /* GoogleService-Info.plist */; };
@@ -114,6 +117,11 @@
 		366A8A241DD24DB4000406BF /* radiance.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = radiance.ttf; path = Fonts/radiance.ttf; sourceTree = "<group>"; };
 		367E34DF1DB7F9670037FA7B /* CustomTabVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabVC.swift; sourceTree = "<group>"; };
 		368D1BB21DF8815D00314648 /* HeroDetailModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroDetailModel.swift; sourceTree = "<group>"; };
+		368D1BB41DF9BD6D00314648 /* DACollapsibleLabelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DACollapsibleLabelCell.swift; path = Views/DACollapsibleLabelCell.swift; sourceTree = "<group>"; };
+		368D1BB51DF9BD6D00314648 /* DACollapsibleLabelCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DACollapsibleLabelCell.xib; path = Views/DACollapsibleLabelCell.xib; sourceTree = "<group>"; };
+		368D1BBA1DF9C7C500314648 /* AbilityCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AbilityCell.swift; path = Views/AbilityCell.swift; sourceTree = "<group>"; };
+		368D1BBB1DF9C7C500314648 /* AbilityCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AbilityCell.xib; path = Views/AbilityCell.xib; sourceTree = "<group>"; };
+		368D1BC01DF9E50D00314648 /* AbilityModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbilityModel.swift; sourceTree = "<group>"; };
 		36A292211DCA51CC006E96A8 /* Arcane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Arcane.png; path = images/Arcane.png; sourceTree = "<group>"; };
 		36A292221DCA51CC006E96A8 /* Arnaments.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Arnaments.png; path = images/Arnaments.png; sourceTree = "<group>"; };
 		36A292231DCA51CC006E96A8 /* Armor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Armor.png; path = images/Armor.png; sourceTree = "<group>"; };
@@ -189,8 +197,6 @@
 		C98F86561DF8D5D5002FD602 /* ExpandableCellProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExpandableCellProtocol.swift; path = Views/ExpandableCellProtocol.swift; sourceTree = "<group>"; };
 		C98F86581DF8E4A7002FD602 /* ImageLabelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageLabelView.swift; path = Views/ImageLabelView.swift; sourceTree = "<group>"; };
 		C98F86591DF8E4A7002FD602 /* ImageLabelView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ImageLabelView.xib; path = Views/ImageLabelView.xib; sourceTree = "<group>"; };
-		C98F865C1DF8F87E002FD602 /* HeroBioCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HeroBioCell.swift; path = Views/HeroBioCell.swift; sourceTree = "<group>"; };
-		C98F865D1DF8F87E002FD602 /* HeroBioCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HeroBioCell.xib; path = Views/HeroBioCell.xib; sourceTree = "<group>"; };
 		C999EA061DE7D1C10036AF47 /* OptimusPrinceps.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = OptimusPrinceps.ttf; path = Fonts/OptimusPrinceps.ttf; sourceTree = "<group>"; };
 		C999EA071DE7D1C10036AF47 /* OptimusPrincepsSemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = OptimusPrincepsSemiBold.ttf; path = Fonts/OptimusPrincepsSemiBold.ttf; sourceTree = "<group>"; };
 		C999EA0E1DE7DF680036AF47 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -264,6 +270,28 @@
 				366A8A241DD24DB4000406BF /* radiance.ttf */,
 			);
 			name = Fonts;
+			sourceTree = "<group>";
+		};
+		368D1BBE1DF9D12E00314648 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				C98F86561DF8D5D5002FD602 /* ExpandableCellProtocol.swift */,
+				368D1BB41DF9BD6D00314648 /* DACollapsibleLabelCell.swift */,
+				368D1BB51DF9BD6D00314648 /* DACollapsibleLabelCell.xib */,
+				368D1BBA1DF9C7C500314648 /* AbilityCell.swift */,
+				368D1BBB1DF9C7C500314648 /* AbilityCell.xib */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		368D1BBF1DF9E4FC00314648 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				C9A6D64C1DBD25AE00580B7B /* Extensions.swift */,
+				C9172C171DD13F9100DCF88F /* Globals.swift */,
+				C999EA101DE7E3CB0036AF47 /* Import.swift */,
+			);
+			name = Other;
 			sourceTree = "<group>";
 		};
 		36A292371DCA51D1006E96A8 /* Item Category */ = {
@@ -372,7 +400,9 @@
 				364A6A5F1DC1192E00FBE163 /* General */,
 				C93028251DF3515A005EA297 /* AbilityView.swift */,
 				C930281F1DF346E1005EA297 /* AbilityView.xib */,
-				C98F86561DF8D5D5002FD602 /* ExpandableCellProtocol.swift */,
+				C98F86581DF8E4A7002FD602 /* ImageLabelView.swift */,
+				C98F86591DF8E4A7002FD602 /* ImageLabelView.xib */,
+				368D1BBE1DF9D12E00314648 /* Cells */,
 				C93028371DF36164005EA297 /* Hero */,
 			);
 			name = View;
@@ -382,11 +412,10 @@
 			isa = PBXGroup;
 			children = (
 				36FD56461DA6E373007C5A9C /* CoreData */,
-				C9A6D64C1DBD25AE00580B7B /* Extensions.swift */,
-				C9172C171DD13F9100DCF88F /* Globals.swift */,
+				368D1BBF1DF9E4FC00314648 /* Other */,
 				36C7DF231DC8F2C800251705 /* RSSFeedHelper.swift */,
-				C999EA101DE7E3CB0036AF47 /* Import.swift */,
 				368D1BB21DF8815D00314648 /* HeroDetailModel.swift */,
+				368D1BC01DF9E50D00314648 /* AbilityModel.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -432,8 +461,6 @@
 				C930282F1DF3579E005EA297 /* BaseStatsView.xib */,
 				C93028311DF35B3B005EA297 /* MiscStatsView.swift */,
 				C93028331DF35B6F005EA297 /* MiscStatsView.xib */,
-				C98F86581DF8E4A7002FD602 /* ImageLabelView.swift */,
-				C98F86591DF8E4A7002FD602 /* ImageLabelView.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -445,8 +472,6 @@
 				C9D0BDBD1DF8D1530099C0E4 /* HeroMainCell.xib */,
 				C9D0BDC41DF8D3050099C0E4 /* HeroStatsCell.swift */,
 				C9D0BDC51DF8D3050099C0E4 /* HeroStatsCell.xib */,
-				C98F865C1DF8F87E002FD602 /* HeroBioCell.swift */,
-				C98F865D1DF8F87E002FD602 /* HeroBioCell.xib */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -535,7 +560,6 @@
 				C999EA091DE7D1C10036AF47 /* OptimusPrincepsSemiBold.ttf in Resources */,
 				366A8A271DD24E99000406BF /* radiance.ttf in Resources */,
 				366A8A261DD24E8E000406BF /* radiance-semibold.ttf in Resources */,
-				C98F865F1DF8F87E002FD602 /* HeroBioCell.xib in Resources */,
 				36FD56541DA6E3F5007C5A9C /* default_icon.png in Resources */,
 				C93028341DF35B6F005EA297 /* MiscStatsView.xib in Resources */,
 				C93028301DF3579E005EA297 /* BaseStatsView.xib in Resources */,
@@ -544,6 +568,7 @@
 				36A292301DCA51CC006E96A8 /* Attributes.png in Resources */,
 				36A292351DCA51CC006E96A8 /* Support.png in Resources */,
 				C95753C71DD57FCF005C9F75 /* agility_icon.png in Resources */,
+				368D1BBD1DF9C7C500314648 /* AbilityCell.xib in Resources */,
 				C9172C211DD176BA00DCF88F /* dota2-logo.png in Resources */,
 				C95753CA1DD57FCF005C9F75 /* intelligence_icon.png in Resources */,
 				36A292361DCA51CC006E96A8 /* Weapons.png in Resources */,
@@ -559,6 +584,7 @@
 				C95753C91DD57FCF005C9F75 /* damage_icon.png in Resources */,
 				36A2922F1DCA51CC006E96A8 /* Artifacts.png in Resources */,
 				C999EA0F1DE7DF680036AF47 /* GoogleService-Info.plist in Resources */,
+				368D1BB71DF9BD6D00314648 /* DACollapsibleLabelCell.xib in Resources */,
 				C98F865B1DF8E4A7002FD602 /* ImageLabelView.xib in Resources */,
 				36A2922D1DCA51CC006E96A8 /* Arnaments.png in Resources */,
 				C9D0BDC71DF8D3050099C0E4 /* HeroStatsCell.xib in Resources */,
@@ -628,13 +654,13 @@
 				C96EBB601DF244EF00D6FFD0 /* DANavigationController.swift in Sources */,
 				366A8A101DD100A8000406BF /* DAMainTableView.swift in Sources */,
 				C94F03A21DEF91D3000E60CE /* ArrayValue+CoreDataClass.swift in Sources */,
+				368D1BC11DF9E50D00314648 /* AbilityModel.swift in Sources */,
 				C930282E1DF3577E005EA297 /* BaseStatsView.swift in Sources */,
 				366A8A091DD0F4F3000406BF /* DAMainLabel.swift in Sources */,
 				366A8A221DD24B71000406BF /* DAMainCellLabel.swift in Sources */,
 				C922FA8B1DD8AD27007B76F8 /* DALoreLabel.swift in Sources */,
 				C999EA111DE7E3CB0036AF47 /* Import.swift in Sources */,
 				C930282C1DF356F5005EA297 /* AttributeView.swift in Sources */,
-				C98F865E1DF8F87E002FD602 /* HeroBioCell.swift in Sources */,
 				C94F03B51DEF91D3000E60CE /* ItemDetail+CoreDataProperties.swift in Sources */,
 				C94F03A91DEF91D3000E60CE /* BaseStat+CoreDataProperties.swift in Sources */,
 				C94F03B71DEF91D3000E60CE /* Damage+CoreDataProperties.swift in Sources */,
@@ -644,6 +670,7 @@
 				366A8A161DD103F1000406BF /* DATabBar.swift in Sources */,
 				C93028261DF3515A005EA297 /* AbilityView.swift in Sources */,
 				C94F03B21DEF91D3000E60CE /* Note+CoreDataClass.swift in Sources */,
+				368D1BB61DF9BD6D00314648 /* DACollapsibleLabelCell.swift in Sources */,
 				368D1BB31DF8815D00314648 /* HeroDetailModel.swift in Sources */,
 				367E34E01DB7F9670037FA7B /* CustomTabVC.swift in Sources */,
 				C93028391DF3629F005EA297 /* HeroDetailVC.swift in Sources */,
@@ -675,6 +702,7 @@
 				C9A6D64D1DBD25AE00580B7B /* Extensions.swift in Sources */,
 				36C0C9621DA6E25800169394 /* AppDelegate.swift in Sources */,
 				C98F865A1DF8E4A7002FD602 /* ImageLabelView.swift in Sources */,
+				368D1BBC1DF9C7C500314648 /* AbilityCell.swift in Sources */,
 				C94F03A51DEF91D3000E60CE /* Ability+CoreDataProperties.swift in Sources */,
 				C94A26D21DD5593F00D9B054 /* DASlider.swift in Sources */,
 				C94F03AF1DEF91D3000E60CE /* MiscStat+CoreDataProperties.swift in Sources */,
