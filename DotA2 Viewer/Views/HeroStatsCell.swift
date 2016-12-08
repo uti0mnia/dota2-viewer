@@ -23,6 +23,14 @@ class HeroStatsCell: UITableViewCell, ExpandableCellProtocol {
         self.selectionStyle = .none
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        if #available(iOS 10, *) {
+            UIView.animate(withDuration: 0.2) { self.contentView.layoutIfNeeded() }
+        }
+    }
+    
     /* This function is to toggle what the uistackview holds */
     func toggle() {
         baseStatsView.isHidden = !isExpanded

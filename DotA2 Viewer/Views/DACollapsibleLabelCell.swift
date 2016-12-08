@@ -22,6 +22,14 @@ class DACollapsibleLabelCell: UITableViewCell, ExpandableCellProtocol {
         
         self.selectionStyle = .none
     }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        if #available(iOS 10, *) {
+            UIView.animate(withDuration: 0.2) { self.contentView.layoutIfNeeded() }
+        }
+    }
 
     func toggle() {
         collapsibleTextLabel.isHidden = !isExpanded

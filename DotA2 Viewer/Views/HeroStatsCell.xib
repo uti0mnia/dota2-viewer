@@ -24,7 +24,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="nNU-80-MJ5">
-                        <rect key="frame" x="8" y="0.0" width="476" height="167.5"/>
+                        <rect key="frame" x="8" y="0.0" width="476" height="168"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Stats" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oNc-8Q-0Pb">
                                 <rect key="frame" x="8" y="8" width="460" height="10"/>
@@ -33,11 +33,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" verticalCompressionResistancePriority="752" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oa0-yx-SSk" customClass="BaseStatsView" customModule="DotA2_Assistant" customModuleProvider="target">
-                                <rect key="frame" x="8" y="26" width="460" height="75.5"/>
+                                <rect key="frame" x="8" y="26" width="460" height="76"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" verticalCompressionResistancePriority="752" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oOF-0W-T8c" customClass="MiscStatsView" customModule="DotA2_Assistant" customModuleProvider="target">
-                                <rect key="frame" x="8" y="109.5" width="460" height="50"/>
+                                <rect key="frame" x="8" y="110" width="460" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
