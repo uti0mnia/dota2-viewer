@@ -12,8 +12,6 @@ class AttributeView: UIView {
     // MARK - Outlets
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var currentValue: UILabel!
-    @IBOutlet weak var incrementLabel: UILabel!
-    
     
     // MARK - Properties
     fileprivate let nibName = "AttributeView"

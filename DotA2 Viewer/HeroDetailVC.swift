@@ -10,12 +10,13 @@ import UIKit
 
 class HeroDetailVC: DAUIViewController {
     // MARK - Outlets
-    @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var stackView: UIStackView!
-    @IBOutlet weak var heroView: HeroView!
+    @IBOutlet weak var tableView: UITableView!
+    
     
     // MARK - Properties
     var hero: Hero!
+    fileprivate var model: HeroDetailModel!
+    fileprivate var cellIdentifiers = ["mainCell", "statsCell", "bioCell", "abilitiesCell"]
     
     // MARK - Methods
     override func viewDidLoad() {
@@ -29,54 +30,139 @@ class HeroDetailVC: DAUIViewController {
         title.sizeToFit()
         self.navigationItem.titleView = title
         
+        // init the model
+        model = HeroDetailModel(hero: hero)
+        model.delegate = self
+        
         // set the view up
         setup()
     }
     
     
+    // TODO: Fix this
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        tableView.beginUpdates()
+        tableView.endUpdates()
+    }
+    
+    
     /* This function sets up the data to be displayed */
     fileprivate func setup() {
-        // ** Immediate info
-        heroView.imageView.image = hero.getImage()
-        heroView.attackTypeLabel.text = (hero.miscStats?.projectileSpeed ?? "" == "Instant") ? "Melee" : "Ranged"
-        heroView.rolesLabel.text = (hero.roles!.allObjects as! [ArrayValue]).map({ $0.value ?? "" }).joined(separator: ", ")
-        heroView.levelLabel.text = "Level 1"
-        heroView.slider.delegate = self
-        
-        // ** Attributes
-        let attributes = hero.attribute?.allObjects as! [Attribute]
-        let views = [heroView.attribute1View, heroView.attribute2View, heroView.attribute3View]
-        for i in 0..<attributes.count { // set up the attributes
-            views[i]?.imageView.image = attributes[i].image
-            views[i]?.incrementLabel.text = "\(attributes[i].increment!)"
-            views[i]?.currentValue.text = String(format: "%.0f", attributes[i].base!.doubleValue + attributes[i].increment!.doubleValue)
+        tableView.register(UINib(nibName: "HeroMainCell", bundle: nil), forCellReuseIdentifier: cellIdentifiers[0])
+        tableView.register(UINib(nibName: "HeroStatsCell", bundle: nil), forCellReuseIdentifier: cellIdentifiers[1])
+        tableView.register(UINib(nibName: "HeroBioCell", bundle: nil), forCellReuseIdentifier: cellIdentifiers[2])
+        tableView.tableFooterView = UIView()
+        tableView.estimatedRowHeight = 100
+        tableView.rowHeight = UITableViewAutomaticDimension
+    }
+    
+    
+    fileprivate func reloadLevel() {
+        if let cell = tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? HeroMainCell {
+            cell.levelLabel.text = "Level \(model.level)"
+            cell.attribute1View.currentValue.text = String(format: "%.0f (+%.1f)", model.strength, model.strengthIncrement)
+            cell.attribute2View.currentValue.text = String(format: "%.0f (+%.1f)", model.agility, model.agilityIncrement)
+            cell.attribute3View.currentValue.text = String(format: "%.0f (+%.1f)", model.intelligence, model.intelligenceIncrement)
         }
         
-        // ** Base Stats
-        heroView.baseStatsView.armorLabel.text = String(format: "%.1f", hero.baseStats?.armor?.floatValue ?? 0)
-        heroView.baseStatsView.hpLabel.text = String(format: "%.0f + %.1f", hero.baseStats?.hp?.floatValue ?? 0, hero.baseStats?.hpRegen?.floatValue ?? 0)
-        heroView.baseStatsView.manaLabel.text = String(format: "%.0f + %.1f", hero.baseStats?.mana?.floatValue ?? 0, hero.baseStats?.manaRegen?.floatValue ?? 0)
-        heroView.baseStatsView.damageLabel.text = String(format: "%.0f-%.0f", hero.baseStats?.damage?.min?.floatValue ?? 0, hero.baseStats?.damage?.max?.floatValue ?? 0)
-        heroView.baseStatsView.attackPerSLabel.text = String(format: "%.2f", hero.baseStats?.attackPerS?.floatValue ?? 0)
-        heroView.baseStatsView.spellDmgLabel.text = String(format: "%.0f", hero.baseStats?.spellDamage?.floatValue ?? 0)
-        
-        // ** Misc Stats
-        heroView.miscStatsView.attackAnimationLabel.text = hero.miscStats?.attackAnimation ?? "N/A"
-        heroView.miscStatsView.attackRangeLabel.text = String(format: "%i", hero.miscStats?.attackRange?.intValue ?? 0)
-        heroView.miscStatsView.collisionSizeLabel.text = String(format: "%.i", hero.miscStats?.collisionSize?.intValue ?? 0)
-        heroView.miscStatsView.magicResistanceLabel.text = String(format: "%.2f", hero.miscStats?.magicResistance?.floatValue ?? 0)
-        heroView.miscStatsView.moveSpeedLabel.text = String(format: "%i", hero.miscStats?.movementSpeed?.intValue ?? 0)
-        heroView.miscStatsView.projectileSpeedLabel.text = hero.miscStats?.projectileSpeed ?? "N/A"
-        heroView.miscStatsView.turnRateLabel.text = String(format: "%i", hero.miscStats?.turnRate?.intValue ?? 0)
-        heroView.miscStatsView.visionLabel.text = hero.miscStats?.visionRange ?? "N/A"
+        if let cell = tableView.cellForRow(at: IndexPath(row: 1, section: 0)) as? HeroStatsCell {
+            cell.baseStatsView.armorLabel.text = String(format: "%.2f", model.armor)
+            cell.baseStatsView.hpLabel.text = String(format: "%.0f + %.1f", model.hp, model.hpRegen)
+            cell.baseStatsView.manaLabel.text = String(format: "%.0f + %.1f", model.mana, model.manaRegen)
+            cell.baseStatsView.damageLabel.text = String(format: "%.0f-%.0f", model.damage.min, model.damage.max)
+            cell.baseStatsView.attackPerSLabel.text = String(format: "%.2f", model.attackPerS)
+            cell.baseStatsView.spellDmgLabel.text = String(format: "%.2f%@", model.spellDamage, "%")
+        }
         
     }
+    
 
+}
+
+extension HeroDetailVC: UITableViewDelegate, UITableViewDataSource {
+    /* configures a given cell at a given index */
+    fileprivate func configure(cell: UITableViewCell, at indexPath: IndexPath) {
+        if let cell = cell as? HeroMainCell {
+            // ** Immediate info
+            cell.heroImageView.image = hero.getImage()
+            cell.levelLabel.text = "Level \(model.level)"
+            cell.attackTypeLabel.text = (hero.miscStats?.projectileSpeed ?? "" == "Instant") ? "Melee" : "Ranged"
+            cell.rolesLabel.text = (hero.roles!.allObjects as! [ArrayValue]).map({ $0.value ?? "" }).joined(separator: ", ")
+            cell.slider.delegate = self
+            
+            // ** Attribute
+            cell.attribute1View.imageView.image = #imageLiteral(resourceName: "strength_icon.png") // strength
+            cell.attribute1View.currentValue.text = String(format: "%.0f (+%.1f)", model.strength, model.strengthIncrement)
+            cell.attribute2View.imageView.image = #imageLiteral(resourceName: "agility_icon.png") // agility
+            cell.attribute2View.currentValue.text = String(format: "%.0f (+%.1f)", model.agility, model.agilityIncrement)
+            cell.attribute3View.imageView.image = #imageLiteral(resourceName: "intelligence_icon.png") // intelligence
+            cell.attribute3View.currentValue.text = String(format: "%.0f (+%.1f)", model.intelligence, model.intelligenceIncrement)
+            
+            return
+        }
+        
+        if let cell = cell as? HeroStatsCell {
+            // ** Base Stats
+            cell.baseStatsView.armorLabel.text = String(format: "%.2f", model.armor)
+            cell.baseStatsView.hpLabel.text = String(format: "%.0f + %.1f", model.hp, model.hpRegen)
+            cell.baseStatsView.manaLabel.text = String(format: "%.0f + %.1f", model.mana, model.manaRegen)
+            cell.baseStatsView.damageLabel.text = String(format: "%.0f-%.0f", model.damage.min, model.damage.max)
+            cell.baseStatsView.attackPerSLabel.text = String(format: "%.2f", model.attackPerS)
+            cell.baseStatsView.spellDmgLabel.text = String(format: "%.2f%@", model.spellDamage, "%")
+            
+            // ** Misc Stats
+            cell.miscStatsView.attackAnimationLabel.text = model.attackAnimation
+            cell.miscStatsView.attackRangeLabel.text = model.attackRange
+            cell.miscStatsView.collisionSizeLabel.text = model.collisionSize
+            cell.miscStatsView.magicResistanceLabel.text = model.magicResistance
+            cell.miscStatsView.moveSpeedLabel.text = model.movementSpeed
+            cell.miscStatsView.projectileSpeedLabel.text = model.projectileSpeed
+            cell.miscStatsView.turnRateLabel.text = model.turnRate
+            cell.miscStatsView.visionLabel.text = model.visionRange
+            
+            return
+        }
+        
+        if let cell = cell as? HeroBioCell {
+            cell.bioLabel.text = model.bio
+        }
+    }
+    
+    /* lets the tableview know how many cells to display */
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    /* lets the tableview know what cell to display */
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifiers[indexPath.row], for: indexPath)
+        configure(cell: cell, at: indexPath)
+        return cell
+    }
+    
+    /* function that handles the selection of a cell */
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let cell = tableView.cellForRow(at: indexPath) as? ExpandableCellProtocol {
+            cell.toggle()
+            tableView.beginUpdates()
+            tableView.endUpdates()
+        }
+    }
+    
 }
 
 extension HeroDetailVC: DASliderDelegate {
     func slider(_ slider: DASlider, didUpdateTo value: Int) {
-        heroView.levelLabel.text = "Level \(value)"
+        model.level = value
+    }
+}
+
+extension HeroDetailVC: HeroDetailModelDelegate {
+    func modelDidUpdate() {
+        // reload data
+        reloadLevel()
     }
 }
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="4iT-JB-6iD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="4iT-JB-6iD">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -40,40 +40,59 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fb5-4i-jIY">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4St-HY-hhC">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="TIb-9O-SCy">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
-                                        <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WVG-sC-IQv" customClass="HeroView" customModule="DotA2_Assistant" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            </view>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="TIb-9O-SCy" firstAttribute="leading" secondItem="Fb5-4i-jIY" secondAttribute="leading" id="26A-h4-7yz"/>
-                                    <constraint firstAttribute="trailing" secondItem="TIb-9O-SCy" secondAttribute="trailing" id="6ga-Oo-2Hd"/>
-                                    <constraint firstItem="TIb-9O-SCy" firstAttribute="width" secondItem="Fb5-4i-jIY" secondAttribute="width" id="Hs1-hY-HnR"/>
-                                    <constraint firstItem="TIb-9O-SCy" firstAttribute="top" secondItem="Fb5-4i-jIY" secondAttribute="top" id="Lrk-5m-gBm"/>
-                                    <constraint firstAttribute="bottom" secondItem="TIb-9O-SCy" secondAttribute="bottom" id="f8Y-LY-sBP"/>
-                                </constraints>
-                            </scrollView>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="mainCell" id="qw0-Ln-TaO" customClass="HeroMainCell" customModule="DotA2_Assistant" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qw0-Ln-TaO" id="8Zn-ZY-zsT">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="statsCell" id="lV9-Mr-WWN" customClass="HeroStatsCell" customModule="DotA2_Assistant" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lV9-Mr-WWN" id="H6c-v6-JhD">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="bioCell" id="z33-2N-Mzg" customClass="HeroBioCell" customModule="DotA2_Assistant" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="116" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="z33-2N-Mzg" id="wb0-AF-7X4">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="abilitiesCell" id="Evr-nc-kHP">
+                                        <rect key="frame" x="0.0" y="160" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Evr-nc-kHP" id="Ddk-RH-5v7">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="kQF-xL-o66" id="pj8-Xq-jEh"/>
+                                    <outlet property="delegate" destination="kQF-xL-o66" id="2K2-3e-g37"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="Fb5-4i-jIY" secondAttribute="trailing" id="9Rd-PI-Sbc"/>
-                            <constraint firstItem="Fb5-4i-jIY" firstAttribute="top" secondItem="2MR-UI-Wax" secondAttribute="top" id="NiH-ip-Mde"/>
-                            <constraint firstAttribute="bottom" secondItem="Fb5-4i-jIY" secondAttribute="bottom" id="QME-oo-W9F"/>
-                            <constraint firstItem="Fb5-4i-jIY" firstAttribute="leading" secondItem="2MR-UI-Wax" secondAttribute="leading" id="ZS1-tU-A6j"/>
+                            <constraint firstItem="4St-HY-hhC" firstAttribute="leading" secondItem="2MR-UI-Wax" secondAttribute="leading" id="NO4-jE-0uJ"/>
+                            <constraint firstAttribute="bottom" secondItem="4St-HY-hhC" secondAttribute="bottom" id="ZdQ-Q2-zbj"/>
+                            <constraint firstItem="4St-HY-hhC" firstAttribute="top" secondItem="2MR-UI-Wax" secondAttribute="top" id="uBM-zN-Li8"/>
+                            <constraint firstAttribute="trailing" secondItem="4St-HY-hhC" secondAttribute="trailing" id="yUd-rB-lZZ"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="heroView" destination="WVG-sC-IQv" id="U6w-BS-AYW"/>
-                        <outlet property="scrollView" destination="Fb5-4i-jIY" id="8om-rg-ahN"/>
-                        <outlet property="stackView" destination="TIb-9O-SCy" id="VI9-GJ-3i3"/>
+                        <outlet property="tableView" destination="4St-HY-hhC" id="XU5-4c-VA4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hgI-fr-V5F" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -171,7 +190,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9FL-AS-YTq" customClass="DANavigationController" customModule="DotA2_Assistant" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Heroes" id="NUl-ZW-oRZ"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="RnW-Iu-fm3">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="RnW-Iu-fm3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.87139734455958551" green="0.03687937124292797" blue="0.051371898444097563" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -190,7 +209,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0xi-1T-PpC" customClass="DANavigationController" customModule="DotA2_Assistant" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="w5g-ZC-18e">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="w5g-ZC-18e">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.88532221502590669" green="0.0" blue="0.16688224116154954" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

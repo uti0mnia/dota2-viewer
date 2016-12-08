@@ -8,6 +8,7 @@
 
 import UIKit
 
+@IBDesignable
 class ImageLabelView: UIView {
     // MARK - Outlets
     @IBOutlet weak var image: UIImageView!
