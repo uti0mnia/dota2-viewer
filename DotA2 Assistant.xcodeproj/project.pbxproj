@@ -804,6 +804,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 860C63C4F37CD7891AF00E52 /* Pods-DotA2 Assistant.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "DotA2 Assistant.entitlements";
 				DEVELOPMENT_TEAM = Y3RP73GH99;
@@ -820,6 +821,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D901BAFFD7186DCAB66C34BB /* Pods-DotA2 Assistant.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "DotA2 Assistant.entitlements";
 				DEVELOPMENT_TEAM = Y3RP73GH99;

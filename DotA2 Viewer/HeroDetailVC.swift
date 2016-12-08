@@ -21,20 +21,14 @@ class HeroDetailVC: DAUIViewController {
     // MARK - Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         guard hero != nil else { return }
-        
-        // set title
-        let title = DAMainLabel(style: .xlarge)
-        title.text = hero.name!
-        title.sizeToFit()
-        self.navigationItem.titleView = title
         
         // init the model
         model = HeroDetailModel(hero: hero)
         model.delegate = self
         
         // set the view up
+        setNavBar()
         setup()
     }
     
@@ -45,6 +39,13 @@ class HeroDetailVC: DAUIViewController {
         
         tableView.beginUpdates()
         tableView.endUpdates()
+    }
+    
+    fileprivate func setNavBar() {// set title
+        let title = DAMainLabel(style: .xlarge)
+        title.text = hero.name!
+        title.sizeToFit()
+        self.navigationItem.titleView = title
     }
     
     

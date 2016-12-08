@@ -145,6 +145,7 @@ extension CustomTabVC: UITableViewDelegate, UITableViewDataSource {
         let obj = fetchedResultsController.object(at: indexPath)
         cell.objectImageView.image = obj.getImage()
         cell.textLabel?.text = obj.name
+        cell.backgroundColor = UIColor.clear // for  iPad (bug < iOS 10)
     }
     
     /* lets tableview know how many sections there are */

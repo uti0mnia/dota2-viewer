@@ -20,7 +20,7 @@ class HeroBioCell: UITableViewCell, ExpandableCellProtocol {
     }
     
     func toggle() {
-        bioLabel.isHidden = !isExpanded
+        bioLabel.isHidden = !bioLabel.isHidden
         isExpanded = !isExpanded
     }
 }
