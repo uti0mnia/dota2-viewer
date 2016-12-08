@@ -31,6 +31,14 @@ class AbilityCell: UITableViewCell, ExpandableCellProtocol {
         self.selectionStyle = .none
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        if #available(iOS 10, *) {
+            UIView.animate(withDuration: kCellAnimationTime) { self.contentView.layoutIfNeeded() }
+        }
+    }
+    
     
     func toggle() {
         detailsVC.isHidden = !isExpanded

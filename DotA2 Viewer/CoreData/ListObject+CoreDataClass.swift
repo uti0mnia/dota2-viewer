@@ -13,10 +13,8 @@ import CoreData
 
 public class ListObject: NSManagedObject {
     func getImage() -> UIImage {
-        guard let data = self.image as? Data else {
-            return #imageLiteral(resourceName: "default_icon.png")
-        }
-        return UIImage(data: data) ?? #imageLiteral(resourceName: "default_icon.png")
+        let name = "\(self.name).png"
+        return UIImage(named: name) ?? #imageLiteral(resourceName: "default_icon.png")
     }
     
     func firstLetter() -> String {

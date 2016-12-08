@@ -152,14 +152,14 @@ extension HeroDetailVC: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.cellForRow(at: indexPath)
         if let expandableCell = cell as? ExpandableCellProtocol {
             if #available(iOS 10, *) {
-                UIView.animate(withDuration: 0.2, animations: {
+                UIView.animate(withDuration: kCellAnimationTime, animations: {
                     expandableCell.toggle()
                 })
                 cell?.contentView.layoutIfNeeded()
                 tableView.beginUpdates()
                 tableView.endUpdates()
             } else {
-                UIView.animate(withDuration: 0.2) {
+                UIView.animate(withDuration: kCellAnimationTime) {
                     expandableCell.toggle()
                     cell?.contentView.layoutIfNeeded()
                     tableView.beginUpdates()

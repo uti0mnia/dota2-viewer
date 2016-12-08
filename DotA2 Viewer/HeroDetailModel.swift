@@ -18,6 +18,7 @@ class HeroDetailModel {
     /* Private */
     fileprivate var _hero: Hero!
     fileprivate var _level: Int! { didSet { delegate?.modelDidUpdate() } }
+    fileprivate var _abilities: [Ability] { get { return _hero.abilities?.array as? [Ability] ?? [Ability]() } }
     fileprivate var _attributes: [Attribute] { get { return _hero.attribute?.allObjects as! [Attribute] } }
     fileprivate var _intelligence: Attribute { get { return _attributes.filter({ $0.name! == "Intelligence"}).first! } }
     fileprivate var _agility: Attribute { get { return _attributes.filter({ $0.name! == "Agility"}).first! } }
@@ -68,6 +69,7 @@ class HeroDetailModel {
     var attackPerS: Double {
         get { return (100 + agility) * 0.01 / (_hero.miscStats?.attackTime?.doubleValue ?? 0) }
     }
+    var abilities: [AbilityModel] { get { return _abilities.map({ AbilityModel(ability: $0) }) } }
     
     // MARK - Functions
     init(hero: Hero) {

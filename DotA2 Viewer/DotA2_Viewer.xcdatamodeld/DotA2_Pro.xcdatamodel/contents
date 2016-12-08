@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11542" systemVersion="16B2657" minimumToolsVersion="Xcode 7.3" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11542" systemVersion="16B2555" minimumToolsVersion="Xcode 7.3" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
     <entity name="Ability" representedClassName="Ability" syncable="YES">
         <attribute name="cooldown" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="image" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
         <attribute name="mana" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
         <attribute name="summary" optional="YES" attributeType="String" syncable="YES"/>
@@ -75,7 +74,6 @@
         <relationship name="value" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="ArrayValue" inverseName="itemDetail" inverseEntity="ArrayValue" syncable="YES"/>
     </entity>
     <entity name="ListObject" representedClassName=".ListObject" isAbstract="YES" syncable="YES">
-        <attribute name="image" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="MiscStat" representedClassName="MiscStat" syncable="YES">
@@ -96,7 +94,8 @@
         <relationship name="subnote" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="Note" inverseName="subnote" inverseEntity="Note" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Ability" positionX="-299" positionY="-288" width="128" height="223"/>
+        <element name="Ability" positionX="-299" positionY="-288" width="128" height="208"/>
+        <element name="AbilityType" positionX="-243" positionY="-135" width="128" height="90"/>
         <element name="ArrayValue" positionX="90" positionY="-316" width="128" height="163"/>
         <element name="Attribute" positionX="-416" positionY="108" width="128" height="120"/>
         <element name="BaseStat" positionX="18" positionY="18" width="128" height="180"/>
@@ -104,9 +103,8 @@
         <element name="Hero" positionX="-522" positionY="-159" width="128" height="150"/>
         <element name="Item" positionX="-504" positionY="-423" width="128" height="133"/>
         <element name="ItemDetail" positionX="-110" positionY="-459" width="128" height="90"/>
-        <element name="ListObject" positionX="-684" positionY="-258" width="128" height="75"/>
+        <element name="ListObject" positionX="-684" positionY="-258" width="128" height="58"/>
         <element name="MiscStat" positionX="-135" positionY="-48" width="128" height="193"/>
         <element name="Note" positionX="187" positionY="-88" width="128" height="90"/>
-        <element name="AbilityType" positionX="-243" positionY="-135" width="128" height="90"/>
     </elements>
 </model>

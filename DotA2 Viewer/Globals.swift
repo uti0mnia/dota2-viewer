@@ -21,3 +21,6 @@ var kManaGain: NSNumber { get { return 12 } }
 var kManaRegenGain: NSNumber { get { return 0.04 } }
 var kSpellDamageGain: NSNumber { get { return 0.0625 } }
 var kArmourGain: NSNumber { get { return NSNumber(floatLiteral: 1/7) } }
+
+// animations
+let kCellAnimationTime = 0.2

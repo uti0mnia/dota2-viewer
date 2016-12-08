@@ -17,6 +17,5 @@ extension ListObject {
     }
 
     @NSManaged public var name: String!
-    @NSManaged public var image: NSData?
 
 }
