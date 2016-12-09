@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 import CoreData
 
 protocol HeroDetailModelDelegate {
@@ -47,6 +48,8 @@ class HeroDetailModel {
     var turnRate: String { get { return String(format: "%.1f", _hero.miscStats?.turnRate?.doubleValue ?? 0) } }
     var visionRange: String { get { return _hero.miscStats?.visionRange ?? "N/A" } }
     var bio: String { get { return _hero.summary ?? "N/A" } }
+    var abilities: [AbilityModel] { get { return _abilities.map({ AbilityModel(ability: $0) }) } }
+    var image: UIImage { get { return _hero.getImage() } }
     
     // ** Level dependent
     var intelligence: Double { get { return valueFor(attribute: _intelligence) } }
@@ -69,7 +72,6 @@ class HeroDetailModel {
     var attackPerS: Double {
         get { return (100 + agility) * 0.01 / (_hero.miscStats?.attackTime?.doubleValue ?? 0) }
     }
-    var abilities: [AbilityModel] { get { return _abilities.map({ AbilityModel(ability: $0) }) } }
     
     // MARK - Functions
     init(hero: Hero) {
