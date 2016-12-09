@@ -21,6 +21,7 @@ class DACollapsibleLabelCell: UITableViewCell, ExpandableCellProtocol {
         // Initialization code
         
         self.selectionStyle = .none
+        toggle()
     }
     
     override func layoutSubviews() {
@@ -34,6 +35,10 @@ class DACollapsibleLabelCell: UITableViewCell, ExpandableCellProtocol {
     func toggle() {
         collapsibleTextLabel.isHidden = !isExpanded
         isExpanded = !isExpanded
+    }
+    
+    func setSpacing(for sv: UIStackView) {
+        
     }
     
 }

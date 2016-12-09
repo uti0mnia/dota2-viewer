@@ -60,7 +60,7 @@ struct Import {
             // if the ability has notes, add them
             if obj[name]["notes"].exists() {
                 let notes = createNote(from: obj[name]["notes"].arrayValue, inContext: moc, notes: [Note]())
-                ability.notes = NSSet(array: notes)
+                ability.notes = NSOrderedSet(array: notes)
             }
             
             // get the ability types
@@ -98,14 +98,14 @@ struct Import {
         // array case
         if let subArray = array[0].array {
             let subNotes = createNote(from: subArray, inContext: moc, notes: [Note]())
-            notes.last?.subnote = NSOrderedSet(array: subNotes)
+            notes.last?.subNotes = NSOrderedSet(array: subNotes)
             let newArray = Array<JSON>(array[1..<array.count])
             return createNote(from: newArray, inContext: moc, notes: notes)
         }
         
         // string case
         let note = NSEntityDescription.insertNewObject(forEntityName: "Note", into: moc) as! Note
-        note.note = array[0].string
+        note.string = array[0].string
         let newNotes = notes + [note]
         let newArray = Array<JSON>(array[1..<array.count])
         return createNote(from: newArray, inContext: moc, notes: newNotes)

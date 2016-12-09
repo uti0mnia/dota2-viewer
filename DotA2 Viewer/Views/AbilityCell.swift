@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AbilityCell: UITableViewCell, ExpandableCellProtocol {
+class AbilityCell: ExpandableCell {
     // MARK - Outlets
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var detailsVC: UIStackView!
@@ -22,27 +22,11 @@ class AbilityCell: UITableViewCell, ExpandableCellProtocol {
     @IBOutlet weak var notesLabel: UILabel!
     @IBOutlet weak var notesDetails: UILabel!
     
-    var isExpanded: Bool = false
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    override func toggle() {
+        super.toggle()
         
-        self.selectionStyle = .none
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
-        if #available(iOS 10, *) {
-            UIView.animate(withDuration: kCellAnimationTime) { self.contentView.layoutIfNeeded() }
-        }
-    }
-    
-    
-    func toggle() {
+        setSpacing(for: detailsVC)
         detailsVC.isHidden = !isExpanded
-        isExpanded = !isExpanded
     }
     
     

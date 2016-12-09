@@ -25,7 +25,8 @@ class AbilityModel {
     var specials: [String] { get { return convert(_ability.abilitySpecial?.allObjects) } }
     var data: [String] { get { return convert(_ability.data?.allObjects) } }
     var modifiers: [String] { get { return convert(_ability.modifiers?.allObjects) } }
-    var notes: [Note] { get { return _ability.notes?.allObjects as? [Note] ?? [Note]() } }
+    var notes: [Note] { get { return _ability.notes?.array as? [Note] ?? [Note]() } }
+    var notesPrettyPrint: String { get { return print(notes: notes) } }
     var types: [String: [String]] {
         get {
             var types = [String: [String]]()
@@ -39,7 +40,7 @@ class AbilityModel {
             for (key, value) in types {
                 print += "\(key)\n\(value.joined(separator: "/"))\n"
             }
-            print.remove(at: print.endIndex) // without the last \n
+            
             return print
         }
     }
@@ -51,6 +52,23 @@ class AbilityModel {
     fileprivate func convert(_ arrayValue: [Any]?) -> [String] {
         let array = arrayValue as? [ArrayValue]
         return array?.map({ $0.value ?? "No Value" }) ?? [String]()
+    }
+    
+    fileprivate func print(notes: [Note], withCurrentString string: String = "", andIndent indent: Int = 0) -> String {
+        // base case
+        if notes.count == 0 {
+            return string
+        }
+        
+        let note = notes[0]
+        let tab = String(repeating: "\t", count: indent)
+        var newString = string + "\n\(tab)•\(note.string ?? "No Note")"
+        if let array = note.subNotes?.array as? [Note] {
+            newString += print(notes: array, withCurrentString: "", andIndent: indent + 1)
+        }
+        let newNotes = Array<Note>(notes[1..<notes.count])
+        return print(notes: newNotes, withCurrentString: newString, andIndent: indent)
+        
     }
 }
 

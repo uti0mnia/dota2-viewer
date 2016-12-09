@@ -164,12 +164,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DotA2 Viewer/HeroDetailVC.swift"
-            timestampString = "502860813.121663"
+            timestampString = "502933790.38136"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "148"
-            endingLineNumber = "148"
-            landmarkName = "tableView(_:didSelectRowAt:)"
+            startingLineNumber = "159"
+            endingLineNumber = "159"
+            landmarkName = "configure(cell:at:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
