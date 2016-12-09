@@ -236,6 +236,7 @@ struct Import {
             // itterate through each detail
             for item in snapshotValue["details"].arrayValue {
                 let name = item.dictionaryValue.keys.first!
+                
                 // check if it builds from items
                 if name == "builds_from" {
                     // init the array if it's nil
@@ -248,6 +249,7 @@ struct Import {
                         buildsFrom?.append(val)
                     }
                 }
+                    
                 // check if it build into items
                 else if name == "builds_into" {
                     // init the array if it's nil
@@ -260,6 +262,7 @@ struct Import {
                         buildsInto?.append(val)
                     }
                 }
+                
                 // it's a regulary detail
                 else {
                     // create an item detail
