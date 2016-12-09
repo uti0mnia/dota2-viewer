@@ -202,17 +202,17 @@ struct Import {
             let abilities = snapshotValue["abilities"].arrayValue
             let itemAbilities = createAbilities(with: abilities, inContext: moc)
             item.abilities = NSOrderedSet(array: itemAbilities)
-            
-            // set the additional info if applicable
-            if snapshotValue["additional_info"] != nil {
-                var itemInfo = [ArrayValue]()
-                for info in snapshotValue["additional_info"].arrayValue {
-                    let arrayValue = NSEntityDescription.insertNewObject(forEntityName: "ArrayValue", into: moc) as! ArrayValue
-                    arrayValue.value = info.string
-                    itemInfo.append(arrayValue)
-                }
-                item.additionalInfo = NSSet(array: itemInfo)
+        }
+        
+        // set the additional info if applicable
+        if snapshotValue["additional_info"] != nil {
+            var itemInfo = [ArrayValue]()
+            for info in snapshotValue["additional_info"].arrayValue {
+                let arrayValue = NSEntityDescription.insertNewObject(forEntityName: "ArrayValue", into: moc) as! ArrayValue
+                arrayValue.value = info.string
+                itemInfo.append(arrayValue)
             }
+            item.additionalInfo = NSSet(array: itemInfo)
         }
         
         // set the availability
@@ -228,28 +228,69 @@ struct Import {
         
         // set the details
         if snapshotValue["details"].exists() {
+            // create array to hold details
             var itemDetails = [ItemDetail]()
+            var buildsFrom: [ArrayValue]?
+            var buildsInto: [ArrayValue]?
+            
+            // itterate through each detail
             for item in snapshotValue["details"].arrayValue {
-                // create an item detail
-                let itemDetail = NSEntityDescription.insertNewObject(forEntityName: "ItemDetail", into: moc) as! ItemDetail
-                
-                // get the key
                 let name = item.dictionaryValue.keys.first!
-                itemDetail.name = name
-                
-                // the dictionary holds an array of string
-                var detailValues = [ArrayValue]()
-                for detail in item[name].arrayValue {
-                    let detailValue = NSEntityDescription.insertNewObject(forEntityName: "ArrayValue", into: moc) as! ArrayValue
-                    detailValue.value = detail.string
-                    detailValues.append(detailValue)
+                // check if it builds from items
+                if name == "builds_from" {
+                    // init the array if it's nil
+                    if buildsFrom == nil { buildsFrom = [ArrayValue]() }
+                    
+                    // iterate through each value of the dict to make the array
+                    for i in item[name].arrayValue {
+                        let val = NSEntityDescription.insertNewObject(forEntityName: "ArrayValue", into: moc) as! ArrayValue
+                        val.value = i.stringValue
+                        buildsFrom?.append(val)
+                    }
                 }
-                itemDetail.value = NSOrderedSet(array: detailValues)
-                
-                // append new item detail
-                itemDetails.append(itemDetail)
+                // check if it build into items
+                else if name == "builds_into" {
+                    // init the array if it's nil
+                    if buildsInto == nil { buildsInto = [ArrayValue]() }
+                    
+                    // iterate through each value of the dict to make the array
+                    for i in item[name].arrayValue {
+                        let val = NSEntityDescription.insertNewObject(forEntityName: "ArrayValue", into: moc) as! ArrayValue
+                        val.value = i.stringValue
+                        buildsInto?.append(val)
+                    }
+                }
+                // it's a regulary detail
+                else {
+                    // create an item detail
+                    let itemDetail = NSEntityDescription.insertNewObject(forEntityName: "ItemDetail", into: moc) as! ItemDetail
+                    
+                    // get the "name"
+                    itemDetail.name = name
+                    
+                    // the dictionary holds an array of string
+                    var detailValues = [ArrayValue]()
+                    for detail in item[name].arrayValue {
+                        let detailValue = NSEntityDescription.insertNewObject(forEntityName: "ArrayValue", into: moc) as! ArrayValue
+                        detailValue.value = detail.string
+                        detailValues.append(detailValue)
+                    }
+                    itemDetail.value = NSOrderedSet(array: detailValues)
+                    
+                    // append new item detail
+                    itemDetails.append(itemDetail)
+                }
             }
+            
+            // set the item details
             item.details = NSSet(array: itemDetails)
+            if let into = buildsInto {
+                item.buildsInto = NSSet(array: into)
+            }
+            if let from = buildsFrom {
+                item.buildsFrom = NSSet(array: from)
+            }
+            
         }
     }
     

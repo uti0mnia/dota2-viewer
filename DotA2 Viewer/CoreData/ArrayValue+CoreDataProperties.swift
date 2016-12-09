@@ -25,5 +25,7 @@ extension ArrayValue {
     @NSManaged public var itemAdditionalInfo: Item?
     @NSManaged public var itemDetail: ItemDetail?
     @NSManaged public var itemAvailability: Item?
+    @NSManaged public var itemBuildsFrom: Item?
+    @NSManaged public var itemBuildsInto: Item?
 
 }
