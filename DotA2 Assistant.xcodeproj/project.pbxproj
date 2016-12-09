@@ -26,6 +26,8 @@
 		368D1BBD1DF9C7C500314648 /* AbilityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 368D1BBB1DF9C7C500314648 /* AbilityCell.xib */; };
 		368D1BC11DF9E50D00314648 /* AbilityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368D1BC01DF9E50D00314648 /* AbilityModel.swift */; };
 		368D1BC51DFAE90600314648 /* ItemDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368D1BC41DFAE90600314648 /* ItemDetailModel.swift */; };
+		368D1BCA1DFAFF6E00314648 /* ItemMainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368D1BC81DFAFF6E00314648 /* ItemMainCell.swift */; };
+		368D1BCB1DFAFF6E00314648 /* ItemMainCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 368D1BC91DFAFF6E00314648 /* ItemMainCell.xib */; };
 		36A2922C1DCA51CC006E96A8 /* Arcane.png in Resources */ = {isa = PBXBuildFile; fileRef = 36A292211DCA51CC006E96A8 /* Arcane.png */; };
 		36A2922D1DCA51CC006E96A8 /* Arnaments.png in Resources */ = {isa = PBXBuildFile; fileRef = 36A292221DCA51CC006E96A8 /* Arnaments.png */; };
 		36A2922E1DCA51CC006E96A8 /* Armor.png in Resources */ = {isa = PBXBuildFile; fileRef = 36A292231DCA51CC006E96A8 /* Armor.png */; };
@@ -124,6 +126,8 @@
 		368D1BBB1DF9C7C500314648 /* AbilityCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AbilityCell.xib; path = Views/AbilityCell.xib; sourceTree = "<group>"; };
 		368D1BC01DF9E50D00314648 /* AbilityModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbilityModel.swift; sourceTree = "<group>"; };
 		368D1BC41DFAE90600314648 /* ItemDetailModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailModel.swift; sourceTree = "<group>"; };
+		368D1BC81DFAFF6E00314648 /* ItemMainCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemMainCell.swift; sourceTree = "<group>"; };
+		368D1BC91DFAFF6E00314648 /* ItemMainCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemMainCell.xib; sourceTree = "<group>"; };
 		36A292211DCA51CC006E96A8 /* Arcane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Arcane.png; path = images/Arcane.png; sourceTree = "<group>"; };
 		36A292221DCA51CC006E96A8 /* Arnaments.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Arnaments.png; path = images/Arnaments.png; sourceTree = "<group>"; };
 		36A292231DCA51CC006E96A8 /* Armor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Armor.png; path = images/Armor.png; sourceTree = "<group>"; };
@@ -296,6 +300,15 @@
 			name = Other;
 			sourceTree = "<group>";
 		};
+		368D1BCC1DFAFF7900314648 /* Item */ = {
+			isa = PBXGroup;
+			children = (
+				368D1BC81DFAFF6E00314648 /* ItemMainCell.swift */,
+				368D1BC91DFAFF6E00314648 /* ItemMainCell.xib */,
+			);
+			name = Item;
+			sourceTree = "<group>";
+		};
 		36A292371DCA51D1006E96A8 /* Item Category */ = {
 			isa = PBXGroup;
 			children = (
@@ -406,6 +419,7 @@
 				C98F86591DF8E4A7002FD602 /* ImageLabelView.xib */,
 				368D1BBE1DF9D12E00314648 /* Cells */,
 				C93028371DF36164005EA297 /* Hero */,
+				368D1BCC1DFAFF7900314648 /* Item */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -585,6 +599,7 @@
 				C96B1F3B1DF0F08E00226D1E /* dota2.json in Resources */,
 				36A2922E1DCA51CC006E96A8 /* Armor.png in Resources */,
 				C95753C91DD57FCF005C9F75 /* damage_icon.png in Resources */,
+				368D1BCB1DFAFF6E00314648 /* ItemMainCell.xib in Resources */,
 				36A2922F1DCA51CC006E96A8 /* Artifacts.png in Resources */,
 				C999EA0F1DE7DF680036AF47 /* GoogleService-Info.plist in Resources */,
 				368D1BB71DF9BD6D00314648 /* DACollapsibleLabelCell.xib in Resources */,
@@ -692,6 +707,7 @@
 				C94F03B61DEF91D3000E60CE /* Damage+CoreDataClass.swift in Sources */,
 				C94F03AB1DEF91D3000E60CE /* Hero+CoreDataProperties.swift in Sources */,
 				C9172C181DD13F9100DCF88F /* Globals.swift in Sources */,
+				368D1BCA1DFAFF6E00314648 /* ItemMainCell.swift in Sources */,
 				C930281D1DF33FF4005EA297 /* AbilityType+CoreDataClass.swift in Sources */,
 				C94F03A81DEF91D3000E60CE /* BaseStat+CoreDataClass.swift in Sources */,
 				C94F03A31DEF91D3000E60CE /* ArrayValue+CoreDataProperties.swift in Sources */,

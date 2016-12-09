@@ -4,3 +4,4 @@ import UIKit
 
 var array: [Any] = ["1"]
 print(array[1..<array.count])
+

@@ -2,7 +2,7 @@
 //  Item+CoreDataProperties.swift
 //  
 //
-//  Created by Casey McLewin on 2016-11-30.
+//  Created by McLewin, Casey on 2016-12-09.
 //
 //
 
@@ -22,6 +22,7 @@ extension Item {
     @NSManaged public var abilities: NSOrderedSet?
     @NSManaged public var additionalInfo: NSSet?
     @NSManaged public var details: NSSet?
+    @NSManaged public var availability: NSSet?
 
 }
 

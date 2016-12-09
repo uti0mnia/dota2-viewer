@@ -215,8 +215,19 @@ struct Import {
             }
         }
         
+        // set the availability
+        if snapshotValue["availability"].exists() {
+            var values = [ArrayValue]()
+            for item in snapshotValue["availability"].arrayValue {
+                let value = NSEntityDescription.insertNewObject(forEntityName: "ArrayValue", into: moc) as! ArrayValue
+                value.value = item.string
+                values.append(value)
+            }
+            item.availability = NSSet(array: values)
+        }
+        
         // set the details
-        if snapshotValue["details"] != nil {
+        if snapshotValue["details"].exists() {
             var itemDetails = [ItemDetail]()
             for item in snapshotValue["details"].arrayValue {
                 // create an item detail
