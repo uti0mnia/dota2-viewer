@@ -2,7 +2,7 @@
 //  Item+CoreDataProperties.swift
 //  
 //
-//  Created by Casey McLewin on 2016-11-30.
+//  Created by McLewin, Casey on 2016-12-09.
 //
 //
 
@@ -22,6 +22,9 @@ extension Item {
     @NSManaged public var abilities: NSOrderedSet?
     @NSManaged public var additionalInfo: NSSet?
     @NSManaged public var details: NSSet?
+    @NSManaged public var availability: NSSet?
+    @NSManaged public var buildsFrom: NSSet?
+    @NSManaged public var buildsInto: NSSet?
 
 }
 
@@ -91,5 +94,56 @@ extension Item {
 
     @objc(removeDetails:)
     @NSManaged public func removeFromDetails(_ values: NSSet)
+
+}
+
+// MARK: Generated accessors for availability
+extension Item {
+
+    @objc(addAvailabilityObject:)
+    @NSManaged public func addToAvailability(_ value: ArrayValue)
+
+    @objc(removeAvailabilityObject:)
+    @NSManaged public func removeFromAvailability(_ value: ArrayValue)
+
+    @objc(addAvailability:)
+    @NSManaged public func addToAvailability(_ values: NSSet)
+
+    @objc(removeAvailability:)
+    @NSManaged public func removeFromAvailability(_ values: NSSet)
+
+}
+
+// MARK: Generated accessors for buildsFrom
+extension Item {
+
+    @objc(addBuildsFromObject:)
+    @NSManaged public func addToBuildsFrom(_ value: ArrayValue)
+
+    @objc(removeBuildsFromObject:)
+    @NSManaged public func removeFromBuildsFrom(_ value: ArrayValue)
+
+    @objc(addBuildsFrom:)
+    @NSManaged public func addToBuildsFrom(_ values: NSSet)
+
+    @objc(removeBuildsFrom:)
+    @NSManaged public func removeFromBuildsFrom(_ values: NSSet)
+
+}
+
+// MARK: Generated accessors for buildsInto
+extension Item {
+
+    @objc(addBuildsIntoObject:)
+    @NSManaged public func addToBuildsInto(_ value: ArrayValue)
+
+    @objc(removeBuildsIntoObject:)
+    @NSManaged public func removeFromBuildsInto(_ value: ArrayValue)
+
+    @objc(addBuildsInto:)
+    @NSManaged public func addToBuildsInto(_ values: NSSet)
+
+    @objc(removeBuildsInto:)
+    @NSManaged public func removeFromBuildsInto(_ values: NSSet)
 
 }
