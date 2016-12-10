@@ -8,33 +8,74 @@
 
 import UIKit
 
-class HeroStatsCell: UITableViewCell, ExpandableCellProtocol {
+class HeroStatsCell: ExpandableCell {
     // MARK - Outlets
+    @IBOutlet weak var mainSV: UIStackView!
     @IBOutlet weak var stackView: UIStackView!
-    @IBOutlet weak var baseStatsView: BaseStatsView!
-    @IBOutlet weak var miscStatsView: MiscStatsView!
     
-    // MARK - Properties
-    var isExpanded: Bool = false
+    /* Base Stats */
+    @IBOutlet weak var baseStatsView: UIStackView!
+    @IBOutlet weak var hpLabel: UILabel!
+    @IBOutlet weak var manaLabel: UILabel!
+    @IBOutlet weak var damageLabel: UILabel!
+    @IBOutlet weak var attackPerSLabel: UILabel!
+    @IBOutlet weak var armorLabel: UILabel!
+    @IBOutlet weak var spellDmgLabel: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-        self.selectionStyle = .none
-    }
+    /* Misc Stats */
+    @IBOutlet weak var miscStatsView: UIStackView!
+    @IBOutlet weak var attackAnimationLabel: UILabel!
+    @IBOutlet weak var attackRangeLabel: UILabel!
+    @IBOutlet weak var moveSpeedLabel: UILabel!
+    @IBOutlet weak var projectileSpeedLabel: UILabel!
+    @IBOutlet weak var collisionSizeLabel: UILabel!
+    @IBOutlet weak var magicResistanceLabel: UILabel!
+    @IBOutlet weak var turnRateLabel: UILabel!
+    @IBOutlet weak var visionLabel: UILabel!
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
-        if #available(iOS 10, *) {
-            UIView.animate(withDuration: kCellAnimationTime) { self.contentView.layoutIfNeeded() }
-        }
-    }
-    
-    /* This function is to toggle what the uistackview holds */
-    func toggle() {
+    override func toggle() {
+        super.toggle()
+        setSpacing(for: mainSV)
         baseStatsView.isHidden = !isExpanded
         miscStatsView.isHidden = !isExpanded
-        isExpanded = !isExpanded
     }
+    
+    
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -55,10 +55,6 @@
 		C93028261DF3515A005EA297 /* AbilityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93028251DF3515A005EA297 /* AbilityView.swift */; };
 		C930282A1DF3567B005EA297 /* AttributeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C93028291DF3567B005EA297 /* AttributeView.xib */; };
 		C930282C1DF356F5005EA297 /* AttributeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C930282B1DF356F5005EA297 /* AttributeView.swift */; };
-		C930282E1DF3577E005EA297 /* BaseStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C930282D1DF3577E005EA297 /* BaseStatsView.swift */; };
-		C93028301DF3579E005EA297 /* BaseStatsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C930282F1DF3579E005EA297 /* BaseStatsView.xib */; };
-		C93028321DF35B3B005EA297 /* MiscStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93028311DF35B3B005EA297 /* MiscStatsView.swift */; };
-		C93028341DF35B6F005EA297 /* MiscStatsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C93028331DF35B6F005EA297 /* MiscStatsView.xib */; };
 		C93028391DF3629F005EA297 /* HeroDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93028381DF3629F005EA297 /* HeroDetailVC.swift */; };
 		C94A26D21DD5593F00D9B054 /* DASlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94A26D11DD5593F00D9B054 /* DASlider.swift */; };
 		C94CAB641DD7CD4F00971BC5 /* DASearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94CAB631DD7CD4F00971BC5 /* DASearchBar.swift */; };
@@ -92,7 +88,7 @@
 		C95753CC1DD57FCF005C9F75 /* strength_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C95753C61DD57FCF005C9F75 /* strength_icon.png */; };
 		C96B1F3B1DF0F08E00226D1E /* dota2.json in Resources */ = {isa = PBXBuildFile; fileRef = C96B1F3A1DF0F08E00226D1E /* dota2.json */; };
 		C96EBB601DF244EF00D6FFD0 /* DANavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96EBB5F1DF244EF00D6FFD0 /* DANavigationController.swift */; };
-		C98F86571DF8D5D5002FD602 /* ExpandableCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98F86561DF8D5D5002FD602 /* ExpandableCellProtocol.swift */; };
+		C98F86571DF8D5D5002FD602 /* ExpandableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98F86561DF8D5D5002FD602 /* ExpandableCell.swift */; };
 		C98F865A1DF8E4A7002FD602 /* ImageLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98F86581DF8E4A7002FD602 /* ImageLabelView.swift */; };
 		C98F865B1DF8E4A7002FD602 /* ImageLabelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C98F86591DF8E4A7002FD602 /* ImageLabelView.xib */; };
 		C999EA081DE7D1C10036AF47 /* OptimusPrinceps.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C999EA061DE7D1C10036AF47 /* OptimusPrinceps.ttf */; };
@@ -161,10 +157,6 @@
 		C93028251DF3515A005EA297 /* AbilityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AbilityView.swift; path = Views/AbilityView.swift; sourceTree = "<group>"; };
 		C93028291DF3567B005EA297 /* AttributeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AttributeView.xib; path = Views/AttributeView.xib; sourceTree = "<group>"; };
 		C930282B1DF356F5005EA297 /* AttributeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AttributeView.swift; path = Views/AttributeView.swift; sourceTree = "<group>"; };
-		C930282D1DF3577E005EA297 /* BaseStatsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseStatsView.swift; path = Views/BaseStatsView.swift; sourceTree = "<group>"; };
-		C930282F1DF3579E005EA297 /* BaseStatsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BaseStatsView.xib; path = Views/BaseStatsView.xib; sourceTree = "<group>"; };
-		C93028311DF35B3B005EA297 /* MiscStatsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MiscStatsView.swift; path = Views/MiscStatsView.swift; sourceTree = "<group>"; };
-		C93028331DF35B6F005EA297 /* MiscStatsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MiscStatsView.xib; path = Views/MiscStatsView.xib; sourceTree = "<group>"; };
 		C93028381DF3629F005EA297 /* HeroDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroDetailVC.swift; sourceTree = "<group>"; };
 		C94A26D11DD5593F00D9B054 /* DASlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DASlider.swift; path = Views/DASlider.swift; sourceTree = "<group>"; };
 		C94CAB631DD7CD4F00971BC5 /* DASearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DASearchBar.swift; sourceTree = "<group>"; };
@@ -200,7 +192,7 @@
 		C96B1F3A1DF0F08E00226D1E /* dota2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dota2.json; sourceTree = "<group>"; };
 		C96EA1111DEE622800259AEF /* DotA2 Assistant.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = "DotA2 Assistant.entitlements"; path = "../DotA2 Assistant.entitlements"; sourceTree = "<group>"; };
 		C96EBB5F1DF244EF00D6FFD0 /* DANavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DANavigationController.swift; sourceTree = "<group>"; };
-		C98F86561DF8D5D5002FD602 /* ExpandableCellProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExpandableCellProtocol.swift; path = Views/ExpandableCellProtocol.swift; sourceTree = "<group>"; };
+		C98F86561DF8D5D5002FD602 /* ExpandableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExpandableCell.swift; path = Views/ExpandableCell.swift; sourceTree = "<group>"; };
 		C98F86581DF8E4A7002FD602 /* ImageLabelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageLabelView.swift; path = Views/ImageLabelView.swift; sourceTree = "<group>"; };
 		C98F86591DF8E4A7002FD602 /* ImageLabelView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ImageLabelView.xib; path = Views/ImageLabelView.xib; sourceTree = "<group>"; };
 		C999EA061DE7D1C10036AF47 /* OptimusPrinceps.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = OptimusPrinceps.ttf; path = Fonts/OptimusPrinceps.ttf; sourceTree = "<group>"; };
@@ -281,7 +273,7 @@
 		368D1BBE1DF9D12E00314648 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				C98F86561DF8D5D5002FD602 /* ExpandableCellProtocol.swift */,
+				C98F86561DF8D5D5002FD602 /* ExpandableCell.swift */,
 				368D1BB41DF9BD6D00314648 /* DACollapsibleLabelCell.swift */,
 				368D1BB51DF9BD6D00314648 /* DACollapsibleLabelCell.xib */,
 				368D1BBA1DF9C7C500314648 /* AbilityCell.swift */,
@@ -474,10 +466,6 @@
 			children = (
 				C930282B1DF356F5005EA297 /* AttributeView.swift */,
 				C93028291DF3567B005EA297 /* AttributeView.xib */,
-				C930282D1DF3577E005EA297 /* BaseStatsView.swift */,
-				C930282F1DF3579E005EA297 /* BaseStatsView.xib */,
-				C93028311DF35B3B005EA297 /* MiscStatsView.swift */,
-				C93028331DF35B6F005EA297 /* MiscStatsView.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -578,8 +566,6 @@
 				366A8A271DD24E99000406BF /* radiance.ttf in Resources */,
 				366A8A261DD24E8E000406BF /* radiance-semibold.ttf in Resources */,
 				36FD56541DA6E3F5007C5A9C /* default_icon.png in Resources */,
-				C93028341DF35B6F005EA297 /* MiscStatsView.xib in Resources */,
-				C93028301DF3579E005EA297 /* BaseStatsView.xib in Resources */,
 				36C0C96F1DA6E25800169394 /* LaunchScreen.storyboard in Resources */,
 				36C0C96C1DA6E25800169394 /* Assets.xcassets in Resources */,
 				36A292301DCA51CC006E96A8 /* Attributes.png in Resources */,
@@ -673,7 +659,6 @@
 				366A8A101DD100A8000406BF /* DAMainTableView.swift in Sources */,
 				C94F03A21DEF91D3000E60CE /* ArrayValue+CoreDataClass.swift in Sources */,
 				368D1BC11DF9E50D00314648 /* AbilityModel.swift in Sources */,
-				C930282E1DF3577E005EA297 /* BaseStatsView.swift in Sources */,
 				366A8A091DD0F4F3000406BF /* DAMainLabel.swift in Sources */,
 				366A8A221DD24B71000406BF /* DAMainCellLabel.swift in Sources */,
 				C922FA8B1DD8AD27007B76F8 /* DALoreLabel.swift in Sources */,
@@ -695,7 +680,7 @@
 				C94F03A71DEF91D3000E60CE /* Attribute+CoreDataProperties.swift in Sources */,
 				366A8A121DD1029F000406BF /* DAUIViewController.swift in Sources */,
 				C94F03B11DEF91D3000E60CE /* ListObject+CoreDataProperties.swift in Sources */,
-				C98F86571DF8D5D5002FD602 /* ExpandableCellProtocol.swift in Sources */,
+				C98F86571DF8D5D5002FD602 /* ExpandableCell.swift in Sources */,
 				C9FEBF2F1DB299F2000CD4FF /* DotA2_Viewer.xcdatamodeld in Sources */,
 				C94F03A41DEF91D3000E60CE /* Ability+CoreDataClass.swift in Sources */,
 				366A8A0C1DD0F87F000406BF /* DAMainTableViewCell.swift in Sources */,
@@ -718,7 +703,6 @@
 				C94F03B01DEF91D3000E60CE /* ListObject+CoreDataClass.swift in Sources */,
 				C94F03B31DEF91D3000E60CE /* Note+CoreDataProperties.swift in Sources */,
 				366A8A0E1DD0F993000406BF /* DACircleImageView.swift in Sources */,
-				C93028321DF35B3B005EA297 /* MiscStatsView.swift in Sources */,
 				C9A6D64D1DBD25AE00580B7B /* Extensions.swift in Sources */,
 				36C0C9621DA6E25800169394 /* AppDelegate.swift in Sources */,
 				C98F865A1DF8E4A7002FD602 /* ImageLabelView.swift in Sources */,

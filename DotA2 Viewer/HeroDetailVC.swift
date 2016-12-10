@@ -74,12 +74,12 @@ class HeroDetailVC: DAUIViewController {
         }
         
         if let cell = tableView.cellForRow(at: IndexPath(row: 1, section: 0)) as? HeroStatsCell {
-            cell.baseStatsView.armorLabel.text = String(format: "%.2f", model.armor)
-            cell.baseStatsView.hpLabel.text = String(format: "%.0f + %.1f", model.hp, model.hpRegen)
-            cell.baseStatsView.manaLabel.text = String(format: "%.0f + %.1f", model.mana, model.manaRegen)
-            cell.baseStatsView.damageLabel.text = String(format: "%.0f-%.0f", model.damage.min, model.damage.max)
-            cell.baseStatsView.attackPerSLabel.text = String(format: "%.2f", model.attackPerS)
-            cell.baseStatsView.spellDmgLabel.text = String(format: "%.2f%@", model.spellDamage, "%")
+            cell.armorLabel.text = String(format: "%.2f", model.armor)
+            cell.hpLabel.text = String(format: "%.0f + %.1f", model.hp, model.hpRegen)
+            cell.manaLabel.text = String(format: "%.0f + %.1f", model.mana, model.manaRegen)
+            cell.damageLabel.text = String(format: "%.0f-%.0f", model.damage.min, model.damage.max)
+            cell.attackPerSLabel.text = String(format: "%.2f", model.attackPerS)
+            cell.spellDmgLabel.text = String(format: "%.2f%@", model.spellDamage, "%")
         }
         
     }
@@ -88,6 +88,13 @@ class HeroDetailVC: DAUIViewController {
 }
 
 extension HeroDetailVC: UITableViewDelegate, UITableViewDataSource {
+    /* gets the cell identifier for the given index */
+    fileprivate func cellIdentifier(for indexPath: IndexPath) -> String {
+        if indexPath.row == 0 { return cellIdentifiers[0] }
+        else if indexPath.row == 1 { return cellIdentifiers[1] }
+        else if indexPath.row == 2 { return cellIdentifiers[2] }
+        else { return cellIdentifiers[3] }
+    }
     /* configures a given cell at a given index */
     fileprivate func configure(cell: UITableViewCell, at indexPath: IndexPath) {
         if let cell = cell as? HeroMainCell {
@@ -111,22 +118,22 @@ extension HeroDetailVC: UITableViewDelegate, UITableViewDataSource {
         
         else if let cell = cell as? HeroStatsCell {
             // ** Base Stats
-            cell.baseStatsView.armorLabel.text = String(format: "%.2f", model.armor)
-            cell.baseStatsView.hpLabel.text = String(format: "%.0f + %.1f", model.hp, model.hpRegen)
-            cell.baseStatsView.manaLabel.text = String(format: "%.0f + %.1f", model.mana, model.manaRegen)
-            cell.baseStatsView.damageLabel.text = String(format: "%.0f-%.0f", model.damage.min, model.damage.max)
-            cell.baseStatsView.attackPerSLabel.text = String(format: "%.2f", model.attackPerS)
-            cell.baseStatsView.spellDmgLabel.text = String(format: "%.2f%@", model.spellDamage, "%")
+            cell.armorLabel.text = String(format: "%.2f", model.armor)
+            cell.hpLabel.text = String(format: "%.0f + %.1f", model.hp, model.hpRegen)
+            cell.manaLabel.text = String(format: "%.0f + %.1f", model.mana, model.manaRegen)
+            cell.damageLabel.text = String(format: "%.0f-%.0f", model.damage.min, model.damage.max)
+            cell.attackPerSLabel.text = String(format: "%.2f", model.attackPerS)
+            cell.spellDmgLabel.text = String(format: "%.2f%@", model.spellDamage, "%")
             
             // ** Misc Stats
-            cell.miscStatsView.attackAnimationLabel.text = model.attackAnimation
-            cell.miscStatsView.attackRangeLabel.text = model.attackRange
-            cell.miscStatsView.collisionSizeLabel.text = model.collisionSize
-            cell.miscStatsView.magicResistanceLabel.text = model.magicResistance
-            cell.miscStatsView.moveSpeedLabel.text = model.movementSpeed
-            cell.miscStatsView.projectileSpeedLabel.text = model.projectileSpeed
-            cell.miscStatsView.turnRateLabel.text = model.turnRate
-            cell.miscStatsView.visionLabel.text = model.visionRange
+            cell.attackAnimationLabel.text = model.attackAnimation
+            cell.attackRangeLabel.text = model.attackRange
+            cell.collisionSizeLabel.text = model.collisionSize
+            cell.magicResistanceLabel.text = model.magicResistance
+            cell.moveSpeedLabel.text = model.movementSpeed
+            cell.projectileSpeedLabel.text = model.projectileSpeed
+            cell.turnRateLabel.text = model.turnRate
+            cell.visionLabel.text = model.visionRange
             
             return
         }
@@ -144,7 +151,11 @@ extension HeroDetailVC: UITableViewDelegate, UITableViewDataSource {
             cell.abilityImageView.image = ability.image
             cell.cooldownLabel.text = ability.cooldown
             cell.manaLabel.text = ability.mana
-            
+            cell.typesLabel.text = ability.typesPrettyPrint
+            cell.summaryLabel.text = ability.summary
+            cell.dataLabel.text = ability.data.joined(separator: "\n")
+            cell.modifiersLabel.text = ability.modifiers.joined(separator: "\n")
+            cell.notesDetails.text = ability.notesPrettyPrint
             
         }
         
@@ -158,7 +169,8 @@ extension HeroDetailVC: UITableViewDelegate, UITableViewDataSource {
     
     /* lets the tableview know what cell to display */
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifiers[indexPath.row], for: indexPath)
+        let identifier = cellIdentifier(for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath)
         configure(cell: cell, at: indexPath)
         return cell
     }

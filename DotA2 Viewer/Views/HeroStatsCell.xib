@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -12,34 +12,156 @@
         <array key="radiance-semibold.ttf">
             <string>Radiance-Semibold</string>
         </array>
+        <array key="radiance.ttf">
+            <string>Radiance</string>
+        </array>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="176" id="KGk-i7-Jjw" customClass="HeroStatsCell" customModule="DotA2_Assistant" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="492" height="176"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="273" id="KGk-i7-Jjw" customClass="HeroStatsCell" customModule="DotA2_Assistant" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="492" height="273"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="492" height="175"/>
+                <rect key="frame" x="0.0" y="0.0" width="492" height="272"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="nNU-80-MJ5">
-                        <rect key="frame" x="8" y="0.0" width="476" height="168"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="248" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="nNU-80-MJ5">
+                        <rect key="frame" x="8" y="0.0" width="476" height="264.5"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Stats" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oNc-8Q-0Pb">
-                                <rect key="frame" x="8" y="8" width="460" height="10"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Stats" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oNc-8Q-0Pb">
+                                <rect key="frame" x="8" y="8" width="460" height="18"/>
                                 <fontDescription key="fontDescription" name="Radiance-Semibold" family="Radiance-Semibold" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" verticalCompressionResistancePriority="752" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oa0-yx-SSk" customClass="BaseStatsView" customModule="DotA2_Assistant" customModuleProvider="target">
-                                <rect key="frame" x="8" y="26" width="460" height="76"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <view contentMode="scaleToFill" verticalCompressionResistancePriority="752" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oOF-0W-T8c" customClass="MiscStatsView" customModule="DotA2_Assistant" customModuleProvider="target">
-                                <rect key="frame" x="8" y="110" width="460" height="50"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="UaR-ax-24j">
+                                <rect key="frame" x="8" y="34" width="460" height="126.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="249" text="hp" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aFj-t4-kFO">
+                                        <rect key="frame" x="0.0" y="0.0" width="460" height="45.5"/>
+                                        <color key="backgroundColor" red="0.29485434069999999" green="0.66547033629999996" blue="0.1566727161" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="Radiance" family="Radiance" pointSize="19"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="mana" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZLz-OB-H5s">
+                                        <rect key="frame" x="0.0" y="53.5" width="460" height="19"/>
+                                        <color key="backgroundColor" red="0.053957145370000001" green="0.60668520370000001" blue="0.87273953049999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="Radiance" family="Radiance" pointSize="19"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="RsD-AJ-mkI">
+                                        <rect key="frame" x="0.0" y="80.5" width="460" height="46"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="248" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="RAD-rF-pj6">
+                                                <rect key="frame" x="0.0" y="0.0" width="230" height="46"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="damage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FjW-lw-kTI">
+                                                        <rect key="frame" x="0.0" y="0.0" width="230" height="19"/>
+                                                        <fontDescription key="fontDescription" name="Radiance" family="Radiance" pointSize="19"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="armor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="svB-PL-thO">
+                                                        <rect key="frame" x="0.0" y="27" width="230" height="19"/>
+                                                        <fontDescription key="fontDescription" name="Radiance" family="Radiance" pointSize="19"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="248" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="3AQ-L1-Ixo">
+                                                <rect key="frame" x="230" y="0.0" width="230" height="46"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="attack per s" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="juB-Ym-Dpm">
+                                                        <rect key="frame" x="0.0" y="0.0" width="230" height="19"/>
+                                                        <fontDescription key="fontDescription" name="Radiance" family="Radiance" pointSize="19"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="spell damage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xtf-uN-bJh">
+                                                        <rect key="frame" x="0.0" y="27" width="230" height="19"/>
+                                                        <fontDescription key="fontDescription" name="Radiance" family="Radiance" pointSize="19"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="3AQ-L1-Ixo" firstAttribute="width" secondItem="RAD-rF-pj6" secondAttribute="width" id="EAn-Hh-I5S"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="dtD-iD-S4X">
+                                <rect key="frame" x="8" y="168.5" width="460" height="88"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="248" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Tpg-Bu-wDU">
+                                        <rect key="frame" x="0.0" y="0.0" width="230" height="88"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="attack Animation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qC4-xL-68h">
+                                                <rect key="frame" x="0.0" y="0.0" width="230" height="19"/>
+                                                <fontDescription key="fontDescription" name="Radiance" family="Radiance" pointSize="19"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="movement speed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fsg-nw-H3H">
+                                                <rect key="frame" x="0.0" y="23" width="230" height="19"/>
+                                                <fontDescription key="fontDescription" name="Radiance" family="Radiance" pointSize="19"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="colision size" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5tn-z6-V4h">
+                                                <rect key="frame" x="0.0" y="46" width="230" height="19"/>
+                                                <fontDescription key="fontDescription" name="Radiance" family="Radiance" pointSize="19"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="turn rate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L14-D7-V4c">
+                                                <rect key="frame" x="0.0" y="69" width="230" height="19"/>
+                                                <fontDescription key="fontDescription" name="Radiance" family="Radiance" pointSize="19"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="248" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="CqR-EK-5Qa">
+                                        <rect key="frame" x="230" y="0.0" width="230" height="88"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="attack Range" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nWv-RI-bxy">
+                                                <rect key="frame" x="0.0" y="0.0" width="230" height="19"/>
+                                                <fontDescription key="fontDescription" name="Radiance" family="Radiance" pointSize="19"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="projectile speed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hq8-YZ-HAT">
+                                                <rect key="frame" x="0.0" y="23" width="230" height="19"/>
+                                                <fontDescription key="fontDescription" name="Radiance" family="Radiance" pointSize="19"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="magic resistance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iG2-W7-bUe">
+                                                <rect key="frame" x="0.0" y="46" width="230" height="19"/>
+                                                <fontDescription key="fontDescription" name="Radiance" family="Radiance" pointSize="19"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="vision range" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ArX-7A-omZ">
+                                                <rect key="frame" x="0.0" y="69" width="230" height="19"/>
+                                                <fontDescription key="fontDescription" name="Radiance" family="Radiance" pointSize="19"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="CqR-EK-5Qa" firstAttribute="width" secondItem="Tpg-Bu-wDU" secondAttribute="width" id="YIs-ZB-wY1"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                     </stackView>
@@ -52,11 +174,26 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="baseStatsView" destination="oa0-yx-SSk" id="ucu-zy-EG2"/>
-                <outlet property="miscStatsView" destination="oOF-0W-T8c" id="M1g-Cn-n0t"/>
+                <outlet property="armorLabel" destination="svB-PL-thO" id="JUQ-fK-tOd"/>
+                <outlet property="attackAnimationLabel" destination="qC4-xL-68h" id="9m1-un-Bbv"/>
+                <outlet property="attackPerSLabel" destination="juB-Ym-Dpm" id="ETg-gT-RF6"/>
+                <outlet property="attackRangeLabel" destination="nWv-RI-bxy" id="uEJ-uD-JSK"/>
+                <outlet property="baseStatsView" destination="UaR-ax-24j" id="sT9-iJ-PgV"/>
+                <outlet property="collisionSizeLabel" destination="5tn-z6-V4h" id="muc-Lj-E2j"/>
+                <outlet property="damageLabel" destination="FjW-lw-kTI" id="jV2-eb-9z9"/>
+                <outlet property="hpLabel" destination="aFj-t4-kFO" id="ESg-lc-Yv6"/>
+                <outlet property="magicResistanceLabel" destination="iG2-W7-bUe" id="bz4-gD-BeY"/>
+                <outlet property="mainSV" destination="nNU-80-MJ5" id="ph3-GT-3FM"/>
+                <outlet property="manaLabel" destination="ZLz-OB-H5s" id="cLs-Ch-0BU"/>
+                <outlet property="miscStatsView" destination="dtD-iD-S4X" id="knN-cJ-1sT"/>
+                <outlet property="moveSpeedLabel" destination="Fsg-nw-H3H" id="AW9-Ng-jpX"/>
+                <outlet property="projectileSpeedLabel" destination="hq8-YZ-HAT" id="Dwb-43-y1f"/>
+                <outlet property="spellDmgLabel" destination="xtf-uN-bJh" id="bfv-dL-HFW"/>
                 <outlet property="stackView" destination="nNU-80-MJ5" id="LZj-Im-3BZ"/>
+                <outlet property="turnRateLabel" destination="L14-D7-V4c" id="pwz-zz-VBC"/>
+                <outlet property="visionLabel" destination="ArX-7A-omZ" id="PdR-4f-k8l"/>
             </connections>
-            <point key="canvasLocation" x="-598" y="-75"/>
+            <point key="canvasLocation" x="-598" y="-26.5"/>
         </tableViewCell>
     </objects>
 </document>

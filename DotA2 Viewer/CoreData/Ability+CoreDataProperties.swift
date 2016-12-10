@@ -25,7 +25,7 @@ extension Ability {
     @NSManaged public var hero: Hero?
     @NSManaged public var item: Item?
     @NSManaged public var modifiers: NSSet?
-    @NSManaged public var notes: NSSet?
+    @NSManaged public var notes: NSOrderedSet?
     @NSManaged public var type: NSSet?
 
 }
