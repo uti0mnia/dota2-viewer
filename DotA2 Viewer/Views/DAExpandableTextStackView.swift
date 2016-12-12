@@ -21,8 +21,7 @@ class DAExpandableTextStackView: DAExpandableStackView {
         topLabel.sizeToFit()
         
         // set the text label
-        textLabel = DAMainLabel(style: .small)
-        textLabel.numberOfLines = 0
+        textLabel = DAMultiLineLabel(style: .small)
         super.init(topView: topLabel, subView: textLabel, expanded: false, frame: frame)
     }
     

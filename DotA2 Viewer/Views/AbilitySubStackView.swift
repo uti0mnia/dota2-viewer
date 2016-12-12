@@ -36,14 +36,10 @@ class AbilitySubStackView: UIStackView {
     }()
     var cooldownLabel = DAMainLabel(style: .medium)
     var manaLabel = DAMainLabel(style: .medium)
-    var typesLabel: DAMainLabel = {
-        let label = DAMainLabel(style: .medium)
-        label.numberOfLines = 0
-        return label
-    }()
-    var summaryLabel = DAMainLabel(style: .medium)
-    var dataLabel = DAMainLabel(style: .medium)
-    var modifiersLabel = DAMainLabel(style: .medium)
+    var typesLabel = DAMultiLineLabel(style: .medium)
+    var summaryLabel = DAMultiLineLabel(style: .medium)
+    var dataLabel = DAMultiLineLabel(style: .medium)
+    var modifiersLabel = DAMultiLineLabel(style: .medium)
     var notesSV = DAExpandableTextStackView(name: "Notes")
     
     // MARK - Initializers
