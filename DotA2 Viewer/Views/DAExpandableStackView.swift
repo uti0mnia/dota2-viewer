@@ -71,6 +71,10 @@ class DAExpandableStackView: UIStackView, DAExpandableProtocol {
     
     /* toggles the current state of the stack view */
     func toggle() {
+        // only toggle if there's a subView
+        guard subView != nil else {
+            return
+        }
         isExpanded = !isExpanded
         setSpacing(for: self)
         UIView.animate(withDuration: kExpansionTime) {
