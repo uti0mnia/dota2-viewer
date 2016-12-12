@@ -18,9 +18,10 @@ class DAExpandableStackView: UIStackView, DAExpandableProtocol {
     /* Internal */
     internal var topView: UIView!
     internal var isExpanded = true
+    fileprivate var subView: UIView?
     
     /* Public */
-    var subView: UIView?
+    
     
     // MARK - Initializers
     init(topView: UIView, subView: UIView?, expanded: Bool = true, frame: CGRect = CGRect()) {
@@ -44,12 +45,21 @@ class DAExpandableStackView: UIStackView, DAExpandableProtocol {
     }
     
     // MARK - Methods
+    /* adds a subview to the stackview */
+    func setSubview(_ view: UIView) {
+        subView?.removeFromSuperview()
+        subView = view
+        subView?.isHidden = !isExpanded
+        self.addArrangedSubview(subView!)
+        
+    }
+    
     /* sets up the stack view */
     internal func setup() {
         // settings
         self.axis = .vertical
         self.alignment = .fill
-        self.distribution = .fillProportionally
+        self.distribution = .equalSpacing
         
         // set the main label
         self.addArrangedSubview(topView)

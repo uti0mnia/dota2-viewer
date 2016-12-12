@@ -99,7 +99,7 @@ class ItemDetailVC: UIViewController {
                 // set the AbilitySV subview
                 self.itemSV.abilitiesSV?.subStackViews[i].nameLabel.text = abilityModel.name
                 self.itemSV.abilitiesSV?.subStackViews[i].specialsLabel.text = abilityModel.specials.joined(separator: ", ")
-                self.itemSV.abilitiesSV?.subStackViews[i].subView = subView
+                self.itemSV.abilitiesSV?.subStackViews[i].setSubview(subView)
             }
         }
     }

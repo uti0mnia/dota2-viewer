@@ -29,8 +29,10 @@ class AbilityStackView: DAExpandableStackView {
     
     // MARK - Initializers
     init(frame: CGRect = CGRect()) {
+        nameLabel.setContentCompressionResistancePriority(751, for: .horizontal)
         topSV.addArrangedSubviews(views: [nameLabel, specialsLabel])
         super.init(topView: topSV, subView: nil, expanded: false, frame: frame)
+        
     }
     
     required init(coder: NSCoder) {
