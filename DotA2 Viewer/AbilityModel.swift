@@ -24,6 +24,36 @@ class AbilityModel {
     var summary: String { get { return _ability.summary ?? "No name" } }
     var specials: [String] { get { return convert(_ability.abilitySpecial?.allObjects) } }
     var data: [String] { get { return convert(_ability.data?.allObjects) } }
+    var dataPrettyPring: NSAttributedString {
+        get {
+            // return string
+            let string = NSMutableAttributedString()
+            
+            // attributes
+            let bold = [NSFontAttributeName : UIFont(name: "Radiance-Semibold", size: 17) ]
+            let normal = [NSFontAttributeName: UIFont(name: "Radiance", size: 17)]
+            
+            // separator
+            var separator = ""
+            for d in data {
+                // split the 2 parts of the data
+                let split = d.components(separatedBy: ":")
+                
+                // create the 2 parts, one bold one normal
+                let s1 = NSAttributedString(string: "\(separator)• \(split[0])", attributes: bold)
+                let s2 = NSAttributedString(string: ": \(split[1])", attributes: normal)
+                
+                // append to return string
+                string.append(s1)
+                string.append(s2)
+                
+                // set the separator (for the first loop)
+                separator = "\n"
+            }
+            
+            return string
+        }
+    }
     var modifiers: [String] { get { return convert(_ability.modifiers?.allObjects) } }
     var notes: [Note] { get { return _ability.notes?.array as? [Note] ?? [Note]() } }
     var notesPrettyPrint: String { get { return print(notes: notes) } }
