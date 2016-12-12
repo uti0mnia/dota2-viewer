@@ -15,18 +15,20 @@ protocol DAExpandableProtocol {
 
 class DAExpandableStackView: UIStackView, DAExpandableProtocol {
     // MARK - Properties
-    internal var topLabel: DAMainLabel!
+    /* Internal */
+    internal var topView: UIView!
     internal var isExpanded = true
     
+    /* Public */
     var subView: UIView?
-    var name = "Expandable StackView"
     
     // MARK - Initializers
-    init(name: String, subView: UIView?, expanded: Bool = true, frame: CGRect = CGRect()) {
+    init(topView: UIView, subView: UIView?, expanded: Bool = true, frame: CGRect = CGRect()) {
         // properties
-        self.name = name
+        self.topView = topView
         self.subView = subView
         self.isExpanded = expanded
+        
         // super init
         super.init(frame: frame)
         
@@ -50,11 +52,7 @@ class DAExpandableStackView: UIStackView, DAExpandableProtocol {
         self.distribution = .fillProportionally
         
         // set the main label
-        topLabel = DAMainLabel(style: .large)
-        topLabel.text = self.name
-        topLabel.textAlignment = .center
-        topLabel.sizeToFit()
-        self.addArrangedSubview(topLabel)
+        self.addArrangedSubview(topView)
         
         // add the subview
         self.addArrangedSubviews(views: [subView])
