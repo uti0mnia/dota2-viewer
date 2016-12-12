@@ -17,7 +17,7 @@ class AbilitiesStackView: UIStackView {
         label.textAlignment = .center
         return label
     }()
-    fileprivate var subStackViews = [AbilityStackView]()
+    var subStackViews = [AbilityStackView]()
     
     
     // MARK - Initializers
