@@ -101,6 +101,7 @@
 		C999EA111DE7E3CB0036AF47 /* Import.swift in Sources */ = {isa = PBXBuildFile; fileRef = C999EA101DE7E3CB0036AF47 /* Import.swift */; };
 		C9A6D64D1DBD25AE00580B7B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A6D64C1DBD25AE00580B7B /* Extensions.swift */; };
 		C9B00F7D1DFE4BA600A15F96 /* AbilitiesStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B00F7C1DFE4BA600A15F96 /* AbilitiesStackView.swift */; };
+		C9B00F7F1DFE4E8600A15F96 /* AbilityStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B00F7E1DFE4E8600A15F96 /* AbilityStackView.swift */; };
 		C9D0BDBE1DF8D1530099C0E4 /* HeroMainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D0BDBC1DF8D1530099C0E4 /* HeroMainCell.swift */; };
 		C9D0BDBF1DF8D1530099C0E4 /* HeroMainCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9D0BDBD1DF8D1530099C0E4 /* HeroMainCell.xib */; };
 		C9D0BDC61DF8D3050099C0E4 /* HeroStatsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D0BDC41DF8D3050099C0E4 /* HeroStatsCell.swift */; };
@@ -210,6 +211,7 @@
 		C999EA101DE7E3CB0036AF47 /* Import.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Import.swift; sourceTree = "<group>"; };
 		C9A6D64C1DBD25AE00580B7B /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		C9B00F7C1DFE4BA600A15F96 /* AbilitiesStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AbilitiesStackView.swift; path = Views/AbilitiesStackView.swift; sourceTree = "<group>"; };
+		C9B00F7E1DFE4E8600A15F96 /* AbilityStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AbilityStackView.swift; path = Views/AbilityStackView.swift; sourceTree = "<group>"; };
 		C9D0BDBC1DF8D1530099C0E4 /* HeroMainCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HeroMainCell.swift; path = Views/HeroMainCell.swift; sourceTree = "<group>"; };
 		C9D0BDBD1DF8D1530099C0E4 /* HeroMainCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HeroMainCell.xib; path = Views/HeroMainCell.xib; sourceTree = "<group>"; };
 		C9D0BDC41DF8D3050099C0E4 /* HeroStatsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HeroStatsCell.swift; path = Views/HeroStatsCell.swift; sourceTree = "<group>"; };
@@ -419,6 +421,7 @@
 				36C0C9651DA6E25800169394 /* Main.storyboard */,
 				364A6A5F1DC1192E00FBE163 /* General */,
 				C9B00F7C1DFE4BA600A15F96 /* AbilitiesStackView.swift */,
+				C9B00F7E1DFE4E8600A15F96 /* AbilityStackView.swift */,
 				C93028251DF3515A005EA297 /* AbilityView.swift */,
 				C930281F1DF346E1005EA297 /* AbilityView.xib */,
 				C98F86581DF8E4A7002FD602 /* ImageLabelView.swift */,
@@ -723,6 +726,7 @@
 				C94F03B01DEF91D3000E60CE /* ListObject+CoreDataClass.swift in Sources */,
 				C94F03B31DEF91D3000E60CE /* Note+CoreDataProperties.swift in Sources */,
 				366A8A0E1DD0F993000406BF /* DACircleImageView.swift in Sources */,
+				C9B00F7F1DFE4E8600A15F96 /* AbilityStackView.swift in Sources */,
 				C9A6D64D1DBD25AE00580B7B /* Extensions.swift in Sources */,
 				36C0C9621DA6E25800169394 /* AppDelegate.swift in Sources */,
 				C98F865A1DF8E4A7002FD602 /* ImageLabelView.swift in Sources */,

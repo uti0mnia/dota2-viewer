@@ -10,5 +10,6 @@ import UIKit
 
 class AbilitiesStackView: UIStackView {
     
+    var subStackViews: [AbilityView]
 
 }
