@@ -11,9 +11,9 @@ import UIKit
 class ItemStackView: UIStackView {
     // MARK - Properties
     var mainView = ItemMainView()
-    var detailsSV = ItemTextStackView(name: "Details")
-    var additionalInfoSV = ItemTextStackView(name: "Additional Information")
-    var loreSV = ItemTextStackView(name: "Lore")
+    var detailsSV = DAExpandableTextStackView(name: "Details")
+    var additionalInfoSV = DAExpandableTextStackView(name: "Additional Information")
+    var loreSV = DAExpandableTextStackView(name: "Lore")
     
     override init(frame: CGRect = CGRect()) {
         super.init(frame: frame)
