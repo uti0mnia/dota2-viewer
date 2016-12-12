@@ -12,12 +12,14 @@ class ItemStackView: UIStackView {
     // MARK - Properties
     var mainView = ItemMainView()
     var detailsSV = DAExpandableTextStackView(name: "Details")
-    var abilitiesSV: AbilitiesStackView!
+    var abilitiesSV: AbilitiesStackView?
     var additionalInfoSV = DAExpandableTextStackView(name: "Additional Information")
     var loreSV = DAExpandableTextStackView(name: "Lore")
     
     init(frame: CGRect = CGRect(), abilitiesCount count: Int) {
-        self.abilitiesSV = AbilitiesStackView(count: count)
+        if count > 0 {
+            self.abilitiesSV = AbilitiesStackView(count: count)
+        }
         super.init(frame: frame)
         setup()
     }
@@ -31,7 +33,7 @@ class ItemStackView: UIStackView {
         self.alignment = .fill
         self.distribution = .equalSpacing
         self.spacing = 8
-        self.addArrangedSubviews(views: [mainView, detailsSV, additionalInfoSV, loreSV])
+        self.addArrangedSubviews(views: [mainView, detailsSV, abilitiesSV, additionalInfoSV, loreSV])
         self.layoutMargins = UIEdgeInsetsMake(8, 8, 8, 8)
         self.isLayoutMarginsRelativeArrangement =  true
     }

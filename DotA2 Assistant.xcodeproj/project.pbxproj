@@ -314,6 +314,16 @@
 			name = Item;
 			sourceTree = "<group>";
 		};
+		368D1BCF1DFF298E00314648 /* Abilities */ = {
+			isa = PBXGroup;
+			children = (
+				C9B00F7C1DFE4BA600A15F96 /* AbilitiesStackView.swift */,
+				C9B00F7E1DFE4E8600A15F96 /* AbilityStackView.swift */,
+				368D1BCD1DFF24A800314648 /* AbilitySubStackView.swift */,
+			);
+			name = Abilities;
+			sourceTree = "<group>";
+		};
 		36A292371DCA51D1006E96A8 /* Item Category */ = {
 			isa = PBXGroup;
 			children = (
@@ -418,9 +428,7 @@
 			children = (
 				36C0C9651DA6E25800169394 /* Main.storyboard */,
 				364A6A5F1DC1192E00FBE163 /* General */,
-				C9B00F7C1DFE4BA600A15F96 /* AbilitiesStackView.swift */,
-				C9B00F7E1DFE4E8600A15F96 /* AbilityStackView.swift */,
-				368D1BCD1DFF24A800314648 /* AbilitySubStackView.swift */,
+				368D1BCF1DFF298E00314648 /* Abilities */,
 				C98F86581DF8E4A7002FD602 /* ImageLabelView.swift */,
 				C98F86591DF8E4A7002FD602 /* ImageLabelView.xib */,
 				368D1BBE1DF9D12E00314648 /* Cells */,
