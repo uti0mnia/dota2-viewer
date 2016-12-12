@@ -45,6 +45,8 @@ class ItemDetailVC: UIViewController {
     
     /* configures the views to the view controller */
     fileprivate func configureViews() {
+        // colours
+        self.view.backgroundColor = UIColor.flatBlack()
         // scrollview
         self.view.addSubview(scrollView)
         var constraints = [NSLayoutConstraint]()
@@ -71,11 +73,11 @@ class ItemDetailVC: UIViewController {
         itemSV.loreSV.textLabel.text = model.lore
         
         // main view
-        itemSV.mainView.availabilityLabel.text = model.availability.joined(separator: ", ")
-        itemSV.mainView.costLabel.text = model.cost
-        itemSV.mainView.itemImageView.image = model.image
-        itemSV.mainView.typeImageView.image = model.typeImg
-        itemSV.mainView.typeLabel.text = model.type
+        itemSV.mainSV.availabilityLabel.text = model.availability.joined(separator: ", ")
+        itemSV.mainSV.costLabel.text = model.cost
+        itemSV.mainSV.itemImageView.image = model.image
+        itemSV.mainSV.typeImageView.image = model.typeImg
+        itemSV.mainSV.typeLabel.text = model.type
     }
     
     /* Sets up the ablities */

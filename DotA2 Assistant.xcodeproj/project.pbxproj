@@ -27,6 +27,7 @@
 		368D1BC11DF9E50D00314648 /* AbilityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368D1BC01DF9E50D00314648 /* AbilityModel.swift */; };
 		368D1BC51DFAE90600314648 /* ItemDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368D1BC41DFAE90600314648 /* ItemDetailModel.swift */; };
 		368D1BCE1DFF24A800314648 /* AbilitySubStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368D1BCD1DFF24A800314648 /* AbilitySubStackView.swift */; };
+		368D1BD11DFF402200314648 /* ItemMainStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368D1BD01DFF402200314648 /* ItemMainStackView.swift */; };
 		36A2922C1DCA51CC006E96A8 /* Arcane.png in Resources */ = {isa = PBXBuildFile; fileRef = 36A292211DCA51CC006E96A8 /* Arcane.png */; };
 		36A2922D1DCA51CC006E96A8 /* Arnaments.png in Resources */ = {isa = PBXBuildFile; fileRef = 36A292221DCA51CC006E96A8 /* Arnaments.png */; };
 		36A2922E1DCA51CC006E96A8 /* Armor.png in Resources */ = {isa = PBXBuildFile; fileRef = 36A292231DCA51CC006E96A8 /* Armor.png */; };
@@ -45,8 +46,6 @@
 		36C7DF241DC8F2C800251705 /* RSSFeedHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C7DF231DC8F2C800251705 /* RSSFeedHelper.swift */; };
 		36FD56541DA6E3F5007C5A9C /* default_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 36FD56511DA6E3F5007C5A9C /* default_icon.png */; };
 		C90CE60A1DFCB67500C93539 /* DAExpandableStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90CE6091DFCB67500C93539 /* DAExpandableStackView.swift */; };
-		C90CE60C1DFCBB6C00C93539 /* ItemMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90CE60B1DFCBB6C00C93539 /* ItemMainView.swift */; };
-		C90CE60E1DFCBB7500C93539 /* ItemMainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C90CE60D1DFCBB7500C93539 /* ItemMainView.xib */; };
 		C90CE6101DFCC18F00C93539 /* DAExpandableTextStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90CE60F1DFCC18F00C93539 /* DAExpandableTextStackView.swift */; };
 		C90CE6121DFCC95A00C93539 /* ItemStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90CE6111DFCC95A00C93539 /* ItemStackView.swift */; };
 		C90CE6141DFCCBA400C93539 /* ItemDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90CE6131DFCCBA400C93539 /* ItemDetailVC.swift */; };
@@ -128,6 +127,7 @@
 		368D1BC01DF9E50D00314648 /* AbilityModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbilityModel.swift; sourceTree = "<group>"; };
 		368D1BC41DFAE90600314648 /* ItemDetailModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailModel.swift; sourceTree = "<group>"; };
 		368D1BCD1DFF24A800314648 /* AbilitySubStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AbilitySubStackView.swift; path = Views/AbilitySubStackView.swift; sourceTree = "<group>"; };
+		368D1BD01DFF402200314648 /* ItemMainStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemMainStackView.swift; path = Views/ItemMainStackView.swift; sourceTree = "<group>"; };
 		36A292211DCA51CC006E96A8 /* Arcane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Arcane.png; path = images/Arcane.png; sourceTree = "<group>"; };
 		36A292221DCA51CC006E96A8 /* Arnaments.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Arnaments.png; path = images/Arnaments.png; sourceTree = "<group>"; };
 		36A292231DCA51CC006E96A8 /* Armor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Armor.png; path = images/Armor.png; sourceTree = "<group>"; };
@@ -152,8 +152,6 @@
 		860C63C4F37CD7891AF00E52 /* Pods-DotA2 Assistant.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DotA2 Assistant.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DotA2 Assistant/Pods-DotA2 Assistant.debug.xcconfig"; sourceTree = "<group>"; };
 		98F87ADCA1FE546C146D14EF /* Pods_DotA2_Assistant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DotA2_Assistant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C90CE6091DFCB67500C93539 /* DAExpandableStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DAExpandableStackView.swift; path = Views/DAExpandableStackView.swift; sourceTree = "<group>"; };
-		C90CE60B1DFCBB6C00C93539 /* ItemMainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemMainView.swift; path = Views/ItemMainView.swift; sourceTree = "<group>"; };
-		C90CE60D1DFCBB7500C93539 /* ItemMainView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ItemMainView.xib; path = Views/ItemMainView.xib; sourceTree = "<group>"; };
 		C90CE60F1DFCC18F00C93539 /* DAExpandableTextStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DAExpandableTextStackView.swift; path = Views/DAExpandableTextStackView.swift; sourceTree = "<group>"; };
 		C90CE6111DFCC95A00C93539 /* ItemStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemStackView.swift; path = Views/ItemStackView.swift; sourceTree = "<group>"; };
 		C90CE6131DFCCBA400C93539 /* ItemDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailVC.swift; sourceTree = "<group>"; };
@@ -308,8 +306,7 @@
 			isa = PBXGroup;
 			children = (
 				C90CE6111DFCC95A00C93539 /* ItemStackView.swift */,
-				C90CE60B1DFCBB6C00C93539 /* ItemMainView.swift */,
-				C90CE60D1DFCBB7500C93539 /* ItemMainView.xib */,
+				368D1BD01DFF402200314648 /* ItemMainStackView.swift */,
 			);
 			name = Item;
 			sourceTree = "<group>";
@@ -604,7 +601,6 @@
 				C91470401DD916D5002A042C /* recipe.png in Resources */,
 				36A292331DCA51CC006E96A8 /* Consumables.png in Resources */,
 				36A292321DCA51CC006E96A8 /* Common.png in Resources */,
-				C90CE60E1DFCBB7500C93539 /* ItemMainView.xib in Resources */,
 				C96B1F3B1DF0F08E00226D1E /* dota2.json in Resources */,
 				36A2922E1DCA51CC006E96A8 /* Armor.png in Resources */,
 				C95753C91DD57FCF005C9F75 /* damage_icon.png in Resources */,
@@ -686,6 +682,7 @@
 				C922FA8B1DD8AD27007B76F8 /* DALoreLabel.swift in Sources */,
 				C999EA111DE7E3CB0036AF47 /* Import.swift in Sources */,
 				C930282C1DF356F5005EA297 /* AttributeView.swift in Sources */,
+				368D1BD11DFF402200314648 /* ItemMainStackView.swift in Sources */,
 				C94F03B51DEF91D3000E60CE /* ItemDetail+CoreDataProperties.swift in Sources */,
 				C94F03A91DEF91D3000E60CE /* BaseStat+CoreDataProperties.swift in Sources */,
 				C94F03B71DEF91D3000E60CE /* Damage+CoreDataProperties.swift in Sources */,
@@ -721,7 +718,6 @@
 				C930281D1DF33FF4005EA297 /* AbilityType+CoreDataClass.swift in Sources */,
 				C94F03A81DEF91D3000E60CE /* BaseStat+CoreDataClass.swift in Sources */,
 				C94F03A31DEF91D3000E60CE /* ArrayValue+CoreDataProperties.swift in Sources */,
-				C90CE60C1DFCBB6C00C93539 /* ItemMainView.swift in Sources */,
 				C90CE6101DFCC18F00C93539 /* DAExpandableTextStackView.swift in Sources */,
 				C94F03AD1DEF91D3000E60CE /* Item+CoreDataProperties.swift in Sources */,
 				36C7DF241DC8F2C800251705 /* RSSFeedHelper.swift in Sources */,

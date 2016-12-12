@@ -10,7 +10,7 @@ import UIKit
 
 class ItemStackView: UIStackView {
     // MARK - Properties
-    var mainView = ItemMainView()
+    var mainSV = ItemMainStackView()
     var detailsSV = DAExpandableTextStackView(name: "Details")
     var abilitiesSV: AbilitiesStackView?
     var additionalInfoSV = DAExpandableTextStackView(name: "Additional Information")
@@ -33,7 +33,7 @@ class ItemStackView: UIStackView {
         self.alignment = .fill
         self.distribution = .equalSpacing
         self.spacing = 8
-        self.addArrangedSubviews(views: [mainView, detailsSV, abilitiesSV, additionalInfoSV, loreSV])
+        self.addArrangedSubviews(views: [mainSV, detailsSV, abilitiesSV, additionalInfoSV, loreSV])
         self.layoutMargins = UIEdgeInsetsMake(8, 8, 8, 8)
         self.isLayoutMarginsRelativeArrangement =  true
     }
