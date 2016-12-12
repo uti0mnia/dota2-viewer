@@ -45,5 +45,67 @@ class AbilitySubStackView: UIStackView {
     var dataLabel = DAMainLabel(style: .medium)
     var modifiersLabel = DAMainLabel(style: .medium)
     var notesSV = DAExpandableTextStackView(name: "Notes")
+    
+    // MARK - Initializers
+    override init(frame: CGRect = CGRect()) {
+        super.init(frame: frame)
+        setup()
+        
+    }
+    
+    required init(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    
+    // MARK - Methods
+    fileprivate func setup() {
+        // setup properties
+        self.axis = .vertical
+        self.alignment = .fill
+        self.distribution = .fillProportionally
+        self.spacing = 8
+        
+        // add subview
+        sideSV.addArrangedSubviews(views: [typesLabel, cooldownLabel, manaLabel])
+        midSV.addArrangedSubviews(views: [abilityImageView, sideSV])
+        self.addArrangedSubviews(views: [midSV, summaryLabel, dataLabel, modifiersLabel, notesSV])
+    }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
