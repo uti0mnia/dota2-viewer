@@ -24,3 +24,4 @@ var kArmourGain: NSNumber { get { return NSNumber(floatLiteral: 1/7) } }
 
 // animations
 let kCellAnimationTime = 0.2
+let kExpansionTime = 0.2

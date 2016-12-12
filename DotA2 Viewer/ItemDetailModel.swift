@@ -14,14 +14,11 @@ class ItemDetailModel {
     // MARK - Properties
     /* Private */
     fileprivate var _item: Item!
+    fileprivate var _buildsInto: [Item]?
+    fileprivate var _buildsFrom: [Item]?
+    fileprivate var _needsRecipe = false
     fileprivate var _abilities: [Ability] { get { return _item.abilities?.array as? [Ability] ?? [Ability]() } }
     fileprivate var _itemDetails: [ItemDetail] { get { return _item.details?.allObjects as? [ItemDetail] ?? [ItemDetail]() } }
-    fileprivate var _buildsInto: [Item] {
-        get {
-            return convert(_item.buildsInto?.allObjects)
-        }
-    }
-    fileprivate var _buildsFrom: [String] { get { return convert(_item.buildsFrom?.allObjects) } }
     
     
     /* Public */
@@ -33,6 +30,20 @@ class ItemDetailModel {
     var typeImg: UIImage { get { return UIImage(named: type) ?? #imageLiteral(resourceName: "dota2-logo.png") } }
     var abilities: [AbilityModel] { get { return _abilities.map({ AbilityModel(ability: $0) }) } }
     var additionalInfo: [String] { get { return convert(_item.additionalInfo?.allObjects) } }
+    var additionalInfoPretty: String {
+        get {
+            var str = ""
+            var separator = ""
+            for item in additionalInfo {
+                str += "\(separator)• \(item)"
+                separator = "\n"
+            }
+            return str
+        }
+    }
+    var availability: [String] { get { return convert(_item.availability?.allObjects) } }
+    var buildsInto: [Item]? { get { return _buildsInto } }
+    var buildsFrom: [Item]? { get { return _buildsFrom } }
     var details: [String: [String]] {
         get {
             var details = [String: [String]]()
@@ -60,24 +71,44 @@ class ItemDetailModel {
             return string
         }
     }
-    var availability: [String] { get { return convert(_item.availability?.allObjects) } }
-    var buildsInto: [Item] {
-        get {
-            
+    var needsRecipe: Bool { get { return _needsRecipe } }
+    
+    /* initializer that inits the item and the items that build into and from it if applicable. */
+    init(item: Item) {
+        self._item = item
+        
+        // create the builds into array that holds what the item can build into
+        for name in item.buildsInto?.allObjects as? [ArrayValue] ?? [] {
+            // can't build into a recipe so don't bother checking
+            if let item = fetchItem(named: name.value ?? "") {
+                if _buildsInto == nil { _buildsInto = [Item]() }
+                _buildsInto?.append(item)
+            }
+        }
+        
+        // create the builds from array that holds what item's make up the item
+        for name in item.buildsFrom?.allObjects as? [ArrayValue] ?? [] {
+            // check if it's a recipe
+            guard name.value != "Recipe" else {
+                _needsRecipe = true
+                continue
+            }
+            if let item = fetchItem(named: name.value ?? "") {
+                if _buildsFrom == nil { _buildsFrom = [Item]() }
+                _buildsInto?.append(item)
+            }
         }
     }
     
-    
-    init(item: Item) {
-        self._item = item
-    }
-    
+    /* tries to convert an array of Any into an [ArrayValue] and returns each item's value as [String] */
     fileprivate func convert(_ arrayValue: [Any]?) -> [String] {
         let array = arrayValue as? [ArrayValue]
         return array?.map({ $0.value ?? "No Value" }) ?? [String]()
     }
     
-    fileprivate func item(named name: String) -> Item? {
+    
+    /* tries to fetch an item with the given name and returns the first found (should always be unique) */
+    fileprivate func fetchItem(named name: String) -> Item? {
         let fetch = NSFetchRequest<Item>(entityName: "Item")
         let moc = (UIApplication.shared.delegate as! AppDelegate).managedObjectContext
         do {

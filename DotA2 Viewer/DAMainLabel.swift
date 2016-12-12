@@ -13,20 +13,14 @@ enum DAMainLabelStyle: CGFloat {
     case xsmall = 12, small = 15, medium = 18, large = 24, xlarge = 30, title = 38
 }
 
-@IBDesignable
 class DAMainLabel: UILabel {
     
-    @IBInspectable var style: DAMainLabelStyle = .medium
+    var style: DAMainLabelStyle = .medium
     
-    init(frame: CGRect, style: DAMainLabelStyle = .medium) {
+    init(frame: CGRect = CGRect(), style: DAMainLabelStyle = .medium) {
         super.init(frame: frame)
         self.style = style
         commonInit()
-    }
-    
-    convenience init(style: DAMainLabelStyle = .medium) {
-        self.init(frame: CGRect(), style: style)
-        
     }
     
     required init?(coder aDecoder: NSCoder) {

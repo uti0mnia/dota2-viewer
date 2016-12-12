@@ -3,6 +3,14 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "DAExpandableStackView.toggle() -&gt; ():DAExpandableStackView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.subView">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "HeroDetailVC.setup() -&gt; ():HeroDetailVC.swift">
          <PersistentStrings>
             <PersistentString
@@ -22,18 +30,29 @@
          contextName = "HeroDetailModel.hp.getter:HeroDetailModel.swift">
          <PersistentStrings>
             <PersistentString
-               value = "strength">
-            </PersistentString>
-            <PersistentString
                value = "hp">
             </PersistentString>
             <PersistentString
                value = "_hero.baseStats?.hp?.intValue">
             </PersistentString>
+            <PersistentString
+               value = "strength">
+            </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "static Import.JSONImport.initialImport() -&gt; ():FirebaseImport.swift">
+      </ContextState>
+      <ContextState
+         contextName = "ItemDetailVC.setup() -&gt; ():ItemDetailVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "model.details">
+            </PersistentString>
+            <PersistentString
+               value = "model.additionalInfoPretty">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "static Import.JSONImport.initialImport(inMOC : NSManagedObjectContext) -&gt; ():FirebaseImport.swift">

@@ -234,8 +234,8 @@ struct Import {
             var buildsInto: [ArrayValue]?
             
             // itterate through each detail
-            for item in snapshotValue["details"].arrayValue {
-                let name = item.dictionaryValue.keys.first!
+            for (key, value) in snapshotValue["details"].dictionaryValue {
+                let name = key
                 
                 // check if it builds from items
                 if name == "builds_from" {
@@ -243,7 +243,7 @@ struct Import {
                     if buildsFrom == nil { buildsFrom = [ArrayValue]() }
                     
                     // iterate through each value of the dict to make the array
-                    for i in item[name].arrayValue {
+                    for i in value.arrayValue {
                         let val = NSEntityDescription.insertNewObject(forEntityName: "ArrayValue", into: moc) as! ArrayValue
                         val.value = i.stringValue
                         buildsFrom?.append(val)
@@ -256,7 +256,7 @@ struct Import {
                     if buildsInto == nil { buildsInto = [ArrayValue]() }
                     
                     // iterate through each value of the dict to make the array
-                    for i in item[name].arrayValue {
+                    for i in value.arrayValue {
                         let val = NSEntityDescription.insertNewObject(forEntityName: "ArrayValue", into: moc) as! ArrayValue
                         val.value = i.stringValue
                         buildsInto?.append(val)
@@ -273,7 +273,7 @@ struct Import {
                     
                     // the dictionary holds an array of string
                     var detailValues = [ArrayValue]()
-                    for detail in item[name].arrayValue {
+                    for detail in value.arrayValue {
                         let detailValue = NSEntityDescription.insertNewObject(forEntityName: "ArrayValue", into: moc) as! ArrayValue
                         detailValue.value = detail.string
                         detailValues.append(detailValue)
