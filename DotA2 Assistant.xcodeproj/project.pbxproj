@@ -26,6 +26,7 @@
 		368D1BBD1DF9C7C500314648 /* AbilityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 368D1BBB1DF9C7C500314648 /* AbilityCell.xib */; };
 		368D1BC11DF9E50D00314648 /* AbilityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368D1BC01DF9E50D00314648 /* AbilityModel.swift */; };
 		368D1BC51DFAE90600314648 /* ItemDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368D1BC41DFAE90600314648 /* ItemDetailModel.swift */; };
+		368D1BCE1DFF24A800314648 /* AbilitySubStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368D1BCD1DFF24A800314648 /* AbilitySubStackView.swift */; };
 		36A2922C1DCA51CC006E96A8 /* Arcane.png in Resources */ = {isa = PBXBuildFile; fileRef = 36A292211DCA51CC006E96A8 /* Arcane.png */; };
 		36A2922D1DCA51CC006E96A8 /* Arnaments.png in Resources */ = {isa = PBXBuildFile; fileRef = 36A292221DCA51CC006E96A8 /* Arnaments.png */; };
 		36A2922E1DCA51CC006E96A8 /* Armor.png in Resources */ = {isa = PBXBuildFile; fileRef = 36A292231DCA51CC006E96A8 /* Armor.png */; };
@@ -128,6 +129,7 @@
 		368D1BBB1DF9C7C500314648 /* AbilityCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AbilityCell.xib; path = Views/AbilityCell.xib; sourceTree = "<group>"; };
 		368D1BC01DF9E50D00314648 /* AbilityModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbilityModel.swift; sourceTree = "<group>"; };
 		368D1BC41DFAE90600314648 /* ItemDetailModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailModel.swift; sourceTree = "<group>"; };
+		368D1BCD1DFF24A800314648 /* AbilitySubStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AbilitySubStackView.swift; path = Views/AbilitySubStackView.swift; sourceTree = "<group>"; };
 		36A292211DCA51CC006E96A8 /* Arcane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Arcane.png; path = images/Arcane.png; sourceTree = "<group>"; };
 		36A292221DCA51CC006E96A8 /* Arnaments.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Arnaments.png; path = images/Arnaments.png; sourceTree = "<group>"; };
 		36A292231DCA51CC006E96A8 /* Armor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Armor.png; path = images/Armor.png; sourceTree = "<group>"; };
@@ -422,6 +424,7 @@
 				364A6A5F1DC1192E00FBE163 /* General */,
 				C9B00F7C1DFE4BA600A15F96 /* AbilitiesStackView.swift */,
 				C9B00F7E1DFE4E8600A15F96 /* AbilityStackView.swift */,
+				368D1BCD1DFF24A800314648 /* AbilitySubStackView.swift */,
 				C93028251DF3515A005EA297 /* AbilityView.swift */,
 				C930281F1DF346E1005EA297 /* AbilityView.xib */,
 				C98F86581DF8E4A7002FD602 /* ImageLabelView.swift */,
@@ -713,6 +716,7 @@
 				C90CE6121DFCC95A00C93539 /* ItemStackView.swift in Sources */,
 				C94F03B61DEF91D3000E60CE /* Damage+CoreDataClass.swift in Sources */,
 				C94F03AB1DEF91D3000E60CE /* Hero+CoreDataProperties.swift in Sources */,
+				368D1BCE1DFF24A800314648 /* AbilitySubStackView.swift in Sources */,
 				C9172C181DD13F9100DCF88F /* Globals.swift in Sources */,
 				C930281D1DF33FF4005EA297 /* AbilityType+CoreDataClass.swift in Sources */,
 				C94F03A81DEF91D3000E60CE /* BaseStat+CoreDataClass.swift in Sources */,
