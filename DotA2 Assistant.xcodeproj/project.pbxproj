@@ -56,8 +56,6 @@
 		C922FA8B1DD8AD27007B76F8 /* DALoreLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C922FA8A1DD8AD27007B76F8 /* DALoreLabel.swift */; };
 		C930281D1DF33FF4005EA297 /* AbilityType+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C930281B1DF33FF4005EA297 /* AbilityType+CoreDataClass.swift */; };
 		C930281E1DF33FF4005EA297 /* AbilityType+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C930281C1DF33FF4005EA297 /* AbilityType+CoreDataProperties.swift */; };
-		C93028201DF346E1005EA297 /* AbilityView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C930281F1DF346E1005EA297 /* AbilityView.xib */; };
-		C93028261DF3515A005EA297 /* AbilityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93028251DF3515A005EA297 /* AbilityView.swift */; };
 		C930282A1DF3567B005EA297 /* AttributeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C93028291DF3567B005EA297 /* AttributeView.xib */; };
 		C930282C1DF356F5005EA297 /* AttributeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C930282B1DF356F5005EA297 /* AttributeView.swift */; };
 		C93028391DF3629F005EA297 /* HeroDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93028381DF3629F005EA297 /* HeroDetailVC.swift */; };
@@ -165,8 +163,6 @@
 		C922FA8A1DD8AD27007B76F8 /* DALoreLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DALoreLabel.swift; sourceTree = "<group>"; };
 		C930281B1DF33FF4005EA297 /* AbilityType+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "AbilityType+CoreDataClass.swift"; path = "CoreData/AbilityType+CoreDataClass.swift"; sourceTree = "<group>"; };
 		C930281C1DF33FF4005EA297 /* AbilityType+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "AbilityType+CoreDataProperties.swift"; path = "CoreData/AbilityType+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		C930281F1DF346E1005EA297 /* AbilityView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AbilityView.xib; path = Views/AbilityView.xib; sourceTree = "<group>"; };
-		C93028251DF3515A005EA297 /* AbilityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AbilityView.swift; path = Views/AbilityView.swift; sourceTree = "<group>"; };
 		C93028291DF3567B005EA297 /* AttributeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AttributeView.xib; path = Views/AttributeView.xib; sourceTree = "<group>"; };
 		C930282B1DF356F5005EA297 /* AttributeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AttributeView.swift; path = Views/AttributeView.swift; sourceTree = "<group>"; };
 		C93028381DF3629F005EA297 /* HeroDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroDetailVC.swift; sourceTree = "<group>"; };
@@ -425,8 +421,6 @@
 				C9B00F7C1DFE4BA600A15F96 /* AbilitiesStackView.swift */,
 				C9B00F7E1DFE4E8600A15F96 /* AbilityStackView.swift */,
 				368D1BCD1DFF24A800314648 /* AbilitySubStackView.swift */,
-				C93028251DF3515A005EA297 /* AbilityView.swift */,
-				C930281F1DF346E1005EA297 /* AbilityView.xib */,
 				C98F86581DF8E4A7002FD602 /* ImageLabelView.swift */,
 				C98F86591DF8E4A7002FD602 /* ImageLabelView.xib */,
 				368D1BBE1DF9D12E00314648 /* Cells */,
@@ -581,7 +575,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C930282A1DF3567B005EA297 /* AttributeView.xib in Resources */,
-				C93028201DF346E1005EA297 /* AbilityView.xib in Resources */,
 				C999EA081DE7D1C10036AF47 /* OptimusPrinceps.ttf in Resources */,
 				C999EA091DE7D1C10036AF47 /* OptimusPrincepsSemiBold.ttf in Resources */,
 				366A8A271DD24E99000406BF /* radiance.ttf in Resources */,
@@ -692,7 +685,6 @@
 				C94F03AE1DEF91D3000E60CE /* MiscStat+CoreDataClass.swift in Sources */,
 				C9D0BDC61DF8D3050099C0E4 /* HeroStatsCell.swift in Sources */,
 				366A8A161DD103F1000406BF /* DATabBar.swift in Sources */,
-				C93028261DF3515A005EA297 /* AbilityView.swift in Sources */,
 				C94F03B21DEF91D3000E60CE /* Note+CoreDataClass.swift in Sources */,
 				368D1BB61DF9BD6D00314648 /* DACollapsibleLabelCell.swift in Sources */,
 				C9B00F7D1DFE4BA600A15F96 /* AbilitiesStackView.swift in Sources */,
