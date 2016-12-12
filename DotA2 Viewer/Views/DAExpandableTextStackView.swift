@@ -10,7 +10,7 @@ import UIKit
 
 class DAExpandableTextStackView: DAExpandableStackView {
     // MARK - Properties
-    var textLabel: DAMainLabel!
+    var textLabel: DAMultiLineLabel!
     
     // MARK - Initializaers
     init(name: String, frame: CGRect = CGRect()) {
