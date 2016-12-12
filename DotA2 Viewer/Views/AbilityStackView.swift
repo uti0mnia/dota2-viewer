@@ -8,16 +8,60 @@
 
 import UIKit
 
-class AbilityStackView: UIStackView {
+class AbilityStackView: DAExpandableStackView {
     // MARK - Properties
-    var nameLabel: DAMainLabel!
-    var abilityImageView: UIImageView!
-    var cooldownLabel: DAMainLabel!
-    var manaLabel: DAMainLabel!
-    var typesLabel: DAMainLabel!
-    var summaryLabel: DAMainLabel!
-    var dataLabel: DAMainLabel!
-    var modifiersLabel: DAMainLabel!
+    /* Private */
+    fileprivate var topSV: UIStackView  = {
+        let sv = UIStackView()
+        sv.axis = .horizontal
+        sv.alignment = .fill
+        sv.distribution = .fillProportionally
+        return sv
+    }()    /* Public */
+    var nameLabel = DAMainLabel(style: .large)
+    var specialsLabel: DAMainLabel = {
+        let label = DAMainLabel(style: .medium)
+        label.textAlignment = .right
+        return label
+    }()
+    
+    // MARK - Initializers
+    init(frame: CGRect = CGRect()) {
+        topSV.addArrangedSubviews(views: [nameLabel, specialsLabel])
+        super.init(topView: topSV, subView: nil, expanded: false, frame: frame)
+    }
+    
+    required init(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
