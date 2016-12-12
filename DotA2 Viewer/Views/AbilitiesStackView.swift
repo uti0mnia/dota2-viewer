@@ -21,7 +21,7 @@ class AbilitiesStackView: UIStackView {
     
     
     // MARK - Initializers
-    init(frame: CGRect = CGRect(), count: Int) {
+    init(frame: CGRect = CGRect(), count: Int = 0) {
         super.init(frame: frame)
         
         // create <count> expandable stack views and add them

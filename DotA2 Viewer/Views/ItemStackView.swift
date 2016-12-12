@@ -12,10 +12,12 @@ class ItemStackView: UIStackView {
     // MARK - Properties
     var mainView = ItemMainView()
     var detailsSV = DAExpandableTextStackView(name: "Details")
+    var abilitiesSV: AbilitiesStackView!
     var additionalInfoSV = DAExpandableTextStackView(name: "Additional Information")
     var loreSV = DAExpandableTextStackView(name: "Lore")
     
-    override init(frame: CGRect = CGRect()) {
+    init(frame: CGRect = CGRect(), abilitiesCount count: Int) {
+        self.abilitiesSV = AbilitiesStackView(count: count)
         super.init(frame: frame)
         setup()
     }
