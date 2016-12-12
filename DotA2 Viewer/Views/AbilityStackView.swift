@@ -17,7 +17,9 @@ class AbilityStackView: DAExpandableStackView {
         sv.alignment = .fill
         sv.distribution = .fillProportionally
         return sv
-    }()    /* Public */
+    }()
+    
+    /* Public */
     var nameLabel = DAMainLabel(style: .large)
     var specialsLabel: DAMainLabel = {
         let label = DAMainLabel(style: .medium)

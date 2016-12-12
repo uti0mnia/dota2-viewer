@@ -60,7 +60,8 @@ class DAExpandableStackView: UIStackView, DAExpandableProtocol {
     }
     
     internal func addGestures() {
-        let tap = UITapGestureRecognizer(target: self, action: #selector(DAExpandableStackView.stackViewWasTapped(_:)))
+        let tap = UITapGestureRecognizer(target: self,
+                                         action: #selector(DAExpandableStackView.stackViewWasTapped(_:)))
         self.addGestureRecognizer(tap)
     }
     
