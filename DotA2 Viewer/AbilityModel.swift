@@ -78,7 +78,7 @@ class AbilityModel {
             for (key, value) in types {
                 // create the attribute strings
                 let s1 = NSAttributedString(string: "\(separator)\(key)", attributes: bold)
-                let s2 = NSAttributedString(string: "\(value.joined(separator: "/"))", attributes: normal)
+                let s2 = NSAttributedString(string: ": \(value.joined(separator: "/"))", attributes: normal)
                 
                 // add them
                 string.append(s1)
