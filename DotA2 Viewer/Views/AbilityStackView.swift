@@ -15,7 +15,7 @@ class AbilityStackView: DAExpandableStackView {
         let sv = UIStackView()
         sv.axis = .horizontal
         sv.alignment = .fill
-        sv.distribution = .fillProportionally
+        sv.distribution = .fill
         return sv
     }()
     

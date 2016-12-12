@@ -59,7 +59,7 @@ class AbilitySubStackView: UIStackView {
         // setup properties
         self.axis = .vertical
         self.alignment = .fill
-        self.distribution = .fillProportionally
+        self.distribution = .equalSpacing
         self.spacing = 8
         
         // add subview

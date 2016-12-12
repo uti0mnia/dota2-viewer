@@ -17,8 +17,8 @@ class ItemDetailVC: UIViewController {
         sv.translatesAutoresizingMaskIntoConstraints = false
         return sv
     }()
-    fileprivate var itemSV: ItemStackView = {
-        let sv = ItemStackView()
+    fileprivate lazy var itemSV: ItemStackView = {[unowned self] in
+        let sv = ItemStackView(abilitiesCount: self.model.abilities.count)
         sv.translatesAutoresizingMaskIntoConstraints = false
         return sv
     }()
@@ -39,6 +39,7 @@ class ItemDetailVC: UIViewController {
     private func configure() {
         model = ItemDetailModel(item: item)
         configureViews()
+        abilitySetup()
         setup()
     }
     
@@ -57,21 +58,50 @@ class ItemDetailVC: UIViewController {
         constraints += createConstraints(withVisual: "H:|[stackView(==scrollView)]|", withViews: ["stackView": itemSV, "scrollView": scrollView], options: .alignAllCenterX)
         constraints += createConstraints(withVisual: "V:|[stackView]|", withViews: ["stackView": itemSV], options: .alignAllCenterX)
         scrollView.addConstraints(constraints)
-        
-        // configure the expandable stack views
     }
 
     /* does the setup from the model to the vies */
     fileprivate func setup() {
+        // navigation bar
         self.navigationItem.titleView = titleLabel
+        
+        // expandable text SV
         itemSV.additionalInfoSV.textLabel.text = model.additionalInfoPretty
         itemSV.detailsSV.textLabel.attributedText = model.detailsString
         itemSV.loreSV.textLabel.text = model.lore
+        
+        // main view
         itemSV.mainView.availabilityLabel.text = model.availability.joined(separator: ", ")
         itemSV.mainView.costLabel.text = model.cost
         itemSV.mainView.itemImageView.image = model.image
         itemSV.mainView.typeImageView.image = model.typeImg
         itemSV.mainView.typeLabel.text = model.type
+    }
+    
+    /* Sets up the ablities */
+    fileprivate func abilitySetup() {
+        // we want to load the abilities asynchronously
+        for i in 0..<model.abilities.count {
+            DispatchQueue.main.async {
+                // create the ability model
+                let abilityModel = self.model.abilities[i]
+                // create the subview for the AbiltyStackView
+                let subView = AbilitySubStackView()
+                subView.abilityImageView.image = abilityModel.image
+                subView.cooldownLabel.text = abilityModel.cooldown
+                subView.dataLabel.attributedText = abilityModel.dataPrettyPring
+                subView.manaLabel.text = abilityModel.mana
+                subView.modifiersLabel.text = abilityModel.modifiers.joined(separator: "\n")
+                subView.notesSV.textLabel.text = abilityModel.notesPrettyPrint
+                subView.summaryLabel.text = abilityModel.summary
+                subView.typesLabel.attributedText = abilityModel.typesPrettyPrint
+                
+                // set the AbilitySV subview
+                self.itemSV.abilitiesSV?.subStackViews[i].nameLabel.text = abilityModel.name
+                self.itemSV.abilitiesSV?.subStackViews[i].specialsLabel.text = abilityModel.specials.joined(separator: ", ")
+                self.itemSV.abilitiesSV?.subStackViews[i].subView = subView
+            }
+        }
     }
     
     fileprivate func createConstraints(withVisual str: String, withViews views: [String: Any], options: NSLayoutFormatOptions = []) -> [NSLayoutConstraint] {

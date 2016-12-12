@@ -151,7 +151,7 @@ extension HeroDetailVC: UITableViewDelegate, UITableViewDataSource {
             cell.abilityImageView.image = ability.image
             cell.cooldownLabel.text = ability.cooldown
             cell.manaLabel.text = ability.mana
-            cell.typesLabel.text = ability.typesPrettyPrint
+            cell.typesLabel.attributedText = ability.typesPrettyPrint
             cell.summaryLabel.text = ability.summary
             cell.dataLabel.text = ability.data.joined(separator: "\n")
             cell.modifiersLabel.text = ability.modifiers.joined(separator: "\n")

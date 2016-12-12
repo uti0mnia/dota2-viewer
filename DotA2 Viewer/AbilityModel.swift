@@ -64,14 +64,31 @@ class AbilityModel {
             return types
         }
     }
-    var typesPrettyPrint: String {
+    var typesPrettyPrint: NSAttributedString {
         get {
-            var print = ""
+            // return string
+            let string = NSMutableAttributedString()
+            
+            // attributes
+            let bold = [NSFontAttributeName : UIFont(name: "Radiance-Semibold", size: 17) ]
+            let normal = [NSFontAttributeName: UIFont(name: "Radiance", size: 17)]
+            
+            // separator
+            var separator = ""
             for (key, value) in types {
-                print += "\(key)\n\(value.joined(separator: "/"))\n"
+                // create the attribute strings
+                let s1 = NSAttributedString(string: "\(separator)\(key)", attributes: bold)
+                let s2 = NSAttributedString(string: "\(value.joined(separator: "/"))", attributes: normal)
+                
+                // add them
+                string.append(s1)
+                string.append(s2)
+                
+                // change separator for the first time
+                separator = "\n"
             }
             
-            return print
+            return string
         }
     }
     
