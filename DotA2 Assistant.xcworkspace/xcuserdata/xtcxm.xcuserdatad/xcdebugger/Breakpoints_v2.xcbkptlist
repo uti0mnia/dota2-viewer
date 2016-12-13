@@ -82,11 +82,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DotA2 Viewer/Views/RecipeSubStackView.swift"
-            timestampString = "503344423.279059"
+            timestampString = "503346562.000343"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
             landmarkName = "configureMidSV()"
             landmarkType = "7">
          </BreakpointContent>

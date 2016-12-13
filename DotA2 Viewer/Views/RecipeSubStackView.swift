@@ -21,7 +21,6 @@ final class RecipeSubStackView: UIStackView {
         sv.axis = .vertical
         sv.alignment = .center
         sv.distribution = .equalSpacing
-        sv.spacing = 8
         return sv
     }()
     fileprivate var bottomSV: UIStackView?
@@ -132,7 +131,6 @@ final class RecipeSubStackView: UIStackView {
         sv.axis = .horizontal
         sv.alignment = .fill
         sv.distribution = .fillEqually
-        sv.spacing = 8
         return sv
     }
     
