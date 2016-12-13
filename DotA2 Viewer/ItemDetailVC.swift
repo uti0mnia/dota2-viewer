@@ -18,7 +18,7 @@ class ItemDetailVC: UIViewController {
         return sv
     }()
     fileprivate lazy var itemSV: ItemStackView = {[unowned self] in
-        let sv = ItemStackView(abilitiesCount: self.model.abilities.count)
+        let sv = ItemStackView(abilitiesCount: self.model.abilities.count, withRecipe: !self.model.isSingularItem)
         sv.translatesAutoresizingMaskIntoConstraints = false
         return sv
     }()
@@ -30,6 +30,7 @@ class ItemDetailVC: UIViewController {
     }()
     fileprivate var model: ItemDetailModel!
 
+    // MARK - Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         guard item != nil else { return }
@@ -40,6 +41,7 @@ class ItemDetailVC: UIViewController {
         model = ItemDetailModel(item: item)
         configureViews()
         abilitySetup()
+        recipeSetup()
         setup()
     }
     
@@ -47,6 +49,7 @@ class ItemDetailVC: UIViewController {
     fileprivate func configureViews() {
         // colours
         self.view.backgroundColor = UIColor.flatBlack()
+        
         // scrollview
         self.view.addSubview(scrollView)
         var constraints = [NSLayoutConstraint]()
@@ -103,6 +106,24 @@ class ItemDetailVC: UIViewController {
                 self.itemSV.abilitiesSV?.subStackViews[i].specialsLabel.text = abilityModel.specials.joined(separator: ", ")
                 self.itemSV.abilitiesSV?.subStackViews[i].setSubview(subView)
             }
+        }
+    }
+    
+    fileprivate func recipeSetup() {
+        // make sure we actually need to make one
+        guard !model.isSingularItem else {
+            return
+        }
+        DispatchQueue.main.async {
+            // create the Recipe Sub StackView
+            let image = self.model.image
+            let buildsFrom = self.model.buildsFrom?.map({ $0.getImage() })
+            let buildsInto = self.model.buildsInto?.map({ $0.getImage() })
+            let needsRecipe = self.model.needsRecipe
+            let subView = RecipeSubStackView(image: image, buildsFrom: buildsFrom, buildsInto: buildsInto, needsRecipe: needsRecipe)
+            
+            // add it to the RecipeStackView
+            self.itemSV.recipeSV?.setSubview(subView)
         }
     }
     

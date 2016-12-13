@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		01EF5848F67B9D68AD107BB2 /* Pods_DotA2_Assistant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98F87ADCA1FE546C146D14EF /* Pods_DotA2_Assistant.framework */; };
+		363A464D1E003E5700BA5D97 /* RecipeStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363A464C1E003E5700BA5D97 /* RecipeStackView.swift */; };
+		363A46511E006AB600BA5D97 /* uparrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 363A46501E006AB600BA5D97 /* uparrow.png */; };
 		364A6A591DC1136300FBE163 /* DAMultiLineLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364A6A581DC1136300FBE163 /* DAMultiLineLabel.swift */; };
 		366A8A091DD0F4F3000406BF /* DAMainLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366A8A081DD0F4F3000406BF /* DAMainLabel.swift */; };
 		366A8A0C1DD0F87F000406BF /* DAMainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366A8A0B1DD0F87F000406BF /* DAMainTableViewCell.swift */; };
@@ -28,6 +30,7 @@
 		368D1BC51DFAE90600314648 /* ItemDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368D1BC41DFAE90600314648 /* ItemDetailModel.swift */; };
 		368D1BCE1DFF24A800314648 /* AbilitySubStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368D1BCD1DFF24A800314648 /* AbilitySubStackView.swift */; };
 		368D1BD11DFF402200314648 /* ItemMainStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368D1BD01DFF402200314648 /* ItemMainStackView.swift */; };
+		368D1BD31E0030A800314648 /* RecipeSubStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368D1BD21E0030A800314648 /* RecipeSubStackView.swift */; };
 		36A2922C1DCA51CC006E96A8 /* Arcane.png in Resources */ = {isa = PBXBuildFile; fileRef = 36A292211DCA51CC006E96A8 /* Arcane.png */; };
 		36A2922D1DCA51CC006E96A8 /* Arnaments.png in Resources */ = {isa = PBXBuildFile; fileRef = 36A292221DCA51CC006E96A8 /* Arnaments.png */; };
 		36A2922E1DCA51CC006E96A8 /* Armor.png in Resources */ = {isa = PBXBuildFile; fileRef = 36A292231DCA51CC006E96A8 /* Armor.png */; };
@@ -108,6 +111,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		363A464C1E003E5700BA5D97 /* RecipeStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecipeStackView.swift; path = Views/RecipeStackView.swift; sourceTree = "<group>"; };
+		363A46501E006AB600BA5D97 /* uparrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = uparrow.png; sourceTree = "<group>"; };
 		364A6A581DC1136300FBE163 /* DAMultiLineLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAMultiLineLabel.swift; sourceTree = "<group>"; };
 		366A8A081DD0F4F3000406BF /* DAMainLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAMainLabel.swift; sourceTree = "<group>"; };
 		366A8A0B1DD0F87F000406BF /* DAMainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAMainTableViewCell.swift; sourceTree = "<group>"; };
@@ -128,6 +133,7 @@
 		368D1BC41DFAE90600314648 /* ItemDetailModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailModel.swift; sourceTree = "<group>"; };
 		368D1BCD1DFF24A800314648 /* AbilitySubStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AbilitySubStackView.swift; path = Views/AbilitySubStackView.swift; sourceTree = "<group>"; };
 		368D1BD01DFF402200314648 /* ItemMainStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemMainStackView.swift; path = Views/ItemMainStackView.swift; sourceTree = "<group>"; };
+		368D1BD21E0030A800314648 /* RecipeSubStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecipeSubStackView.swift; path = Views/RecipeSubStackView.swift; sourceTree = "<group>"; };
 		36A292211DCA51CC006E96A8 /* Arcane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Arcane.png; path = images/Arcane.png; sourceTree = "<group>"; };
 		36A292221DCA51CC006E96A8 /* Arnaments.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Arnaments.png; path = images/Arnaments.png; sourceTree = "<group>"; };
 		36A292231DCA51CC006E96A8 /* Armor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Armor.png; path = images/Armor.png; sourceTree = "<group>"; };
@@ -307,6 +313,8 @@
 			children = (
 				C90CE6111DFCC95A00C93539 /* ItemStackView.swift */,
 				368D1BD01DFF402200314648 /* ItemMainStackView.swift */,
+				368D1BD21E0030A800314648 /* RecipeSubStackView.swift */,
+				363A464C1E003E5700BA5D97 /* RecipeStackView.swift */,
 			);
 			name = Item;
 			sourceTree = "<group>";
@@ -504,6 +512,7 @@
 		C9FB56731DBB1110000A0824 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				363A46501E006AB600BA5D97 /* uparrow.png */,
 				C914703F1DD916D5002A042C /* recipe.png */,
 				C94F03B81DEF9464000E60CE /* Hero Images */,
 				36A292371DCA51D1006E96A8 /* Item Category */,
@@ -593,6 +602,7 @@
 				368D1BBD1DF9C7C500314648 /* AbilityCell.xib in Resources */,
 				C9172C211DD176BA00DCF88F /* dota2-logo.png in Resources */,
 				C95753CA1DD57FCF005C9F75 /* intelligence_icon.png in Resources */,
+				363A46511E006AB600BA5D97 /* uparrow.png in Resources */,
 				36A292361DCA51CC006E96A8 /* Weapons.png in Resources */,
 				C95753CC1DD57FCF005C9F75 /* strength_icon.png in Resources */,
 				C95753C81DD57FCF005C9F75 /* armor_icon.png in Resources */,
@@ -697,6 +707,7 @@
 				367E34E01DB7F9670037FA7B /* CustomTabVC.swift in Sources */,
 				C90CE60A1DFCB67500C93539 /* DAExpandableStackView.swift in Sources */,
 				C93028391DF3629F005EA297 /* HeroDetailVC.swift in Sources */,
+				363A464D1E003E5700BA5D97 /* RecipeStackView.swift in Sources */,
 				C94F03A71DEF91D3000E60CE /* Attribute+CoreDataProperties.swift in Sources */,
 				366A8A121DD1029F000406BF /* DAUIViewController.swift in Sources */,
 				C94F03B11DEF91D3000E60CE /* ListObject+CoreDataProperties.swift in Sources */,
@@ -729,6 +740,7 @@
 				C9B00F7F1DFE4E8600A15F96 /* AbilityStackView.swift in Sources */,
 				C9A6D64D1DBD25AE00580B7B /* Extensions.swift in Sources */,
 				36C0C9621DA6E25800169394 /* AppDelegate.swift in Sources */,
+				368D1BD31E0030A800314648 /* RecipeSubStackView.swift in Sources */,
 				C98F865A1DF8E4A7002FD602 /* ImageLabelView.swift in Sources */,
 				368D1BBC1DF9C7C500314648 /* AbilityCell.swift in Sources */,
 				C94F03A51DEF91D3000E60CE /* Ability+CoreDataProperties.swift in Sources */,

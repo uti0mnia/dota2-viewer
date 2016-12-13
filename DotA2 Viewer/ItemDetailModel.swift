@@ -72,6 +72,7 @@ class ItemDetailModel {
         }
     }
     var needsRecipe: Bool { get { return _needsRecipe } }
+    var isSingularItem: Bool { get { return _buildsFrom == nil && _buildsInto == nil } }
     
     /* initializer that inits the item and the items that build into and from it if applicable. */
     init(item: Item) {
@@ -95,7 +96,7 @@ class ItemDetailModel {
             }
             if let item = fetchItem(named: name.value ?? "") {
                 if _buildsFrom == nil { _buildsFrom = [Item]() }
-                _buildsInto?.append(item)
+                _buildsFrom?.append(item)
             }
         }
     }
