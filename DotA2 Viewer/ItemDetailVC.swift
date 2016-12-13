@@ -37,6 +37,7 @@ class ItemDetailVC: UIViewController {
         configure()
     }
     
+    /* configures the VC */
     private func configure() {
         model = ItemDetailModel(item: item)
         configureViews()
@@ -109,6 +110,7 @@ class ItemDetailVC: UIViewController {
         }
     }
     
+    /* Sets up the recipe */
     fileprivate func recipeSetup() {
         // make sure we actually need to make one
         guard !model.isSingularItem else {
@@ -122,9 +124,42 @@ class ItemDetailVC: UIViewController {
             let needsRecipe = self.model.needsRecipe
             let subView = RecipeSubStackView(image: image, buildsFrom: buildsFrom, buildsInto: buildsInto, needsRecipe: needsRecipe)
             
+            // enable tapping button to move to new item
+            for i in 0..<(subView.topSV?.arrangedSubviews.count ?? 0) {
+                if let btn = subView.topSV?.arrangedSubviews[i] as? RecipeButton {
+                    if let item = self.model.buildsInto?[i] {
+                        btn.item = item
+                        btn.addTarget(self, action: #selector(ItemDetailVC.recipeButtonTapped(_:)), for: .touchUpInside)
+                    }
+                }
+            }
+            for i in 0..<(subView.bottomSV?.arrangedSubviews.count ?? 0) {
+                if let btn = subView.bottomSV?.arrangedSubviews[i] as? RecipeButton {
+                    if let item = self.model.buildsFrom?[i] {
+                        btn.item = item
+                        btn.addTarget(self, action: #selector(ItemDetailVC.recipeButtonTapped(_:)), for: .touchUpInside)
+                    }
+                }
+            }
+            
             // add it to the RecipeStackView
             self.itemSV.recipeSV?.setSubview(subView)
         }
+    }
+    
+    /* Is called when recipe button is tapped */
+    @objc fileprivate func recipeButtonTapped(_ sender: RecipeButton) {
+        if let item = sender.item {
+            moveTo(item: item)
+        }
+    }
+    
+    /* Handles the move to a new item */
+    fileprivate func moveTo(item: Item) {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "ItemDetailVC") as! ItemDetailVC
+        vc.item = item
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     fileprivate func createConstraints(withVisual str: String, withViews views: [String: Any], options: NSLayoutFormatOptions = []) -> [NSLayoutConstraint] {

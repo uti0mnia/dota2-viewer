@@ -110,7 +110,9 @@ class ItemDetailModel {
     
     /* tries to fetch an item with the given name and returns the first found (should always be unique) */
     fileprivate func fetchItem(named name: String) -> Item? {
+        let predicate = NSPredicate(format: "name == %@", name)
         let fetch = NSFetchRequest<Item>(entityName: "Item")
+        fetch.predicate = predicate
         let moc = (UIApplication.shared.delegate as! AppDelegate).managedObjectContext
         do {
             let items = try moc.fetch(fetch)

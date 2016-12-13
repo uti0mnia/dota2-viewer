@@ -15,7 +15,6 @@ final class RecipeSubStackView: UIStackView {
     fileprivate var buildsFrom: [UIImage]?
     fileprivate var buildsInto: [UIImage]?
     fileprivate var needsRecipe: Bool
-    fileprivate var topSV: UIStackView?
     fileprivate var midSV: UIStackView = {
         let sv = UIStackView()
         sv.axis = .vertical
@@ -23,7 +22,8 @@ final class RecipeSubStackView: UIStackView {
         sv.distribution = .equalSpacing
         return sv
     }()
-    fileprivate var bottomSV: UIStackView?
+    var topSV: UIStackView?
+    var bottomSV: UIStackView?
     fileprivate let upArrow = UIImage(named: "uparrow.png")
     fileprivate let kArrowHeight: CGFloat = 20
     fileprivate let kImageHeight: CGFloat = 70
@@ -70,8 +70,8 @@ final class RecipeSubStackView: UIStackView {
         
         // add images to topSV
         for img in images {
-            let imgView = buildImageView(withImage: img, limitHeightTo: 70)
-            topSV?.addArrangedSubview(imgView)
+            let btn = buildRecipeButton(withImage: img, limitHeightTo: 70)
+            topSV?.addArrangedSubview(btn)
         }
         
         // add topSV to self
@@ -109,10 +109,10 @@ final class RecipeSubStackView: UIStackView {
         // init the bottomSV
         bottomSV = buildStackView()
         
-        // add image to sv
+        // add buttons to sv
         for img in images {
-            let imgView = buildImageView(withImage: img, limitHeightTo: kImageHeight)
-            bottomSV?.addArrangedSubview(imgView)
+            let btn = buildRecipeButton(withImage: img, limitHeightTo: kImageHeight)
+            bottomSV?.addArrangedSubview(btn)
         }
         
         // add recipe if necessary
@@ -147,6 +147,16 @@ final class RecipeSubStackView: UIStackView {
         
         // return image view
         return iv
+    }
+    
+    fileprivate func buildRecipeButton(withImage image: UIImage, limitHeightTo height: CGFloat) -> RecipeButton {
+        let btn = RecipeButton(type: .custom)
+        btn.imageView?.contentMode = .scaleAspectFit
+        btn.setImage(image, for: .normal)
+        let constraints = NSLayoutConstraint.constraints(withVisualFormat: "V:[btn(height)]", options: [], metrics: ["height": height], views: ["btn": btn])
+        constraints.forEach({ $0.priority = 999 })
+        btn.addConstraints(constraints)
+        return btn
     }
 
 }

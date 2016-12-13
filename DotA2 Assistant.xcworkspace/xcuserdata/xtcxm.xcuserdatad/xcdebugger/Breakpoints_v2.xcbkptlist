@@ -68,11 +68,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DotA2 Viewer/ItemDetailVC.swift"
-            timestampString = "503342206.998239"
+            timestampString = "503352197.204875"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "114"
-            endingLineNumber = "114"
+            startingLineNumber = "116"
+            endingLineNumber = "116"
             landmarkName = "recipeSetup()"
             landmarkType = "7">
          </BreakpointContent>
@@ -90,6 +90,22 @@
             startingLineNumber = "84"
             endingLineNumber = "84"
             landmarkName = "configureMidSV()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DotA2 Viewer/ItemDetailModel.swift"
+            timestampString = "503353085.121248"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
+            landmarkName = "init(item:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

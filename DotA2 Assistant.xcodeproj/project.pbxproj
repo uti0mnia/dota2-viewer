@@ -25,6 +25,7 @@
 		363A466F1E00827200BA5D97 /* PARTIAL_PIERCE_SPELL_IMMUNE.png in Resources */ = {isa = PBXBuildFile; fileRef = 363A46601E00827200BA5D97 /* PARTIAL_PIERCE_SPELL_IMMUNE.png */; };
 		363A46701E00827200BA5D97 /* PIERCE_SPELL_IMMUNE.png in Resources */ = {isa = PBXBuildFile; fileRef = 363A46611E00827200BA5D97 /* PIERCE_SPELL_IMMUNE.png */; };
 		363A46711E00827200BA5D97 /* UNIQUE_ATTACK_MODIFIER.png in Resources */ = {isa = PBXBuildFile; fileRef = 363A46621E00827200BA5D97 /* UNIQUE_ATTACK_MODIFIER.png */; };
+		363A46741E008A8F00BA5D97 /* RecipeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363A46731E008A8F00BA5D97 /* RecipeButton.swift */; };
 		364A6A591DC1136300FBE163 /* DAMultiLineLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364A6A581DC1136300FBE163 /* DAMultiLineLabel.swift */; };
 		366A8A091DD0F4F3000406BF /* DAMainLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366A8A081DD0F4F3000406BF /* DAMainLabel.swift */; };
 		366A8A0C1DD0F87F000406BF /* DAMainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366A8A0B1DD0F87F000406BF /* DAMainTableViewCell.swift */; };
@@ -143,6 +144,7 @@
 		363A46601E00827200BA5D97 /* PARTIAL_PIERCE_SPELL_IMMUNE.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PARTIAL_PIERCE_SPELL_IMMUNE.png; path = "images/Ability Specials/PARTIAL_PIERCE_SPELL_IMMUNE.png"; sourceTree = "<group>"; };
 		363A46611E00827200BA5D97 /* PIERCE_SPELL_IMMUNE.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PIERCE_SPELL_IMMUNE.png; path = "images/Ability Specials/PIERCE_SPELL_IMMUNE.png"; sourceTree = "<group>"; };
 		363A46621E00827200BA5D97 /* UNIQUE_ATTACK_MODIFIER.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = UNIQUE_ATTACK_MODIFIER.png; path = "images/Ability Specials/UNIQUE_ATTACK_MODIFIER.png"; sourceTree = "<group>"; };
+		363A46731E008A8F00BA5D97 /* RecipeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecipeButton.swift; path = Views/RecipeButton.swift; sourceTree = "<group>"; };
 		364A6A581DC1136300FBE163 /* DAMultiLineLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAMultiLineLabel.swift; sourceTree = "<group>"; };
 		366A8A081DD0F4F3000406BF /* DAMainLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAMainLabel.swift; sourceTree = "<group>"; };
 		366A8A0B1DD0F87F000406BF /* DAMainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAMainTableViewCell.swift; sourceTree = "<group>"; };
@@ -398,6 +400,7 @@
 				368D1BD01DFF402200314648 /* ItemMainStackView.swift */,
 				368D1BD21E0030A800314648 /* RecipeSubStackView.swift */,
 				363A464C1E003E5700BA5D97 /* RecipeStackView.swift */,
+				363A46731E008A8F00BA5D97 /* RecipeButton.swift */,
 			);
 			name = Item;
 			sourceTree = "<group>";
@@ -809,6 +812,7 @@
 				C94F03B61DEF91D3000E60CE /* Damage+CoreDataClass.swift in Sources */,
 				C94F03AB1DEF91D3000E60CE /* Hero+CoreDataProperties.swift in Sources */,
 				368D1BCE1DFF24A800314648 /* AbilitySubStackView.swift in Sources */,
+				363A46741E008A8F00BA5D97 /* RecipeButton.swift in Sources */,
 				C9172C181DD13F9100DCF88F /* Globals.swift in Sources */,
 				C930281D1DF33FF4005EA297 /* AbilityType+CoreDataClass.swift in Sources */,
 				C94F03A81DEF91D3000E60CE /* BaseStat+CoreDataClass.swift in Sources */,
