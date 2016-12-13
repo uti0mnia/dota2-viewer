@@ -78,6 +78,8 @@ class AbilitySubStackView: UIStackView {
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        super.observeValue(forKeyPath: keyPath, of: object, change: change, context: context)
+        
         if keyPath == "image" {
             // we want to fix up the view if there's no image
             if abilityImageView.image == nil {
