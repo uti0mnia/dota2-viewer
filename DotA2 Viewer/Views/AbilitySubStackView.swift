@@ -55,6 +55,7 @@ class AbilitySubStackView: UIStackView {
     
     
     // MARK - Methods
+    /* Private */
     fileprivate func setup() {
         // setup properties
         self.axis = .vertical
