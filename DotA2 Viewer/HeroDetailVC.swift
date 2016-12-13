@@ -155,7 +155,7 @@ extension HeroDetailVC: UITableViewDelegate, UITableViewDataSource {
             cell.summaryLabel.text = ability.summary
             cell.dataLabel.text = ability.data.joined(separator: "\n")
             cell.modifiersLabel.text = ability.modifiers.joined(separator: "\n")
-            cell.notesDetails.text = ability.notesPrettyPrint
+            cell.notesDetails.text = ability.notesPretty
             
         }
         

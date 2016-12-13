@@ -99,7 +99,7 @@ class DAExpandableStackView: UIStackView, DAExpandableProtocol {
         let space: CGFloat = isExpanded ? 8 : 0 // set the spacing required
         sv.spacing = space
         for view in sv.arrangedSubviews {
-            if let sv = view as? UIStackView {
+            if let sv = view as? UIStackView, view != topView {
                 setSpacing(for: sv)
             }
         }

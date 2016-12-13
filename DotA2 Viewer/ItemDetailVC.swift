@@ -94,16 +94,16 @@ class ItemDetailVC: UIViewController {
                 let subView = AbilitySubStackView()
                 subView.abilityImageView.image = abilityModel.image
                 subView.cooldownLabel.text = abilityModel.cooldown
-                subView.dataLabel.attributedText = abilityModel.dataPrettyPring
+                subView.dataLabel.attributedText = abilityModel.dataPretty
                 subView.manaLabel.text = abilityModel.mana
                 subView.modifiersLabel.text = abilityModel.modifiers.joined(separator: "\n")
-                subView.notesSV.textLabel.text = abilityModel.notesPrettyPrint
+                subView.notesSV.textLabel.text = abilityModel.notesPretty
                 subView.summaryLabel.text = abilityModel.summary
                 subView.typesLabel.attributedText = abilityModel.typesPrettyPrint
                 
                 // set the AbilitySV subview
                 self.itemSV.abilitiesSV?.subStackViews[i].nameLabel.text = abilityModel.name
-                self.itemSV.abilitiesSV?.subStackViews[i].specialsLabel.text = abilityModel.specials.joined(separator: ", ")
+                self.itemSV.abilitiesSV?.subStackViews[i].specialsLabel.attributedText = abilityModel.specialsPretty
                 self.itemSV.abilitiesSV?.subStackViews[i].setSubview(subView)
             }
         }
