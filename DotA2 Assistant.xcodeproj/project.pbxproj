@@ -255,6 +255,37 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		363A46521E00730900BA5D97 /* Basic */ = {
+			isa = PBXGroup;
+			children = (
+				C95753C11DD57FCF005C9F75 /* agility_icon.png */,
+				C95753C21DD57FCF005C9F75 /* armor_icon.png */,
+				C95753C31DD57FCF005C9F75 /* damage_icon.png */,
+				C95753C41DD57FCF005C9F75 /* intelligence_icon.png */,
+				C95753C51DD57FCF005C9F75 /* speed_icon.png */,
+				C95753C61DD57FCF005C9F75 /* strength_icon.png */,
+			);
+			name = Basic;
+			sourceTree = "<group>";
+		};
+		363A46531E00731000BA5D97 /* Basic */ = {
+			isa = PBXGroup;
+			children = (
+				36A292211DCA51CC006E96A8 /* Arcane.png */,
+				36A292221DCA51CC006E96A8 /* Arnaments.png */,
+				36A292231DCA51CC006E96A8 /* Armor.png */,
+				36A292241DCA51CC006E96A8 /* Artifacts.png */,
+				36A292251DCA51CC006E96A8 /* Attributes.png */,
+				36A292261DCA51CC006E96A8 /* Caster.png */,
+				36A292271DCA51CC006E96A8 /* Common.png */,
+				36A292281DCA51CC006E96A8 /* Consumables.png */,
+				36A292291DCA51CC006E96A8 /* Secret shop.png */,
+				36A2922A1DCA51CC006E96A8 /* Support.png */,
+				36A2922B1DCA51CC006E96A8 /* Weapons.png */,
+			);
+			name = Basic;
+			sourceTree = "<group>";
+		};
 		364A6A5F1DC1192E00FBE163 /* General */ = {
 			isa = PBXGroup;
 			children = (
@@ -332,17 +363,7 @@
 		36A292371DCA51D1006E96A8 /* Item Category */ = {
 			isa = PBXGroup;
 			children = (
-				36A292211DCA51CC006E96A8 /* Arcane.png */,
-				36A292221DCA51CC006E96A8 /* Arnaments.png */,
-				36A292231DCA51CC006E96A8 /* Armor.png */,
-				36A292241DCA51CC006E96A8 /* Artifacts.png */,
-				36A292251DCA51CC006E96A8 /* Attributes.png */,
-				36A292261DCA51CC006E96A8 /* Caster.png */,
-				36A292271DCA51CC006E96A8 /* Common.png */,
-				36A292281DCA51CC006E96A8 /* Consumables.png */,
-				36A292291DCA51CC006E96A8 /* Secret shop.png */,
-				36A2922A1DCA51CC006E96A8 /* Support.png */,
-				36A2922B1DCA51CC006E96A8 /* Weapons.png */,
+				363A46531E00731000BA5D97 /* Basic */,
 			);
 			name = "Item Category";
 			path = ..;
@@ -479,12 +500,7 @@
 		C94F03B81DEF9464000E60CE /* Hero Images */ = {
 			isa = PBXGroup;
 			children = (
-				C95753C11DD57FCF005C9F75 /* agility_icon.png */,
-				C95753C21DD57FCF005C9F75 /* armor_icon.png */,
-				C95753C31DD57FCF005C9F75 /* damage_icon.png */,
-				C95753C41DD57FCF005C9F75 /* intelligence_icon.png */,
-				C95753C51DD57FCF005C9F75 /* speed_icon.png */,
-				C95753C61DD57FCF005C9F75 /* strength_icon.png */,
+				363A46521E00730900BA5D97 /* Basic */,
 			);
 			name = "Hero Images";
 			sourceTree = "<group>";

@@ -46,11 +46,17 @@ class AbilitySubStackView: UIStackView {
     override init(frame: CGRect = CGRect()) {
         super.init(frame: frame)
         setup()
+        // add KVO for when ImageView image is set to remove if it's nil
+        abilityImageView.addObserver(self, forKeyPath: "image", options: .new, context: nil)
         
     }
     
     required init(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    deinit {
+        abilityImageView.removeObserver(self, forKeyPath: "image")
     }
     
     
@@ -67,6 +73,14 @@ class AbilitySubStackView: UIStackView {
         sideSV.addArrangedSubviews(views: [typesLabel, cooldownLabel, manaLabel])
         midSV.addArrangedSubviews(views: [abilityImageView, sideSV])
         self.addArrangedSubviews(views: [midSV, summaryLabel, dataLabel, modifiersLabel, notesSV])
+    }
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if keyPath == "image" {
+            if abilityImageView.image == nil {
+                abilityImageView.removeFromSuperview()
+            }
+        }
     }
 
 }
