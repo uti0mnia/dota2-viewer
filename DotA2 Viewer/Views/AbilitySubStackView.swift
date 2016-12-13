@@ -23,7 +23,7 @@ class AbilitySubStackView: UIStackView {
         let sv = UIStackView()
         sv.axis = .vertical
         sv.alignment = .fill
-        sv.distribution = .fillProportionally
+        sv.distribution = .fill
         sv.spacing = 8
         return sv
     }()
@@ -31,7 +31,7 @@ class AbilitySubStackView: UIStackView {
     /* Public */
     var abilityImageView: UIImageView = {
         let iv = UIImageView()
-        iv.contentMode = .scaleAspectFill
+        iv.contentMode = .scaleAspectFit
         return iv
     }()
     var cooldownLabel = DAMainLabel(style: .medium)
@@ -70,15 +70,19 @@ class AbilitySubStackView: UIStackView {
         self.spacing = 8
         
         // add subview
-        sideSV.addArrangedSubviews(views: [typesLabel, cooldownLabel, manaLabel])
+        let miniSV = UIStackView(arrangedSubviews: [cooldownLabel, manaLabel])
+        miniSV.axis = .vertical
+        sideSV.addArrangedSubviews(views: [typesLabel, miniSV])
         midSV.addArrangedSubviews(views: [abilityImageView, sideSV])
         self.addArrangedSubviews(views: [midSV, summaryLabel, dataLabel, modifiersLabel, notesSV])
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if keyPath == "image" {
+            // we want to fix up the view if there's no image
             if abilityImageView.image == nil {
                 abilityImageView.removeFromSuperview()
+                sideSV.axis = .horizontal
             }
         }
     }
