@@ -30,7 +30,7 @@ struct Import {
             
             // get the specials
             var abilitySpecials = [ArrayValue]()
-            for special in obj[name]["abilitySpecial"].arrayValue {
+            for special in obj[name]["ability_special"].arrayValue {
                 let abilitySpecial = NSEntityDescription.insertNewObject(forEntityName: "ArrayValue", into: moc) as! ArrayValue
                 abilitySpecial.value = special.string
                 abilitySpecials.append(abilitySpecial)

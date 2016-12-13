@@ -193,7 +193,7 @@
 		C90CE60F1DFCC18F00C93539 /* DAExpandableTextStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DAExpandableTextStackView.swift; path = Views/DAExpandableTextStackView.swift; sourceTree = "<group>"; };
 		C90CE6111DFCC95A00C93539 /* ItemStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemStackView.swift; path = Views/ItemStackView.swift; sourceTree = "<group>"; };
 		C90CE6131DFCCBA400C93539 /* ItemDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailVC.swift; sourceTree = "<group>"; };
-		C914703F1DD916D5002A042C /* recipe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = recipe.png; sourceTree = "<group>"; };
+		C914703F1DD916D5002A042C /* recipe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = recipe.png; path = images/recipe.png; sourceTree = "<group>"; };
 		C9172C171DD13F9100DCF88F /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		C9172C201DD176BA00DCF88F /* dota2-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dota2-logo.png"; sourceTree = "<group>"; };
 		C922FA8A1DD8AD27007B76F8 /* DALoreLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DALoreLabel.swift; sourceTree = "<group>"; };
@@ -303,6 +303,7 @@
 		363A46531E00731000BA5D97 /* Basic */ = {
 			isa = PBXGroup;
 			children = (
+				C914703F1DD916D5002A042C /* recipe.png */,
 				36A292211DCA51CC006E96A8 /* Arcane.png */,
 				36A292221DCA51CC006E96A8 /* Arnaments.png */,
 				36A292231DCA51CC006E96A8 /* Armor.png */,
@@ -318,7 +319,7 @@
 			name = Basic;
 			sourceTree = "<group>";
 		};
-		363A46721E00827700BA5D97 /* Specials */ = {
+		363A46721E00827700BA5D97 /* Ability Specials */ = {
 			isa = PBXGroup;
 			children = (
 				363A46541E00827200BA5D97 /* AGHANIM_UPGRADE.png */,
@@ -337,7 +338,8 @@
 				363A46611E00827200BA5D97 /* PIERCE_SPELL_IMMUNE.png */,
 				363A46621E00827200BA5D97 /* UNIQUE_ATTACK_MODIFIER.png */,
 			);
-			name = Specials;
+			name = "Ability Specials";
+			path = ..;
 			sourceTree = "<group>";
 		};
 		364A6A5F1DC1192E00FBE163 /* General */ = {
@@ -418,7 +420,6 @@
 		36A292371DCA51D1006E96A8 /* Item Category */ = {
 			isa = PBXGroup;
 			children = (
-				363A46721E00827700BA5D97 /* Specials */,
 				363A46531E00731000BA5D97 /* Basic */,
 			);
 			name = "Item Category";
@@ -584,8 +585,8 @@
 		C9FB56731DBB1110000A0824 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				363A46721E00827700BA5D97 /* Ability Specials */,
 				363A46501E006AB600BA5D97 /* uparrow.png */,
-				C914703F1DD916D5002A042C /* recipe.png */,
 				C94F03B81DEF9464000E60CE /* Hero Images */,
 				36A292371DCA51D1006E96A8 /* Item Category */,
 			);
