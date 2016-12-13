@@ -14,7 +14,7 @@ class DAExpandableTextStackView: DAExpandableStackView {
     // MARK - Initializaers
     init(name: String, frame: CGRect = CGRect()) {
         // set the main label
-        let topLabel = DAMainLabel(style: .large)
+        let topLabel = DAMainLabel(style: .xlarge)
         topLabel.textAlignment = .center
         topLabel.text = name
         topLabel.sizeToFit()

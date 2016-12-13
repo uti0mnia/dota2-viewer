@@ -11,7 +11,7 @@ import UIKit
 class AbilitiesStackView: UIStackView {
     // MARK - Properties
     fileprivate var topLabel: DAMainLabel = {
-        let label = DAMainLabel(style: .large)
+        let label = DAMainLabel(style: .xlarge)
         label.text = "Abilities"
         label.sizeToFit()
         label.textAlignment = .center
