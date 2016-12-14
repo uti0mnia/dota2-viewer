@@ -29,7 +29,7 @@ class ItemMainStackView: UIStackView {
     /* Public */
     var itemImageView: UIImageView = {
         let iv = UIImageView()
-        iv.contentMode = .scaleAspectFill
+        iv.contentMode = .scaleAspectFit
         let constraint = NSLayoutConstraint(item: iv, attribute: .height, relatedBy: .equal, toItem: iv, attribute: .width, multiplier: 1.0, constant: 1.0)
         iv.addConstraint(constraint)
         return iv

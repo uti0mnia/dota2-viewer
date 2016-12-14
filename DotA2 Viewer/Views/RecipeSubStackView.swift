@@ -25,8 +25,8 @@ final class RecipeSubStackView: UIStackView {
     var topSV: UIStackView?
     var bottomSV: UIStackView?
     fileprivate let upArrow = UIImage(named: "uparrow.png")
-    fileprivate let kArrowHeight: CGFloat = 20
-    fileprivate let kImageHeight: CGFloat = 70
+    fileprivate let kArrowHeight: CGFloat = 15
+    fileprivate let kImageHeight: CGFloat = 40
     
     
     // MARK - Initializers
