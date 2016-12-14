@@ -3,6 +3,14 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "AbilitySubStackView.observeValue(forKeyPath : String?, of : Any?, change : [NSKeyValueChangeKey : Any]?, context : UnsafeMutableRawPointer?) -&gt; ():AbilitySubStackView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "label.attributedText.string">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "ItemDetailVC.viewDidLoad() -&gt; ():ItemDetailVC.swift">
          <PersistentStrings>
             <PersistentString
@@ -20,6 +28,14 @@
       </ContextState>
       <ContextState
          contextName = "static Import.JSONImport.initialImport() -&gt; ():FirebaseImport.swift">
+      </ContextState>
+      <ContextState
+         contextName = "ItemDetailVC.(abilitySetup() -&gt; ()).(closure #1):ItemDetailVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "abilityModel.mana">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "HeroDetailVC.setup() -&gt; ():HeroDetailVC.swift">
@@ -79,13 +95,13 @@
          contextName = "HeroDetailModel.hp.getter:HeroDetailModel.swift">
          <PersistentStrings>
             <PersistentString
-               value = "strength">
-            </PersistentString>
-            <PersistentString
                value = "hp">
             </PersistentString>
             <PersistentString
                value = "_hero.baseStats?.hp?.intValue">
+            </PersistentString>
+            <PersistentString
+               value = "strength">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -108,6 +124,17 @@
             </PersistentString>
             <PersistentString
                value = "model.additionalInfoPretty">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DAIconLabel.setText() -&gt; ():DAIconLabel.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "s1.string">
+            </PersistentString>
+            <PersistentString
+               value = "self.frame.height">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

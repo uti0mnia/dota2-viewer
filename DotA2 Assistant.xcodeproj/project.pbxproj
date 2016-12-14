@@ -876,6 +876,10 @@
 		C94B1A321E01C108008BF226 /* Wind Lace.png in Resources */ = {isa = PBXBuildFile; fileRef = C94B199E1E01C108008BF226 /* Wind Lace.png */; };
 		C94B1A331E01C108008BF226 /* Wraith Band.png in Resources */ = {isa = PBXBuildFile; fileRef = C94B199F1E01C108008BF226 /* Wraith Band.png */; };
 		C94B1A341E01C108008BF226 /* Yasha.png in Resources */ = {isa = PBXBuildFile; fileRef = C94B19A01E01C108008BF226 /* Yasha.png */; };
+		C94B1A371E01C477008BF226 /* coins.png in Resources */ = {isa = PBXBuildFile; fileRef = C94B1A361E01C477008BF226 /* coins.png */; };
+		C94B1A391E01C4F7008BF226 /* DAIconLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94B1A381E01C4F7008BF226 /* DAIconLabel.swift */; };
+		C94B1A3D1E01D1BC008BF226 /* cooldown.png in Resources */ = {isa = PBXBuildFile; fileRef = C94B1A3C1E01D1BC008BF226 /* cooldown.png */; };
+		C94B1A3F1E01D41F008BF226 /* mana.png in Resources */ = {isa = PBXBuildFile; fileRef = C94B1A3E1E01D41F008BF226 /* mana.png */; };
 		C94CAB641DD7CD4F00971BC5 /* DASearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94CAB631DD7CD4F00971BC5 /* DASearchBar.swift */; };
 		C94F03A21DEF91D3000E60CE /* ArrayValue+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94F038C1DEF91D3000E60CE /* ArrayValue+CoreDataClass.swift */; };
 		C94F03A31DEF91D3000E60CE /* ArrayValue+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94F038D1DEF91D3000E60CE /* ArrayValue+CoreDataProperties.swift */; };
@@ -1798,6 +1802,10 @@
 		C94B199E1E01C108008BF226 /* Wind Lace.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Wind Lace.png"; path = "images/items/Wind Lace.png"; sourceTree = "<group>"; };
 		C94B199F1E01C108008BF226 /* Wraith Band.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Wraith Band.png"; path = "images/items/Wraith Band.png"; sourceTree = "<group>"; };
 		C94B19A01E01C108008BF226 /* Yasha.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Yasha.png; path = images/items/Yasha.png; sourceTree = "<group>"; };
+		C94B1A361E01C477008BF226 /* coins.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coins.png; sourceTree = "<group>"; };
+		C94B1A381E01C4F7008BF226 /* DAIconLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DAIconLabel.swift; path = Views/DAIconLabel.swift; sourceTree = "<group>"; };
+		C94B1A3C1E01D1BC008BF226 /* cooldown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cooldown.png; sourceTree = "<group>"; };
+		C94B1A3E1E01D41F008BF226 /* mana.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mana.png; sourceTree = "<group>"; };
 		C94CAB631DD7CD4F00971BC5 /* DASearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DASearchBar.swift; sourceTree = "<group>"; };
 		C94F038C1DEF91D3000E60CE /* ArrayValue+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ArrayValue+CoreDataClass.swift"; path = "CoreData/ArrayValue+CoreDataClass.swift"; sourceTree = "<group>"; };
 		C94F038D1DEF91D3000E60CE /* ArrayValue+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ArrayValue+CoreDataProperties.swift"; path = "CoreData/ArrayValue+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -1943,6 +1951,7 @@
 				366A8A0D1DD0F993000406BF /* DACircleImageView.swift */,
 				C90CE6091DFCB67500C93539 /* DAExpandableStackView.swift */,
 				C90CE60F1DFCC18F00C93539 /* DAExpandableTextStackView.swift */,
+				C94B1A381E01C4F7008BF226 /* DAIconLabel.swift */,
 				C922FA8A1DD8AD27007B76F8 /* DALoreLabel.swift */,
 				366A8A0B1DD0F87F000406BF /* DAMainTableViewCell.swift */,
 				366A8A0F1DD100A8000406BF /* DAMainTableView.swift */,
@@ -2969,6 +2978,17 @@
 			name = Item;
 			sourceTree = "<group>";
 		};
+		C94B1A351E01C46F008BF226 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				363A46501E006AB600BA5D97 /* uparrow.png */,
+				C94B1A3E1E01D41F008BF226 /* mana.png */,
+				C94B1A3C1E01D1BC008BF226 /* cooldown.png */,
+				C94B1A361E01C477008BF226 /* coins.png */,
+			);
+			name = Misc;
+			sourceTree = "<group>";
+		};
 		C94F03B81DEF9464000E60CE /* Hero Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -3003,7 +3023,7 @@
 			children = (
 				C94B182A1E01C09D008BF226 /* Abilities */,
 				363A46721E00827700BA5D97 /* Ability Specials */,
-				363A46501E006AB600BA5D97 /* uparrow.png */,
+				C94B1A351E01C46F008BF226 /* Misc */,
 				C94F03B81DEF9464000E60CE /* Hero Images */,
 				36A292371DCA51D1006E96A8 /* Item Category */,
 			);
@@ -3240,6 +3260,7 @@
 				C94B17D81E01C090008BF226 /* Sticky Napalm_Batrider.png in Resources */,
 				36FD56541DA6E3F5007C5A9C /* default_icon.png in Resources */,
 				C94B16AD1E01C090008BF226 /* Feral Impulse_Lycan.png in Resources */,
+				C94B1A3D1E01D1BC008BF226 /* cooldown.png in Resources */,
 				C94B165E1E01C090008BF226 /* Coup de Grace_Phantom Assassin.png in Resources */,
 				C94B16941E01C090008BF226 /* Electric Vortex_Storm Spirit.png in Resources */,
 				C94B1A0F1E01C108008BF226 /* Ring of Protection.png in Resources */,
@@ -3708,6 +3729,7 @@
 				C94B173C1E01C090008BF226 /* Nature's Call_Nature's Prophet.png in Resources */,
 				C94B16AB1E01C090008BF226 /* Fate's Edict_Oracle.png in Resources */,
 				C94B17DE1E01C090008BF226 /* Stop Sun Ray_Phoenix.png in Resources */,
+				C94B1A371E01C477008BF226 /* coins.png in Resources */,
 				C94B17671E01C090008BF226 /* Primal Roar_Beastmaster.png in Resources */,
 				C94B164A1E01C090008BF226 /* Chakram (Aghanim's Scepter)_Timbersaw.png in Resources */,
 				C94B19E11E01C108008BF226 /* Hood of Defiance.png in Resources */,
@@ -3802,6 +3824,7 @@
 				C94B16E61E01C090008BF226 /* Hoof Stomp_Centaur Warrunner.png in Resources */,
 				C94B18C61E01C0D2008BF226 /* Kunkka.png in Resources */,
 				C94B170E1E01C090008BF226 /* Leap_Mirana.png in Resources */,
+				C94B1A3F1E01D41F008BF226 /* mana.png in Resources */,
 				C94B17DC1E01C090008BF226 /* Stone Remnant_Earth Spirit.png in Resources */,
 				C94B18061E01C090008BF226 /* Unburrow_Nyx Assassin.png in Resources */,
 				C94B16C31E01C090008BF226 /* Fortune's End_Oracle.png in Resources */,
@@ -3984,6 +4007,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C94B1A391E01C4F7008BF226 /* DAIconLabel.swift in Sources */,
 				C9D0BDBE1DF8D1530099C0E4 /* HeroMainCell.swift in Sources */,
 				C96EBB601DF244EF00D6FFD0 /* DANavigationController.swift in Sources */,
 				366A8A101DD100A8000406BF /* DAMainTableView.swift in Sources */,

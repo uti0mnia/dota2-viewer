@@ -32,8 +32,8 @@ class AbilitySubStackView: UIStackView {
         iv.contentMode = .scaleAspectFit
         return iv
     }()
-    var cooldownLabel = DAMainLabel(style: .medium)
-    var manaLabel = DAMainLabel(style: .medium)
+    var cooldownLabel = DAIconLabel(style: .medium)
+    var manaLabel = DAIconLabel(style: .medium)
     var typesLabel = DAMultiLineLabel(style: .medium)
     var summaryLabel = DAMultiLineLabel(style: .medium)
     var dataLabel = DAMultiLineLabel(style: .medium)
@@ -47,6 +47,8 @@ class AbilitySubStackView: UIStackView {
         setup()
         // add KVO for when ImageView image is set to remove if it's nil
         abilityImageView.addObserver(self, forKeyPath: "image", options: .new, context: nil)
+        cooldownLabel.addObserver(self, forKeyPath: "normalText", options: .new, context: nil)
+        manaLabel.addObserver(self, forKeyPath: "normalText", options: .new, context: nil)
         
     }
     
@@ -56,6 +58,8 @@ class AbilitySubStackView: UIStackView {
     
     deinit {
         abilityImageView.removeObserver(self, forKeyPath: "image")
+        cooldownLabel.removeObserver(self, forKeyPath: "normalText")
+        manaLabel.removeObserver(self, forKeyPath: "normalText")
     }
     
     
@@ -84,6 +88,15 @@ class AbilitySubStackView: UIStackView {
                 sideSV.axis = .horizontal
             }
         }
+        
+        if keyPath == "normalText" {
+            if let lbl = object as? DAIconLabel {
+                if lbl.normalText == "" {
+                    lbl.removeFromSuperview()
+                }
+            }
+        }
+        
     }
 
 }

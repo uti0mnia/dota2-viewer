@@ -30,11 +30,9 @@ class ItemMainStackView: UIStackView {
     var itemImageView: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFit
-        let constraint = NSLayoutConstraint(item: iv, attribute: .height, relatedBy: .equal, toItem: iv, attribute: .width, multiplier: 1.0, constant: 1.0)
-        iv.addConstraint(constraint)
         return iv
     }()
-    var costLabel = DAMainLabel(style: .medium)
+    var costLabel = DAIconLabel(style: .medium)
     var availabilityLabel: DAMainLabel = {
         let label = DAMainLabel(style: .small)
         label.textAlignment = .right
@@ -61,7 +59,7 @@ class ItemMainStackView: UIStackView {
         // setup self
         self.axis = .horizontal
         self.alignment = .fill
-        self.distribution = .fill
+        self.distribution = .fillProportionally
         self.spacing = 14
         
         // add views

@@ -78,6 +78,7 @@ class ItemDetailVC: UIViewController {
         
         // main view
         itemSV.mainSV.availabilityLabel.text = model.availability.joined(separator: ", ")
+        itemSV.mainSV.costLabel.icon = UIImage(named: "coins.png")
         itemSV.mainSV.costLabel.text = model.cost
         itemSV.mainSV.itemImageView.image = model.image
         itemSV.mainSV.typeImageView.image = model.typeImg
@@ -94,8 +95,10 @@ class ItemDetailVC: UIViewController {
                 // create the subview for the AbiltyStackView
                 let subView = AbilitySubStackView()
                 subView.abilityImageView.image = abilityModel.image
+                subView.cooldownLabel.icon = UIImage(named: "cooldown.png")
                 subView.cooldownLabel.text = abilityModel.cooldown
                 subView.dataLabel.attributedText = abilityModel.dataPretty
+                subView.manaLabel.icon = UIImage(named: "mana.png")
                 subView.manaLabel.text = abilityModel.mana
                 subView.modifiersLabel.text = abilityModel.modifiers.joined(separator: "\n")
                 subView.notesSV.textLabel.text = abilityModel.notesPretty
