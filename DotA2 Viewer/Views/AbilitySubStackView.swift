@@ -16,7 +16,6 @@ class AbilitySubStackView: UIStackView {
         sv.axis = .horizontal
         sv.alignment = .fill
         sv.distribution = .fillProportionally
-        sv.spacing = 8
         return sv
     }()
     fileprivate var sideSV: UIStackView = {
@@ -24,7 +23,6 @@ class AbilitySubStackView: UIStackView {
         sv.axis = .vertical
         sv.alignment = .fill
         sv.distribution = .fill
-        sv.spacing = 8
         return sv
     }()
     
@@ -39,6 +37,7 @@ class AbilitySubStackView: UIStackView {
     var typesLabel = DAMultiLineLabel(style: .medium)
     var summaryLabel = DAMultiLineLabel(style: .medium)
     var dataLabel = DAMultiLineLabel(style: .medium)
+    var specialsLabel = DAMultiLineLabel(style: .medium)
     var modifiersLabel = DAMultiLineLabel(style: .medium)
     var notesSV = DAExpandableTextStackView(name: "Notes")
     
@@ -67,14 +66,14 @@ class AbilitySubStackView: UIStackView {
         self.axis = .vertical
         self.alignment = .fill
         self.distribution = .equalSpacing
-        self.spacing = 8
         
         // add subview
         let miniSV = UIStackView(arrangedSubviews: [cooldownLabel, manaLabel])
         miniSV.axis = .vertical
+        miniSV.distribution = .fillProportionally
         sideSV.addArrangedSubviews(views: [typesLabel, miniSV])
         midSV.addArrangedSubviews(views: [abilityImageView, sideSV])
-        self.addArrangedSubviews(views: [midSV, summaryLabel, dataLabel, modifiersLabel, notesSV])
+        self.addArrangedSubviews(views: [midSV, summaryLabel, dataLabel, specialsLabel, modifiersLabel, notesSV])
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {        

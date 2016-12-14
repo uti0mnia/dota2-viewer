@@ -3,6 +3,14 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "ItemDetailVC.viewDidLoad() -&gt; ():ItemDetailVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.item.abilities">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "DAExpandableStackView.toggle() -&gt; ():DAExpandableStackView.swift">
          <PersistentStrings>
             <PersistentString
@@ -11,10 +19,24 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "static Import.JSONImport.initialImport() -&gt; ():FirebaseImport.swift">
+      </ContextState>
+      <ContextState
          contextName = "HeroDetailVC.setup() -&gt; ():HeroDetailVC.swift">
          <PersistentStrings>
             <PersistentString
                value = "hero.roles">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "static Import.insertItem(from : (String, JSON), inContext : NSManagedObjectContext) -&gt; ():Import.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "snapshotValue[&quot;abilities&quot;][0][&quot;Shadow Walk&quot;][&quot;spe_details&quot;]">
+            </PersistentString>
+            <PersistentString
+               value = "snapshotValue[&quot;abilities&quot;][0][&quot;Shadow Walk&quot;]">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -27,30 +49,10 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "HeroDetailModel.hp.getter:HeroDetailModel.swift">
+         contextName = "static Import.JSONImport.initialImport(inMOC : NSManagedObjectContext) -&gt; ():Import.swift">
          <PersistentStrings>
             <PersistentString
-               value = "hp">
-            </PersistentString>
-            <PersistentString
-               value = "_hero.baseStats?.hp?.intValue">
-            </PersistentString>
-            <PersistentString
-               value = "strength">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "static Import.JSONImport.initialImport() -&gt; ():FirebaseImport.swift">
-      </ContextState>
-      <ContextState
-         contextName = "ItemDetailVC.setup() -&gt; ():ItemDetailVC.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "model.details">
-            </PersistentString>
-            <PersistentString
-               value = "model.additionalInfoPretty">
+               value = "json[&quot;item&quot;][&quot;Silver Edge&quot;][&quot;abilities&quot;][0][&quot;Shadow Walk&quot;][&quot;spe_details&quot;]">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -72,6 +74,42 @@
       </ContextState>
       <ContextState
          contextName = "static FirebaseImport.(importAll(toMOC : NSManagedObjectContext) -&gt; ()).(closure #1):FirebaseImport.swift">
+      </ContextState>
+      <ContextState
+         contextName = "HeroDetailModel.hp.getter:HeroDetailModel.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "strength">
+            </PersistentString>
+            <PersistentString
+               value = "hp">
+            </PersistentString>
+            <PersistentString
+               value = "_hero.baseStats?.hp?.intValue">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "static Import.createAbilities(with : [JSON], inContext : NSManagedObjectContext) -&gt; [Ability]:Import.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "obj[&quot;Shadow Walk&quot;][&quot;spe_details&quot;]">
+            </PersistentString>
+            <PersistentString
+               value = "obj[&quot;Shadow Walk&quot;]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ItemDetailVC.setup() -&gt; ():ItemDetailVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "model.details">
+            </PersistentString>
+            <PersistentString
+               value = "model.additionalInfoPretty">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
    </ContextStates>
 </VariablesViewState>

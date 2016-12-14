@@ -2,7 +2,7 @@
 //  Ability+CoreDataProperties.swift
 //  
 //
-//  Created by Casey McLewin on 2016-12-03.
+//  Created by Casey McLewin on 2016-12-13.
 //
 //
 
@@ -27,6 +27,7 @@ extension Ability {
     @NSManaged public var modifiers: NSSet?
     @NSManaged public var notes: NSOrderedSet?
     @NSManaged public var type: NSSet?
+    @NSManaged public var specialDetails: NSSet?
 
 }
 
@@ -84,6 +85,24 @@ extension Ability {
 // MARK: Generated accessors for notes
 extension Ability {
 
+    @objc(insertObject:inNotesAtIndex:)
+    @NSManaged public func insertIntoNotes(_ value: Note, at idx: Int)
+
+    @objc(removeObjectFromNotesAtIndex:)
+    @NSManaged public func removeFromNotes(at idx: Int)
+
+    @objc(insertNotes:atIndexes:)
+    @NSManaged public func insertIntoNotes(_ values: [Note], at indexes: NSIndexSet)
+
+    @objc(removeNotesAtIndexes:)
+    @NSManaged public func removeFromNotes(at indexes: NSIndexSet)
+
+    @objc(replaceObjectInNotesAtIndex:withObject:)
+    @NSManaged public func replaceNotes(at idx: Int, with value: Note)
+
+    @objc(replaceNotesAtIndexes:withNotes:)
+    @NSManaged public func replaceNotes(at indexes: NSIndexSet, with values: [Note])
+
     @objc(addNotesObject:)
     @NSManaged public func addToNotes(_ value: Note)
 
@@ -91,10 +110,10 @@ extension Ability {
     @NSManaged public func removeFromNotes(_ value: Note)
 
     @objc(addNotes:)
-    @NSManaged public func addToNotes(_ values: NSSet)
+    @NSManaged public func addToNotes(_ values: NSOrderedSet)
 
     @objc(removeNotes:)
-    @NSManaged public func removeFromNotes(_ values: NSSet)
+    @NSManaged public func removeFromNotes(_ values: NSOrderedSet)
 
 }
 
@@ -112,5 +131,22 @@ extension Ability {
 
     @objc(removeType:)
     @NSManaged public func removeFromType(_ values: NSSet)
+
+}
+
+// MARK: Generated accessors for specialDetails
+extension Ability {
+
+    @objc(addSpecialDetailsObject:)
+    @NSManaged public func addToSpecialDetails(_ value: ArrayValue)
+
+    @objc(removeSpecialDetailsObject:)
+    @NSManaged public func removeFromSpecialDetails(_ value: ArrayValue)
+
+    @objc(addSpecialDetails:)
+    @NSManaged public func addToSpecialDetails(_ values: NSSet)
+
+    @objc(removeSpecialDetails:)
+    @NSManaged public func removeFromSpecialDetails(_ values: NSSet)
 
 }

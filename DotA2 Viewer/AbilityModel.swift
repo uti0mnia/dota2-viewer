@@ -44,6 +44,36 @@ class AbilityModel {
         return string
         
     }
+    var specialDetails: [String] { get { return convert(_ability.specialDetails?.allObjects) } }
+    var specialDetailsPretty: NSAttributedString {
+        // create the return string
+        let string = NSMutableAttributedString()
+        
+        // separator
+        var separator = ""
+        
+        for special in specialDetails {
+            // split the 2 parts
+            let parts = special.characters.split(separator: " ", maxSplits: 1, omittingEmptySubsequences: true).map(String.init)
+            
+            // create the attributed string
+            let attachment = NSTextAttachment()
+            attachment.image = UIImage(named: "\(parts[0]).png")
+            let s0 = NSAttributedString(string: separator)
+            let s1 = NSAttributedString(attachment: attachment)
+            let s2 = NSAttributedString(string: " \(parts[1])")
+            
+            // append the newly created string
+            string.append(s0)
+            string.append(s1)
+            string.append(s2)
+            
+            // change the separator (for the first time)
+            separator = "\n"
+        }
+        
+        return string
+    }
     var data: [String] { get { return convert(_ability.data?.allObjects) } }
     var dataPretty: NSAttributedString {
         get {

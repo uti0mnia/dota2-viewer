@@ -29,13 +29,26 @@ struct Import {
             ability.summary = obj[name]["description"].string
             
             // get the specials
-            var abilitySpecials = [ArrayValue]()
-            for special in obj[name]["ability_special"].arrayValue {
-                let abilitySpecial = NSEntityDescription.insertNewObject(forEntityName: "ArrayValue", into: moc) as! ArrayValue
-                abilitySpecial.value = special.string
-                abilitySpecials.append(abilitySpecial)
+            if obj[name]["ability_special"].exists() {
+                var abilitySpecials = [ArrayValue]()
+                for special in obj[name]["ability_special"].arrayValue {
+                    let abilitySpecial = NSEntityDescription.insertNewObject(forEntityName: "ArrayValue", into: moc) as! ArrayValue
+                    abilitySpecial.value = special.string
+                    abilitySpecials.append(abilitySpecial)
+                }
+                ability.abilitySpecial = NSSet(array: abilitySpecials)
             }
-            ability.abilitySpecial = NSSet(array: abilitySpecials)
+            
+            // get the special details
+            if obj[name]["special_details"].exists() {
+                var specialDetails = [ArrayValue]()
+                for detail in obj[name]["special_details"].arrayValue {
+                    let specialDetail = NSEntityDescription.insertNewObject(forEntityName: "ArrayValue", into: moc) as! ArrayValue
+                    specialDetail.value = detail.string
+                    specialDetails.append(specialDetail)
+                }
+                ability.specialDetails = NSSet(array: specialDetails)
+            }
             
             // get the data for the ability
             var abilityDatas = [ArrayValue]()

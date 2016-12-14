@@ -2,7 +2,7 @@
 //  Item+CoreDataProperties.swift
 //  
 //
-//  Created by McLewin, Casey on 2016-12-09.
+//  Created by Casey McLewin on 2016-12-13.
 //
 //
 
@@ -21,10 +21,10 @@ extension Item {
     @NSManaged public var type: String?
     @NSManaged public var abilities: NSOrderedSet?
     @NSManaged public var additionalInfo: NSSet?
-    @NSManaged public var details: NSSet?
     @NSManaged public var availability: NSSet?
     @NSManaged public var buildsFrom: NSSet?
     @NSManaged public var buildsInto: NSSet?
+    @NSManaged public var details: NSSet?
 
 }
 
@@ -80,23 +80,6 @@ extension Item {
 
 }
 
-// MARK: Generated accessors for details
-extension Item {
-
-    @objc(addDetailsObject:)
-    @NSManaged public func addToDetails(_ value: ItemDetail)
-
-    @objc(removeDetailsObject:)
-    @NSManaged public func removeFromDetails(_ value: ItemDetail)
-
-    @objc(addDetails:)
-    @NSManaged public func addToDetails(_ values: NSSet)
-
-    @objc(removeDetails:)
-    @NSManaged public func removeFromDetails(_ values: NSSet)
-
-}
-
 // MARK: Generated accessors for availability
 extension Item {
 
@@ -145,5 +128,22 @@ extension Item {
 
     @objc(removeBuildsInto:)
     @NSManaged public func removeFromBuildsInto(_ values: NSSet)
+
+}
+
+// MARK: Generated accessors for details
+extension Item {
+
+    @objc(addDetailsObject:)
+    @NSManaged public func addToDetails(_ value: ItemDetail)
+
+    @objc(removeDetailsObject:)
+    @NSManaged public func removeFromDetails(_ value: ItemDetail)
+
+    @objc(addDetails:)
+    @NSManaged public func addToDetails(_ values: NSSet)
+
+    @objc(removeDetails:)
+    @NSManaged public func removeFromDetails(_ values: NSSet)
 
 }

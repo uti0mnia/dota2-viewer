@@ -50,7 +50,6 @@ final class RecipeSubStackView: UIStackView {
         self.axis = .vertical
         self.alignment = .fill
         self.distribution = .fillProportionally
-        self.spacing = 8
         
         // configure the stack views
         configureTopSV()

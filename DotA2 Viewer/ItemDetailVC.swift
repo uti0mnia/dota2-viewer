@@ -99,6 +99,7 @@ class ItemDetailVC: UIViewController {
                 subView.manaLabel.text = abilityModel.mana
                 subView.modifiersLabel.text = abilityModel.modifiers.joined(separator: "\n")
                 subView.notesSV.textLabel.text = abilityModel.notesPretty
+                subView.specialsLabel.attributedText = abilityModel.specialDetailsPretty
                 subView.summaryLabel.text = abilityModel.summary
                 subView.typesLabel.attributedText = abilityModel.typesPrettyPrint
                 
