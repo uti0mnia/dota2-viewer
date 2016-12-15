@@ -77,7 +77,7 @@ class ItemDetailVC: UIViewController {
         itemSV.loreSV.textLabel.text = model.lore
         
         // main view
-        itemSV.mainSV.availabilityLabel.text = model.availability.joined(separator: ", ")
+        itemSV.mainSV.availabilityLabel.attributedText = model.availabilityPretty
         itemSV.mainSV.costLabel.icon = UIImage(named: "coins.png")
         itemSV.mainSV.costLabel.text = model.cost
         itemSV.mainSV.itemImageView.image = model.image

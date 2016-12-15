@@ -3,6 +3,14 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "AbilitiesStackView.configure() -&gt; ():AbilitiesStackView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.bottomSV.subviews">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "AbilitySubStackView.observeValue(forKeyPath : String?, of : Any?, change : [NSKeyValueChangeKey : Any]?, context : UnsafeMutableRawPointer?) -&gt; ():AbilitySubStackView.swift">
          <PersistentStrings>
             <PersistentString
@@ -135,6 +143,14 @@
             </PersistentString>
             <PersistentString
                value = "self.frame.height">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DAExpandableStackView.setSubview(UIView) -&gt; ():DAExpandableStackView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "isExpanded">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

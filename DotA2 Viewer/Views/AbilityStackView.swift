@@ -39,6 +39,16 @@ class AbilityStackView: DAExpandableStackView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override internal func setSpacing(for sv: UIStackView) {
+        super.setSpacing(for: sv)
+        
+        
+        // set the margins
+        let margins: CGFloat = isExpanded ? 4 : 0
+        self.layoutMargins = UIEdgeInsetsMake(margins, 0, margins, 0)
+        self.isLayoutMarginsRelativeArrangement = true
+    }
+    
     
 
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AbilitiesStackView: UIStackView {
+class AbilitiesStackView: DAExpandableStackView {
     // MARK - Properties
     fileprivate var topLabel: DAMainLabel = {
         let label = DAMainLabel(style: .xlarge)
@@ -17,6 +17,13 @@ class AbilitiesStackView: UIStackView {
         label.textAlignment = .center
         return label
     }()
+    fileprivate var bottomSV: UIStackView = {
+        let sv = UIStackView()
+        sv.axis = .vertical
+        sv.alignment = .fill
+        sv.distribution = .equalSpacing
+        return sv
+    }()
     fileprivate var count: Int = 0
     var subStackViews = [AbilityStackView]()
     
@@ -24,8 +31,7 @@ class AbilitiesStackView: UIStackView {
     // MARK - Initializers
     init(frame: CGRect = CGRect(), count: Int = 0) {
         self.count = count
-        super.init(frame: frame)
-        setup()
+        super.init(topView: topLabel, subView: nil, expanded: false, frame: frame)
         configure()
     }
     
@@ -34,22 +40,56 @@ class AbilitiesStackView: UIStackView {
     }
     
     // MARK - Methods
+    override internal func toggle() {
+        if let sv = self.subView as? UIStackView {
+            for view in sv.arrangedSubviews {
+                if let abilitySV = view as? AbilityStackView {
+                    if abilitySV.isExpanded {
+                        abilitySV.forceExpanded(false)
+                    }
+                }
+            }
+        }
+        super.toggle()
+    }
+    
+    override internal func setSpacing(for sv: UIStackView) {
+        super.setSpacing(for: sv)
+        bottomSV.spacing = 0
+    }
+    
+    
     fileprivate func configure() {
-        self.addArrangedSubview(topLabel)
-        
         // create <count> expandable stack views and add them
         for _ in 0..<self.count {
             let sv = AbilityStackView()
             subStackViews.append(sv)
+            bottomSV.addArrangedSubview(sv)
         }
-        self.addArrangedSubviews(views: subStackViews)
+        
+        self.setSubview(bottomSV)
     }
     
-    fileprivate func setup() {
-        self.axis = .vertical
-        self.alignment = .fill
-        self.distribution = .equalSpacing
-        self.spacing = 8
-    }
+    
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

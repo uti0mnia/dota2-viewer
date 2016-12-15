@@ -13,12 +13,12 @@ protocol DAExpandableProtocol {
     func toggle()
 }
 
-class DAExpandableStackView: UIStackView, DAExpandableProtocol {
+class DAExpandableStackView: DAStackView, DAExpandableProtocol {
     // MARK - Properties
     /* Internal */
     internal var topView: UIView!
     internal var isExpanded = true
-    fileprivate var subView: UIView?
+    internal var subView: UIView?
     
     /* Public */
     
@@ -94,13 +94,20 @@ class DAExpandableStackView: UIStackView, DAExpandableProtocol {
         }
     }
     
+    func forceExpanded(_ expanded: Bool) {
+        isExpanded = !expanded
+        toggle()
+    }
+    
     /* used to set the spacing when hidding the subviews so there are no issues */
     internal func setSpacing(for sv: UIStackView) {
         let space: CGFloat = isExpanded ? 8 : 0 // set the spacing required
         sv.spacing = space
         for view in sv.arrangedSubviews {
             if let sv = view as? UIStackView, view != topView {
-                setSpacing(for: sv)
+                if !(sv is DAExpandableStackView) {
+                    setSpacing(for: sv)
+                }
             }
         }
     }

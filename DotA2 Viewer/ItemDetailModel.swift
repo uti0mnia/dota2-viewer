@@ -42,6 +42,30 @@ class ItemDetailModel {
         }
     }
     var availability: [String] { get { return convert(_item.availability?.allObjects) } }
+    var availabilityPretty: NSAttributedString {
+        get {
+            // init the return string
+            let string = NSMutableAttributedString()
+            var spacing = ""
+            
+            // for each string create the image
+            for str in availability {
+                // create text attachment
+                let attachment = NSTextAttachment()
+                attachment.image = UIImage(named: "\(str).png")
+                
+                let s0 = NSAttributedString(string: spacing)
+                let s1 = NSAttributedString(attachment: attachment)
+                string.append(s0)
+                string.append(s1)
+                
+                // fix facing 
+                spacing = "\t"
+            }
+            
+            return string
+        }
+    }
     var buildsInto: [Item]? { get { return _buildsInto } }
     var buildsFrom: [Item]? { get { return _buildsFrom } }
     var details: [String: [String]] {

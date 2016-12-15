@@ -64,6 +64,9 @@
 		36C0C96F1DA6E25800169394 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36C0C96D1DA6E25800169394 /* LaunchScreen.storyboard */; };
 		36C7DF241DC8F2C800251705 /* RSSFeedHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C7DF231DC8F2C800251705 /* RSSFeedHelper.swift */; };
 		36FD56541DA6E3F5007C5A9C /* default_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 36FD56511DA6E3F5007C5A9C /* default_icon.png */; };
+		C90A79371E0218680068C79C /* SECRET_SHOP.png in Resources */ = {isa = PBXBuildFile; fileRef = C90A79351E0218680068C79C /* SECRET_SHOP.png */; };
+		C90A79381E0218680068C79C /* SIDE_SHOP.png in Resources */ = {isa = PBXBuildFile; fileRef = C90A79361E0218680068C79C /* SIDE_SHOP.png */; };
+		C90A793A1E021EE00068C79C /* DAStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90A79391E021EE00068C79C /* DAStackView.swift */; };
 		C90CE60A1DFCB67500C93539 /* DAExpandableStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90CE6091DFCB67500C93539 /* DAExpandableStackView.swift */; };
 		C90CE6101DFCC18F00C93539 /* DAExpandableTextStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90CE60F1DFCC18F00C93539 /* DAExpandableTextStackView.swift */; };
 		C90CE6121DFCC95A00C93539 /* ItemStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90CE6111DFCC95A00C93539 /* ItemStackView.swift */; };
@@ -990,6 +993,9 @@
 		764636FE62A54B2886530601 /* Pods-DotA2 AssistantTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DotA2 AssistantTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DotA2 AssistantTests/Pods-DotA2 AssistantTests.debug.xcconfig"; sourceTree = "<group>"; };
 		860C63C4F37CD7891AF00E52 /* Pods-DotA2 Assistant.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DotA2 Assistant.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DotA2 Assistant/Pods-DotA2 Assistant.debug.xcconfig"; sourceTree = "<group>"; };
 		98F87ADCA1FE546C146D14EF /* Pods_DotA2_Assistant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DotA2_Assistant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C90A79351E0218680068C79C /* SECRET_SHOP.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SECRET_SHOP.png; sourceTree = "<group>"; };
+		C90A79361E0218680068C79C /* SIDE_SHOP.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SIDE_SHOP.png; sourceTree = "<group>"; };
+		C90A79391E021EE00068C79C /* DAStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DAStackView.swift; path = Views/DAStackView.swift; sourceTree = "<group>"; };
 		C90CE6091DFCB67500C93539 /* DAExpandableStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DAExpandableStackView.swift; path = Views/DAExpandableStackView.swift; sourceTree = "<group>"; };
 		C90CE60F1DFCC18F00C93539 /* DAExpandableTextStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DAExpandableTextStackView.swift; path = Views/DAExpandableTextStackView.swift; sourceTree = "<group>"; };
 		C90CE6111DFCC95A00C93539 /* ItemStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemStackView.swift; path = Views/ItemStackView.swift; sourceTree = "<group>"; };
@@ -1962,6 +1968,7 @@
 				366A8A151DD103F1000406BF /* DATabBar.swift */,
 				364A6A581DC1136300FBE163 /* DAMultiLineLabel.swift */,
 				C94CAB631DD7CD4F00971BC5 /* DASearchBar.swift */,
+				C90A79391E021EE00068C79C /* DAStackView.swift */,
 			);
 			name = General;
 			sourceTree = "<group>";
@@ -2981,6 +2988,8 @@
 		C94B1A351E01C46F008BF226 /* Misc */ = {
 			isa = PBXGroup;
 			children = (
+				C90A79361E0218680068C79C /* SIDE_SHOP.png */,
+				C90A79351E0218680068C79C /* SECRET_SHOP.png */,
 				363A46501E006AB600BA5D97 /* uparrow.png */,
 				C94B1A3E1E01D41F008BF226 /* mana.png */,
 				C94B1A3C1E01D1BC008BF226 /* cooldown.png */,
@@ -3692,6 +3701,7 @@
 				C94B17BA1E01C090008BF226 /* Soul Rip_Undying.png in Resources */,
 				C94B18F31E01C0D2008BF226 /* Storm Spirit.png in Resources */,
 				C94B19A51E01C108008BF226 /* Arcane Boots.png in Resources */,
+				C90A79381E0218680068C79C /* SIDE_SHOP.png in Resources */,
 				C94B18CE1E01C0D2008BF226 /* Luna.png in Resources */,
 				C94B19D31E01C108008BF226 /* Force Staff.png in Resources */,
 				C94B16D01E01C090008BF226 /* Glimpse_Disruptor.png in Resources */,
@@ -3819,6 +3829,7 @@
 				C94B17231E01C090008BF226 /* Mana Shield_Medusa.png in Resources */,
 				C98F865B1DF8E4A7002FD602 /* ImageLabelView.xib in Resources */,
 				36A2922D1DCA51CC006E96A8 /* Arnaments.png in Resources */,
+				C90A79371E0218680068C79C /* SECRET_SHOP.png in Resources */,
 				C94B16F31E01C090008BF226 /* Ignite_Ogre Magi.png in Resources */,
 				C94B19C41E01C108008BF226 /* Desolator.png in Resources */,
 				C94B16E61E01C090008BF226 /* Hoof Stomp_Centaur Warrunner.png in Resources */,
@@ -4029,6 +4040,7 @@
 				C94F03B21DEF91D3000E60CE /* Note+CoreDataClass.swift in Sources */,
 				368D1BB61DF9BD6D00314648 /* DACollapsibleLabelCell.swift in Sources */,
 				C9B00F7D1DFE4BA600A15F96 /* AbilitiesStackView.swift in Sources */,
+				C90A793A1E021EE00068C79C /* DAStackView.swift in Sources */,
 				368D1BB31DF8815D00314648 /* HeroDetailModel.swift in Sources */,
 				367E34E01DB7F9670037FA7B /* CustomTabVC.swift in Sources */,
 				C90CE60A1DFCB67500C93539 /* DAExpandableStackView.swift in Sources */,

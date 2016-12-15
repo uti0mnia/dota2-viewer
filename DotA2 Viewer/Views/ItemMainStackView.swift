@@ -30,11 +30,13 @@ class ItemMainStackView: UIStackView {
     var itemImageView: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFit
+        iv.layer.borderColor = UIColor.flatWhite().cgColor
+        iv.layer.borderWidth = 2.0
         return iv
     }()
     var costLabel = DAIconLabel(style: .medium)
-    var availabilityLabel: DAMainLabel = {
-        let label = DAMainLabel(style: .small)
+    var availabilityLabel: DAIconLabel = {
+        let label = DAIconLabel(style: .small)
         label.textAlignment = .right
         return label
     } ()

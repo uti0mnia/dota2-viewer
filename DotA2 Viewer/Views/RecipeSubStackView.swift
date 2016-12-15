@@ -69,7 +69,7 @@ final class RecipeSubStackView: UIStackView {
         
         // add images to topSV
         for img in images {
-            let btn = buildRecipeButton(withImage: img, limitHeightTo: 70)
+            let btn = buildRecipeButton(withImage: img, limitHeightTo: kImageHeight)
             topSV?.addArrangedSubview(btn)
         }
         
