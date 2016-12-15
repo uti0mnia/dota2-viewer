@@ -26,12 +26,11 @@ class ItemMainStackView: DAStackView {
         sv.distribution = .fillProportionally
         return sv
     }()
+    
     /* Public */
     var itemImageView: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFit
-        iv.layer.borderColor = UIColor.flatWhite().cgColor
-        iv.layer.borderWidth = 2.0
         return iv
     }()
     var costLabel = DAIconLabel(style: .medium)
