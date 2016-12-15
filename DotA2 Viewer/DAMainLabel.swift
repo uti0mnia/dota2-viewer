@@ -15,11 +15,13 @@ enum DAMainLabelStyle: CGFloat {
 
 class DAMainLabel: UILabel {
     
-    var style: DAMainLabelStyle = .medium
+    internal var style: DAMainLabelStyle = .medium
+    internal var isBold: Bool = false
     
-    init(frame: CGRect = CGRect(), style: DAMainLabelStyle = .medium) {
-        super.init(frame: frame)
+    init(frame: CGRect = CGRect(), style: DAMainLabelStyle = .medium, bold: Bool = false) {
         self.style = style
+        self.isBold = bold
+        super.init(frame: frame)
         commonInit()
     }
     
@@ -33,7 +35,11 @@ class DAMainLabel: UILabel {
         self.textColor = UIColor.flatWhite()
         
         // the font
-        self.font = UIFont(name: kRadiance.fontName, size: style.rawValue)
+        if isBold {
+            self.font = UIFont(name: kRadianceBold.fontName, size: style.rawValue)
+        } else {
+            self.font = UIFont(name: kRadiance.fontName, size: style.rawValue)
+        }
         
         // make sure the text fits
         self.adjustsFontSizeToFitWidth = true

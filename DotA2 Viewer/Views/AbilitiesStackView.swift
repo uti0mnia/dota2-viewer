@@ -11,7 +11,7 @@ import UIKit
 class AbilitiesStackView: DAExpandableStackView {
     // MARK - Properties
     fileprivate var topLabel: DAMainLabel = {
-        let label = DAMainLabel(style: .xlarge)
+        let label = DAMainLabel(style: .large)
         label.text = "Abilities"
         label.sizeToFit()
         return label

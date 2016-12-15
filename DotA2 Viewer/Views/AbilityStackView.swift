@@ -20,7 +20,7 @@ class AbilityStackView: DAExpandableStackView {
     }()
     
     /* Public */
-    var nameLabel = DAMainLabel(style: .large)
+    var nameLabel = DAMainLabel(style: .medium, bold: true)
     var specialsLabel: DAMainLabel = {
         let label = DAMainLabel(style: .medium)
         label.textAlignment = .right

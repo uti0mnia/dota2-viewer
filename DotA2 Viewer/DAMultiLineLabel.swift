@@ -10,8 +10,8 @@ import UIKit
 
 class DAMultiLineLabel: DAMainLabel {
 
-    override init(frame: CGRect = CGRect(), style: DAMainLabelStyle = .medium) {
-        super.init(frame: frame, style: style)
+    override init(frame: CGRect = CGRect(), style: DAMainLabelStyle = .medium, bold: Bool = false) {
+        super.init(frame: frame, style: style, bold: bold)
         commonInit()
     }
     
