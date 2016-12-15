@@ -36,8 +36,7 @@ class DAExpandableTextStackView: DAExpandableStackView {
         textLabel.removeObserver(self, forKeyPath: "text")
     }
     
-
-    // MARK - Methods
+    
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if keyPath == "text" {
             if textLabel.text == "" {

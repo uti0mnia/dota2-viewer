@@ -68,6 +68,7 @@ class ItemMainStackView: DAStackView {
         topSV.addArrangedSubviews(views: [costLabel, availabilityLabel])
         rightSV.addArrangedSubviews(views: [topSV, typeLabel, typeImageView])
         self.addArrangedSubviews(views: [itemImageView, rightSV])
+        
     }
     
     

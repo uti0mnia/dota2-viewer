@@ -32,6 +32,7 @@ class AbilitiesStackView: DAExpandableStackView {
     init(frame: CGRect = CGRect(), count: Int = 0) {
         self.count = count
         super.init(topView: topLabel, subView: nil, expanded: false, frame: frame)
+        
         configure()
     }
     
