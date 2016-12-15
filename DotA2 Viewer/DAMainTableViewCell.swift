@@ -9,61 +9,63 @@
 import UIKit
 
 class DAMainTableViewCell: UITableViewCell {
-    
-    var objectImageView: DACircleImageView = {
-        let img = DACircleImageView()
-        img.translatesAutoresizingMaskIntoConstraints = false
-        return img
+    // MARK - Properties
+    /* Private */
+    fileprivate var fullSV: UIStackView = {
+        let sv = UIStackView()
+        sv.axis = .horizontal
+        sv.alignment = .fill
+        sv.distribution = .fill
+        sv.spacing = 8
+        sv.translatesAutoresizingMaskIntoConstraints = false
+        return sv
+    }()
+    fileprivate var rightSV: UIStackView = {
+        let sv = UIStackView()
+        sv.axis = .vertical
+        sv.alignment = .leading
+        sv.distribution = .fillEqually
+        return sv
     }()
     
-    var objectName: DAMainCellLabel = {
-        let lbl = DAMainCellLabel()
-        lbl.translatesAutoresizingMaskIntoConstraints = false
-        return lbl
-    }()
+    /* Public */
+    var circleImageView = DARoundedImageView()
+    var mainLabel = DAMainLabel(style: .medium)
+    var detailLabel = DAMultiLineLabel(style: .small)
     
-    
+    // MARK - Initializers
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        self.commonInit()
+        self.setup()
     }
     
     required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        self.commonInit()
+        fatalError("init(coder:) has not been implemented")
     }
     
-    fileprivate func commonInit() {
-        // add the views
-        self.contentView.addSubview(objectImageView)
-        self.contentView.addSubview(objectName)
+    // MARK - Methods
+    fileprivate func setup() {
+        // setup the stack views
+        rightSV.addArrangedSubviews(views: [mainLabel, detailLabel])
+        fullSV.addArrangedSubviews(views: [circleImageView, rightSV])
+        self.contentView.addSubview(fullSV)
         
-        // set the layout
-        let viewConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:|-spl-[img]-spr-[label]|",
-                                                             options: .alignAllCenterY,
-                                                             metrics: ["spl": kTableViewCellImageSpaceL, "spr": kTableViewCellImageSpaceR],
-                                                             views: ["img": objectImageView, "label": objectName])
+        // set up constraints
+        let wConstraint = NSLayoutConstraint(item: circleImageView, attribute: .width, relatedBy: .equal, toItem: circleImageView, attribute: .height, multiplier: 1.3, constant: 0)
+        let hConstraint = NSLayoutConstraint(item: circleImageView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 50)
+        circleImageView.addConstraints([wConstraint, hConstraint])
+        var constraints = createConstraints("V:|-[stackView]-|", views: ["stackView": fullSV])
+        constraints += createConstraints("H:|-[stackView]-|", views: ["stackView": fullSV])
+        self.contentView.addConstraints(constraints)
         
-        let v1 = NSLayoutConstraint.constraints(withVisualFormat: "V:|-(2)-[img]-(2)-|",
-                                                options: [],
-                                                metrics: nil,
-                                                views: ["img": objectImageView])
+        // setup the separators
+        self.separatorInset = UIEdgeInsetsMake(0, -10, 0, 0)
         
-        let v2 = NSLayoutConstraint.constraints(withVisualFormat: "V:|[label]|",
-                                                options: [],
-                                                metrics: nil,
-                                                views: ["label": objectName])
+    }
+    
+    fileprivate func createConstraints(_ format: String, views: [String: Any]) -> [NSLayoutConstraint] {
+        return NSLayoutConstraint.constraints(withVisualFormat: format, options: [], metrics: nil, views: views)
         
-        self.contentView.addConstraints(viewConstraints + v1 + v2)
-        
-        // image constraint
-        let constraint = NSLayoutConstraint(item: objectImageView, attribute: .width, relatedBy: .equal, toItem: objectImageView, attribute: .height, multiplier: 1, constant: 1)
-        objectImageView.addConstraint(constraint)
-        
-        // set the colours
-        self.backgroundColor = UIColor.clear
-        self.selectionStyle = .gray
-        objectName.textColor = UIColor.flatMint()
     }
 
 }

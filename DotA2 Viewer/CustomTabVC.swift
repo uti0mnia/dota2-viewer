@@ -71,6 +71,11 @@ class CustomTabVC: DAUIViewController {
         titleView.sizeToFit()
         self.navigationItem.titleView = titleView
         
+        // table view
+        tableView.register(DAMainTableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.estimatedRowHeight = 100
+        tableView.rowHeight = UITableViewAutomaticDimension
+        
         // hide the back button when pushing
         let btn = UIBarButtonItem()
         btn.title = ""
@@ -151,8 +156,10 @@ extension CustomTabVC: UITableViewDelegate, UITableViewDataSource {
     /* helper function to configure the cell */
     fileprivate func configure(cell: DAMainTableViewCell, atIndexPath indexPath: IndexPath) {
         let obj = fetchedResultsController.object(at: indexPath)
-        cell.objectImageView.image = obj.getImage()
-        cell.textLabel?.text = obj.name
+        cell.circleImageView.image = obj.getImage()
+        cell.mainLabel.text = obj.name
+        cell.detailLabel.attributedText = obj.detailPretty
+        
         cell.backgroundColor = UIColor.clear // for  iPad (bug < iOS 10)
     }
     
@@ -234,8 +241,6 @@ extension CustomTabVC: NSFetchedResultsControllerDelegate {
                     newIndexPath: IndexPath?) {
         switch type {
         case .move:
-            let cell = tableView.cellForRow(at: indexPath!) as! DAMainTableViewCell
-            configure(cell: cell, atIndexPath: indexPath!)
             tableView.reloadRows(at: [indexPath!], with: .fade)
         case .insert:
             tableView.insertRows(at: [newIndexPath!], with: .fade)

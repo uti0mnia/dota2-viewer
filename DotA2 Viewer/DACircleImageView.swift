@@ -9,33 +9,30 @@
 import UIKit
 import ChameleonFramework
 
-class DACircleImageView: UIImageView {
+class DARoundedImageView: UIImageView {
+    // MARK - Properties
+    fileprivate var radius: CGFloat!
     
-    override init(frame: CGRect) {
+    init(frame: CGRect = CGRect(), radius: CGFloat = 2) {
+        self.radius = radius
         super.init(frame: frame)
-        commonInit()
-    }
-    
-    convenience init() {
-        self.init(frame: CGRect())
+        setup()
     }
     
     required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        commonInit()
+        fatalError("init(coder:) has not been implemented")
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        // set the image to be a cicle
-        // we need to do this in layout subview since we don't know it's frame until its image is set
-        self.layer.cornerRadius = min(self.frame.height, self.frame.width) / 2
+    func setup() {
+        // set properties
+        self.contentMode = .scaleAspectFill
         self.clipsToBounds = true
-    }
-    
-    func commonInit() {
+        
+        // set the corners
+        self.layer.cornerRadius = radius
+        
         // set the contour to be white
-        self.layer.borderWidth = 1
+        self.layer.borderWidth = 0
         self.layer.borderColor = UIColor.flatWhite().cgColor
     }
 

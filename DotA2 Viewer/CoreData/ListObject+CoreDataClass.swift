@@ -23,4 +23,6 @@ public class ListObject: NSManagedObject {
         self.didAccessValue(forKey: "firstLetter")
         return firstLetter
     }
+    
+    var detailPretty: NSAttributedString { get { return NSAttributedString() } }
 }
