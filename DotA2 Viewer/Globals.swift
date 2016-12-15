@@ -8,6 +8,8 @@
 
 import UIKit
 
+// constants
+let π = CGFloat(M_PI)
 let kTableViewCellImageSpaceR: CGFloat = 10
 let kTableViewCellImageSpaceL: CGFloat = 8
 let kDotaFontLarge = UIFont(name: "OptimusPrincepsSemiBold", size: 16)!

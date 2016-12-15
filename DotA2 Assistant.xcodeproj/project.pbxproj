@@ -27,6 +27,7 @@
 		363A46711E00827200BA5D97 /* UNIQUE_ATTACK_MODIFIER.png in Resources */ = {isa = PBXBuildFile; fileRef = 363A46621E00827200BA5D97 /* UNIQUE_ATTACK_MODIFIER.png */; };
 		363A46741E008A8F00BA5D97 /* RecipeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363A46731E008A8F00BA5D97 /* RecipeButton.swift */; };
 		364A6A591DC1136300FBE163 /* DAMultiLineLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364A6A581DC1136300FBE163 /* DAMultiLineLabel.swift */; };
+		365F75481E02E01D00F928B0 /* sidearrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 365F75471E02E01D00F928B0 /* sidearrow.png */; };
 		366A8A091DD0F4F3000406BF /* DAMainLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366A8A081DD0F4F3000406BF /* DAMainLabel.swift */; };
 		366A8A0C1DD0F87F000406BF /* DAMainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366A8A0B1DD0F87F000406BF /* DAMainTableViewCell.swift */; };
 		366A8A0E1DD0F993000406BF /* DACircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366A8A0D1DD0F993000406BF /* DACircleImageView.swift */; };
@@ -950,6 +951,7 @@
 		363A46621E00827200BA5D97 /* UNIQUE_ATTACK_MODIFIER.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = UNIQUE_ATTACK_MODIFIER.png; path = "images/Ability Specials/UNIQUE_ATTACK_MODIFIER.png"; sourceTree = "<group>"; };
 		363A46731E008A8F00BA5D97 /* RecipeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecipeButton.swift; path = Views/RecipeButton.swift; sourceTree = "<group>"; };
 		364A6A581DC1136300FBE163 /* DAMultiLineLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAMultiLineLabel.swift; sourceTree = "<group>"; };
+		365F75471E02E01D00F928B0 /* sidearrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sidearrow.png; sourceTree = "<group>"; };
 		366A8A081DD0F4F3000406BF /* DAMainLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAMainLabel.swift; sourceTree = "<group>"; };
 		366A8A0B1DD0F87F000406BF /* DAMainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAMainTableViewCell.swift; sourceTree = "<group>"; };
 		366A8A0D1DD0F993000406BF /* DACircleImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DACircleImageView.swift; sourceTree = "<group>"; };
@@ -2991,6 +2993,7 @@
 				C90A79361E0218680068C79C /* SIDE_SHOP.png */,
 				C90A79351E0218680068C79C /* SECRET_SHOP.png */,
 				363A46501E006AB600BA5D97 /* uparrow.png */,
+				365F75471E02E01D00F928B0 /* sidearrow.png */,
 				C94B1A3E1E01D41F008BF226 /* mana.png */,
 				C94B1A3C1E01D1BC008BF226 /* cooldown.png */,
 				C94B1A361E01C477008BF226 /* coins.png */,
@@ -3831,6 +3834,7 @@
 				36A2922D1DCA51CC006E96A8 /* Arnaments.png in Resources */,
 				C90A79371E0218680068C79C /* SECRET_SHOP.png in Resources */,
 				C94B16F31E01C090008BF226 /* Ignite_Ogre Magi.png in Resources */,
+				365F75481E02E01D00F928B0 /* sidearrow.png in Resources */,
 				C94B19C41E01C108008BF226 /* Desolator.png in Resources */,
 				C94B16E61E01C090008BF226 /* Hoof Stomp_Centaur Warrunner.png in Resources */,
 				C94B18C61E01C0D2008BF226 /* Kunkka.png in Resources */,

@@ -14,7 +14,6 @@ class AbilitiesStackView: DAExpandableStackView {
         let label = DAMainLabel(style: .xlarge)
         label.text = "Abilities"
         label.sizeToFit()
-        label.textAlignment = .center
         return label
     }()
     fileprivate var bottomSV: UIStackView = {
