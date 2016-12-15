@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ItemStackView: UIStackView {
+class ItemStackView: DAStackView {
     // MARK - Properties
     var mainSV = ItemMainStackView()
     var recipeSV: RecipeStackView?

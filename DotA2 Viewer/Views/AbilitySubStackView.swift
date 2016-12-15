@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AbilitySubStackView: UIStackView {
+class AbilitySubStackView: DAStackView {
     // MARK - Properties
     /* Private */
     fileprivate var midSV: UIStackView = {

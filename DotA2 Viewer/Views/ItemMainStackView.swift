@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ItemMainStackView: UIStackView {
+class ItemMainStackView: DAStackView {
     // MARK - Properties
     /* Private */
     fileprivate var rightSV: UIStackView = {
