@@ -915,8 +915,6 @@
 		C95753CC1DD57FCF005C9F75 /* strength_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C95753C61DD57FCF005C9F75 /* strength_icon.png */; };
 		C96EBB601DF244EF00D6FFD0 /* DANavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96EBB5F1DF244EF00D6FFD0 /* DANavigationController.swift */; };
 		C98F86571DF8D5D5002FD602 /* ExpandableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98F86561DF8D5D5002FD602 /* ExpandableCell.swift */; };
-		C98F865A1DF8E4A7002FD602 /* ImageLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98F86581DF8E4A7002FD602 /* ImageLabelView.swift */; };
-		C98F865B1DF8E4A7002FD602 /* ImageLabelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C98F86591DF8E4A7002FD602 /* ImageLabelView.xib */; };
 		C999EA081DE7D1C10036AF47 /* OptimusPrinceps.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C999EA061DE7D1C10036AF47 /* OptimusPrinceps.ttf */; };
 		C999EA091DE7D1C10036AF47 /* OptimusPrincepsSemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C999EA071DE7D1C10036AF47 /* OptimusPrincepsSemiBold.ttf */; };
 		C999EA0F1DE7DF680036AF47 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C999EA0E1DE7DF680036AF47 /* GoogleService-Info.plist */; };
@@ -1847,8 +1845,6 @@
 		C96EA1111DEE622800259AEF /* DotA2 Assistant.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = "DotA2 Assistant.entitlements"; path = "../DotA2 Assistant.entitlements"; sourceTree = "<group>"; };
 		C96EBB5F1DF244EF00D6FFD0 /* DANavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DANavigationController.swift; sourceTree = "<group>"; };
 		C98F86561DF8D5D5002FD602 /* ExpandableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExpandableCell.swift; path = Views/ExpandableCell.swift; sourceTree = "<group>"; };
-		C98F86581DF8E4A7002FD602 /* ImageLabelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageLabelView.swift; path = Views/ImageLabelView.swift; sourceTree = "<group>"; };
-		C98F86591DF8E4A7002FD602 /* ImageLabelView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ImageLabelView.xib; path = Views/ImageLabelView.xib; sourceTree = "<group>"; };
 		C999EA061DE7D1C10036AF47 /* OptimusPrinceps.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = OptimusPrinceps.ttf; path = Fonts/OptimusPrinceps.ttf; sourceTree = "<group>"; };
 		C999EA071DE7D1C10036AF47 /* OptimusPrincepsSemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = OptimusPrincepsSemiBold.ttf; path = Fonts/OptimusPrincepsSemiBold.ttf; sourceTree = "<group>"; };
 		C999EA0E1DE7DF680036AF47 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -2127,8 +2123,6 @@
 				36C0C9651DA6E25800169394 /* Main.storyboard */,
 				364A6A5F1DC1192E00FBE163 /* General */,
 				368D1BCF1DFF298E00314648 /* Abilities */,
-				C98F86581DF8E4A7002FD602 /* ImageLabelView.swift */,
-				C98F86591DF8E4A7002FD602 /* ImageLabelView.xib */,
 				368D1BBE1DF9D12E00314648 /* Cells */,
 				C93028371DF36164005EA297 /* Hero */,
 				368D1BCC1DFAFF7900314648 /* Item */,
@@ -3830,7 +3824,6 @@
 				C94B17211E01C090008BF226 /* Mana Drain_Lion.png in Resources */,
 				C94B16301E01C090008BF226 /* Blade Dance_Juggernaut.png in Resources */,
 				C94B17231E01C090008BF226 /* Mana Shield_Medusa.png in Resources */,
-				C98F865B1DF8E4A7002FD602 /* ImageLabelView.xib in Resources */,
 				36A2922D1DCA51CC006E96A8 /* Arnaments.png in Resources */,
 				C90A79371E0218680068C79C /* SECRET_SHOP.png in Resources */,
 				C94B16F31E01C090008BF226 /* Ignite_Ogre Magi.png in Resources */,
@@ -4084,7 +4077,6 @@
 				C9A6D64D1DBD25AE00580B7B /* Extensions.swift in Sources */,
 				36C0C9621DA6E25800169394 /* AppDelegate.swift in Sources */,
 				368D1BD31E0030A800314648 /* RecipeSubStackView.swift in Sources */,
-				C98F865A1DF8E4A7002FD602 /* ImageLabelView.swift in Sources */,
 				368D1BBC1DF9C7C500314648 /* AbilityCell.swift in Sources */,
 				C94F03A51DEF91D3000E60CE /* Ability+CoreDataProperties.swift in Sources */,
 				C94A26D21DD5593F00D9B054 /* DASlider.swift in Sources */,
