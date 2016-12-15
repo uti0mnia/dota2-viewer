@@ -2,7 +2,7 @@
 //  ArrayValue+CoreDataProperties.swift
 //  
 //
-//  Created by McLewin, Casey on 2016-12-09.
+//  Created by Casey McLewin on 2016-12-13.
 //
 //
 
@@ -23,9 +23,10 @@ extension ArrayValue {
     @NSManaged public var abilityType: AbilityType?
     @NSManaged public var heroRole: Hero?
     @NSManaged public var itemAdditionalInfo: Item?
-    @NSManaged public var itemDetail: ItemDetail?
     @NSManaged public var itemAvailability: Item?
     @NSManaged public var itemBuildsFrom: Item?
     @NSManaged public var itemBuildsInto: Item?
+    @NSManaged public var itemDetail: ItemDetail?
+    @NSManaged public var abilitySpecialDetails: Ability?
 
 }

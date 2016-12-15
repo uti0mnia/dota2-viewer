@@ -8,11 +8,14 @@
 
 import UIKit
 
+// constants
+let π = CGFloat(M_PI)
 let kTableViewCellImageSpaceR: CGFloat = 10
 let kTableViewCellImageSpaceL: CGFloat = 8
 let kDotaFontLarge = UIFont(name: "OptimusPrincepsSemiBold", size: 16)!
 let kDotaFontSmall = UIFont(name: "OptimusPrinceps", size: 10)!
 let kRadiance = UIFont(name: "Radiance", size: 18)!
+let kRadianceBold = UIFont(name: "Radiance-Semibold", size: 18)!
 
 // stats
 var kHPGain: NSNumber { get { return 20 } }

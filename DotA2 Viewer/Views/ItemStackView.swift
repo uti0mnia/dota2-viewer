@@ -8,14 +8,24 @@
 
 import UIKit
 
-class ItemStackView: UIStackView {
+class ItemStackView: DAStackView {
     // MARK - Properties
-    var mainView = ItemMainView()
-    var detailsSV = ItemTextStackView(name: "Details")
-    var additionalInfoSV = ItemTextStackView(name: "Additional Information")
-    var loreSV = ItemTextStackView(name: "Lore")
+    var mainSV = ItemMainStackView()
+    var recipeSV: RecipeStackView?
+    var detailsSV = DAExpandableTextStackView(name: "Details")
+    var abilitiesSV: AbilitiesStackView?
+    var additionalInfoSV = DAExpandableTextStackView(name: "Additional Information")
+    var loreSV = DAExpandableTextStackView(name: "Lore")
     
-    override init(frame: CGRect = CGRect()) {
+    
+    // MARK - Initializers
+    init(frame: CGRect = CGRect(), abilitiesCount count: Int, withRecipe: Bool) {
+        if count > 0 {
+            abilitiesSV = AbilitiesStackView(count: count)
+        }
+        if withRecipe {
+            recipeSV = RecipeStackView()
+        }
         super.init(frame: frame)
         setup()
     }
@@ -24,12 +34,13 @@ class ItemStackView: UIStackView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK - Methods
     fileprivate func setup() {
         self.axis = .vertical
         self.alignment = .fill
         self.distribution = .equalSpacing
         self.spacing = 8
-        self.addArrangedSubviews(views: [mainView, detailsSV, additionalInfoSV, loreSV])
+        self.addArrangedSubviews(views: [mainSV, recipeSV, detailsSV, abilitiesSV, additionalInfoSV, loreSV])
         self.layoutMargins = UIEdgeInsetsMake(8, 8, 8, 8)
         self.isLayoutMarginsRelativeArrangement =  true
     }

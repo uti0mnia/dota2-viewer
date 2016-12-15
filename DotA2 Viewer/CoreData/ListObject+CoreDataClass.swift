@@ -13,7 +13,7 @@ import CoreData
 
 public class ListObject: NSManagedObject {
     func getImage() -> UIImage {
-        let name = "\(self.name).png"
+        let name = String(format: "%@.png", self.name)
         return UIImage(named: name) ?? #imageLiteral(resourceName: "default_icon.png")
     }
     

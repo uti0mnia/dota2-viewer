@@ -42,6 +42,30 @@ class ItemDetailModel {
         }
     }
     var availability: [String] { get { return convert(_item.availability?.allObjects) } }
+    var availabilityPretty: NSAttributedString {
+        get {
+            // init the return string
+            let string = NSMutableAttributedString()
+            var spacing = ""
+            
+            // for each string create the image
+            for str in availability {
+                // create text attachment
+                let attachment = NSTextAttachment()
+                attachment.image = UIImage(named: "\(str).png")
+                
+                let s0 = NSAttributedString(string: spacing)
+                let s1 = NSAttributedString(attachment: attachment)
+                string.append(s0)
+                string.append(s1)
+                
+                // fix facing 
+                spacing = "\t"
+            }
+            
+            return string
+        }
+    }
     var buildsInto: [Item]? { get { return _buildsInto } }
     var buildsFrom: [Item]? { get { return _buildsFrom } }
     var details: [String: [String]] {
@@ -72,6 +96,7 @@ class ItemDetailModel {
         }
     }
     var needsRecipe: Bool { get { return _needsRecipe } }
+    var isSingularItem: Bool { get { return _buildsFrom == nil && _buildsInto == nil } }
     
     /* initializer that inits the item and the items that build into and from it if applicable. */
     init(item: Item) {
@@ -95,7 +120,7 @@ class ItemDetailModel {
             }
             if let item = fetchItem(named: name.value ?? "") {
                 if _buildsFrom == nil { _buildsFrom = [Item]() }
-                _buildsInto?.append(item)
+                _buildsFrom?.append(item)
             }
         }
     }
@@ -109,7 +134,9 @@ class ItemDetailModel {
     
     /* tries to fetch an item with the given name and returns the first found (should always be unique) */
     fileprivate func fetchItem(named name: String) -> Item? {
+        let predicate = NSPredicate(format: "name == %@", name)
         let fetch = NSFetchRequest<Item>(entityName: "Item")
+        fetch.predicate = predicate
         let moc = (UIApplication.shared.delegate as! AppDelegate).managedObjectContext
         do {
             let items = try moc.fetch(fetch)
