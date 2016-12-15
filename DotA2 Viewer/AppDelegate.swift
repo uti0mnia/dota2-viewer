@@ -8,6 +8,9 @@
 
 import UIKit
 import CoreData
+import ChameleonFramework
+import MBProgressHUD
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
@@ -18,11 +21,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        // for importing the CSVs
-        if UserDefaults.standard.value(forKey: "hasLaunched") == nil {
-            let importer = CSVImporter(managedObjectContext: managedObjectContext)
-            importer.importCSV()
-            UserDefaults.standard.set(true, forKey: "hasLaunched")
+        // for firebase
+        FIRApp.configure()
+        
+        if UserDefaults.standard.value(forKey: "firstRun") == nil {
+            Import.JSONImport.initialImport(inMOC: managedObjectContext)
+            UserDefaults.standard.set(true, forKey: "firstRun")
         }
         
         // for the split view controller
@@ -32,6 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         DispatchQueue.main.async {
             splitViewController.preferredDisplayMode = .allVisible // on ipad the master is opened by default
         }
+        
         
         return true
     }

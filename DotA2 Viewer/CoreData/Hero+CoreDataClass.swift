@@ -1,23 +1,16 @@
 //
 //  Hero+CoreDataClass.swift
-//  DotA2 Viewer
+//  
 //
-//  Created by Casey McLewin on 2016-10-15.
-//  Copyright © 2016 self. All rights reserved.
+//  Created by Casey McLewin on 2016-11-30.
+//
 //
 
-import UIKit
+import Foundation
 import CoreData
+import FirebaseDatabase
 
 @objc(Hero)
 public class Hero: ListObject {
-    override func objectImage() -> UIImage? {
-        let imgName = self.name!.replacingOccurrences(of: " ", with: "-") + "_hero" + ".png"
-        if let img = UIImage(named: imgName) {
-            return img
-        } else {
-            print("Failed to create image for hero: \(imgName)")
-            return #imageLiteral(resourceName: "default_icon.png")
-        }
-    }
+    
 }

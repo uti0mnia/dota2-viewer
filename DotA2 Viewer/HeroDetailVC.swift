@@ -1,185 +1,216 @@
 //
 //  HeroDetailVC.swift
-//  DotA2 Viewer
+//  DotA2 Assistant
 //
-//  Created by Casey McLewin on 2016-10-22.
+//  Created by Casey McLewin on 2016-12-03.
 //  Copyright © 2016 self. All rights reserved.
 //
 
 import UIKit
 
-private enum SelectedView {
-    case bio, stats, ability
-}
-
-class HeroDetailVC: ObjectDetailVC {
-
-    /* Outlets */
-    var scrollView: UIScrollView!
-    var fullStackView: HeroDetailStackView!
-
-    // extra views
-    lazy var abilitiesStackView: AbilitiesStackView = { [unowned self] in
-        let sv = AbilitiesStackView()
-        guard self.object is Hero else { return sv }
-        let hero = self.object as! Hero
-        sv.abilities = hero.ability?.array as! [Ability]
-        sv.setStack()
-        return sv
-    }()
+class HeroDetailVC: DAUIViewController {
+    // MARK - Outlets
+    @IBOutlet weak var tableView: UITableView!
     
-    lazy var bioStackView: HeroBioStackView = {[unowned self] in
-        let sv = HeroBioStackView()
-        guard self.object is Hero else { return sv }
-        let hero = self.object as! Hero
-        sv.bio = hero.bio?.replacingOccurrences(of: "--", with: " ").replacingOccurrences(of: "\\n", with: "\n") // fix this shit
-        sv.setStack()
-        return sv
-    }()
     
-    lazy var statsStackView: StatsStackView = {[unowned self] in
-        let sv = StatsStackView()
-        guard self.object is Hero else { return sv }
-        let hero = self.object as! Hero
-        sv.stats = hero.stat?.array as! [Stat]
-        sv.setStack()
-        return sv
-    }()
+    // MARK - Properties
+    var hero: Hero!
+    fileprivate var model: HeroDetailModel!
+    fileprivate var cellIdentifiers = ["mainCell", "statsCell", "bioCell", "abilitiesCell"]
     
-    // vars to keep track of things
-    var currentExtraSV: UIStackView!
-    
-    /* Methods */
+    // MARK - Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        guard hero != nil else { return }
         
-        // inits the views programatically
-        initViews()
-        
-        // add the segment control target
-        fullStackView.extraSegmentControl.addTarget(self, action: #selector(didChangeSegment(sender:)), for: .valueChanged)
-        
+        // init the model
+        model = HeroDetailModel(hero: hero)
+        model.delegate = self
         
         // set the view up
-        setView()
+        setNavBar()
+        setup()
     }
     
-    // handling the extra view at the bottom for Bio/Stats/Abilities
-    @objc fileprivate func didChangeSegment(sender: UISegmentedControl) {
+    
+    // TODO: Fix this
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
-        switch sender.selectedSegmentIndex {
-        case 0:
-            swapDetailContainer(from: currentExtraSV, to: bioStackView)
-        case 1:
-            swapDetailContainer(from: currentExtraSV, to: statsStackView)
-            break
-        case 2:
-            swapDetailContainer(from: currentExtraSV, to: abilitiesStackView)
-        default:
-            break
+        tableView.beginUpdates()
+        tableView.endUpdates()
+    }
+    
+    
+    /* configure the navigation bar */
+    fileprivate func setNavBar() {// set title
+        let title = DAMainLabel(style: .xlarge)
+        title.text = hero.name!
+        title.sizeToFit()
+        self.navigationItem.titleView = title
+    }
+    
+    /* This function sets up the data to be displayed */
+    fileprivate func setup() {
+        // register the cells
+        tableView.register(UINib(nibName: "HeroMainCell", bundle: nil), forCellReuseIdentifier: cellIdentifiers[0])
+        tableView.register(UINib(nibName: "HeroStatsCell", bundle: nil), forCellReuseIdentifier: cellIdentifiers[1])
+        tableView.register(UINib(nibName: "DACollapsibleLabelCell", bundle: nil), forCellReuseIdentifier: cellIdentifiers[2])
+        tableView.register(UINib(nibName: "AbilityCell", bundle: nil), forCellReuseIdentifier: cellIdentifiers[3])
+        
+        // setup table view
+        tableView.tableFooterView = UIView() // empty the footers
+        tableView.estimatedRowHeight = 100
+        tableView.rowHeight = UITableViewAutomaticDimension
+    }
+    
+    /* This fuctions reloads the labels in the cells that are level dependent */
+    fileprivate func reloadLevel() {
+        if let cell = tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? HeroMainCell {
+            cell.levelLabel.text = "Level \(model.level)"
+            cell.attribute1View.currentValue.text = String(format: "%.0f (+%.1f)", model.strength, model.strengthIncrement)
+            cell.attribute2View.currentValue.text = String(format: "%.0f (+%.1f)", model.agility, model.agilityIncrement)
+            cell.attribute3View.currentValue.text = String(format: "%.0f (+%.1f)", model.intelligence, model.intelligenceIncrement)
         }
-    }
-    
-    // sets the view of self
-    fileprivate func setView() {
-        guard object is Hero else { return }
         
-        let hero = object as! Hero
-        
-        // set self's displays
-        self.title = hero.name
-        fullStackView.heroImage.image = hero.objectImage()
-        fullStackView.attackTypeLabel.text = hero.attackType
-        fullStackView.roleLabel.text = hero.role
-        setPrimaryStats()
-        
-        
-        // add default child
-        currentExtraSV = bioStackView
-        fullStackView.addArrangedSubview(bioStackView)
+        if let cell = tableView.cellForRow(at: IndexPath(row: 1, section: 0)) as? HeroStatsCell {
+            cell.armorLabel.text = String(format: "%.2f", model.armor)
+            cell.hpLabel.text = String(format: "%.0f + %.1f", model.hp, model.hpRegen)
+            cell.manaLabel.text = String(format: "%.0f + %.1f", model.mana, model.manaRegen)
+            cell.damageLabel.text = String(format: "%.0f-%.0f", model.damage.min, model.damage.max)
+            cell.attackPerSLabel.text = String(format: "%.2f", model.attackPerS)
+            cell.spellDmgLabel.text = String(format: "%.2f%@", model.spellDamage, "%")
+        }
         
     }
     
-    
-    // adds the primary stat view controller as a child and to the container view
-    fileprivate func setPrimaryStats() {
-        guard object is Hero else { return }
-        let hero = object as! Hero
-        
-        guard hero.primaryStat != nil else { return }
-        let stat = hero.primaryStat!
-        // set values
-        fullStackView.intelligenceLabel.text = stat.intelligence
-        fullStackView.agilityLabel.text = stat.agility
-        fullStackView.strengthLabel.text = stat.strength
-        fullStackView.damageLabel.text = stat.damage
-        fullStackView.speedLabel.text = stat.speed
-        fullStackView.armorLabel.text = stat.armor
-    }
-    
-    fileprivate func initViews() {
-        
-        // set up scroll view
-        scrollView = UIScrollView()
-        scrollView.translatesAutoresizingMaskIntoConstraints = false
-        scrollView.alwaysBounceVertical = true
-        self.view.addSubview(scrollView)
-        self.view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[scrollView]|",
-                                                                options: [],
-                                                                metrics: nil,
-                                                                views: ["scrollView": scrollView]))
-        self.view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[scrollView]|",
-                                                                options: [],
-                                                                metrics: nil,
-                                                                views: ["scrollView": scrollView]))
-        
-        
-        // set up the full view
-        fullStackView = HeroDetailStackView()
-        fullStackView.setStack()
-        fullStackView.translatesAutoresizingMaskIntoConstraints = false
-        scrollView.addSubview(fullStackView)
-        scrollView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[stackView(==scrollView)]|",
-                                                                    options: .alignAllCenterX,
-                                                                    metrics: nil,
-                                                                    views: ["stackView": fullStackView, "scrollView": scrollView]))
-        scrollView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-[stackView]-|",
-                                                                    options: [],
-                                                                    metrics: nil,
-                                                                    views: ["stackView": fullStackView]))
-        
-        
-    }
 
 }
 
-
-/* UIViewController Child Handling */
-extension HeroDetailVC {
-    // meant to handle the swapping of the extra VC at the bottom
-    fileprivate func swapDetailContainer(from sv1: UIStackView, to sv2: UIStackView) {
-        // do async because if abilities is a big view there's a small delay in showing it - should make better for older devices as well
-        DispatchQueue.main.async {
-            //block the segment view in case
-            self.fullStackView.extraSegmentControl.isEnabled = false
+extension HeroDetailVC: UITableViewDelegate, UITableViewDataSource {
+    /* gets the cell identifier for the given index */
+    fileprivate func cellIdentifier(for indexPath: IndexPath) -> String {
+        if indexPath.row == 0 { return cellIdentifiers[0] }
+        else if indexPath.row == 1 { return cellIdentifiers[1] }
+        else if indexPath.row == 2 { return cellIdentifiers[2] }
+        else { return cellIdentifiers[3] }
+    }
+    /* configures a given cell at a given index */
+    fileprivate func configure(cell: UITableViewCell, at indexPath: IndexPath) {
+        if let cell = cell as? HeroMainCell {
+            // ** Immediate info
+            cell.heroImageView.image = hero.getImage()
+            cell.levelLabel.text = "Level \(model.level)"
+            cell.attackTypeLabel.text = (hero.miscStats?.projectileSpeed ?? "" == "Instant") ? "Melee" : "Ranged"
+            cell.rolesLabel.text = (hero.roles!.allObjects as! [ArrayValue]).map({ $0.value ?? "" }).joined(separator: ", ")
+            cell.slider.delegate = self
             
-            // do work
-            sv1.removeFromSuperview()
-            self.fullStackView.addArrangedSubview(sv2)
-            self.currentExtraSV = sv2
+            // ** Attribute
+            cell.attribute1View.imageView.image = #imageLiteral(resourceName: "strength_icon.png") // strength
+            cell.attribute1View.currentValue.text = String(format: "%.0f (+%.1f)", model.strength, model.strengthIncrement)
+            cell.attribute2View.imageView.image = #imageLiteral(resourceName: "agility_icon.png") // agility
+            cell.attribute2View.currentValue.text = String(format: "%.0f (+%.1f)", model.agility, model.agilityIncrement)
+            cell.attribute3View.imageView.image = #imageLiteral(resourceName: "intelligence_icon.png") // intelligence
+            cell.attribute3View.currentValue.text = String(format: "%.0f (+%.1f)", model.intelligence, model.intelligenceIncrement)
             
-            // unblock it
-            self.fullStackView.extraSegmentControl.isEnabled = true
+            return
         }
+        
+        else if let cell = cell as? HeroStatsCell {
+            // ** Base Stats
+            cell.armorLabel.text = String(format: "%.2f", model.armor)
+            cell.hpLabel.text = String(format: "%.0f + %.1f", model.hp, model.hpRegen)
+            cell.manaLabel.text = String(format: "%.0f + %.1f", model.mana, model.manaRegen)
+            cell.damageLabel.text = String(format: "%.0f-%.0f", model.damage.min, model.damage.max)
+            cell.attackPerSLabel.text = String(format: "%.2f", model.attackPerS)
+            cell.spellDmgLabel.text = String(format: "%.2f%@", model.spellDamage, "%")
+            
+            // ** Misc Stats
+            cell.attackAnimationLabel.text = model.attackAnimation
+            cell.attackRangeLabel.text = model.attackRange
+            cell.collisionSizeLabel.text = model.collisionSize
+            cell.magicResistanceLabel.text = model.magicResistance
+            cell.moveSpeedLabel.text = model.movementSpeed
+            cell.projectileSpeedLabel.text = model.projectileSpeed
+            cell.turnRateLabel.text = model.turnRate
+            cell.visionLabel.text = model.visionRange
+            
+            return
+        }
+        
+        else if let cell = cell as? DACollapsibleLabelCell {
+            if indexPath.row == 2 {
+                cell.descriptionLabel.text = "Bio"
+                cell.collapsibleTextLabel.text = model.bio
+            }
+        }
+        
+        else if let cell = cell as? AbilityCell {
+            let ability = model.abilities[indexPath.row - 3]
+            cell.nameLabel.text = ability.name
+            cell.abilityImageView.image = ability.image
+            cell.cooldownLabel.text = ability.cooldown
+            cell.manaLabel.text = ability.mana
+            cell.typesLabel.attributedText = ability.typesPrettyPrint
+            cell.summaryLabel.text = ability.summary
+            cell.dataLabel.text = ability.data.joined(separator: "\n")
+            cell.modifiersLabel.text = ability.modifiers.joined(separator: "\n")
+            cell.notesDetails.text = ability.notesPretty
+            
+        }
+        
+        
+    }
+    
+    /* lets the tableview know how many cells to display */
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3 + model.abilities.count
+    }
+    
+    /* lets the tableview know what cell to display */
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let identifier = cellIdentifier(for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath)
+        configure(cell: cell, at: indexPath)
+        return cell
+    }
+    
+    /* function that handles the selection of a cell */
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath)
+        if let expandableCell = cell as? ExpandableCellProtocol {
+            if #available(iOS 10, *) {
+                UIView.animate(withDuration: kCellAnimationTime, animations: {
+                    expandableCell.toggle()
+                })
+                cell?.contentView.layoutIfNeeded()
+                tableView.beginUpdates()
+                tableView.endUpdates()
+            } else {
+                UIView.animate(withDuration: kCellAnimationTime) {
+                    expandableCell.toggle()
+                    cell?.contentView.layoutIfNeeded()
+                    tableView.beginUpdates()
+                    tableView.endUpdates()
+                }
+            }
+        }
+    }
+    
+}
+
+extension HeroDetailVC: DASliderDelegate {
+    func slider(_ slider: DASlider, didUpdateTo value: Int) {
+        model.level = value
     }
 }
 
-
-
-
-
-
-
+extension HeroDetailVC: HeroDetailModelDelegate {
+    func modelDidUpdate() {
+        // reload data
+        reloadLevel()
+    }
+}
 
 
 
