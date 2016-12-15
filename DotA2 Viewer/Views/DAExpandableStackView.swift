@@ -70,6 +70,7 @@ class DAExpandableStackView: DAStackView, DAExpandableProtocol {
         subView?.removeFromSuperview()
         subView = view
         subView?.isHidden = !isExpanded
+        configSubview()
         self.addArrangedSubview(subView!)
         
     }
@@ -108,12 +109,6 @@ class DAExpandableStackView: DAStackView, DAExpandableProtocol {
         self.addArrangedSubview(topSV)
         
         // add the side arrow (and rotate if necessary)
-//        let height = topView.frame.height
-//        let constraint = NSLayoutConstraint(item: arrowView, attribute: .width, relatedBy: .lessThanOrEqual, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: height)
-////        let constraints = NSLayoutConstraint.constraints(withVisualFormat: "V:[imgView(height)]", options: [], metrics: ["height": height], views: ["imgView": arrowView])
-////        constraints.forEach({ $0.priority = 999 })
-////        arrowView.addConstraints(constraints)
-////        arrowView.addConstraint(constraint)
         let rotation = isExpanded ? π / 2 : 0
         arrowView.transform = CGAffineTransform(rotationAngle: rotation)
         topSV.insertArrangedSubview(arrowView, at: 0)
@@ -133,6 +128,13 @@ class DAExpandableStackView: DAStackView, DAExpandableProtocol {
     /* meant to handle the top button being tapped */
     @objc fileprivate func stackViewWasTapped(_ sender: Any) {
         toggle()
+    }
+    
+    internal func configSubview() {
+        guard subView != nil else {
+            return
+        }
+        
     }
     
     /* used to set the spacing when hidding the subviews so there are no issues */
