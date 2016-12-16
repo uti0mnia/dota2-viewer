@@ -34,7 +34,7 @@ class ItemDetailVC: DADetailVC {
     
     /* configures the VC */
     private func configure() {
-        abilitySetup()
+        insertAbilities(model.abilities, into: itemSV.abilitiesSV)
         recipeSetup()
     }
     
@@ -48,7 +48,7 @@ class ItemDetailVC: DADetailVC {
         scrollView.addConstraints(constraints)
     }
 
-    /* does the setup from the model to the vies */
+    /* does the setup from the model to the views */
     override internal func setup() {
         super.setup()
         
@@ -64,35 +64,6 @@ class ItemDetailVC: DADetailVC {
         itemSV.mainSV.itemImageView.image = model.image
         itemSV.mainSV.typeImageView.image = model.typeImg
         itemSV.mainSV.typeLabel.text = model.type
-    }
-    
-    /* Sets up the ablities */
-    fileprivate func abilitySetup() {
-        // we want to load the abilities asynchronously
-        for i in 0..<model.abilities.count {
-            DispatchQueue.main.async {
-                // create the ability model
-                let abilityModel = self.model.abilities[i]
-                // create the subview for the AbiltyStackView
-                let subView = AbilitySubStackView()
-                subView.abilityImageView.image = abilityModel.image
-                subView.cooldownLabel.icon = UIImage(named: "cooldown.png")
-                subView.cooldownLabel.text = abilityModel.cooldown
-                subView.dataLabel.attributedText = abilityModel.dataPretty
-                subView.manaLabel.icon = UIImage(named: "mana.png")
-                subView.manaLabel.text = abilityModel.mana
-                subView.modifiersLabel.text = abilityModel.modifiers.joined(separator: "\n")
-                subView.notesSV.textLabel.text = abilityModel.notesPretty
-                subView.specialsLabel.attributedText = abilityModel.specialDetailsPretty
-                subView.summaryLabel.text = abilityModel.summary
-                subView.typesLabel.attributedText = abilityModel.typesPrettyPrint
-                
-                // set the AbilitySV subview
-                self.itemSV.abilitiesSV?.subStackViews[i].nameLabel.text = abilityModel.name
-                self.itemSV.abilitiesSV?.subStackViews[i].specialsLabel.attributedText = abilityModel.specialsPretty
-                self.itemSV.abilitiesSV?.subStackViews[i].setSubview(subView)
-            }
-        }
     }
     
     /* Sets up the recipe */
