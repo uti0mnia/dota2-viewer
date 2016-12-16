@@ -73,7 +73,7 @@ class HeroDetailModel {
         get { return (100 + agility) * 0.01 / (_hero.miscStats?.attackTime?.doubleValue ?? 0) }
     }
     var lore: String { get { return _hero.lore ?? "" } }
-    var roles: [String] { get { return _hero.roles?.allObjects as? [String] ?? [String]() } }
+    var roles: [String] { get { return convert(_hero.roles?.allObjects) } }
     
     // MARK - Functions
     init(hero: Hero) {
@@ -88,6 +88,12 @@ class HeroDetailModel {
         return base + increment * (_level - 1).doubleValue // the -1 is to offset the data scrapped
     }
     
+    
+    /* tries to convert an array of Any into an [ArrayValue] and returns each item's value as [String] */
+    fileprivate func convert(_ arrayValue: [Any]?) -> [String] {
+        let array = arrayValue as? [ArrayValue]
+        return array?.map({ $0.value ?? "No Value" }) ?? [String]()
+    }
     
     
 }

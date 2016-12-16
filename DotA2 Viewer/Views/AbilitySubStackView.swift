@@ -34,7 +34,11 @@ class AbilitySubStackView: DAStackView {
     }()
     var cooldownLabel = DAIconLabel(style: .medium)
     var manaLabel = DAIconLabel(style: .medium)
-    var typesLabel = DAMultiLineLabel(style: .medium)
+    var typesLabel: DAMultiLineLabel = {
+        let lbl = DAMultiLineLabel(style: .medium)
+        lbl.textAlignment = .center
+        return lbl
+    }()
     var summaryLabel = DAMultiLineLabel(style: .medium)
     var dataLabel = DAMultiLineLabel(style: .medium)
     var specialsLabel = DAMultiLineLabel(style: .medium)

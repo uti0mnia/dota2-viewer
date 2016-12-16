@@ -122,14 +122,16 @@ class AbilityModel {
             
             // attributes
             let bold = [NSFontAttributeName : UIFont(name: "Radiance-Semibold", size: 17) ]
-            let normal = [NSFontAttributeName: UIFont(name: "Radiance", size: 17)]
             
             // separator
             var separator = ""
             for (key, value) in types {
+                // try to create an aghs image (for certain abilities)
+                let attachment = NSTextAttachment()
+                attachment.image = UIImage(named: "\(value).png")
                 // create the attribute strings
-                let s1 = NSAttributedString(string: "\(separator)\(key)", attributes: bold)
-                let s2 = NSAttributedString(string: ": \(value.joined(separator: "/"))", attributes: normal)
+                let s1 = NSAttributedString(string: "\(separator)\(key)\n", attributes: bold)
+                let s2 = getStringFrom(typesValues: value)
                 
                 // add them
                 string.append(s1)
@@ -172,6 +174,38 @@ class AbilityModel {
         let newNotes = Array<Note>(notes[1..<notes.count])
         return print(notes: newNotes, withCurrentString: newString, andIndent: indent, initial: false)
         
+    }
+    
+    fileprivate func getStringFrom(typesValues values: [String]) -> NSAttributedString {
+        let string = NSMutableAttributedString()
+        
+        let normal = [NSFontAttributeName: UIFont(name: "Radiance", size: 17)]
+        
+        var separator = ""
+        for value in values {
+            var split = value.components(separatedBy: " ")
+            if let image = UIImage(named: "\(split.remove(at: 0)).png") {
+                // create the attachment
+                let attachment = NSTextAttachment()
+                attachment.image = image
+                attachment.bounds = CGRect(x: 0, y: kRadiance.descender, width: image.size.width, height: image.size.height)
+                
+                // create the string
+                let s1 = NSAttributedString(attachment: attachment)
+                let s2 = NSAttributedString(string: "\(separator) \(split.joined(separator: " "))", attributes: normal)
+                
+                // append the strings
+                string.append(s1)
+                string.append(s2)
+            } else {
+                let s1 = NSAttributedString(string: "\(separator)\(value)", attributes: normal)
+                string.append(s1)
+            }
+            
+            separator = "\n"
+        }
+        
+        return string
     }
 }
 
