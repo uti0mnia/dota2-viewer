@@ -1966,6 +1966,16 @@
 			name = General;
 			sourceTree = "<group>";
 		};
+		365554941E04603700C809BC /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				365F75531E042F6400F928B0 /* DADetailVC.swift */,
+				C93028381DF3629F005EA297 /* HeroDetailVC.swift */,
+				C90CE6131DFCCBA400C93539 /* ItemDetailVC.swift */,
+			);
+			name = Details;
+			sourceTree = "<group>";
+		};
 		366A8A251DD24DB9000406BF /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -2130,9 +2140,7 @@
 			children = (
 				366A8A111DD1029F000406BF /* DAUIViewController.swift */,
 				367E34DF1DB7F9670037FA7B /* CustomTabVC.swift */,
-				365F75531E042F6400F928B0 /* DADetailVC.swift */,
-				C93028381DF3629F005EA297 /* HeroDetailVC.swift */,
-				C90CE6131DFCCBA400C93539 /* ItemDetailVC.swift */,
+				365554941E04603700C809BC /* Details */,
 			);
 			name = Controller;
 			sourceTree = "<group>";

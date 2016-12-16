@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DAPaddedLabel: DAMainLabel {
+class DAPaddedLabel: UILabel {
     // MARK - Properties
     var insets: UIEdgeInsets? { didSet { drawText(in: self.frame) } }
 

@@ -13,7 +13,7 @@ enum DAMainLabelStyle: CGFloat {
     case xsmall = 11, small = 14, medium = 18, large = 24, xlarge = 30, title = 38
 }
 
-class DAMainLabel: UILabel {
+class DAMainLabel: DAPaddedLabel {
     
     internal var style: DAMainLabelStyle = .medium
     internal var isBold: Bool = false

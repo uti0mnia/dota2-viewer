@@ -15,12 +15,13 @@ class DAExpandableTextStackView: DAExpandableStackView {
     // MARK - Initializaers
     init(name: String, frame: CGRect = CGRect()) {
         // set the main label
-        let topLabel = DAMainLabel(style: .large)
+        let topLabel = DAMainLabel(style: .large, bold: true)
         topLabel.text = name
         topLabel.sizeToFit()
         
         // set the text label
         textLabel = DAMultiLineLabel(style: .medium)
+        textLabel.insets = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 0)
         super.init(topView: topLabel, subView: textLabel, expanded: false, frame: frame)
         
         // observer to follow the changes in the text label

@@ -152,20 +152,25 @@ class AbilityModel {
         return array?.map({ $0.value ?? "No Value" }) ?? [String]()
     }
     
-    fileprivate func print(notes: [Note], withCurrentString string: String = "", andIndent indent: Int = 0) -> String {
+    fileprivate func print(notes: [Note], withCurrentString string: String = "", andIndent indent: Int = 0, initial: Bool = true) -> String {
         // base case
         if notes.count == 0 {
             return string
         }
         
         let note = notes[0]
+        let newLine = initial ? "" : "\n"
         let tab = String(repeating: "\t", count: indent)
-        var newString = string + "\n\(tab)•\(note.string ?? "No Note")"
+        var newString = string + "\(newLine)\(tab)• \(note.string ?? "No Note")"
+        
+        // check if there's a subnote
         if let array = note.subNotes?.array as? [Note] {
-            newString += print(notes: array, withCurrentString: "", andIndent: indent + 1)
+            newString += print(notes: array, withCurrentString: "", andIndent: indent + 1, initial: false)
         }
+        
+        
         let newNotes = Array<Note>(notes[1..<notes.count])
-        return print(notes: newNotes, withCurrentString: newString, andIndent: indent)
+        return print(notes: newNotes, withCurrentString: newString, andIndent: indent, initial: false)
         
     }
 }
