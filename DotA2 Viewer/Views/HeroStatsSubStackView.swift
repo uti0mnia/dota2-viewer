@@ -12,7 +12,11 @@ class HeroStatsSubStackView: UIStackView {
     // MARK - Properties
     fileprivate let kLabelHeight: CGFloat = 30
     // top
-    var levelLabel = DAMainLabel(style: .medium)
+    var levelLabel: DAMainLabel = {
+        let lbl = DAMainLabel(style: .large, bold: true)
+        lbl.textAlignment = .center
+        return lbl
+    }()
     var slider = DASlider()
     
     // middle
@@ -87,7 +91,7 @@ class HeroStatsSubStackView: UIStackView {
         let topSV = UIStackView(arrangedSubviews: [levelLabel, slider])
         topSV.axis = .vertical
         topSV.alignment = .fill
-        topSV.distribution = .fill
+        topSV.distribution = .fillProportionally
         return topSV
     }
     
@@ -102,7 +106,7 @@ class HeroStatsSubStackView: UIStackView {
         let rightSV = UIStackView(arrangedSubviews: [hpLabel, manaLabel])
         rightSV.axis = .vertical
         rightSV.alignment = .fill
-        rightSV.distribution = .equalSpacing
+        rightSV.distribution = .fillProportionally
         
         // middle SV
         let middleSV = UIStackView(arrangedSubviews: [leftSV, rightSV])
