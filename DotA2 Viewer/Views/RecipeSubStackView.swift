@@ -24,7 +24,8 @@ final class RecipeSubStackView: DAStackView {
     }()
     var topSV: UIStackView?
     var bottomSV: UIStackView?
-    fileprivate let upArrow = UIImage(named: "uparrow.png")
+    fileprivate let upArrow1 = UIImage(named: "uparrow.png") // seems like using 2 separate images doens't cause a crash
+    fileprivate let upArrow2 = UIImage(named: "uparrow.png")
     fileprivate let kArrowHeight: CGFloat = 15
     fileprivate let kImageHeight: CGFloat = 40
     
@@ -81,7 +82,7 @@ final class RecipeSubStackView: DAStackView {
     fileprivate func configureMidSV() {
         // add the top arrow if necessary
         if buildsInto != nil {
-            let imgView = buildImageView(withImage: upArrow, limitHeightTo: kArrowHeight)
+            let imgView = buildImageView(withImage: upArrow1, limitHeightTo: kArrowHeight)
             midSV.addArrangedSubview(imgView)
         }
         // add the item image
@@ -90,7 +91,7 @@ final class RecipeSubStackView: DAStackView {
         
         // add up arrow for builds from if necessary
         if buildsFrom != nil {
-            let imgView = buildImageView(withImage: upArrow, limitHeightTo: kArrowHeight)
+            let imgView = buildImageView(withImage: upArrow2, limitHeightTo: kArrowHeight)
             midSV.addArrangedSubview(imgView)
         }
         
