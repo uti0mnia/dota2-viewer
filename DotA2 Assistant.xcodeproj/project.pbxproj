@@ -28,6 +28,11 @@
 		363A46741E008A8F00BA5D97 /* RecipeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363A46731E008A8F00BA5D97 /* RecipeButton.swift */; };
 		364A6A591DC1136300FBE163 /* DAMultiLineLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364A6A581DC1136300FBE163 /* DAMultiLineLabel.swift */; };
 		365F75481E02E01D00F928B0 /* sidearrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 365F75471E02E01D00F928B0 /* sidearrow.png */; };
+		365F754A1E04237000F928B0 /* HeroMainStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365F75491E04237000F928B0 /* HeroMainStackView.swift */; };
+		365F754C1E04269D00F928B0 /* HeroStatsSubStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365F754B1E04269D00F928B0 /* HeroStatsSubStackView.swift */; };
+		365F754E1E04271300F928B0 /* HeroAttributeStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365F754D1E04271300F928B0 /* HeroAttributeStackView.swift */; };
+		365F75501E042D4B00F928B0 /* HeroStatsStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365F754F1E042D4B00F928B0 /* HeroStatsStackView.swift */; };
+		365F75521E042DE100F928B0 /* HeroStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365F75511E042DE100F928B0 /* HeroStackView.swift */; };
 		366A8A091DD0F4F3000406BF /* DAMainLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366A8A081DD0F4F3000406BF /* DAMainLabel.swift */; };
 		366A8A0C1DD0F87F000406BF /* DAMainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366A8A0B1DD0F87F000406BF /* DAMainTableViewCell.swift */; };
 		366A8A0E1DD0F993000406BF /* DACircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366A8A0D1DD0F993000406BF /* DACircleImageView.swift */; };
@@ -951,6 +956,11 @@
 		363A46731E008A8F00BA5D97 /* RecipeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecipeButton.swift; path = Views/RecipeButton.swift; sourceTree = "<group>"; };
 		364A6A581DC1136300FBE163 /* DAMultiLineLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAMultiLineLabel.swift; sourceTree = "<group>"; };
 		365F75471E02E01D00F928B0 /* sidearrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sidearrow.png; sourceTree = "<group>"; };
+		365F75491E04237000F928B0 /* HeroMainStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HeroMainStackView.swift; path = Views/HeroMainStackView.swift; sourceTree = "<group>"; };
+		365F754B1E04269D00F928B0 /* HeroStatsSubStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HeroStatsSubStackView.swift; path = Views/HeroStatsSubStackView.swift; sourceTree = "<group>"; };
+		365F754D1E04271300F928B0 /* HeroAttributeStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HeroAttributeStackView.swift; path = Views/HeroAttributeStackView.swift; sourceTree = "<group>"; };
+		365F754F1E042D4B00F928B0 /* HeroStatsStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HeroStatsStackView.swift; path = Views/HeroStatsStackView.swift; sourceTree = "<group>"; };
+		365F75511E042DE100F928B0 /* HeroStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HeroStackView.swift; path = Views/HeroStackView.swift; sourceTree = "<group>"; };
 		366A8A081DD0F4F3000406BF /* DAMainLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAMainLabel.swift; sourceTree = "<group>"; };
 		366A8A0B1DD0F87F000406BF /* DAMainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAMainTableViewCell.swift; sourceTree = "<group>"; };
 		366A8A0D1DD0F993000406BF /* DACircleImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DACircleImageView.swift; sourceTree = "<group>"; };
@@ -2161,6 +2171,11 @@
 			children = (
 				C9D0BDC01DF8D1E00099C0E4 /* Views */,
 				C9D0BDC11DF8D1E60099C0E4 /* Cells */,
+				365F75511E042DE100F928B0 /* HeroStackView.swift */,
+				365F75491E04237000F928B0 /* HeroMainStackView.swift */,
+				365F754B1E04269D00F928B0 /* HeroStatsSubStackView.swift */,
+				365F754F1E042D4B00F928B0 /* HeroStatsStackView.swift */,
+				365F754D1E04271300F928B0 /* HeroAttributeStackView.swift */,
 			);
 			name = Hero;
 			sourceTree = "<group>";
@@ -4025,6 +4040,7 @@
 				366A8A101DD100A8000406BF /* DAMainTableView.swift in Sources */,
 				C94F03A21DEF91D3000E60CE /* ArrayValue+CoreDataClass.swift in Sources */,
 				368D1BC11DF9E50D00314648 /* AbilityModel.swift in Sources */,
+				365F754A1E04237000F928B0 /* HeroMainStackView.swift in Sources */,
 				366A8A091DD0F4F3000406BF /* DAMainLabel.swift in Sources */,
 				366A8A221DD24B71000406BF /* DAMainCellLabel.swift in Sources */,
 				C922FA8B1DD8AD27007B76F8 /* DALoreLabel.swift in Sources */,
@@ -4049,9 +4065,11 @@
 				363A464D1E003E5700BA5D97 /* RecipeStackView.swift in Sources */,
 				C94F03A71DEF91D3000E60CE /* Attribute+CoreDataProperties.swift in Sources */,
 				366A8A121DD1029F000406BF /* DAUIViewController.swift in Sources */,
+				365F75501E042D4B00F928B0 /* HeroStatsStackView.swift in Sources */,
 				C94F03B11DEF91D3000E60CE /* ListObject+CoreDataProperties.swift in Sources */,
 				C98F86571DF8D5D5002FD602 /* ExpandableCell.swift in Sources */,
 				C90CE6141DFCCBA400C93539 /* ItemDetailVC.swift in Sources */,
+				365F75521E042DE100F928B0 /* HeroStackView.swift in Sources */,
 				C9FEBF2F1DB299F2000CD4FF /* DotA2_Viewer.xcdatamodeld in Sources */,
 				C94F03A41DEF91D3000E60CE /* Ability+CoreDataClass.swift in Sources */,
 				366A8A0C1DD0F87F000406BF /* DAMainTableViewCell.swift in Sources */,
@@ -4063,10 +4081,12 @@
 				C90CE6121DFCC95A00C93539 /* ItemStackView.swift in Sources */,
 				C94F03B61DEF91D3000E60CE /* Damage+CoreDataClass.swift in Sources */,
 				C94F03AB1DEF91D3000E60CE /* Hero+CoreDataProperties.swift in Sources */,
+				365F754C1E04269D00F928B0 /* HeroStatsSubStackView.swift in Sources */,
 				368D1BCE1DFF24A800314648 /* AbilitySubStackView.swift in Sources */,
 				363A46741E008A8F00BA5D97 /* RecipeButton.swift in Sources */,
 				C9172C181DD13F9100DCF88F /* Globals.swift in Sources */,
 				C930281D1DF33FF4005EA297 /* AbilityType+CoreDataClass.swift in Sources */,
+				365F754E1E04271300F928B0 /* HeroAttributeStackView.swift in Sources */,
 				C94F03A81DEF91D3000E60CE /* BaseStat+CoreDataClass.swift in Sources */,
 				C94F03A31DEF91D3000E60CE /* ArrayValue+CoreDataProperties.swift in Sources */,
 				C90CE6101DFCC18F00C93539 /* DAExpandableTextStackView.swift in Sources */,

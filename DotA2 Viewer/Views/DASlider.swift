@@ -26,7 +26,7 @@ class DASlider: UISlider {
     
     var delegate: DASliderDelegate?
     
-    init(frame: CGRect, initialLevel lvl: Int = 1) {
+    init(frame: CGRect = CGRect(), initialLevel lvl: Int = 1) {
         // make sure level isn't outside of range
         var level = lvl > 25 ? 25 : lvl
         level = lvl < 1 ? 1 : level
@@ -36,10 +36,6 @@ class DASlider: UISlider {
         
         setup()
         
-    }
-    
-    convenience init(initialLevel level: Int = 1) {
-        self.init(frame: CGRect(), initialLevel: level)
     }
     
     
