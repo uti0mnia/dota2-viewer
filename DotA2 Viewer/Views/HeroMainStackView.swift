@@ -10,11 +10,7 @@ import UIKit
 
 class HeroMainStackView: UIStackView {
     // MARK - Properties
-    var imageView: UIImageView = {
-        let iv = UIImageView()
-        iv.contentMode = .scaleAspectFit
-        return iv
-    }()
+    var imageView = DARoundedImageView(radius: 10)
     var attackTypeLabel = DAMainLabel(style: .medium, bold: true)
     var rolesLabel = DAMultiLineLabel(style: .medium)
     
@@ -32,7 +28,7 @@ class HeroMainStackView: UIStackView {
     fileprivate func setup() {
         // Configure properties
         self.axis = .vertical
-        self.alignment = .fill
+        self.alignment = .center
         self.distribution = .fillProportionally
         self.spacing = 8
         

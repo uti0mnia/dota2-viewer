@@ -8,195 +8,124 @@
 
 import UIKit
 
-class HeroDetailVC: DAUIViewController {
-    // MARK - Outlets
-    @IBOutlet weak var tableView: UITableView!
-    
-    
+class HeroDetailVC: DADetailVC {
     // MARK - Properties
-    var hero: Hero!
+    fileprivate var hero: Hero!
+    fileprivate lazy var heroSV: HeroStackView = {[unowned self] in
+        let sv = HeroStackView(abilities: self.model.abilities.count)
+        sv.translatesAutoresizingMaskIntoConstraints = false
+        return sv
+    }()
     fileprivate var model: HeroDetailModel!
-    fileprivate var cellIdentifiers = ["mainCell", "statsCell", "bioCell", "abilitiesCell"]
+    fileprivate var imageView: UIImageView!
+    fileprivate var cachedImageSize: CGRect!
     
     // MARK - Methods
     override func viewDidLoad() {
-        super.viewDidLoad()
-        guard hero != nil else { return }
-        
-        // init the model
+        // make sure we have an item
+        guard let heroObj = object as? Hero else {
+            return
+        }
+        hero = heroObj
         model = HeroDetailModel(hero: hero)
         model.delegate = self
         
-        // set the view up
-        setNavBar()
-        setup()
+        // Configure the VC
+        super.viewDidLoad()
+        insertAbilities(model.abilities, into: heroSV.abilitiesSV)
+        setStats()
     }
     
-    
-    // TODO: Fix this
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override internal func addSubviews() {
+        super.addSubviews()
         
-        tableView.beginUpdates()
-        tableView.endUpdates()
+        // hero stack view
+        scrollView.delegate = self
+        scrollView.addSubview(heroSV)
+        var constraints = createConstraints(withVisual: "H:|[stackView(==scrollView)]|", withViews: ["stackView": heroSV, "scrollView": scrollView], options: .alignAllCenterX)
+        constraints += createConstraints(withVisual: "V:|[stackView]|", withViews: ["stackView": heroSV], options: .alignAllCenterX)
+        scrollView.addConstraints(constraints)
     }
     
-    
-    /* configure the navigation bar */
-    fileprivate func setNavBar() {// set title
-        let title = DAMainLabel(style: .xlarge)
-        title.text = hero.name!
-        title.sizeToFit()
-        self.navigationItem.titleView = title
-    }
-    
-    /* This function sets up the data to be displayed */
-    fileprivate func setup() {
-        // register the cells
-        tableView.register(UINib(nibName: "HeroMainCell", bundle: nil), forCellReuseIdentifier: cellIdentifiers[0])
-        tableView.register(UINib(nibName: "HeroStatsCell", bundle: nil), forCellReuseIdentifier: cellIdentifiers[1])
-        tableView.register(UINib(nibName: "DACollapsibleLabelCell", bundle: nil), forCellReuseIdentifier: cellIdentifiers[2])
-        tableView.register(UINib(nibName: "AbilityCell", bundle: nil), forCellReuseIdentifier: cellIdentifiers[3])
+    /* does the setup from the model to the views */
+    override internal func setup() {
+        super.setup()
         
-        // setup table view
-        tableView.tableFooterView = UIView() // empty the footers
-        tableView.estimatedRowHeight = 100
-        tableView.rowHeight = UITableViewAutomaticDimension
+        // expandable text SV
+        heroSV.bioSV.textLabel.text = model.bio
+        heroSV.loreSV.textLabel.text = model.lore
+        
+        // main view
+        heroSV.mainSV.attackTypeLabel.text = (model.projectileSpeed == "Instant") ? "Melee" : "Ranged"
+        heroSV.mainSV.imageView.image = model.image
+        heroSV.mainSV.rolesLabel.text = model.roles.joined(separator: ", ")
+        
+    }
+    
+    fileprivate func setStats() {
+        DispatchQueue.main.async {
+            let subSV = HeroStatsSubStackView()
+            
+            // top
+            subSV.levelLabel.text = "Level 1"
+            subSV.slider.delegate = self
+            
+            // middle
+            subSV.strengthSV.imageView.image = #imageLiteral(resourceName: "strength_icon.png") // strength_icon.png
+            subSV.strengthSV.label.text = "\(self.model.strength.format(0)) (+\(self.model.strengthIncrement.format(1)))"
+            subSV.agilitySV.imageView.image = #imageLiteral(resourceName: "agility_icon.png") // agility_icon.png
+            subSV.agilitySV.label.text = "\(self.model.agility.format(0)) (+\(self.model.agilityIncrement.format(1)))"
+            subSV.intelligenceSV.imageView.image = #imageLiteral(resourceName: "intelligence_icon.png") // intelligence_icon.png
+            subSV.intelligenceSV.label.text = "\(self.model.intelligence.format(0)) (+\(self.model.intelligenceIncrement.format(1)))"
+            subSV.hpLabel.text = "\(self.model.hp.format(0)) + \(self.model.hpRegen.format(1))"
+            subSV.manaLabel.text = "\(self.model.mana.format(0)) + \(self.model.manaRegen.format(1))"
+            
+            // bottom
+            subSV.damageLabel.text = "Dmg: \(self.model.damage.min.format(0)) - \(self.model.damage.max.format(0))"
+            subSV.attackPerSLabel.text = "Attack/s: \(self.model.attackPerS.format(0))"
+            subSV.armorLabel.text = "Armor: \(self.model.armor.format(2))"
+            subSV.spellDmgLabel.text = "Spell Dmg: \(self.model.spellDamage.format(2))%"
+            subSV.attackAnimationLabel.text = "Attack Animation: \(self.model.attackAnimation)"
+            subSV.attackRangeLabel.text = "Attack Range: \(self.model.attackRange)"
+            subSV.moveSpeedLabel.text = "Movement Speed: \(self.model.movementSpeed)"
+            subSV.projectileSpeedLabel.text = "Projectile Speed: \(self.model.projectileSpeed)"
+            subSV.collisionSizeLabel.text = "Collision Size: \(self.model.collisionSize)"
+            subSV.magicResistanceLabel.text = "Magic Resistance: \(self.model.magicResistance)%"
+            subSV.turnRateLabel.text = "Turn Rate: \(self.model.turnRate)"
+            subSV.visionLabel.text = "Vision: \(self.model.visionRange)"
+            
+            // set subView
+            self.heroSV.statsSV.setSubview(subSV)
+        }
     }
     
     /* This fuctions reloads the labels in the cells that are level dependent */
     fileprivate func reloadLevel() {
-        if let cell = tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? HeroMainCell {
-            cell.levelLabel.text = "Level \(model.level)"
-            cell.attribute1View.currentValue.text = String(format: "%.0f (+%.1f)", model.strength, model.strengthIncrement)
-            cell.attribute2View.currentValue.text = String(format: "%.0f (+%.1f)", model.agility, model.agilityIncrement)
-            cell.attribute3View.currentValue.text = String(format: "%.0f (+%.1f)", model.intelligence, model.intelligenceIncrement)
+        if let subView = heroSV.statsSV.subView as? HeroStatsSubStackView {
+            // top
+            subView.levelLabel.text = "Level \(model.level)"
+            
+            // middle
+            subView.strengthSV.label.text = "\(self.model.strength.format(0)) (+\(self.model.strengthIncrement.format(1)))"
+            subView.agilitySV.label.text = "\(self.model.agility.format(0)) (+\(self.model.agilityIncrement.format(1)))"
+            subView.intelligenceSV.label.text = "\(self.model.intelligence.format(0)) (+\(self.model.intelligenceIncrement.format(1)))"
+            subView.hpLabel.text = "\(self.model.hp.format(0)) + \(self.model.hpRegen.format(1))"
+            subView.manaLabel.text = "\(self.model.mana.format(0)) + \(self.model.manaRegen.format(1))"
+            
+            // bottom
+            subView.damageLabel.text = "Dmg: \(self.model.damage.min.format(0)) - \(self.model.damage.max.format(0))"
+            subView.attackPerSLabel.text = "Attack/s: \(self.model.attackPerS.format(0))"
+            subView.armorLabel.text = "Armor: \(self.model.armor.format(2))"
+            subView.spellDmgLabel.text = "Spell Dmg: \(self.model.spellDamage.format(2))%"
         }
-        
-        if let cell = tableView.cellForRow(at: IndexPath(row: 1, section: 0)) as? HeroStatsCell {
-            cell.armorLabel.text = String(format: "%.2f", model.armor)
-            cell.hpLabel.text = String(format: "%.0f + %.1f", model.hp, model.hpRegen)
-            cell.manaLabel.text = String(format: "%.0f + %.1f", model.mana, model.manaRegen)
-            cell.damageLabel.text = String(format: "%.0f-%.0f", model.damage.min, model.damage.max)
-            cell.attackPerSLabel.text = String(format: "%.2f", model.attackPerS)
-            cell.spellDmgLabel.text = String(format: "%.2f%@", model.spellDamage, "%")
-        }
-        
     }
     
 
 }
 
-extension HeroDetailVC: UITableViewDelegate, UITableViewDataSource {
-    /* gets the cell identifier for the given index */
-    fileprivate func cellIdentifier(for indexPath: IndexPath) -> String {
-        if indexPath.row == 0 { return cellIdentifiers[0] }
-        else if indexPath.row == 1 { return cellIdentifiers[1] }
-        else if indexPath.row == 2 { return cellIdentifiers[2] }
-        else { return cellIdentifiers[3] }
+extension HeroDetailVC: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
     }
-    /* configures a given cell at a given index */
-    fileprivate func configure(cell: UITableViewCell, at indexPath: IndexPath) {
-        if let cell = cell as? HeroMainCell {
-            // ** Immediate info
-            cell.heroImageView.image = hero.getImage()
-            cell.levelLabel.text = "Level \(model.level)"
-            cell.attackTypeLabel.text = (hero.miscStats?.projectileSpeed ?? "" == "Instant") ? "Melee" : "Ranged"
-            cell.rolesLabel.text = (hero.roles!.allObjects as! [ArrayValue]).map({ $0.value ?? "" }).joined(separator: ", ")
-            cell.slider.delegate = self
-            
-            // ** Attribute
-            cell.attribute1View.imageView.image = #imageLiteral(resourceName: "strength_icon.png") // strength
-            cell.attribute1View.currentValue.text = String(format: "%.0f (+%.1f)", model.strength, model.strengthIncrement)
-            cell.attribute2View.imageView.image = #imageLiteral(resourceName: "agility_icon.png") // agility
-            cell.attribute2View.currentValue.text = String(format: "%.0f (+%.1f)", model.agility, model.agilityIncrement)
-            cell.attribute3View.imageView.image = #imageLiteral(resourceName: "intelligence_icon.png") // intelligence
-            cell.attribute3View.currentValue.text = String(format: "%.0f (+%.1f)", model.intelligence, model.intelligenceIncrement)
-            
-            return
-        }
-        
-        else if let cell = cell as? HeroStatsCell {
-            // ** Base Stats
-            cell.armorLabel.text = String(format: "%.2f", model.armor)
-            cell.hpLabel.text = String(format: "%.0f + %.1f", model.hp, model.hpRegen)
-            cell.manaLabel.text = String(format: "%.0f + %.1f", model.mana, model.manaRegen)
-            cell.damageLabel.text = String(format: "%.0f-%.0f", model.damage.min, model.damage.max)
-            cell.attackPerSLabel.text = String(format: "%.2f", model.attackPerS)
-            cell.spellDmgLabel.text = String(format: "%.2f%@", model.spellDamage, "%")
-            
-            // ** Misc Stats
-            cell.attackAnimationLabel.text = model.attackAnimation
-            cell.attackRangeLabel.text = model.attackRange
-            cell.collisionSizeLabel.text = model.collisionSize
-            cell.magicResistanceLabel.text = model.magicResistance
-            cell.moveSpeedLabel.text = model.movementSpeed
-            cell.projectileSpeedLabel.text = model.projectileSpeed
-            cell.turnRateLabel.text = model.turnRate
-            cell.visionLabel.text = model.visionRange
-            
-            return
-        }
-        
-        else if let cell = cell as? DACollapsibleLabelCell {
-            if indexPath.row == 2 {
-                cell.descriptionLabel.text = "Bio"
-                cell.collapsibleTextLabel.text = model.bio
-            }
-        }
-        
-        else if let cell = cell as? AbilityCell {
-            let ability = model.abilities[indexPath.row - 3]
-            cell.nameLabel.text = ability.name
-            cell.abilityImageView.image = ability.image
-            cell.cooldownLabel.text = ability.cooldown
-            cell.manaLabel.text = ability.mana
-            cell.typesLabel.attributedText = ability.typesPrettyPrint
-            cell.summaryLabel.text = ability.summary
-            cell.dataLabel.text = ability.data.joined(separator: "\n")
-            cell.modifiersLabel.text = ability.modifiers.joined(separator: "\n")
-            cell.notesDetails.text = ability.notesPretty
-            
-        }
-        
-        
-    }
-    
-    /* lets the tableview know how many cells to display */
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3 + model.abilities.count
-    }
-    
-    /* lets the tableview know what cell to display */
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let identifier = cellIdentifier(for: indexPath)
-        let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath)
-        configure(cell: cell, at: indexPath)
-        return cell
-    }
-    
-    /* function that handles the selection of a cell */
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = tableView.cellForRow(at: indexPath)
-        if let expandableCell = cell as? ExpandableCellProtocol {
-            if #available(iOS 10, *) {
-                UIView.animate(withDuration: kCellAnimationTime, animations: {
-                    expandableCell.toggle()
-                })
-                cell?.contentView.layoutIfNeeded()
-                tableView.beginUpdates()
-                tableView.endUpdates()
-            } else {
-                UIView.animate(withDuration: kCellAnimationTime) {
-                    expandableCell.toggle()
-                    cell?.contentView.layoutIfNeeded()
-                    tableView.beginUpdates()
-                    tableView.endUpdates()
-                }
-            }
-        }
-    }
-    
 }
 
 extension HeroDetailVC: DASliderDelegate {

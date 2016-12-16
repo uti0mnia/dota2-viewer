@@ -29,11 +29,6 @@ class ItemDetailVC: DADetailVC {
         
         // Configure the VC
         super.viewDidLoad()
-        configure()
-    }
-    
-    /* configures the VC */
-    private func configure() {
         insertAbilities(model.abilities, into: itemSV.abilitiesSV)
         recipeSetup()
     }

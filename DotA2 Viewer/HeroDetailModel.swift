@@ -72,6 +72,8 @@ class HeroDetailModel {
     var attackPerS: Double {
         get { return (100 + agility) * 0.01 / (_hero.miscStats?.attackTime?.doubleValue ?? 0) }
     }
+    var lore: String { get { return _hero.lore ?? "" } }
+    var roles: [String] { get { return _hero.roles?.allObjects as? [String] ?? [String]() } }
     
     // MARK - Functions
     init(hero: Hero) {

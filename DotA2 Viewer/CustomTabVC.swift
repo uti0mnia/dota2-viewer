@@ -117,7 +117,7 @@ class CustomTabVC: DAUIViewController {
         
         if let hero = object as? Hero {
             let vc = sb.instantiateViewController(withIdentifier: "HeroDetailVC") as! HeroDetailVC
-            vc.hero = hero
+            vc.object = hero
             showDetailViewController(vc, sender: nil)
             return
         }

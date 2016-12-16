@@ -67,8 +67,11 @@ class DAExpandableStackView: DAStackView, DAExpandableProtocol {
     // MARK - Methods
     /* adds a subview to the stackview */
     func setSubview(_ view: UIView) {
+        // reset subview
         subView?.removeFromSuperview()
         subView = view
+        
+        // set its status
         subView?.isHidden = !isExpanded
         configSubview()
         self.addArrangedSubview(subView!)
@@ -133,6 +136,11 @@ class DAExpandableStackView: DAStackView, DAExpandableProtocol {
     internal func configSubview() {
         guard subView != nil else {
             return
+        }
+        
+        subView?.layoutMargins = UIEdgeInsetsMake(0, 8, 0, 8)
+        if let sv = subView as? UIStackView {
+            sv.isLayoutMarginsRelativeArrangement = true
         }
         
     }

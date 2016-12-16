@@ -10,6 +10,7 @@ import UIKit
 
 class HeroStatsSubStackView: UIStackView {
     // MARK - Properties
+    fileprivate let kLabelHeight: CGFloat = 30
     // top
     var levelLabel = DAMainLabel(style: .medium)
     var slider = DASlider()
@@ -21,14 +22,18 @@ class HeroStatsSubStackView: UIStackView {
     var hpLabel: DAMainLabel = {
         let lbl = DAMainLabel(style: .medium, bold: true)
         lbl.textColor = UIColor.flatBlack()
-        lbl.layer.cornerRadius = 8
+        lbl.backgroundColor = UIColor.flatGreen()
+        lbl.textAlignment = .center
+        lbl.layer.cornerRadius = 4
         lbl.clipsToBounds = true
         return lbl
     }()
     var manaLabel: DAMainLabel = {
         let lbl = DAMainLabel(style: .medium, bold: true)
         lbl.textColor = UIColor.flatBlack()
-        lbl.layer.cornerRadius = 8
+        lbl.backgroundColor = UIColor.flatSkyBlue()
+        lbl.textAlignment = .center
+        lbl.layer.cornerRadius = 4
         lbl.clipsToBounds = true
         return lbl
     }()
@@ -66,6 +71,9 @@ class HeroStatsSubStackView: UIStackView {
         self.alignment = .fill
         self.distribution = .fillProportionally
         
+        // constraints
+        setConstraints()
+        
         // create SV
         let topSV = createTopSV()
         let middleSV = createMiddleSV()
@@ -86,7 +94,7 @@ class HeroStatsSubStackView: UIStackView {
     fileprivate func createMiddleSV() -> UIStackView {
         // left SV
         let leftSV = UIStackView(arrangedSubviews: [strengthSV, agilitySV, intelligenceSV])
-        leftSV.axis = .vertical
+        leftSV.axis = .horizontal
         leftSV.alignment = .fill
         leftSV.distribution = .fillEqually
         
@@ -98,10 +106,22 @@ class HeroStatsSubStackView: UIStackView {
         
         // middle SV
         let middleSV = UIStackView(arrangedSubviews: [leftSV, rightSV])
-        middleSV.axis = .horizontal
+        middleSV.axis = .vertical
         middleSV.alignment = .fill
-        middleSV.distribution = .fillProportionally
+        middleSV.distribution = .fillEqually
         return middleSV
+    }
+    
+    fileprivate func setConstraints() {
+        // hp label
+        var constraints = NSLayoutConstraint.constraints(withVisualFormat: "V:[lbl(height)]", options: [], metrics: ["height": kLabelHeight], views: ["lbl": hpLabel])
+        constraints.forEach({ $0.priority = 999 })
+        hpLabel.addConstraints(constraints)
+        
+        // mana label
+        constraints = NSLayoutConstraint.constraints(withVisualFormat: "V:[lbl(height)]", options: [], metrics: ["height": kLabelHeight], views: ["lbl": manaLabel])
+        constraints.forEach({ $0.priority = 999 })
+        manaLabel.addConstraints(constraints)
     }
     
     fileprivate func createBottomSV() -> UIStackView {

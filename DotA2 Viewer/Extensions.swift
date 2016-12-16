@@ -45,6 +45,12 @@ extension Int {
     var doubleValue: Double { get { return Double(self) } }
 }
 
+extension Double {
+    func format(_ digits: Int) -> String {
+        return String(format: "%.\(digits)f", self)
+    }
+}
+
 
 
 
