@@ -23,11 +23,12 @@ class DAExpandableStackView: DAStackView, DAExpandableProtocol {
         sv.axis = .horizontal
         sv.alignment = .fill
         sv.distribution = .fill
-        sv.spacing = 10
         return sv
     }()
     fileprivate var arrowView: UIImageView = {
         let iv = UIImageView()
+        let constraint = NSLayoutConstraint(item: iv, attribute: .width, relatedBy: .equal, toItem: iv, attribute: .height, multiplier: 1, constant: 0)
+        iv.addConstraint(constraint)
         iv.contentMode = .left
         iv.image = #imageLiteral(resourceName: "sidearrow.png") // sidearrow.png
         return iv

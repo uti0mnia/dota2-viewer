@@ -114,14 +114,14 @@ class HeroStatsSubStackView: UIStackView {
     
     fileprivate func setConstraints() {
         // hp label
-        var constraints = NSLayoutConstraint.constraints(withVisualFormat: "V:[lbl(height)]", options: [], metrics: ["height": kLabelHeight], views: ["lbl": hpLabel])
-        constraints.forEach({ $0.priority = 999 })
-        hpLabel.addConstraints(constraints)
+//        var constraints = NSLayoutConstraint.constraints(withVisualFormat: "V:[lbl(height)]", options: [], metrics: ["height": kLabelHeight], views: ["lbl": hpLabel])
+//        constraints.forEach({ $0.priority = 999 })
+//        hpLabel.addConstraints(constraints)
         
         // mana label
-        constraints = NSLayoutConstraint.constraints(withVisualFormat: "V:[lbl(height)]", options: [], metrics: ["height": kLabelHeight], views: ["lbl": manaLabel])
-        constraints.forEach({ $0.priority = 999 })
-        manaLabel.addConstraints(constraints)
+//        constraints = NSLayoutConstraint.constraints(withVisualFormat: "V:[lbl(height)]", options: [], metrics: ["height": kLabelHeight], views: ["lbl": manaLabel])
+//        constraints.forEach({ $0.priority = 999 })
+//        manaLabel.addConstraints(constraints)
     }
     
     fileprivate func createBottomSV() -> UIStackView {

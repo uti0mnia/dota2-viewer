@@ -15,7 +15,7 @@ class RecipeStackView: DAExpandableStackView {
     // MARK - Initializer
     init(frame: CGRect = CGRect()) {
         // set the main label
-        textLabel = DAMainLabel(style: .large)
+        textLabel = DAMainLabel(style: .large, bold: true)
         textLabel.text = "Recipe"
         textLabel.sizeToFit()
         

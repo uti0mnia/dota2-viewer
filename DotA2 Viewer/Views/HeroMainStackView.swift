@@ -10,7 +10,7 @@ import UIKit
 
 class HeroMainStackView: UIStackView {
     // MARK - Properties
-    var imageView = DARoundedImageView(radius: 10)
+    var imageView = DARoundedImageView(radius: 5)
     var attackTypeLabel = DAMainLabel(style: .medium, bold: true)
     var rolesLabel = DAMultiLineLabel(style: .medium)
     

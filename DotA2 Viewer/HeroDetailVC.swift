@@ -79,10 +79,18 @@ class HeroDetailVC: DADetailVC {
             subSV.intelligenceSV.label.text = "\(self.model.intelligence.format(0)) (+\(self.model.intelligenceIncrement.format(1)))"
             subSV.hpLabel.text = "\(self.model.hp.format(0)) + \(self.model.hpRegen.format(1))"
             subSV.manaLabel.text = "\(self.model.mana.format(0)) + \(self.model.manaRegen.format(1))"
+            switch self.model.primaryAttribute.name ?? "" {
+            case "Strength":
+                subSV.strengthSV.backgroundColor = UIColor.flatMaroonColorDark()
+            case "Agility":
+                subSV.agilitySV.backgroundColor = UIColor.flatForestGreenColorDark()
+            default:
+                subSV.intelligenceSV.backgroundColor = UIColor.flatSkyBlueColorDark()
+            }
             
             // bottom
             subSV.damageLabel.text = "Dmg: \(self.model.damage.min.format(0)) - \(self.model.damage.max.format(0))"
-            subSV.attackPerSLabel.text = "Attack/s: \(self.model.attackPerS.format(0))"
+            subSV.attackPerSLabel.text = "Attack/s: \(self.model.attackPerS.format(2))"
             subSV.armorLabel.text = "Armor: \(self.model.armor.format(2))"
             subSV.spellDmgLabel.text = "Spell Dmg: \(self.model.spellDamage.format(2))%"
             subSV.attackAnimationLabel.text = "Attack Animation: \(self.model.attackAnimation)"
@@ -114,7 +122,7 @@ class HeroDetailVC: DADetailVC {
             
             // bottom
             subView.damageLabel.text = "Dmg: \(self.model.damage.min.format(0)) - \(self.model.damage.max.format(0))"
-            subView.attackPerSLabel.text = "Attack/s: \(self.model.attackPerS.format(0))"
+            subView.attackPerSLabel.text = "Attack/s: \(self.model.attackPerS.format(2))"
             subView.armorLabel.text = "Armor: \(self.model.armor.format(2))"
             subView.spellDmgLabel.text = "Spell Dmg: \(self.model.spellDamage.format(2))%"
         }
