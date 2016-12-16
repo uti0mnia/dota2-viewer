@@ -49,7 +49,7 @@
 		368D1BD11DFF402200314648 /* ItemMainStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368D1BD01DFF402200314648 /* ItemMainStackView.swift */; };
 		368D1BD31E0030A800314648 /* RecipeSubStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368D1BD21E0030A800314648 /* RecipeSubStackView.swift */; };
 		36A2922C1DCA51CC006E96A8 /* Arcane.png in Resources */ = {isa = PBXBuildFile; fileRef = 36A292211DCA51CC006E96A8 /* Arcane.png */; };
-		36A2922D1DCA51CC006E96A8 /* Arnaments.png in Resources */ = {isa = PBXBuildFile; fileRef = 36A292221DCA51CC006E96A8 /* Arnaments.png */; };
+		36A2922D1DCA51CC006E96A8 /* Armaments.png in Resources */ = {isa = PBXBuildFile; fileRef = 36A292221DCA51CC006E96A8 /* Armaments.png */; };
 		36A2922E1DCA51CC006E96A8 /* Armor.png in Resources */ = {isa = PBXBuildFile; fileRef = 36A292231DCA51CC006E96A8 /* Armor.png */; };
 		36A2922F1DCA51CC006E96A8 /* Artifacts.png in Resources */ = {isa = PBXBuildFile; fileRef = 36A292241DCA51CC006E96A8 /* Artifacts.png */; };
 		36A292301DCA51CC006E96A8 /* Attributes.png in Resources */ = {isa = PBXBuildFile; fileRef = 36A292251DCA51CC006E96A8 /* Attributes.png */; };
@@ -913,6 +913,7 @@
 		C95753CA1DD57FCF005C9F75 /* intelligence_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C95753C41DD57FCF005C9F75 /* intelligence_icon.png */; };
 		C95753CB1DD57FCF005C9F75 /* speed_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C95753C51DD57FCF005C9F75 /* speed_icon.png */; };
 		C95753CC1DD57FCF005C9F75 /* strength_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C95753C61DD57FCF005C9F75 /* strength_icon.png */; };
+		C95E86801E0369CE00822703 /* dota2.png in Resources */ = {isa = PBXBuildFile; fileRef = C95E867F1E0369CE00822703 /* dota2.png */; };
 		C96EBB601DF244EF00D6FFD0 /* DANavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96EBB5F1DF244EF00D6FFD0 /* DANavigationController.swift */; };
 		C98F86571DF8D5D5002FD602 /* ExpandableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98F86561DF8D5D5002FD602 /* ExpandableCell.swift */; };
 		C999EA081DE7D1C10036AF47 /* OptimusPrinceps.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C999EA061DE7D1C10036AF47 /* OptimusPrinceps.ttf */; };
@@ -971,7 +972,7 @@
 		368D1BD01DFF402200314648 /* ItemMainStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemMainStackView.swift; path = Views/ItemMainStackView.swift; sourceTree = "<group>"; };
 		368D1BD21E0030A800314648 /* RecipeSubStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecipeSubStackView.swift; path = Views/RecipeSubStackView.swift; sourceTree = "<group>"; };
 		36A292211DCA51CC006E96A8 /* Arcane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Arcane.png; path = images/Arcane.png; sourceTree = "<group>"; };
-		36A292221DCA51CC006E96A8 /* Arnaments.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Arnaments.png; path = images/Arnaments.png; sourceTree = "<group>"; };
+		36A292221DCA51CC006E96A8 /* Armaments.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Armaments.png; path = images/Armaments.png; sourceTree = "<group>"; };
 		36A292231DCA51CC006E96A8 /* Armor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Armor.png; path = images/Armor.png; sourceTree = "<group>"; };
 		36A292241DCA51CC006E96A8 /* Artifacts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Artifacts.png; path = images/Artifacts.png; sourceTree = "<group>"; };
 		36A292251DCA51CC006E96A8 /* Attributes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Attributes.png; path = images/Attributes.png; sourceTree = "<group>"; };
@@ -1842,6 +1843,7 @@
 		C95753C41DD57FCF005C9F75 /* intelligence_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = intelligence_icon.png; sourceTree = "<group>"; };
 		C95753C51DD57FCF005C9F75 /* speed_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = speed_icon.png; sourceTree = "<group>"; };
 		C95753C61DD57FCF005C9F75 /* strength_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = strength_icon.png; sourceTree = "<group>"; };
+		C95E867F1E0369CE00822703 /* dota2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dota2.png; sourceTree = "<group>"; };
 		C96EA1111DEE622800259AEF /* DotA2 Assistant.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = "DotA2 Assistant.entitlements"; path = "../DotA2 Assistant.entitlements"; sourceTree = "<group>"; };
 		C96EBB5F1DF244EF00D6FFD0 /* DANavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DANavigationController.swift; sourceTree = "<group>"; };
 		C98F86561DF8D5D5002FD602 /* ExpandableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExpandableCell.swift; path = Views/ExpandableCell.swift; sourceTree = "<group>"; };
@@ -1912,7 +1914,7 @@
 			children = (
 				C914703F1DD916D5002A042C /* recipe.png */,
 				36A292211DCA51CC006E96A8 /* Arcane.png */,
-				36A292221DCA51CC006E96A8 /* Arnaments.png */,
+				36A292221DCA51CC006E96A8 /* Armaments.png */,
 				36A292231DCA51CC006E96A8 /* Armor.png */,
 				36A292241DCA51CC006E96A8 /* Artifacts.png */,
 				36A292251DCA51CC006E96A8 /* Attributes.png */,
@@ -2984,6 +2986,7 @@
 		C94B1A351E01C46F008BF226 /* Misc */ = {
 			isa = PBXGroup;
 			children = (
+				C95E867F1E0369CE00822703 /* dota2.png */,
 				C90A79361E0218680068C79C /* SIDE_SHOP.png */,
 				C90A79351E0218680068C79C /* SECRET_SHOP.png */,
 				363A46501E006AB600BA5D97 /* uparrow.png */,
@@ -3340,6 +3343,7 @@
 				C94B17FD1E01C090008BF226 /* Toggle Movement_Phoenix.png in Resources */,
 				C94B17C41E01C090008BF226 /* Spiked Carapace_Nyx Assassin.png in Resources */,
 				C94B162E1E01C090008BF226 /* Berserker's Rage_Troll Warlord.png in Resources */,
+				C95E86801E0369CE00822703 /* dota2.png in Resources */,
 				C94B18271E01C090008BF226 /* Wraithfire Blast_Wraith King.png in Resources */,
 				C94B176C1E01C090008BF226 /* Purification_Omniknight.png in Resources */,
 				C94B18A01E01C0D2008BF226 /* Anti-Mage.png in Resources */,
@@ -3824,7 +3828,7 @@
 				C94B17211E01C090008BF226 /* Mana Drain_Lion.png in Resources */,
 				C94B16301E01C090008BF226 /* Blade Dance_Juggernaut.png in Resources */,
 				C94B17231E01C090008BF226 /* Mana Shield_Medusa.png in Resources */,
-				36A2922D1DCA51CC006E96A8 /* Arnaments.png in Resources */,
+				36A2922D1DCA51CC006E96A8 /* Armaments.png in Resources */,
 				C90A79371E0218680068C79C /* SECRET_SHOP.png in Resources */,
 				C94B16F31E01C090008BF226 /* Ignite_Ogre Magi.png in Resources */,
 				365F75481E02E01D00F928B0 /* sidearrow.png in Resources */,

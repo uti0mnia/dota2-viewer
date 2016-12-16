@@ -27,7 +27,7 @@ class ItemDetailModel {
     var cost: String { get { return _item.cost ?? "" } }
     var lore: String { get { return _item.lore ?? "" } }
     var type: String { get { return _item.type ?? "No Type" } }
-    var typeImg: UIImage { get { return UIImage(named: type) ?? #imageLiteral(resourceName: "dota2-logo.png") } }
+    var typeImg: UIImage { get { return UIImage(named: type) ?? #imageLiteral(resourceName: "dota2.png") } }
     var abilities: [AbilityModel] { get { return _abilities.map({ AbilityModel(ability: $0) }) } }
     var additionalInfo: [String] { get { return convert(_item.additionalInfo?.allObjects) } }
     var additionalInfoPretty: String {
