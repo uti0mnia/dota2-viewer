@@ -33,6 +33,7 @@
 		365F754E1E04271300F928B0 /* HeroAttributeStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365F754D1E04271300F928B0 /* HeroAttributeStackView.swift */; };
 		365F75501E042D4B00F928B0 /* HeroStatsStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365F754F1E042D4B00F928B0 /* HeroStatsStackView.swift */; };
 		365F75521E042DE100F928B0 /* HeroStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365F75511E042DE100F928B0 /* HeroStackView.swift */; };
+		365F75541E042F6400F928B0 /* DADetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365F75531E042F6400F928B0 /* DADetailVC.swift */; };
 		366A8A091DD0F4F3000406BF /* DAMainLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366A8A081DD0F4F3000406BF /* DAMainLabel.swift */; };
 		366A8A0C1DD0F87F000406BF /* DAMainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366A8A0B1DD0F87F000406BF /* DAMainTableViewCell.swift */; };
 		366A8A0E1DD0F993000406BF /* DACircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366A8A0D1DD0F993000406BF /* DACircleImageView.swift */; };
@@ -961,6 +962,7 @@
 		365F754D1E04271300F928B0 /* HeroAttributeStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HeroAttributeStackView.swift; path = Views/HeroAttributeStackView.swift; sourceTree = "<group>"; };
 		365F754F1E042D4B00F928B0 /* HeroStatsStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HeroStatsStackView.swift; path = Views/HeroStatsStackView.swift; sourceTree = "<group>"; };
 		365F75511E042DE100F928B0 /* HeroStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HeroStackView.swift; path = Views/HeroStackView.swift; sourceTree = "<group>"; };
+		365F75531E042F6400F928B0 /* DADetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DADetailVC.swift; sourceTree = "<group>"; };
 		366A8A081DD0F4F3000406BF /* DAMainLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAMainLabel.swift; sourceTree = "<group>"; };
 		366A8A0B1DD0F87F000406BF /* DAMainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAMainTableViewCell.swift; sourceTree = "<group>"; };
 		366A8A0D1DD0F993000406BF /* DACircleImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DACircleImageView.swift; sourceTree = "<group>"; };
@@ -2160,6 +2162,7 @@
 			children = (
 				366A8A111DD1029F000406BF /* DAUIViewController.swift */,
 				367E34DF1DB7F9670037FA7B /* CustomTabVC.swift */,
+				365F75531E042F6400F928B0 /* DADetailVC.swift */,
 				C93028381DF3629F005EA297 /* HeroDetailVC.swift */,
 				C90CE6131DFCCBA400C93539 /* ItemDetailVC.swift */,
 			);
@@ -4039,6 +4042,7 @@
 				C96EBB601DF244EF00D6FFD0 /* DANavigationController.swift in Sources */,
 				366A8A101DD100A8000406BF /* DAMainTableView.swift in Sources */,
 				C94F03A21DEF91D3000E60CE /* ArrayValue+CoreDataClass.swift in Sources */,
+				365F75541E042F6400F928B0 /* DADetailVC.swift in Sources */,
 				368D1BC11DF9E50D00314648 /* AbilityModel.swift in Sources */,
 				365F754A1E04237000F928B0 /* HeroMainStackView.swift in Sources */,
 				366A8A091DD0F4F3000406BF /* DAMainLabel.swift in Sources */,

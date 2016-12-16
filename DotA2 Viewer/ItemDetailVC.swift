@@ -8,68 +8,49 @@
 
 import UIKit
 
-class ItemDetailVC: UIViewController {
+class ItemDetailVC: DADetailVC {
     // MARK - Properties
-    var item: Item!
-    fileprivate var scrollView: UIScrollView = {
-        let sv = UIScrollView()
-        sv.alwaysBounceVertical = true
-        sv.translatesAutoresizingMaskIntoConstraints = false
-        return sv
-    }()
+    fileprivate var item: Item!
     fileprivate lazy var itemSV: ItemStackView = {[unowned self] in
         let sv = ItemStackView(abilitiesCount: self.model.abilities.count, withRecipe: !self.model.isSingularItem)
         sv.translatesAutoresizingMaskIntoConstraints = false
         return sv
     }()
-    fileprivate lazy var titleLabel: DAMainLabel = {[unowned self] in
-        let lbl = DAMainLabel(style: .large)
-        lbl.text = self.item.name!
-        lbl.sizeToFit()
-        return lbl
-    }()
     fileprivate var model: ItemDetailModel!
 
     // MARK - Methods
     override func viewDidLoad() {
+        // make sure we have an item
+        guard let itemObj = object as? Item else {
+            return
+        }
+        item = itemObj
+        model = ItemDetailModel(item: item)
+        
+        // Configure the VC
         super.viewDidLoad()
-        guard item != nil else { return }
         configure()
     }
     
     /* configures the VC */
     private func configure() {
-        model = ItemDetailModel(item: item)
-        configureViews()
         abilitySetup()
         recipeSetup()
-        setup()
     }
     
-    /* configures the views to the view controller */
-    fileprivate func configureViews() {
-        // colours
-        self.view.backgroundColor = UIColor.flatBlack()
-        
-        // scrollview
-        self.view.addSubview(scrollView)
-        var constraints = [NSLayoutConstraint]()
-        constraints += createConstraints(withVisual: "H:|[scrollView]|", withViews: ["scrollView": scrollView], options: .alignAllCenterX)
-        constraints += createConstraints(withVisual: "V:|[scrollView]|", withViews: ["scrollView": scrollView], options: .alignAllCenterX)
-        self.view.addConstraints(constraints)
+    override internal func addSubviews() {
+        super.addSubviews()
         
         // item stack view
         scrollView.addSubview(itemSV)
-        constraints.removeAll()
-        constraints += createConstraints(withVisual: "H:|[stackView(==scrollView)]|", withViews: ["stackView": itemSV, "scrollView": scrollView], options: .alignAllCenterX)
+        var constraints = createConstraints(withVisual: "H:|[stackView(==scrollView)]|", withViews: ["stackView": itemSV, "scrollView": scrollView], options: .alignAllCenterX)
         constraints += createConstraints(withVisual: "V:|[stackView]|", withViews: ["stackView": itemSV], options: .alignAllCenterX)
         scrollView.addConstraints(constraints)
     }
 
     /* does the setup from the model to the vies */
-    fileprivate func setup() {
-        // navigation bar
-        self.navigationItem.titleView = titleLabel
+    override internal func setup() {
+        super.setup()
         
         // expandable text SV
         itemSV.additionalInfoSV.textLabel.text = model.additionalInfoPretty
@@ -162,12 +143,8 @@ class ItemDetailVC: UIViewController {
     fileprivate func moveTo(item: Item) {
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "ItemDetailVC") as! ItemDetailVC
-        vc.item = item
+        vc.object = item
         self.navigationController?.pushViewController(vc, animated: true)
-    }
-    
-    fileprivate func createConstraints(withVisual str: String, withViews views: [String: Any], options: NSLayoutFormatOptions = []) -> [NSLayoutConstraint] {
-        return NSLayoutConstraint.constraints(withVisualFormat: str, options: options, metrics: nil, views: views)
     }
 
 }
