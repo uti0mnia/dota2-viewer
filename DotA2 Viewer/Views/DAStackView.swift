@@ -15,6 +15,7 @@ class DAStackView: UIStackView {
         get { return colour }
         set { colour = newValue }
     }
+    var radius: CGFloat = 0
     
     private lazy var backgroundLayer: CAShapeLayer = {
         let layer = CAShapeLayer()
@@ -24,7 +25,7 @@ class DAStackView: UIStackView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        backgroundLayer.path = UIBezierPath(rect: self.bounds).cgPath
+        backgroundLayer.path = UIBezierPath(roundedRect: self.bounds, cornerRadius: radius).cgPath
         backgroundLayer.fillColor = self.backgroundColor?.cgColor
     }
 

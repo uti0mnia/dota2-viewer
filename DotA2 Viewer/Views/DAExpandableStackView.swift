@@ -130,8 +130,9 @@ class DAExpandableStackView: DAStackView, DAExpandableProtocol {
     }
     
     /* meant to handle the top button being tapped */
-    @objc fileprivate func stackViewWasTapped(_ sender: Any) {
+    @objc fileprivate func stackViewWasTapped(_ sender: UITapGestureRecognizer) {
         toggle()
+        
     }
     
     internal func configSubview() {

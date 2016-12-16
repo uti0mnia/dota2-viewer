@@ -32,6 +32,7 @@ class HeroAttributeStackView: DAStackView {
         self.axis = .horizontal
         self.alignment = .fill
         self.distribution = .fillProportionally
+        self.radius = 4
         
         self.addArrangedSubviews(views: [imageView, label])
     }

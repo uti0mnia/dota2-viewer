@@ -75,9 +75,6 @@ class HeroStatsSubStackView: UIStackView {
         self.alignment = .fill
         self.distribution = .fillProportionally
         
-        // constraints
-        setConstraints()
-        
         // create SV
         let topSV = createTopSV()
         let middleSV = createMiddleSV()
@@ -91,7 +88,7 @@ class HeroStatsSubStackView: UIStackView {
         let topSV = UIStackView(arrangedSubviews: [levelLabel, slider])
         topSV.axis = .vertical
         topSV.alignment = .fill
-        topSV.distribution = .fillProportionally
+        topSV.distribution = .equalSpacing
         return topSV
     }
     
@@ -114,18 +111,6 @@ class HeroStatsSubStackView: UIStackView {
         middleSV.alignment = .fill
         middleSV.distribution = .fillEqually
         return middleSV
-    }
-    
-    fileprivate func setConstraints() {
-        // hp label
-//        var constraints = NSLayoutConstraint.constraints(withVisualFormat: "V:[lbl(height)]", options: [], metrics: ["height": kLabelHeight], views: ["lbl": hpLabel])
-//        constraints.forEach({ $0.priority = 999 })
-//        hpLabel.addConstraints(constraints)
-        
-        // mana label
-//        constraints = NSLayoutConstraint.constraints(withVisualFormat: "V:[lbl(height)]", options: [], metrics: ["height": kLabelHeight], views: ["lbl": manaLabel])
-//        constraints.forEach({ $0.priority = 999 })
-//        manaLabel.addConstraints(constraints)
     }
     
     fileprivate func createBottomSV() -> UIStackView {

@@ -1946,7 +1946,6 @@
 		364A6A5F1DC1192E00FBE163 /* General */ = {
 			isa = PBXGroup;
 			children = (
-				366A8A0D1DD0F993000406BF /* DARoundedImageView.swift */,
 				C90CE6091DFCB67500C93539 /* DAExpandableStackView.swift */,
 				C90CE60F1DFCC18F00C93539 /* DAExpandableTextStackView.swift */,
 				C94B1A381E01C4F7008BF226 /* DAIconLabel.swift */,
@@ -1957,6 +1956,7 @@
 				366A8A211DD24B71000406BF /* DAMainCellLabel.swift */,
 				C96EBB5F1DF244EF00D6FFD0 /* DANavigationController.swift */,
 				365F75551E0443D900F928B0 /* DAPaddedLabel.swift */,
+				366A8A0D1DD0F993000406BF /* DARoundedImageView.swift */,
 				C94A26D11DD5593F00D9B054 /* DASlider.swift */,
 				366A8A151DD103F1000406BF /* DATabBar.swift */,
 				364A6A581DC1136300FBE163 /* DAMultiLineLabel.swift */,
@@ -2148,11 +2148,11 @@
 		C93028371DF36164005EA297 /* Hero */ = {
 			isa = PBXGroup;
 			children = (
-				365F75511E042DE100F928B0 /* HeroStackView.swift */,
-				365F75491E04237000F928B0 /* HeroMainStackView.swift */,
-				365F754B1E04269D00F928B0 /* HeroStatsSubStackView.swift */,
-				365F754F1E042D4B00F928B0 /* HeroStatsStackView.swift */,
 				365F754D1E04271300F928B0 /* HeroAttributeStackView.swift */,
+				365F75491E04237000F928B0 /* HeroMainStackView.swift */,
+				365F754F1E042D4B00F928B0 /* HeroStatsStackView.swift */,
+				365F754B1E04269D00F928B0 /* HeroStatsSubStackView.swift */,
+				365F75511E042DE100F928B0 /* HeroStackView.swift */,
 			);
 			name = Hero;
 			sourceTree = "<group>";
