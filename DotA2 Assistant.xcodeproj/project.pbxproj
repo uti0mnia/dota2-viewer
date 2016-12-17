@@ -59,7 +59,7 @@
 		36A292311DCA51CC006E96A8 /* Caster.png in Resources */ = {isa = PBXBuildFile; fileRef = 36A292261DCA51CC006E96A8 /* Caster.png */; };
 		36A292321DCA51CC006E96A8 /* Common.png in Resources */ = {isa = PBXBuildFile; fileRef = 36A292271DCA51CC006E96A8 /* Common.png */; };
 		36A292331DCA51CC006E96A8 /* Consumables.png in Resources */ = {isa = PBXBuildFile; fileRef = 36A292281DCA51CC006E96A8 /* Consumables.png */; };
-		36A292341DCA51CC006E96A8 /* Secret shop.png in Resources */ = {isa = PBXBuildFile; fileRef = 36A292291DCA51CC006E96A8 /* Secret shop.png */; };
+		36A292341DCA51CC006E96A8 /* Secret Shop.png in Resources */ = {isa = PBXBuildFile; fileRef = 36A292291DCA51CC006E96A8 /* Secret Shop.png */; };
 		36A292351DCA51CC006E96A8 /* Support.png in Resources */ = {isa = PBXBuildFile; fileRef = 36A2922A1DCA51CC006E96A8 /* Support.png */; };
 		36A292361DCA51CC006E96A8 /* Weapons.png in Resources */ = {isa = PBXBuildFile; fileRef = 36A2922B1DCA51CC006E96A8 /* Weapons.png */; };
 		36C0C9621DA6E25800169394 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C0C9611DA6E25800169394 /* AppDelegate.swift */; };
@@ -692,7 +692,7 @@
 		C94B18E11E01C0D2008BF226 /* Puck.png in Resources */ = {isa = PBXBuildFile; fileRef = C94B18711E01C0D2008BF226 /* Puck.png */; };
 		C94B18E21E01C0D2008BF226 /* Pudge.png in Resources */ = {isa = PBXBuildFile; fileRef = C94B18721E01C0D2008BF226 /* Pudge.png */; };
 		C94B18E31E01C0D2008BF226 /* Pugna.png in Resources */ = {isa = PBXBuildFile; fileRef = C94B18731E01C0D2008BF226 /* Pugna.png */; };
-		C94B18E41E01C0D2008BF226 /* Queen of Pain.png in Resources */ = {isa = PBXBuildFile; fileRef = C94B18741E01C0D2008BF226 /* Queen of Pain.png */; };
+		C94B18E41E01C0D2008BF226 /* Queen Of Pain.png in Resources */ = {isa = PBXBuildFile; fileRef = C94B18741E01C0D2008BF226 /* Queen Of Pain.png */; };
 		C94B18E51E01C0D2008BF226 /* Razor.png in Resources */ = {isa = PBXBuildFile; fileRef = C94B18751E01C0D2008BF226 /* Razor.png */; };
 		C94B18E61E01C0D2008BF226 /* Riki.png in Resources */ = {isa = PBXBuildFile; fileRef = C94B18761E01C0D2008BF226 /* Riki.png */; };
 		C94B18E71E01C0D2008BF226 /* Rubick.png in Resources */ = {isa = PBXBuildFile; fileRef = C94B18771E01C0D2008BF226 /* Rubick.png */; };
@@ -978,7 +978,7 @@
 		36A292261DCA51CC006E96A8 /* Caster.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Caster.png; path = images/Caster.png; sourceTree = "<group>"; };
 		36A292271DCA51CC006E96A8 /* Common.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Common.png; path = images/Common.png; sourceTree = "<group>"; };
 		36A292281DCA51CC006E96A8 /* Consumables.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Consumables.png; path = images/Consumables.png; sourceTree = "<group>"; };
-		36A292291DCA51CC006E96A8 /* Secret shop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Secret shop.png"; path = "images/Secret shop.png"; sourceTree = "<group>"; };
+		36A292291DCA51CC006E96A8 /* Secret Shop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Secret Shop.png"; path = "images/Secret Shop.png"; sourceTree = "<group>"; };
 		36A2922A1DCA51CC006E96A8 /* Support.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Support.png; path = images/Support.png; sourceTree = "<group>"; };
 		36A2922B1DCA51CC006E96A8 /* Weapons.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Weapons.png; path = images/Weapons.png; sourceTree = "<group>"; };
 		36C0C95E1DA6E25800169394 /* DotA2 Assistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DotA2 Assistant.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1617,7 +1617,7 @@
 		C94B18711E01C0D2008BF226 /* Puck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Puck.png; path = heroes/Puck.png; sourceTree = "<group>"; };
 		C94B18721E01C0D2008BF226 /* Pudge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Pudge.png; path = heroes/Pudge.png; sourceTree = "<group>"; };
 		C94B18731E01C0D2008BF226 /* Pugna.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Pugna.png; path = heroes/Pugna.png; sourceTree = "<group>"; };
-		C94B18741E01C0D2008BF226 /* Queen of Pain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Queen of Pain.png"; path = "heroes/Queen of Pain.png"; sourceTree = "<group>"; };
+		C94B18741E01C0D2008BF226 /* Queen Of Pain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Queen Of Pain.png"; path = "heroes/Queen Of Pain.png"; sourceTree = "<group>"; };
 		C94B18751E01C0D2008BF226 /* Razor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Razor.png; path = heroes/Razor.png; sourceTree = "<group>"; };
 		C94B18761E01C0D2008BF226 /* Riki.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Riki.png; path = heroes/Riki.png; sourceTree = "<group>"; };
 		C94B18771E01C0D2008BF226 /* Rubick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Rubick.png; path = heroes/Rubick.png; sourceTree = "<group>"; };
@@ -1913,7 +1913,7 @@
 				36A292261DCA51CC006E96A8 /* Caster.png */,
 				36A292271DCA51CC006E96A8 /* Common.png */,
 				36A292281DCA51CC006E96A8 /* Consumables.png */,
-				36A292291DCA51CC006E96A8 /* Secret shop.png */,
+				36A292291DCA51CC006E96A8 /* Secret Shop.png */,
 				36A2922A1DCA51CC006E96A8 /* Support.png */,
 				36A2922B1DCA51CC006E96A8 /* Weapons.png */,
 			);
@@ -2775,7 +2775,7 @@
 				C94B18711E01C0D2008BF226 /* Puck.png */,
 				C94B18721E01C0D2008BF226 /* Pudge.png */,
 				C94B18731E01C0D2008BF226 /* Pugna.png */,
-				C94B18741E01C0D2008BF226 /* Queen of Pain.png */,
+				C94B18741E01C0D2008BF226 /* Queen Of Pain.png */,
 				C94B18751E01C0D2008BF226 /* Razor.png */,
 				C94B18761E01C0D2008BF226 /* Riki.png */,
 				C94B18771E01C0D2008BF226 /* Rubick.png */,
@@ -3584,7 +3584,7 @@
 				C94B17A71E01C090008BF226 /* Shadowraze (Near)_Shadow Fiend.png in Resources */,
 				C94B16831E01C090008BF226 /* Dragon Slave_Lina.png in Resources */,
 				C94B17841E01C090008BF226 /* Return Astral Spirit_Elder Titan.png in Resources */,
-				C94B18E41E01C0D2008BF226 /* Queen of Pain.png in Resources */,
+				C94B18E41E01C0D2008BF226 /* Queen Of Pain.png in Resources */,
 				C94B18EE1E01C0D2008BF226 /* Slardar.png in Resources */,
 				C94B16DB1E01C090008BF226 /* Gust_Drow Ranger.png in Resources */,
 				C94B17B21E01C090008BF226 /* Slithereen Crush_Slardar.png in Resources */,
@@ -3859,7 +3859,7 @@
 				C94B17F71E01C090008BF226 /* Tidebringer_Kunkka.png in Resources */,
 				C94B18171E01C090008BF226 /* Walrus Kick_Tusk.png in Resources */,
 				C94B17851E01C090008BF226 /* Return Chakram (Aghanim's Scepter)_Timbersaw.png in Resources */,
-				36A292341DCA51CC006E96A8 /* Secret shop.png in Resources */,
+				36A292341DCA51CC006E96A8 /* Secret Shop.png in Resources */,
 				C94B176D1E01C090008BF226 /* Purifying Flames_Oracle.png in Resources */,
 				C94B17FF1E01C090008BF226 /* Tornado_Invoker.png in Resources */,
 				C94B181E1E01C090008BF226 /* Weave_Dazzle.png in Resources */,
