@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ItemStackView: DAStackView {
+class ItemStackView: UIStackView {
     // MARK - Properties
     var mainSV = ItemMainStackView()
     var recipeSV: RecipeStackView?
@@ -39,7 +39,7 @@ class ItemStackView: DAStackView {
         self.axis = .vertical
         self.alignment = .fill
         self.distribution = .equalSpacing
-        self.spacing = 8
+        self.spacing = 20
         self.addArrangedSubviews(views: [mainSV, recipeSV, detailsSV, abilitiesSV, additionalInfoSV, loreSV])
         self.layoutMargins = UIEdgeInsetsMake(8, 8, 8, 8)
         self.isLayoutMarginsRelativeArrangement =  true

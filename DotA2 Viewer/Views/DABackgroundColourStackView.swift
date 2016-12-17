@@ -1,5 +1,5 @@
 //
-//  DAStackView.swift
+//  UIStackView.swift
 //  DotA2 Assistant
 //
 //  Created by Casey McLewin on 2016-12-14.
@@ -8,7 +8,8 @@
 
 import UIKit
 
-class DAStackView: UIStackView {
+// DO NOT USE THIS UNLESS YOU REALLY NEED TO COLOUR THE BACKGROUND
+class DABackgroundStackView: UIStackView {
     // MARK - Properties
     private var colour: UIColor?
     override var backgroundColor: UIColor? {

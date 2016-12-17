@@ -11,7 +11,7 @@ import UIKit
 class AbilitiesStackView: DAExpandableStackView {
     // MARK - Properties
     fileprivate var topLabel: DAMainLabel = {
-        let label = DAMainLabel(style: .large, bold: true)
+        let label = DAMainLabel(style: .xlarge, bold: true)
         label.text = "Abilities"
         label.sizeToFit()
         return label
@@ -55,7 +55,7 @@ class AbilitiesStackView: DAExpandableStackView {
     
     override internal func setSpacing(for sv: UIStackView) {
         super.setSpacing(for: sv)
-        bottomSV.spacing = 0
+        bottomSV.spacing = isExpanded ? 16 : 0
     }
     
     

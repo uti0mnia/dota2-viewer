@@ -20,16 +20,15 @@ class AbilityStackView: DAExpandableStackView {
     }()
     
     /* Public */
-    var nameLabel = DAMainLabel(style: .medium, bold: true)
+    var nameLabel = DAMainLabel(style: .large, bold: true)
     var specialsLabel: DAMainLabel = {
-        let label = DAMainLabel(style: .medium)
+        let label = DAMainLabel(style: .large)
         label.textAlignment = .right
         return label
     }()
     
     // MARK - Initializers
     init(frame: CGRect = CGRect()) {
-        nameLabel.setContentCompressionResistancePriority(751, for: .horizontal)
         topSV.addArrangedSubviews(views: [nameLabel, specialsLabel])
         super.init(topView: topSV, subView: nil, expanded: false, frame: frame)
         
@@ -44,7 +43,7 @@ class AbilityStackView: DAExpandableStackView {
         
         
         // set the margins
-        let margins: CGFloat = isExpanded ? 4 : 0
+        let margins: CGFloat = isExpanded ? 8 : 0
         self.layoutMargins = UIEdgeInsetsMake(margins, 0, margins, 0)
         self.isLayoutMarginsRelativeArrangement = true
     }

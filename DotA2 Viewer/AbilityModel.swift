@@ -25,12 +25,14 @@ class AbilityModel {
     var specials: [String] { get { return convert(_ability.abilitySpecial?.allObjects) } }
     var specialsPretty: NSAttributedString {
         // create return attribute string
-        let string = NSMutableAttributedString()
-        var separator = ""
+        let string = NSMutableAttributedString(string: " ")
+        var separator = "  "
         for special in specials {
             // create the attachment and spacing
             let attachment = NSTextAttachment()
             attachment.image = UIImage(named: "\(special).png")
+            let size = attachment.image?.size ?? CGSize.zero
+            attachment.bounds = CGRect(x: 0, y: kRadiance.descender, width: size.width, height: size.height)
             
             // create the attributed strings and append
             let s1 = NSAttributedString(string: separator)
@@ -59,6 +61,7 @@ class AbilityModel {
             // create the attributed string
             let attachment = NSTextAttachment()
             attachment.image = UIImage(named: "\(parts[0]).png")
+            attachment.bounds = CGRect(x: 0, y: kRadiance.descender, width: attachment.image?.size.width ?? 0, height: attachment.image?.size.height ?? 0)
             let s0 = NSAttributedString(string: separator)
             let s1 = NSAttributedString(attachment: attachment)
             let s2 = NSAttributedString(string: " \(parts[1])")

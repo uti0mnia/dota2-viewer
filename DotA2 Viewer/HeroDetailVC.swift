@@ -36,6 +36,7 @@ class HeroDetailVC: DADetailVC {
         setStats()
     }
     
+    /* Adds the main subview */
     override internal func addSubviews() {
         super.addSubviews()
         

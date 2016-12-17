@@ -10,7 +10,13 @@ import UIKit
 import ChameleonFramework
 
 enum DAMainLabelStyle: CGFloat {
-    case xsmall = 11, small = 14, medium = 18, large = 24, xlarge = 30, title = 38
+    case xsmall = 11, small = 15, medium = 19, large = 23, xlarge = 27, title = 31
+    func shrink() -> DAMainLabelStyle {
+        return DAMainLabelStyle(rawValue: self.rawValue - CGFloat(4)) ?? .xsmall
+    }
+    func enlarge() -> DAMainLabelStyle {
+        return DAMainLabelStyle(rawValue: self.rawValue + CGFloat(4)) ?? .xlarge
+    }
 }
 
 class DAMainLabel: DAPaddedLabel {
@@ -24,6 +30,7 @@ class DAMainLabel: DAPaddedLabel {
         super.init(frame: frame)
         commonInit()
     }
+    
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -43,7 +50,6 @@ class DAMainLabel: DAPaddedLabel {
         
         // make sure the text fits
         self.adjustsFontSizeToFitWidth = true
-        self.minimumScaleFactor = 0.5
     }
 
 }

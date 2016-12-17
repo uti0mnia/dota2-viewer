@@ -13,14 +13,14 @@ class DAExpandableTextStackView: DAExpandableStackView {
     var textLabel: DAMultiLineLabel!
     
     // MARK - Initializaers
-    init(name: String, frame: CGRect = CGRect()) {
+    init(name: String, frame: CGRect = CGRect(), style: DAMainLabelStyle = .xlarge) {
         // set the main label
-        let topLabel = DAMainLabel(style: .large, bold: true)
+        let topLabel = DAMainLabel(style: style, bold: true)
         topLabel.text = name
         topLabel.sizeToFit()
         
         // set the text label
-        textLabel = DAMultiLineLabel(style: .medium)
+        textLabel = DAMultiLineLabel(style: style.shrink())
         textLabel.insets = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 0)
         super.init(topView: topLabel, subView: textLabel, expanded: false, frame: frame)
         

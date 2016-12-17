@@ -70,7 +70,7 @@
 		36FD56541DA6E3F5007C5A9C /* default_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 36FD56511DA6E3F5007C5A9C /* default_icon.png */; };
 		C90A79371E0218680068C79C /* SECRET_SHOP.png in Resources */ = {isa = PBXBuildFile; fileRef = C90A79351E0218680068C79C /* SECRET_SHOP.png */; };
 		C90A79381E0218680068C79C /* SIDE_SHOP.png in Resources */ = {isa = PBXBuildFile; fileRef = C90A79361E0218680068C79C /* SIDE_SHOP.png */; };
-		C90A793A1E021EE00068C79C /* DAStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90A79391E021EE00068C79C /* DAStackView.swift */; };
+		C90A793A1E021EE00068C79C /* DABackgroundColourStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90A79391E021EE00068C79C /* DABackgroundColourStackView.swift */; };
 		C90CE60A1DFCB67500C93539 /* DAExpandableStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90CE6091DFCB67500C93539 /* DAExpandableStackView.swift */; };
 		C90CE6101DFCC18F00C93539 /* DAExpandableTextStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90CE60F1DFCC18F00C93539 /* DAExpandableTextStackView.swift */; };
 		C90CE6121DFCC95A00C93539 /* ItemStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90CE6111DFCC95A00C93539 /* ItemStackView.swift */; };
@@ -661,7 +661,7 @@
 		C94B18C21E01C0D2008BF226 /* Io.png in Resources */ = {isa = PBXBuildFile; fileRef = C94B18521E01C0D2008BF226 /* Io.png */; };
 		C94B18C31E01C0D2008BF226 /* Jakiro.png in Resources */ = {isa = PBXBuildFile; fileRef = C94B18531E01C0D2008BF226 /* Jakiro.png */; };
 		C94B18C41E01C0D2008BF226 /* Juggernaut.png in Resources */ = {isa = PBXBuildFile; fileRef = C94B18541E01C0D2008BF226 /* Juggernaut.png */; };
-		C94B18C51E01C0D2008BF226 /* Keeper of the Light.png in Resources */ = {isa = PBXBuildFile; fileRef = C94B18551E01C0D2008BF226 /* Keeper of the Light.png */; };
+		C94B18C51E01C0D2008BF226 /* Keeper Of The Light.png in Resources */ = {isa = PBXBuildFile; fileRef = C94B18551E01C0D2008BF226 /* Keeper Of The Light.png */; };
 		C94B18C61E01C0D2008BF226 /* Kunkka.png in Resources */ = {isa = PBXBuildFile; fileRef = C94B18561E01C0D2008BF226 /* Kunkka.png */; };
 		C94B18C71E01C0D2008BF226 /* Legion Commander.png in Resources */ = {isa = PBXBuildFile; fileRef = C94B18571E01C0D2008BF226 /* Legion Commander.png */; };
 		C94B18C81E01C0D2008BF226 /* Leshrac.png in Resources */ = {isa = PBXBuildFile; fileRef = C94B18581E01C0D2008BF226 /* Leshrac.png */; };
@@ -995,7 +995,7 @@
 		98F87ADCA1FE546C146D14EF /* Pods_DotA2_Assistant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DotA2_Assistant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C90A79351E0218680068C79C /* SECRET_SHOP.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SECRET_SHOP.png; sourceTree = "<group>"; };
 		C90A79361E0218680068C79C /* SIDE_SHOP.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SIDE_SHOP.png; sourceTree = "<group>"; };
-		C90A79391E021EE00068C79C /* DAStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DAStackView.swift; path = Views/DAStackView.swift; sourceTree = "<group>"; };
+		C90A79391E021EE00068C79C /* DABackgroundColourStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DABackgroundColourStackView.swift; path = Views/DABackgroundColourStackView.swift; sourceTree = "<group>"; };
 		C90CE6091DFCB67500C93539 /* DAExpandableStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DAExpandableStackView.swift; path = Views/DAExpandableStackView.swift; sourceTree = "<group>"; };
 		C90CE60F1DFCC18F00C93539 /* DAExpandableTextStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DAExpandableTextStackView.swift; path = Views/DAExpandableTextStackView.swift; sourceTree = "<group>"; };
 		C90CE6111DFCC95A00C93539 /* ItemStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemStackView.swift; path = Views/ItemStackView.swift; sourceTree = "<group>"; };
@@ -1586,7 +1586,7 @@
 		C94B18521E01C0D2008BF226 /* Io.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Io.png; path = heroes/Io.png; sourceTree = "<group>"; };
 		C94B18531E01C0D2008BF226 /* Jakiro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Jakiro.png; path = heroes/Jakiro.png; sourceTree = "<group>"; };
 		C94B18541E01C0D2008BF226 /* Juggernaut.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Juggernaut.png; path = heroes/Juggernaut.png; sourceTree = "<group>"; };
-		C94B18551E01C0D2008BF226 /* Keeper of the Light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Keeper of the Light.png"; path = "heroes/Keeper of the Light.png"; sourceTree = "<group>"; };
+		C94B18551E01C0D2008BF226 /* Keeper Of The Light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Keeper Of The Light.png"; path = "heroes/Keeper Of The Light.png"; sourceTree = "<group>"; };
 		C94B18561E01C0D2008BF226 /* Kunkka.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Kunkka.png; path = heroes/Kunkka.png; sourceTree = "<group>"; };
 		C94B18571E01C0D2008BF226 /* Legion Commander.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Legion Commander.png"; path = "heroes/Legion Commander.png"; sourceTree = "<group>"; };
 		C94B18581E01C0D2008BF226 /* Leshrac.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Leshrac.png; path = heroes/Leshrac.png; sourceTree = "<group>"; };
@@ -1961,7 +1961,7 @@
 				366A8A151DD103F1000406BF /* DATabBar.swift */,
 				364A6A581DC1136300FBE163 /* DAMultiLineLabel.swift */,
 				C94CAB631DD7CD4F00971BC5 /* DASearchBar.swift */,
-				C90A79391E021EE00068C79C /* DAStackView.swift */,
+				C90A79391E021EE00068C79C /* DABackgroundColourStackView.swift */,
 			);
 			name = General;
 			sourceTree = "<group>";
@@ -2744,7 +2744,7 @@
 				C94B18521E01C0D2008BF226 /* Io.png */,
 				C94B18531E01C0D2008BF226 /* Jakiro.png */,
 				C94B18541E01C0D2008BF226 /* Juggernaut.png */,
-				C94B18551E01C0D2008BF226 /* Keeper of the Light.png */,
+				C94B18551E01C0D2008BF226 /* Keeper Of The Light.png */,
 				C94B18561E01C0D2008BF226 /* Kunkka.png */,
 				C94B18571E01C0D2008BF226 /* Legion Commander.png */,
 				C94B18581E01C0D2008BF226 /* Leshrac.png */,
@@ -3466,7 +3466,7 @@
 				C94B16C11E01C090008BF226 /* Focused Detonate_Techies.png in Resources */,
 				C94B17B61E01C090008BF226 /* Song of the Siren_Naga Siren.png in Resources */,
 				C94B18D11E01C0D2008BF226 /* Medusa.png in Resources */,
-				C94B18C51E01C0D2008BF226 /* Keeper of the Light.png in Resources */,
+				C94B18C51E01C0D2008BF226 /* Keeper Of The Light.png in Resources */,
 				C94B1A161E01C108008BF226 /* Sange.png in Resources */,
 				C94B1A1F1E01C108008BF226 /* Slippers of Agility.png in Resources */,
 				C94B174A1E01C090008BF226 /* Overgrowth_Treant Protector.png in Resources */,
@@ -4007,7 +4007,7 @@
 				366A8A161DD103F1000406BF /* DATabBar.swift in Sources */,
 				C94F03B21DEF91D3000E60CE /* Note+CoreDataClass.swift in Sources */,
 				C9B00F7D1DFE4BA600A15F96 /* AbilitiesStackView.swift in Sources */,
-				C90A793A1E021EE00068C79C /* DAStackView.swift in Sources */,
+				C90A793A1E021EE00068C79C /* DABackgroundColourStackView.swift in Sources */,
 				368D1BB31DF8815D00314648 /* HeroDetailModel.swift in Sources */,
 				367E34E01DB7F9670037FA7B /* CustomTabVC.swift in Sources */,
 				C90CE60A1DFCB67500C93539 /* DAExpandableStackView.swift in Sources */,

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ItemMainStackView: DAStackView {
+class ItemMainStackView: UIStackView {
     // MARK - Properties
     /* Private */
     fileprivate var rightSV: UIStackView = {
@@ -28,8 +28,8 @@ class ItemMainStackView: DAStackView {
     }()
     
     /* Public */
-    var itemImageView: UIImageView = {
-        let iv = UIImageView()
+    var itemImageView: DARoundedImageView = {
+        let iv = DARoundedImageView(radius: 5)
         iv.contentMode = .scaleAspectFit
         return iv
     }()

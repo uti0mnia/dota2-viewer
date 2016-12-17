@@ -11,7 +11,7 @@ import UIKit
 class HeroStatsStackView: DAExpandableStackView {
     // MARK - Properties
     var topLabel: DAMainLabel = {
-        let lbl = DAMainLabel(style: .large, bold: true)
+        let lbl = DAMainLabel(style: .xlarge, bold: true)
         lbl.text = "Stats"
         return lbl
     }()

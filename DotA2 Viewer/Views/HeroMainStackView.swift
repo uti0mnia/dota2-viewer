@@ -11,8 +11,16 @@ import UIKit
 class HeroMainStackView: UIStackView {
     // MARK - Properties
     var imageView = DARoundedImageView(radius: 5)
-    var attackTypeLabel = DAMainLabel(style: .medium, bold: true)
-    var rolesLabel = DAMultiLineLabel(style: .medium)
+    var attackTypeLabel: DAMainLabel = {
+        let label = DAMainLabel(style: .medium, bold: true)
+        label.textAlignment = .center
+        return label
+    }()
+    var rolesLabel: DAMainLabel = {
+        let lbl = DAMainLabel(style: .medium)
+        lbl.textAlignment = .center
+        return lbl
+    }()
     
     // MARK - Initializers
     override init(frame: CGRect = CGRect()) {
@@ -29,8 +37,8 @@ class HeroMainStackView: UIStackView {
         // Configure properties
         self.axis = .vertical
         self.alignment = .center
-        self.distribution = .fillProportionally
-        self.spacing = 8
+        self.distribution = .equalSpacing
+        self.spacing = 12
         
         // Add views
         self.addArrangedSubviews(views: [imageView, attackTypeLabel, rolesLabel])

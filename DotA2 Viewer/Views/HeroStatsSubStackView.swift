@@ -24,7 +24,7 @@ class HeroStatsSubStackView: UIStackView {
     var agilitySV = HeroAttributeStackView()
     var intelligenceSV = HeroAttributeStackView()
     var hpLabel: DAMainLabel = {
-        let lbl = DAMainLabel(style: .medium, bold: true)
+        let lbl = DAMainLabel(style: .large, bold: true)
         lbl.textColor = UIColor.flatBlack()
         lbl.backgroundColor = UIColor.flatGreen()
         lbl.textAlignment = .center
@@ -33,7 +33,7 @@ class HeroStatsSubStackView: UIStackView {
         return lbl
     }()
     var manaLabel: DAMainLabel = {
-        let lbl = DAMainLabel(style: .medium, bold: true)
+        let lbl = DAMainLabel(style: .large, bold: true)
         lbl.textColor = UIColor.flatBlack()
         lbl.backgroundColor = UIColor.flatSkyBlue()
         lbl.textAlignment = .center
@@ -73,7 +73,7 @@ class HeroStatsSubStackView: UIStackView {
         // Configure properties
         self.axis = .vertical
         self.alignment = .fill
-        self.distribution = .fillProportionally
+        self.distribution = .equalSpacing
         
         // create SV
         let topSV = createTopSV()
@@ -88,7 +88,7 @@ class HeroStatsSubStackView: UIStackView {
         let topSV = UIStackView(arrangedSubviews: [levelLabel, slider])
         topSV.axis = .vertical
         topSV.alignment = .fill
-        topSV.distribution = .equalSpacing
+        topSV.distribution = .fillEqually
         return topSV
     }
     

@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class RecipeSubStackView: DAStackView {
+final class RecipeSubStackView: UIStackView {
     // MARK - Properties
     /* Private */
     fileprivate var image: UIImage

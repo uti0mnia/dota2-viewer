@@ -32,7 +32,7 @@ class HeroStackView: UIStackView {
         self.axis = .vertical
         self.alignment = .fill
         self.distribution = .equalSpacing
-        self.spacing = 8
+        self.spacing = 20
         self.addArrangedSubviews(views: [mainSV, statsSV, abilitiesSV, bioSV, loreSV])
         self.layoutMargins = UIEdgeInsetsMake(8, 8, 8, 8)
         self.isLayoutMarginsRelativeArrangement =  true

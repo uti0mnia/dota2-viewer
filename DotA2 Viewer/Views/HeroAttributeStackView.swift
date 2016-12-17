@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HeroAttributeStackView: DAStackView {
+class HeroAttributeStackView: DABackgroundStackView {
     // MARK - Properties
     var imageView: UIImageView = {
         let iv = UIImageView()

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AbilitySubStackView: DAStackView {
+class AbilitySubStackView: UIStackView {
     // MARK - Properties
     /* Private */
     fileprivate var midSV: UIStackView = {
@@ -27,23 +27,22 @@ class AbilitySubStackView: DAStackView {
     }()
     
     /* Public */
-    var abilityImageView: UIImageView = {
-        let iv = UIImageView()
-        iv.contentMode = .scaleAspectFit
+    var abilityImageView: DARoundedImageView = {
+        let iv = DARoundedImageView(radius: 5)
+        iv.contentMode = .left
         return iv
     }()
     var cooldownLabel = DAIconLabel(style: .medium)
     var manaLabel = DAIconLabel(style: .medium)
     var typesLabel: DAMultiLineLabel = {
         let lbl = DAMultiLineLabel(style: .medium)
-        lbl.textAlignment = .center
         return lbl
     }()
     var summaryLabel = DAMultiLineLabel(style: .medium)
     var dataLabel = DAMultiLineLabel(style: .medium)
     var specialsLabel = DAMultiLineLabel(style: .medium)
     var modifiersLabel = DAMultiLineLabel(style: .medium)
-    var notesSV = DAExpandableTextStackView(name: "Notes")
+    var notesSV = DAExpandableTextStackView(name: "Notes", style: .large)
     
     // MARK - Initializers
     override init(frame: CGRect = CGRect()) {

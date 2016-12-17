@@ -13,7 +13,7 @@ protocol DAExpandableProtocol {
     func toggle()
 }
 
-class DAExpandableStackView: DAStackView, DAExpandableProtocol {
+class DAExpandableStackView: UIStackView, DAExpandableProtocol {
     // MARK - Properties
     
     /* Private */
@@ -29,7 +29,7 @@ class DAExpandableStackView: DAStackView, DAExpandableProtocol {
         let iv = UIImageView()
         let constraint = NSLayoutConstraint(item: iv, attribute: .width, relatedBy: .equal, toItem: iv, attribute: .height, multiplier: 1, constant: 0)
         iv.addConstraint(constraint)
-        iv.contentMode = .left
+        iv.contentMode = .center
         iv.image = #imageLiteral(resourceName: "sidearrow.png") // sidearrow.png
         return iv
     }()
@@ -87,11 +87,20 @@ class DAExpandableStackView: DAStackView, DAExpandableProtocol {
         }
         let rotation = isExpanded ? 0 : π / 2
         isExpanded = !isExpanded
+        var t1 = Date()
         setSpacing(for: self)
-        UIView.animate(withDuration: kExpansionTime) {
+        var t2 = Date()
+        print("Spacing: ", t2.timeIntervalSince(t1))
+        t1 = Date()
+        UIView.animate(withDuration: kExpansionTime, animations: {
             self.arrowView.transform = CGAffineTransform(rotationAngle: rotation)
+        })
+        UIView.animate(withDuration: kExpansionTime, animations: {
             self.subView?.isHidden = !self.isExpanded
             self.layoutIfNeeded()
+        }) {_ in
+            t2 = Date()
+            print(t2.timeIntervalSince(t1))
         }
     }
     
