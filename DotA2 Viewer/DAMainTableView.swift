@@ -36,10 +36,6 @@ class DAMainTableView: UITableView {
         self.sectionIndexColor = UIColor.flatRed()
         self.sectionIndexTrackingBackgroundColor = UIColor.flatBlack()
         self.sectionIndexBackgroundColor = UIColor.flatBlack()
-        self.rowHeight = 60
-        
-        // settings
-        self.separatorInset = UIEdgeInsetsMake(0, self.rowHeight + kTableViewCellImageSpaceR + kTableViewCellImageSpaceL, 0, 0)
     }
 
 }

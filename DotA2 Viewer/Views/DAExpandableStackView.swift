@@ -87,21 +87,12 @@ class DAExpandableStackView: UIStackView, DAExpandableProtocol {
         }
         let rotation = isExpanded ? 0 : π / 2
         isExpanded = !isExpanded
-        var t1 = Date()
         setSpacing(for: self)
-        var t2 = Date()
-        print("Spacing: ", t2.timeIntervalSince(t1))
-        t1 = Date()
         UIView.animate(withDuration: kExpansionTime, animations: {
             self.arrowView.transform = CGAffineTransform(rotationAngle: rotation)
-        })
-        UIView.animate(withDuration: kExpansionTime, animations: {
             self.subView?.isHidden = !self.isExpanded
             self.layoutIfNeeded()
-        }) {_ in
-            t2 = Date()
-            print(t2.timeIntervalSince(t1))
-        }
+        })
     }
     
     /* Forces the state of the expansion (true means expanded, false means not expanded) */

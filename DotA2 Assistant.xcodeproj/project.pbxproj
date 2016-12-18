@@ -1946,6 +1946,7 @@
 		364A6A5F1DC1192E00FBE163 /* General */ = {
 			isa = PBXGroup;
 			children = (
+				C90A79391E021EE00068C79C /* DABackgroundColourStackView.swift */,
 				C90CE6091DFCB67500C93539 /* DAExpandableStackView.swift */,
 				C90CE60F1DFCC18F00C93539 /* DAExpandableTextStackView.swift */,
 				C94B1A381E01C4F7008BF226 /* DAIconLabel.swift */,
@@ -1961,7 +1962,6 @@
 				366A8A151DD103F1000406BF /* DATabBar.swift */,
 				364A6A581DC1136300FBE163 /* DAMultiLineLabel.swift */,
 				C94CAB631DD7CD4F00971BC5 /* DASearchBar.swift */,
-				C90A79391E021EE00068C79C /* DABackgroundColourStackView.swift */,
 			);
 			name = General;
 			sourceTree = "<group>";

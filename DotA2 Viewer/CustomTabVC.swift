@@ -63,25 +63,7 @@ class CustomTabVC: DAUIViewController {
     // MARK - Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // configure the UI Elements
-        tabBar.selectedItem = tabBar.items?.first!
-        
-        // title view
-        titleView = DAMainLabel(style: .title)
-        titleView.text = tabBar.selectedItem?.title
-        titleView.sizeToFit()
-        self.navigationItem.titleView = titleView
-        
-        // table view
-        tableView.register(DAMainTableViewCell.self, forCellReuseIdentifier: "cell")
-        tableView.estimatedRowHeight = 100
-        tableView.rowHeight = UITableViewAutomaticDimension
-        
-        // hide the back button when pushing
-        let btn = UIBarButtonItem()
-        btn.title = ""
-        navigationItem.backBarButtonItem = btn
+        setup()
         
         // perform the fetch
         do {
@@ -112,34 +94,60 @@ class CustomTabVC: DAUIViewController {
         NotificationCenter.default.removeObserver(self)
     }
     
+    fileprivate func setup () {
+        // configure the UI Elements
+        tabBar.selectedItem = tabBar.items?.first!
+        
+        // title view
+        titleView = DAMainLabel(style: .title)
+        titleView.text = tabBar.selectedItem?.title
+        titleView.sizeToFit()
+        self.navigationItem.titleView = titleView
+        
+        // table view
+        tableView.register(DAMainTableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.estimatedRowHeight = 100
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.searchBar.delegate = self
+        
+        // hide the back button when pushing
+        let btn = UIBarButtonItem()
+        btn.title = ""
+        navigationItem.backBarButtonItem = btn
+
+    }
+    
     
     /* Handles the user input when selecting the search button (scroll to search bar and  */
     @IBAction func searchButton(_ sender: UIBarButtonItem) {
         tableView.setContentOffset(CGPoint.zero, animated: true)
-        tableView.searchBar.becomeFirstResponder()
     }
     
     /* Creates the detail view controller */
-    fileprivate func createDetail(for object: ListObject) -> DADetailVC {
+    fileprivate func createDetail(for object: ListObject) -> DADetailVC? {
         let sb = UIStoryboard(name: "Main", bundle: nil)
         if let hero = object as? Hero {
             let vc = sb.instantiateViewController(withIdentifier: "HeroDetailVC") as! HeroDetailVC
             vc.object = hero
             return vc
         }
-        else {
-            let item = object as! Item
+        
+        if let item = object as? Item {
             let vc = sb.instantiateViewController(withIdentifier: "ItemDetailVC") as! ItemDetailVC
             vc.object = item
             return vc
         }
+        
+        return nil
     }
     
     /* Handles the move from hero <-> item */
     fileprivate func switchTableView() {
-            self.tableView.reloadData()
-            let ip = IndexPath(row: 0, section: 0)
-            self.tableView.scrollToRow(at: ip, at: .top, animated: false)
+        tableView.searchBar.textField?.text = ""
+        filterSeach(withText: "")
+        self.tableView.reloadData()
+        let ip = IndexPath(row: 0, section: 0)
+        self.tableView.scrollToRow(at: ip, at: .top, animated: false)
     }
 }
 
@@ -201,8 +209,39 @@ extension CustomTabVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let obj = fetchedResultsController.object(at: indexPath)
         tableView.deselectRow(at: indexPath, animated: true)
-        let vc = createDetail(for: obj)
-        showDetailViewController(vc, sender: self)
+        if let vc = createDetail(for: obj) {
+            self.tableView.searchBar.resignFirstResponder()
+            showDetailViewController(vc, sender: self)
+        }
+    }
+}
+
+// MARK - Search Bar Delegate methods
+extension CustomTabVC: UISearchBarDelegate {
+    fileprivate func filterSeach(withText text: String) {
+        let predicate = (text != "") ? NSPredicate(format: "name CONTAINS %@", text) : NSPredicate(value: true)
+        fetchedResultsController.fetchRequest.predicate = predicate
+        do {
+            try fetchedResultsController.performFetch()
+            tableView.reloadData()
+        } catch {
+            print("Error performing fetch: \(error.localizedDescription)")
+        }
+    }
+    /* create a predicate and filter the search */
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        filterSeach(withText: searchText)
+    }
+    
+    /* called when the cancel button is tapped */
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        tableView.searchBar.textField?.text = ""
+        filterSeach(withText: "")
+        tableView.searchBar.resignFirstResponder()
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        tableView.searchBar.resignFirstResponder()
     }
 }
 
