@@ -65,6 +65,7 @@ class CustomTabVC: DAUIViewController {
         super.viewDidLoad()
         setup()
         
+        
         // perform the fetch
         do {
             try heroFRC.performFetch()
@@ -82,11 +83,6 @@ class CustomTabVC: DAUIViewController {
         ns.addObserver(self, selector: #selector(CustomTabVC.keyboardWillShow), name: .UIKeyboardDidShow, object: nil)
         ns.addObserver(self, selector: #selector(CustomTabVC.keyboardWillHide), name: .UIKeyboardWillHide, object: nil)
         
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
