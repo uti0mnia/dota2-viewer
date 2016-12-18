@@ -21,42 +21,43 @@ class CustomTabVC: DAUIViewController {
     
     // MARK - Core Data
     fileprivate let context = (UIApplication.shared.delegate as! AppDelegate).managedObjectContext
-    private var _fetchedResultsController: NSFetchedResultsController<ListObject>?
+    private lazy var heroFRC: NSFetchedResultsController<ListObject> = {
+        // properties
+        let fetchRequest = NSFetchRequest<ListObject>(entityName: "Hero")
+        let sort = NSSortDescriptor(key: "name", ascending: true)
+        fetchRequest.sortDescriptors = [sort]
+        
+        
+        // init the frc
+        let frc = NSFetchedResultsController(fetchRequest: fetchRequest,
+                                             managedObjectContext: self.context,
+                                             sectionNameKeyPath: "firstLetter",
+                                             cacheName: nil)
+        frc.delegate = self
+        return frc
+        
+    }()
+    private lazy var itemFRC: NSFetchedResultsController<ListObject> = {
+        // properties
+        let request = NSFetchRequest<ListObject>(entityName: "Item")
+        let sort = NSSortDescriptor(key: "name", ascending: true)
+        request.sortDescriptors = [sort]
+        
+        
+        // init the frc
+        let frc = NSFetchedResultsController(fetchRequest: request,
+                                             managedObjectContext: self.context,
+                                             sectionNameKeyPath: "firstLetter",
+                                             cacheName: nil)
+        frc.delegate = self
+        return frc
+    }()
     fileprivate var fetchedResultsController: NSFetchedResultsController<ListObject> {
         get {
-            if _fetchedResultsController != nil {
-                return _fetchedResultsController!
-            } else {
-                // set properties
-                let fetchRequest = NSFetchRequest<ListObject>(entityName: self.entity)
-                let sort = NSSortDescriptor(key: "name", ascending: true)
-                fetchRequest.sortDescriptors = [sort]
-                
-                // init the NSFRC
-                let frc = NSFetchedResultsController(
-                    fetchRequest: fetchRequest,
-                    managedObjectContext: self.context,
-                    sectionNameKeyPath: "firstLetter", // for the indexing
-                    cacheName: nil)
-                
-                frc.delegate = self
-                _fetchedResultsController = frc
-                
-                return frc
-            }
+            return self.entity == "Hero" ? heroFRC : itemFRC
         }
     }
-    fileprivate var entity = "Hero" {
-        didSet {
-            _fetchedResultsController = nil
-            do {
-                try fetchedResultsController.performFetch()
-            } catch {
-                print("Error performing fetch: \(error.localizedDescription)")
-            }
-            tableView.reloadData()
-        }
-    }
+    fileprivate var entity = "Hero" { didSet { switchTableView() } }
     
     
     // MARK - Methods
@@ -66,6 +67,7 @@ class CustomTabVC: DAUIViewController {
         // configure the UI Elements
         tabBar.selectedItem = tabBar.items?.first!
         
+        // title view
         titleView = DAMainLabel(style: .title)
         titleView.text = tabBar.selectedItem?.title
         titleView.sizeToFit()
@@ -83,7 +85,8 @@ class CustomTabVC: DAUIViewController {
         
         // perform the fetch
         do {
-            try fetchedResultsController.performFetch()
+            try heroFRC.performFetch()
+            try itemFRC.performFetch()
         } catch {
             print("Error performing fetch: \(error.localizedDescription)")
         }
@@ -99,6 +102,11 @@ class CustomTabVC: DAUIViewController {
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         NotificationCenter.default.removeObserver(self)
@@ -111,23 +119,27 @@ class CustomTabVC: DAUIViewController {
         tableView.searchBar.becomeFirstResponder()
     }
     
-    /* Handles the segue to a detail vc (item/hero) */
-    fileprivate func moveToDetail(for object: ListObject) {
+    /* Creates the detail view controller */
+    fileprivate func createDetail(for object: ListObject) -> DADetailVC {
         let sb = UIStoryboard(name: "Main", bundle: nil)
-        
         if let hero = object as? Hero {
             let vc = sb.instantiateViewController(withIdentifier: "HeroDetailVC") as! HeroDetailVC
             vc.object = hero
-            showDetailViewController(vc, sender: nil)
-            return
+            return vc
         }
-        
-        if let item = object as? Item {
+        else {
+            let item = object as! Item
             let vc = sb.instantiateViewController(withIdentifier: "ItemDetailVC") as! ItemDetailVC
             vc.object = item
-            showDetailViewController(vc, sender: nil)
-            return
+            return vc
         }
+    }
+    
+    /* Handles the move from hero <-> item */
+    fileprivate func switchTableView() {
+            self.tableView.reloadData()
+            let ip = IndexPath(row: 0, section: 0)
+            self.tableView.scrollToRow(at: ip, at: .top, animated: false)
     }
 }
 
@@ -189,7 +201,8 @@ extension CustomTabVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let obj = fetchedResultsController.object(at: indexPath)
         tableView.deselectRow(at: indexPath, animated: true)
-        moveToDetail(for: obj)
+        let vc = createDetail(for: obj)
+        showDetailViewController(vc, sender: self)
     }
 }
 
@@ -207,22 +220,6 @@ extension CustomTabVC {
         if let _ = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             tableView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height - tabBar.frame.height)
         }
-    }
-}
-
-extension CustomTabVC: UIViewControllerPreviewingDelegate {
-    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
-        if let indexPath = tableView.indexPathForRow(at: location) {
-            // this will blur everything else
-            previewingContext.sourceRect = tableView.rectForRow(at: indexPath)
-            return nil
-        }
-        
-        return nil
-    }
-    
-    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
-        self.showDetailViewController(viewControllerToCommit, sender: nil)
     }
 }
 

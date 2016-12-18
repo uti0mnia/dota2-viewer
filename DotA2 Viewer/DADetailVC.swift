@@ -30,6 +30,7 @@ class DADetailVC: DAUIViewController {
         guard object != nil else { return }
         addSubviews()
         setup()
+        
     }
     
     internal func addSubviews() {
