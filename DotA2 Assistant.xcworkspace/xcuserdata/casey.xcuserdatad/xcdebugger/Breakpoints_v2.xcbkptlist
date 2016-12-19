@@ -41,11 +41,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DotA2 Viewer/DADetailVC.swift"
-            timestampString = "503770522.23019"
+            timestampString = "503794349.165134"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
             landmarkName = "insertAbilities(_:into:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -57,11 +57,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DotA2 Viewer/DADetailVC.swift"
-            timestampString = "503770522.23019"
+            timestampString = "503794349.165134"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
             landmarkName = "insertAbilities(_:into:)"
             landmarkType = "7">
          </BreakpointContent>

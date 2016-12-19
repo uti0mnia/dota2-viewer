@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--DetailVC-->
         <scene sceneID="EZB-Ee-Ng9">
             <objects>
-                <viewController storyboardIdentifier="DetailVC" id="ifV-oI-FyM" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailVC" id="ifV-oI-FyM" customClass="DADetailVC" customModule="DotA2_Assistant" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="71q-ul-khF"/>
                         <viewControllerLayoutGuide type="bottom" id="bdm-5m-Ymp"/>
@@ -45,7 +45,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hgI-fr-V5F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="279" y="-3114"/>
+            <point key="canvasLocation" x="1025" y="-4239"/>
         </scene>
         <!--Item DetailVC-->
         <scene sceneID="7zx-1k-b0q">
@@ -60,10 +60,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="yEw-0A-xnY"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S79-Bf-hcC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="264.80000000000001" y="-2446.3268365817094"/>
+            <point key="canvasLocation" x="1025" y="-3571"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="UHe-h5-DLc">
@@ -143,7 +144,8 @@
                     <connections>
                         <outlet property="tabBar" destination="jXN-rz-piJ" id="31T-xH-p8L"/>
                         <outlet property="tableView" destination="fK7-yF-qEb" id="bMx-98-k1f"/>
-                        <segue destination="0xi-1T-PpC" kind="showDetail" identifier="showDetail" id="Eb3-np-PG4"/>
+                        <segue destination="PFW-AB-ylf" kind="showDetail" identifier="showHero" id="cSM-c0-d1S"/>
+                        <segue destination="Fnu-Zt-5vx" kind="showDetail" identifier="showItem" id="dba-00-KsJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j50-in-VgG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -189,12 +191,45 @@
             </objects>
             <point key="canvasLocation" x="-1644" y="-3148"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="jLh-8g-rjP">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PFW-AB-ylf" customClass="DANavigationController" customModule="DotA2_Assistant" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Spx-cL-hrD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="kQF-xL-o66" kind="relationship" relationship="rootViewController" id="t9y-GZ-Ack"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ydh-Df-l74" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="265" y="-4239"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="oZy-RY-JfT">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Fnu-Zt-5vx" customClass="DANavigationController" customModule="DotA2_Assistant" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="HyQ-M8-ZoL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="k4F-Gs-toX" kind="relationship" relationship="rootViewController" id="o1o-QC-RST"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NnV-3A-Bzy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="266" y="-3570"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Heroes" width="25" height="25"/>
         <image name="Shop" width="25" height="25"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="Eb3-np-PG4"/>
-    </inferredMetricsTieBreakers>
 </document>

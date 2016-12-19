@@ -113,13 +113,10 @@ class CustomTabVC: DAUIViewController {
 
     }
     
-    
-    /* Handles the user input when selecting the search button (scroll to search bar and  */
     @IBAction func searchButton(_ sender: UIBarButtonItem) {
         tableView.setContentOffset(CGPoint.zero, animated: true)
     }
     
-    /* Creates the detail view controller */
     fileprivate func createDetail(for object: ListObject) -> DADetailVC? {
         let sb = UIStoryboard(name: "Main", bundle: nil)
         if let hero = object as? Hero {
@@ -137,13 +134,30 @@ class CustomTabVC: DAUIViewController {
         return nil
     }
     
-    /* Handles the move from hero <-> item */
     fileprivate func switchTableView() {
         tableView.searchBar.textField?.text = ""
         filterSeach(withText: "")
         self.tableView.reloadData()
         let ip = IndexPath(row: 0, section: 0)
         self.tableView.scrollToRow(at: ip, at: .top, animated: false)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // hero segue
+        if segue.identifier == "showHero" {
+            if let hero = selectedObject as? Hero {
+                let vc = (segue.destination as! UINavigationController).topViewController as! HeroDetailVC
+                vc.object = hero
+            }
+        }
+        
+        // item segue
+        if segue.identifier == "showItem" {
+            if let item = selectedObject as? Item {
+                let vc = (segue.destination as! UINavigationController).topViewController as! ItemDetailVC
+                vc.object = item
+            }
+        }
     }
 }
 
@@ -169,7 +183,6 @@ extension CustomTabVC: UITabBarDelegate {
 
 // MARK - TableView Methods
 extension CustomTabVC: UITableViewDelegate, UITableViewDataSource {
-    /* helper function to configure the cell */
     fileprivate func configure(cell: DAMainTableViewCell, atIndexPath indexPath: IndexPath) {
         let obj = fetchedResultsController.object(at: indexPath)
         cell.circleImageView.image = obj.getImage()
@@ -179,36 +192,40 @@ extension CustomTabVC: UITableViewDelegate, UITableViewDataSource {
         cell.backgroundColor = UIColor.clear // for  iPad (bug < iOS 10)
     }
     
-    /* lets tableview know how many sections there are */
     func numberOfSections(in tableView: UITableView) -> Int {
         return fetchedResultsController.sections?.count ?? 1
     }
     
-    /* lets tableview know how many rows are in the section */
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return fetchedResultsController.sections?[section].numberOfObjects ?? 0
     }
     
-    /* sets the index titles for the tableview index */
     func sectionIndexTitles(for tableView: UITableView) -> [String]? {
         return fetchedResultsController.sectionIndexTitles
     }
     
-    /* configures the cell at the given index path */
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! DAMainTableViewCell
         configure(cell: cell, atIndexPath: indexPath)
         return cell
     }
     
-    /* handles the selection of a cell */
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let obj = fetchedResultsController.object(at: indexPath)
+        selectedObject = fetchedResultsController.object(at: indexPath)
         tableView.deselectRow(at: indexPath, animated: true)
-        if let vc = createDetail(for: obj) {
-            self.tableView.searchBar.resignFirstResponder()
-            showDetailViewController(vc, sender: self)
+        
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            // for iPad
+            let segue = selectedObject is Hero ? "showHero" : "showItem"
+            self.performSegue(withIdentifier: segue, sender: self)
+        } else {
+            // for iPhone
+            if let vc = createDetail(for: selectedObject) {
+                showDetailViewController(vc, sender: self)
+            }
         }
+        
+        
     }
 }
 
@@ -224,12 +241,11 @@ extension CustomTabVC: UISearchBarDelegate {
             print("Error performing fetch: \(error.localizedDescription)")
         }
     }
-    /* create a predicate and filter the search */
+    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         filterSeach(withText: searchText)
     }
     
-    /* called when the cancel button is tapped */
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         tableView.searchBar.textField?.text = ""
         filterSeach(withText: "")
@@ -243,14 +259,12 @@ extension CustomTabVC: UISearchBarDelegate {
 
 // MARK - Keyboard handling
 extension CustomTabVC {
-    /* fixes tableview height when the keyboard will appear */
     func keyboardWillShow(notification: NSNotification) {
         if let offset = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue.height {
             tableView.frame = CGRect(x: 0, y: 0, width: tableView.frame.width, height: self.view.frame.height - offset)
         }
     }
     
-    /* fixes tableview height when the keyboard disapears */
     func keyboardWillHide(notification: NSNotification) {
         if let _ = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             tableView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height - tabBar.frame.height)
@@ -260,12 +274,10 @@ extension CustomTabVC {
 
 // MARK - NSFRC Del
 extension CustomTabVC: NSFetchedResultsControllerDelegate {
-    /* this function is called when the NSFRC will be chaing its context */
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.beginUpdates()
     }
     
-    /* This function is called when the NSFRC is changing its content */
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>,
                     didChange anObject: Any,
                     at indexPath: IndexPath?,
@@ -283,7 +295,6 @@ extension CustomTabVC: NSFetchedResultsControllerDelegate {
         }
     }
     
-    /* This function is called when the NSFRC is finished updating from the db */
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.endUpdates()
     }
