@@ -915,6 +915,8 @@
 		C95753CB1DD57FCF005C9F75 /* speed_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C95753C51DD57FCF005C9F75 /* speed_icon.png */; };
 		C95753CC1DD57FCF005C9F75 /* strength_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C95753C61DD57FCF005C9F75 /* strength_icon.png */; };
 		C95E86801E0369CE00822703 /* dota2.png in Resources */ = {isa = PBXBuildFile; fileRef = C95E867F1E0369CE00822703 /* dota2.png */; };
+		C962582B1E07A49100037D57 /* Talent+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96258291E07A49100037D57 /* Talent+CoreDataClass.swift */; };
+		C962582C1E07A49100037D57 /* Talent+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C962582A1E07A49100037D57 /* Talent+CoreDataProperties.swift */; };
 		C96EBB601DF244EF00D6FFD0 /* DANavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96EBB5F1DF244EF00D6FFD0 /* DANavigationController.swift */; };
 		C999EA081DE7D1C10036AF47 /* OptimusPrinceps.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C999EA061DE7D1C10036AF47 /* OptimusPrinceps.ttf */; };
 		C999EA091DE7D1C10036AF47 /* OptimusPrincepsSemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C999EA071DE7D1C10036AF47 /* OptimusPrincepsSemiBold.ttf */; };
@@ -1841,6 +1843,8 @@
 		C95753C51DD57FCF005C9F75 /* speed_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = speed_icon.png; sourceTree = "<group>"; };
 		C95753C61DD57FCF005C9F75 /* strength_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = strength_icon.png; sourceTree = "<group>"; };
 		C95E867F1E0369CE00822703 /* dota2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dota2.png; sourceTree = "<group>"; };
+		C96258291E07A49100037D57 /* Talent+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Talent+CoreDataClass.swift"; path = "CoreData/Talent+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C962582A1E07A49100037D57 /* Talent+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Talent+CoreDataProperties.swift"; path = "CoreData/Talent+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C96EA1111DEE622800259AEF /* DotA2 Assistant.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = "DotA2 Assistant.entitlements"; path = "../DotA2 Assistant.entitlements"; sourceTree = "<group>"; };
 		C96EBB5F1DF244EF00D6FFD0 /* DANavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DANavigationController.swift; sourceTree = "<group>"; };
 		C999EA061DE7D1C10036AF47 /* OptimusPrinceps.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = OptimusPrinceps.ttf; path = Fonts/OptimusPrinceps.ttf; sourceTree = "<group>"; };
@@ -2091,6 +2095,8 @@
 				C94F03911DEF91D3000E60CE /* Attribute+CoreDataProperties.swift */,
 				C94F03921DEF91D3000E60CE /* BaseStat+CoreDataClass.swift */,
 				C94F03931DEF91D3000E60CE /* BaseStat+CoreDataProperties.swift */,
+				C94F03A01DEF91D3000E60CE /* Damage+CoreDataClass.swift */,
+				C94F03A11DEF91D3000E60CE /* Damage+CoreDataProperties.swift */,
 				C94F03941DEF91D3000E60CE /* Hero+CoreDataClass.swift */,
 				C94F03951DEF91D3000E60CE /* Hero+CoreDataProperties.swift */,
 				C94F03961DEF91D3000E60CE /* Item+CoreDataClass.swift */,
@@ -2103,8 +2109,8 @@
 				C94F039D1DEF91D3000E60CE /* Note+CoreDataProperties.swift */,
 				C94F039E1DEF91D3000E60CE /* ItemDetail+CoreDataClass.swift */,
 				C94F039F1DEF91D3000E60CE /* ItemDetail+CoreDataProperties.swift */,
-				C94F03A01DEF91D3000E60CE /* Damage+CoreDataClass.swift */,
-				C94F03A11DEF91D3000E60CE /* Damage+CoreDataProperties.swift */,
+				C96258291E07A49100037D57 /* Talent+CoreDataClass.swift */,
+				C962582A1E07A49100037D57 /* Talent+CoreDataProperties.swift */,
 				C9FEBF2D1DB299F2000CD4FF /* DotA2_Viewer.xcdatamodeld */,
 			);
 			name = CoreData;
@@ -4015,6 +4021,7 @@
 				363A464D1E003E5700BA5D97 /* RecipeStackView.swift in Sources */,
 				C94F03A71DEF91D3000E60CE /* Attribute+CoreDataProperties.swift in Sources */,
 				366A8A121DD1029F000406BF /* DAUIViewController.swift in Sources */,
+				C962582B1E07A49100037D57 /* Talent+CoreDataClass.swift in Sources */,
 				365F75501E042D4B00F928B0 /* HeroStatsStackView.swift in Sources */,
 				C94F03B11DEF91D3000E60CE /* ListObject+CoreDataProperties.swift in Sources */,
 				C90CE6141DFCCBA400C93539 /* ItemDetailVC.swift in Sources */,
@@ -4048,6 +4055,7 @@
 				366A8A0E1DD0F993000406BF /* DARoundedImageView.swift in Sources */,
 				C9B00F7F1DFE4E8600A15F96 /* AbilityStackView.swift in Sources */,
 				C9A6D64D1DBD25AE00580B7B /* Extensions.swift in Sources */,
+				C962582C1E07A49100037D57 /* Talent+CoreDataProperties.swift in Sources */,
 				36C0C9621DA6E25800169394 /* AppDelegate.swift in Sources */,
 				368D1BD31E0030A800314648 /* RecipeSubStackView.swift in Sources */,
 				C94F03A51DEF91D3000E60CE /* Ability+CoreDataProperties.swift in Sources */,

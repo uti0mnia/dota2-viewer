@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11542" systemVersion="16B2657" minimumToolsVersion="Xcode 7.3" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="16B2555" minimumToolsVersion="Xcode 7.3" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Ability" representedClassName="Ability" syncable="YES">
         <attribute name="cooldown" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="mana" optional="YES" attributeType="String" syncable="YES"/>
@@ -27,6 +27,7 @@
         <relationship name="abilitySpecialDetails" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Ability" inverseName="specialDetails" inverseEntity="Ability" syncable="YES"/>
         <relationship name="abilityType" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AbilityType" inverseName="value" inverseEntity="AbilityType" syncable="YES"/>
         <relationship name="heroRole" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Hero" inverseName="roles" inverseEntity="Hero" syncable="YES"/>
+        <relationship name="heroTalentNotes" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Hero" inverseName="talentNotes" inverseEntity="Hero" syncable="YES"/>
         <relationship name="itemAdditionalInfo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Item" inverseName="additionalInfo" inverseEntity="Item" syncable="YES"/>
         <relationship name="itemAvailability" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Item" inverseName="availability" inverseEntity="Item" syncable="YES"/>
         <relationship name="itemBuildsFrom" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Item" inverseName="buildsFrom" inverseEntity="Item" syncable="YES"/>
@@ -64,6 +65,8 @@
         <relationship name="baseStats" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BaseStat" inverseName="hero" inverseEntity="BaseStat" syncable="YES"/>
         <relationship name="miscStats" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MiscStat" inverseName="hero" inverseEntity="MiscStat" syncable="YES"/>
         <relationship name="roles" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="ArrayValue" inverseName="heroRole" inverseEntity="ArrayValue" syncable="YES"/>
+        <relationship name="talentNotes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ArrayValue" inverseName="heroTalentNotes" inverseEntity="ArrayValue" syncable="YES"/>
+        <relationship name="talents" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Talent" inverseName="hero" inverseEntity="Talent" syncable="YES"/>
     </entity>
     <entity name="Item" representedClassName="Item" parentEntity="ListObject" syncable="YES">
         <attribute name="cost" attributeType="String" syncable="YES"/>
@@ -102,18 +105,25 @@
         <relationship name="note" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Note" inverseName="subNotes" inverseEntity="Note" syncable="YES"/>
         <relationship name="subNotes" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Note" inverseName="note" inverseEntity="Note" syncable="YES"/>
     </entity>
+    <entity name="Talent" representedClassName=".Talent" syncable="YES">
+        <attribute name="left" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="level" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="right" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="hero" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Hero" inverseName="talents" inverseEntity="Hero" syncable="YES"/>
+    </entity>
     <elements>
         <element name="Ability" positionX="-299" positionY="-288" width="128" height="225"/>
         <element name="AbilityType" positionX="-243" positionY="-135" width="128" height="90"/>
-        <element name="ArrayValue" positionX="90" positionY="-316" width="128" height="225"/>
+        <element name="ArrayValue" positionX="90" positionY="-316" width="128" height="240"/>
         <element name="Attribute" positionX="-416" positionY="108" width="128" height="120"/>
         <element name="BaseStat" positionX="18" positionY="18" width="128" height="180"/>
         <element name="Damage" positionX="205" positionY="108" width="128" height="90"/>
-        <element name="Hero" positionX="-522" positionY="-159" width="128" height="150"/>
+        <element name="Hero" positionX="-522" positionY="-159" width="128" height="180"/>
         <element name="Item" positionX="-504" positionY="-423" width="128" height="180"/>
         <element name="ItemDetail" positionX="-110" positionY="-459" width="128" height="90"/>
         <element name="ListObject" positionX="-684" positionY="-258" width="128" height="58"/>
         <element name="MiscStat" positionX="-135" positionY="-48" width="128" height="193"/>
         <element name="Note" positionX="187" positionY="-88" width="128" height="103"/>
+        <element name="Talent" positionX="-477" positionY="-306" width="128" height="105"/>
     </elements>
 </model>

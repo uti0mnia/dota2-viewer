@@ -189,6 +189,28 @@ struct Import {
         }
         hero.attribute = NSSet(array: heroAttributes)
         
+        // get talent tree
+        var talents = [Talent]()
+        for obj in snapshotValue["talents"].arrayValue {
+            let talent = NSEntityDescription.insertNewObject(forEntityName: "Talent", into: moc) as! Talent
+            talent.level = NSDecimalNumber(string: obj["level"].string)
+            talent.left = obj["left"].string
+            talent.right = obj["right"].string
+            talents.append(talent)
+        }
+        hero.talents = NSSet(array: talents)
+        
+        // get talent notes (if any)
+        if snapshotValue["talent_notes"].exists() {
+            var talentNotes = [ArrayValue]()
+            for obj in snapshotValue["talent_notes"].arrayValue {
+                let talentNote = NSEntityDescription.insertNewObject(forEntityName: "ArrayValue", into: moc) as! ArrayValue
+                talentNote.value = obj.string
+                talentNotes.append(talentNote)
+            }
+            hero.talentNotes = NSSet(array: talentNotes)
+        }
+        
         // get abilities
         let abilities = snapshotValue["abilities"].arrayValue
         let heroAbilities = createAbilities(with: abilities, inContext: moc)
