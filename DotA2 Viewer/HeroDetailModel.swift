@@ -77,7 +77,7 @@ class HeroDetailModel {
     var talents: [Talent] {
         get {
             if let talents = _hero.talents?.allObjects as? [Talent] {
-                let sorted = talents.sorted(by: { $0.0.level!.doubleValue < $0.1.level!.doubleValue })
+                let sorted = talents.sorted(by: { $0.0.level!.doubleValue > $0.1.level!.doubleValue })
                 return sorted
             }
             return [Talent]()
