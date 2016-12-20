@@ -19,7 +19,7 @@ class RecipeStackView: DAExpandableStackView {
         textLabel.text = "Recipe"
         textLabel.sizeToFit()
         
-        super.init(topView: textLabel, subView: nil, expanded: false, frame: frame)
+        super.init(topView: textLabel, expanded: false, frame: frame)
         
     }
     

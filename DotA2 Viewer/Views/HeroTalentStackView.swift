@@ -17,7 +17,7 @@ class HeroTalentStackView: DAExpandableStackView {
     }()
     
     init(frame: CGRect = CGRect()) {
-        super.init(topView: topLabel, subView: nil, expanded: false, frame: frame)
+        super.init(topView: topLabel, expanded: false, frame: frame)
     }
     
     required init(coder: NSCoder) {

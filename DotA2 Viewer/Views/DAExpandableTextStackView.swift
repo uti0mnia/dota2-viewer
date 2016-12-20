@@ -22,7 +22,8 @@ class DAExpandableTextStackView: DAExpandableStackView {
         // set the text label
         textLabel = DAMultiLineLabel(style: style.shrink())
         textLabel.insets = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 0)
-        super.init(topView: topLabel, subView: textLabel, expanded: false, frame: frame)
+        super.init(topView: topLabel, expanded: false, frame: frame)
+        self.setSubview(textLabel)
         
         // observer to follow the changes in the text label
         textLabel.addObserver(self, forKeyPath: "text", options: [.new], context: nil)

@@ -30,7 +30,7 @@ class AbilityStackView: DAExpandableStackView {
     // MARK - Initializers
     init(frame: CGRect = CGRect()) {
         topSV.addArrangedSubviews(views: [nameLabel, specialsLabel])
-        super.init(topView: topSV, subView: nil, expanded: false, frame: frame)
+        super.init(topView: topSV, expanded: false, frame: frame)
         
     }
     

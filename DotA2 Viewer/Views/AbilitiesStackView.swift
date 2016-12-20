@@ -30,7 +30,7 @@ class AbilitiesStackView: DAExpandableStackView {
     // MARK - Initializers
     init(frame: CGRect = CGRect(), count: Int = 0) {
         self.count = count
-        super.init(topView: topLabel, subView: nil, expanded: false, frame: frame)
+        super.init(topView: topLabel, expanded: false, frame: frame)
         
         configure()
     }

@@ -45,10 +45,9 @@ class DAExpandableStackView: UIStackView, DAExpandableProtocol {
     
     
     // MARK - Initializers
-    init(topView: UIView, subView: UIView?, expanded: Bool = true, frame: CGRect = CGRect()) {
+    init(topView: UIView, expanded: Bool = true, frame: CGRect = CGRect()) {
         // properties
         self.topView = topView
-        self.subView = subView
         self.isExpanded = expanded
         
         // super init
@@ -140,7 +139,7 @@ class DAExpandableStackView: UIStackView, DAExpandableProtocol {
             return
         }
         
-        subView?.layoutMargins = UIEdgeInsetsMake(0, 8, 0, 8)
+        subView?.layoutMargins = UIEdgeInsetsMake(0, 8, 0, 0)
         if let sv = subView as? UIStackView {
             sv.isLayoutMarginsRelativeArrangement = true
         }
