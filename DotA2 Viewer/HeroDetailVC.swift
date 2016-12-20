@@ -34,6 +34,7 @@ class HeroDetailVC: DADetailVC {
         super.viewDidLoad()
         insertAbilities(model.abilities, into: heroSV.abilitiesSV)
         setStats()
+        setTalents()
     }
     
     /* Adds the main subview */
@@ -105,6 +106,29 @@ class HeroDetailVC: DADetailVC {
             
             // set subView
             self.heroSV.statsSV.setSubview(subSV)
+        }
+    }
+    
+    fileprivate func setTalents() {
+        DispatchQueue.main.async {
+            // create subview
+            let subView = HeroTalentSubStackView()
+            let talents = self.model.talents
+            
+            // add talent for each level
+            for i in 0..<talents.count {
+                subView.talents[i].leftLabel.text = talents[i].left ?? ""
+                subView.talents[i].levelLabel.text = String(format: "%.0f" , talents[i].level?.floatValue ?? 0)
+                subView.talents[i].rightLabel.text = talents[i].right ?? ""
+                if self.model.talentsNotes != nil {
+                    subView.talentNotes.textLabel.text = self.model.talentsNotes!
+                } else {
+                    subView.talentNotes.removeFromSuperview()
+                }
+            }
+            
+            // add to subview
+            self.heroSV.talentSV.setSubview(subView)
         }
     }
     

@@ -74,6 +74,28 @@ class HeroDetailModel {
     }
     var lore: String { get { return _hero.lore ?? "" } }
     var roles: [String] { get { return convert(_hero.roles?.allObjects) } }
+    var talents: [Talent] {
+        get {
+            if let talents = _hero.talents?.allObjects as? [Talent] {
+                let sorted = talents.sorted(by: { $0.0.level!.doubleValue < $0.1.level!.doubleValue })
+                return sorted
+            }
+            return [Talent]()
+        }
+    }
+    var talentsNotes: String? {
+        get {
+            let notes = convert(_hero.talentNotes?.allObjects)
+            var string: String?
+            var separator = ""
+            for note in notes {
+                if string == nil { string = "" }
+                string! += "\(separator)• \(note)"
+                separator = "\n"
+            }
+            return string
+        }
+    }
     
     // MARK - Functions
     init(hero: Hero) {

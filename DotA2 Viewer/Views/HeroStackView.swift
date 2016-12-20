@@ -13,6 +13,7 @@ class HeroStackView: UIStackView {
     var mainSV = HeroMainStackView()
     var statsSV = HeroStatsStackView()
     var abilitiesSV: AbilitiesStackView!
+    var talentSV = HeroTalentStackView()
     var bioSV = DAExpandableTextStackView(name: "Bio")
     var loreSV = DAExpandableTextStackView(name: "Lore")
     
@@ -33,7 +34,7 @@ class HeroStackView: UIStackView {
         self.alignment = .fill
         self.distribution = .equalSpacing
         self.spacing = 20
-        self.addArrangedSubviews(views: [mainSV, statsSV, abilitiesSV, bioSV, loreSV])
+        self.addArrangedSubviews(views: [mainSV, statsSV, abilitiesSV, talentSV, bioSV, loreSV])
         self.layoutMargins = UIEdgeInsetsMake(8, 8, 8, 8)
         self.isLayoutMarginsRelativeArrangement =  true
     }
