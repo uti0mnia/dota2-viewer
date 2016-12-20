@@ -10,8 +10,8 @@ import UIKit
 
 class HeroSingleTalentStackView: UIStackView {
     // MARK - Properties
-    var leftLabel: DAMultiLineLabel = {
-        let lbl = DAMultiLineLabel(style: .medium)
+    var leftLabel: DAMainLabel = {
+        let lbl = DAMainLabel(style: .medium)
         lbl.textAlignment = .center
         return lbl
     }()
@@ -20,8 +20,8 @@ class HeroSingleTalentStackView: UIStackView {
         lbl.textAlignment = .center
         return lbl
     }()
-    var rightLabel: DAMultiLineLabel = {
-        let lbl = DAMultiLineLabel(style: .medium)
+    var rightLabel: DAMainLabel = {
+        let lbl = DAMainLabel(style: .medium)
         lbl.textAlignment = .center
         return lbl
     }()
@@ -39,7 +39,7 @@ class HeroSingleTalentStackView: UIStackView {
         // set properties
         self.axis = .vertical
         self.alignment = .fill
-        self.distribution = .fillProportionally
+        self.distribution = .equalSpacing
         
         let bottomSV = createBottomSV()
         bottomSV.addArrangedSubviews(views: [leftLabel, rightLabel])
