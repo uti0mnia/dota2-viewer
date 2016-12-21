@@ -914,6 +914,7 @@
 		C95753CA1DD57FCF005C9F75 /* intelligence_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C95753C41DD57FCF005C9F75 /* intelligence_icon.png */; };
 		C95753CB1DD57FCF005C9F75 /* speed_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C95753C51DD57FCF005C9F75 /* speed_icon.png */; };
 		C95753CC1DD57FCF005C9F75 /* strength_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C95753C61DD57FCF005C9F75 /* strength_icon.png */; };
+		C95E51DB1E0A142900A48965 /* Monkey King.png in Resources */ = {isa = PBXBuildFile; fileRef = C95E51DA1E0A142900A48965 /* Monkey King.png */; };
 		C95E86801E0369CE00822703 /* dota2.png in Resources */ = {isa = PBXBuildFile; fileRef = C95E867F1E0369CE00822703 /* dota2.png */; };
 		C962582B1E07A49100037D57 /* Talent+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96258291E07A49100037D57 /* Talent+CoreDataClass.swift */; };
 		C962582C1E07A49100037D57 /* Talent+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C962582A1E07A49100037D57 /* Talent+CoreDataProperties.swift */; };
@@ -1845,6 +1846,7 @@
 		C95753C41DD57FCF005C9F75 /* intelligence_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = intelligence_icon.png; sourceTree = "<group>"; };
 		C95753C51DD57FCF005C9F75 /* speed_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = speed_icon.png; sourceTree = "<group>"; };
 		C95753C61DD57FCF005C9F75 /* strength_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = strength_icon.png; sourceTree = "<group>"; };
+		C95E51DA1E0A142900A48965 /* Monkey King.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Monkey King.png"; path = "heroes/Monkey King.png"; sourceTree = "<group>"; };
 		C95E867F1E0369CE00822703 /* dota2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dota2.png; sourceTree = "<group>"; };
 		C96258291E07A49100037D57 /* Talent+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Talent+CoreDataClass.swift"; path = "CoreData/Talent+CoreDataClass.swift"; sourceTree = "<group>"; };
 		C962582A1E07A49100037D57 /* Talent+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Talent+CoreDataProperties.swift"; path = "CoreData/Talent+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -2719,6 +2721,7 @@
 		C94B182B1E01C0C1008BF226 /* Hero */ = {
 			isa = PBXGroup;
 			children = (
+				C95E51DA1E0A142900A48965 /* Monkey King.png */,
 				C94B182D1E01C0D2008BF226 /* Abaddon.png */,
 				C94B182E1E01C0D2008BF226 /* Alchemist.png */,
 				C94B182F1E01C0D2008BF226 /* Ancient Apparition.png */,
@@ -3786,6 +3789,7 @@
 				C94B181B1E01C090008BF226 /* Warpath_Bristleback.png in Resources */,
 				C94B1A341E01C108008BF226 /* Yasha.png in Resources */,
 				C94B177E1E01C090008BF226 /* Release_Ancient Apparition.png in Resources */,
+				C95E51DB1E0A142900A48965 /* Monkey King.png in Resources */,
 				C94B18DD1E01C0D2008BF226 /* Outworld Devourer.png in Resources */,
 				C94B18191E01C090008BF226 /* Waning Rift_Puck.png in Resources */,
 				C94B18E91E01C0D2008BF226 /* Shadow Demon.png in Resources */,
