@@ -1,185 +1,179 @@
 //
 //  HeroDetailVC.swift
-//  DotA2 Viewer
+//  DotA2 Assistant
 //
-//  Created by Casey McLewin on 2016-10-22.
+//  Created by Casey McLewin on 2016-12-03.
 //  Copyright © 2016 self. All rights reserved.
 //
 
 import UIKit
 
-private enum SelectedView {
-    case bio, stats, ability
-}
-
-class HeroDetailVC: ObjectDetailVC {
-
-    /* Outlets */
-    var scrollView: UIScrollView!
-    var fullStackView: HeroDetailStackView!
-
-    // extra views
-    lazy var abilitiesStackView: AbilitiesStackView = { [unowned self] in
-        let sv = AbilitiesStackView()
-        guard self.object is Hero else { return sv }
-        let hero = self.object as! Hero
-        sv.abilities = hero.ability?.array as! [Ability]
-        sv.setStack()
+class HeroDetailVC: DADetailVC {
+    // MARK - Properties
+    fileprivate var hero: Hero!
+    fileprivate lazy var heroSV: HeroStackView = {[unowned self] in
+        let sv = HeroStackView(abilities: self.model.abilities.count)
+        sv.translatesAutoresizingMaskIntoConstraints = false
         return sv
     }()
+    fileprivate var model: HeroDetailModel!
+    fileprivate var imageView: UIImageView!
+    fileprivate var cachedImageSize: CGRect!
     
-    lazy var bioStackView: HeroBioStackView = {[unowned self] in
-        let sv = HeroBioStackView()
-        guard self.object is Hero else { return sv }
-        let hero = self.object as! Hero
-        sv.bio = hero.bio?.replacingOccurrences(of: "--", with: " ").replacingOccurrences(of: "\\n", with: "\n") // fix this shit
-        sv.setStack()
-        return sv
-    }()
-    
-    lazy var statsStackView: StatsStackView = {[unowned self] in
-        let sv = StatsStackView()
-        guard self.object is Hero else { return sv }
-        let hero = self.object as! Hero
-        sv.stats = hero.stat?.array as! [Stat]
-        sv.setStack()
-        return sv
-    }()
-    
-    // vars to keep track of things
-    var currentExtraSV: UIStackView!
-    
-    /* Methods */
+    // MARK - Methods
     override func viewDidLoad() {
+        // make sure we have an item
+        guard let heroObj = object as? Hero else {
+            return
+        }
+        hero = heroObj
+        model = HeroDetailModel(hero: hero)
+        model.delegate = self
+        
+        // Configure the VC
         super.viewDidLoad()
-        
-        // inits the views programatically
-        initViews()
-        
-        // add the segment control target
-        fullStackView.extraSegmentControl.addTarget(self, action: #selector(didChangeSegment(sender:)), for: .valueChanged)
-        
-        
-        // set the view up
-        setView()
+        insertAbilities(model.abilities, into: heroSV.abilitiesSV)
+        setStats()
+        setTalents()
     }
     
-    // handling the extra view at the bottom for Bio/Stats/Abilities
-    @objc fileprivate func didChangeSegment(sender: UISegmentedControl) {
+    /* Adds the main subview */
+    override internal func addSubviews() {
+        super.addSubviews()
         
-        switch sender.selectedSegmentIndex {
-        case 0:
-            swapDetailContainer(from: currentExtraSV, to: bioStackView)
-        case 1:
-            swapDetailContainer(from: currentExtraSV, to: statsStackView)
-            break
-        case 2:
-            swapDetailContainer(from: currentExtraSV, to: abilitiesStackView)
-        default:
-            break
-        }
+        // hero stack view
+        scrollView.delegate = self
+        scrollView.addSubview(heroSV)
+        var constraints = createConstraints(withVisual: "H:|[stackView(==scrollView)]|", withViews: ["stackView": heroSV, "scrollView": scrollView], options: .alignAllCenterX)
+        constraints += createConstraints(withVisual: "V:|[stackView]|", withViews: ["stackView": heroSV], options: .alignAllCenterX)
+        scrollView.addConstraints(constraints)
     }
     
-    // sets the view of self
-    fileprivate func setView() {
-        guard object is Hero else { return }
+    /* does the setup from the model to the views */
+    override internal func setup() {
+        super.setup()
         
-        let hero = object as! Hero
+        // expandable text SV
+        heroSV.bioSV.textLabel.text = model.bio
+        heroSV.loreSV.textLabel.text = model.lore
         
-        // set self's displays
-        self.title = hero.name
-        fullStackView.heroImage.image = hero.objectImage()
-        fullStackView.attackTypeLabel.text = hero.attackType
-        fullStackView.roleLabel.text = hero.role
-        setPrimaryStats()
-        
-        
-        // add default child
-        currentExtraSV = bioStackView
-        fullStackView.addArrangedSubview(bioStackView)
+        // main view
+        heroSV.mainSV.attackTypeLabel.text = (model.projectileSpeed == "Instant") ? "Melee" : "Ranged"
+        heroSV.mainSV.imageView.image = model.image
+        heroSV.mainSV.rolesLabel.text = model.roles.joined(separator: ", ")
         
     }
     
-    
-    // adds the primary stat view controller as a child and to the container view
-    fileprivate func setPrimaryStats() {
-        guard object is Hero else { return }
-        let hero = object as! Hero
-        
-        guard hero.primaryStat != nil else { return }
-        let stat = hero.primaryStat!
-        // set values
-        fullStackView.intelligenceLabel.text = stat.intelligence
-        fullStackView.agilityLabel.text = stat.agility
-        fullStackView.strengthLabel.text = stat.strength
-        fullStackView.damageLabel.text = stat.damage
-        fullStackView.speedLabel.text = stat.speed
-        fullStackView.armorLabel.text = stat.armor
+    fileprivate func setStats() {
+//        DispatchQueue.main.async {
+            let subSV = HeroStatsSubStackView()
+            
+            // top
+            subSV.levelLabel.text = "Level 1"
+            subSV.slider.delegate = self
+            
+            // middle
+            subSV.strengthSV.imageView.image = #imageLiteral(resourceName: "strength_icon.png") // strength_icon.png
+            subSV.strengthSV.label.text = "\(self.model.strength.format(0)) (+\(self.model.strengthIncrement.format(1)))"
+            subSV.agilitySV.imageView.image = #imageLiteral(resourceName: "agility_icon.png") // agility_icon.png
+            subSV.agilitySV.label.text = "\(self.model.agility.format(0)) (+\(self.model.agilityIncrement.format(1)))"
+            subSV.intelligenceSV.imageView.image = #imageLiteral(resourceName: "intelligence_icon.png") // intelligence_icon.png
+            subSV.intelligenceSV.label.text = "\(self.model.intelligence.format(0)) (+\(self.model.intelligenceIncrement.format(1)))"
+            subSV.hpLabel.text = "\(self.model.hp.format(0)) + \(self.model.hpRegen.format(1))"
+            subSV.manaLabel.text = "\(self.model.mana.format(0)) + \(self.model.manaRegen.format(1))"
+            switch self.model.primaryAttribute.name ?? "" {
+            case "Strength":
+                subSV.strengthSV.backgroundColor = UIColor.flatMaroonColorDark()
+            case "Agility":
+                subSV.agilitySV.backgroundColor = UIColor.flatForestGreenColorDark()
+            default:
+                subSV.intelligenceSV.backgroundColor = UIColor.flatSkyBlueColorDark()
+            }
+            
+            // bottom
+            subSV.damageLabel.text = "Dmg: \(self.model.damage.min.format(0)) - \(self.model.damage.max.format(0))"
+            subSV.attackPerSLabel.text = "Attack/s: \(self.model.attackPerS.format(2))"
+            subSV.armorLabel.text = "Armor: \(self.model.armor.format(2))"
+            subSV.spellDmgLabel.text = "Spell Dmg: \(self.model.spellDamage.format(2))%"
+            subSV.attackAnimationLabel.text = "Attack Animation: \(self.model.attackAnimation)"
+            subSV.attackRangeLabel.text = "Attack Range: \(self.model.attackRange)"
+            subSV.moveSpeedLabel.text = "Movement Speed: \(self.model.movementSpeed)"
+            subSV.projectileSpeedLabel.text = "Projectile Speed: \(self.model.projectileSpeed)"
+            subSV.collisionSizeLabel.text = "Collision Size: \(self.model.collisionSize)"
+            subSV.magicResistanceLabel.text = "Magic Resistance: \(self.model.magicResistance)%"
+            subSV.turnRateLabel.text = "Turn Rate: \(self.model.turnRate)"
+            subSV.visionLabel.text = "Vision: \(self.model.visionRange)"
+            
+            // set subView
+            self.heroSV.statsSV.setSubview(subSV)
+//            self.heroSV.statsSV.forceExpanded(true)
+//        }
     }
     
-    fileprivate func initViews() {
-        
-        // set up scroll view
-        scrollView = UIScrollView()
-        scrollView.translatesAutoresizingMaskIntoConstraints = false
-        scrollView.alwaysBounceVertical = true
-        self.view.addSubview(scrollView)
-        self.view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[scrollView]|",
-                                                                options: [],
-                                                                metrics: nil,
-                                                                views: ["scrollView": scrollView]))
-        self.view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[scrollView]|",
-                                                                options: [],
-                                                                metrics: nil,
-                                                                views: ["scrollView": scrollView]))
-        
-        
-        // set up the full view
-        fullStackView = HeroDetailStackView()
-        fullStackView.setStack()
-        fullStackView.translatesAutoresizingMaskIntoConstraints = false
-        scrollView.addSubview(fullStackView)
-        scrollView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[stackView(==scrollView)]|",
-                                                                    options: .alignAllCenterX,
-                                                                    metrics: nil,
-                                                                    views: ["stackView": fullStackView, "scrollView": scrollView]))
-        scrollView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-[stackView]-|",
-                                                                    options: [],
-                                                                    metrics: nil,
-                                                                    views: ["stackView": fullStackView]))
-        
-        
-    }
-
-}
-
-
-/* UIViewController Child Handling */
-extension HeroDetailVC {
-    // meant to handle the swapping of the extra VC at the bottom
-    fileprivate func swapDetailContainer(from sv1: UIStackView, to sv2: UIStackView) {
-        // do async because if abilities is a big view there's a small delay in showing it - should make better for older devices as well
+    fileprivate func setTalents() {
         DispatchQueue.main.async {
-            //block the segment view in case
-            self.fullStackView.extraSegmentControl.isEnabled = false
+            // create subview
+            let subView = HeroTalentSubStackView()
+            let talents = self.model.talents
             
-            // do work
-            sv1.removeFromSuperview()
-            self.fullStackView.addArrangedSubview(sv2)
-            self.currentExtraSV = sv2
+            // add talent for each level
+            for i in 0..<talents.count {
+                subView.talents[i].leftLabel.text = talents[i].left ?? ""
+                subView.talents[i].levelLabel.text = String(format: "%.0f" , talents[i].level?.floatValue ?? 0)
+                subView.talents[i].rightLabel.text = talents[i].right ?? ""
+                if self.model.talentsNotes != nil {
+                    subView.talentNotes.textLabel.text = self.model.talentsNotes!
+                } else {
+                    subView.talentNotes.removeFromSuperview()
+                }
+            }
             
-            // unblock it
-            self.fullStackView.extraSegmentControl.isEnabled = true
+            // add to subview
+            self.heroSV.talentSV.setSubview(subView)
         }
+    }
+    
+    /* This fuctions reloads the labels in the cells that are level dependent */
+    fileprivate func reloadLevel() {
+        if let subView = heroSV.statsSV.subView as? HeroStatsSubStackView {
+            // top
+            subView.levelLabel.text = "Level \(model.level)"
+            
+            // middle
+            subView.strengthSV.label.text = "\(self.model.strength.format(0)) (+\(self.model.strengthIncrement.format(1)))"
+            subView.agilitySV.label.text = "\(self.model.agility.format(0)) (+\(self.model.agilityIncrement.format(1)))"
+            subView.intelligenceSV.label.text = "\(self.model.intelligence.format(0)) (+\(self.model.intelligenceIncrement.format(1)))"
+            subView.hpLabel.text = "\(self.model.hp.format(0)) + \(self.model.hpRegen.format(1))"
+            subView.manaLabel.text = "\(self.model.mana.format(0)) + \(self.model.manaRegen.format(1))"
+            
+            // bottom
+            subView.damageLabel.text = "Dmg: \(self.model.damage.min.format(0)) - \(self.model.damage.max.format(0))"
+            subView.attackPerSLabel.text = "Attack/s: \(self.model.attackPerS.format(2))"
+            subView.armorLabel.text = "Armor: \(self.model.armor.format(2))"
+            subView.spellDmgLabel.text = "Spell Dmg: \(self.model.spellDamage.format(2))%"
+        }
+    }
+    
+
+}
+
+extension HeroDetailVC: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
     }
 }
 
+extension HeroDetailVC: DASliderDelegate {
+    func slider(_ slider: DASlider, didUpdateTo value: Int) {
+        model.level = value
+    }
+}
 
-
-
-
-
-
+extension HeroDetailVC: HeroDetailModelDelegate {
+    func modelDidUpdate() {
+        // reload data
+        reloadLevel()
+    }
+}
 
 
 

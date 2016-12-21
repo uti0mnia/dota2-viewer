@@ -1,44 +1,32 @@
 //
 //  Item+CoreDataClass.swift
-//  DotA2 Viewer
+//  
 //
-//  Created by Casey McLewin on 2016-10-15.
-//  Copyright © 2016 self. All rights reserved.
+//  Created by Casey McLewin on 2016-11-30.
+//
 //
 
+import Foundation
 import UIKit
 import CoreData
 
 @objc(Item)
 public class Item: ListObject {
-    func getTypeImage() -> UIImage? {
-        // make sure type isn't nil
-        guard self.type != nil else { return nil }
-        
-        // create the image if we can
-        let imgName = self.type! + ".png"
-        if let img = UIImage(named: imgName) {
-            return img
+    override var detailPretty: NSAttributedString {
+        get {
+            // create coin attachment
+            let attachment = NSTextAttachment()
+            attachment.image = #imageLiteral(resourceName: "coins.png") // coins.png
+            attachment.bounds = CGRect(x: 0, y: kRadiance.descender, width: #imageLiteral(resourceName: "coins.png").size.width, height: #imageLiteral(resourceName: "coins.png").size.height)
+            
+            // create both strings
+            let coinStr = NSAttributedString(attachment: attachment)
+            let costStr = NSAttributedString(string: "\t\(self.cost!)")
+            
+            // setup return string
+            let string = NSMutableAttributedString(attributedString: coinStr)
+            string.append(costStr)
+            return string
         }
-        
-        // weren't able to create image - return default image
-        print("Failed to create item type image: \(imgName)")
-        return nil
     }
-    
-    override func objectImage() -> UIImage? {
-        // make sure id isn't nil
-        guard self.id != nil else { return nil }
-        
-        // create the image
-        let imgName = self.id! + "_item" + ".png"
-        if let img = UIImage(named: imgName) {
-            return img
-        }
-        
-        print("Failed to create item image: \(imgName)")
-        return nil
-        
-    }
-    
 }

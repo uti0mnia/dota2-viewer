@@ -1,46 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="4iT-JB-6iD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="4iT-JB-6iD">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--DetailVC-->
         <scene sceneID="EZB-Ee-Ng9">
             <objects>
-                <viewController storyboardIdentifier="DetailVC" id="ifV-oI-FyM" customClass="DetailVC" customModule="DotA2_Viewer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailVC" id="ifV-oI-FyM" customClass="DADetailVC" customModule="DotA2_Assistant" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="71q-ul-khF"/>
                         <viewControllerLayoutGuide type="bottom" id="bdm-5m-Ymp"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" misplaced="YES" id="Ctq-VA-4zB">
+                    <view key="view" contentMode="scaleToFill" id="Ctq-VA-4zB">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LU9-dX-xkW">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </containerView>
-                        </subviews>
                         <color key="backgroundColor" red="0.36227080352622915" green="0.36606691802902558" blue="0.36963649611398963" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="LU9-dX-xkW" firstAttribute="top" secondItem="71q-ul-khF" secondAttribute="bottom" id="RDw-fE-I1N"/>
-                            <constraint firstAttribute="trailing" secondItem="LU9-dX-xkW" secondAttribute="trailing" id="fhL-Ds-Q4R"/>
-                            <constraint firstItem="LU9-dX-xkW" firstAttribute="leading" secondItem="Ctq-VA-4zB" secondAttribute="leading" id="g4s-mn-R0R"/>
-                            <constraint firstItem="bdm-5m-Ymp" firstAttribute="top" secondItem="LU9-dX-xkW" secondAttribute="bottom" id="wVx-N7-rXT"/>
-                        </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" id="ssI-vz-wRY"/>
-                    <connections>
-                        <outlet property="containerView" destination="LU9-dX-xkW" id="qYO-yv-78Q"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Eec-w4-4Xs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-655.20000000000005" y="-3149.7751124437782"/>
+        </scene>
+        <!--Hero DetailVC-->
+        <scene sceneID="F3e-kg-pKd">
+            <objects>
+                <viewController storyboardIdentifier="HeroDetailVC" id="kQF-xL-o66" customClass="HeroDetailVC" customModule="DotA2_Assistant" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZS3-LY-WRL"/>
+                        <viewControllerLayoutGuide type="bottom" id="dMo-AC-Pvy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2MR-UI-Wax">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="0o7-8C-H2S"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hgI-fr-V5F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1025" y="-4239"/>
+        </scene>
+        <!--Item DetailVC-->
+        <scene sceneID="7zx-1k-b0q">
+            <objects>
+                <viewController storyboardIdentifier="ItemDetailVC" id="k4F-Gs-toX" customClass="ItemDetailVC" customModule="DotA2_Assistant" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="goy-ia-qy1"/>
+                        <viewControllerLayoutGuide type="bottom" id="elu-ia-hQk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rjV-1q-DNE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="yEw-0A-xnY"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S79-Bf-hcC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1025" y="-3571"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="UHe-h5-DLc">
@@ -58,29 +82,54 @@
         <!--Master-->
         <scene sceneID="9S5-hT-qey">
             <objects>
-                <viewController id="pNF-lp-DZt" customClass="CustomTabVC" customModule="DotA2_Viewer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="pNF-lp-DZt" customClass="CustomTabVC" customModule="DotA2_Assistant" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lSp-vm-6Vb"/>
                         <viewControllerLayoutGuide type="bottom" id="WO6-Zn-fWE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" misplaced="YES" id="2lC-T3-oy4">
+                    <view key="view" contentMode="scaleToFill" id="2lC-T3-oy4">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8t3-Dw-i4L">
-                                <rect key="frame" x="0.0" y="618" width="375" height="49"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fK7-yF-qEb" customClass="DAMainTableView" customModule="DotA2_Assistant" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="ART-K3-c3D" customClass="DAMainTableViewCell" customModule="DotA2_Assistant" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ART-K3-c3D" id="8MB-Gs-bsl">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="pNF-lp-DZt" id="S6z-Gy-iSd"/>
+                                    <outlet property="delegate" destination="pNF-lp-DZt" id="fpO-rq-e7D"/>
+                                </connections>
+                            </tableView>
+                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jXN-rz-piJ" customClass="DATabBar" customModule="DotA2_Assistant" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="554" width="375" height="49"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <items>
-                                    <tabBarItem title="Hero" id="p32-gu-1Ia"/>
-                                    <tabBarItem title="Item" id="QT3-DC-HO0"/>
+                                    <tabBarItem title="Heroes" image="Heroes" id="L5m-mH-MO1"/>
+                                    <tabBarItem title="Items" image="Shop" id="Ne2-b8-LYb"/>
                                 </items>
+                                <connections>
+                                    <outlet property="delegate" destination="pNF-lp-DZt" id="PxS-NB-6fw"/>
+                                </connections>
                             </tabBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="8t3-Dw-i4L" firstAttribute="leading" secondItem="2lC-T3-oy4" secondAttribute="leading" id="CuD-SI-7Fx"/>
-                            <constraint firstItem="8t3-Dw-i4L" firstAttribute="bottom" secondItem="WO6-Zn-fWE" secondAttribute="top" id="ZbR-Yy-vmk"/>
-                            <constraint firstAttribute="trailing" secondItem="8t3-Dw-i4L" secondAttribute="trailing" id="jhd-9z-XCB"/>
+                            <constraint firstAttribute="trailing" secondItem="fK7-yF-qEb" secondAttribute="trailing" id="8Lj-Yc-xah"/>
+                            <constraint firstItem="fK7-yF-qEb" firstAttribute="leading" secondItem="2lC-T3-oy4" secondAttribute="leading" id="GIH-wi-riG"/>
+                            <constraint firstItem="jXN-rz-piJ" firstAttribute="leading" secondItem="2lC-T3-oy4" secondAttribute="leading" id="Qy3-IC-TI2"/>
+                            <constraint firstItem="jXN-rz-piJ" firstAttribute="top" secondItem="fK7-yF-qEb" secondAttribute="bottom" id="bGW-iZ-su7"/>
+                            <constraint firstAttribute="trailing" secondItem="jXN-rz-piJ" secondAttribute="trailing" id="gdU-0K-owa"/>
+                            <constraint firstItem="WO6-Zn-fWE" firstAttribute="top" secondItem="jXN-rz-piJ" secondAttribute="bottom" id="iYR-Bu-2tJ"/>
+                            <constraint firstItem="fK7-yF-qEb" firstAttribute="top" secondItem="lSp-vm-6Vb" secondAttribute="bottom" id="jrs-sH-0wt"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
@@ -93,36 +142,20 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="tabBar" destination="8t3-Dw-i4L" id="Ssb-Rn-biN"/>
-                        <segue destination="0xi-1T-PpC" kind="showDetail" identifier="showDetail" id="XL8-BY-o5U"/>
+                        <outlet property="tabBar" destination="jXN-rz-piJ" id="31T-xH-p8L"/>
+                        <outlet property="tableView" destination="fK7-yF-qEb" id="bMx-98-k1f"/>
+                        <segue destination="PFW-AB-ylf" kind="showDetail" identifier="showHero" id="cSM-c0-d1S"/>
+                        <segue destination="Fnu-Zt-5vx" kind="showDetail" identifier="showItem" id="dba-00-KsJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j50-in-VgG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-655.20000000000005" y="-3926.0869565217395"/>
         </scene>
-        <!--Item ListVC-->
-        <scene sceneID="IKn-Dh-FVQ">
-            <objects>
-                <viewController storyboardIdentifier="ItemListVC" id="lby-KB-nZt" customClass="ItemListVC" customModule="DotA2_Viewer" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="qaA-tt-T3Y"/>
-                        <viewControllerLayoutGuide type="bottom" id="6dO-WT-GCO"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="4SR-Dn-prL">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ohe-dx-l4s" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="393" y="-3566"/>
-        </scene>
         <!--Heroes-->
         <scene sceneID="QyQ-Dn-b98">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9FL-AS-YTq" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9FL-AS-YTq" customClass="DANavigationController" customModule="DotA2_Assistant" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Heroes" id="NUl-ZW-oRZ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="RnW-Iu-fm3">
@@ -142,7 +175,7 @@
         <!--Navigation Controller-->
         <scene sceneID="mTk-dz-dFN">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0xi-1T-PpC" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0xi-1T-PpC" customClass="DANavigationController" customModule="DotA2_Assistant" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="w5g-ZC-18e">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -158,26 +191,45 @@
             </objects>
             <point key="canvasLocation" x="-1644" y="-3148"/>
         </scene>
-        <!--Hero ListVC-->
-        <scene sceneID="zjP-me-9ZN">
+        <!--Navigation Controller-->
+        <scene sceneID="jLh-8g-rjP">
             <objects>
-                <viewController storyboardIdentifier="HeroListVC" id="29n-og-yOj" customClass="HeroListVC" customModule="DotA2_Viewer" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="3wR-jQ-zKm"/>
-                        <viewControllerLayoutGuide type="bottom" id="3lm-gW-0e5"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ixG-J8-FoS">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bSk-67-zdF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PFW-AB-ylf" customClass="DANavigationController" customModule="DotA2_Assistant" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Spx-cL-hrD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="kQF-xL-o66" kind="relationship" relationship="rootViewController" id="t9y-GZ-Ack"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ydh-Df-l74" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="393" y="-4283"/>
+            <point key="canvasLocation" x="265" y="-4239"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="oZy-RY-JfT">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Fnu-Zt-5vx" customClass="DANavigationController" customModule="DotA2_Assistant" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="HyQ-M8-ZoL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="k4F-Gs-toX" kind="relationship" relationship="rootViewController" id="o1o-QC-RST"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NnV-3A-Bzy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="266" y="-3570"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="XL8-BY-o5U"/>
-    </inferredMetricsTieBreakers>
+    <resources>
+        <image name="Heroes" width="25" height="25"/>
+        <image name="Shop" width="25" height="25"/>
+    </resources>
 </document>

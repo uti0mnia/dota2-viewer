@@ -1,99 +1,124 @@
 //
 //  ItemDetailVC.swift
-//  DotA2 Viewer
+//  DotA2 Assistant
 //
-//  Created by Casey McLewin on 2016-10-22.
+//  Created by Casey McLewin on 2016-12-10.
 //  Copyright © 2016 self. All rights reserved.
 //
 
 import UIKit
 
-// delegate method for picking ListObjects (usually item) to display
+class ItemDetailVC: DADetailVC {
+    // MARK - Properties
+    fileprivate var item: Item!
+    fileprivate lazy var itemSV: ItemStackView = {[unowned self] in
+        let sv = ItemStackView(abilitiesCount: self.model.abilities.count, withRecipe: !self.model.isSingularItem)
+        sv.translatesAutoresizingMaskIntoConstraints = false
+        return sv
+    }()
+    fileprivate var model: ItemDetailModel!
 
-class ItemDetailVC: ObjectDetailVC {
-    
-    /* Outlets */
-    /* Properties */
-    @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var fullStackView: UIStackView!
-    @IBOutlet weak var itemImageView: UIImageView!
-    @IBOutlet weak var recipeStack: UIStackView!
-    @IBOutlet weak var infoStackView: UIStackView!
-    @IBOutlet weak var costLabel: UILabel!
-    @IBOutlet weak var manaLabel: UILabel!
-    @IBOutlet weak var cooldownLabel: UILabel!
-    @IBOutlet weak var typeLabel: UILabel!
-    @IBOutlet weak var typeImageView: UIImageView!
-    @IBOutlet weak var detailStackView: UIStackView!
-    @IBOutlet weak var abilityLabel: UILabel!
-    @IBOutlet weak var detailLabel: UILabel!
-    @IBOutlet weak var loreLabel: UILabel!
-    
-    // properties
-
+    // MARK - Methods
     override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        setView()
-        refineView()
-    }
-    
-    fileprivate func setView() {
-        guard object is Item else { return }
-        
-        // get the object as an item
-        let item = object as! Item
-        // set up the view
-        // the main image
-        self.itemImageView.image = item.objectImage()
-        
-        // the recipes
-        if (item.recipe != nil) {
-            // create an array of Recipe to itterate over
-            let recipes = item.recipe!.allObjects as! [Recipe]
-            for recipe in recipes {
-                // create the recipe button
-                let btn = RecipeButton(itemID: recipe.itemID!)
-                btn.addTarget(self, action: #selector(recipeButtonPressed(sender:)), for: .touchUpInside)
-                
-                // add it to the stack view
-                self.recipeStack.addArrangedSubview(btn)
-            }
+        // make sure we have an item
+        guard let itemObj = object as? Item else {
+            return
         }
+        item = itemObj
+        model = ItemDetailModel(item: item)
         
-        // set the info stack view
-        self.costLabel.text = item.cost
-        self.manaLabel.text = item.mana
-        self.cooldownLabel.text = item.cooldown
-        self.typeLabel.text = item.type
-        self.typeImageView.image = item.getTypeImage()
-        
-        // set the details stack view
-        self.abilityLabel.text = item.ability?.replacingOccurrences(of: "\\n", with: "\n")
-        self.detailLabel.text = item.detail?.replacingOccurrences(of: "\\n", with: "\n")
-        self.loreLabel.text = item.lore?.replacingOccurrences(of: "\\n", with: "\n")
+        // Configure the VC
+        super.viewDidLoad()
+        insertAbilities(model.abilities, into: itemSV.abilitiesSV)
+        recipeSetup()
     }
     
-    @objc fileprivate func recipeButtonPressed(sender: RecipeButton) {
-        guard sender.item != nil else { return }
-        del?.didSelectObject(object: sender.item!)
+    override internal func addSubviews() {
+        super.addSubviews()
+        
+        // item stack view
+        scrollView.addSubview(itemSV)
+        var constraints = createConstraints(withVisual: "H:|[stackView(==scrollView)]|", withViews: ["stackView": itemSV, "scrollView": scrollView], options: .alignAllCenterX)
+        constraints += createConstraints(withVisual: "V:|[stackView]|", withViews: ["stackView": itemSV], options: .alignAllCenterX)
+        scrollView.addConstraints(constraints)
+    }
+
+    /* does the setup from the model to the views */
+    override internal func setup() {
+        super.setup()
+        
+        // expandable text SV
+        itemSV.additionalInfoSV.textLabel.text = model.additionalInfoPretty
+        itemSV.detailsSV.textLabel.attributedText = model.detailsString
+        itemSV.loreSV.textLabel.text = model.lore
+        
+        // main view
+        itemSV.mainSV.availabilityLabel.attributedText = model.availabilityPretty
+        itemSV.mainSV.costLabel.icon = UIImage(named: "coins.png")
+        itemSV.mainSV.costLabel.text = model.cost
+        itemSV.mainSV.itemImageView.image = model.image
+        itemSV.mainSV.typeImageView.image = model.typeImg
+        itemSV.mainSV.typeLabel.text = model.type
     }
     
-    fileprivate func refineView() {
-        // meant to remove items from the view if they're empty
-        if recipeStack.arrangedSubviews.count <= 1 { recipeStack.removeFromSuperview() }
-        if manaLabel.text == nil || manaLabel.text == "" { manaLabel.removeFromSuperview() }
-        if cooldownLabel.text == nil || cooldownLabel.text == "" { cooldownLabel.removeFromSuperview() }
-        if abilityLabel.text == nil || abilityLabel.text == "" { cooldownLabel.removeFromSuperview() }
-        if detailLabel.text == nil || detailLabel.text == "" { detailLabel.removeFromSuperview() }
-        if loreLabel.text == nil || loreLabel.text == "" { loreLabel.removeFromSuperview() }
-        
-        // set properties
-        scrollView.alwaysBounceVertical = true
-        scrollView.translatesAutoresizingMaskIntoConstraints = false
-        
+    /* Sets up the recipe */
+    fileprivate func recipeSetup() {
+        // make sure we actually need to make one
+        guard !model.isSingularItem else {
+            return
+        }
+        DispatchQueue.main.async {
+            // create the Recipe Sub StackView
+            let image = self.model.image
+            let buildsFrom = self.model.buildsFrom?.map({ $0.getImage() })
+            let buildsInto = self.model.buildsInto?.map({ $0.getImage() })
+            let needsRecipe = self.model.needsRecipe
+            let subView = RecipeSubStackView(image: image, buildsFrom: buildsFrom, buildsInto: buildsInto, needsRecipe: needsRecipe)
+            
+            // enable tapping button to move to new item
+            for i in 0..<(subView.topSV?.arrangedSubviews.count ?? 0) {
+                if let btn = subView.topSV?.arrangedSubviews[i] as? RecipeButton {
+                    if let item = self.model.buildsInto?[i] {
+                        btn.item = item
+                        btn.addTarget(self, action: #selector(ItemDetailVC.recipeButtonTapped(_:)), for: .touchUpInside)
+                    }
+                }
+            }
+            for i in 0..<(subView.bottomSV?.arrangedSubviews.count ?? 0) {
+                if let btn = subView.bottomSV?.arrangedSubviews[i] as? RecipeButton {
+                    if let item = self.model.buildsFrom?[i] {
+                        btn.item = item
+                        btn.addTarget(self, action: #selector(ItemDetailVC.recipeButtonTapped(_:)), for: .touchUpInside)
+                    }
+                }
+            }
+            
+            // add it to the RecipeStackView
+            self.itemSV.recipeSV?.setSubview(subView)
+        }
     }
+    
+    /* Is called when recipe button is tapped */
+    @objc fileprivate func recipeButtonTapped(_ sender: RecipeButton) {
+        if let item = sender.item {
+            moveTo(item: item)
+        }
+    }
+    
+    /* Handles the move to a new item */
+    fileprivate func moveTo(item: Item) {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "ItemDetailVC") as! ItemDetailVC
+        vc.object = item
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+
 }
+
+
+
+
+
 
 
 

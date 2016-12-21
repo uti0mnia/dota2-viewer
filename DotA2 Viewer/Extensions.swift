@@ -30,3 +30,59 @@ extension String {
         self = self.capitalizingFirstLetter()
     }
 }
+
+extension UIStackView {
+    func addArrangedSubviews(views: [UIView?]) {
+        for view in views {
+            if view == nil { continue }
+            self.addArrangedSubview(view!)
+        }
+    }
+}
+
+extension Int {    
+    var nsDecimalValue: NSDecimalNumber { get { return NSDecimalNumber(value: self) } }
+    var doubleValue: Double { get { return Double(self) } }
+}
+
+extension Double {
+    func format(_ digits: Int) -> String {
+        return String(format: "%.\(digits)f", self)
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
