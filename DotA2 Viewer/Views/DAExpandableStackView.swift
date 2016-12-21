@@ -75,6 +75,7 @@ class DAExpandableStackView: UIStackView, DAExpandableProtocol {
         subView?.isHidden = !isExpanded
         configSubview()
         self.addArrangedSubview(subView!)
+        setSpacing(for: self)
         
     }
     

@@ -89,6 +89,8 @@ class HeroStatsSubStackView: UIStackView {
         topSV.axis = .vertical
         topSV.alignment = .fill
         topSV.distribution = .fillEqually
+        topSV.layoutMargins = UIEdgeInsetsMake(0, 12, 0, 12)
+        topSV.isLayoutMarginsRelativeArrangement = true
         return topSV
     }
     

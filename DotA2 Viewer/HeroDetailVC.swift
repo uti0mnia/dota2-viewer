@@ -65,7 +65,7 @@ class HeroDetailVC: DADetailVC {
     }
     
     fileprivate func setStats() {
-        DispatchQueue.main.async {
+//        DispatchQueue.main.async {
             let subSV = HeroStatsSubStackView()
             
             // top
@@ -106,7 +106,8 @@ class HeroDetailVC: DADetailVC {
             
             // set subView
             self.heroSV.statsSV.setSubview(subSV)
-        }
+//            self.heroSV.statsSV.forceExpanded(true)
+//        }
     }
     
     fileprivate func setTalents() {
