@@ -4210,7 +4210,7 @@
 				INFOPLIST_FILE = "DotA2 Viewer/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.uti0mnia.DotA2-Viewer";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.uti0mnia.DotA2-Assistant";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -4227,7 +4227,7 @@
 				INFOPLIST_FILE = "DotA2 Viewer/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.uti0mnia.DotA2-Viewer";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.uti0mnia.DotA2-Assistant";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
