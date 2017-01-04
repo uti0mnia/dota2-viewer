@@ -15,7 +15,7 @@ public class Hero: ListObject {
     override var detailPretty: NSAttributedString {
         get {
             let string = NSMutableAttributedString()
-            let bold = [NSFontAttributeName : UIFont(name: "Radiance-Semibold", size: 15)]
+            let bold = [NSFontAttributeName : UIFont(name: "Radiance-Semibold", size: 15) as Any]
             
             // create primary attribute image
             let attributes = self.attribute?.allObjects as! [Attribute]
