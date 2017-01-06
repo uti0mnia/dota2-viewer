@@ -84,8 +84,8 @@ class AbilityModel {
             let string = NSMutableAttributedString()
             
             // attributes
-            let bold = [NSFontAttributeName : UIFont(name: "Radiance-Semibold", size: 17) ]
-            let normal = [NSFontAttributeName: UIFont(name: "Radiance", size: 17)]
+            let bold = [NSFontAttributeName : UIFont(name: "Radiance-Semibold", size: 17) as Any]
+            let normal = [NSFontAttributeName: UIFont(name: "Radiance", size: 17) as Any]
             
             // separator
             var separator = ""
@@ -124,7 +124,7 @@ class AbilityModel {
             let string = NSMutableAttributedString()
             
             // attributes
-            let bold = [NSFontAttributeName : UIFont(name: "Radiance-Semibold", size: 17) ]
+            let bold = [NSFontAttributeName : UIFont(name: "Radiance-Semibold", size: 17) as Any]
             
             // separator
             var separator = ""
@@ -182,7 +182,7 @@ class AbilityModel {
     fileprivate func getStringFrom(typesValues values: [String]) -> NSAttributedString {
         let string = NSMutableAttributedString()
         
-        let normal = [NSFontAttributeName: UIFont(name: "Radiance", size: 17)]
+        let normal = [NSFontAttributeName: UIFont(name: "Radiance", size: 17) as Any]
         
         var separator = ""
         for value in values {

@@ -31,7 +31,7 @@ class DAIconLabel: DAMainLabel {
         attachment.bounds = CGRect(x: 0, y: self.font.descender, width: icon?.size.width ?? 0, height: icon?.size.height ?? 0)
         
         // create the text
-        let normal = [NSFontAttributeName: UIFont(name: "Radiance", size: style.rawValue)]
+        let normal = [NSFontAttributeName: UIFont(name: "Radiance", size: style.rawValue) as Any]
         let s1 = NSAttributedString(string: "\(text)", attributes: normal)
         
         // create the attribute string

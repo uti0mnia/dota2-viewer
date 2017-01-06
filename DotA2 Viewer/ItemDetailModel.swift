@@ -78,8 +78,8 @@ class ItemDetailModel {
     var detailsString: NSAttributedString {
         get {
             // attributes
-            let bold = [NSFontAttributeName : UIFont(name: "Radiance-Semibold", size: 17) ]
-            let normal = [NSFontAttributeName: UIFont(name: "Radiance", size: 17)]
+            let bold = [NSFontAttributeName : UIFont(name: "Radiance-Semibold", size: 17) as Any]
+            let normal = [NSFontAttributeName: UIFont(name: "Radiance", size: 17) as Any]
             
             // attributed string that we will be returning
             let string = NSMutableAttributedString()
