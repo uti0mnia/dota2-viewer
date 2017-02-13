@@ -929,6 +929,10 @@
 		C9A6D64D1DBD25AE00580B7B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A6D64C1DBD25AE00580B7B /* Extensions.swift */; };
 		C9B00F7D1DFE4BA600A15F96 /* AbilitiesStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B00F7C1DFE4BA600A15F96 /* AbilitiesStackView.swift */; };
 		C9B00F7F1DFE4E8600A15F96 /* AbilityStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B00F7E1DFE4E8600A15F96 /* AbilityStackView.swift */; };
+		C9BA34571E50B23F003AC6B5 /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BA34561E50B23F003AC6B5 /* Hero.swift */; };
+		C9BA34591E50B249003AC6B5 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BA34581E50B249003AC6B5 /* Item.swift */; };
+		C9BA345B1E50B260003AC6B5 /* Ability.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BA345A1E50B260003AC6B5 /* Ability.swift */; };
+		C9BA345D1E50B6B3003AC6B5 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BA345C1E50B6B3003AC6B5 /* Note.swift */; };
 		C9FEBF2F1DB299F2000CD4FF /* DotA2_Viewer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C9FEBF2D1DB299F2000CD4FF /* DotA2_Viewer.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
@@ -1862,6 +1866,10 @@
 		C9A6D64C1DBD25AE00580B7B /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		C9B00F7C1DFE4BA600A15F96 /* AbilitiesStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AbilitiesStackView.swift; path = Views/AbilitiesStackView.swift; sourceTree = "<group>"; };
 		C9B00F7E1DFE4E8600A15F96 /* AbilityStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AbilityStackView.swift; path = Views/AbilityStackView.swift; sourceTree = "<group>"; };
+		C9BA34561E50B23F003AC6B5 /* Hero.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Hero.swift; path = Model/Hero.swift; sourceTree = "<group>"; };
+		C9BA34581E50B249003AC6B5 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Item.swift; path = Model/Item.swift; sourceTree = "<group>"; };
+		C9BA345A1E50B260003AC6B5 /* Ability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Ability.swift; path = Model/Ability.swift; sourceTree = "<group>"; };
+		C9BA345C1E50B6B3003AC6B5 /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Note.swift; path = Model/Note.swift; sourceTree = "<group>"; };
 		C9BF2F981E00B94E00A4AB93 /* dota.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dota.json; sourceTree = "<group>"; };
 		C9FEBF2E1DB299F2000CD4FF /* DotA2_Pro.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DotA2_Pro.xcdatamodel; sourceTree = "<group>"; };
 		D901BAFFD7186DCAB66C34BB /* Pods-DotA2 Assistant.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DotA2 Assistant.release.xcconfig"; path = "Pods/Target Support Files/Pods-DotA2 Assistant/Pods-DotA2 Assistant.release.xcconfig"; sourceTree = "<group>"; };
@@ -2145,6 +2153,10 @@
 				368D1BC41DFAE90600314648 /* ItemDetailModel.swift */,
 				368D1BB21DF8815D00314648 /* HeroDetailModel.swift */,
 				368D1BC01DF9E50D00314648 /* AbilityModel.swift */,
+				C9BA345A1E50B260003AC6B5 /* Ability.swift */,
+				C9BA34561E50B23F003AC6B5 /* Hero.swift */,
+				C9BA345C1E50B6B3003AC6B5 /* Note.swift */,
+				C9BA34581E50B249003AC6B5 /* Item.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -4007,6 +4019,7 @@
 			files = (
 				C94B1A391E01C4F7008BF226 /* DAIconLabel.swift in Sources */,
 				C96EBB601DF244EF00D6FFD0 /* DANavigationController.swift in Sources */,
+				C9BA34591E50B249003AC6B5 /* Item.swift in Sources */,
 				366A8A101DD100A8000406BF /* DAMainTableView.swift in Sources */,
 				C94F03A21DEF91D3000E60CE /* ArrayValue+CoreDataClass.swift in Sources */,
 				365F75541E042F6400F928B0 /* DADetailVC.swift in Sources */,
@@ -4035,7 +4048,9 @@
 				C93028391DF3629F005EA297 /* HeroDetailVC.swift in Sources */,
 				363A464D1E003E5700BA5D97 /* RecipeStackView.swift in Sources */,
 				C94F03A71DEF91D3000E60CE /* Attribute+CoreDataProperties.swift in Sources */,
+				C9BA345B1E50B260003AC6B5 /* Ability.swift in Sources */,
 				366A8A121DD1029F000406BF /* DAUIViewController.swift in Sources */,
+				C9BA34571E50B23F003AC6B5 /* Hero.swift in Sources */,
 				C962582B1E07A49100037D57 /* Talent+CoreDataClass.swift in Sources */,
 				365F75501E042D4B00F928B0 /* HeroStatsStackView.swift in Sources */,
 				C94F03B11DEF91D3000E60CE /* ListObject+CoreDataProperties.swift in Sources */,
@@ -4049,6 +4064,7 @@
 				C94F03AA1DEF91D3000E60CE /* Hero+CoreDataClass.swift in Sources */,
 				C94F03AC1DEF91D3000E60CE /* Item+CoreDataClass.swift in Sources */,
 				C94F03B41DEF91D3000E60CE /* ItemDetail+CoreDataClass.swift in Sources */,
+				C9BA345D1E50B6B3003AC6B5 /* Note.swift in Sources */,
 				C94F03A61DEF91D3000E60CE /* Attribute+CoreDataClass.swift in Sources */,
 				C90CE6121DFCC95A00C93539 /* ItemStackView.swift in Sources */,
 				C94F03B61DEF91D3000E60CE /* Damage+CoreDataClass.swift in Sources */,
