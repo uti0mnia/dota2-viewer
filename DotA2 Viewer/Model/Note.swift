@@ -9,6 +9,6 @@
 import Foundation
 
 struct Note {
-    var value: String
+    var value: [String]
     var subNote: Note?
 }

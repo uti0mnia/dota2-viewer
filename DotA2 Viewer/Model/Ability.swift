@@ -11,6 +11,7 @@ import Foundation
 class Ability {
 	// Ability data structutres
     enum DataType: String { case normal = "normal", aghanim = "AGHANIM_UPGRADE", talent = "TALENT", talent_aghs = "TALENT_AGHS" }
+    enum ModifierColour: String { case green = "green", red = "red" }
     private struct DataItem {
         var normal: String?
         var aghs: String?
@@ -20,13 +21,13 @@ class Ability {
     
     // properties
     private(set) var name: String
-    private(set) var modifiers: [(String, Bool)] // string is modifier, bool is true <=> green, false <=> red
+    private(set) var modifiers: [(String, ModifierColour)] 
     private(set) var description: String
     private(set) var mana: DataItem
     private(set) var abilitySpecial: [String]
     private(set) var notes: [Note]
     private(set) var specialDetails: [String: String]
     private(set) var cooldown: DataItem
-    private(set) var data: [String: DataItem]
-    private(set) var types: [String: DataItem]
+    private(set) var data: (String, DataItem)
+    private(set) var types: (String, DataItem)
 }
