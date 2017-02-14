@@ -1,9 +1,9 @@
 //
 //  Item+CoreDataProperties.swift
-//  
+//  DotA2 Assistant
 //
-//  Created by Casey McLewin on 2016-12-13.
-//
+//  Created by Casey McLewin on 2017-02-13.
+//  Copyright © 2017 self. All rights reserved.
 //
 
 import Foundation
@@ -16,15 +16,13 @@ extension Item {
         return NSFetchRequest<Item>(entityName: "Item");
     }
 
-    @NSManaged public var cost: String?
+    @NSManaged public var additionalInfo: NSObject?
+    @NSManaged public var availability: NSObject?
+    @NSManaged public var details: NSObject?
     @NSManaged public var lore: String?
     @NSManaged public var type: String?
     @NSManaged public var abilities: NSOrderedSet?
-    @NSManaged public var additionalInfo: NSSet?
-    @NSManaged public var availability: NSSet?
-    @NSManaged public var buildsFrom: NSSet?
-    @NSManaged public var buildsInto: NSSet?
-    @NSManaged public var details: NSSet?
+    @NSManaged public var cost: Tuple?
 
 }
 
@@ -60,90 +58,5 @@ extension Item {
 
     @objc(removeAbilities:)
     @NSManaged public func removeFromAbilities(_ values: NSOrderedSet)
-
-}
-
-// MARK: Generated accessors for additionalInfo
-extension Item {
-
-    @objc(addAdditionalInfoObject:)
-    @NSManaged public func addToAdditionalInfo(_ value: ArrayValue)
-
-    @objc(removeAdditionalInfoObject:)
-    @NSManaged public func removeFromAdditionalInfo(_ value: ArrayValue)
-
-    @objc(addAdditionalInfo:)
-    @NSManaged public func addToAdditionalInfo(_ values: NSSet)
-
-    @objc(removeAdditionalInfo:)
-    @NSManaged public func removeFromAdditionalInfo(_ values: NSSet)
-
-}
-
-// MARK: Generated accessors for availability
-extension Item {
-
-    @objc(addAvailabilityObject:)
-    @NSManaged public func addToAvailability(_ value: ArrayValue)
-
-    @objc(removeAvailabilityObject:)
-    @NSManaged public func removeFromAvailability(_ value: ArrayValue)
-
-    @objc(addAvailability:)
-    @NSManaged public func addToAvailability(_ values: NSSet)
-
-    @objc(removeAvailability:)
-    @NSManaged public func removeFromAvailability(_ values: NSSet)
-
-}
-
-// MARK: Generated accessors for buildsFrom
-extension Item {
-
-    @objc(addBuildsFromObject:)
-    @NSManaged public func addToBuildsFrom(_ value: ArrayValue)
-
-    @objc(removeBuildsFromObject:)
-    @NSManaged public func removeFromBuildsFrom(_ value: ArrayValue)
-
-    @objc(addBuildsFrom:)
-    @NSManaged public func addToBuildsFrom(_ values: NSSet)
-
-    @objc(removeBuildsFrom:)
-    @NSManaged public func removeFromBuildsFrom(_ values: NSSet)
-
-}
-
-// MARK: Generated accessors for buildsInto
-extension Item {
-
-    @objc(addBuildsIntoObject:)
-    @NSManaged public func addToBuildsInto(_ value: ArrayValue)
-
-    @objc(removeBuildsIntoObject:)
-    @NSManaged public func removeFromBuildsInto(_ value: ArrayValue)
-
-    @objc(addBuildsInto:)
-    @NSManaged public func addToBuildsInto(_ values: NSSet)
-
-    @objc(removeBuildsInto:)
-    @NSManaged public func removeFromBuildsInto(_ values: NSSet)
-
-}
-
-// MARK: Generated accessors for details
-extension Item {
-
-    @objc(addDetailsObject:)
-    @NSManaged public func addToDetails(_ value: ItemDetail)
-
-    @objc(removeDetailsObject:)
-    @NSManaged public func removeFromDetails(_ value: ItemDetail)
-
-    @objc(addDetails:)
-    @NSManaged public func addToDetails(_ values: NSSet)
-
-    @objc(removeDetails:)
-    @NSManaged public func removeFromDetails(_ values: NSSet)
 
 }

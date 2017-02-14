@@ -1,9 +1,9 @@
 //
 //  Talent+CoreDataClass.swift
-//  
+//  DotA2 Assistant
 //
-//  Created by Casey McLewin on 2016-12-19.
-//
+//  Created by Casey McLewin on 2017-02-13.
+//  Copyright © 2017 self. All rights reserved.
 //
 
 import Foundation

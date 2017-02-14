@@ -1,21 +1,15 @@
 //
 //  Ability+CoreDataClass.swift
-//  
+//  DotA2 Assistant
 //
-//  Created by Casey McLewin on 2016-11-30.
-//
+//  Created by Casey McLewin on 2017-02-13.
+//  Copyright © 2017 self. All rights reserved.
 //
 
 import Foundation
-import UIKit
 import CoreData
 
 @objc(Ability)
 public class Ability: NSManagedObject {
-    var image: UIImage? {
-        get {
-            let name = String(format: "%@_%@.png", self.name ?? "", self.hero?.name ?? "")
-            return UIImage(named: name)
-        }
-    }
+
 }

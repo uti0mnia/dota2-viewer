@@ -1,28 +1,15 @@
 //
 //  ListObject+CoreDataClass.swift
-//  
+//  DotA2 Assistant
 //
-//  Created by Casey McLewin on 2016-11-30.
-//
+//  Created by Casey McLewin on 2017-02-13.
+//  Copyright © 2017 self. All rights reserved.
 //
 
 import Foundation
-import UIKit
 import CoreData
 
 
 public class ListObject: NSManagedObject {
-    func getImage() -> UIImage {
-        let name = String(format: "%@.png", self.name)
-        return UIImage(named: name) ?? #imageLiteral(resourceName: "default_icon.png")
-    }
-    
-    func firstLetter() -> String {
-        self.willAccessValue(forKey: "firstLetter")
-        let firstLetter = self.name.substring(to: self.name.index(after: self.name.startIndex)).uppercased()
-        self.didAccessValue(forKey: "firstLetter")
-        return firstLetter
-    }
-    
-    var detailPretty: NSAttributedString { get { return NSAttributedString() } }
+
 }

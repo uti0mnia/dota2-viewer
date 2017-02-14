@@ -79,8 +79,6 @@
 		C9172C181DD13F9100DCF88F /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9172C171DD13F9100DCF88F /* Globals.swift */; };
 		C9172C211DD176BA00DCF88F /* dota2-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = C9172C201DD176BA00DCF88F /* dota2-logo.png */; };
 		C922FA8B1DD8AD27007B76F8 /* DALoreLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C922FA8A1DD8AD27007B76F8 /* DALoreLabel.swift */; };
-		C930281D1DF33FF4005EA297 /* AbilityType+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C930281B1DF33FF4005EA297 /* AbilityType+CoreDataClass.swift */; };
-		C930281E1DF33FF4005EA297 /* AbilityType+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C930281C1DF33FF4005EA297 /* AbilityType+CoreDataProperties.swift */; };
 		C93028391DF3629F005EA297 /* HeroDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93028381DF3629F005EA297 /* HeroDetailVC.swift */; };
 		C942CF351E00BCF800DEE8A9 /* dota2.json in Resources */ = {isa = PBXBuildFile; fileRef = C942CF341E00BCF800DEE8A9 /* dota2.json */; };
 		C94A26D21DD5593F00D9B054 /* DASlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94A26D11DD5593F00D9B054 /* DASlider.swift */; };
@@ -886,28 +884,6 @@
 		C94B1A3D1E01D1BC008BF226 /* cooldown.png in Resources */ = {isa = PBXBuildFile; fileRef = C94B1A3C1E01D1BC008BF226 /* cooldown.png */; };
 		C94B1A3F1E01D41F008BF226 /* mana.png in Resources */ = {isa = PBXBuildFile; fileRef = C94B1A3E1E01D41F008BF226 /* mana.png */; };
 		C94CAB641DD7CD4F00971BC5 /* DASearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94CAB631DD7CD4F00971BC5 /* DASearchBar.swift */; };
-		C94F03A21DEF91D3000E60CE /* ArrayValue+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94F038C1DEF91D3000E60CE /* ArrayValue+CoreDataClass.swift */; };
-		C94F03A31DEF91D3000E60CE /* ArrayValue+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94F038D1DEF91D3000E60CE /* ArrayValue+CoreDataProperties.swift */; };
-		C94F03A41DEF91D3000E60CE /* Ability+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94F038E1DEF91D3000E60CE /* Ability+CoreDataClass.swift */; };
-		C94F03A51DEF91D3000E60CE /* Ability+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94F038F1DEF91D3000E60CE /* Ability+CoreDataProperties.swift */; };
-		C94F03A61DEF91D3000E60CE /* Attribute+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94F03901DEF91D3000E60CE /* Attribute+CoreDataClass.swift */; };
-		C94F03A71DEF91D3000E60CE /* Attribute+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94F03911DEF91D3000E60CE /* Attribute+CoreDataProperties.swift */; };
-		C94F03A81DEF91D3000E60CE /* BaseStat+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94F03921DEF91D3000E60CE /* BaseStat+CoreDataClass.swift */; };
-		C94F03A91DEF91D3000E60CE /* BaseStat+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94F03931DEF91D3000E60CE /* BaseStat+CoreDataProperties.swift */; };
-		C94F03AA1DEF91D3000E60CE /* Hero+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94F03941DEF91D3000E60CE /* Hero+CoreDataClass.swift */; };
-		C94F03AB1DEF91D3000E60CE /* Hero+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94F03951DEF91D3000E60CE /* Hero+CoreDataProperties.swift */; };
-		C94F03AC1DEF91D3000E60CE /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94F03961DEF91D3000E60CE /* Item+CoreDataClass.swift */; };
-		C94F03AD1DEF91D3000E60CE /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94F03971DEF91D3000E60CE /* Item+CoreDataProperties.swift */; };
-		C94F03AE1DEF91D3000E60CE /* MiscStat+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94F03981DEF91D3000E60CE /* MiscStat+CoreDataClass.swift */; };
-		C94F03AF1DEF91D3000E60CE /* MiscStat+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94F03991DEF91D3000E60CE /* MiscStat+CoreDataProperties.swift */; };
-		C94F03B01DEF91D3000E60CE /* ListObject+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94F039A1DEF91D3000E60CE /* ListObject+CoreDataClass.swift */; };
-		C94F03B11DEF91D3000E60CE /* ListObject+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94F039B1DEF91D3000E60CE /* ListObject+CoreDataProperties.swift */; };
-		C94F03B21DEF91D3000E60CE /* Note+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94F039C1DEF91D3000E60CE /* Note+CoreDataClass.swift */; };
-		C94F03B31DEF91D3000E60CE /* Note+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94F039D1DEF91D3000E60CE /* Note+CoreDataProperties.swift */; };
-		C94F03B41DEF91D3000E60CE /* ItemDetail+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94F039E1DEF91D3000E60CE /* ItemDetail+CoreDataClass.swift */; };
-		C94F03B51DEF91D3000E60CE /* ItemDetail+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94F039F1DEF91D3000E60CE /* ItemDetail+CoreDataProperties.swift */; };
-		C94F03B61DEF91D3000E60CE /* Damage+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94F03A01DEF91D3000E60CE /* Damage+CoreDataClass.swift */; };
-		C94F03B71DEF91D3000E60CE /* Damage+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94F03A11DEF91D3000E60CE /* Damage+CoreDataProperties.swift */; };
 		C95753C71DD57FCF005C9F75 /* agility_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C95753C11DD57FCF005C9F75 /* agility_icon.png */; };
 		C95753C81DD57FCF005C9F75 /* armor_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C95753C21DD57FCF005C9F75 /* armor_icon.png */; };
 		C95753C91DD57FCF005C9F75 /* damage_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C95753C31DD57FCF005C9F75 /* damage_icon.png */; };
@@ -916,8 +892,32 @@
 		C95753CC1DD57FCF005C9F75 /* strength_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C95753C61DD57FCF005C9F75 /* strength_icon.png */; };
 		C95E51DB1E0A142900A48965 /* Monkey King.png in Resources */ = {isa = PBXBuildFile; fileRef = C95E51DA1E0A142900A48965 /* Monkey King.png */; };
 		C95E86801E0369CE00822703 /* dota2.png in Resources */ = {isa = PBXBuildFile; fileRef = C95E867F1E0369CE00822703 /* dota2.png */; };
-		C962582B1E07A49100037D57 /* Talent+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96258291E07A49100037D57 /* Talent+CoreDataClass.swift */; };
-		C962582C1E07A49100037D57 /* Talent+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C962582A1E07A49100037D57 /* Talent+CoreDataProperties.swift */; };
+		C96194B71E52917700765DA9 /* Tuple+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C961949D1E52917700765DA9 /* Tuple+CoreDataClass.swift */; };
+		C96194B81E52917700765DA9 /* Tuple+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C961949E1E52917700765DA9 /* Tuple+CoreDataProperties.swift */; };
+		C96194B91E52917700765DA9 /* AbilityTuple+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C961949F1E52917700765DA9 /* AbilityTuple+CoreDataClass.swift */; };
+		C96194BA1E52917700765DA9 /* AbilityTuple+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96194A01E52917700765DA9 /* AbilityTuple+CoreDataProperties.swift */; };
+		C96194BB1E52917700765DA9 /* Ability+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96194A11E52917700765DA9 /* Ability+CoreDataClass.swift */; };
+		C96194BC1E52917700765DA9 /* Ability+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96194A21E52917700765DA9 /* Ability+CoreDataProperties.swift */; };
+		C96194BD1E52917700765DA9 /* HeroAttribute+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96194A31E52917700765DA9 /* HeroAttribute+CoreDataClass.swift */; };
+		C96194BE1E52917700765DA9 /* HeroAttribute+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96194A41E52917700765DA9 /* HeroAttribute+CoreDataProperties.swift */; };
+		C96194BF1E52917700765DA9 /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96194A51E52917700765DA9 /* Item+CoreDataClass.swift */; };
+		C96194C01E52917700765DA9 /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96194A61E52917700765DA9 /* Item+CoreDataProperties.swift */; };
+		C96194C11E52917700765DA9 /* ListObject+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96194A71E52917700765DA9 /* ListObject+CoreDataClass.swift */; };
+		C96194C21E52917700765DA9 /* ListObject+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96194A81E52917700765DA9 /* ListObject+CoreDataProperties.swift */; };
+		C96194C31E52917700765DA9 /* Talent+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96194A91E52917700765DA9 /* Talent+CoreDataClass.swift */; };
+		C96194C41E52917700765DA9 /* Talent+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96194AA1E52917700765DA9 /* Talent+CoreDataProperties.swift */; };
+		C96194C51E52917700765DA9 /* Note+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96194AB1E52917700765DA9 /* Note+CoreDataClass.swift */; };
+		C96194C61E52917700765DA9 /* Note+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96194AC1E52917700765DA9 /* Note+CoreDataProperties.swift */; };
+		C96194C71E52917700765DA9 /* DataItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96194AD1E52917700765DA9 /* DataItem+CoreDataClass.swift */; };
+		C96194C81E52917700765DA9 /* DataItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96194AE1E52917700765DA9 /* DataItem+CoreDataProperties.swift */; };
+		C96194C91E52917700765DA9 /* AbilityModifier+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96194AF1E52917700765DA9 /* AbilityModifier+CoreDataClass.swift */; };
+		C96194CA1E52917700765DA9 /* AbilityModifier+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96194B01E52917700765DA9 /* AbilityModifier+CoreDataProperties.swift */; };
+		C96194CB1E52917700765DA9 /* Hero+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96194B11E52917700765DA9 /* Hero+CoreDataClass.swift */; };
+		C96194CC1E52917700765DA9 /* Hero+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96194B21E52917700765DA9 /* Hero+CoreDataProperties.swift */; };
+		C96194CD1E52917700765DA9 /* HeroBaseStat+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96194B31E52917700765DA9 /* HeroBaseStat+CoreDataClass.swift */; };
+		C96194CE1E52917700765DA9 /* HeroBaseStat+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96194B41E52917700765DA9 /* HeroBaseStat+CoreDataProperties.swift */; };
+		C96194CF1E52917700765DA9 /* HeroMiscStat+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96194B51E52917700765DA9 /* HeroMiscStat+CoreDataClass.swift */; };
+		C96194D01E52917700765DA9 /* HeroMiscStat+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96194B61E52917700765DA9 /* HeroMiscStat+CoreDataProperties.swift */; };
 		C962582E1E07ADC400037D57 /* HeroSingleTalentStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C962582D1E07ADC400037D57 /* HeroSingleTalentStackView.swift */; };
 		C96258301E07B02C00037D57 /* HeroTalentStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C962582F1E07B02C00037D57 /* HeroTalentStackView.swift */; };
 		C96258341E07B12500037D57 /* HeroTalentSubStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96258331E07B12500037D57 /* HeroTalentSubStackView.swift */; };
@@ -929,10 +929,6 @@
 		C9A6D64D1DBD25AE00580B7B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A6D64C1DBD25AE00580B7B /* Extensions.swift */; };
 		C9B00F7D1DFE4BA600A15F96 /* AbilitiesStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B00F7C1DFE4BA600A15F96 /* AbilitiesStackView.swift */; };
 		C9B00F7F1DFE4E8600A15F96 /* AbilityStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B00F7E1DFE4E8600A15F96 /* AbilityStackView.swift */; };
-		C9BA34571E50B23F003AC6B5 /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BA34561E50B23F003AC6B5 /* Hero.swift */; };
-		C9BA34591E50B249003AC6B5 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BA34581E50B249003AC6B5 /* Item.swift */; };
-		C9BA345B1E50B260003AC6B5 /* Ability.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BA345A1E50B260003AC6B5 /* Ability.swift */; };
-		C9BA345D1E50B6B3003AC6B5 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BA345C1E50B6B3003AC6B5 /* Note.swift */; };
 		C9FEBF2F1DB299F2000CD4FF /* DotA2_Viewer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C9FEBF2D1DB299F2000CD4FF /* DotA2_Viewer.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
@@ -1014,8 +1010,6 @@
 		C9172C171DD13F9100DCF88F /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		C9172C201DD176BA00DCF88F /* dota2-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dota2-logo.png"; sourceTree = "<group>"; };
 		C922FA8A1DD8AD27007B76F8 /* DALoreLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DALoreLabel.swift; sourceTree = "<group>"; };
-		C930281B1DF33FF4005EA297 /* AbilityType+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "AbilityType+CoreDataClass.swift"; path = "CoreData/AbilityType+CoreDataClass.swift"; sourceTree = "<group>"; };
-		C930281C1DF33FF4005EA297 /* AbilityType+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "AbilityType+CoreDataProperties.swift"; path = "CoreData/AbilityType+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C93028381DF3629F005EA297 /* HeroDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroDetailVC.swift; sourceTree = "<group>"; };
 		C942CF341E00BCF800DEE8A9 /* dota2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dota2.json; sourceTree = "<group>"; };
 		C94A26D11DD5593F00D9B054 /* DASlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DASlider.swift; path = Views/DASlider.swift; sourceTree = "<group>"; };
@@ -1821,28 +1815,6 @@
 		C94B1A3C1E01D1BC008BF226 /* cooldown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cooldown.png; sourceTree = "<group>"; };
 		C94B1A3E1E01D41F008BF226 /* mana.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mana.png; sourceTree = "<group>"; };
 		C94CAB631DD7CD4F00971BC5 /* DASearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DASearchBar.swift; sourceTree = "<group>"; };
-		C94F038C1DEF91D3000E60CE /* ArrayValue+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ArrayValue+CoreDataClass.swift"; path = "CoreData/ArrayValue+CoreDataClass.swift"; sourceTree = "<group>"; };
-		C94F038D1DEF91D3000E60CE /* ArrayValue+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ArrayValue+CoreDataProperties.swift"; path = "CoreData/ArrayValue+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		C94F038E1DEF91D3000E60CE /* Ability+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Ability+CoreDataClass.swift"; path = "CoreData/Ability+CoreDataClass.swift"; sourceTree = "<group>"; };
-		C94F038F1DEF91D3000E60CE /* Ability+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Ability+CoreDataProperties.swift"; path = "CoreData/Ability+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		C94F03901DEF91D3000E60CE /* Attribute+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Attribute+CoreDataClass.swift"; path = "CoreData/Attribute+CoreDataClass.swift"; sourceTree = "<group>"; };
-		C94F03911DEF91D3000E60CE /* Attribute+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Attribute+CoreDataProperties.swift"; path = "CoreData/Attribute+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		C94F03921DEF91D3000E60CE /* BaseStat+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "BaseStat+CoreDataClass.swift"; path = "CoreData/BaseStat+CoreDataClass.swift"; sourceTree = "<group>"; };
-		C94F03931DEF91D3000E60CE /* BaseStat+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "BaseStat+CoreDataProperties.swift"; path = "CoreData/BaseStat+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		C94F03941DEF91D3000E60CE /* Hero+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Hero+CoreDataClass.swift"; path = "CoreData/Hero+CoreDataClass.swift"; sourceTree = "<group>"; };
-		C94F03951DEF91D3000E60CE /* Hero+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Hero+CoreDataProperties.swift"; path = "CoreData/Hero+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		C94F03961DEF91D3000E60CE /* Item+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Item+CoreDataClass.swift"; path = "CoreData/Item+CoreDataClass.swift"; sourceTree = "<group>"; };
-		C94F03971DEF91D3000E60CE /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Item+CoreDataProperties.swift"; path = "CoreData/Item+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		C94F03981DEF91D3000E60CE /* MiscStat+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "MiscStat+CoreDataClass.swift"; path = "CoreData/MiscStat+CoreDataClass.swift"; sourceTree = "<group>"; };
-		C94F03991DEF91D3000E60CE /* MiscStat+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "MiscStat+CoreDataProperties.swift"; path = "CoreData/MiscStat+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		C94F039A1DEF91D3000E60CE /* ListObject+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ListObject+CoreDataClass.swift"; path = "CoreData/ListObject+CoreDataClass.swift"; sourceTree = "<group>"; };
-		C94F039B1DEF91D3000E60CE /* ListObject+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ListObject+CoreDataProperties.swift"; path = "CoreData/ListObject+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		C94F039C1DEF91D3000E60CE /* Note+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Note+CoreDataClass.swift"; path = "CoreData/Note+CoreDataClass.swift"; sourceTree = "<group>"; };
-		C94F039D1DEF91D3000E60CE /* Note+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Note+CoreDataProperties.swift"; path = "CoreData/Note+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		C94F039E1DEF91D3000E60CE /* ItemDetail+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ItemDetail+CoreDataClass.swift"; path = "CoreData/ItemDetail+CoreDataClass.swift"; sourceTree = "<group>"; };
-		C94F039F1DEF91D3000E60CE /* ItemDetail+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ItemDetail+CoreDataProperties.swift"; path = "CoreData/ItemDetail+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		C94F03A01DEF91D3000E60CE /* Damage+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Damage+CoreDataClass.swift"; path = "CoreData/Damage+CoreDataClass.swift"; sourceTree = "<group>"; };
-		C94F03A11DEF91D3000E60CE /* Damage+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Damage+CoreDataProperties.swift"; path = "CoreData/Damage+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C94F03B91DEFA55A000E60CE /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = MyPlayground.playground; path = "DotA2 Viewer/MyPlayground.playground"; sourceTree = "<group>"; };
 		C95753C11DD57FCF005C9F75 /* agility_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = agility_icon.png; sourceTree = "<group>"; };
 		C95753C21DD57FCF005C9F75 /* armor_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = armor_icon.png; sourceTree = "<group>"; };
@@ -1852,8 +1824,32 @@
 		C95753C61DD57FCF005C9F75 /* strength_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = strength_icon.png; sourceTree = "<group>"; };
 		C95E51DA1E0A142900A48965 /* Monkey King.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Monkey King.png"; path = "heroes/Monkey King.png"; sourceTree = "<group>"; };
 		C95E867F1E0369CE00822703 /* dota2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dota2.png; sourceTree = "<group>"; };
-		C96258291E07A49100037D57 /* Talent+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Talent+CoreDataClass.swift"; path = "CoreData/Talent+CoreDataClass.swift"; sourceTree = "<group>"; };
-		C962582A1E07A49100037D57 /* Talent+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Talent+CoreDataProperties.swift"; path = "CoreData/Talent+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C961949D1E52917700765DA9 /* Tuple+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Tuple+CoreDataClass.swift"; path = "CoreData/Tuple+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C961949E1E52917700765DA9 /* Tuple+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Tuple+CoreDataProperties.swift"; path = "CoreData/Tuple+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C961949F1E52917700765DA9 /* AbilityTuple+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "AbilityTuple+CoreDataClass.swift"; path = "CoreData/AbilityTuple+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C96194A01E52917700765DA9 /* AbilityTuple+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "AbilityTuple+CoreDataProperties.swift"; path = "CoreData/AbilityTuple+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C96194A11E52917700765DA9 /* Ability+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Ability+CoreDataClass.swift"; path = "CoreData/Ability+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C96194A21E52917700765DA9 /* Ability+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Ability+CoreDataProperties.swift"; path = "CoreData/Ability+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C96194A31E52917700765DA9 /* HeroAttribute+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "HeroAttribute+CoreDataClass.swift"; path = "CoreData/HeroAttribute+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C96194A41E52917700765DA9 /* HeroAttribute+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "HeroAttribute+CoreDataProperties.swift"; path = "CoreData/HeroAttribute+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C96194A51E52917700765DA9 /* Item+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Item+CoreDataClass.swift"; path = "CoreData/Item+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C96194A61E52917700765DA9 /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Item+CoreDataProperties.swift"; path = "CoreData/Item+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C96194A71E52917700765DA9 /* ListObject+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ListObject+CoreDataClass.swift"; path = "CoreData/ListObject+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C96194A81E52917700765DA9 /* ListObject+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ListObject+CoreDataProperties.swift"; path = "CoreData/ListObject+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C96194A91E52917700765DA9 /* Talent+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Talent+CoreDataClass.swift"; path = "CoreData/Talent+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C96194AA1E52917700765DA9 /* Talent+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Talent+CoreDataProperties.swift"; path = "CoreData/Talent+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C96194AB1E52917700765DA9 /* Note+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Note+CoreDataClass.swift"; path = "CoreData/Note+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C96194AC1E52917700765DA9 /* Note+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Note+CoreDataProperties.swift"; path = "CoreData/Note+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C96194AD1E52917700765DA9 /* DataItem+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "DataItem+CoreDataClass.swift"; path = "CoreData/DataItem+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C96194AE1E52917700765DA9 /* DataItem+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "DataItem+CoreDataProperties.swift"; path = "CoreData/DataItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C96194AF1E52917700765DA9 /* AbilityModifier+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "AbilityModifier+CoreDataClass.swift"; path = "CoreData/AbilityModifier+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C96194B01E52917700765DA9 /* AbilityModifier+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "AbilityModifier+CoreDataProperties.swift"; path = "CoreData/AbilityModifier+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C96194B11E52917700765DA9 /* Hero+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Hero+CoreDataClass.swift"; path = "CoreData/Hero+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C96194B21E52917700765DA9 /* Hero+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Hero+CoreDataProperties.swift"; path = "CoreData/Hero+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C96194B31E52917700765DA9 /* HeroBaseStat+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "HeroBaseStat+CoreDataClass.swift"; path = "CoreData/HeroBaseStat+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C96194B41E52917700765DA9 /* HeroBaseStat+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "HeroBaseStat+CoreDataProperties.swift"; path = "CoreData/HeroBaseStat+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C96194B51E52917700765DA9 /* HeroMiscStat+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "HeroMiscStat+CoreDataClass.swift"; path = "CoreData/HeroMiscStat+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C96194B61E52917700765DA9 /* HeroMiscStat+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "HeroMiscStat+CoreDataProperties.swift"; path = "CoreData/HeroMiscStat+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C962582D1E07ADC400037D57 /* HeroSingleTalentStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HeroSingleTalentStackView.swift; path = Views/HeroSingleTalentStackView.swift; sourceTree = "<group>"; };
 		C962582F1E07B02C00037D57 /* HeroTalentStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HeroTalentStackView.swift; path = Views/HeroTalentStackView.swift; sourceTree = "<group>"; };
 		C96258331E07B12500037D57 /* HeroTalentSubStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HeroTalentSubStackView.swift; path = Views/HeroTalentSubStackView.swift; sourceTree = "<group>"; };
@@ -1866,10 +1862,6 @@
 		C9A6D64C1DBD25AE00580B7B /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		C9B00F7C1DFE4BA600A15F96 /* AbilitiesStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AbilitiesStackView.swift; path = Views/AbilitiesStackView.swift; sourceTree = "<group>"; };
 		C9B00F7E1DFE4E8600A15F96 /* AbilityStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AbilityStackView.swift; path = Views/AbilityStackView.swift; sourceTree = "<group>"; };
-		C9BA34561E50B23F003AC6B5 /* Hero.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Hero.swift; path = Model/Hero.swift; sourceTree = "<group>"; };
-		C9BA34581E50B249003AC6B5 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Item.swift; path = Model/Item.swift; sourceTree = "<group>"; };
-		C9BA345A1E50B260003AC6B5 /* Ability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Ability.swift; path = Model/Ability.swift; sourceTree = "<group>"; };
-		C9BA345C1E50B6B3003AC6B5 /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Note.swift; path = Model/Note.swift; sourceTree = "<group>"; };
 		C9BF2F981E00B94E00A4AB93 /* dota.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dota.json; sourceTree = "<group>"; };
 		C9FEBF2E1DB299F2000CD4FF /* DotA2_Pro.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DotA2_Pro.xcdatamodel; sourceTree = "<group>"; };
 		D901BAFFD7186DCAB66C34BB /* Pods-DotA2 Assistant.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DotA2 Assistant.release.xcconfig"; path = "Pods/Target Support Files/Pods-DotA2 Assistant/Pods-DotA2 Assistant.release.xcconfig"; sourceTree = "<group>"; };
@@ -2101,32 +2093,20 @@
 		36FD56461DA6E373007C5A9C /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				C94F038E1DEF91D3000E60CE /* Ability+CoreDataClass.swift */,
-				C94F038F1DEF91D3000E60CE /* Ability+CoreDataProperties.swift */,
-				C930281B1DF33FF4005EA297 /* AbilityType+CoreDataClass.swift */,
-				C930281C1DF33FF4005EA297 /* AbilityType+CoreDataProperties.swift */,
-				C94F038C1DEF91D3000E60CE /* ArrayValue+CoreDataClass.swift */,
-				C94F038D1DEF91D3000E60CE /* ArrayValue+CoreDataProperties.swift */,
-				C94F03901DEF91D3000E60CE /* Attribute+CoreDataClass.swift */,
-				C94F03911DEF91D3000E60CE /* Attribute+CoreDataProperties.swift */,
-				C94F03921DEF91D3000E60CE /* BaseStat+CoreDataClass.swift */,
-				C94F03931DEF91D3000E60CE /* BaseStat+CoreDataProperties.swift */,
-				C94F03A01DEF91D3000E60CE /* Damage+CoreDataClass.swift */,
-				C94F03A11DEF91D3000E60CE /* Damage+CoreDataProperties.swift */,
-				C94F03941DEF91D3000E60CE /* Hero+CoreDataClass.swift */,
-				C94F03951DEF91D3000E60CE /* Hero+CoreDataProperties.swift */,
-				C94F03961DEF91D3000E60CE /* Item+CoreDataClass.swift */,
-				C94F03971DEF91D3000E60CE /* Item+CoreDataProperties.swift */,
-				C94F03981DEF91D3000E60CE /* MiscStat+CoreDataClass.swift */,
-				C94F03991DEF91D3000E60CE /* MiscStat+CoreDataProperties.swift */,
-				C94F039A1DEF91D3000E60CE /* ListObject+CoreDataClass.swift */,
-				C94F039B1DEF91D3000E60CE /* ListObject+CoreDataProperties.swift */,
-				C94F039C1DEF91D3000E60CE /* Note+CoreDataClass.swift */,
-				C94F039D1DEF91D3000E60CE /* Note+CoreDataProperties.swift */,
-				C94F039E1DEF91D3000E60CE /* ItemDetail+CoreDataClass.swift */,
-				C94F039F1DEF91D3000E60CE /* ItemDetail+CoreDataProperties.swift */,
-				C96258291E07A49100037D57 /* Talent+CoreDataClass.swift */,
-				C962582A1E07A49100037D57 /* Talent+CoreDataProperties.swift */,
+				C96194D21E5291DA00765DA9 /* Ability */,
+				C96194AD1E52917700765DA9 /* DataItem+CoreDataClass.swift */,
+				C96194AE1E52917700765DA9 /* DataItem+CoreDataProperties.swift */,
+				C96194A51E52917700765DA9 /* Item+CoreDataClass.swift */,
+				C96194A61E52917700765DA9 /* Item+CoreDataProperties.swift */,
+				C96194D11E52918A00765DA9 /* Hero */,
+				C96194A71E52917700765DA9 /* ListObject+CoreDataClass.swift */,
+				C96194A81E52917700765DA9 /* ListObject+CoreDataProperties.swift */,
+				C96194AB1E52917700765DA9 /* Note+CoreDataClass.swift */,
+				C96194AC1E52917700765DA9 /* Note+CoreDataProperties.swift */,
+				C96194A91E52917700765DA9 /* Talent+CoreDataClass.swift */,
+				C96194AA1E52917700765DA9 /* Talent+CoreDataProperties.swift */,
+				C961949D1E52917700765DA9 /* Tuple+CoreDataClass.swift */,
+				C961949E1E52917700765DA9 /* Tuple+CoreDataProperties.swift */,
 				C9FEBF2D1DB299F2000CD4FF /* DotA2_Viewer.xcdatamodeld */,
 			);
 			name = CoreData;
@@ -2153,10 +2133,6 @@
 				368D1BC41DFAE90600314648 /* ItemDetailModel.swift */,
 				368D1BB21DF8815D00314648 /* HeroDetailModel.swift */,
 				368D1BC01DF9E50D00314648 /* AbilityModel.swift */,
-				C9BA345A1E50B260003AC6B5 /* Ability.swift */,
-				C9BA34561E50B23F003AC6B5 /* Hero.swift */,
-				C9BA345C1E50B6B3003AC6B5 /* Note.swift */,
-				C9BA34581E50B249003AC6B5 /* Item.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -3027,6 +3003,34 @@
 				363A46521E00730900BA5D97 /* Basic */,
 			);
 			name = "Hero Images";
+			sourceTree = "<group>";
+		};
+		C96194D11E52918A00765DA9 /* Hero */ = {
+			isa = PBXGroup;
+			children = (
+				C96194B11E52917700765DA9 /* Hero+CoreDataClass.swift */,
+				C96194B21E52917700765DA9 /* Hero+CoreDataProperties.swift */,
+				C96194A31E52917700765DA9 /* HeroAttribute+CoreDataClass.swift */,
+				C96194A41E52917700765DA9 /* HeroAttribute+CoreDataProperties.swift */,
+				C96194B31E52917700765DA9 /* HeroBaseStat+CoreDataClass.swift */,
+				C96194B41E52917700765DA9 /* HeroBaseStat+CoreDataProperties.swift */,
+				C96194B51E52917700765DA9 /* HeroMiscStat+CoreDataClass.swift */,
+				C96194B61E52917700765DA9 /* HeroMiscStat+CoreDataProperties.swift */,
+			);
+			name = Hero;
+			sourceTree = "<group>";
+		};
+		C96194D21E5291DA00765DA9 /* Ability */ = {
+			isa = PBXGroup;
+			children = (
+				C961949F1E52917700765DA9 /* AbilityTuple+CoreDataClass.swift */,
+				C96194A01E52917700765DA9 /* AbilityTuple+CoreDataProperties.swift */,
+				C96194A11E52917700765DA9 /* Ability+CoreDataClass.swift */,
+				C96194A21E52917700765DA9 /* Ability+CoreDataProperties.swift */,
+				C96194AF1E52917700765DA9 /* AbilityModifier+CoreDataClass.swift */,
+				C96194B01E52917700765DA9 /* AbilityModifier+CoreDataProperties.swift */,
+			);
+			name = Ability;
 			sourceTree = "<group>";
 		};
 		C9FB56731DBB1110000A0824 /* images */ = {
@@ -4017,11 +4021,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C96194BB1E52917700765DA9 /* Ability+CoreDataClass.swift in Sources */,
+				C96194CC1E52917700765DA9 /* Hero+CoreDataProperties.swift in Sources */,
+				C96194B71E52917700765DA9 /* Tuple+CoreDataClass.swift in Sources */,
 				C94B1A391E01C4F7008BF226 /* DAIconLabel.swift in Sources */,
 				C96EBB601DF244EF00D6FFD0 /* DANavigationController.swift in Sources */,
-				C9BA34591E50B249003AC6B5 /* Item.swift in Sources */,
 				366A8A101DD100A8000406BF /* DAMainTableView.swift in Sources */,
-				C94F03A21DEF91D3000E60CE /* ArrayValue+CoreDataClass.swift in Sources */,
+				C96194BF1E52917700765DA9 /* Item+CoreDataClass.swift in Sources */,
 				365F75541E042F6400F928B0 /* DADetailVC.swift in Sources */,
 				368D1BC11DF9E50D00314648 /* AbilityModel.swift in Sources */,
 				365F754A1E04237000F928B0 /* HeroMainStackView.swift in Sources */,
@@ -4031,68 +4037,62 @@
 				C922FA8B1DD8AD27007B76F8 /* DALoreLabel.swift in Sources */,
 				C999EA111DE7E3CB0036AF47 /* Import.swift in Sources */,
 				368D1BD11DFF402200314648 /* ItemMainStackView.swift in Sources */,
-				C94F03B51DEF91D3000E60CE /* ItemDetail+CoreDataProperties.swift in Sources */,
+				C96194BA1E52917700765DA9 /* AbilityTuple+CoreDataProperties.swift in Sources */,
+				C96194C21E52917700765DA9 /* ListObject+CoreDataProperties.swift in Sources */,
 				C962582E1E07ADC400037D57 /* HeroSingleTalentStackView.swift in Sources */,
-				C94F03A91DEF91D3000E60CE /* BaseStat+CoreDataProperties.swift in Sources */,
-				C94F03B71DEF91D3000E60CE /* Damage+CoreDataProperties.swift in Sources */,
+				C96194B81E52917700765DA9 /* Tuple+CoreDataProperties.swift in Sources */,
 				365F75561E0443D900F928B0 /* DAPaddedLabel.swift in Sources */,
+				C96194BE1E52917700765DA9 /* HeroAttribute+CoreDataProperties.swift in Sources */,
+				C96194CA1E52917700765DA9 /* AbilityModifier+CoreDataProperties.swift in Sources */,
 				364A6A591DC1136300FBE163 /* DAMultiLineLabel.swift in Sources */,
-				C94F03AE1DEF91D3000E60CE /* MiscStat+CoreDataClass.swift in Sources */,
 				366A8A161DD103F1000406BF /* DATabBar.swift in Sources */,
-				C94F03B21DEF91D3000E60CE /* Note+CoreDataClass.swift in Sources */,
 				C9B00F7D1DFE4BA600A15F96 /* AbilitiesStackView.swift in Sources */,
+				C96194C71E52917700765DA9 /* DataItem+CoreDataClass.swift in Sources */,
 				C90A793A1E021EE00068C79C /* DABackgroundColourStackView.swift in Sources */,
 				368D1BB31DF8815D00314648 /* HeroDetailModel.swift in Sources */,
 				367E34E01DB7F9670037FA7B /* CustomTabVC.swift in Sources */,
 				C90CE60A1DFCB67500C93539 /* DAExpandableStackView.swift in Sources */,
+				C96194C91E52917700765DA9 /* AbilityModifier+CoreDataClass.swift in Sources */,
 				C93028391DF3629F005EA297 /* HeroDetailVC.swift in Sources */,
 				363A464D1E003E5700BA5D97 /* RecipeStackView.swift in Sources */,
-				C94F03A71DEF91D3000E60CE /* Attribute+CoreDataProperties.swift in Sources */,
-				C9BA345B1E50B260003AC6B5 /* Ability.swift in Sources */,
 				366A8A121DD1029F000406BF /* DAUIViewController.swift in Sources */,
-				C9BA34571E50B23F003AC6B5 /* Hero.swift in Sources */,
-				C962582B1E07A49100037D57 /* Talent+CoreDataClass.swift in Sources */,
+				C96194C81E52917700765DA9 /* DataItem+CoreDataProperties.swift in Sources */,
 				365F75501E042D4B00F928B0 /* HeroStatsStackView.swift in Sources */,
-				C94F03B11DEF91D3000E60CE /* ListObject+CoreDataProperties.swift in Sources */,
 				C90CE6141DFCCBA400C93539 /* ItemDetailVC.swift in Sources */,
 				C96258301E07B02C00037D57 /* HeroTalentStackView.swift in Sources */,
 				365F75521E042DE100F928B0 /* HeroStackView.swift in Sources */,
 				C9FEBF2F1DB299F2000CD4FF /* DotA2_Viewer.xcdatamodeld in Sources */,
-				C94F03A41DEF91D3000E60CE /* Ability+CoreDataClass.swift in Sources */,
+				C96194D01E52917700765DA9 /* HeroMiscStat+CoreDataProperties.swift in Sources */,
 				366A8A0C1DD0F87F000406BF /* DAMainTableViewCell.swift in Sources */,
 				368D1BC51DFAE90600314648 /* ItemDetailModel.swift in Sources */,
-				C94F03AA1DEF91D3000E60CE /* Hero+CoreDataClass.swift in Sources */,
-				C94F03AC1DEF91D3000E60CE /* Item+CoreDataClass.swift in Sources */,
-				C94F03B41DEF91D3000E60CE /* ItemDetail+CoreDataClass.swift in Sources */,
-				C9BA345D1E50B6B3003AC6B5 /* Note.swift in Sources */,
-				C94F03A61DEF91D3000E60CE /* Attribute+CoreDataClass.swift in Sources */,
+				C96194CF1E52917700765DA9 /* HeroMiscStat+CoreDataClass.swift in Sources */,
 				C90CE6121DFCC95A00C93539 /* ItemStackView.swift in Sources */,
-				C94F03B61DEF91D3000E60CE /* Damage+CoreDataClass.swift in Sources */,
-				C94F03AB1DEF91D3000E60CE /* Hero+CoreDataProperties.swift in Sources */,
+				C96194BC1E52917700765DA9 /* Ability+CoreDataProperties.swift in Sources */,
 				365F754C1E04269D00F928B0 /* HeroStatsSubStackView.swift in Sources */,
+				C96194C11E52917700765DA9 /* ListObject+CoreDataClass.swift in Sources */,
+				C96194C51E52917700765DA9 /* Note+CoreDataClass.swift in Sources */,
+				C96194CE1E52917700765DA9 /* HeroBaseStat+CoreDataProperties.swift in Sources */,
 				368D1BCE1DFF24A800314648 /* AbilitySubStackView.swift in Sources */,
+				C96194C31E52917700765DA9 /* Talent+CoreDataClass.swift in Sources */,
 				363A46741E008A8F00BA5D97 /* RecipeButton.swift in Sources */,
+				C96194C01E52917700765DA9 /* Item+CoreDataProperties.swift in Sources */,
 				C9172C181DD13F9100DCF88F /* Globals.swift in Sources */,
-				C930281D1DF33FF4005EA297 /* AbilityType+CoreDataClass.swift in Sources */,
 				365F754E1E04271300F928B0 /* HeroAttributeStackView.swift in Sources */,
-				C94F03A81DEF91D3000E60CE /* BaseStat+CoreDataClass.swift in Sources */,
-				C94F03A31DEF91D3000E60CE /* ArrayValue+CoreDataProperties.swift in Sources */,
+				C96194C61E52917700765DA9 /* Note+CoreDataProperties.swift in Sources */,
 				C90CE6101DFCC18F00C93539 /* DAExpandableTextStackView.swift in Sources */,
-				C94F03AD1DEF91D3000E60CE /* Item+CoreDataProperties.swift in Sources */,
 				36C7DF241DC8F2C800251705 /* RSSFeedHelper.swift in Sources */,
-				C930281E1DF33FF4005EA297 /* AbilityType+CoreDataProperties.swift in Sources */,
 				C94CAB641DD7CD4F00971BC5 /* DASearchBar.swift in Sources */,
-				C94F03B01DEF91D3000E60CE /* ListObject+CoreDataClass.swift in Sources */,
-				C94F03B31DEF91D3000E60CE /* Note+CoreDataProperties.swift in Sources */,
+				C96194B91E52917700765DA9 /* AbilityTuple+CoreDataClass.swift in Sources */,
 				366A8A0E1DD0F993000406BF /* DARoundedImageView.swift in Sources */,
+				C96194CD1E52917700765DA9 /* HeroBaseStat+CoreDataClass.swift in Sources */,
+				C96194CB1E52917700765DA9 /* Hero+CoreDataClass.swift in Sources */,
 				C9B00F7F1DFE4E8600A15F96 /* AbilityStackView.swift in Sources */,
 				C9A6D64D1DBD25AE00580B7B /* Extensions.swift in Sources */,
-				C962582C1E07A49100037D57 /* Talent+CoreDataProperties.swift in Sources */,
 				36C0C9621DA6E25800169394 /* AppDelegate.swift in Sources */,
+				C96194BD1E52917700765DA9 /* HeroAttribute+CoreDataClass.swift in Sources */,
+				C96194C41E52917700765DA9 /* Talent+CoreDataProperties.swift in Sources */,
 				368D1BD31E0030A800314648 /* RecipeSubStackView.swift in Sources */,
-				C94F03A51DEF91D3000E60CE /* Ability+CoreDataProperties.swift in Sources */,
 				C94A26D21DD5593F00D9B054 /* DASlider.swift in Sources */,
-				C94F03AF1DEF91D3000E60CE /* MiscStat+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

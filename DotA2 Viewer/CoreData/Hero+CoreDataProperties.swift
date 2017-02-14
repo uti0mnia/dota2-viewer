@@ -1,9 +1,9 @@
 //
 //  Hero+CoreDataProperties.swift
-//  
+//  DotA2 Assistant
 //
-//  Created by Casey McLewin on 2016-12-19.
-//
+//  Created by Casey McLewin on 2017-02-13.
+//  Copyright © 2017 self. All rights reserved.
 //
 
 import Foundation
@@ -17,15 +17,13 @@ extension Hero {
     }
 
     @NSManaged public var lore: String?
+    @NSManaged public var roles: NSObject?
     @NSManaged public var summary: String?
     @NSManaged public var abilities: NSOrderedSet?
-    @NSManaged public var attribute: NSSet?
-    @NSManaged public var baseStats: BaseStat?
-    @NSManaged public var miscStats: MiscStat?
-    @NSManaged public var roles: NSSet?
+    @NSManaged public var attributes: NSSet?
+    @NSManaged public var baseStats: HeroBaseStat?
+    @NSManaged public var miscStats: HeroMiscStat?
     @NSManaged public var talents: NSSet?
-    @NSManaged public var relationship: NSManagedObject?
-    @NSManaged public var talentNotes: NSSet?
 
 }
 
@@ -64,37 +62,20 @@ extension Hero {
 
 }
 
-// MARK: Generated accessors for attribute
+// MARK: Generated accessors for attributes
 extension Hero {
 
-    @objc(addAttributeObject:)
-    @NSManaged public func addToAttribute(_ value: Attribute)
+    @objc(addAttributesObject:)
+    @NSManaged public func addToAttributes(_ value: HeroAttribute)
 
-    @objc(removeAttributeObject:)
-    @NSManaged public func removeFromAttribute(_ value: Attribute)
+    @objc(removeAttributesObject:)
+    @NSManaged public func removeFromAttributes(_ value: HeroAttribute)
 
-    @objc(addAttribute:)
-    @NSManaged public func addToAttribute(_ values: NSSet)
+    @objc(addAttributes:)
+    @NSManaged public func addToAttributes(_ values: NSSet)
 
-    @objc(removeAttribute:)
-    @NSManaged public func removeFromAttribute(_ values: NSSet)
-
-}
-
-// MARK: Generated accessors for roles
-extension Hero {
-
-    @objc(addRolesObject:)
-    @NSManaged public func addToRoles(_ value: ArrayValue)
-
-    @objc(removeRolesObject:)
-    @NSManaged public func removeFromRoles(_ value: ArrayValue)
-
-    @objc(addRoles:)
-    @NSManaged public func addToRoles(_ values: NSSet)
-
-    @objc(removeRoles:)
-    @NSManaged public func removeFromRoles(_ values: NSSet)
+    @objc(removeAttributes:)
+    @NSManaged public func removeFromAttributes(_ values: NSSet)
 
 }
 

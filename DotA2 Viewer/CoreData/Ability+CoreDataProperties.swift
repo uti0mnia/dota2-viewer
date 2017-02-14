@@ -1,9 +1,9 @@
 //
 //  Ability+CoreDataProperties.swift
-//  
+//  DotA2 Assistant
 //
-//  Created by Casey McLewin on 2016-12-13.
-//
+//  Created by Casey McLewin on 2017-02-13.
+//  Copyright © 2017 self. All rights reserved.
 //
 
 import Foundation
@@ -16,52 +16,17 @@ extension Ability {
         return NSFetchRequest<Ability>(entityName: "Ability");
     }
 
-    @NSManaged public var cooldown: String?
-    @NSManaged public var mana: String?
     @NSManaged public var name: String?
+    @NSManaged public var specials: NSObject?
     @NSManaged public var summary: String?
-    @NSManaged public var abilitySpecial: NSSet?
-    @NSManaged public var data: NSSet?
+    @NSManaged public var cooldown: DataItem?
+    @NSManaged public var data: AbilityTuple?
     @NSManaged public var hero: Hero?
     @NSManaged public var item: Item?
+    @NSManaged public var mana: DataItem?
     @NSManaged public var modifiers: NSSet?
     @NSManaged public var notes: NSOrderedSet?
-    @NSManaged public var type: NSSet?
-    @NSManaged public var specialDetails: NSSet?
-
-}
-
-// MARK: Generated accessors for abilitySpecial
-extension Ability {
-
-    @objc(addAbilitySpecialObject:)
-    @NSManaged public func addToAbilitySpecial(_ value: ArrayValue)
-
-    @objc(removeAbilitySpecialObject:)
-    @NSManaged public func removeFromAbilitySpecial(_ value: ArrayValue)
-
-    @objc(addAbilitySpecial:)
-    @NSManaged public func addToAbilitySpecial(_ values: NSSet)
-
-    @objc(removeAbilitySpecial:)
-    @NSManaged public func removeFromAbilitySpecial(_ values: NSSet)
-
-}
-
-// MARK: Generated accessors for data
-extension Ability {
-
-    @objc(addDataObject:)
-    @NSManaged public func addToData(_ value: ArrayValue)
-
-    @objc(removeDataObject:)
-    @NSManaged public func removeFromData(_ value: ArrayValue)
-
-    @objc(addData:)
-    @NSManaged public func addToData(_ values: NSSet)
-
-    @objc(removeData:)
-    @NSManaged public func removeFromData(_ values: NSSet)
+    @NSManaged public var types: NSSet?
 
 }
 
@@ -69,10 +34,10 @@ extension Ability {
 extension Ability {
 
     @objc(addModifiersObject:)
-    @NSManaged public func addToModifiers(_ value: ArrayValue)
+    @NSManaged public func addToModifiers(_ value: AbilityModifier)
 
     @objc(removeModifiersObject:)
-    @NSManaged public func removeFromModifiers(_ value: ArrayValue)
+    @NSManaged public func removeFromModifiers(_ value: AbilityModifier)
 
     @objc(addModifiers:)
     @NSManaged public func addToModifiers(_ values: NSSet)
@@ -117,36 +82,19 @@ extension Ability {
 
 }
 
-// MARK: Generated accessors for type
+// MARK: Generated accessors for types
 extension Ability {
 
-    @objc(addTypeObject:)
-    @NSManaged public func addToType(_ value: AbilityType)
+    @objc(addTypesObject:)
+    @NSManaged public func addToTypes(_ value: AbilityTuple)
 
-    @objc(removeTypeObject:)
-    @NSManaged public func removeFromType(_ value: AbilityType)
+    @objc(removeTypesObject:)
+    @NSManaged public func removeFromTypes(_ value: AbilityTuple)
 
-    @objc(addType:)
-    @NSManaged public func addToType(_ values: NSSet)
+    @objc(addTypes:)
+    @NSManaged public func addToTypes(_ values: NSSet)
 
-    @objc(removeType:)
-    @NSManaged public func removeFromType(_ values: NSSet)
-
-}
-
-// MARK: Generated accessors for specialDetails
-extension Ability {
-
-    @objc(addSpecialDetailsObject:)
-    @NSManaged public func addToSpecialDetails(_ value: ArrayValue)
-
-    @objc(removeSpecialDetailsObject:)
-    @NSManaged public func removeFromSpecialDetails(_ value: ArrayValue)
-
-    @objc(addSpecialDetails:)
-    @NSManaged public func addToSpecialDetails(_ values: NSSet)
-
-    @objc(removeSpecialDetails:)
-    @NSManaged public func removeFromSpecialDetails(_ values: NSSet)
+    @objc(removeTypes:)
+    @NSManaged public func removeFromTypes(_ values: NSSet)
 
 }

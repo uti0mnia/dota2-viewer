@@ -1,5 +1,5 @@
 //
-//  Note+CoreDataClass.swift
+//  AbilityTuple+CoreDataClass.swift
 //  DotA2 Assistant
 //
 //  Created by Casey McLewin on 2017-02-13.
@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
-@objc(Note)
-public class Note: NSManagedObject {
+@objc(AbilityTuple)
+public class AbilityTuple: NSManagedObject {
 
 }
