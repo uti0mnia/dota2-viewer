@@ -185,9 +185,9 @@ extension CustomTabVC: UITabBarDelegate {
 extension CustomTabVC: UITableViewDelegate, UITableViewDataSource {
     fileprivate func configure(cell: DAMainTableViewCell, atIndexPath indexPath: IndexPath) {
         let obj = fetchedResultsController.object(at: indexPath)
-        cell.circleImageView.image = obj.getImage()
+        cell.circleImageView.image = obj.image
         cell.mainLabel.text = obj.name
-        cell.detailLabel.attributedText = obj.detailPretty
+        cell.detailLabel.attributedText = obj.details
         
         cell.backgroundColor = UIColor.clear // for  iPad (bug < iOS 10)
     }
