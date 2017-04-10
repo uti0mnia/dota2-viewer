@@ -4,7 +4,7 @@
         <attribute name="descrip" attributeType="String" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
         <attribute name="specialDetails" optional="YES" attributeType="Transformable" syncable="YES"/>
-        <attribute name="specials" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="specials" optional="YES" attributeType="Transformable" customClassName="[String]" syncable="YES"/>
         <relationship name="cooldown" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ModifiableValue" inverseName="abilityCooldown" inverseEntity="ModifiableValue" syncable="YES"/>
         <relationship name="data" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="ModifiableValue" inverseName="abilityData" inverseEntity="ModifiableValue" syncable="YES"/>
         <relationship name="mana" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ModifiableValue" inverseName="abilityMana" inverseEntity="ModifiableValue" syncable="YES"/>
@@ -108,12 +108,12 @@
         <element name="Attribute" positionX="-612" positionY="-72" width="128" height="120"/>
         <element name="BaseStats" positionX="-657" positionY="-198" width="128" height="165"/>
         <element name="Hero" positionX="-684" positionY="-252" width="128" height="150"/>
+        <element name="Item" positionX="-630" positionY="-108" width="128" height="165"/>
         <element name="MiscStats" positionX="-639" positionY="-135" width="128" height="195"/>
         <element name="Modifer" positionX="-612" positionY="-99" width="128" height="75"/>
         <element name="ModifiableValue" positionX="-603" positionY="-90" width="128" height="180"/>
         <element name="Note" positionX="-594" positionY="-63" width="128" height="120"/>
         <element name="Object" positionX="-684" positionY="-258" width="128" height="90"/>
         <element name="Talent" positionX="-630" positionY="-117" width="128" height="105"/>
-        <element name="Item" positionX="-630" positionY="-108" width="128" height="165"/>
     </elements>
 </model>
