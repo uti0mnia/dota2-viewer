@@ -918,7 +918,6 @@
 		C96194CE1E52917700765DA9 /* HeroBaseStat+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96194B41E52917700765DA9 /* HeroBaseStat+CoreDataProperties.swift */; };
 		C96194CF1E52917700765DA9 /* HeroMiscStat+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96194B51E52917700765DA9 /* HeroMiscStat+CoreDataClass.swift */; };
 		C96194D01E52917700765DA9 /* HeroMiscStat+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96194B61E52917700765DA9 /* HeroMiscStat+CoreDataProperties.swift */; };
-		C96194D41E5292A600765DA9 /* CoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96194D31E5292A600765DA9 /* CoreModel.swift */; };
 		C962582E1E07ADC400037D57 /* HeroSingleTalentStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C962582D1E07ADC400037D57 /* HeroSingleTalentStackView.swift */; };
 		C96258301E07B02C00037D57 /* HeroTalentStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C962582F1E07B02C00037D57 /* HeroTalentStackView.swift */; };
 		C96258341E07B12500037D57 /* HeroTalentSubStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96258331E07B12500037D57 /* HeroTalentSubStackView.swift */; };
@@ -1851,7 +1850,6 @@
 		C96194B41E52917700765DA9 /* HeroBaseStat+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "HeroBaseStat+CoreDataProperties.swift"; path = "CoreData/HeroBaseStat+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C96194B51E52917700765DA9 /* HeroMiscStat+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "HeroMiscStat+CoreDataClass.swift"; path = "CoreData/HeroMiscStat+CoreDataClass.swift"; sourceTree = "<group>"; };
 		C96194B61E52917700765DA9 /* HeroMiscStat+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "HeroMiscStat+CoreDataProperties.swift"; path = "CoreData/HeroMiscStat+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		C96194D31E5292A600765DA9 /* CoreModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreModel.swift; path = Model/CoreModel.swift; sourceTree = "<group>"; };
 		C962582D1E07ADC400037D57 /* HeroSingleTalentStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HeroSingleTalentStackView.swift; path = Views/HeroSingleTalentStackView.swift; sourceTree = "<group>"; };
 		C962582F1E07B02C00037D57 /* HeroTalentStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HeroTalentStackView.swift; path = Views/HeroTalentStackView.swift; sourceTree = "<group>"; };
 		C96258331E07B12500037D57 /* HeroTalentSubStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HeroTalentSubStackView.swift; path = Views/HeroTalentSubStackView.swift; sourceTree = "<group>"; };
@@ -2105,8 +2103,6 @@
 				C96194A81E52917700765DA9 /* ListObject+CoreDataProperties.swift */,
 				C96194AB1E52917700765DA9 /* Note+CoreDataClass.swift */,
 				C96194AC1E52917700765DA9 /* Note+CoreDataProperties.swift */,
-				C96194A91E52917700765DA9 /* Talent+CoreDataClass.swift */,
-				C96194AA1E52917700765DA9 /* Talent+CoreDataProperties.swift */,
 				C961949D1E52917700765DA9 /* Tuple+CoreDataClass.swift */,
 				C961949E1E52917700765DA9 /* Tuple+CoreDataProperties.swift */,
 				C9FEBF2D1DB299F2000CD4FF /* DotA2_Viewer.xcdatamodeld */,
@@ -2131,7 +2127,6 @@
 			children = (
 				36FD56461DA6E373007C5A9C /* CoreData */,
 				368D1BBF1DF9E4FC00314648 /* Other */,
-				C96194D31E5292A600765DA9 /* CoreModel.swift */,
 				36C7DF231DC8F2C800251705 /* RSSFeedHelper.swift */,
 				368D1BC41DFAE90600314648 /* ItemDetailModel.swift */,
 				368D1BB21DF8815D00314648 /* HeroDetailModel.swift */,
@@ -3019,6 +3014,8 @@
 				C96194B41E52917700765DA9 /* HeroBaseStat+CoreDataProperties.swift */,
 				C96194B51E52917700765DA9 /* HeroMiscStat+CoreDataClass.swift */,
 				C96194B61E52917700765DA9 /* HeroMiscStat+CoreDataProperties.swift */,
+				C96194A91E52917700765DA9 /* Talent+CoreDataClass.swift */,
+				C96194AA1E52917700765DA9 /* Talent+CoreDataProperties.swift */,
 			);
 			name = Hero;
 			sourceTree = "<group>";
@@ -3078,7 +3075,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = self;
 				TargetAttributes = {
 					36C0C95D1DA6E25800169394 = {
@@ -4085,7 +4082,6 @@
 				C90CE6101DFCC18F00C93539 /* DAExpandableTextStackView.swift in Sources */,
 				36C7DF241DC8F2C800251705 /* RSSFeedHelper.swift in Sources */,
 				C94CAB641DD7CD4F00971BC5 /* DASearchBar.swift in Sources */,
-				C96194D41E5292A600765DA9 /* CoreModel.swift in Sources */,
 				C96194B91E52917700765DA9 /* AbilityTuple+CoreDataClass.swift in Sources */,
 				366A8A0E1DD0F993000406BF /* DARoundedImageView.swift in Sources */,
 				C96194CD1E52917700765DA9 /* HeroBaseStat+CoreDataClass.swift in Sources */,

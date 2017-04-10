@@ -14,10 +14,16 @@ class AbilityModel {
     // MARK - Properties
     /* Private */
     fileprivate var _ability: Ability!
-    fileprivate var _types: [AbilityType] { get { return _ability.type?.allObjects as? [AbilityType] ?? [AbilityType]() } }
+    fileprivate var _types: [AbilityTuple] { get { return _ability.types?.allObjects as? [AbilityTuple] ?? [AbilityTuple]() } }
     
     /* Public */
-    var cooldown: String { get { return _ability.cooldown ?? "" } }
+    var cooldown: NSAttributedString {
+        get {
+            let attString = NSAttributedString()
+            let attachment = NSTextAttachment()
+            attachment.image = UIImage(named: "cooldown.png")
+        }
+    }
     var mana: String { get { return _ability.mana ?? "" } }
     var image: UIImage? { get { return _ability.image } }
     var name: String { get { return _ability.name ?? "No name" } }

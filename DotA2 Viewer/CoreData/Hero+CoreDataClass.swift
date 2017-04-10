@@ -8,8 +8,13 @@
 
 import Foundation
 import CoreData
+import UIKit
 
 @objc(Hero)
 public class Hero: ListObject {
-
+    override var image: UIImage? {
+        get {
+            return UIImage(named: name + ".png")
+        }
+    }
 }

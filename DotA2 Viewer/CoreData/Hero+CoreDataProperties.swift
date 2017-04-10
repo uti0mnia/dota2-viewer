@@ -17,13 +17,14 @@ extension Hero {
     }
 
     @NSManaged public var lore: String?
-    @NSManaged public var roles: NSObject?
+    @NSManaged public var roles: [String]
     @NSManaged public var summary: String?
     @NSManaged public var abilities: NSOrderedSet?
     @NSManaged public var attributes: NSSet?
     @NSManaged public var baseStats: HeroBaseStat?
     @NSManaged public var miscStats: HeroMiscStat?
-    @NSManaged public var talents: NSSet?
+    @NSManaged public var talents: NSOrderedSet?
+    @NSManaged public var talentNotes: NSOrderedSet?
 
 }
 

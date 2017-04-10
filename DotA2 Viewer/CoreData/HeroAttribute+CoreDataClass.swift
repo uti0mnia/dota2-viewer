@@ -11,5 +11,4 @@ import CoreData
 
 @objc(HeroAttribute)
 public class HeroAttribute: NSManagedObject {
-
 }

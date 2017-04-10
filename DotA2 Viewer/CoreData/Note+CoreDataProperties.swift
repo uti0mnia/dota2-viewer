@@ -20,7 +20,7 @@ extension Note {
     @NSManaged public var ability: Ability?
     @NSManaged public var note: Note?
     @NSManaged public var subNotes: NSOrderedSet?
-    @NSManaged public var heroTalent: Talent?
+    @NSManaged public var heroTalent: Hero?
 
 }
 

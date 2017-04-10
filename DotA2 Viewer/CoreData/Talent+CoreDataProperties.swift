@@ -20,7 +20,6 @@ extension Talent {
     @NSManaged public var level: NSNumber?
     @NSManaged public var right: String?
     @NSManaged public var hero: Hero?
-    @NSManaged public var notes: NSOrderedSet?
 
 }
 

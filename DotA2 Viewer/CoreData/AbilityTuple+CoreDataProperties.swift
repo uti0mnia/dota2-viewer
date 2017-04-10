@@ -17,6 +17,7 @@ extension AbilityTuple {
     }
 
     @NSManaged public var value: String?
+    @NSManaged public var key: String?
     @NSManaged public var abilityData: Ability?
     @NSManaged public var abilityType: Ability?
     @NSManaged public var dataItem: DataItem?
