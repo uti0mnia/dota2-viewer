@@ -17,6 +17,6 @@ extension Modifer {
     }
 
     @NSManaged public var colour: Int16
-    @NSManaged public var ability: Ability?
+    @NSManaged public var ability: Ability
 
 }

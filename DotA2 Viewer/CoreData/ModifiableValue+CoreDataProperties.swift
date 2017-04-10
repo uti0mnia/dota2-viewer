@@ -19,7 +19,7 @@ extension ModifiableValue {
     @NSManaged public var aghs: String?
     @NSManaged public var aghsAndTalent: String?
     @NSManaged public var name: String?
-    @NSManaged public var normal: String?
+    @NSManaged public var normal: String
     @NSManaged public var talent: String?
     @NSManaged public var abilityCooldown: Ability?
     @NSManaged public var abilityData: Ability?

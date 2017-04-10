@@ -17,9 +17,9 @@ extension Item {
     }
 
     @NSManaged public var cost: Int16
-    @NSManaged public var details: NSObject?
+    @NSManaged public var details: [String:[Any]]
     @NSManaged public var recipeCost: Int16
-    @NSManaged public var type: String?
+    @NSManaged public var type: String
     @NSManaged public var additionalInfo: NSOrderedSet?
     @NSManaged public var availability: NSSet?
     @NSManaged public var buildsFrom: ArrayItem?

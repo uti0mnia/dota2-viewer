@@ -16,7 +16,7 @@ extension ArrayItem {
         return NSFetchRequest<ArrayItem>(entityName: "ArrayItem")
     }
 
-    @NSManaged public var value: String?
+    @NSManaged public var value: String
     @NSManaged public var hero: Hero?
     @NSManaged public var itemAdditionalInfo: Item?
     @NSManaged public var itemAvailability: Item?

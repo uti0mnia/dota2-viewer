@@ -3,7 +3,7 @@
     <entity name="Ability" representedClassName=".Ability" syncable="YES">
         <attribute name="descrip" attributeType="String" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
-        <attribute name="specialDetails" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="specialDetails" optional="YES" attributeType="Transformable" customClassName="[String]" syncable="YES"/>
         <attribute name="specials" optional="YES" attributeType="Transformable" customClassName="[String]" syncable="YES"/>
         <relationship name="cooldown" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ModifiableValue" inverseName="abilityCooldown" inverseEntity="ModifiableValue" syncable="YES"/>
         <relationship name="data" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="ModifiableValue" inverseName="abilityData" inverseEntity="ModifiableValue" syncable="YES"/>
@@ -39,7 +39,7 @@
         <relationship name="hero" maxCount="1" deletionRule="Nullify" destinationEntity="Hero" inverseName="base" inverseEntity="Hero" syncable="YES"/>
     </entity>
     <entity name="Hero" representedClassName=".Hero" parentEntity="Object" syncable="YES">
-        <attribute name="descript" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="descript" attributeType="String" syncable="YES"/>
         <relationship name="attributes" toMany="YES" minCount="3" maxCount="3" deletionRule="Nullify" destinationEntity="Attribute" inverseName="hero" inverseEntity="Attribute" syncable="YES"/>
         <relationship name="base" maxCount="1" deletionRule="Nullify" destinationEntity="BaseStats" inverseName="hero" inverseEntity="BaseStats" syncable="YES"/>
         <relationship name="misc" maxCount="1" deletionRule="Nullify" destinationEntity="MiscStats" inverseName="hero" inverseEntity="MiscStats" syncable="YES"/>
@@ -49,7 +49,7 @@
     </entity>
     <entity name="Item" representedClassName=".Item" parentEntity="Object" syncable="YES">
         <attribute name="cost" attributeType="Integer 16" minValueString="0" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="details" attributeType="Transformable" syncable="YES"/>
+        <attribute name="details" attributeType="Transformable" customClassName="[String:[Any]]" syncable="YES"/>
         <attribute name="recipeCost" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="type" attributeType="String" syncable="YES"/>
         <relationship name="additionalInfo" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="ArrayItem" inverseName="itemAdditionalInfo" inverseEntity="ArrayItem" syncable="YES"/>
@@ -89,7 +89,7 @@
         <relationship name="ability" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Ability" inverseName="notes" inverseEntity="Ability" syncable="YES"/>
         <relationship name="hero" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Note" inverseName="hero" inverseEntity="Note" syncable="YES"/>
         <relationship name="heroTalentNotes" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Hero" inverseName="talentNotes" inverseEntity="Hero" syncable="YES"/>
-        <relationship name="subnotes" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Note" inverseName="subnotes" inverseEntity="Note" syncable="YES"/>
+        <relationship name="subnotes" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="Note" inverseName="subnotes" inverseEntity="Note" syncable="YES"/>
     </entity>
     <entity name="Object" representedClassName=".Object" isAbstract="YES" syncable="YES">
         <attribute name="lore" attributeType="String" syncable="YES"/>

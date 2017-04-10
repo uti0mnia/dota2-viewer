@@ -16,8 +16,8 @@ extension Object {
         return NSFetchRequest<Object>(entityName: "Object")
     }
 
-    @NSManaged public var lore: String?
-    @NSManaged public var name: String?
+    @NSManaged public var lore: String
+    @NSManaged public var name: String
     @NSManaged public var abilities: NSOrderedSet?
 
 }

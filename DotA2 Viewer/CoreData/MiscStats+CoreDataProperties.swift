@@ -16,15 +16,15 @@ extension MiscStats {
         return NSFetchRequest<MiscStats>(entityName: "MiscStats")
     }
 
-    @NSManaged public var attackAnimation: String?
+    @NSManaged public var attackAnimation: String
     @NSManaged public var attackRange: Int16
-    @NSManaged public var baseAttackTime: NSDecimalNumber?
+    @NSManaged public var baseAttackTime: NSDecimalNumber
     @NSManaged public var collisionSize: Int16
-    @NSManaged public var magicResistance: NSDecimalNumber?
+    @NSManaged public var magicResistance: NSDecimalNumber
     @NSManaged public var movementSpeed: Int16
     @NSManaged public var projectileSpeed: Int16
-    @NSManaged public var turnRate: NSDecimalNumber?
-    @NSManaged public var visionRange: String?
-    @NSManaged public var hero: Hero?
+    @NSManaged public var turnRate: NSDecimalNumber
+    @NSManaged public var visionRange: String
+    @NSManaged public var hero: Hero
 
 }

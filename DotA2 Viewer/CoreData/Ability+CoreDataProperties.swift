@@ -16,16 +16,16 @@ extension Ability {
         return NSFetchRequest<Ability>(entityName: "Ability")
     }
 
-    @NSManaged public var descrip: String?
-    @NSManaged public var name: String?
-    @NSManaged public var specialDetails: NSObject?
+    @NSManaged public var descrip: String
+    @NSManaged public var name: String
+    @NSManaged public var specialDetails: [String]?
     @NSManaged public var specials: [String]?
     @NSManaged public var cooldown: ModifiableValue?
     @NSManaged public var data: NSOrderedSet?
     @NSManaged public var mana: ModifiableValue?
     @NSManaged public var modifiers: NSSet?
     @NSManaged public var notes: NSOrderedSet?
-    @NSManaged public var object: Object?
+    @NSManaged public var object: Object
     @NSManaged public var types: NSOrderedSet?
 
 }
