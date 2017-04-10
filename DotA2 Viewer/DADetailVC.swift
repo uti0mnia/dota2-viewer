@@ -10,7 +10,7 @@ import UIKit
 
 class DADetailVC: DAUIViewController {
     // MARK - Properties
-    var object: ListObject!
+    var object: Object!
     internal var scrollView: UIScrollView = {
         let sv = UIScrollView()
         sv.alwaysBounceVertical = true

@@ -1,127 +1,119 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16D32" minimumToolsVersion="Xcode 7.3" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Ability" representedClassName="Ability" syncable="YES">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16D32" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Ability" representedClassName=".Ability" syncable="YES">
+        <attribute name="descrip" attributeType="String" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="specialDetails" optional="YES" attributeType="Transformable" syncable="YES"/>
         <attribute name="specials" optional="YES" attributeType="Transformable" syncable="YES"/>
-        <attribute name="summary" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="cooldown" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DataItem" inverseName="abilityCooldown" inverseEntity="DataItem" syncable="YES"/>
-        <relationship name="data" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AbilityTuple" inverseName="abilityData" inverseEntity="AbilityTuple" syncable="YES"/>
-        <relationship name="hero" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Hero" inverseName="abilities" inverseEntity="Hero" syncable="YES"/>
-        <relationship name="item" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Item" inverseName="abilities" inverseEntity="Item" syncable="YES"/>
-        <relationship name="mana" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DataItem" inverseName="abilityMana" inverseEntity="DataItem" syncable="YES"/>
-        <relationship name="modifiers" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="AbilityModifier" inverseName="ability" inverseEntity="AbilityModifier" syncable="YES"/>
-        <relationship name="notes" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="Note" inverseName="ability" inverseEntity="Note" syncable="YES"/>
-        <relationship name="types" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="AbilityTuple" inverseName="abilityType" inverseEntity="AbilityTuple" syncable="YES"/>
+        <relationship name="cooldown" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ModifiableValue" inverseName="abilityCooldown" inverseEntity="ModifiableValue" syncable="YES"/>
+        <relationship name="data" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="ModifiableValue" inverseName="abilityData" inverseEntity="ModifiableValue" syncable="YES"/>
+        <relationship name="mana" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ModifiableValue" inverseName="abilityMana" inverseEntity="ModifiableValue" syncable="YES"/>
+        <relationship name="modifiers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Modifer" inverseName="ability" inverseEntity="Modifer" syncable="YES"/>
+        <relationship name="notes" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Note" inverseName="ability" inverseEntity="Note" syncable="YES"/>
+        <relationship name="object" maxCount="1" deletionRule="Nullify" destinationEntity="Object" inverseName="abilities" inverseEntity="Object" syncable="YES"/>
+        <relationship name="types" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="ModifiableValue" inverseName="abilityType" inverseEntity="ModifiableValue" syncable="YES"/>
     </entity>
-    <entity name="AbilityModifier" representedClassName=".AbilityModifier" syncable="YES">
-        <attribute name="colour" optional="YES" attributeType="Integer 16" minValueString="0" maxValueString="1" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="value" optional="YES" attributeType="String" syncable="YES"/>
+    <entity name="ArrayItem" representedClassName=".ArrayItem" syncable="YES">
+        <attribute name="value" attributeType="String" syncable="YES"/>
+        <relationship name="hero" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Hero" inverseName="roles" inverseEntity="Hero" syncable="YES"/>
+        <relationship name="itemAdditionalInfo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Item" inverseName="additionalInfo" inverseEntity="Item" syncable="YES"/>
+        <relationship name="itemAvailability" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Item" inverseName="availability" inverseEntity="Item" syncable="YES"/>
+        <relationship name="itemBuildsFrom" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Item" inverseName="buildsFrom" inverseEntity="Item" syncable="YES"/>
+        <relationship name="itemBuildsInto" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Item" inverseName="buildsInto" inverseEntity="Item" syncable="YES"/>
+    </entity>
+    <entity name="Attribute" representedClassName=".Attribute" syncable="YES">
+        <attribute name="base" attributeType="Decimal" minValueString="0" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="increment" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="isPrimary" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="type" attributeType="Integer 16" minValueString="0" maxValueString="2" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="hero" maxCount="1" deletionRule="Nullify" destinationEntity="Hero" inverseName="attributes" inverseEntity="Hero" syncable="YES"/>
+    </entity>
+    <entity name="BaseStats" representedClassName=".BaseStats" syncable="YES">
+        <attribute name="armor" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="attackPerSecond" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="hp" attributeType="Integer 16" minValueString="0" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="hpRegen" attributeType="Decimal" minValueString="0" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="mana" attributeType="Integer 16" minValueString="0" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="manaRegen" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="spellDamage" attributeType="Decimal" minValueString="0" defaultValueString="0" syncable="YES"/>
+        <relationship name="hero" maxCount="1" deletionRule="Nullify" destinationEntity="Hero" inverseName="base" inverseEntity="Hero" syncable="YES"/>
+    </entity>
+    <entity name="Hero" representedClassName=".Hero" parentEntity="Object" syncable="YES">
+        <attribute name="descript" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="attributes" toMany="YES" minCount="3" maxCount="3" deletionRule="Nullify" destinationEntity="Attribute" inverseName="hero" inverseEntity="Attribute" syncable="YES"/>
+        <relationship name="base" maxCount="1" deletionRule="Nullify" destinationEntity="BaseStats" inverseName="hero" inverseEntity="BaseStats" syncable="YES"/>
+        <relationship name="misc" maxCount="1" deletionRule="Nullify" destinationEntity="MiscStats" inverseName="hero" inverseEntity="MiscStats" syncable="YES"/>
+        <relationship name="roles" toMany="YES" deletionRule="Nullify" destinationEntity="ArrayItem" inverseName="hero" inverseEntity="ArrayItem" syncable="YES"/>
+        <relationship name="talentNotes" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Note" inverseName="heroTalentNotes" inverseEntity="Note" syncable="YES"/>
+        <relationship name="talents" toMany="YES" minCount="4" maxCount="4" deletionRule="Nullify" destinationEntity="Talent" inverseName="hero" inverseEntity="Talent" syncable="YES"/>
+    </entity>
+    <entity name="Item" representedClassName=".Item" parentEntity="Object" syncable="YES">
+        <attribute name="cost" attributeType="Integer 16" minValueString="0" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="details" attributeType="Transformable" syncable="YES"/>
+        <attribute name="recipeCost" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="type" attributeType="String" syncable="YES"/>
+        <relationship name="additionalInfo" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="ArrayItem" inverseName="itemAdditionalInfo" inverseEntity="ArrayItem" syncable="YES"/>
+        <relationship name="availability" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ArrayItem" inverseName="itemAvailability" inverseEntity="ArrayItem" syncable="YES"/>
+        <relationship name="buildsFrom" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ArrayItem" inverseName="itemBuildsFrom" inverseEntity="ArrayItem" syncable="YES"/>
+        <relationship name="buildsInto" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ArrayItem" inverseName="itemBuildsInto" inverseEntity="ArrayItem" syncable="YES"/>
+    </entity>
+    <entity name="MiscStats" representedClassName=".MiscStats" syncable="YES">
+        <attribute name="attackAnimation" attributeType="String" syncable="YES"/>
+        <attribute name="attackRange" attributeType="Integer 16" minValueString="0" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="baseAttackTime" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="collisionSize" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="magicResistance" attributeType="Decimal" minValueString="0" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="movementSpeed" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="projectileSpeed" attributeType="Integer 16" minValueString="0" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="turnRate" attributeType="Decimal" minValueString="0" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="visionRange" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="hero" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Hero" inverseName="misc" inverseEntity="Hero" syncable="YES"/>
+    </entity>
+    <entity name="Modifer" representedClassName=".Modifer" parentEntity="ArrayItem" syncable="YES">
+        <attribute name="colour" attributeType="Integer 16" minValueString="0" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="ability" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Ability" inverseName="modifiers" inverseEntity="Ability" syncable="YES"/>
     </entity>
-    <entity name="AbilityTuple" representedClassName="AbilityTuple" syncable="YES">
-        <attribute name="key" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="value" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="abilityData" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Ability" inverseName="data" inverseEntity="Ability" syncable="YES"/>
-        <relationship name="abilityType" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Ability" inverseName="types" inverseEntity="Ability" syncable="YES"/>
-        <relationship name="dataItem" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DataItem" inverseName="abilityTuple" inverseEntity="DataItem" syncable="YES"/>
-    </entity>
-    <entity name="DataItem" representedClassName=".DataItem" syncable="YES">
+    <entity name="ModifiableValue" representedClassName=".ModifiableValue" syncable="YES">
         <attribute name="aghs" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="normal" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="aghsAndTalent" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="normal" attributeType="String" syncable="YES"/>
         <attribute name="talent" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="talentAghs" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="type" optional="YES" attributeType="Integer 16" minValueString="0" maxValueString="3" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
         <relationship name="abilityCooldown" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Ability" inverseName="cooldown" inverseEntity="Ability" syncable="YES"/>
+        <relationship name="abilityData" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Ability" inverseName="data" inverseEntity="Ability" syncable="YES"/>
         <relationship name="abilityMana" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Ability" inverseName="mana" inverseEntity="Ability" syncable="YES"/>
-        <relationship name="abilityTuple" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AbilityTuple" inverseName="dataItem" inverseEntity="AbilityTuple" syncable="YES"/>
+        <relationship name="abilityType" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Ability" inverseName="types" inverseEntity="Ability" syncable="YES"/>
     </entity>
-    <entity name="Hero" representedClassName="Hero" parentEntity="ListObject" syncable="YES">
-        <attribute name="lore" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="roles" optional="YES" attributeType="Transformable" syncable="YES"/>
-        <attribute name="summary" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="abilities" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="Ability" inverseName="hero" inverseEntity="Ability" syncable="YES"/>
-        <relationship name="attributes" optional="YES" toMany="YES" maxCount="3" deletionRule="Cascade" destinationEntity="HeroAttribute" inverseName="hero" inverseEntity="HeroAttribute" syncable="YES"/>
-        <relationship name="baseStats" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="HeroBaseStat" inverseName="hero" inverseEntity="HeroBaseStat" syncable="YES"/>
-        <relationship name="miscStats" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="HeroMiscStat" inverseName="hero" inverseEntity="HeroMiscStat" syncable="YES"/>
-        <relationship name="talentNotes" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Note" inverseName="heroTalent" inverseEntity="Note" syncable="YES"/>
-        <relationship name="talents" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="HeroTalent" inverseName="hero" inverseEntity="HeroTalent" syncable="YES"/>
+    <entity name="Note" representedClassName=".Note" syncable="YES">
+        <attribute name="value" attributeType="String" syncable="YES"/>
+        <relationship name="ability" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Ability" inverseName="notes" inverseEntity="Ability" syncable="YES"/>
+        <relationship name="hero" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Note" inverseName="hero" inverseEntity="Note" syncable="YES"/>
+        <relationship name="heroTalentNotes" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Hero" inverseName="talentNotes" inverseEntity="Hero" syncable="YES"/>
+        <relationship name="subnotes" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Note" inverseName="subnotes" inverseEntity="Note" syncable="YES"/>
     </entity>
-    <entity name="HeroAttribute" representedClassName="HeroAttribute" syncable="YES">
-        <attribute name="base" attributeType="Double" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="increment" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="isPrimary" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="type" attributeType="Integer 16" minValueString="0" maxValueString="2" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
-        <relationship name="hero" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Hero" inverseName="attributes" inverseEntity="Hero" syncable="YES"/>
+    <entity name="Object" representedClassName=".Object" isAbstract="YES" syncable="YES">
+        <attribute name="lore" attributeType="String" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <relationship name="abilities" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Ability" inverseName="object" inverseEntity="Ability" syncable="YES"/>
     </entity>
-    <entity name="HeroBaseStat" representedClassName="HeroBaseStat" syncable="YES">
-        <attribute name="armor" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="attackPerSecond" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="hp" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="hpRegen" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="mana" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="manaRegen" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="spellDamage" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
-        <relationship name="damage" maxCount="1" deletionRule="Cascade" destinationEntity="Tuple" inverseName="stats" inverseEntity="Tuple" syncable="YES"/>
-        <relationship name="hero" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Hero" inverseName="baseStats" inverseEntity="Hero" syncable="YES"/>
-    </entity>
-    <entity name="HeroMiscStat" representedClassName="HeroMiscStat" syncable="YES">
-        <attribute name="attackRange" optional="YES" attributeType="Integer 16" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="attackTime" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="collisionSize" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="magicResistance" optional="YES" attributeType="Integer 16" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="movementSpeed" optional="YES" attributeType="Integer 16" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="projectileSpeed" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="turnRate" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
-        <relationship name="attackAnimation" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Tuple" inverseName="attackAnimation" inverseEntity="Tuple" syncable="YES"/>
-        <relationship name="hero" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Hero" inverseName="miscStats" inverseEntity="Hero" syncable="YES"/>
-        <relationship name="visionRange" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Tuple" inverseName="visionRange" inverseEntity="Tuple" syncable="YES"/>
-    </entity>
-    <entity name="HeroTalent" representedClassName=".Talent" syncable="YES">
-        <attribute name="left" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="level" optional="YES" attributeType="Integer 16" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="right" optional="YES" attributeType="String" syncable="YES"/>
+    <entity name="Talent" representedClassName=".Talent" syncable="YES">
+        <attribute name="left" attributeType="String" syncable="YES"/>
+        <attribute name="level" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="right" attributeType="String" syncable="YES"/>
         <relationship name="hero" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Hero" inverseName="talents" inverseEntity="Hero" syncable="YES"/>
     </entity>
-    <entity name="Item" representedClassName="Item" parentEntity="ListObject" syncable="YES">
-        <attribute name="additionalInfo" optional="YES" attributeType="Transformable" syncable="YES"/>
-        <attribute name="availability" optional="YES" attributeType="Transformable" syncable="YES"/>
-        <attribute name="details" optional="YES" attributeType="Transformable" syncable="YES"/>
-        <attribute name="lore" attributeType="String" syncable="YES"/>
-        <attribute name="type" attributeType="String" syncable="YES"/>
-        <relationship name="abilities" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="Ability" inverseName="item" inverseEntity="Ability" syncable="YES"/>
-        <relationship name="cost" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Tuple" inverseName="itemCost" inverseEntity="Tuple" syncable="YES"/>
-    </entity>
-    <entity name="ListObject" representedClassName=".ListObject" isAbstract="YES" syncable="YES">
-        <attribute name="name" attributeType="String" syncable="YES"/>
-    </entity>
-    <entity name="Note" representedClassName="Note" syncable="YES">
-        <attribute name="string" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="ability" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Ability" inverseName="notes" inverseEntity="Ability" syncable="YES"/>
-        <relationship name="heroTalent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Hero" inverseName="talentNotes" inverseEntity="Hero" syncable="YES"/>
-        <relationship name="note" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Note" inverseName="subNotes" inverseEntity="Note" syncable="YES"/>
-        <relationship name="subNotes" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Note" inverseName="note" inverseEntity="Note" syncable="YES"/>
-    </entity>
-    <entity name="Tuple" representedClassName="Tuple" syncable="YES">
-        <attribute name="first" attributeType="Double" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="second" attributeType="Double" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
-        <relationship name="attackAnimation" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="HeroMiscStat" inverseName="attackAnimation" inverseEntity="HeroMiscStat" syncable="YES"/>
-        <relationship name="itemCost" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Item" inverseName="cost" inverseEntity="Item" syncable="YES"/>
-        <relationship name="stats" maxCount="1" deletionRule="Nullify" destinationEntity="HeroBaseStat" inverseName="damage" inverseEntity="HeroBaseStat" syncable="YES"/>
-        <relationship name="visionRange" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="HeroMiscStat" inverseName="visionRange" inverseEntity="HeroMiscStat" syncable="YES"/>
-    </entity>
     <elements>
-        <element name="Ability" positionX="-299" positionY="-288" width="128" height="210"/>
-        <element name="AbilityModifier" positionX="-468" positionY="-297" width="128" height="90"/>
-        <element name="AbilityTuple" positionX="-243" positionY="-135" width="128" height="120"/>
-        <element name="DataItem" positionX="-477" positionY="-306" width="128" height="165"/>
-        <element name="Hero" positionX="-522" positionY="-159" width="128" height="180"/>
-        <element name="HeroAttribute" positionX="-416" positionY="108" width="128" height="120"/>
-        <element name="HeroBaseStat" positionX="18" positionY="18" width="128" height="180"/>
-        <element name="HeroMiscStat" positionX="-135" positionY="-48" width="128" height="195"/>
-        <element name="HeroTalent" positionX="-477" positionY="-306" width="128" height="30"/>
-        <element name="Item" positionX="-504" positionY="-423" width="128" height="150"/>
-        <element name="ListObject" positionX="-684" positionY="-258" width="128" height="58"/>
-        <element name="Note" positionX="187" positionY="-88" width="128" height="30"/>
-        <element name="Tuple" positionX="205" positionY="108" width="128" height="135"/>
+        <element name="Ability" positionX="-621" positionY="-108" width="128" height="210"/>
+        <element name="ArrayItem" positionX="-675" positionY="-225" width="128" height="135"/>
+        <element name="Attribute" positionX="-612" positionY="-72" width="128" height="120"/>
+        <element name="BaseStats" positionX="-657" positionY="-198" width="128" height="165"/>
+        <element name="Hero" positionX="-684" positionY="-252" width="128" height="150"/>
+        <element name="MiscStats" positionX="-639" positionY="-135" width="128" height="195"/>
+        <element name="Modifer" positionX="-612" positionY="-99" width="128" height="75"/>
+        <element name="ModifiableValue" positionX="-603" positionY="-90" width="128" height="180"/>
+        <element name="Note" positionX="-594" positionY="-63" width="128" height="120"/>
+        <element name="Object" positionX="-684" positionY="-258" width="128" height="90"/>
+        <element name="Talent" positionX="-630" positionY="-117" width="128" height="105"/>
+        <element name="Item" positionX="-630" positionY="-108" width="128" height="165"/>
     </elements>
 </model>
