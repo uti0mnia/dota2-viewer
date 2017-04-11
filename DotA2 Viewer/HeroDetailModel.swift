@@ -13,7 +13,7 @@ import CoreData
 protocol HeroDetailModelDelegate {
     func modelDidUpdate()
 }
-
+// TODO: Make this only calculate values base on level
 class HeroDetailModel {
     // MARK - Properties
     /* Private */

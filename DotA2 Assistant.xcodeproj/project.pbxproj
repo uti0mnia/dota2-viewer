@@ -896,6 +896,7 @@
 		C96258301E07B02C00037D57 /* HeroTalentStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C962582F1E07B02C00037D57 /* HeroTalentStackView.swift */; };
 		C96258341E07B12500037D57 /* HeroTalentSubStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96258331E07B12500037D57 /* HeroTalentSubStackView.swift */; };
 		C96EBB601DF244EF00D6FFD0 /* DANavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96EBB5F1DF244EF00D6FFD0 /* DANavigationController.swift */; };
+		C981B9361E9D6A6400004F1F /* HeroDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C981B9351E9D6A6400004F1F /* HeroDetail.swift */; };
 		C999EA081DE7D1C10036AF47 /* OptimusPrinceps.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C999EA061DE7D1C10036AF47 /* OptimusPrinceps.ttf */; };
 		C999EA091DE7D1C10036AF47 /* OptimusPrincepsSemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C999EA071DE7D1C10036AF47 /* OptimusPrincepsSemiBold.ttf */; };
 		C999EA0F1DE7DF680036AF47 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C999EA0E1DE7DF680036AF47 /* GoogleService-Info.plist */; };
@@ -1826,6 +1827,7 @@
 		C96258331E07B12500037D57 /* HeroTalentSubStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HeroTalentSubStackView.swift; path = Views/HeroTalentSubStackView.swift; sourceTree = "<group>"; };
 		C96EA1111DEE622800259AEF /* DotA2 Assistant.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = "DotA2 Assistant.entitlements"; path = "../DotA2 Assistant.entitlements"; sourceTree = "<group>"; };
 		C96EBB5F1DF244EF00D6FFD0 /* DANavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DANavigationController.swift; sourceTree = "<group>"; };
+		C981B9351E9D6A6400004F1F /* HeroDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HeroDetail.swift; path = model/HeroDetail.swift; sourceTree = "<group>"; };
 		C999EA061DE7D1C10036AF47 /* OptimusPrinceps.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = OptimusPrinceps.ttf; path = Fonts/OptimusPrinceps.ttf; sourceTree = "<group>"; };
 		C999EA071DE7D1C10036AF47 /* OptimusPrincepsSemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = OptimusPrincepsSemiBold.ttf; path = Fonts/OptimusPrincepsSemiBold.ttf; sourceTree = "<group>"; };
 		C999EA0E1DE7DF680036AF47 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -2135,6 +2137,7 @@
 				368D1BBF1DF9E4FC00314648 /* Other */,
 				36C7DF231DC8F2C800251705 /* RSSFeedHelper.swift */,
 				368D1BC41DFAE90600314648 /* ItemDetailModel.swift */,
+				C981B9351E9D6A6400004F1F /* HeroDetail.swift */,
 				368D1BB21DF8815D00314648 /* HeroDetailModel.swift */,
 				368D1BC01DF9E50D00314648 /* AbilityModel.swift */,
 			);
@@ -4009,6 +4012,7 @@
 				365F754A1E04237000F928B0 /* HeroMainStackView.swift in Sources */,
 				C9AEA20B1E9C4629006FD974 /* Talent+CoreDataClass.swift in Sources */,
 				366A8A091DD0F4F3000406BF /* DAMainLabel.swift in Sources */,
+				C981B9361E9D6A6400004F1F /* HeroDetail.swift in Sources */,
 				C96258341E07B12500037D57 /* HeroTalentSubStackView.swift in Sources */,
 				366A8A221DD24B71000406BF /* DAMainCellLabel.swift in Sources */,
 				C9AEA2111E9C4629006FD974 /* Item+CoreDataClass.swift in Sources */,

@@ -17,13 +17,13 @@ extension MiscStats {
     }
 
     @NSManaged public var attackAnimation: String
-    @NSManaged public var attackRange: Int16
-    @NSManaged public var baseAttackTime: NSDecimalNumber
-    @NSManaged public var collisionSize: Int16
-    @NSManaged public var magicResistance: NSDecimalNumber
-    @NSManaged public var movementSpeed: Int16
-    @NSManaged public var projectileSpeed: Int16
-    @NSManaged public var turnRate: NSDecimalNumber
+    @NSManaged public var attackRange: Double
+    @NSManaged public var baseAttackTime: Double
+    @NSManaged public var collisionSize: Double
+    @NSManaged public var magicResistance: Double
+    @NSManaged public var movementSpeed: Double
+    @NSManaged public var projectileSpeed: Double
+    @NSManaged public var turnRate: Double
     @NSManaged public var visionRange: String
     @NSManaged public var hero: Hero
 

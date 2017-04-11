@@ -22,25 +22,27 @@
         <relationship name="itemBuildsInto" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Item" inverseName="buildsInto" inverseEntity="Item" syncable="YES"/>
     </entity>
     <entity name="Attribute" representedClassName=".Attribute" syncable="YES">
-        <attribute name="base" attributeType="Decimal" minValueString="0" defaultValueString="0.0" syncable="YES"/>
-        <attribute name="increment" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="base" attributeType="Double" minValueString="0" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="increment" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="isPrimary" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="type" attributeType="Integer 16" minValueString="0" maxValueString="2" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="hero" maxCount="1" deletionRule="Nullify" destinationEntity="Hero" inverseName="attributes" inverseEntity="Hero" syncable="YES"/>
     </entity>
     <entity name="BaseStats" representedClassName=".BaseStats" syncable="YES">
-        <attribute name="armor" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="attackPerSecond" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
-        <attribute name="hp" attributeType="Integer 16" minValueString="0" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="hpRegen" attributeType="Decimal" minValueString="0" defaultValueString="0.0" syncable="YES"/>
-        <attribute name="mana" attributeType="Integer 16" minValueString="0" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="manaRegen" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
-        <attribute name="spellDamage" attributeType="Decimal" minValueString="0" defaultValueString="0" syncable="YES"/>
+        <attribute name="armor" attributeType="Double" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="attackPerSecond" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="hp" attributeType="Double" minValueString="0" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="hpRegen" attributeType="Double" minValueString="0" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="mana" attributeType="Double" minValueString="0" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="manaRegen" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="maxDamage" optional="YES" attributeType="Double" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="minDamage" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="spellDamage" attributeType="Double" minValueString="0" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="hero" maxCount="1" deletionRule="Nullify" destinationEntity="Hero" inverseName="base" inverseEntity="Hero" syncable="YES"/>
     </entity>
     <entity name="Hero" representedClassName=".Hero" parentEntity="Object" syncable="YES">
         <attribute name="descript" attributeType="String" syncable="YES"/>
-        <relationship name="attributes" toMany="YES" minCount="3" maxCount="3" deletionRule="Nullify" destinationEntity="Attribute" inverseName="hero" inverseEntity="Attribute" syncable="YES"/>
+        <relationship name="attributes" toMany="YES" minCount="3" maxCount="3" deletionRule="Nullify" ordered="YES" destinationEntity="Attribute" inverseName="hero" inverseEntity="Attribute" syncable="YES"/>
         <relationship name="base" maxCount="1" deletionRule="Nullify" destinationEntity="BaseStats" inverseName="hero" inverseEntity="BaseStats" syncable="YES"/>
         <relationship name="misc" maxCount="1" deletionRule="Nullify" destinationEntity="MiscStats" inverseName="hero" inverseEntity="MiscStats" syncable="YES"/>
         <relationship name="roles" toMany="YES" deletionRule="Nullify" destinationEntity="ArrayItem" inverseName="hero" inverseEntity="ArrayItem" syncable="YES"/>
@@ -59,13 +61,13 @@
     </entity>
     <entity name="MiscStats" representedClassName=".MiscStats" syncable="YES">
         <attribute name="attackAnimation" attributeType="String" syncable="YES"/>
-        <attribute name="attackRange" attributeType="Integer 16" minValueString="0" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="baseAttackTime" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
-        <attribute name="collisionSize" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="magicResistance" attributeType="Decimal" minValueString="0" defaultValueString="0.0" syncable="YES"/>
-        <attribute name="movementSpeed" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="projectileSpeed" attributeType="Integer 16" minValueString="0" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="turnRate" attributeType="Decimal" minValueString="0" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="attackRange" attributeType="Double" minValueString="0" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="baseAttackTime" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="collisionSize" attributeType="Double" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="magicResistance" attributeType="Double" minValueString="0" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="movementSpeed" attributeType="Double" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="projectileSpeed" attributeType="Double" minValueString="0" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="turnRate" attributeType="Double" minValueString="0" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="visionRange" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="hero" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Hero" inverseName="misc" inverseEntity="Hero" syncable="YES"/>
     </entity>
@@ -106,7 +108,7 @@
         <element name="Ability" positionX="-621" positionY="-108" width="128" height="210"/>
         <element name="ArrayItem" positionX="-675" positionY="-225" width="128" height="135"/>
         <element name="Attribute" positionX="-612" positionY="-72" width="128" height="120"/>
-        <element name="BaseStats" positionX="-657" positionY="-198" width="128" height="165"/>
+        <element name="BaseStats" positionX="-657" positionY="-198" width="128" height="195"/>
         <element name="Hero" positionX="-684" positionY="-252" width="128" height="150"/>
         <element name="Item" positionX="-630" positionY="-108" width="128" height="165"/>
         <element name="MiscStats" positionX="-639" positionY="-135" width="128" height="195"/>

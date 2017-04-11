@@ -16,13 +16,13 @@ extension BaseStats {
         return NSFetchRequest<BaseStats>(entityName: "BaseStats")
     }
 
-    @NSManaged public var armor: Int16
-    @NSManaged public var attackPerSecond: NSDecimalNumber
-    @NSManaged public var hp: Int16
-    @NSManaged public var hpRegen: NSDecimalNumber
-    @NSManaged public var mana: Int16
-    @NSManaged public var manaRegen: NSDecimalNumber
-    @NSManaged public var spellDamage: NSDecimalNumber
+    @NSManaged public var armor: Double
+    @NSManaged public var attackPerSecond: Double
+    @NSManaged public var hp: Double
+    @NSManaged public var hpRegen: Double
+    @NSManaged public var mana: Double
+    @NSManaged public var manaRegen: Double
+    @NSManaged public var spellDamage: Double
     @NSManaged public var hero: Hero
 
 }
