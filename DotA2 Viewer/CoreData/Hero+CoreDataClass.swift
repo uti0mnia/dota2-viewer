@@ -50,9 +50,6 @@ public class Hero: Object {
     var spellDamage: Double { get { return base.spellDamage + intelligence * Hero.SPELL_DAMAGE_GAIN } }
     var attackPerSecond: Double { get { return (100 + agility) * 0.01 / misc.baseAttackTime } }
     
-    
-    
-    
     func valueFor(attribute: Attribute) -> Double{
         let base = attribute.base
         let increment = attribute.increment

@@ -1,3 +1,4 @@
+/*
 //
 //  AbilityModel.swift
 //  DotA2 Assistant
@@ -217,41 +218,4 @@ class AbilityModel {
         return string
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+*/

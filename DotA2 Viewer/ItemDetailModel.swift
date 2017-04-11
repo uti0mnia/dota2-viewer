@@ -1,3 +1,4 @@
+/*
 //
 //  ItemDetailModel.swift
 //  DotA2 Assistant
@@ -148,45 +149,4 @@ class ItemDetailModel {
     }
     
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+*/

@@ -1,3 +1,4 @@
+/* 
 //
 //  HeroDetailModel.swift
 //  DotA2 Assistant
@@ -135,42 +136,4 @@ class HeroDetailModel {
     
     
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+*/
