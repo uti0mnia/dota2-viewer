@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreData
+import UIKit
 
 
 public class Hero: Object {
@@ -40,7 +41,7 @@ public class Hero: Object {
     var damage: (min: Double, max: Double) {
         get {
             let increment = valueFor(attribute: primaryAttribute)
-            return (minDamage + increment, maxDamage + increment)
+            return (base.minDamage + increment, base.maxDamage + increment)
         }
     }
     var hp: Double { get { return base.hp + strength * Hero.HP_GAIN } }

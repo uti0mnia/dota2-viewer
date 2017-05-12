@@ -22,6 +22,8 @@ extension BaseStats {
     @NSManaged public var hpRegen: Double
     @NSManaged public var mana: Double
     @NSManaged public var manaRegen: Double
+    @NSManaged public var maxDamage: Double
+    @NSManaged public var minDamage: Double
     @NSManaged public var spellDamage: Double
     @NSManaged public var hero: Hero
 

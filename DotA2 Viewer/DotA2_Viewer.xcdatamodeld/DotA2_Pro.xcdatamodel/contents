@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16D32" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16E195" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Ability" representedClassName=".Ability" syncable="YES">
         <attribute name="descrip" attributeType="String" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
-        <attribute name="specialDetails" optional="YES" attributeType="Transformable" customClassName="[String]" syncable="YES"/>
+        <attribute name="specialDetails" optional="YES" attributeType="Transformable" customClassName="[String: String]" syncable="YES"/>
         <attribute name="specials" optional="YES" attributeType="Transformable" customClassName="[String]" syncable="YES"/>
         <relationship name="cooldown" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ModifiableValue" inverseName="abilityCooldown" inverseEntity="ModifiableValue" syncable="YES"/>
         <relationship name="data" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="ModifiableValue" inverseName="abilityData" inverseEntity="ModifiableValue" syncable="YES"/>
         <relationship name="mana" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ModifiableValue" inverseName="abilityMana" inverseEntity="ModifiableValue" syncable="YES"/>
-        <relationship name="modifiers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Modifer" inverseName="ability" inverseEntity="Modifer" syncable="YES"/>
+        <relationship name="modifiers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Modifier" inverseName="ability" inverseEntity="Modifier" syncable="YES"/>
         <relationship name="notes" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Note" inverseName="ability" inverseEntity="Note" syncable="YES"/>
         <relationship name="object" maxCount="1" deletionRule="Nullify" destinationEntity="Object" inverseName="abilities" inverseEntity="Object" syncable="YES"/>
         <relationship name="types" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="ModifiableValue" inverseName="abilityType" inverseEntity="ModifiableValue" syncable="YES"/>
@@ -16,7 +16,6 @@
     <entity name="ArrayItem" representedClassName=".ArrayItem" syncable="YES">
         <attribute name="value" attributeType="String" syncable="YES"/>
         <relationship name="hero" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Hero" inverseName="roles" inverseEntity="Hero" syncable="YES"/>
-        <relationship name="itemAdditionalInfo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Item" inverseName="additionalInfo" inverseEntity="Item" syncable="YES"/>
         <relationship name="itemAvailability" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Item" inverseName="availability" inverseEntity="Item" syncable="YES"/>
         <relationship name="itemBuildsFrom" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Item" inverseName="buildsFrom" inverseEntity="Item" syncable="YES"/>
         <relationship name="itemBuildsInto" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Item" inverseName="buildsInto" inverseEntity="Item" syncable="YES"/>
@@ -50,13 +49,13 @@
         <relationship name="talents" toMany="YES" minCount="4" maxCount="4" deletionRule="Nullify" destinationEntity="Talent" inverseName="hero" inverseEntity="Talent" syncable="YES"/>
     </entity>
     <entity name="Item" representedClassName=".Item" parentEntity="Object" syncable="YES">
-        <attribute name="cost" attributeType="Integer 16" minValueString="0" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="details" attributeType="Transformable" customClassName="[String:[Any]]" syncable="YES"/>
-        <attribute name="recipeCost" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="cost" attributeType="Double" minValueString="0" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="details" attributeType="Transformable" customClassName="[String:Any]" syncable="YES"/>
+        <attribute name="recipeCost" attributeType="Double" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="type" attributeType="String" syncable="YES"/>
-        <relationship name="additionalInfo" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="ArrayItem" inverseName="itemAdditionalInfo" inverseEntity="ArrayItem" syncable="YES"/>
+        <relationship name="additionalInfo" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Note" inverseName="itemAdditionalInfo" inverseEntity="Note" syncable="YES"/>
         <relationship name="availability" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ArrayItem" inverseName="itemAvailability" inverseEntity="ArrayItem" syncable="YES"/>
-        <relationship name="buildsFrom" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ArrayItem" inverseName="itemBuildsFrom" inverseEntity="ArrayItem" syncable="YES"/>
+        <relationship name="buildsFrom" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ArrayItem" inverseName="itemBuildsFrom" inverseEntity="ArrayItem" syncable="YES"/>
         <relationship name="buildsInto" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ArrayItem" inverseName="itemBuildsInto" inverseEntity="ArrayItem" syncable="YES"/>
     </entity>
     <entity name="MiscStats" representedClassName=".MiscStats" syncable="YES">
@@ -71,10 +70,6 @@
         <attribute name="visionRange" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="hero" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Hero" inverseName="misc" inverseEntity="Hero" syncable="YES"/>
     </entity>
-    <entity name="Modifer" representedClassName=".Modifer" parentEntity="ArrayItem" syncable="YES">
-        <attribute name="colour" attributeType="Integer 16" minValueString="0" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <relationship name="ability" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Ability" inverseName="modifiers" inverseEntity="Ability" syncable="YES"/>
-    </entity>
     <entity name="ModifiableValue" representedClassName=".ModifiableValue" syncable="YES">
         <attribute name="aghs" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="aghsAndTalent" optional="YES" attributeType="String" syncable="YES"/>
@@ -86,11 +81,16 @@
         <relationship name="abilityMana" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Ability" inverseName="mana" inverseEntity="Ability" syncable="YES"/>
         <relationship name="abilityType" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Ability" inverseName="types" inverseEntity="Ability" syncable="YES"/>
     </entity>
+    <entity name="Modifier" representedClassName=".Modifier" parentEntity="ArrayItem" syncable="YES">
+        <attribute name="colour" attributeType="Integer 16" minValueString="0" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="ability" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Ability" inverseName="modifiers" inverseEntity="Ability" syncable="YES"/>
+    </entity>
     <entity name="Note" representedClassName=".Note" syncable="YES">
-        <attribute name="value" attributeType="String" syncable="YES"/>
+        <attribute name="value" attributeType="Transformable" customClassName="[String]" syncable="YES"/>
         <relationship name="ability" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Ability" inverseName="notes" inverseEntity="Ability" syncable="YES"/>
         <relationship name="hero" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Note" inverseName="hero" inverseEntity="Note" syncable="YES"/>
         <relationship name="heroTalentNotes" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Hero" inverseName="talentNotes" inverseEntity="Hero" syncable="YES"/>
+        <relationship name="itemAdditionalInfo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Item" inverseName="additionalInfo" inverseEntity="Item" syncable="YES"/>
         <relationship name="subnotes" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="Note" inverseName="subnotes" inverseEntity="Note" syncable="YES"/>
     </entity>
     <entity name="Object" representedClassName=".Object" isAbstract="YES" syncable="YES">
@@ -106,15 +106,15 @@
     </entity>
     <elements>
         <element name="Ability" positionX="-621" positionY="-108" width="128" height="210"/>
-        <element name="ArrayItem" positionX="-675" positionY="-225" width="128" height="135"/>
+        <element name="ArrayItem" positionX="-675" positionY="-225" width="128" height="120"/>
         <element name="Attribute" positionX="-612" positionY="-72" width="128" height="120"/>
         <element name="BaseStats" positionX="-657" positionY="-198" width="128" height="195"/>
         <element name="Hero" positionX="-684" positionY="-252" width="128" height="150"/>
         <element name="Item" positionX="-630" positionY="-108" width="128" height="165"/>
         <element name="MiscStats" positionX="-639" positionY="-135" width="128" height="195"/>
-        <element name="Modifer" positionX="-612" positionY="-99" width="128" height="75"/>
+        <element name="Modifier" positionX="-612" positionY="-99" width="128" height="75"/>
         <element name="ModifiableValue" positionX="-603" positionY="-90" width="128" height="180"/>
-        <element name="Note" positionX="-594" positionY="-63" width="128" height="120"/>
+        <element name="Note" positionX="-594" positionY="-63" width="128" height="135"/>
         <element name="Object" positionX="-684" positionY="-258" width="128" height="90"/>
         <element name="Talent" positionX="-630" positionY="-117" width="128" height="105"/>
     </elements>

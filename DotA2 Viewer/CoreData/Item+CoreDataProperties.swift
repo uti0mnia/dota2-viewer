@@ -16,13 +16,13 @@ extension Item {
         return NSFetchRequest<Item>(entityName: "Item")
     }
 
-    @NSManaged public var cost: Int16
-    @NSManaged public var details: [String:[Any]]
-    @NSManaged public var recipeCost: Int16
+    @NSManaged public var cost: Double
+    @NSManaged public var details: [String:Any]
+    @NSManaged public var recipeCost: Double
     @NSManaged public var type: String
     @NSManaged public var additionalInfo: NSOrderedSet?
     @NSManaged public var availability: NSSet?
-    @NSManaged public var buildsFrom: ArrayItem?
+    @NSManaged public var buildsFrom: NSSet?
     @NSManaged public var buildsInto: NSSet?
 
 }

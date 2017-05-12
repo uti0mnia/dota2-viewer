@@ -10,6 +10,6 @@ import Foundation
 import CoreData
 
 
-public class Modifer: ArrayItem {
+public class Modifier: ArrayItem {
 
 }

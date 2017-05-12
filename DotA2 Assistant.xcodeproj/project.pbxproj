@@ -79,8 +79,11 @@
 		C9172C181DD13F9100DCF88F /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9172C171DD13F9100DCF88F /* Globals.swift */; };
 		C9172C211DD176BA00DCF88F /* dota2-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = C9172C201DD176BA00DCF88F /* dota2-logo.png */; };
 		C922FA8B1DD8AD27007B76F8 /* DALoreLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C922FA8A1DD8AD27007B76F8 /* DALoreLabel.swift */; };
+		C92EC1351EA2CA8900FA01E1 /* dota2.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = C92EC1321EA2CA8900FA01E1 /* dota2.sqlite */; };
+		C92EC1361EA2CA8900FA01E1 /* dota2.sqlite-shm in Resources */ = {isa = PBXBuildFile; fileRef = C92EC1331EA2CA8900FA01E1 /* dota2.sqlite-shm */; };
+		C92EC1371EA2CA8900FA01E1 /* dota2.sqlite-wal in Resources */ = {isa = PBXBuildFile; fileRef = C92EC1341EA2CA8900FA01E1 /* dota2.sqlite-wal */; };
+		C92EC13A1EA2E35800FA01E1 /* Aegis of the Immortal.png in Resources */ = {isa = PBXBuildFile; fileRef = C92EC1391EA2E35800FA01E1 /* Aegis of the Immortal.png */; };
 		C93028391DF3629F005EA297 /* HeroDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93028381DF3629F005EA297 /* HeroDetailVC.swift */; };
-		C942CF351E00BCF800DEE8A9 /* dota2.json in Resources */ = {isa = PBXBuildFile; fileRef = C942CF341E00BCF800DEE8A9 /* dota2.json */; };
 		C94A26D21DD5593F00D9B054 /* DASlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94A26D11DD5593F00D9B054 /* DASlider.swift */; };
 		C94B16111E01C090008BF226 /* Acid Spray_Alchemist.png in Resources */ = {isa = PBXBuildFile; fileRef = C94B13F81E01C08E008BF226 /* Acid Spray_Alchemist.png */; };
 		C94B16121E01C090008BF226 /* Activate Fire Remnant_Ember Spirit.png in Resources */ = {isa = PBXBuildFile; fileRef = C94B13F91E01C08E008BF226 /* Activate Fire Remnant_Ember Spirit.png */; };
@@ -884,12 +887,12 @@
 		C94B1A3D1E01D1BC008BF226 /* cooldown.png in Resources */ = {isa = PBXBuildFile; fileRef = C94B1A3C1E01D1BC008BF226 /* cooldown.png */; };
 		C94B1A3F1E01D41F008BF226 /* mana.png in Resources */ = {isa = PBXBuildFile; fileRef = C94B1A3E1E01D41F008BF226 /* mana.png */; };
 		C94CAB641DD7CD4F00971BC5 /* DASearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94CAB631DD7CD4F00971BC5 /* DASearchBar.swift */; };
-		C95753C71DD57FCF005C9F75 /* agility_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C95753C11DD57FCF005C9F75 /* agility_icon.png */; };
+		C95753C71DD57FCF005C9F75 /* agility.png in Resources */ = {isa = PBXBuildFile; fileRef = C95753C11DD57FCF005C9F75 /* agility.png */; };
 		C95753C81DD57FCF005C9F75 /* armor_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C95753C21DD57FCF005C9F75 /* armor_icon.png */; };
 		C95753C91DD57FCF005C9F75 /* damage_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C95753C31DD57FCF005C9F75 /* damage_icon.png */; };
-		C95753CA1DD57FCF005C9F75 /* intelligence_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C95753C41DD57FCF005C9F75 /* intelligence_icon.png */; };
+		C95753CA1DD57FCF005C9F75 /* intelligence.png in Resources */ = {isa = PBXBuildFile; fileRef = C95753C41DD57FCF005C9F75 /* intelligence.png */; };
 		C95753CB1DD57FCF005C9F75 /* speed_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C95753C51DD57FCF005C9F75 /* speed_icon.png */; };
-		C95753CC1DD57FCF005C9F75 /* strength_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C95753C61DD57FCF005C9F75 /* strength_icon.png */; };
+		C95753CC1DD57FCF005C9F75 /* strength.png in Resources */ = {isa = PBXBuildFile; fileRef = C95753C61DD57FCF005C9F75 /* strength.png */; };
 		C95E51DB1E0A142900A48965 /* Monkey King.png in Resources */ = {isa = PBXBuildFile; fileRef = C95E51DA1E0A142900A48965 /* Monkey King.png */; };
 		C95E86801E0369CE00822703 /* dota2.png in Resources */ = {isa = PBXBuildFile; fileRef = C95E867F1E0369CE00822703 /* dota2.png */; };
 		C962582E1E07ADC400037D57 /* HeroSingleTalentStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C962582D1E07ADC400037D57 /* HeroSingleTalentStackView.swift */; };
@@ -900,12 +903,11 @@
 		C999EA081DE7D1C10036AF47 /* OptimusPrinceps.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C999EA061DE7D1C10036AF47 /* OptimusPrinceps.ttf */; };
 		C999EA091DE7D1C10036AF47 /* OptimusPrincepsSemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C999EA071DE7D1C10036AF47 /* OptimusPrincepsSemiBold.ttf */; };
 		C999EA0F1DE7DF680036AF47 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C999EA0E1DE7DF680036AF47 /* GoogleService-Info.plist */; };
-		C999EA111DE7E3CB0036AF47 /* Import.swift in Sources */ = {isa = PBXBuildFile; fileRef = C999EA101DE7E3CB0036AF47 /* Import.swift */; };
 		C9A6D64D1DBD25AE00580B7B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A6D64C1DBD25AE00580B7B /* Extensions.swift */; };
 		C9AEA2031E9C4629006FD974 /* BaseStats+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AEA1EB1E9C4629006FD974 /* BaseStats+CoreDataClass.swift */; };
 		C9AEA2041E9C4629006FD974 /* BaseStats+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AEA1EC1E9C4629006FD974 /* BaseStats+CoreDataProperties.swift */; };
-		C9AEA2051E9C4629006FD974 /* Modifer+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AEA1ED1E9C4629006FD974 /* Modifer+CoreDataClass.swift */; };
-		C9AEA2061E9C4629006FD974 /* Modifer+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AEA1EE1E9C4629006FD974 /* Modifer+CoreDataProperties.swift */; };
+		C9AEA2051E9C4629006FD974 /* Modifier+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AEA1ED1E9C4629006FD974 /* Modifier+CoreDataClass.swift */; };
+		C9AEA2061E9C4629006FD974 /* Modifier+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AEA1EE1E9C4629006FD974 /* Modifier+CoreDataProperties.swift */; };
 		C9AEA2071E9C4629006FD974 /* ModifiableValue+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AEA1EF1E9C4629006FD974 /* ModifiableValue+CoreDataClass.swift */; };
 		C9AEA2081E9C4629006FD974 /* ModifiableValue+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AEA1F01E9C4629006FD974 /* ModifiableValue+CoreDataProperties.swift */; };
 		C9AEA2091E9C4629006FD974 /* Object+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AEA1F11E9C4629006FD974 /* Object+CoreDataClass.swift */; };
@@ -1009,8 +1011,11 @@
 		C9172C171DD13F9100DCF88F /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		C9172C201DD176BA00DCF88F /* dota2-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dota2-logo.png"; sourceTree = "<group>"; };
 		C922FA8A1DD8AD27007B76F8 /* DALoreLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DALoreLabel.swift; sourceTree = "<group>"; };
+		C92EC1321EA2CA8900FA01E1 /* dota2.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = dota2.sqlite; sourceTree = "<group>"; };
+		C92EC1331EA2CA8900FA01E1 /* dota2.sqlite-shm */ = {isa = PBXFileReference; lastKnownFileType = file; path = "dota2.sqlite-shm"; sourceTree = "<group>"; };
+		C92EC1341EA2CA8900FA01E1 /* dota2.sqlite-wal */ = {isa = PBXFileReference; lastKnownFileType = file; path = "dota2.sqlite-wal"; sourceTree = "<group>"; };
+		C92EC1391EA2E35800FA01E1 /* Aegis of the Immortal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Aegis of the Immortal.png"; path = "images/items/Aegis of the Immortal.png"; sourceTree = "<group>"; };
 		C93028381DF3629F005EA297 /* HeroDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroDetailVC.swift; sourceTree = "<group>"; };
-		C942CF341E00BCF800DEE8A9 /* dota2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dota2.json; sourceTree = "<group>"; };
 		C94A26D11DD5593F00D9B054 /* DASlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DASlider.swift; path = Views/DASlider.swift; sourceTree = "<group>"; };
 		C94B13F81E01C08E008BF226 /* Acid Spray_Alchemist.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Acid Spray_Alchemist.png"; path = "Abilities/Acid Spray_Alchemist.png"; sourceTree = "<group>"; };
 		C94B13F91E01C08E008BF226 /* Activate Fire Remnant_Ember Spirit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Activate Fire Remnant_Ember Spirit.png"; path = "Abilities/Activate Fire Remnant_Ember Spirit.png"; sourceTree = "<group>"; };
@@ -1814,12 +1819,12 @@
 		C94B1A3C1E01D1BC008BF226 /* cooldown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cooldown.png; sourceTree = "<group>"; };
 		C94B1A3E1E01D41F008BF226 /* mana.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mana.png; sourceTree = "<group>"; };
 		C94CAB631DD7CD4F00971BC5 /* DASearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DASearchBar.swift; sourceTree = "<group>"; };
-		C95753C11DD57FCF005C9F75 /* agility_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = agility_icon.png; sourceTree = "<group>"; };
+		C95753C11DD57FCF005C9F75 /* agility.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = agility.png; sourceTree = "<group>"; };
 		C95753C21DD57FCF005C9F75 /* armor_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = armor_icon.png; sourceTree = "<group>"; };
 		C95753C31DD57FCF005C9F75 /* damage_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = damage_icon.png; sourceTree = "<group>"; };
-		C95753C41DD57FCF005C9F75 /* intelligence_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = intelligence_icon.png; sourceTree = "<group>"; };
+		C95753C41DD57FCF005C9F75 /* intelligence.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = intelligence.png; sourceTree = "<group>"; };
 		C95753C51DD57FCF005C9F75 /* speed_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = speed_icon.png; sourceTree = "<group>"; };
-		C95753C61DD57FCF005C9F75 /* strength_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = strength_icon.png; sourceTree = "<group>"; };
+		C95753C61DD57FCF005C9F75 /* strength.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = strength.png; sourceTree = "<group>"; };
 		C95E51DA1E0A142900A48965 /* Monkey King.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Monkey King.png"; path = "heroes/Monkey King.png"; sourceTree = "<group>"; };
 		C95E867F1E0369CE00822703 /* dota2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dota2.png; sourceTree = "<group>"; };
 		C962582D1E07ADC400037D57 /* HeroSingleTalentStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HeroSingleTalentStackView.swift; path = Views/HeroSingleTalentStackView.swift; sourceTree = "<group>"; };
@@ -1831,12 +1836,11 @@
 		C999EA061DE7D1C10036AF47 /* OptimusPrinceps.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = OptimusPrinceps.ttf; path = Fonts/OptimusPrinceps.ttf; sourceTree = "<group>"; };
 		C999EA071DE7D1C10036AF47 /* OptimusPrincepsSemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = OptimusPrincepsSemiBold.ttf; path = Fonts/OptimusPrincepsSemiBold.ttf; sourceTree = "<group>"; };
 		C999EA0E1DE7DF680036AF47 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
-		C999EA101DE7E3CB0036AF47 /* Import.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Import.swift; sourceTree = "<group>"; };
 		C9A6D64C1DBD25AE00580B7B /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		C9AEA1EB1E9C4629006FD974 /* BaseStats+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "BaseStats+CoreDataClass.swift"; path = "CoreData/BaseStats+CoreDataClass.swift"; sourceTree = "<group>"; };
 		C9AEA1EC1E9C4629006FD974 /* BaseStats+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "BaseStats+CoreDataProperties.swift"; path = "CoreData/BaseStats+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		C9AEA1ED1E9C4629006FD974 /* Modifer+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Modifer+CoreDataClass.swift"; path = "CoreData/Modifer+CoreDataClass.swift"; sourceTree = "<group>"; };
-		C9AEA1EE1E9C4629006FD974 /* Modifer+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Modifer+CoreDataProperties.swift"; path = "CoreData/Modifer+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C9AEA1ED1E9C4629006FD974 /* Modifier+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Modifier+CoreDataClass.swift"; path = "CoreData/Modifier+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C9AEA1EE1E9C4629006FD974 /* Modifier+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Modifier+CoreDataProperties.swift"; path = "CoreData/Modifier+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C9AEA1EF1E9C4629006FD974 /* ModifiableValue+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ModifiableValue+CoreDataClass.swift"; path = "CoreData/ModifiableValue+CoreDataClass.swift"; sourceTree = "<group>"; };
 		C9AEA1F01E9C4629006FD974 /* ModifiableValue+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ModifiableValue+CoreDataProperties.swift"; path = "CoreData/ModifiableValue+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C9AEA1F11E9C4629006FD974 /* Object+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Object+CoreDataClass.swift"; path = "CoreData/Object+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -1859,7 +1863,6 @@
 		C9AEA2021E9C4629006FD974 /* Ability+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Ability+CoreDataProperties.swift"; path = "CoreData/Ability+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C9B00F7C1DFE4BA600A15F96 /* AbilitiesStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AbilitiesStackView.swift; path = Views/AbilitiesStackView.swift; sourceTree = "<group>"; };
 		C9B00F7E1DFE4E8600A15F96 /* AbilityStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AbilityStackView.swift; path = Views/AbilityStackView.swift; sourceTree = "<group>"; };
-		C9BF2F981E00B94E00A4AB93 /* dota.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dota.json; sourceTree = "<group>"; };
 		C9FEBF2E1DB299F2000CD4FF /* DotA2_Pro.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DotA2_Pro.xcdatamodel; sourceTree = "<group>"; };
 		D901BAFFD7186DCAB66C34BB /* Pods-DotA2 Assistant.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DotA2 Assistant.release.xcconfig"; path = "Pods/Target Support Files/Pods-DotA2 Assistant/Pods-DotA2 Assistant.release.xcconfig"; sourceTree = "<group>"; };
 		DDB9AA602964BD3E72F453D3 /* Pods_DotA2_AssistantTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DotA2_AssistantTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1900,12 +1903,12 @@
 		363A46521E00730900BA5D97 /* Basic */ = {
 			isa = PBXGroup;
 			children = (
-				C95753C11DD57FCF005C9F75 /* agility_icon.png */,
+				C95753C11DD57FCF005C9F75 /* agility.png */,
 				C95753C21DD57FCF005C9F75 /* armor_icon.png */,
 				C95753C31DD57FCF005C9F75 /* damage_icon.png */,
-				C95753C41DD57FCF005C9F75 /* intelligence_icon.png */,
+				C95753C41DD57FCF005C9F75 /* intelligence.png */,
 				C95753C51DD57FCF005C9F75 /* speed_icon.png */,
-				C95753C61DD57FCF005C9F75 /* strength_icon.png */,
+				C95753C61DD57FCF005C9F75 /* strength.png */,
 			);
 			name = Basic;
 			sourceTree = "<group>";
@@ -1988,7 +1991,6 @@
 		366A8A251DD24DB9000406BF /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				C9BF2F981E00B94E00A4AB93 /* dota.json */,
 				C999EA061DE7D1C10036AF47 /* OptimusPrinceps.ttf */,
 				C999EA071DE7D1C10036AF47 /* OptimusPrincepsSemiBold.ttf */,
 				366A8A231DD24DB4000406BF /* radiance-semibold.ttf */,
@@ -2002,7 +2004,6 @@
 			children = (
 				C9A6D64C1DBD25AE00580B7B /* Extensions.swift */,
 				C9172C171DD13F9100DCF88F /* Globals.swift */,
-				C999EA101DE7E3CB0036AF47 /* Import.swift */,
 			);
 			name = Other;
 			sourceTree = "<group>";
@@ -2072,7 +2073,7 @@
 		36FD56451DA6E36C007C5A9C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				C942CF341E00BCF800DEE8A9 /* dota2.json */,
+				C92EC1381EA2CACC00FA01E1 /* Database */,
 				C96EA1111DEE622800259AEF /* DotA2 Assistant.entitlements */,
 				366A8A251DD24DB9000406BF /* Fonts */,
 				36FD56511DA6E3F5007C5A9C /* default_icon.png */,
@@ -2103,8 +2104,8 @@
 				C9AEA1FA1E9C4629006FD974 /* Item+CoreDataProperties.swift */,
 				C9AEA1F71E9C4629006FD974 /* MiscStats+CoreDataClass.swift */,
 				C9AEA1F81E9C4629006FD974 /* MiscStats+CoreDataProperties.swift */,
-				C9AEA1ED1E9C4629006FD974 /* Modifer+CoreDataClass.swift */,
-				C9AEA1EE1E9C4629006FD974 /* Modifer+CoreDataProperties.swift */,
+				C9AEA1ED1E9C4629006FD974 /* Modifier+CoreDataClass.swift */,
+				C9AEA1EE1E9C4629006FD974 /* Modifier+CoreDataProperties.swift */,
 				C9AEA1EF1E9C4629006FD974 /* ModifiableValue+CoreDataClass.swift */,
 				C9AEA1F01E9C4629006FD974 /* ModifiableValue+CoreDataProperties.swift */,
 				C9AEA1FB1E9C4629006FD974 /* Note+CoreDataClass.swift */,
@@ -2152,6 +2153,16 @@
 				365554941E04603700C809BC /* Details */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		C92EC1381EA2CACC00FA01E1 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				C92EC1321EA2CA8900FA01E1 /* dota2.sqlite */,
+				C92EC1331EA2CA8900FA01E1 /* dota2.sqlite-shm */,
+				C92EC1341EA2CA8900FA01E1 /* dota2.sqlite-wal */,
+			);
+			name = Database;
 			sourceTree = "<group>";
 		};
 		C93028371DF36164005EA297 /* Hero */ = {
@@ -2837,6 +2848,7 @@
 			isa = PBXGroup;
 			children = (
 				C94B190D1E01C108008BF226 /* Abyssal Blade.png */,
+				C92EC1391EA2E35800FA01E1 /* Aegis of the Immortal.png */,
 				C94B190E1E01C108008BF226 /* Aether Lens.png */,
 				C94B190F1E01C108008BF226 /* Aghanim's Scepter.png */,
 				C94B19101E01C108008BF226 /* Animal Courier.png */,
@@ -3188,6 +3200,7 @@
 				C94B18BA1E01C0D2008BF226 /* Elder Titan.png in Resources */,
 				C94B19FF1E01C108008BF226 /* Orchid Malevolence.png in Resources */,
 				C94B18ED1E01C0D2008BF226 /* Skywrath Mage.png in Resources */,
+				C92EC1351EA2CA8900FA01E1 /* dota2.sqlite in Resources */,
 				C94B16D81E01C090008BF226 /* Grow_Tiny.png in Resources */,
 				C94B16821E01C090008BF226 /* Dragon Blood_Dragon Knight.png in Resources */,
 				C94B189F1E01C0D2008BF226 /* Ancient Apparition.png in Resources */,
@@ -3325,6 +3338,7 @@
 				36C0C96C1DA6E25800169394 /* Assets.xcassets in Resources */,
 				C94B19A21E01C108008BF226 /* Aether Lens.png in Resources */,
 				C94B17FD1E01C090008BF226 /* Toggle Movement_Phoenix.png in Resources */,
+				C92EC13A1EA2E35800FA01E1 /* Aegis of the Immortal.png in Resources */,
 				C94B17C41E01C090008BF226 /* Spiked Carapace_Nyx Assassin.png in Resources */,
 				C94B162E1E01C090008BF226 /* Berserker's Rage_Troll Warlord.png in Resources */,
 				C95E86801E0369CE00822703 /* dota2.png in Resources */,
@@ -3416,7 +3430,7 @@
 				C94B19C11E01C108008BF226 /* Daedalus.png in Resources */,
 				C94B17B51E01C090008BF226 /* Song of the Siren End_Naga Siren.png in Resources */,
 				C94B175A1E01C090008BF226 /* Poison Attack_Viper.png in Resources */,
-				C95753C71DD57FCF005C9F75 /* agility_icon.png in Resources */,
+				C95753C71DD57FCF005C9F75 /* agility.png in Resources */,
 				C94B19EA1E01C108008BF226 /* Maelstrom.png in Resources */,
 				C94B19AF1E01C108008BF226 /* Blight Stone.png in Resources */,
 				C94B181C1E01C090008BF226 /* Wave of Terror_Vengeful Spirit.png in Resources */,
@@ -3525,7 +3539,7 @@
 				C94B17391E01C090008BF226 /* Mystic Snake_Medusa.png in Resources */,
 				C94B1A151E01C108008BF226 /* Sange and Yasha.png in Resources */,
 				C94B19CF1E01C108008BF226 /* Eul's Scepter of Divinity.png in Resources */,
-				C95753CA1DD57FCF005C9F75 /* intelligence_icon.png in Resources */,
+				C95753CA1DD57FCF005C9F75 /* intelligence.png in Resources */,
 				C94B16C61E01C090008BF226 /* Frost Blast_Lich.png in Resources */,
 				C94B17021E01C090008BF226 /* Invoke_Invoker.png in Resources */,
 				C94B18FE1E01C0D2008BF226 /* Tusk.png in Resources */,
@@ -3554,7 +3568,7 @@
 				C94B172B1E01C090008BF226 /* Metamorphosis_Terrorblade.png in Resources */,
 				C94B17B01E01C090008BF226 /* Skewer_Magnus.png in Resources */,
 				C94B18FC1E01C0D2008BF226 /* Treant Protector.png in Resources */,
-				C95753CC1DD57FCF005C9F75 /* strength_icon.png in Resources */,
+				C95753CC1DD57FCF005C9F75 /* strength.png in Resources */,
 				C94B19B51E01C108008BF226 /* Bottle.png in Resources */,
 				C94B18AD1E01C0D2008BF226 /* Chen.png in Resources */,
 				C94B18A61E01C0D2008BF226 /* Bloodseeker.png in Resources */,
@@ -3562,7 +3576,6 @@
 				C94B163D1E01C090008BF226 /* Break Tether_Io.png in Resources */,
 				C94B17001E01C090008BF226 /* Invisibility_Beastmaster.png in Resources */,
 				C94B19AE1E01C108008BF226 /* Blades of Attack.png in Resources */,
-				C942CF351E00BCF800DEE8A9 /* dota2.json in Resources */,
 				C94B17621E01C090008BF226 /* Power Cogs_Clockwerk.png in Resources */,
 				C94B1A281E01C108008BF226 /* Tome of Knowledge.png in Resources */,
 				C94B17FA1E01C090008BF226 /* Time Lapse_Weaver.png in Resources */,
@@ -3582,6 +3595,8 @@
 				C94B19E41E01C108008BF226 /* Infused Raindrop.png in Resources */,
 				C94B16B11E01C090008BF226 /* Finger of Death_Lion.png in Resources */,
 				C94B172F1E01C090008BF226 /* Mist Coil_Abaddon.png in Resources */,
+				C92EC1361EA2CA8900FA01E1 /* dota2.sqlite-shm in Resources */,
+				C92EC1371EA2CA8900FA01E1 /* dota2.sqlite-wal in Resources */,
 				C94B1A331E01C108008BF226 /* Wraith Band.png in Resources */,
 				C94B16491E01C090008BF226 /* Chakra Magic_Keeper Of The Light.png in Resources */,
 				C94B1A0B1E01C108008BF226 /* Refresher Orb.png in Resources */,
@@ -4019,7 +4034,6 @@
 				C922FA8B1DD8AD27007B76F8 /* DALoreLabel.swift in Sources */,
 				C9AEA2131E9C4629006FD974 /* Note+CoreDataClass.swift in Sources */,
 				C9AEA2041E9C4629006FD974 /* BaseStats+CoreDataProperties.swift in Sources */,
-				C999EA111DE7E3CB0036AF47 /* Import.swift in Sources */,
 				368D1BD11DFF402200314648 /* ItemMainStackView.swift in Sources */,
 				C962582E1E07ADC400037D57 /* HeroSingleTalentStackView.swift in Sources */,
 				C9AEA2091E9C4629006FD974 /* Object+CoreDataClass.swift in Sources */,
@@ -4050,14 +4064,14 @@
 				366A8A0C1DD0F87F000406BF /* DAMainTableViewCell.swift in Sources */,
 				368D1BC51DFAE90600314648 /* ItemDetailModel.swift in Sources */,
 				C90CE6121DFCC95A00C93539 /* ItemStackView.swift in Sources */,
-				C9AEA2051E9C4629006FD974 /* Modifer+CoreDataClass.swift in Sources */,
+				C9AEA2051E9C4629006FD974 /* Modifier+CoreDataClass.swift in Sources */,
 				365F754C1E04269D00F928B0 /* HeroStatsSubStackView.swift in Sources */,
 				368D1BCE1DFF24A800314648 /* AbilitySubStackView.swift in Sources */,
 				363A46741E008A8F00BA5D97 /* RecipeButton.swift in Sources */,
 				C9AEA20F1E9C4629006FD974 /* MiscStats+CoreDataClass.swift in Sources */,
 				C9172C181DD13F9100DCF88F /* Globals.swift in Sources */,
 				C9AEA20D1E9C4629006FD974 /* Attribute+CoreDataClass.swift in Sources */,
-				C9AEA2061E9C4629006FD974 /* Modifer+CoreDataProperties.swift in Sources */,
+				C9AEA2061E9C4629006FD974 /* Modifier+CoreDataProperties.swift in Sources */,
 				365F754E1E04271300F928B0 /* HeroAttributeStackView.swift in Sources */,
 				C9AEA2191E9C4629006FD974 /* Ability+CoreDataClass.swift in Sources */,
 				C90CE6101DFCC18F00C93539 /* DAExpandableTextStackView.swift in Sources */,

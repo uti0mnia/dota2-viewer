@@ -18,7 +18,7 @@ extension Ability {
 
     @NSManaged public var descrip: String
     @NSManaged public var name: String
-    @NSManaged public var specialDetails: [String]?
+    @NSManaged public var specialDetails: [String: String]?
     @NSManaged public var specials: [String]?
     @NSManaged public var cooldown: ModifiableValue?
     @NSManaged public var data: NSOrderedSet?
@@ -69,10 +69,10 @@ extension Ability {
 extension Ability {
 
     @objc(addModifiersObject:)
-    @NSManaged public func addToModifiers(_ value: Modifer)
+    @NSManaged public func addToModifiers(_ value: Modifier)
 
     @objc(removeModifiersObject:)
-    @NSManaged public func removeFromModifiers(_ value: Modifer)
+    @NSManaged public func removeFromModifiers(_ value: Modifier)
 
     @objc(addModifiers:)
     @NSManaged public func addToModifiers(_ values: NSSet)

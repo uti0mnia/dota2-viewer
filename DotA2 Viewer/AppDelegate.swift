@@ -19,16 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        
-        // for firebase
-        FIRApp.configure()
-        
-        if UserDefaults.standard.value(forKey: "firstRun") == nil {
-            Import.JSONImport.initialImport(inMOC: managedObjectContext)
-            UserDefaults.standard.set(true, forKey: "firstRun")
-        }
-        
         // for the split view controller
         let splitViewController = self.window!.rootViewController as! UISplitViewController
         splitViewController.delegate = self
@@ -83,7 +73,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         // The persistent store coordinator for the application. This implementation creates and returns a coordinator, having added the store for the application to it. This property is optional since there are legitimate error conditions that could cause the creation of the store to fail.
         // Create the coordinator and store
         let coordinator = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
-        let url = self.applicationDocumentsDirectory.appendingPathComponent("SingleViewCoreData.sqlite")
+        let url = self.applicationDocumentsDirectory.appendingPathComponent("dota2.sqlite")
+        
+        if !FileManager.default.fileExists(atPath: url.path) {
+            let sourceSqliteURLs = [Bundle.main.url(forResource: "dota2", withExtension: "sqlite")!, Bundle.main.url(forResource: "dota2", withExtension: "sqlite-wal")!, Bundle.main.url(forResource: "dota2", withExtension: "sqlite-shm")!]
+            
+            let destSqliteURLs = [self.applicationDocumentsDirectory.appendingPathComponent("dota2.sqlite"),
+                                  self.applicationDocumentsDirectory.appendingPathComponent("dota2.sqlite-wal"),
+                                  self.applicationDocumentsDirectory.appendingPathComponent("dota2.sqlite-shm")]
+            
+            for index in 0 ..< sourceSqliteURLs.count {
+                do {
+                    try FileManager.default.copyItem(at: sourceSqliteURLs[index], to: destSqliteURLs[index])
+                } catch {
+                    print("Error copying over db: ", error.localizedDescription)
+                }
+            }
+        }
+        
         var failureReason = "There was an error creating or loading the application's saved data."
         do {
             try coordinator.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: url, options: nil)
