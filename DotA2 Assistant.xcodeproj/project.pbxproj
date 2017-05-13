@@ -899,6 +899,9 @@
 		C96258301E07B02C00037D57 /* HeroTalentStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C962582F1E07B02C00037D57 /* HeroTalentStackView.swift */; };
 		C96258341E07B12500037D57 /* HeroTalentSubStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96258331E07B12500037D57 /* HeroTalentSubStackView.swift */; };
 		C96EBB601DF244EF00D6FFD0 /* DANavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96EBB5F1DF244EF00D6FFD0 /* DANavigationController.swift */; };
+		C9745D5A1EC57548009537E4 /* HeroStretchyHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9745D591EC57548009537E4 /* HeroStretchyHeaderView.xib */; };
+		C9745D5C1EC57558009537E4 /* HeroStretchHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9745D5B1EC57558009537E4 /* HeroStretchHeaderView.swift */; };
+		C9745D5E1EC577CC009537E4 /* HeroStretchHeaderViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9745D5D1EC577CC009537E4 /* HeroStretchHeaderViewDelegate.swift */; };
 		C981B9361E9D6A6400004F1F /* HeroDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C981B9351E9D6A6400004F1F /* HeroDetail.swift */; };
 		C999EA081DE7D1C10036AF47 /* OptimusPrinceps.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C999EA061DE7D1C10036AF47 /* OptimusPrinceps.ttf */; };
 		C999EA091DE7D1C10036AF47 /* OptimusPrincepsSemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C999EA071DE7D1C10036AF47 /* OptimusPrincepsSemiBold.ttf */; };
@@ -1832,6 +1835,9 @@
 		C96258331E07B12500037D57 /* HeroTalentSubStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HeroTalentSubStackView.swift; path = Views/HeroTalentSubStackView.swift; sourceTree = "<group>"; };
 		C96EA1111DEE622800259AEF /* DotA2 Assistant.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = "DotA2 Assistant.entitlements"; path = "../DotA2 Assistant.entitlements"; sourceTree = "<group>"; };
 		C96EBB5F1DF244EF00D6FFD0 /* DANavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DANavigationController.swift; sourceTree = "<group>"; };
+		C9745D591EC57548009537E4 /* HeroStretchyHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HeroStretchyHeaderView.xib; path = Views/HeroStretchyHeaderView.xib; sourceTree = "<group>"; };
+		C9745D5B1EC57558009537E4 /* HeroStretchHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroStretchHeaderView.swift; sourceTree = "<group>"; };
+		C9745D5D1EC577CC009537E4 /* HeroStretchHeaderViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HeroStretchHeaderViewDelegate.swift; path = Views/HeroStretchHeaderViewDelegate.swift; sourceTree = "<group>"; };
 		C981B9351E9D6A6400004F1F /* HeroDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HeroDetail.swift; path = model/HeroDetail.swift; sourceTree = "<group>"; };
 		C999EA061DE7D1C10036AF47 /* OptimusPrinceps.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = OptimusPrinceps.ttf; path = Fonts/OptimusPrinceps.ttf; sourceTree = "<group>"; };
 		C999EA071DE7D1C10036AF47 /* OptimusPrincepsSemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = OptimusPrincepsSemiBold.ttf; path = Fonts/OptimusPrincepsSemiBold.ttf; sourceTree = "<group>"; };
@@ -2127,6 +2133,9 @@
 				368D1BCF1DFF298E00314648 /* Abilities */,
 				C93028371DF36164005EA297 /* Hero */,
 				368D1BCC1DFAFF7900314648 /* Item */,
+				C9745D591EC57548009537E4 /* HeroStretchyHeaderView.xib */,
+				C9745D5B1EC57558009537E4 /* HeroStretchHeaderView.swift */,
+				C9745D5D1EC577CC009537E4 /* HeroStretchHeaderViewDelegate.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -3135,6 +3144,7 @@
 				C94B18B21E01C0D2008BF226 /* Dazzle.png in Resources */,
 				C94B167F1E01C090008BF226 /* Doom_Doom.png in Resources */,
 				C94B19A91E01C108008BF226 /* Battle Fury.png in Resources */,
+				C9745D5A1EC57548009537E4 /* HeroStretchyHeaderView.xib in Resources */,
 				C94B16CE1E01C090008BF226 /* Ghostship_Kunkka.png in Resources */,
 				C94B17E91E01C090008BF226 /* Surge_Dark Seer.png in Resources */,
 				C94B18B11E01C0D2008BF226 /* Dark Seer.png in Resources */,
@@ -4047,6 +4057,7 @@
 				367E34E01DB7F9670037FA7B /* CustomTabVC.swift in Sources */,
 				C90CE60A1DFCB67500C93539 /* DAExpandableStackView.swift in Sources */,
 				C9AEA2081E9C4629006FD974 /* ModifiableValue+CoreDataProperties.swift in Sources */,
+				C9745D5C1EC57558009537E4 /* HeroStretchHeaderView.swift in Sources */,
 				C93028391DF3629F005EA297 /* HeroDetailVC.swift in Sources */,
 				363A464D1E003E5700BA5D97 /* RecipeStackView.swift in Sources */,
 				C9AEA2151E9C4629006FD974 /* ArrayItem+CoreDataClass.swift in Sources */,
@@ -4062,6 +4073,7 @@
 				C9FEBF2F1DB299F2000CD4FF /* DotA2_Viewer.xcdatamodeld in Sources */,
 				C9AEA2141E9C4629006FD974 /* Note+CoreDataProperties.swift in Sources */,
 				366A8A0C1DD0F87F000406BF /* DAMainTableViewCell.swift in Sources */,
+				C9745D5E1EC577CC009537E4 /* HeroStretchHeaderViewDelegate.swift in Sources */,
 				368D1BC51DFAE90600314648 /* ItemDetailModel.swift in Sources */,
 				C90CE6121DFCC95A00C93539 /* ItemStackView.swift in Sources */,
 				C9AEA2051E9C4629006FD974 /* Modifier+CoreDataClass.swift in Sources */,
