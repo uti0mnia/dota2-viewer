@@ -26,14 +26,14 @@ PODS:
   - GoogleToolboxForMac/Defines (2.1.0)
   - GoogleToolboxForMac/NSData+zlib (2.1.0):
     - GoogleToolboxForMac/Defines (= 2.1.0)
-  - MBProgressHUD (1.0.0)
+  - SnapKit (3.2.0)
   - SwiftyJSON (3.1.1)
 
 DEPENDENCIES:
   - ChameleonFramework
   - Firebase/Core
   - Firebase/Database
-  - MBProgressHUD (~> 1.0.0)
+  - SnapKit (~> 3.2.0)
   - SwiftyJSON
 
 SPEC CHECKSUMS:
@@ -46,9 +46,9 @@ SPEC CHECKSUMS:
   GoogleInterchangeUtilities: d5bc4d88d5b661ab72f9d70c58d02ca8c27ad1f7
   GoogleSymbolUtilities: 631ee17048aa5e9ab133470d768ea997a5ef9b96
   GoogleToolboxForMac: 2b2596cbb7186865e98cadf2b1e262d851c2b168
-  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
+  SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
   SwiftyJSON: f0be2e604f83e8405a624e9f891898bf6ed4e019
 
-PODFILE CHECKSUM: 022f6f44fe782ffc9cd933384cd1a47852021f9b
+PODFILE CHECKSUM: a99d0dd23c097b5b04f33db351819e2acaee8859
 
 COCOAPODS: 1.1.1
