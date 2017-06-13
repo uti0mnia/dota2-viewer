@@ -202,7 +202,7 @@ extension CustomTabVC: UITableViewDelegate, UITableViewDataSource {
         // if it's a hero
         if let hero = obj as? Hero {
             // image
-            attachment.image = UIImage(named: hero.primaryAttribute.typeString + ".png")
+            attachment.image = UIImage(named: hero.primaryAttribute.heroAttribute.rawValue + ".png")
             
             //attack type
             details = (hero.misc.projectileSpeed == 0) ? " | Melee" : " | Ranged"

@@ -9,7 +9,6 @@
 import UIKit
 import CoreData
 import ChameleonFramework
-import MBProgressHUD
 import Firebase
 
 @UIApplicationMain
