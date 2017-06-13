@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HeroStretchHeaderView: GSKStretchyHeaderView {
+class HeroStretchHeaderView: UIView { //GSKStretchyHeaderView {
     weak var delegate: HeroStretchHeaderViewDelegate?
     
     @IBOutlet weak var imageView: UIImageView!
