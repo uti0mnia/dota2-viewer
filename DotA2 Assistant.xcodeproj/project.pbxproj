@@ -903,13 +903,13 @@
 		C957BBDF1EECE682008F756B /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C957BBDE1EECE682008F756B /* Layout.swift */; };
 		C957BBE11EECE9FB008F756B /* AbilityTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C957BBE01EECE9FB008F756B /* AbilityTVC.swift */; };
 		C957BBE41EEE4081008F756B /* HeroTalentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C957BBE31EEE4081008F756B /* HeroTalentCell.swift */; };
-		C957BBE61EEE45F5008F756B /* HeroTalentLevelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C957BBE51EEE45F5008F756B /* HeroTalentLevelView.swift */; };
 		C957BBE81EEFA1BD008F756B /* HeroTalentTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C957BBE71EEFA1BD008F756B /* HeroTalentTVC.swift */; };
 		C957BBEB1EEFA76B008F756B /* HeroMiscCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C957BBEA1EEFA76B008F756B /* HeroMiscCell.swift */; };
 		C957BBED1EEFA920008F756B /* HeroMiscTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C957BBEC1EEFA920008F756B /* HeroMiscTVC.swift */; };
 		C957BBEF1EEFB048008F756B /* HeroAttributeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C957BBEE1EEFB048008F756B /* HeroAttributeCell.xib */; };
 		C957BBF11EEFB053008F756B /* HeroAttributeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C957BBF01EEFB053008F756B /* HeroAttributeCell.swift */; };
 		C957BBF31EEFB34C008F756B /* HeroBasicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C957BBF21EEFB34C008F756B /* HeroBasicCell.swift */; };
+		C957BBF51EEFB6B0008F756B /* HeroTalentLevelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C957BBF41EEFB6B0008F756B /* HeroTalentLevelView.swift */; };
 		C95E51DB1E0A142900A48965 /* Monkey King.png in Resources */ = {isa = PBXBuildFile; fileRef = C95E51DA1E0A142900A48965 /* Monkey King.png */; };
 		C95E86801E0369CE00822703 /* dota2.png in Resources */ = {isa = PBXBuildFile; fileRef = C95E867F1E0369CE00822703 /* dota2.png */; };
 		C962582E1E07ADC400037D57 /* HeroSingleTalentStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C962582D1E07ADC400037D57 /* HeroSingleTalentStackView.swift */; };
@@ -1862,13 +1862,13 @@
 		C957BBDE1EECE682008F756B /* Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
 		C957BBE01EECE9FB008F756B /* AbilityTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbilityTVC.swift; sourceTree = "<group>"; };
 		C957BBE31EEE4081008F756B /* HeroTalentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroTalentCell.swift; sourceTree = "<group>"; };
-		C957BBE51EEE45F5008F756B /* HeroTalentLevelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroTalentLevelView.swift; sourceTree = "<group>"; };
 		C957BBE71EEFA1BD008F756B /* HeroTalentTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroTalentTVC.swift; sourceTree = "<group>"; };
 		C957BBEA1EEFA76B008F756B /* HeroMiscCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroMiscCell.swift; sourceTree = "<group>"; };
 		C957BBEC1EEFA920008F756B /* HeroMiscTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroMiscTVC.swift; sourceTree = "<group>"; };
 		C957BBEE1EEFB048008F756B /* HeroAttributeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeroAttributeCell.xib; sourceTree = "<group>"; };
 		C957BBF01EEFB053008F756B /* HeroAttributeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroAttributeCell.swift; sourceTree = "<group>"; };
 		C957BBF21EEFB34C008F756B /* HeroBasicCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroBasicCell.swift; sourceTree = "<group>"; };
+		C957BBF41EEFB6B0008F756B /* HeroTalentLevelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroTalentLevelView.swift; sourceTree = "<group>"; };
 		C95E51DA1E0A142900A48965 /* Monkey King.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Monkey King.png"; path = "heroes/Monkey King.png"; sourceTree = "<group>"; };
 		C95E867F1E0369CE00822703 /* dota2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dota2.png; sourceTree = "<group>"; };
 		C962582D1E07ADC400037D57 /* HeroSingleTalentStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HeroSingleTalentStackView.swift; path = Views/HeroSingleTalentStackView.swift; sourceTree = "<group>"; };
@@ -3105,8 +3105,8 @@
 			isa = PBXGroup;
 			children = (
 				C957BBE31EEE4081008F756B /* HeroTalentCell.swift */,
-				C957BBE51EEE45F5008F756B /* HeroTalentLevelView.swift */,
 				C957BBE71EEFA1BD008F756B /* HeroTalentTVC.swift */,
+				C957BBF41EEFB6B0008F756B /* HeroTalentLevelView.swift */,
 			);
 			name = "Hero Talent";
 			sourceTree = "<group>";
@@ -4159,7 +4159,6 @@
 			files = (
 				C9AEA2071E9C4629006FD974 /* ModifiableValue+CoreDataClass.swift in Sources */,
 				C9B125671EDFC5AF00984F90 /* HeroDelegate.swift in Sources */,
-				C957BBE61EEE45F5008F756B /* HeroTalentLevelView.swift in Sources */,
 				C9AEA2181E9C4629006FD974 /* Hero+CoreDataProperties.swift in Sources */,
 				C94B1A391E01C4F7008BF226 /* DAIconLabel.swift in Sources */,
 				C9AEA20A1E9C4629006FD974 /* Object+CoreDataProperties.swift in Sources */,
@@ -4199,6 +4198,7 @@
 				C90CE60A1DFCB67500C93539 /* DAExpandableStackView.swift in Sources */,
 				C9AEA2081E9C4629006FD974 /* ModifiableValue+CoreDataProperties.swift in Sources */,
 				C9745D5C1EC57558009537E4 /* HeroStretchHeaderView.swift in Sources */,
+				C957BBF51EEFB6B0008F756B /* HeroTalentLevelView.swift in Sources */,
 				C93028391DF3629F005EA297 /* HeroDetailVC.swift in Sources */,
 				363A464D1E003E5700BA5D97 /* RecipeStackView.swift in Sources */,
 				C9AEA2151E9C4629006FD974 /* ArrayItem+CoreDataClass.swift in Sources */,

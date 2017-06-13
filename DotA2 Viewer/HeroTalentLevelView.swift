@@ -1,7 +1,12 @@
-//: Playground - noun: a place where people can play
+//
+//  HeroTalentLevelView.swift
+//  DotA2 Assistant
+//
+//  Created by Casey McLewin on 2017-06-12.
+//  Copyright © 2017 self. All rights reserved.
+//
 
 import UIKit
-
 
 class HeroTalentLevelView: UIView {
     
@@ -65,7 +70,3 @@ class HeroTalentLevelView: UIView {
     }
     
 }
-
-let talent = HeroTalentLevelView(frame: CGRect(x: 0, y: 0, width: 200, height: 300))
-talent.level = 20
-let a = talent
