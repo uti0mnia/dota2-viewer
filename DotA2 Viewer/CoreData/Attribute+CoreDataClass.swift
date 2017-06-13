@@ -10,17 +10,21 @@ import Foundation
 import CoreData
 
 
+public enum HeroAttribute: String {
+    case intelligence = "intelligence"
+    case agility = "agility"
+    case strength = "strength"
+}
+
 public class Attribute: NSManagedObject {
-    var typeString: String {
-        get {
+    var heroAttribute: HeroAttribute {
             if type == 0 {
-                return "intelligence"
+                return .intelligence
             } else if type == 1 {
-                return "agility"
+                return .agility
             } else {
-                return "strength"
+                return .strength
             }
-        }
     }
 
 }

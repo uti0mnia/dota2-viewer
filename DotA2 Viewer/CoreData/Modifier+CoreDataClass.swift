@@ -6,10 +6,20 @@
 //
 //
 
-import Foundation
+import UIKit
 import CoreData
 
 
 public class Modifier: ArrayItem {
-
+    
+    public var getUIColour: UIColor {
+        switch self.colour {
+        case 0:
+            return Colours.modifierGreen
+        case 1:
+            return Colours.modifierRed
+        default:
+            return Colours.defaultTextColours
+        }
+    }
 }
