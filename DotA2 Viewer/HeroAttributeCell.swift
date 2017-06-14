@@ -9,6 +9,8 @@
 import UIKit
 
 class HeroAttributeCell: UITableViewCell {
+    public static let nibName = "HeroAttributeCell"
+    
     weak var delegate: HeroAttributeViewDelegate?
     
     @IBOutlet weak var slider: UISlider!
@@ -23,17 +25,17 @@ class HeroAttributeCell: UITableViewCell {
     
     private var primaryAttributeLayer: CALayer!
     
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-        commonInit()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        
-        commonInit()
-    }
+//    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+//        super.init(style: style, reuseIdentifier: reuseIdentifier)
+//        
+//        commonInit()
+//    }
+//    
+//    required init?(coder aDecoder: NSCoder) {
+//        super.init(coder: aDecoder)
+//        
+//        commonInit()
+//    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

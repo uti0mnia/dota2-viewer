@@ -14,36 +14,35 @@ import CoreData
  * This view controller is meant to handle basic details of a hero like attributes 
  * and stats. Most of the stats and the attributes can be changed with the slider.
  */
-class HeroBasicTVC: UIViewController, UITableViewDataSource, HeroAttributeViewDelegate, HeroDelegate {
+class HeroBasicTVC: UIViewController, UITableViewDataSource, HeroDelegate {
     
     private static let attributeReuseIdentifier = "attributeCell"
     private static let basicReuseIndentifier = "basicCell"
     
     private var tableView: UITableView!
     
-    private var hero: Hero!
-    private var heroData: [String: [String: String]]!
-    private var heroDataKeys: [String]! // holds the keys in HeroData
+    public var hero: Hero? {
+        didSet {
+            guard let hero = hero else {
+                return
+            }
+            
+            hero.delegate = self
+            
+            heroData = hero.dataDictionary
+            heroDataKeys = Array(heroData.keys)
+            primaryAttribute = hero.primaryAttribute.heroAttribute
+            
+            updateData()
+        }
+    }
+    private var heroData = [String: [String: String]]()
+    private var heroDataKeys = [String]() // holds the keys in HeroData
     
     private var agility: Attribute!
     private var intelligence: Attribute!
     private var strength: Attribute!
     private var primaryAttribute: HeroAttribute!
-    
-    init(hero: Hero) {
-        super.init(nibName: nil, bundle: nil)
-        
-        self.hero = hero
-        self.hero.delegate = self
-        
-        self.heroData = hero.dataDictionary
-        self.heroDataKeys = Array(self.heroData.keys)
-        self.primaryAttribute = hero.primaryAttribute.heroAttribute
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,16 +51,19 @@ class HeroBasicTVC: UIViewController, UITableViewDataSource, HeroAttributeViewDe
         
         // configure table view
         tableView = UITableView(frame: self.view.bounds)
-        tableView.register(HeroAttributeCell.self, forCellReuseIdentifier: HeroBasicTVC.attributeReuseIdentifier)
+        let nib = UINib(nibName: HeroAttributeCell.nibName, bundle: .main)
+        tableView.register(nib, forCellReuseIdentifier: HeroBasicTVC.attributeReuseIdentifier)
         tableView.register(HeroBasicCell.self, forCellReuseIdentifier: HeroBasicTVC.basicReuseIndentifier)
         tableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         tableView.dataSource = self
-        
-        updateData()
     }
     
     private func updateData() {
-        self.heroData = hero.dataDictionary
+        if let hero = hero {
+            heroData = hero.dataDictionary
+        } else {
+            heroData.removeAll(keepingCapacity: true)
+        }
         
         tableView.beginUpdates()
         if let indexPaths = tableView.indexPathsForVisibleRows {
@@ -75,9 +77,9 @@ class HeroBasicTVC: UIViewController, UITableViewDataSource, HeroAttributeViewDe
     private func configure(_ cell: UITableViewCell, at indexPath: IndexPath) {
         if let cell = cell as? HeroAttributeCell {
             cell.setPrimaryAttribute(primaryAttribute)
-            cell.agilityLabel.text = hero.agility.string(1)
-            cell.intelligenceLabel.text = hero.intelligence.string(1)
-            cell.strengthLabel.text = hero.strength.string(1)
+            cell.agilityLabel.text = hero?.agility.string(1)
+            cell.intelligenceLabel.text = hero?.intelligence.string(1)
+            cell.strengthLabel.text = hero?.strength.string(1)
         }
         
         if let cell = cell as? HeroBasicCell {
@@ -94,10 +96,10 @@ class HeroBasicTVC: UIViewController, UITableViewDataSource, HeroAttributeViewDe
     // MARK: - HeroAttributeViewDelegate
     
     public func sliderDidChangeValue(_ newValue: Int) {
-        hero.level = newValue
+        hero?.level = newValue
     }
     
-    // MARK: - UITableViewDelegate
+    // MARK: - UITableViewDataSource
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1 + heroDataKeys.count

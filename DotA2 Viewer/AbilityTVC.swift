@@ -15,22 +15,14 @@ class AbilityTVC: UIViewController, UITableViewDataSource {
     
     private var tableView: UITableView!
     
-    public var abilities: [Ability]!
-    
-    init(abilities: [Ability]) {
-        super.init(nibName: nil, bundle: nil)
-        
-        self.abilities = abilities
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+    public var abilities: [Ability]? {
+        didSet {
+            tableView.reloadData()
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        assert(abilities != nil, "Abilties must be set for AbilityTVC")
         
         // tableview setup
         tableView = UITableView(frame: self.view.bounds)
@@ -42,26 +34,26 @@ class AbilityTVC: UIViewController, UITableViewDataSource {
     }
     
     private func configure(_ cell: AbilityCell, at indexPath: IndexPath) {
-        let ability = abilities[indexPath.row]
-        
-        cell.nameLabel.text = ability.name
-        cell.specialsLabel.attributedText = ability.specialIcons
-        cell.abilityImageView.image = UIImage(named: ability.imageName)
-        
-        cell.abilityStackView.types = ability.types?.array as? [ModifiableValue]
-        cell.abilityStackView.abilityDescription = ability.descrip
-        cell.abilityStackView.data = ability.data?.array as? [ModifiableValue]
-        cell.abilityStackView.modifiers = ability.modifiers?.allObjects as? [Modifier]
-        cell.abilityStackView.cooldown = ability.cooldown
-        cell.abilityStackView.mana = ability.mana
-        cell.abilityStackView.notes = ability.notes?.array as? [Note]
+        if let ability = abilities?[indexPath.row] {
+            cell.nameLabel.text = ability.name
+            cell.specialsLabel.attributedText = ability.specialIcons
+            cell.abilityImageView.image = UIImage(named: ability.imageName)
+            
+            cell.abilityStackView.types = ability.types?.array as? [ModifiableValue]
+            cell.abilityStackView.abilityDescription = ability.descrip
+            cell.abilityStackView.data = ability.data?.array as? [ModifiableValue]
+            cell.abilityStackView.modifiers = ability.modifiers?.allObjects as? [Modifier]
+            cell.abilityStackView.cooldown = ability.cooldown
+            cell.abilityStackView.mana = ability.mana
+            cell.abilityStackView.notes = ability.notes?.array as? [Note]
+        }
         
     }
     
     // MARK: - UITableViewDataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return abilities.count
+        return abilities?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

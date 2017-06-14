@@ -13,21 +13,14 @@ class HeroTalentTVC: UIViewController, UITableViewDataSource {
     private static let talentReuseIdentifier = "talentCell"
     
     private var tableView: UITableView!
-    public var talents: [Talent]!
-    
-    init(talents: [Talent]) {
-        super.init(nibName: nil, bundle: nil)
-        self.talents = talents
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+    public var talents: [Talent]? {
+        didSet {
+            tableView.reloadData()
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        assert(talents != nil, "Talents can't be nil")
         
         tableView = UITableView(frame: self.view.bounds)
         tableView.register(HeroTalentCell.self, forCellReuseIdentifier: HeroTalentTVC.talentReuseIdentifier)
@@ -35,20 +28,20 @@ class HeroTalentTVC: UIViewController, UITableViewDataSource {
         tableView.dataSource = self
     }
     
-    
     // MARK: - UITableViewDataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return talents.count
+        return talents?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: HeroTalentTVC.talentReuseIdentifier, for: indexPath) as! HeroTalentCell
         
-        let talent = talents[indexPath.row]
-        cell.leftLabel.text = talent.left
-        cell.rightLabel.text = talent.right
-        cell.levelView.level = Int(talent.level)
+        if let talent = talents?[indexPath.row] {
+            cell.leftLabel.text = talent.left
+            cell.rightLabel.text = talent.right
+            cell.levelView.level = Int(talent.level)
+        }
         
         return cell
     }
