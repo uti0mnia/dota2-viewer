@@ -86,10 +86,12 @@
 		C9172C181DD13F9100DCF88F /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9172C171DD13F9100DCF88F /* Globals.swift */; };
 		C9172C211DD176BA00DCF88F /* dota2-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = C9172C201DD176BA00DCF88F /* dota2-logo.png */; };
 		C922FA8B1DD8AD27007B76F8 /* DALoreLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C922FA8A1DD8AD27007B76F8 /* DALoreLabel.swift */; };
+		C923CF5B1EF0E44400971660 /* Call of the Wild (Boar)_Beastmaster.png in Resources */ = {isa = PBXBuildFile; fileRef = C923CF591EF0E44400971660 /* Call of the Wild (Boar)_Beastmaster.png */; };
+		C923CF5C1EF0E44400971660 /* Call of the Wild (Hawk)_Beastmaster.png in Resources */ = {isa = PBXBuildFile; fileRef = C923CF5A1EF0E44400971660 /* Call of the Wild (Hawk)_Beastmaster.png */; };
+		C923CF5E1EF0E5AE00971660 /* Aegis of the Immortal.png in Resources */ = {isa = PBXBuildFile; fileRef = C923CF5D1EF0E5AE00971660 /* Aegis of the Immortal.png */; };
 		C92EC1351EA2CA8900FA01E1 /* dota2.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = C92EC1321EA2CA8900FA01E1 /* dota2.sqlite */; };
 		C92EC1361EA2CA8900FA01E1 /* dota2.sqlite-shm in Resources */ = {isa = PBXBuildFile; fileRef = C92EC1331EA2CA8900FA01E1 /* dota2.sqlite-shm */; };
 		C92EC1371EA2CA8900FA01E1 /* dota2.sqlite-wal in Resources */ = {isa = PBXBuildFile; fileRef = C92EC1341EA2CA8900FA01E1 /* dota2.sqlite-wal */; };
-		C92EC13A1EA2E35800FA01E1 /* Aegis of the Immortal.png in Resources */ = {isa = PBXBuildFile; fileRef = C92EC1391EA2E35800FA01E1 /* Aegis of the Immortal.png */; };
 		C93028391DF3629F005EA297 /* HeroDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93028381DF3629F005EA297 /* HeroDetailVC.swift */; };
 		C94A26D21DD5593F00D9B054 /* DASlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94A26D11DD5593F00D9B054 /* DASlider.swift */; };
 		C94B16111E01C090008BF226 /* Acid Spray_Alchemist.png in Resources */ = {isa = PBXBuildFile; fileRef = C94B13F81E01C08E008BF226 /* Acid Spray_Alchemist.png */; };
@@ -143,8 +145,6 @@
 		C94B16411E01C090008BF226 /* Burrow_Nyx Assassin.png in Resources */ = {isa = PBXBuildFile; fileRef = C94B14281E01C08E008BF226 /* Burrow_Nyx Assassin.png */; };
 		C94B16421E01C090008BF226 /* Burrowstrike_Sand King.png in Resources */ = {isa = PBXBuildFile; fileRef = C94B14291E01C08E008BF226 /* Burrowstrike_Sand King.png */; };
 		C94B16431E01C090008BF226 /* Call Down_Gyrocopter.png in Resources */ = {isa = PBXBuildFile; fileRef = C94B142A1E01C08E008BF226 /* Call Down_Gyrocopter.png */; };
-		C94B16441E01C090008BF226 /* Call of the Wild: Boar_Beastmaster.png in Resources */ = {isa = PBXBuildFile; fileRef = C94B142B1E01C08E008BF226 /* Call of the Wild: Boar_Beastmaster.png */; };
-		C94B16451E01C090008BF226 /* Call of the Wild: Hawk_Beastmaster.png in Resources */ = {isa = PBXBuildFile; fileRef = C94B142C1E01C08E008BF226 /* Call of the Wild: Hawk_Beastmaster.png */; };
 		C94B16461E01C090008BF226 /* Cancel Dark Rift_Underlord.png in Resources */ = {isa = PBXBuildFile; fileRef = C94B142D1E01C08E008BF226 /* Cancel Dark Rift_Underlord.png */; };
 		C94B16471E01C090008BF226 /* Caustic Finale_Sand King.png in Resources */ = {isa = PBXBuildFile; fileRef = C94B142E1E01C08E008BF226 /* Caustic Finale_Sand King.png */; };
 		C94B16481E01C090008BF226 /* Chain Frost_Lich.png in Resources */ = {isa = PBXBuildFile; fileRef = C94B142F1E01C08E008BF226 /* Chain Frost_Lich.png */; };
@@ -909,7 +909,7 @@
 		C957BBEF1EEFB048008F756B /* HeroAttributeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C957BBEE1EEFB048008F756B /* HeroAttributeCell.xib */; };
 		C957BBF11EEFB053008F756B /* HeroAttributeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C957BBF01EEFB053008F756B /* HeroAttributeCell.swift */; };
 		C957BBF31EEFB34C008F756B /* HeroBasicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C957BBF21EEFB34C008F756B /* HeroBasicCell.swift */; };
-		C957BBF51EEFB6B0008F756B /* HeroTalentLevelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C957BBF41EEFB6B0008F756B /* HeroTalentLevelView.swift */; };
+		C957BBF71EEFB77A008F756B /* HeroTalentLevelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C957BBF61EEFB77A008F756B /* HeroTalentLevelView.swift */; };
 		C95E51DB1E0A142900A48965 /* Monkey King.png in Resources */ = {isa = PBXBuildFile; fileRef = C95E51DA1E0A142900A48965 /* Monkey King.png */; };
 		C95E86801E0369CE00822703 /* dota2.png in Resources */ = {isa = PBXBuildFile; fileRef = C95E867F1E0369CE00822703 /* dota2.png */; };
 		C962582E1E07ADC400037D57 /* HeroSingleTalentStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C962582D1E07ADC400037D57 /* HeroSingleTalentStackView.swift */; };
@@ -1045,10 +1045,12 @@
 		C9172C171DD13F9100DCF88F /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		C9172C201DD176BA00DCF88F /* dota2-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dota2-logo.png"; sourceTree = "<group>"; };
 		C922FA8A1DD8AD27007B76F8 /* DALoreLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DALoreLabel.swift; sourceTree = "<group>"; };
+		C923CF591EF0E44400971660 /* Call of the Wild (Boar)_Beastmaster.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Call of the Wild (Boar)_Beastmaster.png"; path = "images/Abilities/Call of the Wild (Boar)_Beastmaster.png"; sourceTree = "<group>"; };
+		C923CF5A1EF0E44400971660 /* Call of the Wild (Hawk)_Beastmaster.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Call of the Wild (Hawk)_Beastmaster.png"; path = "images/Abilities/Call of the Wild (Hawk)_Beastmaster.png"; sourceTree = "<group>"; };
+		C923CF5D1EF0E5AE00971660 /* Aegis of the Immortal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Aegis of the Immortal.png"; path = "images/Abilities/Aegis of the Immortal.png"; sourceTree = "<group>"; };
 		C92EC1321EA2CA8900FA01E1 /* dota2.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = dota2.sqlite; sourceTree = "<group>"; };
 		C92EC1331EA2CA8900FA01E1 /* dota2.sqlite-shm */ = {isa = PBXFileReference; lastKnownFileType = file; path = "dota2.sqlite-shm"; sourceTree = "<group>"; };
 		C92EC1341EA2CA8900FA01E1 /* dota2.sqlite-wal */ = {isa = PBXFileReference; lastKnownFileType = file; path = "dota2.sqlite-wal"; sourceTree = "<group>"; };
-		C92EC1391EA2E35800FA01E1 /* Aegis of the Immortal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Aegis of the Immortal.png"; path = "images/items/Aegis of the Immortal.png"; sourceTree = "<group>"; };
 		C93028381DF3629F005EA297 /* HeroDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroDetailVC.swift; sourceTree = "<group>"; };
 		C94A26D11DD5593F00D9B054 /* DASlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DASlider.swift; path = Views/DASlider.swift; sourceTree = "<group>"; };
 		C94B13F81E01C08E008BF226 /* Acid Spray_Alchemist.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Acid Spray_Alchemist.png"; path = "Abilities/Acid Spray_Alchemist.png"; sourceTree = "<group>"; };
@@ -1868,7 +1870,7 @@
 		C957BBEE1EEFB048008F756B /* HeroAttributeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeroAttributeCell.xib; sourceTree = "<group>"; };
 		C957BBF01EEFB053008F756B /* HeroAttributeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroAttributeCell.swift; sourceTree = "<group>"; };
 		C957BBF21EEFB34C008F756B /* HeroBasicCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroBasicCell.swift; sourceTree = "<group>"; };
-		C957BBF41EEFB6B0008F756B /* HeroTalentLevelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroTalentLevelView.swift; sourceTree = "<group>"; };
+		C957BBF61EEFB77A008F756B /* HeroTalentLevelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HeroTalentLevelView.swift; path = Views/HeroTalentLevelView.swift; sourceTree = "<group>"; };
 		C95E51DA1E0A142900A48965 /* Monkey King.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Monkey King.png"; path = "heroes/Monkey King.png"; sourceTree = "<group>"; };
 		C95E867F1E0369CE00822703 /* dota2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dota2.png; sourceTree = "<group>"; };
 		C962582D1E07ADC400037D57 /* HeroSingleTalentStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HeroSingleTalentStackView.swift; path = Views/HeroSingleTalentStackView.swift; sourceTree = "<group>"; };
@@ -2925,7 +2927,7 @@
 			isa = PBXGroup;
 			children = (
 				C94B190D1E01C108008BF226 /* Abyssal Blade.png */,
-				C92EC1391EA2E35800FA01E1 /* Aegis of the Immortal.png */,
+				C923CF5D1EF0E5AE00971660 /* Aegis of the Immortal.png */,
 				C94B190E1E01C108008BF226 /* Aether Lens.png */,
 				C94B190F1E01C108008BF226 /* Aghanim's Scepter.png */,
 				C94B19101E01C108008BF226 /* Animal Courier.png */,
@@ -2950,6 +2952,8 @@
 				C94B19231E01C108008BF226 /* Broadsword.png */,
 				C94B19241E01C108008BF226 /* Buckler.png */,
 				C94B19251E01C108008BF226 /* Butterfly.png */,
+				C923CF591EF0E44400971660 /* Call of the Wild (Boar)_Beastmaster.png */,
+				C923CF5A1EF0E44400971660 /* Call of the Wild (Hawk)_Beastmaster.png */,
 				C94B19261E01C108008BF226 /* Chainmail.png */,
 				C94B19271E01C108008BF226 /* Circlet.png */,
 				C94B19281E01C108008BF226 /* Clarity.png */,
@@ -3104,9 +3108,9 @@
 		C957BBE21EEE4066008F756B /* Hero Talent */ = {
 			isa = PBXGroup;
 			children = (
+				C957BBF61EEFB77A008F756B /* HeroTalentLevelView.swift */,
 				C957BBE31EEE4081008F756B /* HeroTalentCell.swift */,
 				C957BBE71EEFA1BD008F756B /* HeroTalentTVC.swift */,
-				C957BBF41EEFB6B0008F756B /* HeroTalentLevelView.swift */,
 			);
 			name = "Hero Talent";
 			sourceTree = "<group>";
@@ -3262,6 +3266,7 @@
 				C94B16BE1E01C090008BF226 /* Flesh Heap_Pudge.png in Resources */,
 				C94B167B1E01C090008BF226 /* Dispel Magic_Brewmaster.png in Resources */,
 				C94B19D71E01C108008BF226 /* Glimmer Cape.png in Resources */,
+				C923CF5B1EF0E44400971660 /* Call of the Wild (Boar)_Beastmaster.png in Resources */,
 				C94B18AB1E01C0D2008BF226 /* Centaur Warrunner.png in Resources */,
 				C94B19D01E01C108008BF226 /* Eye of Skadi.png in Resources */,
 				C94B19EE1E01C108008BF226 /* Mantle of Intelligence.png in Resources */,
@@ -3396,7 +3401,6 @@
 				366A8A261DD24E8E000406BF /* radiance-semibold.ttf in Resources */,
 				C94B18CF1E01C0D2008BF226 /* Lycan.png in Resources */,
 				C94B175F1E01C090008BF226 /* Poison_Beastmaster.png in Resources */,
-				C94B16451E01C090008BF226 /* Call of the Wild: Hawk_Beastmaster.png in Resources */,
 				C94B162B1E01C090008BF226 /* Battle Trance_Troll Warlord.png in Resources */,
 				C94B16AF1E01C090008BF226 /* Fiend's Grip_Bane.png in Resources */,
 				C94B19A61E01C108008BF226 /* Armlet of Mordiggian.png in Resources */,
@@ -3427,6 +3431,7 @@
 				C94B17FC1E01C090008BF226 /* Time Walk_Faceless Void.png in Resources */,
 				C94B19B31E01C108008BF226 /* Boots of Speed.png in Resources */,
 				C94B16711E01C090008BF226 /* Degen Aura_Omniknight.png in Resources */,
+				C923CF5E1EF0E5AE00971660 /* Aegis of the Immortal.png in Resources */,
 				C94B162C1E01C090008BF226 /* Berserker's Blood_Huskar.png in Resources */,
 				C94B18FF1E01C0D2008BF226 /* Underlord.png in Resources */,
 				C94B17BC1E01C090008BF226 /* Spawn Spiderite_Broodmother.png in Resources */,
@@ -3454,6 +3459,7 @@
 				C94B18071E01C090008BF226 /* Unrefined Fireblast_Ogre Magi.png in Resources */,
 				C94B17961E01C090008BF226 /* Savage Roar_Lone Druid.png in Resources */,
 				C94B18F11E01C0D2008BF226 /* Spectre.png in Resources */,
+				C923CF5C1EF0E44400971660 /* Call of the Wild (Hawk)_Beastmaster.png in Resources */,
 				C94B173A1E01C090008BF226 /* Natural Order_Elder Titan.png in Resources */,
 				C94B16A11E01C090008BF226 /* Essence Shift_Slark.png in Resources */,
 				C94B18A81E01C0D2008BF226 /* Brewmaster.png in Resources */,
@@ -3479,7 +3485,6 @@
 				36C0C96C1DA6E25800169394 /* Assets.xcassets in Resources */,
 				C94B19A21E01C108008BF226 /* Aether Lens.png in Resources */,
 				C94B17FD1E01C090008BF226 /* Toggle Movement_Phoenix.png in Resources */,
-				C92EC13A1EA2E35800FA01E1 /* Aegis of the Immortal.png in Resources */,
 				C94B17C41E01C090008BF226 /* Spiked Carapace_Nyx Assassin.png in Resources */,
 				C94B162E1E01C090008BF226 /* Berserker's Rage_Troll Warlord.png in Resources */,
 				C95E86801E0369CE00822703 /* dota2.png in Resources */,
@@ -4049,7 +4054,6 @@
 				C94B16BB1E01C090008BF226 /* Flaming Fists_Warlock.png in Resources */,
 				C94B16FB1E01C090008BF226 /* Infest_Lifestealer.png in Resources */,
 				C94B17CB1E01C090008BF226 /* Spirits_Io.png in Resources */,
-				C94B16441E01C090008BF226 /* Call of the Wild: Boar_Beastmaster.png in Resources */,
 				C94B17D71E01C090008BF226 /* Static Storm_Disruptor.png in Resources */,
 				C94B16141E01C090008BF226 /* Aftershock_Earthshaker.png in Resources */,
 				C94B16BD1E01C090008BF226 /* Flesh Golem_Undying.png in Resources */,
@@ -4198,7 +4202,7 @@
 				C90CE60A1DFCB67500C93539 /* DAExpandableStackView.swift in Sources */,
 				C9AEA2081E9C4629006FD974 /* ModifiableValue+CoreDataProperties.swift in Sources */,
 				C9745D5C1EC57558009537E4 /* HeroStretchHeaderView.swift in Sources */,
-				C957BBF51EEFB6B0008F756B /* HeroTalentLevelView.swift in Sources */,
+				C957BBF71EEFB77A008F756B /* HeroTalentLevelView.swift in Sources */,
 				C93028391DF3629F005EA297 /* HeroDetailVC.swift in Sources */,
 				363A464D1E003E5700BA5D97 /* RecipeStackView.swift in Sources */,
 				C9AEA2151E9C4629006FD974 /* ArrayItem+CoreDataClass.swift in Sources */,
