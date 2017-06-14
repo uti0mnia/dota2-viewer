@@ -916,7 +916,6 @@
 		C96258301E07B02C00037D57 /* HeroTalentStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C962582F1E07B02C00037D57 /* HeroTalentStackView.swift */; };
 		C96258341E07B12500037D57 /* HeroTalentSubStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96258331E07B12500037D57 /* HeroTalentSubStackView.swift */; };
 		C96EBB601DF244EF00D6FFD0 /* DANavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96EBB5F1DF244EF00D6FFD0 /* DANavigationController.swift */; };
-		C9745D5A1EC57548009537E4 /* HeroStretchyHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9745D591EC57548009537E4 /* HeroStretchyHeaderView.xib */; };
 		C9745D5C1EC57558009537E4 /* HeroStretchHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9745D5B1EC57558009537E4 /* HeroStretchHeaderView.swift */; };
 		C9745D5E1EC577CC009537E4 /* HeroStretchHeaderViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9745D5D1EC577CC009537E4 /* HeroStretchHeaderViewDelegate.swift */; };
 		C9745D651EC7B86B009537E4 /* HeroAttributeCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9745D641EC7B86B009537E4 /* HeroAttributeCellDelegate.swift */; };
@@ -1878,7 +1877,6 @@
 		C96258331E07B12500037D57 /* HeroTalentSubStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HeroTalentSubStackView.swift; path = Views/HeroTalentSubStackView.swift; sourceTree = "<group>"; };
 		C96EA1111DEE622800259AEF /* DotA2 Assistant.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = "DotA2 Assistant.entitlements"; path = "../DotA2 Assistant.entitlements"; sourceTree = "<group>"; };
 		C96EBB5F1DF244EF00D6FFD0 /* DANavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DANavigationController.swift; sourceTree = "<group>"; };
-		C9745D591EC57548009537E4 /* HeroStretchyHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HeroStretchyHeaderView.xib; path = Views/HeroStretchyHeaderView.xib; sourceTree = "<group>"; };
 		C9745D5B1EC57558009537E4 /* HeroStretchHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroStretchHeaderView.swift; sourceTree = "<group>"; };
 		C9745D5D1EC577CC009537E4 /* HeroStretchHeaderViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HeroStretchHeaderViewDelegate.swift; path = Views/HeroStretchHeaderViewDelegate.swift; sourceTree = "<group>"; };
 		C9745D641EC7B86B009537E4 /* HeroAttributeCellDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroAttributeCellDelegate.swift; sourceTree = "<group>"; };
@@ -2119,6 +2117,7 @@
 		36C0C9601DA6E25800169394 /* DotA2 Viewer */ = {
 			isa = PBXGroup;
 			children = (
+				C923CF5F1EF0E71100971660 /* DA Classes */,
 				C9B125651EDA5D8600984F90 /* MyPlayground.playground */,
 				C9B125681EDFC86800984F90 /* Extensions */,
 				C90A135C1EE7C7E500D143B8 /* Constants */,
@@ -2216,7 +2215,6 @@
 		36FD565C1DA6E606007C5A9C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				366A8A111DD1029F000406BF /* DAUIViewController.swift */,
 				367E34DF1DB7F9670037FA7B /* CustomTabVC.swift */,
 				365554941E04603700C809BC /* Details */,
 			);
@@ -2232,6 +2230,14 @@
 				C957BBDE1EECE682008F756B /* Layout.swift */,
 			);
 			name = Constants;
+			sourceTree = "<group>";
+		};
+		C923CF5F1EF0E71100971660 /* DA Classes */ = {
+			isa = PBXGroup;
+			children = (
+				366A8A111DD1029F000406BF /* DAUIViewController.swift */,
+			);
+			name = "DA Classes";
 			sourceTree = "<group>";
 		};
 		C92EC1381EA2CACC00FA01E1 /* Database */ = {
@@ -3127,7 +3133,6 @@
 		C9745D5F1EC7B0B0009537E4 /* Hero Details */ = {
 			isa = PBXGroup;
 			children = (
-				C9745D591EC57548009537E4 /* HeroStretchyHeaderView.xib */,
 				C9745D5B1EC57558009537E4 /* HeroStretchHeaderView.swift */,
 				C9745D5D1EC577CC009537E4 /* HeroStretchHeaderViewDelegate.swift */,
 				C9B125721EE1182400984F90 /* KeyValueView.swift */,
@@ -3279,7 +3284,6 @@
 				C94B18B21E01C0D2008BF226 /* Dazzle.png in Resources */,
 				C94B167F1E01C090008BF226 /* Doom_Doom.png in Resources */,
 				C94B19A91E01C108008BF226 /* Battle Fury.png in Resources */,
-				C9745D5A1EC57548009537E4 /* HeroStretchyHeaderView.xib in Resources */,
 				C94B16CE1E01C090008BF226 /* Ghostship_Kunkka.png in Resources */,
 				C94B17E91E01C090008BF226 /* Surge_Dark Seer.png in Resources */,
 				C94B18B11E01C0D2008BF226 /* Dark Seer.png in Resources */,
