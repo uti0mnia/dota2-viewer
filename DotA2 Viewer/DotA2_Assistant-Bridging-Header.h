@@ -6,8 +6,4 @@
 //  Copyright © 2017 self. All rights reserved.
 //
 
-#ifndef DotA2_Assistant_Bridging_Header_h
-#define DotA2_Assistant_Bridging_Header_h
-
-
-#endif /* DotA2_Assistant_Bridging_Header_h */
+@import GSKStretchyHeaderView;

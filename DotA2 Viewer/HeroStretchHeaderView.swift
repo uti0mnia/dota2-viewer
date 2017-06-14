@@ -17,6 +17,7 @@ class HeroStretchHeaderView: UIView {
         
         iv.clipsToBounds = true
         iv.contentMode = .scaleAspectFill
+        iv.isUserInteractionEnabled = true
         
         return iv
     }()
@@ -27,6 +28,7 @@ class HeroStretchHeaderView: UIView {
     public var talentsButton = UIButton()
     public var miscButton = UIButton()
     
+    // TODO: Make into swipe gesture.
     private var tapGesture: UITapGestureRecognizer!
     private var isCollapsed = false
     

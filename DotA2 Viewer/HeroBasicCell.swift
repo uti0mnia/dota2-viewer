@@ -12,6 +12,7 @@ class HeroBasicCell: UITableViewCell {
     private(set) var kvView: KeyValueView = {
         let view = KeyValueView()
         view.orientation = .horizontal
+        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     

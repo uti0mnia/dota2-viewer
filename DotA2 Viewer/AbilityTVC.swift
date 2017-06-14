@@ -21,10 +21,19 @@ class AbilityTVC: UIViewController, UITableViewDataSource {
         }
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
-        // tableview setup
+        commonInit()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        commonInit()
+    }
+    
+    private func commonInit() {
         tableView = UITableView(frame: self.view.bounds)
         tableView.register(AbilityCell.self, forCellReuseIdentifier: AbilityTVC.abilityCellIndetifier)
         tableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]

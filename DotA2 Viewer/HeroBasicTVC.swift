@@ -44,20 +44,29 @@ class HeroBasicTVC: UIViewController, UITableViewDataSource, HeroDelegate {
     private var strength: Attribute!
     private var primaryAttribute: HeroAttribute!
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
-        assert(hero != nil, "Hero must be set for AbilityTVC")
+        commonInit()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
         
-        // configure table view
+        commonInit()
+    }
+    
+    private func commonInit() {
         tableView = UITableView(frame: self.view.bounds)
         let nib = UINib(nibName: HeroAttributeCell.nibName, bundle: .main)
         tableView.register(nib, forCellReuseIdentifier: HeroBasicTVC.attributeReuseIdentifier)
         tableView.register(HeroBasicCell.self, forCellReuseIdentifier: HeroBasicTVC.basicReuseIndentifier)
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 100
         tableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         tableView.dataSource = self
     }
-    
+
     private func updateData() {
         if let hero = hero {
             heroData = hero.dataDictionary
@@ -83,8 +92,9 @@ class HeroBasicTVC: UIViewController, UITableViewDataSource, HeroDelegate {
         }
         
         if let cell = cell as? HeroBasicCell {
+            // TODO: Make this actually readable.
             // get the dictionary for the section so we can get good key/value pair
-            let dictSection = heroData[heroDataKeys[indexPath.section]]!
+            let dictSection = heroData[heroDataKeys[indexPath.section - 1]]!
             let keyText = Array(dictSection.keys)[indexPath.row] // the stat to display
             let valueText = dictSection[keyText] // the value of the stat to display
             
@@ -106,7 +116,7 @@ class HeroBasicTVC: UIViewController, UITableViewDataSource, HeroDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        assert(section < heroDataKeys.count + 1, "Section out of bounds")
+        assert(section < 1 + heroDataKeys.count, "Section out of bounds")
         
         if section == 0 {
             return 1

@@ -8,18 +8,109 @@
 
 import UIKit
 
-class HeroDetailVC: DADetailVC {
+class HeroDetailVC: UIViewController, HeroStretchHeaderViewDelegate {
     
-    var hero: Hero!
+    public var hero: Hero? {
+        didSet {
+            updateView()
+        }
+    }
     
-    // MARK - Methods
+    private var heroStretchHeaderView = HeroStretchHeaderView()
+    private var abilityTVC = AbilityTVC()
+    private var basicTVC = HeroBasicTVC()
+    private var miscTVC = HeroMiscTVC()
+    private var talentTVC = HeroTalentTVC()
+    
+    private var contentView = UIView()
+    private var currentChildViewController: UIViewController?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // make sure we have an item
-        hero = object as? Hero
-        if (hero == nil) { return }
+        view.addSubview(heroStretchHeaderView)
+        view.addSubview(contentView)
         
+        heroStretchHeaderView.delegate = self
+        
+        // configure ViewControllers
+        addChildViewController(abilityTVC)
+        abilityTVC.didMove(toParentViewController: self)
+        
+        addChildViewController(miscTVC)
+        miscTVC.didMove(toParentViewController: self)
+        
+        addChildViewController(talentTVC)
+        talentTVC.didMove(toParentViewController: self)
+        
+        addChildViewController(basicTVC)
+        basicTVC.didMove(toParentViewController: self)
+        
+        
+        // TODO: Remove
+        view.backgroundColor = UIColor.black
+        contentView.backgroundColor = UIColor.flatRed()
+        
+        addConstraints()
+    }
+    
+    private func updateView() {
+        guard let hero = hero else {
+            return
+        }
+        self.title = hero.name
+        
+        heroStretchHeaderView.imageView.image = UIImage(named: hero.imageName)
+        abilityTVC.abilities = hero.abilities?.array as? [Ability]
+        basicTVC.hero = hero
+        miscTVC.hero = hero
+        talentTVC.talents = hero.talents.allObjects as? [Talent]
+        
+        swapChildViewController(to: basicTVC)
+        
+    }
+    
+    private func addConstraints() {
+        heroStretchHeaderView.snp.makeConstraints() { make in
+            make.left.equalTo(view)
+            make.top.equalTo(view)
+            make.right.equalTo(view)
+            make.bottom.equalTo(contentView.snp.top)
+        }
+        
+        contentView.snp.makeConstraints() { make in
+            make.left.equalTo(view)
+            make.right.equalTo(view)
+            make.bottom.equalTo(view)
+        }
+    }
+    
+    // TODO: Animate this stuff.
+    private func swapChildViewController(to viewController: UIViewController) {
+        currentChildViewController?.view.removeFromSuperview()
+        currentChildViewController = viewController
+        
+        contentView.addSubview(viewController.view)
+        
+        viewController.view.frame = contentView.bounds
+        viewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        
+    }
+    
+    // MARK: - HeroStretchHeaderViewDelegate
+    
+    func heroStretchHeaderView(_ headerView: HeroStretchHeaderView, didTapTab tab: HeroDetailTab) {
+        print(tab)
+        switch tab {
+        case .ability:
+            break
+        case .detail:
+            break
+        case .misc:
+            break
+        case .talent:
+            break
+        }
     }
 }
 

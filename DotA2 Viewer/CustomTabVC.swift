@@ -58,6 +58,7 @@ class CustomTabVC: DAUIViewController {
         }
     }
     fileprivate var entity = "Hero" { didSet { switchTableView() } }
+    fileprivate var heroDetailVC = HeroDetailVC()
     
     
     // MARK - Methods
@@ -119,12 +120,12 @@ class CustomTabVC: DAUIViewController {
     
     fileprivate func createDetail(for object: Object) -> DADetailVC? {
         let sb = UIStoryboard(name: "Main", bundle: nil)
-        if let hero = object as? Hero {
-            let vc = sb.instantiateViewController(withIdentifier: "HeroDetailVC") as! HeroDetailVC
-            vc.object = hero
-            return vc
-        }
-        
+//        if let hero = object as? Hero {
+//            let vc = sb.instantiateViewController(withIdentifier: "HeroDetailVC") as! HeroDetailVC
+//            vc.object = hero
+//            return vc
+//        }
+//        
         if let item = object as? Item {
             let vc = sb.instantiateViewController(withIdentifier: "ItemDetailVC") as! ItemDetailVC
             vc.object = item
@@ -143,13 +144,13 @@ class CustomTabVC: DAUIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // hero segue
-        if segue.identifier == "showHero" {
-            if let hero = selectedObject as? Hero {
-                let vc = (segue.destination as! UINavigationController).topViewController as! HeroDetailVC
-                vc.object = hero
-            }
-        }
+//        // hero segue
+//        if segue.identifier == "showHero" {
+//            if let hero = selectedObject as? Hero {
+//                let vc = (segue.destination as! UINavigationController).topViewController as! HeroDetailVC
+//                vc.object = hero
+//            }
+//        }
         
         // item segue
         if segue.identifier == "showItem" {
@@ -250,16 +251,23 @@ extension CustomTabVC: UITableViewDelegate, UITableViewDataSource {
         selectedObject = fetchedResultsController.object(at: indexPath)
         tableView.deselectRow(at: indexPath, animated: true)
         
-        if UIDevice.current.userInterfaceIdiom == .pad {
-            // for iPad
-            let segue = selectedObject is Hero ? "showHero" : "showItem"
-            self.performSegue(withIdentifier: segue, sender: self)
-        } else {
-            // for iPhone
-            if let vc = createDetail(for: selectedObject) {
-                showDetailViewController(vc, sender: self)
-            }
+        if selectedObject is Item {
+            return
         }
+        
+        heroDetailVC.hero = selectedObject as! Hero
+        showDetailViewController(heroDetailVC, sender: self)
+        
+//        if UIDevice.current.userInterfaceIdiom == .pad {
+//            // for iPad
+//            let segue = selectedObject is Hero ? "showHero" : "showItem"
+//            self.performSegue(withIdentifier: segue, sender: self)
+//        } else {
+//            // for iPhone
+//            if let vc = createDetail(for: selectedObject) {
+//                showDetailViewController(vc, sender: self)
+//            }
+//        }
         
         
     }
