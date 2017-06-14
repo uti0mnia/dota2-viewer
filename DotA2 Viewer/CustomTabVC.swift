@@ -182,10 +182,11 @@ extension CustomTabVC: UITabBarDelegate {
 }
 
 // MARK - TableView Methods
+
 extension CustomTabVC: UITableViewDelegate, UITableViewDataSource {
     fileprivate func configure(cell: DAMainTableViewCell, atIndexPath indexPath: IndexPath) {
         let obj = fetchedResultsController.object(at: indexPath)
-        cell.circleImageView.image = UIImage(named: obj.name + ".png")
+        cell.circleImageView.image = UIImage(named: obj.imageName)
         cell.mainLabel.text = obj.name
         
         // details of the cell
