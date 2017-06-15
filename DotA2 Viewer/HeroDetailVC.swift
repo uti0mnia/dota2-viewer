@@ -54,7 +54,7 @@ class HeroDetailVC: UIViewController, HeroStretchHeaderViewDelegate {
         miscTVC.hero = hero
         talentTVC.talents = hero.talents.allObjects as? [Talent]
         
-        swapChildViewController(to: miscTVC)
+        swapChildViewController(to: abilityTVC)
         
     }
     

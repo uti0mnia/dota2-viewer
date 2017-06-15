@@ -11,7 +11,7 @@ import UIKit
 class AbilityTVC: UIViewController, UITableViewDataSource {
     
     private static let abilityCellIndetifier = "abilityCell"
-    private static let estimatedRowHeight: CGFloat = 200
+    private static let estimatedRowHeight: CGFloat = 600
     
     private var tableView: UITableView!
     
@@ -38,8 +38,11 @@ class AbilityTVC: UIViewController, UITableViewDataSource {
         tableView.register(AbilityCell.self, forCellReuseIdentifier: AbilityTVC.abilityCellIndetifier)
         tableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         tableView.dataSource = self
+        
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = AbilityTVC.estimatedRowHeight
+        
+        view.addSubview(tableView)
     }
     
     private func configure(_ cell: AbilityCell, at indexPath: IndexPath) {

@@ -23,14 +23,6 @@ class AbilityCell: UITableViewCell {
         return iv
     }()
     private(set) var abilityStackView = AbilityCellStackView()
-    override var selectionStyle: UITableViewCellSelectionStyle {
-        get {
-            return .none
-        }
-        set {
-            self.selectionStyle = newValue
-        }
-    }
     
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
@@ -46,34 +38,30 @@ class AbilityCell: UITableViewCell {
     }
     
     private func commonInit() {
-        self.addSubviews([nameLabel, specialsLabel, abilityImageView, abilityStackView])
+        self.isUserInteractionEnabled = false
         
-        nameLabel.snp.makeConstraints() { make in
-            make.top.equalToSuperview()
-            make.left.equalToSuperview()
-            make.right.equalTo(specialsLabel.snp.left)
-        }
+        let stackView = UIStackView(arrangedSubviews: [nameLabel, specialsLabel])
+        stackView.distribution = .fillProportionally
         
-        specialsLabel.snp.makeConstraints() { make in
-            make.top.equalToSuperview()
-            make.right.equalToSuperview()
-        }
-        
-        abilityImageView.snp.makeConstraints() { make in
-            make.left.equalToSuperview()
-            make.right.equalToSuperview()
-            make.bottom.equalTo(abilityStackView)
-            make.height.equalTo(Layout.abilityImageSize.height)
-        }
-        
+//        contentView.addSubviews([stackView, abilityImageView, abilityStackView])
+        contentView.addSubview(abilityStackView)
         abilityStackView.snp.makeConstraints() { make in
-            make.left.equalToSuperview()
-            make.right.equalToSuperview()
-            make.bottom.equalToSuperview()
+            make.left.top.right.bottom.equalTo(contentView)
         }
+        
+//        stackView.snp.makeConstraints() { make in
+//            make.left.top.right.equalTo(contentView)
+//        }
+//        
+//        abilityImageView.snp.makeConstraints() { make in
+//            make.left.right.bottom.equalTo(contentView)
+//            make.top.equalTo(stackView.snp.bottom)
+//            make.bottom.equalTo(abilityStackView.snp.top)
+//            make.height.equalTo(Layout.abilityImageSize.height)
+//        }
+        
+//        abilityStackView.snp.makeConstraints() { make in
+//            make.left.bottom.right.equalTo(contentView)
+//        }
     }
-    
-    
-    
-    
 }

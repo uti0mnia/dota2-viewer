@@ -58,7 +58,6 @@ class AbilityCellStackView: UIStackView {
         sv.axis = .vertical
         sv.distribution = .fillProportionally
         sv.alignment = .fill
-        sv.isLayoutMarginsRelativeArrangement = false
         
         return sv
     }()
@@ -97,7 +96,7 @@ class AbilityCellStackView: UIStackView {
             assert(types.count <= typeKVViews.count, "Type KVViews not configured properly")
             
             // configure each view
-            for index in 0...types.count {
+            for index in 0..<types.count {
                 let view = typeKVViews[index]
                 configure(kvView: view, withModifiableValue: types[index])
                 typeStack.insertArrangedSubview(view, at: index) // add them in order
@@ -137,7 +136,7 @@ class AbilityCellStackView: UIStackView {
             assert(data.count <= dataKVViews.count, "Data KVViews not configured properly")
             
             // configure each view
-            for index in 0...data.count {
+            for index in 0..<data.count {
                 let view = dataKVViews[index]
                 configure(kvView: view, withModifiableValue: data[index])
                 dataStack.insertArrangedSubview(view, at: index)
@@ -163,7 +162,7 @@ class AbilityCellStackView: UIStackView {
             assert(modifiers.count <= modifierKVViews.count, "Modifier KVViews not configured properly")
             
             // configure each view
-            for index in 0...modifiers.count {
+            for index in 0..<modifiers.count {
                 let label = modifierKVViews[index]
                 let modifier = modifiers[index]
                 label.text = modifier.value
@@ -208,7 +207,7 @@ class AbilityCellStackView: UIStackView {
             }
             
             let finalString = NSMutableAttributedString()
-            for i in 0...notes.count {
+            for i in 0..<notes.count {
                 if i != 0 {
                     finalString.append(NSAttributedString.newLine)
                 }
@@ -236,11 +235,13 @@ class AbilityCellStackView: UIStackView {
     private func commonInit() {
         // setup properties
         self.axis = .vertical
-        self.distribution = .fillProportionally
+        self.distribution = .fill
         self.alignment = .fill
-        self.isLayoutMarginsRelativeArrangement = false
         
         self.addArrangedSubviews(views: [typeStack, descriptionLabel, dataStack, cooldownView, manaView, notesLabel])
+        
+        descriptionLabel.widthAnchor.constraint(equalTo: self.widthAnchor).isActive = true
+        notesLabel.widthAnchor.constraint(equalTo: self.widthAnchor).isActive = true
     }
     
     private func configure(kvView view: KeyValueView, withModifiableValue value: ModifiableValue) {
