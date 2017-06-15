@@ -43,9 +43,16 @@ class HeroMiscTVC: UIViewController, UITableViewDataSource {
     
     private func commonInit() {
         tableView = UITableView(frame: self.view.bounds)
+        tableView.tableFooterView = UIView()
+        
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 200
+        
         tableView.register(HeroMiscCell.self, forCellReuseIdentifier: HeroMiscTVC.miscReuseIdentifier)
         tableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         tableView.dataSource = self
+        
+        view.addSubview(tableView)
     }
     
     // MARK: - UITableViewDataSource

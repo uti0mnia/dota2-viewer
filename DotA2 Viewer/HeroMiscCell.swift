@@ -19,6 +19,7 @@ class HeroMiscCell: UITableViewCell {
         return label
     }()
     private(set) var subLabel: UILabel = {
+        // TODO: Make NSParagraphStyle for this
         let label = UILabel()
         label.numberOfLines = 0
         return label
@@ -37,17 +38,17 @@ class HeroMiscCell: UITableViewCell {
     }
     
     private func commonInit() {
+        self.isUserInteractionEnabled = false
+        
+        contentView.addSubviews([mainLabel, subLabel])
+        
         mainLabel.snp.makeConstraints() { make in
-            make.top.equalTo(contentView)
-            make.bottom.equalTo(subLabel.snp.top)
-            make.right.equalTo(contentView)
-            make.left.equalTo(contentView)
+            make.left.top.right.equalTo(contentView).inset(8)
+            make.bottom.equalTo(subLabel.snp.top).offset(-8)
         }
         
         subLabel.snp.makeConstraints() { make in
-            make.left.equalTo(contentView)
-            make.right.equalTo(contentView)
-            make.bottom.equalTo(contentView)
+            make.left.bottom.right.equalTo(contentView).inset(8)
         }
     }
     

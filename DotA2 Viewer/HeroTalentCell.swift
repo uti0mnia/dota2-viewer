@@ -29,6 +29,8 @@ class HeroTalentCell: UITableViewCell {
     }
     
     private func commonInit() {
+        self.isUserInteractionEnabled = false
+        
         leftLabel = createLabel()
         rightLabel = createLabel()
         
