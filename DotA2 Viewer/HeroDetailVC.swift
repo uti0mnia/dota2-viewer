@@ -12,7 +12,9 @@ class HeroDetailVC: UIViewController, HeroStretchHeaderViewDelegate {
     
     public var hero: Hero? {
         didSet {
-            updateView()
+            if view != nil {
+                updateView()
+            }
         }
     }
     
@@ -33,20 +35,6 @@ class HeroDetailVC: UIViewController, HeroStretchHeaderViewDelegate {
         
         heroStretchHeaderView.delegate = self
         
-        // configure ViewControllers
-        addChildViewController(abilityTVC)
-        abilityTVC.didMove(toParentViewController: self)
-        
-        addChildViewController(miscTVC)
-        miscTVC.didMove(toParentViewController: self)
-        
-        addChildViewController(talentTVC)
-        talentTVC.didMove(toParentViewController: self)
-        
-        addChildViewController(basicTVC)
-        basicTVC.didMove(toParentViewController: self)
-        
-        
         // TODO: Remove
         view.backgroundColor = UIColor.black
         contentView.backgroundColor = UIColor.flatRed()
@@ -66,7 +54,7 @@ class HeroDetailVC: UIViewController, HeroStretchHeaderViewDelegate {
         miscTVC.hero = hero
         talentTVC.talents = hero.talents.allObjects as? [Talent]
         
-        swapChildViewController(to: basicTVC)
+        swapChildViewController(to: talentTVC)
         
     }
     
@@ -87,13 +75,19 @@ class HeroDetailVC: UIViewController, HeroStretchHeaderViewDelegate {
     
     // TODO: Animate this stuff.
     private func swapChildViewController(to viewController: UIViewController) {
+        
+        currentChildViewController?.willMove(toParentViewController: nil)
         currentChildViewController?.view.removeFromSuperview()
+        currentChildViewController?.removeFromParentViewController()
+        
         currentChildViewController = viewController
         
+        addChildViewController(viewController)
         contentView.addSubview(viewController.view)
-        
-        viewController.view.frame = contentView.bounds
+        viewController.view.frame = contentView.bounds // TODO: Fix this shit. ?? 
         viewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        
+        viewController.didMove(toParentViewController: self)
         
     }
     

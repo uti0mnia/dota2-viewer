@@ -15,27 +15,38 @@ class HeroTalentTVC: UIViewController, UITableViewDataSource {
     private var tableView: UITableView!
     public var talents: [Talent]? {
         didSet {
-            tableView.reloadData()
+            if view != nil {
+                tableView.reloadData()
+            }
         }
     }
     
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        
-        commonInit()
-    }
+//    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+//        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+//        
+//        commonInit()
+//    }
+//    
+//    required init?(coder aDecoder: NSCoder) {
+//        super.init(coder: aDecoder)
+//        
+//        commonInit()
+//    }
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        print("viewDidLoad!")
         
-        commonInit()
-    }
-    
-    private func commonInit() {
-        tableView = UITableView(frame: self.view.bounds)
+        view.backgroundColor = UIColor.brown
+        
+        tableView = UITableView(frame: view.bounds)
+        tableView.tableFooterView = UIView()
+        tableView.alwaysBounceVertical = false
         tableView.register(HeroTalentCell.self, forCellReuseIdentifier: HeroTalentTVC.talentReuseIdentifier)
         tableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         tableView.dataSource = self
+        
+        view.addSubview(tableView)
     }
     
     // MARK: - UITableViewDataSource

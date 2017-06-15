@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class HeroTalentLevelView: UIView {
     
@@ -67,6 +68,10 @@ class HeroTalentLevelView: UIView {
         addLayer()
         
         self.addSubview(levelLabel)
+        
+        levelLabel.snp.makeConstraints() { make in
+            make.center.equalTo(self.snp.center)
+        }
     }
     
 }

@@ -89,9 +89,6 @@
 		C923CF5B1EF0E44400971660 /* Call of the Wild (Boar)_Beastmaster.png in Resources */ = {isa = PBXBuildFile; fileRef = C923CF591EF0E44400971660 /* Call of the Wild (Boar)_Beastmaster.png */; };
 		C923CF5C1EF0E44400971660 /* Call of the Wild (Hawk)_Beastmaster.png in Resources */ = {isa = PBXBuildFile; fileRef = C923CF5A1EF0E44400971660 /* Call of the Wild (Hawk)_Beastmaster.png */; };
 		C923CF5E1EF0E5AE00971660 /* Aegis of the Immortal.png in Resources */ = {isa = PBXBuildFile; fileRef = C923CF5D1EF0E5AE00971660 /* Aegis of the Immortal.png */; };
-		C92EC1351EA2CA8900FA01E1 /* dota2.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = C92EC1321EA2CA8900FA01E1 /* dota2.sqlite */; };
-		C92EC1361EA2CA8900FA01E1 /* dota2.sqlite-shm in Resources */ = {isa = PBXBuildFile; fileRef = C92EC1331EA2CA8900FA01E1 /* dota2.sqlite-shm */; };
-		C92EC1371EA2CA8900FA01E1 /* dota2.sqlite-wal in Resources */ = {isa = PBXBuildFile; fileRef = C92EC1341EA2CA8900FA01E1 /* dota2.sqlite-wal */; };
 		C93028391DF3629F005EA297 /* HeroDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93028381DF3629F005EA297 /* HeroDetailVC.swift */; };
 		C94A26D21DD5593F00D9B054 /* DASlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94A26D11DD5593F00D9B054 /* DASlider.swift */; };
 		C94B16111E01C090008BF226 /* Acid Spray_Alchemist.png in Resources */ = {isa = PBXBuildFile; fileRef = C94B13F81E01C08E008BF226 /* Acid Spray_Alchemist.png */; };
@@ -956,6 +953,9 @@
 		C9B125711EE116D200984F90 /* AbilityCellStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B125701EE116D200984F90 /* AbilityCellStackView.swift */; };
 		C9B125731EE1182400984F90 /* KeyValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B125721EE1182400984F90 /* KeyValueView.swift */; };
 		C9B125771EE48A5800984F90 /* TALENT_UPGRADE.png in Resources */ = {isa = PBXBuildFile; fileRef = C9B125761EE48A5800984F90 /* TALENT_UPGRADE.png */; };
+		C9D558911EF20CCA00D0E923 /* dota2.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = C9D5588E1EF20CCA00D0E923 /* dota2.sqlite */; };
+		C9D558921EF20CCA00D0E923 /* dota2.sqlite-shm in Resources */ = {isa = PBXBuildFile; fileRef = C9D5588F1EF20CCA00D0E923 /* dota2.sqlite-shm */; };
+		C9D558931EF20CCA00D0E923 /* dota2.sqlite-wal in Resources */ = {isa = PBXBuildFile; fileRef = C9D558901EF20CCA00D0E923 /* dota2.sqlite-wal */; };
 		C9FEBF2F1DB299F2000CD4FF /* DotA2_Viewer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C9FEBF2D1DB299F2000CD4FF /* DotA2_Viewer.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
@@ -1047,9 +1047,7 @@
 		C923CF591EF0E44400971660 /* Call of the Wild (Boar)_Beastmaster.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Call of the Wild (Boar)_Beastmaster.png"; path = "images/Abilities/Call of the Wild (Boar)_Beastmaster.png"; sourceTree = "<group>"; };
 		C923CF5A1EF0E44400971660 /* Call of the Wild (Hawk)_Beastmaster.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Call of the Wild (Hawk)_Beastmaster.png"; path = "images/Abilities/Call of the Wild (Hawk)_Beastmaster.png"; sourceTree = "<group>"; };
 		C923CF5D1EF0E5AE00971660 /* Aegis of the Immortal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Aegis of the Immortal.png"; path = "images/Abilities/Aegis of the Immortal.png"; sourceTree = "<group>"; };
-		C92EC1321EA2CA8900FA01E1 /* dota2.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = dota2.sqlite; sourceTree = "<group>"; };
-		C92EC1331EA2CA8900FA01E1 /* dota2.sqlite-shm */ = {isa = PBXFileReference; lastKnownFileType = file; path = "dota2.sqlite-shm"; sourceTree = "<group>"; };
-		C92EC1341EA2CA8900FA01E1 /* dota2.sqlite-wal */ = {isa = PBXFileReference; lastKnownFileType = file; path = "dota2.sqlite-wal"; sourceTree = "<group>"; };
+		C923CF601EF0EA1700971660 /* DotA2_Assistant-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DotA2_Assistant-Bridging-Header.h"; sourceTree = "<group>"; };
 		C93028381DF3629F005EA297 /* HeroDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroDetailVC.swift; sourceTree = "<group>"; };
 		C94A26D11DD5593F00D9B054 /* DASlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DASlider.swift; path = Views/DASlider.swift; sourceTree = "<group>"; };
 		C94B13F81E01C08E008BF226 /* Acid Spray_Alchemist.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Acid Spray_Alchemist.png"; path = "Abilities/Acid Spray_Alchemist.png"; sourceTree = "<group>"; };
@@ -1918,6 +1916,9 @@
 		C9B125701EE116D200984F90 /* AbilityCellStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbilityCellStackView.swift; sourceTree = "<group>"; };
 		C9B125721EE1182400984F90 /* KeyValueView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyValueView.swift; sourceTree = "<group>"; };
 		C9B125761EE48A5800984F90 /* TALENT_UPGRADE.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = TALENT_UPGRADE.png; path = "images/Ability Specials/TALENT_UPGRADE.png"; sourceTree = "<group>"; };
+		C9D5588E1EF20CCA00D0E923 /* dota2.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = dota2.sqlite; sourceTree = "<group>"; };
+		C9D5588F1EF20CCA00D0E923 /* dota2.sqlite-shm */ = {isa = PBXFileReference; lastKnownFileType = file; path = "dota2.sqlite-shm"; sourceTree = "<group>"; };
+		C9D558901EF20CCA00D0E923 /* dota2.sqlite-wal */ = {isa = PBXFileReference; lastKnownFileType = file; path = "dota2.sqlite-wal"; sourceTree = "<group>"; };
 		C9FEBF2E1DB299F2000CD4FF /* DotA2_Pro.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DotA2_Pro.xcdatamodel; sourceTree = "<group>"; };
 		D901BAFFD7186DCAB66C34BB /* Pods-DotA2 Assistant.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DotA2 Assistant.release.xcconfig"; path = "Pods/Target Support Files/Pods-DotA2 Assistant/Pods-DotA2 Assistant.release.xcconfig"; sourceTree = "<group>"; };
 		DDB9AA602964BD3E72F453D3 /* Pods_DotA2_AssistantTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DotA2_AssistantTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -2038,7 +2039,6 @@
 			isa = PBXGroup;
 			children = (
 				365F75531E042F6400F928B0 /* DADetailVC.swift */,
-				C93028381DF3629F005EA297 /* HeroDetailVC.swift */,
 				C90CE6131DFCCBA400C93539 /* ItemDetailVC.swift */,
 			);
 			name = Details;
@@ -2135,6 +2135,7 @@
 				36FD56451DA6E36C007C5A9C /* Supporting Files */,
 				C9FB56731DBB1110000A0824 /* images */,
 				C90A13561EE66C0C00D143B8 /* AttributedStringParser.swift */,
+				C923CF601EF0EA1700971660 /* DotA2_Assistant-Bridging-Header.h */,
 			);
 			path = "DotA2 Viewer";
 			sourceTree = "<group>";
@@ -2243,9 +2244,9 @@
 		C92EC1381EA2CACC00FA01E1 /* Database */ = {
 			isa = PBXGroup;
 			children = (
-				C92EC1321EA2CA8900FA01E1 /* dota2.sqlite */,
-				C92EC1331EA2CA8900FA01E1 /* dota2.sqlite-shm */,
-				C92EC1341EA2CA8900FA01E1 /* dota2.sqlite-wal */,
+				C9D5588E1EF20CCA00D0E923 /* dota2.sqlite */,
+				C9D5588F1EF20CCA00D0E923 /* dota2.sqlite-shm */,
+				C9D558901EF20CCA00D0E923 /* dota2.sqlite-wal */,
 			);
 			name = Database;
 			sourceTree = "<group>";
@@ -3133,6 +3134,7 @@
 		C9745D5F1EC7B0B0009537E4 /* Hero Details */ = {
 			isa = PBXGroup;
 			children = (
+				C93028381DF3629F005EA297 /* HeroDetailVC.swift */,
 				C9745D5B1EC57558009537E4 /* HeroStretchHeaderView.swift */,
 				C9745D5D1EC577CC009537E4 /* HeroStretchHeaderViewDelegate.swift */,
 				C9B125721EE1182400984F90 /* KeyValueView.swift */,
@@ -3166,8 +3168,8 @@
 			isa = PBXGroup;
 			children = (
 				C90A13611EEA6CCB00D143B8 /* AbilityCell.swift */,
-				C957BBE01EECE9FB008F756B /* AbilityTVC.swift */,
 				C9B125701EE116D200984F90 /* AbilityCellStackView.swift */,
+				C957BBE01EECE9FB008F756B /* AbilityTVC.swift */,
 			);
 			name = "Ability Display";
 			sourceTree = "<group>";
@@ -3349,7 +3351,6 @@
 				C94B18BA1E01C0D2008BF226 /* Elder Titan.png in Resources */,
 				C94B19FF1E01C108008BF226 /* Orchid Malevolence.png in Resources */,
 				C94B18ED1E01C0D2008BF226 /* Skywrath Mage.png in Resources */,
-				C92EC1351EA2CA8900FA01E1 /* dota2.sqlite in Resources */,
 				C94B16D81E01C090008BF226 /* Grow_Tiny.png in Resources */,
 				C94B16821E01C090008BF226 /* Dragon Blood_Dragon Knight.png in Resources */,
 				C94B189F1E01C0D2008BF226 /* Ancient Apparition.png in Resources */,
@@ -3745,8 +3746,6 @@
 				C94B19E41E01C108008BF226 /* Infused Raindrop.png in Resources */,
 				C94B16B11E01C090008BF226 /* Finger of Death_Lion.png in Resources */,
 				C94B172F1E01C090008BF226 /* Mist Coil_Abaddon.png in Resources */,
-				C92EC1361EA2CA8900FA01E1 /* dota2.sqlite-shm in Resources */,
-				C92EC1371EA2CA8900FA01E1 /* dota2.sqlite-wal in Resources */,
 				C94B1A331E01C108008BF226 /* Wraith Band.png in Resources */,
 				C94B16491E01C090008BF226 /* Chakra Magic_Keeper Of The Light.png in Resources */,
 				C94B1A0B1E01C108008BF226 /* Refresher Orb.png in Resources */,
@@ -3822,10 +3821,12 @@
 				C94B16A61E01C090008BF226 /* Eye of the Storm_Razor.png in Resources */,
 				C94B17F31E01C090008BF226 /* Thirst_Bloodseeker.png in Resources */,
 				C94B16B51E01C090008BF226 /* Firefly_Batrider.png in Resources */,
+				C9D558921EF20CCA00D0E923 /* dota2.sqlite-shm in Resources */,
 				C94B16561E01C090008BF226 /* Cold Feet_Ancient Apparition.png in Resources */,
 				C94B175B1E01C090008BF226 /* Poison Nova_Venomancer.png in Resources */,
 				C94B16591E01C090008BF226 /* Conjure Image_Terrorblade.png in Resources */,
 				C94B16411E01C090008BF226 /* Burrow_Nyx Assassin.png in Resources */,
+				C9D558931EF20CCA00D0E923 /* dota2.sqlite-wal in Resources */,
 				C94B170B1E01C090008BF226 /* Last Word_Silencer.png in Resources */,
 				C94B16FA1E01C090008BF226 /* Infernal Blade_Doom.png in Resources */,
 				C94B19D61E01C108008BF226 /* Ghost Scepter.png in Resources */,
@@ -3877,6 +3878,7 @@
 				C94B16CF1E01C090008BF226 /* Glaives of Wisdom_Silencer.png in Resources */,
 				C94B18051E01C090008BF226 /* True Form_Lone Druid.png in Resources */,
 				C94B17731E01C090008BF226 /* Reactive Armor_Timbersaw.png in Resources */,
+				C9D558911EF20CCA00D0E923 /* dota2.sqlite in Resources */,
 				C94B19C61E01C108008BF226 /* Divine Rapier.png in Resources */,
 				C94B18A41E01C0D2008BF226 /* Batrider.png in Resources */,
 				C94B17661E01C090008BF226 /* Press the Attack_Legion Commander.png in Resources */,
@@ -4394,6 +4396,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.uti0mnia.DotA2-Assistant";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "DotA2 Viewer/DotA2_Assistant-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -4411,6 +4414,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.uti0mnia.DotA2-Assistant";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "DotA2 Viewer/DotA2_Assistant-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

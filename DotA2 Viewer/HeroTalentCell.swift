@@ -29,8 +29,10 @@ class HeroTalentCell: UITableViewCell {
     }
     
     private func commonInit() {
-        self.leftLabel = createLabel()
-        self.rightLabel = createLabel()
+        leftLabel = createLabel()
+        rightLabel = createLabel()
+        
+        contentView.addSubviews([leftLabel, levelView, rightLabel])
         
         leftLabel.snp.makeConstraints() { make in
             make.left.equalTo(contentView)
@@ -40,10 +42,10 @@ class HeroTalentCell: UITableViewCell {
         
         levelView.snp.makeConstraints() { make in
             make.left.equalTo(leftLabel.snp.right)
-            make.top.equalTo(contentView)
+            make.top.bottom.equalTo(contentView)
             make.right.equalTo(rightLabel.snp.left)
-            make.bottom.equalTo(contentView)
             make.width.equalTo(HeroTalentCell.viewWidth)
+            make.centerX.equalTo(contentView.snp.centerX)
         }
         
         rightLabel.snp.makeConstraints() { make in
