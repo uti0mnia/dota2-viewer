@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import SnapKit
 
 class HeroBasicCell: UITableViewCell {
+    
     private(set) var kvView: KeyValueView = {
         let view = KeyValueView()
         view.orientation = .horizontal
-        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
@@ -29,11 +30,13 @@ class HeroBasicCell: UITableViewCell {
     }
     
     private func commonInit() {
-        self.contentView.addSubview(kvView)
+        self.isUserInteractionEnabled = false
         
-        kvView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
-        kvView.leftAnchor.constraint(equalTo: contentView.leftAnchor).isActive = true
-        kvView.rightAnchor.constraint(equalTo: contentView.rightAnchor).isActive = true
-        kvView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
+        contentView.addSubview(kvView)
+        
+        kvView.snp.makeConstraints() { make in
+            let edges = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+            make.edges.equalTo(contentView).inset(edges)
+        }
     }
 }
