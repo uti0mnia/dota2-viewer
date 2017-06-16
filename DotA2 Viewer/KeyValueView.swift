@@ -7,21 +7,24 @@
 //
 
 import UIKit
+import SnapKit
 
 class KeyValueView: UIView {
     public enum KeyValueViewOrientation {
         case vertical, horizontal
     }
     private(set) var keyLabel = UILabel()
-    private(set) var valueLabel = UILabel()
+    private(set) var valueLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 0
+        return label
+    }()
     private var stackView: UIStackView = {
         let sv = UIStackView()
         
         sv.axis = .horizontal
         sv.alignment = .fill
-        sv.distribution = .fillProportionally
-        
-        sv.isLayoutMarginsRelativeArrangement = false
+        sv.distribution = .fillEqually
         sv.translatesAutoresizingMaskIntoConstraints = false
         
         return sv
@@ -55,12 +58,9 @@ class KeyValueView: UIView {
     
     private func commonInit() {
         self.addSubview(stackView)
-        
-        stackView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        stackView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
-        stackView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-        stackView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
-        
         stackView.addArrangedSubviews(views: [keyLabel, valueLabel])
+        stackView.snp.makeConstraints() { make in
+            make.left.top.right.bottom.equalTo(self).priority(999)
+        }
     }
 }

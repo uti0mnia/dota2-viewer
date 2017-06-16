@@ -38,8 +38,8 @@ class AbilityCellStackView: UIStackView {
     private var typeStack: UIStackView = {
         let sv = UIStackView()
         
-        sv.axis = .horizontal
-        sv.distribution = .fillEqually
+        sv.axis = .vertical
+        sv.distribution = .fillProportionally
         sv.alignment = .fill
         sv.isLayoutMarginsRelativeArrangement = false
         
@@ -53,6 +53,15 @@ class AbilityCellStackView: UIStackView {
     }()
     //3 (Holds Data, modifiers, cooldown, mana, notes)
     private var dataStack: UIStackView = {
+        let sv = UIStackView()
+        
+        sv.axis = .vertical
+        sv.distribution = .fillProportionally
+        sv.alignment = .fill
+        
+        return sv
+    }()
+    private var modifierStack: UIStackView = {
         let sv = UIStackView()
         
         sv.axis = .vertical
@@ -77,7 +86,11 @@ class AbilityCellStackView: UIStackView {
     // Data to display
     public var types: [ModifiableValue]? {
         didSet {
-            typeKVViews.forEach() { $0.removeFromSuperview() }
+//            typeKVViews.forEach() {
+//                if $0.superview != nil {
+//                    $0.removeFromSuperview()
+//                }
+//            }
             
             guard let types = types else {
                 return
@@ -88,7 +101,7 @@ class AbilityCellStackView: UIStackView {
             if newKVViewCount > 0 {
                 for _ in 0..<newKVViewCount {
                     let view = KeyValueView()
-                    view.orientation = .vertical
+                    view.orientation = .horizontal
                     typeKVViews.append(view)
                 }
             }
@@ -105,7 +118,7 @@ class AbilityCellStackView: UIStackView {
     }
     public var abilityDescription: String? {
         didSet {
-            descriptionLabel.removeFromSuperview()
+//            descriptionLabel.removeFromSuperview()
             
             guard let description = abilityDescription else {
                 return
@@ -117,35 +130,43 @@ class AbilityCellStackView: UIStackView {
     }
     public var data: [ModifiableValue]? {
         didSet {
-            dataKVViews.forEach() { $0.removeFromSuperview() }
+//            dataKVViews.forEach() {
+//                if $0.superview != nil {
+//                    $0.removeFromSuperview()
+//                }
+//            }
             
-            guard let data = data else {
-                return
-            }
-            
-            // configure the data view array to hold enough views
-            let newKVViewCount = data.count - dataKVViews.count
-            if newKVViewCount > 0 {
-                for _ in 0..<newKVViewCount {
-                    let view = KeyValueView()
-                    view.orientation = .horizontal
-                    dataKVViews.append(view)
-                }
-            }
-            
-            assert(data.count <= dataKVViews.count, "Data KVViews not configured properly")
-            
-            // configure each view
-            for index in 0..<data.count {
-                let view = dataKVViews[index]
-                configure(kvView: view, withModifiableValue: data[index])
-                dataStack.insertArrangedSubview(view, at: index)
-            }
+//            guard let data = data else {
+//                return
+//            }
+//            
+//            // configure the data view array to hold enough views
+//            let newKVViewCount = data.count - dataKVViews.count
+//            if newKVViewCount > 0 {
+//                for _ in 0..<newKVViewCount {
+//                    let view = KeyValueView()
+//                    view.orientation = .horizontal
+//                    dataKVViews.append(view)
+//                }
+//            }
+//            
+//            assert(data.count <= dataKVViews.count, "Data KVViews not configured properly")
+//            
+//            // configure each view
+//            for index in 0..<data.count {
+//                let view = dataKVViews[index]
+//                configure(kvView: view, withModifiableValue: data[index])
+//                dataStack.insertArrangedSubview(view, at: index)
+//            }
         }
     }
     public var modifiers: [Modifier]? {
         didSet {
-            modifierKVViews.forEach() { $0.removeFromSuperview() }
+            modifierKVViews.forEach() {
+                if $0.superview != nil {
+                    $0.removeFromSuperview()
+                }
+            }
             
             guard let modifiers = modifiers else {
                 return
@@ -155,7 +176,9 @@ class AbilityCellStackView: UIStackView {
             let newKVViewCount = modifiers.count - modifierKVViews.count
             if newKVViewCount > 0 {
                 for _ in 0..<newKVViewCount {
-                    modifierKVViews.append(UILabel())
+                    let label = UILabel()
+                    label.numberOfLines = 0
+                    modifierKVViews.append(label)
                 }
             }
             
@@ -167,56 +190,56 @@ class AbilityCellStackView: UIStackView {
                 let modifier = modifiers[index]
                 label.text = modifier.value
                 label.textColor = modifier.getUIColour
-                dataStack.insertArrangedSubview(label, at: modifierIndex + index)
+                modifierStack.addArrangedSubview(label)
             }
         }
     }
     public var cooldown: ModifiableValue? {
         didSet {
-            cooldownView.removeFromSuperview()
+//            cooldownView.removeFromSuperview()
             
-            guard let cooldown = cooldown else {
-                return
-            }
-            
-            configure(kvView: cooldownView, withModifiableValue: cooldown)
-            
-            self.insertArrangedSubview(cooldownView, at: cooldownIndex)
-            
+//            guard let cooldown = cooldown else {
+//                return
+//            }
+//            
+//            configure(kvView: cooldownView, withModifiableValue: cooldown)
+//            
+//            self.insertArrangedSubview(cooldownView, at: cooldownIndex)
+//            
         }
     }
     public var mana: ModifiableValue? {
         didSet {
-            manaView.removeFromSuperview()
+//            manaView.removeFromSuperview()
             
-            guard let mana = mana else {
-                return
-            }
-            
-            configure(kvView: manaView, withModifiableValue: mana)
-            
-            self.insertArrangedSubview(manaView, at: manaIndex)
+//            guard let mana = mana else {
+//                return
+//            }
+//            
+//            configure(kvView: manaView, withModifiableValue: mana)
+//            
+//            self.insertArrangedSubview(manaView, at: manaIndex)
         }
     }
     public var notes: [Note]? {
         didSet {
-            notesLabel.removeFromSuperview()
+//            notesLabel.removeFromSuperview()
             
-            guard let notes = notes else {
-                return
-            }
-            
-            let finalString = NSMutableAttributedString()
-            for i in 0..<notes.count {
-                if i != 0 {
-                    finalString.append(NSAttributedString.newLine)
-                }
-                finalString.append(notes[i].prettify())
-            }
-            
-            notesLabel.attributedText = finalString
-            
-            self.addArrangedSubview(notesLabel) // add to end
+//            guard let notes = notes else {
+//                return
+//            }
+//            
+//            let finalString = NSMutableAttributedString()
+//            for i in 0..<notes.count {
+//                if i != 0 {
+//                    finalString.append(NSAttributedString.newLine)
+//                }
+//                finalString.append(notes[i].prettify())
+//            }
+//            
+//            notesLabel.attributedText = finalString
+//            
+//            self.addArrangedSubview(notesLabel) // add to end
         }
     }
     
@@ -238,10 +261,7 @@ class AbilityCellStackView: UIStackView {
         self.distribution = .fill
         self.alignment = .fill
         
-        self.addArrangedSubviews(views: [typeStack, descriptionLabel, dataStack, cooldownView, manaView, notesLabel])
-        
-        descriptionLabel.widthAnchor.constraint(equalTo: self.widthAnchor).isActive = true
-        notesLabel.widthAnchor.constraint(equalTo: self.widthAnchor).isActive = true
+        self.addArrangedSubviews(views: [typeStack, descriptionLabel, dataStack, modifierStack, cooldownView, manaView, notesLabel])
     }
     
     private func configure(kvView view: KeyValueView, withModifiableValue value: ModifiableValue) {

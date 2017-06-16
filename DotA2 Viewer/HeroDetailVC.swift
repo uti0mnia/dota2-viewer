@@ -26,6 +26,7 @@ class HeroDetailVC: UIViewController, HeroStretchHeaderViewDelegate {
     
     private var contentView = UIView()
     private var currentChildViewController: UIViewController?
+    private var currentTab: HeroDetailTab = .basic
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,7 +55,7 @@ class HeroDetailVC: UIViewController, HeroStretchHeaderViewDelegate {
         miscTVC.hero = hero
         talentTVC.talents = hero.talents.allObjects as? [Talent]
         
-        swapChildViewController(to: abilityTVC)
+        swapChildViewController(to: basicTVC)
         
     }
     
@@ -94,16 +95,20 @@ class HeroDetailVC: UIViewController, HeroStretchHeaderViewDelegate {
     // MARK: - HeroStretchHeaderViewDelegate
     
     func heroStretchHeaderView(_ headerView: HeroStretchHeaderView, didTapTab tab: HeroDetailTab) {
-        print(tab)
+        guard tab != currentTab else {
+            return
+        }
+        currentTab = tab
+        
         switch tab {
         case .ability:
-            break
-        case .detail:
-            break
+            swapChildViewController(to: abilityTVC)
+        case .basic:
+            swapChildViewController(to: basicTVC)
         case .misc:
-            break
+            swapChildViewController(to: miscTVC)
         case .talent:
-            break
+            swapChildViewController(to: talentTVC)
         }
     }
 }

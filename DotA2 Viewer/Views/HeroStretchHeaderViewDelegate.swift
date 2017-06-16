@@ -9,7 +9,7 @@
 import Foundation
 
 public enum HeroDetailTab: Int {
-    case detail = 0, ability, talent, misc
+    case basic = 0, ability, talent, misc
 }
 
 protocol HeroStretchHeaderViewDelegate: class {
