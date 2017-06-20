@@ -63,4 +63,9 @@ class KeyValueView: UIView {
             make.left.top.right.bottom.equalTo(self).priority(999)
         }
     }
+    
+    public func clear() {
+        keyLabel.text = nil
+        valueLabel.text = nil
+    }
 }

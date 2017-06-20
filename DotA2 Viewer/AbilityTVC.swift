@@ -69,7 +69,7 @@ class AbilityTVC: UIViewController, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: AbilityTVC.abilityCellIndetifier, for: indexPath) as! AbilityCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: AbilityTVC.abilityCellIndetifier) as! AbilityCell
         configure(cell, at: indexPath)
         return cell
     }
