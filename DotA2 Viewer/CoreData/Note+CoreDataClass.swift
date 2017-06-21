@@ -20,7 +20,7 @@ public class Note: NSManagedObject {
         if let subnotes = subnotes?.array as? [Note] {
             for subnote in subnotes {
                 let subnoteString = subnote.prettify(depth: depth + 1)
-                finalString.append(NSAttributedString.newLine)
+                finalString.append(NSAttributedString.uti_newLine)
                 finalString.append(subnoteString)
             }
         }

@@ -56,10 +56,10 @@ class HeroStretchHeaderView: UIView {
     }
     
     private func initViews() {
-        stackView.addArrangedSubviews(views: [detailsButton, abilitiesButton, talentsButton, miscButton])
+        stackView.uti_addArrangedSubviews(views: [detailsButton, abilitiesButton, talentsButton, miscButton])
         stackView.distribution = .fillEqually
         
-        addSubviews([imageView, stackView])
+        uti_addSubviews([imageView, stackView])
         
         detailsButton.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
         detailsButton.setTitle("Details", for: .normal)

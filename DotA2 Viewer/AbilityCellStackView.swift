@@ -254,7 +254,7 @@ class AbilityCellStackView: UIStackView {
         self.distribution = .fillProportionally
         self.alignment = .fill
         
-        self.addArrangedSubviews(views: [typeStack, descriptionLabel, dataStack, modifierStack, cooldownView, manaView, notesLabel])
+        self.uti_addArrangedSubviews(views: [typeStack, descriptionLabel, dataStack, modifierStack, cooldownView, manaView, notesLabel])
     }
     
     private func configure(kvView view: KeyValueView, withModifiableValue value: ModifiableValue) {

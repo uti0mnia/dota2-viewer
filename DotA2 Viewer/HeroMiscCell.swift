@@ -40,7 +40,7 @@ class HeroMiscCell: UITableViewCell {
     private func commonInit() {
         self.isUserInteractionEnabled = false
         
-        contentView.addSubviews([mainLabel, subLabel])
+        contentView.uti_addSubviews([mainLabel, subLabel])
         
         mainLabel.snp.makeConstraints() { make in
             make.left.top.right.equalTo(contentView).inset(8)

@@ -34,7 +34,7 @@ class HeroTalentCell: UITableViewCell {
         leftLabel = createLabel()
         rightLabel = createLabel()
         
-        contentView.addSubviews([leftLabel, levelView, rightLabel])
+        contentView.uti_addSubviews([leftLabel, levelView, rightLabel])
         
         leftLabel.snp.makeConstraints() { make in
             make.left.equalTo(contentView)

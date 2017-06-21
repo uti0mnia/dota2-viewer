@@ -95,9 +95,9 @@ class HeroBasicTVC: UIViewController, UITableViewDataSource, HeroAttributeViewDe
         tableView.endUpdates()
         
         attributeView.setPrimaryAttribute(primaryAttribute)
-        attributeView.agilityLabel.text = hero?.agility.string(1)
-        attributeView.intelligenceLabel.text = hero?.intelligence.string(1)
-        attributeView.strengthLabel.text = hero?.strength.string(1)
+        attributeView.agilityLabel.text = hero?.agility.uti_string(1)
+        attributeView.intelligenceLabel.text = hero?.intelligence.uti_string(1)
+        attributeView.strengthLabel.text = hero?.strength.uti_string(1)
     }
     
     private func configure(_ cell: HeroBasicCell, at indexPath: IndexPath) {

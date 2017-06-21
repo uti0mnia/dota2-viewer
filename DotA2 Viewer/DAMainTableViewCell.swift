@@ -46,8 +46,8 @@ class DAMainTableViewCell: UITableViewCell {
     // MARK - Methods
     fileprivate func setup() {
         // setup the stack views
-        rightSV.addArrangedSubviews(views: [mainLabel, detailLabel])
-        fullSV.addArrangedSubviews(views: [circleImageView, rightSV])
+        rightSV.uti_addArrangedSubviews(views: [mainLabel, detailLabel])
+        fullSV.uti_addArrangedSubviews(views: [circleImageView, rightSV])
         self.contentView.addSubview(fullSV)
         
         // set up constraints

@@ -86,8 +86,8 @@ class HeroAttributeView: UIView {
     }
     private func commonInit() {
         initView()
-        topStackView.addArrangedSubviews(views: [strengthIV, strengthLabel, agilityIV, agilityLabel, intelligenceIV, intelligenceLabel])
-        self.addSubviews([topStackView, slider])
+        topStackView.uti_addArrangedSubviews(views: [strengthIV, strengthLabel, agilityIV, agilityLabel, intelligenceIV, intelligenceLabel])
+        self.uti_addSubviews([topStackView, slider])
         addConstraints()
     }
     

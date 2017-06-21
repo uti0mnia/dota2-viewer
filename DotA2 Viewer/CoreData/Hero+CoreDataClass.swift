@@ -74,25 +74,25 @@ public class Hero: Object {
             [
                 "Stats":
                     [
-                        "Armour": armour.string(2),
-                        "Attack/s": attackPerSecond.string(2),
-                        "HP": hp.string(0),
-                        "HP Regen": hpRegen.string(2),
-                        "Mana": mana.string(0),
-                        "Mana Regen": manaRegen.string(2),
-                        "Damage": damage.min.string(0) + "-" + damage.max.string(0),
-                        "Spell Damage": spellDamage.string(2) + "%"
+                        "Armour": armour.uti_string(2),
+                        "Attack/s": attackPerSecond.uti_string(2),
+                        "HP": hp.uti_string(0),
+                        "HP Regen": hpRegen.uti_string(2),
+                        "Mana": mana.uti_string(0),
+                        "Mana Regen": manaRegen.uti_string(2),
+                        "Damage": damage.min.uti_string(0) + "-" + damage.max.uti_string(0),
+                        "Spell Damage": spellDamage.uti_string(2) + "%"
                     ],
                 "Misc":
                     [
                         "Attack Animation": attackAnimation,
-                        "Attack Range": attackRange.string(0),
-                        "Base Attack Time": baseAttackTime.string(1),
-                        "Collision Size": collisionSize.string(0),
-                        "Magic Resistance": magicResistance.string(0) + "%",
-                        "Movement Speed": movementSpeed.string(0),
-                        "Projectile Speed": projectileSpeed == 0 ? "Instant" : projectileSpeed.string(0),
-                        "Turn Rate": turnRate.string(0),
+                        "Attack Range": attackRange.uti_string(0),
+                        "Base Attack Time": baseAttackTime.uti_string(1),
+                        "Collision Size": collisionSize.uti_string(0),
+                        "Magic Resistance": magicResistance.uti_string(0) + "%",
+                        "Movement Speed": movementSpeed.uti_string(0),
+                        "Projectile Speed": projectileSpeed == 0 ? "Instant" : projectileSpeed.uti_string(0),
+                        "Turn Rate": turnRate.uti_string(0),
                         "Vision Range": visionRange
                     ]
             ]
@@ -108,7 +108,7 @@ public class Hero: Object {
     private func valueFor(attribute: Attribute) -> Double {
         let base = attribute.base
         let increment = attribute.increment
-        return base + increment * (level - 1).doubleValue
+        return base + increment * (level - 1).uti_doubleValue
     }
     
 }

@@ -58,7 +58,7 @@ class KeyValueView: UIView {
     
     private func commonInit() {
         self.addSubview(stackView)
-        stackView.addArrangedSubviews(views: [keyLabel, valueLabel])
+        stackView.uti_addArrangedSubviews(views: [keyLabel, valueLabel])
         stackView.snp.makeConstraints() { make in
             make.left.top.right.bottom.equalTo(self).priority(999)
         }
