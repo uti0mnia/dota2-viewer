@@ -10,9 +10,10 @@ import UIKit
 import SnapKit
 
 class KeyValueView: UIView {
-    public enum KeyValueViewOrientation {
+    public enum Orientation {
         case vertical, horizontal
     }
+    
     private(set) var keyLabel = UILabel()
     private(set) var valueLabel: UILabel = {
         let label = UILabel()
@@ -29,7 +30,7 @@ class KeyValueView: UIView {
         
         return sv
     }()
-    public var orientation: KeyValueViewOrientation = .vertical {
+    public var orientation: Orientation = .vertical {
         didSet {
             switch orientation {
             case .horizontal:
@@ -42,6 +43,9 @@ class KeyValueView: UIView {
                 stackView.axis = .vertical
             }
         }
+    }
+    public var isEmpty: Bool {
+        return keyLabel.text == nil && valueLabel.text == nil
     }
     
     override init(frame: CGRect) {
@@ -68,4 +72,5 @@ class KeyValueView: UIView {
         keyLabel.text = nil
         valueLabel.text = nil
     }
+    
 }

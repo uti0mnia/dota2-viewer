@@ -8,10 +8,10 @@
 
 import UIKit
 
-class AbilityTVC: UIViewController, UITableViewDataSource {
+class AbilityTVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     private static let abilityCellIndetifier = "abilityCell"
-    private static let estimatedRowHeight: CGFloat = 600
+    private static let estimatedRowHeight: CGFloat = 300
     
     private var tableView: UITableView!
     
@@ -38,28 +38,35 @@ class AbilityTVC: UIViewController, UITableViewDataSource {
         tableView.register(AbilityCell.self, forCellReuseIdentifier: AbilityTVC.abilityCellIndetifier)
         tableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         tableView.dataSource = self
+        tableView.delegate = self
         
-        tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = AbilityTVC.estimatedRowHeight
+//        tableView.rowHeight = UITableViewAutomaticDimension
+//        tableView.estimatedRowHeight = AbilityTVC.estimatedRowHeight
         
         view.addSubview(tableView)
     }
     
     private func configure(_ cell: AbilityCell, at indexPath: IndexPath) {
         if let ability = abilities?[indexPath.row] {
-            cell.nameLabel.text = ability.name
-            cell.specialsLabel.attributedText = ability.specialIcons
-            cell.abilityImageView.image = UIImage(named: ability.imageName)
+            cell.name = ability.name
+            cell.specials = ability.specialIcons
+            cell.abilityImage = UIImage(named: ability.imageName)
+            cell.types = ability.types?.array as? [ModifiableValue]
+            cell.abilityDescription = ability.descrip
+            cell.data = ability.data?.array as? [ModifiableValue]
+            cell.modifiers = ability.modifiers?.allObjects as? [Modifier]
+            cell.cooldown = ability.cooldown
+            cell.mana = ability.mana
+            cell.notes = ability.notes?.array as? [Note]
             
-            cell.abilityStackView.types = ability.types?.array as? [ModifiableValue]
-            cell.abilityStackView.abilityDescription = ability.descrip
-            cell.abilityStackView.data = ability.data?.array as? [ModifiableValue]
-            cell.abilityStackView.modifiers = ability.modifiers?.allObjects as? [Modifier]
-            cell.abilityStackView.cooldown = ability.cooldown
-            cell.abilityStackView.mana = ability.mana
-            cell.abilityStackView.notes = ability.notes?.array as? [Note]
+            cell.setNeedsLayout()
         }
         
+    }
+    
+    // MARK: - UITableViewDelegate
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 200
     }
     
     // MARK: - UITableViewDataSource
