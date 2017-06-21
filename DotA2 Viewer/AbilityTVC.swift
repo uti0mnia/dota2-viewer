@@ -61,7 +61,7 @@ class AbilityTVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             
             cell.setNeedsLayout()
         }
-        
+        // TODO: Try adding view with dynamic layout then making it autolayout with the cell.
     }
     
     // MARK: - UITableViewDelegate
