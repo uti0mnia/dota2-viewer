@@ -35,7 +35,6 @@ class HeroTalentTVC: UIViewController, UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("viewDidLoad!")
         
         view.backgroundColor = UIColor.brown
         

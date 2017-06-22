@@ -10,38 +10,22 @@ import UIKit
 import SnapKit
 
 class KeyValueView: UIView {
-    public enum Orientation {
-        case vertical, horizontal
-    }
     
     private(set) var keyLabel = UILabel()
-    private(set) var valueLabel: UILabel = {
-        let label = UILabel()
-        label.numberOfLines = 0
-        return label
-    }()
+    private(set) var valueLabel = UILabel()
     private var stackView: UIStackView = {
         let sv = UIStackView()
         
         sv.axis = .horizontal
         sv.alignment = .fill
-        sv.distribution = .fillEqually
+        sv.distribution = .fill
         sv.translatesAutoresizingMaskIntoConstraints = false
         
         return sv
     }()
-    public var orientation: Orientation = .vertical {
+    public var isVertical = false {
         didSet {
-            switch orientation {
-            case .horizontal:
-                keyLabel.textAlignment = .left
-                valueLabel.textAlignment = .right
-                stackView.axis = .horizontal
-            case .vertical:
-                keyLabel.textAlignment = .center
-                valueLabel.textAlignment = .center
-                stackView.axis = .vertical
-            }
+            stackView.axis = isVertical ? .vertical : .horizontal
         }
     }
     public var isEmpty: Bool {

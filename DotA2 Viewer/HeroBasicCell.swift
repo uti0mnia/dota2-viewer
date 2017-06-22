@@ -11,11 +11,7 @@ import SnapKit
 
 class HeroBasicCell: UITableViewCell {
     
-    private(set) var kvView: KeyValueView = {
-        let view = KeyValueView()
-        view.orientation = .horizontal
-        return view
-    }()
+    private(set) var kvView = KeyValueView()
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -32,6 +28,7 @@ class HeroBasicCell: UITableViewCell {
     private func commonInit() {
         self.isUserInteractionEnabled = false
         
+        kvView.isVertical = false
         contentView.addSubview(kvView)
         
         kvView.snp.makeConstraints() { make in

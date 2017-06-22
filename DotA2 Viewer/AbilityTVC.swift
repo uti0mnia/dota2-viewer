@@ -8,10 +8,10 @@
 
 import UIKit
 
-class AbilityTVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class AbilityTVC: UIViewController, UITableViewDataSource {
     
     private static let abilityCellIndetifier = "abilityCell"
-    private static let estimatedRowHeight: CGFloat = 300
+    private static let estimatedRowHeight: CGFloat = 500
     
     private var tableView: UITableView!
     
@@ -38,10 +38,9 @@ class AbilityTVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         tableView.register(AbilityCell.self, forCellReuseIdentifier: AbilityTVC.abilityCellIndetifier)
         tableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         tableView.dataSource = self
-        tableView.delegate = self
         
-//        tableView.rowHeight = UITableViewAutomaticDimension
-//        tableView.estimatedRowHeight = AbilityTVC.estimatedRowHeight
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = AbilityTVC.estimatedRowHeight
         
         view.addSubview(tableView)
     }
@@ -51,8 +50,8 @@ class AbilityTVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             cell.name = ability.name
             cell.specials = ability.specialIcons
             cell.abilityImage = UIImage(named: ability.imageName)
-            cell.types = ability.types?.array as? [ModifiableValue]
             cell.abilityDescription = ability.descrip
+            cell.types = ability.types?.array as? [ModifiableValue]
             cell.data = ability.data?.array as? [ModifiableValue]
             cell.modifiers = ability.modifiers?.allObjects as? [Modifier]
             cell.cooldown = ability.cooldown
@@ -61,12 +60,6 @@ class AbilityTVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             
             cell.setNeedsLayout()
         }
-        // TODO: Try adding view with dynamic layout then making it autolayout with the cell.
-    }
-    
-    // MARK: - UITableViewDelegate
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
     }
     
     // MARK: - UITableViewDataSource
@@ -78,6 +71,7 @@ class AbilityTVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: AbilityTVC.abilityCellIndetifier) as! AbilityCell
         configure(cell, at: indexPath)
+        
         return cell
     }
 

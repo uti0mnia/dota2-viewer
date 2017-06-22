@@ -14,96 +14,135 @@ class AbilityCell: UITableViewCell {
     private static let padding: CGFloat = 8
     
     // MARK: Views
+    
     private var nameLabel = UILabel()
     private var specialsLabel = UILabel()
     private var abilityImageView = UIImageView()
     private var descriptionLabel = UILabel()
-    private var typeKVViews = [KeyValueView]()
-    private var dataKVViews = [KeyValueView]()
+    
+    private var typeStackView: TypeKVStackView = {
+        let sv = TypeKVStackView()
+        sv.axis = .vertical
+        sv.distribution = .equalCentering
+        sv.spacing = AbilityCell.padding
+        return sv
+    }()
+    private var dataStackView: DataKVStackView = {
+        let sv = DataKVStackView()
+        sv.axis = .vertical
+        sv.distribution = .fillEqually
+        sv.spacing = AbilityCell.padding
+        return sv
+    }()
+    
+    private var modifierStackView: UIStackView = {
+        let sv = UIStackView()
+        sv.axis = .vertical
+        sv.spacing = AbilityCell.padding
+        sv.distribution = .fillProportionally
+        return sv
+    }()
     private var modifierLabels = [UILabel]()
+    
+    private var bottomStackView: UIStackView = {
+        let sv = UIStackView()
+        sv.axis = .vertical
+        sv.distribution = .fillProportionally
+        sv.spacing = 8
+        return sv
+    }()
     private var cooldownView = KeyValueView()
     private var manaView = KeyValueView()
     private var notesLabel = UILabel()
     
-    // MARK: - Variables.
+    // MARK: - Variables
+    
     public var name: String? {
         didSet {
             nameLabel.text = name
-            
-            setNeedsLayout()
         }
     }
     public var specials: NSAttributedString? {
         didSet {
             specialsLabel.attributedText = specials
-            
-            setNeedsLayout()
         }
     }
     public var abilityImage: UIImage? {
         didSet {
             abilityImageView.image = abilityImage
-            
-            setNeedsLayout()
         }
     }
     public var types: [ModifiableValue]? {
         didSet {
-           configure(kvViews: &typeKVViews, values: types, orientation: .vertical)
-            
-            setNeedsLayout()
+           typeStackView.values = types
         }
     }
     public var abilityDescription: String? {
         didSet {
             descriptionLabel.text = abilityDescription
-            
-            setNeedsLayout()
         }
     }
     public var data: [ModifiableValue]? {
         didSet {
-            configure(kvViews: &dataKVViews, values: data, orientation: .horizontal)
-            
-            setNeedsLayout()
+            dataStackView.values = data
         }
     }
     public var modifiers: [Modifier]? {
         didSet {
-            configure(labels: &modifierLabels, modifiers: modifiers)
+            modifierLabels.forEach({ $0.removeFromSuperview() })
             
-            setNeedsLayout()
+            guard let modifiers = modifiers else {
+                return
+            }
+            
+            let newLabelsCount = modifiers.count - modifierLabels.count
+            if newLabelsCount > 0 {
+                for _ in 0..<newLabelsCount {
+                    let label = UILabel()
+                    label.numberOfLines = 0
+                    modifierLabels.append(label)
+                }
+            }
+            
+            assert(modifiers.count <= modifierLabels.count, "Modifiers not configured properly")
+            
+            for index in 0..<modifiers.count {
+                let label = modifierLabels[index]
+                let modifier = modifiers[index]
+                label.text = modifier.value
+                label.textColor = modifier.getUIColour
+            }
         }
     }
     public var cooldown: ModifiableValue? {
         didSet {
-            cooldownView.clear()
+            cooldownView.removeFromSuperview()
             
             guard let cooldown = cooldown else {
                 return
             }
             
-            write(modifiableValue: cooldown, to: cooldownView)
-            
-            setNeedsLayout()
+            cooldown.write(to: cooldownView)
+            bottomStackView.insertArrangedSubview(cooldownView, at: 0)
         }
     }
     public var mana: ModifiableValue? {
         didSet {
-            manaView.clear()
+            manaView.removeFromSuperview()
             
             guard let mana = mana else {
                 return
             }
             
-            write(modifiableValue: mana, to: manaView)
-            
-            setNeedsLayout()
+            mana.write(to: manaView)
+            let index = cooldownView.superview != nil ? 1 : 0
+            bottomStackView.insertArrangedSubview(manaView, at: index)
         }
     }
     public var notes: [Note]? {
         didSet {
             notesLabel.attributedText = nil
+            notesLabel.removeFromSuperview()
             
             guard let notes = notes else {
                 return
@@ -118,13 +157,12 @@ class AbilityCell: UITableViewCell {
             }
 
             notesLabel.attributedText = finalString
-
-            setNeedsLayout()
+            bottomStackView.addArrangedSubview(notesLabel)
         }
     }
-    private(set) var preferredHeight: CGFloat = 44
     
-    // MARK: - Initializers.
+    // MARK: - Initializers
+    
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -142,143 +180,73 @@ class AbilityCell: UITableViewCell {
         
         // TODO: Add some of these fonts as defaults for label subclasses.
         nameLabel.font = Fonts.title
-        abilityImageView.contentMode = .scaleAspectFit
+        abilityImageView.contentMode = .scaleAspectFill
+        abilityImageView.clipsToBounds = true
         descriptionLabel.numberOfLines = 0
-        cooldownView.orientation = .horizontal
-        manaView.orientation = .horizontal
+        cooldownView.isVertical = false
+        manaView.isVertical = false
         notesLabel.numberOfLines = 0
         
-
-        addSubview(nameLabel)
-        addSubview(specialsLabel)
-        addSubview(abilityImageView)
-//        contentView.addSubview(nameLabel)
-//        contentView.addSubview(specialsLabel)
-//        contentView.addSubview(abilityImageView)
-//        contentView.addSubview(descriptionLabel)
-//        contentView.uti_addSubviews(typeKVViews)
-//        contentView.uti_addSubviews(dataKVViews)
-//        contentView.uti_addSubviews(modifierLabels)
-//        contentView.addSubview(cooldownView)
-//        contentView.addSubview(manaView)
-//        contentView.addSubview(notesLabel)
+        contentView.addSubview(nameLabel)
+        contentView.addSubview(specialsLabel)
+        contentView.addSubview(abilityImageView)
+        contentView.addSubview(typeStackView)
+        contentView.addSubview(descriptionLabel)
+        contentView.addSubview(dataStackView)
+        contentView.addSubview(modifierStackView)
+        contentView.addSubview(bottomStackView)
+        
+        addConstraints()
     }
     
-    // MARK: - Custom functions.
-    private func configure(kvViews: inout [KeyValueView], values: [ModifiableValue]?, orientation: KeyValueView.Orientation) {
-        kvViews.forEach({ $0.clear() })
-        
-        guard let values = values else {
-            return
-        }
-        
-        let newKVViewCount = values.count - kvViews.count
-        if newKVViewCount > 0 {
-            for _ in 0..<newKVViewCount {
-                let view = KeyValueView()
-                view.orientation = orientation
-                kvViews.append(view)
-            }
-        }
-        
-        assert(values.count <= kvViews.count, "KVViews not configured properly")
-        
-        for index in 0..<values.count {
-            write(modifiableValue: values[index], to: kvViews[index])
-        }
-    }
+    // MARK: - Layout
     
-    private func configure(labels: inout [UILabel], modifiers: [Modifier]?) {
-        labels.forEach({
-            $0.text = nil
-            $0.attributedText = nil
-        })
+    private func addConstraints() {
+        let padding = AbilityCell.padding
         
-        guard let modifiers = modifiers else {
-            return
+        nameLabel.snp.makeConstraints() { make in
+            make.left.top.equalTo(contentView).inset(padding)
+            make.right.equalTo(specialsLabel.snp.left).offset(-padding)
+            make.bottom.equalTo(specialsLabel.snp.bottom)
         }
         
-        let newLabelsCount = modifiers.count - labels.count
-        if newLabelsCount > 0 {
-            for _ in 0..<newLabelsCount {
-                let label = UILabel()
-                label.numberOfLines = 0
-                labels.append(label)
-            }
+        specialsLabel.snp.makeConstraints() { make in
+            make.top.right.equalTo(contentView).inset(padding)
         }
         
-        assert(modifiers.count <= labels.count, "Labels not configured properly")
-        
-        for index in 0..<modifiers.count {
-            let label = labels[index]
-            let modifier = modifiers[index]
-            label.text = modifier.value
-            label.textColor = modifier.getUIColour
+        typeStackView.snp.makeConstraints() { make in
+            make.top.equalTo(nameLabel.snp.bottom).offset(padding)
+            make.right.equalTo(contentView).inset(padding)
         }
-    }
-    
-    private func write(modifiableValue: ModifiableValue, to kvView: KeyValueView) {
-        kvView.keyLabel.attributedText = NSAttributedString(string: modifiableValue.name,
-                                                            attributes: Fonts.boldLabelAttribute)
-        kvView.valueLabel.attributedText = modifiableValue.getValuesAttributedString()
-    }
-    
-    // MARK: - Layout.
-    override func layoutSubviews() {
-        super.layoutSubviews()
         
-        var latestY: CGFloat = AbilityCell.padding
-        let fullWidth = self.bounds.width - (2 * AbilityCell.padding)
+        abilityImageView.snp.makeConstraints() { make in
+            make.top.equalTo(nameLabel.snp.bottom).offset(padding)
+            make.left.equalTo(contentView).inset(padding)
+            make.right.equalTo(typeStackView.snp.left).offset(-padding)
+            make.bottom.equalTo(typeStackView.snp.bottom)
+        }
+        abilityImageView.setContentHuggingPriority(251, for: .horizontal)
         
-        // Configure top line.
-        specialsLabel.preferredMaxLayoutWidth = fullWidth / 2
-        specialsLabel.sizeToFit()
-        nameLabel.preferredMaxLayoutWidth = fullWidth - specialsLabel.bounds.width
-        nameLabel.sizeToFit()
-        let specialsFrame = specialsLabel.bounds
-        let topLabelHeight = max(nameLabel.bounds.height, specialsFrame.height)
-        specialsLabel.frame =  CGRect(x: self.bounds.width - specialsFrame.width - AbilityCell.padding,
-                                     y: latestY,
-                                     width: specialsFrame.width,
-                                     height: topLabelHeight)
-        nameLabel.frame = CGRect(x: AbilityCell.padding,
-                                 y: latestY,
-                                 width: self.bounds.width - (2 * AbilityCell.padding) - specialsFrame.width,
-                                 height: topLabelHeight)
-        latestY += (topLabelHeight + AbilityCell.padding)
+        descriptionLabel.snp.makeConstraints() { make in
+            make.top.equalTo(abilityImageView.snp.bottom).offset(padding)
+            make.left.right.equalTo(contentView).inset(padding)
+        }
         
-        // Configure image.
-        abilityImageView.sizeToFit()
-        abilityImageView.frame = CGRect(x: AbilityCell.padding,
-                                        y: latestY,
-                                        width: self.bounds.width - (2 * AbilityCell.padding),
-                                        height: abilityImageView.bounds.height)
-        latestY += (abilityImageView.bounds.height + AbilityCell.padding)
+        dataStackView.snp.makeConstraints() { make in
+            make.top.equalTo(descriptionLabel.snp.bottom).offset(padding)
+            make.left.right.equalTo(contentView).inset(padding)
+        }
         
-        // Types
-//        for typeView in typeKVViews {
-//            if typeView.isEmpty {
-//                break
-//            }
-//            
-//            typeView.sizeToFit()
-//            typeView.frame = CGRect(x: AbilityCell.padding, y: latestY, width: <#T##CGFloat#>, height: <#T##CGFloat#>)
-//        }
+        modifierStackView.snp.makeConstraints() { make in
+            make.top.equalTo(dataStackView.snp.bottom).offset(padding)
+            make.left.right.equalTo(contentView).inset(padding)
+        }
         
-        preferredHeight = latestY
+        bottomStackView.snp.makeConstraints() { make in
+            make.top.equalTo(modifierStackView.snp.bottom).offset(padding)
+            make.left.right.bottom.equalTo(contentView).inset(padding)
+        }
         
-    }
-    
-    // This function size to fits all the labels. This is used for the height since the width is configured elsewhere
-    private func sizeToFitViews() {
-        nameLabel.sizeToFit()
-        specialsLabel.sizeToFit()
-        descriptionLabel.sizeToFit()
-        typeKVViews.forEach({ $0.sizeToFit() })
-        dataKVViews.forEach({ $0.sizeToFit() })
-        modifierLabels.forEach({ $0.sizeToFit() })
-        cooldownView.sizeToFit()
-        manaView.sizeToFit()
-        notesLabel.sizeToFit()
+        
     }
 }

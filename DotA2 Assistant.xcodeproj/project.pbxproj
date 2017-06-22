@@ -902,6 +902,7 @@
 		C98526701EFA27F100398D10 /* String+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = C985266F1EFA27F100398D10 /* String+Convenience.swift */; };
 		C98526721EFA299200398D10 /* UIStackView+AddArrangedSubviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98526711EFA299200398D10 /* UIStackView+AddArrangedSubviews.swift */; };
 		C98526741EFA2A0F00398D10 /* Int+NumberHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98526731EFA2A0F00398D10 /* Int+NumberHandling.swift */; };
+		C98526961EFB7EBC00398D10 /* AbilityKVStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98526951EFB7EBC00398D10 /* AbilityKVStackView.swift */; };
 		C999EA081DE7D1C10036AF47 /* OptimusPrinceps.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C999EA061DE7D1C10036AF47 /* OptimusPrinceps.ttf */; };
 		C999EA091DE7D1C10036AF47 /* OptimusPrincepsSemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C999EA071DE7D1C10036AF47 /* OptimusPrincepsSemiBold.ttf */; };
 		C999EA0F1DE7DF680036AF47 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C999EA0E1DE7DF680036AF47 /* GoogleService-Info.plist */; };
@@ -931,7 +932,6 @@
 		C9AEA21A1E9C4629006FD974 /* Ability+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AEA2021E9C4629006FD974 /* Ability+CoreDataProperties.swift */; };
 		C9B125671EDFC5AF00984F90 /* HeroDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B125661EDFC5AF00984F90 /* HeroDelegate.swift */; };
 		C9B1256A1EDFC87800984F90 /* Double+StringFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B125691EDFC87800984F90 /* Double+StringFormat.swift */; };
-		C9B125711EE116D200984F90 /* AbilityCellStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B125701EE116D200984F90 /* AbilityCellStackView.swift */; };
 		C9B125731EE1182400984F90 /* KeyValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B125721EE1182400984F90 /* KeyValueView.swift */; };
 		C9B125771EE48A5800984F90 /* TALENT_UPGRADE.png in Resources */ = {isa = PBXBuildFile; fileRef = C9B125761EE48A5800984F90 /* TALENT_UPGRADE.png */; };
 		C9D558951EF2197D00D0E923 /* HeroAttributeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D558941EF2197D00D0E923 /* HeroAttributeSlider.swift */; };
@@ -1846,6 +1846,7 @@
 		C985266F1EFA27F100398D10 /* String+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Convenience.swift"; sourceTree = "<group>"; };
 		C98526711EFA299200398D10 /* UIStackView+AddArrangedSubviews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStackView+AddArrangedSubviews.swift"; sourceTree = "<group>"; };
 		C98526731EFA2A0F00398D10 /* Int+NumberHandling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+NumberHandling.swift"; sourceTree = "<group>"; };
+		C98526951EFB7EBC00398D10 /* AbilityKVStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbilityKVStackView.swift; sourceTree = "<group>"; };
 		C999EA061DE7D1C10036AF47 /* OptimusPrinceps.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = OptimusPrinceps.ttf; path = Fonts/OptimusPrinceps.ttf; sourceTree = "<group>"; };
 		C999EA071DE7D1C10036AF47 /* OptimusPrincepsSemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = OptimusPrincepsSemiBold.ttf; path = Fonts/OptimusPrincepsSemiBold.ttf; sourceTree = "<group>"; };
 		C999EA0E1DE7DF680036AF47 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -1876,7 +1877,6 @@
 		C9B125651EDA5D8600984F90 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		C9B125661EDFC5AF00984F90 /* HeroDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroDelegate.swift; sourceTree = "<group>"; };
 		C9B125691EDFC87800984F90 /* Double+StringFormat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+StringFormat.swift"; sourceTree = "<group>"; };
-		C9B125701EE116D200984F90 /* AbilityCellStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbilityCellStackView.swift; sourceTree = "<group>"; };
 		C9B125721EE1182400984F90 /* KeyValueView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyValueView.swift; sourceTree = "<group>"; };
 		C9B125761EE48A5800984F90 /* TALENT_UPGRADE.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = TALENT_UPGRADE.png; path = "images/Ability Specials/TALENT_UPGRADE.png"; sourceTree = "<group>"; };
 		C9D558941EF2197D00D0E923 /* HeroAttributeSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroAttributeSlider.swift; sourceTree = "<group>"; };
@@ -3066,8 +3066,8 @@
 			isa = PBXGroup;
 			children = (
 				C90A13611EEA6CCB00D143B8 /* AbilityCell.swift */,
-				C9B125701EE116D200984F90 /* AbilityCellStackView.swift */,
 				C957BBE01EECE9FB008F756B /* AbilityTVC.swift */,
+				C98526951EFB7EBC00398D10 /* AbilityKVStackView.swift */,
 			);
 			name = "Ability Display";
 			sourceTree = "<group>";
@@ -4096,6 +4096,7 @@
 				C9B125731EE1182400984F90 /* KeyValueView.swift in Sources */,
 				C90A793A1E021EE00068C79C /* DABackgroundColourStackView.swift in Sources */,
 				C98526721EFA299200398D10 /* UIStackView+AddArrangedSubviews.swift in Sources */,
+				C98526961EFB7EBC00398D10 /* AbilityKVStackView.swift in Sources */,
 				C98526741EFA2A0F00398D10 /* Int+NumberHandling.swift in Sources */,
 				367E34E01DB7F9670037FA7B /* CustomTabVC.swift in Sources */,
 				C90CE60A1DFCB67500C93539 /* DAExpandableStackView.swift in Sources */,
@@ -4123,7 +4124,6 @@
 				C957BBEB1EEFA76B008F756B /* HeroMiscCell.swift in Sources */,
 				C9AEA20F1E9C4629006FD974 /* MiscStats+CoreDataClass.swift in Sources */,
 				C957BBE11EECE9FB008F756B /* AbilityTVC.swift in Sources */,
-				C9B125711EE116D200984F90 /* AbilityCellStackView.swift in Sources */,
 				C9172C181DD13F9100DCF88F /* Globals.swift in Sources */,
 				C9AEA20D1E9C4629006FD974 /* Attribute+CoreDataClass.swift in Sources */,
 				C9AEA2061E9C4629006FD974 /* Modifier+CoreDataProperties.swift in Sources */,
