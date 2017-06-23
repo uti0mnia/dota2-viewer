@@ -1,5 +1,5 @@
 //
-//  HeroAbilityCell.swift
+//  HeroAbilityView.swift
 //  DotA2 Assistant
 //
 //  Created by Casey McLewin on 2017-06-08.
@@ -9,7 +9,7 @@
 import UIKit
 import SnapKit
 
-class AbilityCell: UITableViewCell {
+class AbilityView: UIView {
     
     private static let padding: CGFloat = 8
     
@@ -24,21 +24,21 @@ class AbilityCell: UITableViewCell {
         let sv = TypeKVStackView()
         sv.axis = .vertical
         sv.distribution = .fillEqually
-        sv.spacing = AbilityCell.padding
+        sv.spacing = AbilityView.padding
         return sv
     }()
     private var dataStackView: DataKVStackView = {
         let sv = DataKVStackView()
         sv.axis = .vertical
         sv.distribution = .fillEqually
-        sv.spacing = AbilityCell.padding
+        sv.spacing = AbilityView.padding
         return sv
     }()
     
     private var modifierStackView: UIStackView = {
         let sv = UIStackView()
         sv.axis = .vertical
-        sv.spacing = AbilityCell.padding
+        sv.spacing = AbilityView.padding
         sv.distribution = .fillProportionally
         return sv
     }()
@@ -157,14 +157,14 @@ class AbilityCell: UITableViewCell {
             }
 
             notesLabel.attributedText = finalString
-//            bottomStackView.addArrangedSubview(notesLabel)
+            bottomStackView.addArrangedSubview(notesLabel)
         }
     }
     
     // MARK: - Initializers
     
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         
         commonInit()
     }
@@ -187,14 +187,14 @@ class AbilityCell: UITableViewCell {
         manaView.isVertical = false
         notesLabel.numberOfLines = 0
         
-        contentView.addSubview(nameLabel)
-        contentView.addSubview(specialsLabel)
-        contentView.addSubview(abilityImageView)
-        contentView.addSubview(typeStackView)
-        contentView.addSubview(descriptionLabel)
-        contentView.addSubview(dataStackView)
-        contentView.addSubview(modifierStackView)
-        contentView.addSubview(bottomStackView)
+        addSubview(nameLabel)
+        addSubview(specialsLabel)
+        addSubview(abilityImageView)
+        addSubview(typeStackView)
+        addSubview(descriptionLabel)
+        addSubview(dataStackView)
+        addSubview(modifierStackView)
+        addSubview(bottomStackView)
         
         addConstraints()
     }
@@ -202,27 +202,27 @@ class AbilityCell: UITableViewCell {
     // MARK: - Layout
     
     private func addConstraints() {
-        let padding = AbilityCell.padding
+        let padding = AbilityView.padding
         
         nameLabel.snp.makeConstraints() { make in
-            make.left.top.equalTo(contentView).inset(padding)
+            make.left.top.equalTo(self).inset(padding)
             make.right.lessThanOrEqualTo(specialsLabel.snp.left).offset(-padding)
             make.bottom.equalTo(specialsLabel.snp.bottom)
             make.height.equalTo(nameLabel.font.pointSize)
         }
         
         specialsLabel.snp.makeConstraints() { make in
-            make.top.right.equalTo(contentView).inset(padding)
+            make.top.right.equalTo(self).inset(padding)
         }
         
         typeStackView.snp.makeConstraints() { make in
             make.top.equalTo(nameLabel.snp.bottom).offset(padding)
-            make.right.equalTo(contentView).inset(padding)
+            make.right.equalTo(self).inset(padding)
         }
         
         abilityImageView.snp.makeConstraints() { make in
             make.top.equalTo(nameLabel.snp.bottom).offset(padding)
-            make.left.equalTo(contentView).inset(padding)
+            make.left.equalTo(self).inset(padding)
             make.right.equalTo(typeStackView.snp.left).offset(-padding)
             make.bottom.equalTo(typeStackView.snp.bottom)
         }
@@ -231,22 +231,22 @@ class AbilityCell: UITableViewCell {
         
         descriptionLabel.snp.makeConstraints() { make in
             make.top.equalTo(abilityImageView.snp.bottom).offset(padding)
-            make.left.right.equalTo(contentView).inset(padding)
+            make.left.right.equalTo(self).inset(padding)
         }
         
         dataStackView.snp.makeConstraints() { make in
             make.top.equalTo(descriptionLabel.snp.bottom).offset(padding)
-            make.left.right.equalTo(contentView).inset(padding)
+            make.left.right.equalTo(self).inset(padding)
         }
         
         modifierStackView.snp.makeConstraints() { make in
             make.top.equalTo(dataStackView.snp.bottom).offset(padding)
-            make.left.right.equalTo(contentView).inset(padding)
+            make.left.right.equalTo(self).inset(padding)
         }
         
         bottomStackView.snp.makeConstraints() { make in
             make.top.equalTo(modifierStackView.snp.bottom).offset(padding)
-            make.left.right.bottom.equalTo(contentView).inset(padding)
+            make.left.right.bottom.equalTo(self).inset(padding)
         }
         
         

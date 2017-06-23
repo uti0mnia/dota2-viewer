@@ -2,7 +2,6 @@
 
 import UIKit
 
-let a  = 0
-for i in 0..<a {
-    print(i)
+for i in 0..<3 {
+    print((i + 2) % 3)
 }

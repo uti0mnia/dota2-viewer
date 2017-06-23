@@ -19,7 +19,9 @@ class HeroDetailVC: UIViewController, HeroStretchHeaderViewDelegate {
     }
     
     private var heroStretchHeaderView = HeroStretchHeaderView()
-    private var abilityTVC = AbilityTVC()
+//    private var abilityTVC = AbilityTVC()
+//    private var abilityVC = AbilityViewController()
+    private var abilityPVC = AbilityPageViewController()
     private var basicTVC = HeroBasicTVC()
     private var miscTVC = HeroMiscTVC()
     private var talentTVC = HeroTalentTVC()
@@ -50,7 +52,9 @@ class HeroDetailVC: UIViewController, HeroStretchHeaderViewDelegate {
         self.title = hero.name
         
         heroStretchHeaderView.imageView.image = UIImage(named: hero.imageName)
-        abilityTVC.abilities = hero.abilities?.array as? [Ability]
+//        abilityTVC.abilities = hero.abilities?.array as? [Ability]
+//        abilityVC.ability = hero.abilities?.array.first as? Ability
+        abilityPVC.abilities = hero.abilities?.array as? [Ability]
         basicTVC.hero = hero
         miscTVC.hero = hero
         talentTVC.talents = hero.talents.allObjects as? [Talent]
@@ -102,7 +106,7 @@ class HeroDetailVC: UIViewController, HeroStretchHeaderViewDelegate {
         
         switch tab {
         case .ability:
-            swapChildViewController(to: abilityTVC)
+            swapChildViewController(to: abilityPVC)
         case .basic:
             swapChildViewController(to: basicTVC)
         case .misc:
