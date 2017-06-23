@@ -23,7 +23,7 @@ class AbilityCell: UITableViewCell {
     private var typeStackView: TypeKVStackView = {
         let sv = TypeKVStackView()
         sv.axis = .vertical
-        sv.distribution = .equalCentering
+        sv.distribution = .fillEqually
         sv.spacing = AbilityCell.padding
         return sv
     }()
@@ -157,7 +157,7 @@ class AbilityCell: UITableViewCell {
             }
 
             notesLabel.attributedText = finalString
-            bottomStackView.addArrangedSubview(notesLabel)
+//            bottomStackView.addArrangedSubview(notesLabel)
         }
     }
     
@@ -206,8 +206,9 @@ class AbilityCell: UITableViewCell {
         
         nameLabel.snp.makeConstraints() { make in
             make.left.top.equalTo(contentView).inset(padding)
-            make.right.equalTo(specialsLabel.snp.left).offset(-padding)
+            make.right.lessThanOrEqualTo(specialsLabel.snp.left).offset(-padding)
             make.bottom.equalTo(specialsLabel.snp.bottom)
+            make.height.equalTo(nameLabel.font.pointSize)
         }
         
         specialsLabel.snp.makeConstraints() { make in
@@ -225,7 +226,8 @@ class AbilityCell: UITableViewCell {
             make.right.equalTo(typeStackView.snp.left).offset(-padding)
             make.bottom.equalTo(typeStackView.snp.bottom)
         }
-        abilityImageView.setContentHuggingPriority(251, for: .horizontal)
+        abilityImageView.setContentHuggingPriority(252, for: .horizontal)
+        abilityImageView.setContentCompressionResistancePriority(1000, for: .vertical)
         
         descriptionLabel.snp.makeConstraints() { make in
             make.top.equalTo(abilityImageView.snp.bottom).offset(padding)
