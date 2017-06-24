@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HeroDetailVC: UIViewController, HeroStretchHeaderViewDelegate {
+class HeroDetailVC: UIViewController, HeroHeaderViewDelegate {
     
     public var hero: Hero? {
         didSet {
@@ -18,7 +18,7 @@ class HeroDetailVC: UIViewController, HeroStretchHeaderViewDelegate {
         }
     }
     
-    private var heroStretchHeaderView = HeroStretchHeaderView()
+    private var heroStretchHeaderView = HeroHeaderView()
     private var ablilityVCV = AbilityCollectionViewController()
     private var basicTVC = HeroBasicTVC()
     private var miscTVC = HeroMiscTVC()
@@ -94,7 +94,7 @@ class HeroDetailVC: UIViewController, HeroStretchHeaderViewDelegate {
     
     // MARK: - HeroStretchHeaderViewDelegate
     
-    func heroStretchHeaderView(_ headerView: HeroStretchHeaderView, didTapTab tab: HeroDetailTab) {
+    func heroHeaderView(_ headerView: HeroHeaderView, didTapTab tab: HeroDetailTab) {
         guard tab != currentTab else {
             return
         }

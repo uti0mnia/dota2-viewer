@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 
 class HeroTalentCell: UITableViewCell {
-    private static let viewWidth: CGFloat = 50
+    private static let viewHeight: CGFloat = 50
     
     private(set) var leftLabel = UILabel()
     private(set) var rightLabel = UILabel()
@@ -39,19 +39,19 @@ class HeroTalentCell: UITableViewCell {
         contentView.uti_addSubviews([leftLabel, levelView, rightLabel])
         
         leftLabel.snp.makeConstraints() { make in
-            make.left.top.bottom.equalTo(contentView).inset(8)
+            make.left.bottom.equalTo(contentView).inset(8)
+            make.right.equalTo(rightLabel.snp.left).offset(-8)
+            make.width.equalTo(contentView.snp.width).dividedBy(2)
         }
         
         levelView.snp.makeConstraints() { make in
-            make.left.equalTo(leftLabel.snp.right)
-            make.top.bottom.equalTo(contentView)
-            make.right.equalTo(rightLabel.snp.left)
-            make.width.equalTo(HeroTalentCell.viewWidth)
-            make.centerX.equalTo(contentView.snp.centerX)
+            make.left.top.right.equalTo(contentView)
+            make.height.equalTo(HeroTalentCell.viewHeight)
+            make.bottom.equalTo(leftLabel.snp.top)
         }
         
         rightLabel.snp.makeConstraints() { make in
-            make.top.right.bottom.equalTo(contentView).inset(8)
+            make.right.bottom.equalTo(contentView).inset(8)
         }
     }
     

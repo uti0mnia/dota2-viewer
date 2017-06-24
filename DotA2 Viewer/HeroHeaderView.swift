@@ -9,8 +9,8 @@
 import UIKit
 import SnapKit
 
-class HeroStretchHeaderView: UIView {
-    weak var delegate: HeroStretchHeaderViewDelegate?
+class HeroHeaderView: UIView {
+    weak var delegate: HeroHeaderViewDelegate?
     
     public var imageView: UIImageView = {
         let iv = UIImageView()
@@ -107,7 +107,7 @@ class HeroStretchHeaderView: UIView {
             return
         }
         
-        delegate?.heroStretchHeaderView(self, didTapTab: tab)
+        delegate?.heroHeaderView(self, didTapTab: tab)
     }
     
 }
