@@ -10,10 +10,10 @@ import UIKit
 import SnapKit
 
 class HeroTalentCell: UITableViewCell {
-    private static let viewWidth: CGFloat = 50
+    private static let viewHeight: CGFloat = 50
     
-    private(set) var leftLabel: UILabel!
-    private(set) var rightLabel: UILabel!
+    private(set) var leftLabel = UILabel()
+    private(set) var rightLabel = UILabel()
     private(set) var levelView = HeroTalentLevelView()
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
@@ -29,35 +29,30 @@ class HeroTalentCell: UITableViewCell {
     }
     
     private func commonInit() {
-        self.leftLabel = createLabel()
-        self.rightLabel = createLabel()
+        self.isUserInteractionEnabled = false
+        
+        leftLabel.textAlignment = .left
+        leftLabel.numberOfLines = 0
+        rightLabel.textAlignment = .right
+        rightLabel.numberOfLines = 0
+        
+        contentView.uti_addSubviews([leftLabel, levelView, rightLabel])
         
         leftLabel.snp.makeConstraints() { make in
-            make.left.equalTo(contentView)
-            make.top.equalTo(contentView)
-            make.bottom.equalTo(contentView)
+            make.left.bottom.equalTo(contentView).inset(8)
+            make.right.equalTo(rightLabel.snp.left).offset(-8)
+            make.width.equalTo(contentView.snp.width).dividedBy(2)
         }
         
         levelView.snp.makeConstraints() { make in
-            make.left.equalTo(leftLabel.snp.right)
-            make.top.equalTo(contentView)
-            make.right.equalTo(rightLabel.snp.left)
-            make.bottom.equalTo(contentView)
-            make.width.equalTo(HeroTalentCell.viewWidth)
+            make.left.top.right.equalTo(contentView)
+            make.height.equalTo(HeroTalentCell.viewHeight)
+            make.bottom.equalTo(leftLabel.snp.top)
         }
         
         rightLabel.snp.makeConstraints() { make in
-            make.top.equalTo(contentView)
-            make.right.equalTo(contentView)
-            make.bottom.equalTo(contentView)
+            make.right.bottom.equalTo(contentView).inset(8)
         }
-    }
-    
-    private func createLabel() -> UILabel {
-        let label = UILabel()
-        label.textAlignment = .center
-        label.numberOfLines = 0
-        return label
     }
     
 }

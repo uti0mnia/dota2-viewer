@@ -88,10 +88,10 @@
     <entity name="Note" representedClassName=".Note" syncable="YES">
         <attribute name="value" attributeType="String" customClassName="[String]" syncable="YES"/>
         <relationship name="ability" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Ability" inverseName="notes" inverseEntity="Ability" syncable="YES"/>
-        <relationship name="hero" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Note" inverseName="hero" inverseEntity="Note" syncable="YES"/>
         <relationship name="heroTalentNotes" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Hero" inverseName="talentNotes" inverseEntity="Hero" syncable="YES"/>
         <relationship name="itemAdditionalInfo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Item" inverseName="additionalInfo" inverseEntity="Item" syncable="YES"/>
-        <relationship name="subnotes" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="Note" inverseName="subnotes" inverseEntity="Note" syncable="YES"/>
+        <relationship name="parentNote" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Note" inverseName="subnotes" inverseEntity="Note" syncable="YES"/>
+        <relationship name="subnotes" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="Note" inverseName="parentNote" inverseEntity="Note" syncable="YES"/>
     </entity>
     <entity name="Object" representedClassName=".Object" isAbstract="YES" syncable="YES">
         <attribute name="lore" attributeType="String" syncable="YES"/>

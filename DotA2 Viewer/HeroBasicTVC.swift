@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import SnapKit
 
 
 /*
@@ -16,52 +17,74 @@ import CoreData
  */
 class HeroBasicTVC: UIViewController, UITableViewDataSource, HeroAttributeViewDelegate, HeroDelegate {
     
-    private static let attributeReuseIdentifier = "attributeCell"
     private static let basicReuseIndentifier = "basicCell"
     
-    private var tableView: UITableView!
+    private var tableView = UITableView()
+    private var attributeView = HeroAttributeView()
     
-    private var hero: Hero!
-    private var heroData: [String: [String: String]]!
-    private var heroDataKeys: [String]! // holds the keys in HeroData
+    public var hero: Hero? {
+        didSet {
+            guard let hero = hero else {
+                return
+            }
+            
+            hero.delegate = self
+            
+            heroData = hero.dataDictionary
+            heroDataKeys = Array(heroData.keys)
+            primaryAttribute = hero.primaryAttribute.heroAttribute
+            
+            updateData()
+        }
+    }
+    private var heroData = [String: [String: String]]()
+    private var heroDataKeys = [String]() // holds the keys in HeroData
     
-    private var agility: Attribute!
-    private var intelligence: Attribute!
-    private var strength: Attribute!
-    private var primaryAttribute: HeroAttribute!
-    
-    init(hero: Hero) {
-        super.init(nibName: nil, bundle: nil)
+    private var primaryAttribute: HeroAttribute?
+
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
-        self.hero = hero
-        self.hero.delegate = self
-        
-        self.heroData = hero.dataDictionary
-        self.heroDataKeys = Array(self.heroData.keys)
-        self.primaryAttribute = hero.primaryAttribute.heroAttribute
+        commonInit()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
         
-        assert(hero != nil, "Hero must be set for AbilityTVC")
-        
-        // configure table view
-        tableView = UITableView(frame: self.view.bounds)
-        tableView.register(HeroAttributeCell.self, forCellReuseIdentifier: HeroBasicTVC.attributeReuseIdentifier)
-        tableView.register(HeroBasicCell.self, forCellReuseIdentifier: HeroBasicTVC.basicReuseIndentifier)
-        tableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        tableView.dataSource = self
-        
-        updateData()
+        commonInit()
     }
     
+    private func addContraints() {
+        attributeView.translatesAutoresizingMaskIntoConstraints = false
+        attributeView.snp.makeConstraints() { make in
+            make.left.top.right.equalTo(view)
+            make.bottom.equalTo(tableView.snp.top)
+        }
+        
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.snp.makeConstraints() { make in
+            make.left.bottom.right.equalTo(view)
+        }
+    }
+    
+    private func commonInit() {
+        tableView.register(HeroBasicCell.self, forCellReuseIdentifier: HeroBasicTVC.basicReuseIndentifier)
+        tableView.dataSource = self
+        
+        attributeView.delegate = self
+        
+        view.addSubview(tableView)
+        view.addSubview(attributeView)
+        
+        addContraints()
+    }
+
     private func updateData() {
-        self.heroData = hero.dataDictionary
+        if let hero = hero {
+            heroData = hero.dataDictionary
+        } else {
+            heroData.removeAll(keepingCapacity: true)
+        }
         
         tableView.beginUpdates()
         if let indexPaths = tableView.indexPathsForVisibleRows {
@@ -70,63 +93,46 @@ class HeroBasicTVC: UIViewController, UITableViewDataSource, HeroAttributeViewDe
             tableView.reloadData()
         }
         tableView.endUpdates()
+        
+        attributeView.setPrimaryAttribute(primaryAttribute)
+        attributeView.agilityLabel.text = hero?.agility.uti_string(1)
+        attributeView.intelligenceLabel.text = hero?.intelligence.uti_string(1)
+        attributeView.strengthLabel.text = hero?.strength.uti_string(1)
     }
     
-    private func configure(_ cell: UITableViewCell, at indexPath: IndexPath) {
-        if let cell = cell as? HeroAttributeCell {
-            cell.setPrimaryAttribute(primaryAttribute)
-            cell.agilityLabel.text = hero.agility.string(1)
-            cell.intelligenceLabel.text = hero.intelligence.string(1)
-            cell.strengthLabel.text = hero.strength.string(1)
-        }
+    private func configure(_ cell: HeroBasicCell, at indexPath: IndexPath) {
+        // TODO: Make this actually readable.
+        // get the dictionary for the section so we can get good key/value pair
+        let dictSection = heroData[heroDataKeys[indexPath.section]]!
+        let keyText = Array(dictSection.keys)[indexPath.row] // the stat to display
+        let valueText = dictSection[keyText] // the value of the stat to display
         
-        if let cell = cell as? HeroBasicCell {
-            // get the dictionary for the section so we can get good key/value pair
-            let dictSection = heroData[heroDataKeys[indexPath.section]]!
-            let keyText = Array(dictSection.keys)[indexPath.row] // the stat to display
-            let valueText = dictSection[keyText] // the value of the stat to display
-            
-            cell.kvView.keyLabel.text = keyText
-            cell.kvView.valueLabel.text = valueText
-        }
+        cell.kvView.keyLabel.text = keyText
+        cell.kvView.valueLabel.text = valueText
     }
     
     // MARK: - HeroAttributeViewDelegate
     
     public func sliderDidChangeValue(_ newValue: Int) {
-        hero.level = newValue
+        hero?.level = newValue
     }
     
-    // MARK: - UITableViewDelegate
+    // MARK: - UITableViewDataSource
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1 + heroDataKeys.count
+        return heroDataKeys.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        assert(section < heroDataKeys.count + 1, "Section out of bounds")
+        assert(section < heroDataKeys.count, "Section out of bounds")
         
-        if section == 0 {
-            return 1
-        } else {
-            let key = heroDataKeys[section - 1]
-            return heroData[key]!.count
-        }
-    }
-    
-    func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-        return ["Attributes"] + heroDataKeys
+        let key = heroDataKeys[section]
+        return heroData[key]!.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell: UITableViewCell!
-        if indexPath.section == 0 {
-            cell = tableView.dequeueReusableCell(withIdentifier: HeroBasicTVC.attributeReuseIdentifier,
-                                                 for: indexPath) as! HeroAttributeCell
-        } else {
-            cell = tableView.dequeueReusableCell(withIdentifier: HeroBasicTVC.basicReuseIndentifier,
+        let cell = tableView.dequeueReusableCell(withIdentifier: HeroBasicTVC.basicReuseIndentifier,
                                                  for: indexPath) as! HeroBasicCell
-        }
         configure(cell, at: indexPath)
         return cell
     }
@@ -136,6 +142,5 @@ class HeroBasicTVC: UIViewController, UITableViewDataSource, HeroAttributeViewDe
     func heroDidUpdateLevel() {
         updateData()
     }
-    
     
 }

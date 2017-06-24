@@ -40,4 +40,10 @@ public class ModifiableValue: NSManagedObject {
         let attString = AttributedStringParser.parse(string: string)!
         return NSMutableAttributedString(attributedString: attString)
     }
+    
+    func write(to kvView: KeyValueView) {
+        kvView.keyLabel.attributedText = NSAttributedString(string: name,
+                                                            attributes: Fonts.boldLabelAttribute)
+        kvView.valueLabel.attributedText = getValuesAttributedString()
+    }
 }

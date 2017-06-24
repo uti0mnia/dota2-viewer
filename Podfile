@@ -9,7 +9,6 @@ target 'DotA2 Assistant' do
   pod 'ChameleonFramework'
   pod 'Firebase/Core'
   pod 'Firebase/Database'
-  pod 'SwiftyJSON'
   pod 'SnapKit', '~> 3.2.0'
-
+  pod "CenteredCollectionView"
 end

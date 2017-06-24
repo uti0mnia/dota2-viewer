@@ -7,11 +7,10 @@
 //
 
 import UIKit
+import SnapKit
 
 class KeyValueView: UIView {
-    public enum KeyValueViewOrientation {
-        case vertical, horizontal
-    }
+    
     private(set) var keyLabel = UILabel()
     private(set) var valueLabel = UILabel()
     private var stackView: UIStackView = {
@@ -19,26 +18,18 @@ class KeyValueView: UIView {
         
         sv.axis = .horizontal
         sv.alignment = .fill
-        sv.distribution = .fillProportionally
-        
-        sv.isLayoutMarginsRelativeArrangement = false
+        sv.distribution = .fill
         sv.translatesAutoresizingMaskIntoConstraints = false
         
         return sv
     }()
-    public var orientation: KeyValueViewOrientation = .vertical {
+    public var isVertical = false {
         didSet {
-            switch orientation {
-            case .horizontal:
-                keyLabel.textAlignment = .left
-                valueLabel.textAlignment = .right
-                stackView.axis = .horizontal
-            case .vertical:
-                keyLabel.textAlignment = .center
-                valueLabel.textAlignment = .center
-                stackView.axis = .vertical
-            }
+            stackView.axis = isVertical ? .vertical : .horizontal
         }
+    }
+    public var isEmpty: Bool {
+        return keyLabel.text == nil && valueLabel.text == nil
     }
     
     override init(frame: CGRect) {
@@ -54,13 +45,19 @@ class KeyValueView: UIView {
     }
     
     private func commonInit() {
-        self.addSubview(stackView)
+        valueLabel.setContentHuggingPriority(251, for: .horizontal)
+        valueLabel.setContentHuggingPriority(251, for: .vertical)
         
-        stackView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        stackView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
-        stackView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-        stackView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
-        
-        stackView.addArrangedSubviews(views: [keyLabel, valueLabel])
+        addSubview(stackView)
+        stackView.uti_addArrangedSubviews(views: [keyLabel, valueLabel])
+        stackView.snp.makeConstraints() { make in
+            make.left.top.right.bottom.equalTo(self).priority(999)
+        }
     }
+    
+    public func clear() {
+        keyLabel.text = nil
+        valueLabel.text = nil
+    }
+    
 }
