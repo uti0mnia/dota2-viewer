@@ -12,8 +12,8 @@ import SnapKit
 class HeroTalentCell: UITableViewCell {
     private static let viewWidth: CGFloat = 50
     
-    private(set) var leftLabel: UILabel!
-    private(set) var rightLabel: UILabel!
+    private(set) var leftLabel = UILabel()
+    private(set) var rightLabel = UILabel()
     private(set) var levelView = HeroTalentLevelView()
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
@@ -31,15 +31,15 @@ class HeroTalentCell: UITableViewCell {
     private func commonInit() {
         self.isUserInteractionEnabled = false
         
-        leftLabel = createLabel()
-        rightLabel = createLabel()
+        leftLabel.textAlignment = .left
+        leftLabel.numberOfLines = 0
+        rightLabel.textAlignment = .right
+        rightLabel.numberOfLines = 0
         
         contentView.uti_addSubviews([leftLabel, levelView, rightLabel])
         
         leftLabel.snp.makeConstraints() { make in
-            make.left.equalTo(contentView)
-            make.top.equalTo(contentView)
-            make.bottom.equalTo(contentView)
+            make.left.top.bottom.equalTo(contentView).inset(8)
         }
         
         levelView.snp.makeConstraints() { make in
@@ -51,17 +51,8 @@ class HeroTalentCell: UITableViewCell {
         }
         
         rightLabel.snp.makeConstraints() { make in
-            make.top.equalTo(contentView)
-            make.right.equalTo(contentView)
-            make.bottom.equalTo(contentView)
+            make.top.right.bottom.equalTo(contentView).inset(8)
         }
-    }
-    
-    private func createLabel() -> UILabel {
-        let label = UILabel()
-        label.textAlignment = .center
-        label.numberOfLines = 0
-        return label
     }
     
 }

@@ -902,8 +902,8 @@
 		C98526721EFA299200398D10 /* UIStackView+AddArrangedSubviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98526711EFA299200398D10 /* UIStackView+AddArrangedSubviews.swift */; };
 		C98526741EFA2A0F00398D10 /* Int+NumberHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98526731EFA2A0F00398D10 /* Int+NumberHandling.swift */; };
 		C98526961EFB7EBC00398D10 /* AbilityKVStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98526951EFB7EBC00398D10 /* AbilityKVStackView.swift */; };
-		C98526981EFCD3CE00398D10 /* AbilityPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98526971EFCD3CE00398D10 /* AbilityPageViewController.swift */; };
-		C985269B1EFCD67200398D10 /* AbilityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C985269A1EFCD67200398D10 /* AbilityViewController.swift */; };
+		C985269D1EFE0EC300398D10 /* AbiltyCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C985269C1EFE0EC300398D10 /* AbiltyCollectionViewController.swift */; };
+		C985269F1EFE0F0F00398D10 /* AbilityCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C985269E1EFE0F0F00398D10 /* AbilityCollectionCell.swift */; };
 		C999EA081DE7D1C10036AF47 /* OptimusPrinceps.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C999EA061DE7D1C10036AF47 /* OptimusPrinceps.ttf */; };
 		C999EA091DE7D1C10036AF47 /* OptimusPrincepsSemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C999EA071DE7D1C10036AF47 /* OptimusPrincepsSemiBold.ttf */; };
 		C999EA0F1DE7DF680036AF47 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C999EA0E1DE7DF680036AF47 /* GoogleService-Info.plist */; };
@@ -1847,8 +1847,8 @@
 		C98526711EFA299200398D10 /* UIStackView+AddArrangedSubviews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStackView+AddArrangedSubviews.swift"; sourceTree = "<group>"; };
 		C98526731EFA2A0F00398D10 /* Int+NumberHandling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+NumberHandling.swift"; sourceTree = "<group>"; };
 		C98526951EFB7EBC00398D10 /* AbilityKVStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbilityKVStackView.swift; sourceTree = "<group>"; };
-		C98526971EFCD3CE00398D10 /* AbilityPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbilityPageViewController.swift; sourceTree = "<group>"; };
-		C985269A1EFCD67200398D10 /* AbilityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbilityViewController.swift; sourceTree = "<group>"; };
+		C985269C1EFE0EC300398D10 /* AbiltyCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbiltyCollectionViewController.swift; sourceTree = "<group>"; };
+		C985269E1EFE0F0F00398D10 /* AbilityCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbilityCollectionCell.swift; sourceTree = "<group>"; };
 		C999EA061DE7D1C10036AF47 /* OptimusPrinceps.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = OptimusPrinceps.ttf; path = Fonts/OptimusPrinceps.ttf; sourceTree = "<group>"; };
 		C999EA071DE7D1C10036AF47 /* OptimusPrincepsSemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = OptimusPrincepsSemiBold.ttf; path = Fonts/OptimusPrincepsSemiBold.ttf; sourceTree = "<group>"; };
 		C999EA0E1DE7DF680036AF47 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -3069,8 +3069,8 @@
 			children = (
 				C90A13611EEA6CCB00D143B8 /* AbilityView.swift */,
 				C98526951EFB7EBC00398D10 /* AbilityKVStackView.swift */,
-				C98526971EFCD3CE00398D10 /* AbilityPageViewController.swift */,
-				C985269A1EFCD67200398D10 /* AbilityViewController.swift */,
+				C985269E1EFE0F0F00398D10 /* AbilityCollectionCell.swift */,
+				C985269C1EFE0EC300398D10 /* AbiltyCollectionViewController.swift */,
 			);
 			name = "Ability Display";
 			sourceTree = "<group>";
@@ -4042,7 +4042,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		F8F0E62758A965A9B795DC47 /* [CP] Embed Pods Frameworks */ = {
@@ -4082,6 +4082,7 @@
 				366A8A091DD0F4F3000406BF /* DAMainLabel.swift in Sources */,
 				C957BBED1EEFA920008F756B /* HeroMiscTVC.swift in Sources */,
 				C9745D6B1EC8E262009537E4 /* HeroBasicTVC.swift in Sources */,
+				C985269D1EFE0EC300398D10 /* AbiltyCollectionViewController.swift in Sources */,
 				366A8A221DD24B71000406BF /* DAMainCellLabel.swift in Sources */,
 				C98526701EFA27F100398D10 /* String+Convenience.swift in Sources */,
 				C9AEA2111E9C4629006FD974 /* Item+CoreDataClass.swift in Sources */,
@@ -4098,7 +4099,6 @@
 				366A8A161DD103F1000406BF /* DATabBar.swift in Sources */,
 				C9B125731EE1182400984F90 /* KeyValueView.swift in Sources */,
 				C90A793A1E021EE00068C79C /* DABackgroundColourStackView.swift in Sources */,
-				C98526981EFCD3CE00398D10 /* AbilityPageViewController.swift in Sources */,
 				C98526721EFA299200398D10 /* UIStackView+AddArrangedSubviews.swift in Sources */,
 				C98526961EFB7EBC00398D10 /* AbilityKVStackView.swift in Sources */,
 				C98526741EFA2A0F00398D10 /* Int+NumberHandling.swift in Sources */,
@@ -4122,7 +4122,6 @@
 				366A8A0C1DD0F87F000406BF /* DAMainTableViewCell.swift in Sources */,
 				C9745D5E1EC577CC009537E4 /* HeroStretchHeaderViewDelegate.swift in Sources */,
 				C9B1256A1EDFC87800984F90 /* Double+StringFormat.swift in Sources */,
-				C985269B1EFCD67200398D10 /* AbilityViewController.swift in Sources */,
 				C9AEA2051E9C4629006FD974 /* Modifier+CoreDataClass.swift in Sources */,
 				C90A13601EEA695E00D143B8 /* NSAttributedString+Static.swift in Sources */,
 				C90A13571EE66C0C00D143B8 /* AttributedStringParser.swift in Sources */,
@@ -4130,6 +4129,7 @@
 				C9AEA20F1E9C4629006FD974 /* MiscStats+CoreDataClass.swift in Sources */,
 				C9172C181DD13F9100DCF88F /* Globals.swift in Sources */,
 				C9AEA20D1E9C4629006FD974 /* Attribute+CoreDataClass.swift in Sources */,
+				C985269F1EFE0F0F00398D10 /* AbilityCollectionCell.swift in Sources */,
 				C9AEA2061E9C4629006FD974 /* Modifier+CoreDataProperties.swift in Sources */,
 				C957BBF31EEFB34C008F756B /* HeroBasicCell.swift in Sources */,
 				C9AEA2191E9C4629006FD974 /* Ability+CoreDataClass.swift in Sources */,

@@ -21,18 +21,6 @@ class HeroTalentTVC: UIViewController, UITableViewDataSource {
         }
     }
     
-//    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-//        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-//        
-//        commonInit()
-//    }
-//    
-//    required init?(coder aDecoder: NSCoder) {
-//        super.init(coder: aDecoder)
-//        
-//        commonInit()
-//    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -41,8 +29,12 @@ class HeroTalentTVC: UIViewController, UITableViewDataSource {
         tableView = UITableView(frame: view.bounds)
         tableView.tableFooterView = UIView()
         tableView.alwaysBounceVertical = false
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 70
+        
         tableView.register(HeroTalentCell.self, forCellReuseIdentifier: HeroTalentTVC.talentReuseIdentifier)
         tableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        
         tableView.dataSource = self
         
         view.addSubview(tableView)
