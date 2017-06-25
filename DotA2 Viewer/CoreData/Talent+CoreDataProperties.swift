@@ -2,7 +2,7 @@
 //  Talent+CoreDataProperties.swift
 //  
 //
-//  Created by Casey McLewin on 2016-12-19.
+//  Created by Casey McLewin on 2017-04-10.
 //
 //
 
@@ -13,12 +13,12 @@ import CoreData
 extension Talent {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Talent> {
-        return NSFetchRequest<Talent>(entityName: "Talent");
+        return NSFetchRequest<Talent>(entityName: "Talent")
     }
 
-    @NSManaged public var level: NSDecimalNumber?
-    @NSManaged public var left: String?
-    @NSManaged public var right: String?
-    @NSManaged public var hero: Hero?
+    @NSManaged public var left: String
+    @NSManaged public var level: Int16
+    @NSManaged public var right: String
+    @NSManaged public var hero: Hero
 
 }

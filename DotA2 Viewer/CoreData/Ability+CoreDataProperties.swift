@@ -2,7 +2,7 @@
 //  Ability+CoreDataProperties.swift
 //  
 //
-//  Created by Casey McLewin on 2016-12-13.
+//  Created by Casey McLewin on 2017-04-10.
 //
 //
 
@@ -13,55 +13,55 @@ import CoreData
 extension Ability {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Ability> {
-        return NSFetchRequest<Ability>(entityName: "Ability");
+        return NSFetchRequest<Ability>(entityName: "Ability")
     }
 
-    @NSManaged public var cooldown: String?
-    @NSManaged public var mana: String?
-    @NSManaged public var name: String?
-    @NSManaged public var summary: String?
-    @NSManaged public var abilitySpecial: NSSet?
-    @NSManaged public var data: NSSet?
-    @NSManaged public var hero: Hero?
-    @NSManaged public var item: Item?
+    @NSManaged public var descrip: String
+    @NSManaged public var name: String
+    @NSManaged public var specialDetails: [String: String]?
+    @NSManaged public var specials: [String]?
+    @NSManaged public var cooldown: ModifiableValue?
+    @NSManaged public var data: NSOrderedSet?
+    @NSManaged public var mana: ModifiableValue?
     @NSManaged public var modifiers: NSSet?
     @NSManaged public var notes: NSOrderedSet?
-    @NSManaged public var type: NSSet?
-    @NSManaged public var specialDetails: NSSet?
-
-}
-
-// MARK: Generated accessors for abilitySpecial
-extension Ability {
-
-    @objc(addAbilitySpecialObject:)
-    @NSManaged public func addToAbilitySpecial(_ value: ArrayValue)
-
-    @objc(removeAbilitySpecialObject:)
-    @NSManaged public func removeFromAbilitySpecial(_ value: ArrayValue)
-
-    @objc(addAbilitySpecial:)
-    @NSManaged public func addToAbilitySpecial(_ values: NSSet)
-
-    @objc(removeAbilitySpecial:)
-    @NSManaged public func removeFromAbilitySpecial(_ values: NSSet)
+    @NSManaged public var object: Object
+    @NSManaged public var types: NSOrderedSet?
 
 }
 
 // MARK: Generated accessors for data
 extension Ability {
 
+    @objc(insertObject:inDataAtIndex:)
+    @NSManaged public func insertIntoData(_ value: ModifiableValue, at idx: Int)
+
+    @objc(removeObjectFromDataAtIndex:)
+    @NSManaged public func removeFromData(at idx: Int)
+
+    @objc(insertData:atIndexes:)
+    @NSManaged public func insertIntoData(_ values: [ModifiableValue], at indexes: NSIndexSet)
+
+    @objc(removeDataAtIndexes:)
+    @NSManaged public func removeFromData(at indexes: NSIndexSet)
+
+    @objc(replaceObjectInDataAtIndex:withObject:)
+    @NSManaged public func replaceData(at idx: Int, with value: ModifiableValue)
+
+    @objc(replaceDataAtIndexes:withData:)
+    @NSManaged public func replaceData(at indexes: NSIndexSet, with values: [ModifiableValue])
+
     @objc(addDataObject:)
-    @NSManaged public func addToData(_ value: ArrayValue)
+    @NSManaged public func addToData(_ value: ModifiableValue)
 
     @objc(removeDataObject:)
-    @NSManaged public func removeFromData(_ value: ArrayValue)
+    @NSManaged public func removeFromData(_ value: ModifiableValue)
 
     @objc(addData:)
-    @NSManaged public func addToData(_ values: NSSet)
+    @NSManaged public func addToData(_ values: NSOrderedSet)
 
     @objc(removeData:)
-    @NSManaged public func removeFromData(_ values: NSSet)
+    @NSManaged public func removeFromData(_ values: NSOrderedSet)
 
 }
 
@@ -69,10 +69,10 @@ extension Ability {
 extension Ability {
 
     @objc(addModifiersObject:)
-    @NSManaged public func addToModifiers(_ value: ArrayValue)
+    @NSManaged public func addToModifiers(_ value: Modifier)
 
     @objc(removeModifiersObject:)
-    @NSManaged public func removeFromModifiers(_ value: ArrayValue)
+    @NSManaged public func removeFromModifiers(_ value: Modifier)
 
     @objc(addModifiers:)
     @NSManaged public func addToModifiers(_ values: NSSet)
@@ -117,36 +117,37 @@ extension Ability {
 
 }
 
-// MARK: Generated accessors for type
+// MARK: Generated accessors for types
 extension Ability {
 
-    @objc(addTypeObject:)
-    @NSManaged public func addToType(_ value: AbilityType)
+    @objc(insertObject:inTypesAtIndex:)
+    @NSManaged public func insertIntoTypes(_ value: ModifiableValue, at idx: Int)
 
-    @objc(removeTypeObject:)
-    @NSManaged public func removeFromType(_ value: AbilityType)
+    @objc(removeObjectFromTypesAtIndex:)
+    @NSManaged public func removeFromTypes(at idx: Int)
 
-    @objc(addType:)
-    @NSManaged public func addToType(_ values: NSSet)
+    @objc(insertTypes:atIndexes:)
+    @NSManaged public func insertIntoTypes(_ values: [ModifiableValue], at indexes: NSIndexSet)
 
-    @objc(removeType:)
-    @NSManaged public func removeFromType(_ values: NSSet)
+    @objc(removeTypesAtIndexes:)
+    @NSManaged public func removeFromTypes(at indexes: NSIndexSet)
 
-}
+    @objc(replaceObjectInTypesAtIndex:withObject:)
+    @NSManaged public func replaceTypes(at idx: Int, with value: ModifiableValue)
 
-// MARK: Generated accessors for specialDetails
-extension Ability {
+    @objc(replaceTypesAtIndexes:withTypes:)
+    @NSManaged public func replaceTypes(at indexes: NSIndexSet, with values: [ModifiableValue])
 
-    @objc(addSpecialDetailsObject:)
-    @NSManaged public func addToSpecialDetails(_ value: ArrayValue)
+    @objc(addTypesObject:)
+    @NSManaged public func addToTypes(_ value: ModifiableValue)
 
-    @objc(removeSpecialDetailsObject:)
-    @NSManaged public func removeFromSpecialDetails(_ value: ArrayValue)
+    @objc(removeTypesObject:)
+    @NSManaged public func removeFromTypes(_ value: ModifiableValue)
 
-    @objc(addSpecialDetails:)
-    @NSManaged public func addToSpecialDetails(_ values: NSSet)
+    @objc(addTypes:)
+    @NSManaged public func addToTypes(_ values: NSOrderedSet)
 
-    @objc(removeSpecialDetails:)
-    @NSManaged public func removeFromSpecialDetails(_ values: NSSet)
+    @objc(removeTypes:)
+    @NSManaged public func removeFromTypes(_ values: NSOrderedSet)
 
 }

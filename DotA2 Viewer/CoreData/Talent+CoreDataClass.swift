@@ -2,7 +2,7 @@
 //  Talent+CoreDataClass.swift
 //  
 //
-//  Created by Casey McLewin on 2016-12-19.
+//  Created by Casey McLewin on 2017-04-10.
 //
 //
 

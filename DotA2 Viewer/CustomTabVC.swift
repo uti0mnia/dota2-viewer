@@ -17,13 +17,13 @@ class CustomTabVC: DAUIViewController {
     
     // MARK - Properties
     fileprivate var titleView: DAMainLabel!
-    fileprivate var selectedObject: ListObject!
+    fileprivate var selectedObject: Object!
     
     // MARK - Core Data
     fileprivate let context = (UIApplication.shared.delegate as! AppDelegate).managedObjectContext
-    private lazy var heroFRC: NSFetchedResultsController<ListObject> = {
+    private lazy var heroFRC: NSFetchedResultsController<Object> = {
         // properties
-        let fetchRequest = NSFetchRequest<ListObject>(entityName: "Hero")
+        let fetchRequest = NSFetchRequest<Object>(entityName: "Hero")
         let sort = NSSortDescriptor(key: "name", ascending: true)
         fetchRequest.sortDescriptors = [sort]
         
@@ -37,9 +37,9 @@ class CustomTabVC: DAUIViewController {
         return frc
         
     }()
-    private lazy var itemFRC: NSFetchedResultsController<ListObject> = {
+    private lazy var itemFRC: NSFetchedResultsController<Object> = {
         // properties
-        let request = NSFetchRequest<ListObject>(entityName: "Item")
+        let request = NSFetchRequest<Object>(entityName: "Item")
         let sort = NSSortDescriptor(key: "name", ascending: true)
         request.sortDescriptors = [sort]
         
@@ -52,12 +52,13 @@ class CustomTabVC: DAUIViewController {
         frc.delegate = self
         return frc
     }()
-    fileprivate var fetchedResultsController: NSFetchedResultsController<ListObject> {
+    fileprivate var fetchedResultsController: NSFetchedResultsController<Object> {
         get {
             return self.entity == "Hero" ? heroFRC : itemFRC
         }
     }
     fileprivate var entity = "Hero" { didSet { switchTableView() } }
+    fileprivate var heroDetailVC = HeroDetailVC()
     
     
     // MARK - Methods
@@ -117,19 +118,19 @@ class CustomTabVC: DAUIViewController {
         tableView.setContentOffset(CGPoint.zero, animated: true)
     }
     
-    fileprivate func createDetail(for object: ListObject) -> DADetailVC? {
-        let sb = UIStoryboard(name: "Main", bundle: nil)
-        if let hero = object as? Hero {
-            let vc = sb.instantiateViewController(withIdentifier: "HeroDetailVC") as! HeroDetailVC
-            vc.object = hero
-            return vc
-        }
-        
-        if let item = object as? Item {
-            let vc = sb.instantiateViewController(withIdentifier: "ItemDetailVC") as! ItemDetailVC
-            vc.object = item
-            return vc
-        }
+    fileprivate func createDetail(for object: Object) -> DADetailVC? {
+//        let sb = UIStoryboard(name: "Main", bundle: nil)
+//        if let hero = object as? Hero {
+//            let vc = sb.instantiateViewController(withIdentifier: "HeroDetailVC") as! HeroDetailVC
+//            vc.object = hero
+//            return vc
+//        }
+//        
+//        if let item = object as? Item {
+//            let vc = sb.instantiateViewController(withIdentifier: "ItemDetailVC") as! ItemDetailVC
+//            vc.object = item
+//            return vc
+//        }
         
         return nil
     }
@@ -143,21 +144,21 @@ class CustomTabVC: DAUIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // hero segue
-        if segue.identifier == "showHero" {
-            if let hero = selectedObject as? Hero {
-                let vc = (segue.destination as! UINavigationController).topViewController as! HeroDetailVC
-                vc.object = hero
-            }
-        }
+//        // hero segue
+//        if segue.identifier == "showHero" {
+//            if let hero = selectedObject as? Hero {
+//                let vc = (segue.destination as! UINavigationController).topViewController as! HeroDetailVC
+//                vc.object = hero
+//            }
+//        }
         
         // item segue
-        if segue.identifier == "showItem" {
-            if let item = selectedObject as? Item {
-                let vc = (segue.destination as! UINavigationController).topViewController as! ItemDetailVC
-                vc.object = item
-            }
-        }
+//        if segue.identifier == "showItem" {
+//            if let item = selectedObject as? Item {
+//                let vc = (segue.destination as! UINavigationController).topViewController as! ItemDetailVC
+//                vc.object = item
+//            }
+//        }
     }
 }
 
@@ -182,13 +183,49 @@ extension CustomTabVC: UITabBarDelegate {
 }
 
 // MARK - TableView Methods
+
 extension CustomTabVC: UITableViewDelegate, UITableViewDataSource {
     fileprivate func configure(cell: DAMainTableViewCell, atIndexPath indexPath: IndexPath) {
         let obj = fetchedResultsController.object(at: indexPath)
-        cell.circleImageView.image = obj.getImage()
+        cell.circleImageView.image = UIImage(named: obj.imageName)
         cell.mainLabel.text = obj.name
-        cell.detailLabel.attributedText = obj.detailPretty
         
+        // details of the cell
+        let attString = NSMutableAttributedString()
+        let font = UIFont(name: "Radiance-Semibold", size: 12)!
+        let attachment = NSTextAttachment()
+        attachment.bounds = CGRect(x: 0, y: font.descender, width: 20, height: 20)
+        
+        // variables to simplify ifs
+        var s1: NSAttributedString!
+        var s2: NSAttributedString!
+        var details: String!
+        
+        // if it's a hero
+        if let hero = obj as? Hero {
+            // image
+            attachment.image = UIImage(named: hero.primaryAttribute.heroAttribute.rawValue + ".png")
+            
+            //attack type
+            details = (hero.misc.projectileSpeed == 0) ? " | Melee" : " | Ranged"
+            
+        }
+        // if its an item
+        if let item = obj as? Item {
+            attachment.image = #imageLiteral(resourceName: "coins.png") // coins.png
+
+            // cost of item with recipe cost if applicable
+            details = (item.recipeCost == 0) ? String(format: " %.0f", item.cost) : String(format: " %.0f (%.0f)", item.cost, item.recipeCost)
+        }
+        
+        s1 = NSAttributedString(attachment: attachment)
+        s2 = NSAttributedString(string: details, attributes: [NSFontAttributeName: font]) // should crash if we don't have an item or hero
+        
+        // combine strings
+        attString.append(s1)
+        attString.append(s2)
+        
+        cell.detailLabel.attributedText = attString
         cell.backgroundColor = UIColor.clear // for  iPad (bug < iOS 10)
     }
     
@@ -214,16 +251,23 @@ extension CustomTabVC: UITableViewDelegate, UITableViewDataSource {
         selectedObject = fetchedResultsController.object(at: indexPath)
         tableView.deselectRow(at: indexPath, animated: true)
         
-        if UIDevice.current.userInterfaceIdiom == .pad {
-            // for iPad
-            let segue = selectedObject is Hero ? "showHero" : "showItem"
-            self.performSegue(withIdentifier: segue, sender: self)
-        } else {
-            // for iPhone
-            if let vc = createDetail(for: selectedObject) {
-                showDetailViewController(vc, sender: self)
-            }
+        if selectedObject is Item {
+            return
         }
+        
+        heroDetailVC.hero = selectedObject as! Hero
+        showDetailViewController(heroDetailVC, sender: self)
+        
+//        if UIDevice.current.userInterfaceIdiom == .pad {
+//            // for iPad
+//            let segue = selectedObject is Hero ? "showHero" : "showItem"
+//            self.performSegue(withIdentifier: segue, sender: self)
+//        } else {
+//            // for iPhone
+//            if let vc = createDetail(for: selectedObject) {
+//                showDetailViewController(vc, sender: self)
+//            }
+//        }
         
         
     }

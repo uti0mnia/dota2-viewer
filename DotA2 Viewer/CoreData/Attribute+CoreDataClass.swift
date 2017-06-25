@@ -2,15 +2,29 @@
 //  Attribute+CoreDataClass.swift
 //  
 //
-//  Created by Casey McLewin on 2016-11-30.
+//  Created by Casey McLewin on 2017-04-10.
 //
 //
 
 import Foundation
 import CoreData
-import UIKit
 
-@objc(Attribute)
+
+public enum HeroAttribute: String {
+    case intelligence = "intelligence"
+    case agility = "agility"
+    case strength = "strength"
+}
+
 public class Attribute: NSManagedObject {
-    var image: UIImage { get { return UIImage(named: "\(self.name!.lowercased())_icon.png") ?? #imageLiteral(resourceName: "strength_icon.png") } }
+    var heroAttribute: HeroAttribute {
+            if type == 0 {
+                return .intelligence
+            } else if type == 1 {
+                return .agility
+            } else {
+                return .strength
+            }
+    }
+
 }

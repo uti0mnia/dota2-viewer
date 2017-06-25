@@ -2,7 +2,7 @@
 //  Hero+CoreDataProperties.swift
 //  
 //
-//  Created by Casey McLewin on 2016-12-19.
+//  Created by Casey McLewin on 2017-04-10.
 //
 //
 
@@ -13,71 +13,33 @@ import CoreData
 extension Hero {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Hero> {
-        return NSFetchRequest<Hero>(entityName: "Hero");
+        return NSFetchRequest<Hero>(entityName: "Hero")
     }
 
-    @NSManaged public var lore: String?
-    @NSManaged public var summary: String?
-    @NSManaged public var abilities: NSOrderedSet?
-    @NSManaged public var attribute: NSSet?
-    @NSManaged public var baseStats: BaseStat?
-    @NSManaged public var miscStats: MiscStat?
-    @NSManaged public var roles: NSSet?
-    @NSManaged public var talents: NSSet?
-    @NSManaged public var relationship: NSManagedObject?
-    @NSManaged public var talentNotes: NSSet?
+    @NSManaged public var descript: String
+    @NSManaged public var attributes: NSOrderedSet
+    @NSManaged public var base: BaseStats
+    @NSManaged public var misc: MiscStats
+    @NSManaged public var roles: NSSet
+    @NSManaged public var talentNotes: NSOrderedSet?
+    @NSManaged public var talents: NSSet
 
 }
 
-// MARK: Generated accessors for abilities
+// MARK: Generated accessors for attributes
 extension Hero {
 
-    @objc(insertObject:inAbilitiesAtIndex:)
-    @NSManaged public func insertIntoAbilities(_ value: Ability, at idx: Int)
+    @objc(addAttributesObject:)
+    @NSManaged public func addToAttributes(_ value: Attribute)
 
-    @objc(removeObjectFromAbilitiesAtIndex:)
-    @NSManaged public func removeFromAbilities(at idx: Int)
+    @objc(removeAttributesObject:)
+    @NSManaged public func removeFromAttributes(_ value: Attribute)
 
-    @objc(insertAbilities:atIndexes:)
-    @NSManaged public func insertIntoAbilities(_ values: [Ability], at indexes: NSIndexSet)
+    @objc(addAttributes:)
+    @NSManaged public func addToAttributes(_ values: NSSet)
 
-    @objc(removeAbilitiesAtIndexes:)
-    @NSManaged public func removeFromAbilities(at indexes: NSIndexSet)
-
-    @objc(replaceObjectInAbilitiesAtIndex:withObject:)
-    @NSManaged public func replaceAbilities(at idx: Int, with value: Ability)
-
-    @objc(replaceAbilitiesAtIndexes:withAbilities:)
-    @NSManaged public func replaceAbilities(at indexes: NSIndexSet, with values: [Ability])
-
-    @objc(addAbilitiesObject:)
-    @NSManaged public func addToAbilities(_ value: Ability)
-
-    @objc(removeAbilitiesObject:)
-    @NSManaged public func removeFromAbilities(_ value: Ability)
-
-    @objc(addAbilities:)
-    @NSManaged public func addToAbilities(_ values: NSOrderedSet)
-
-    @objc(removeAbilities:)
-    @NSManaged public func removeFromAbilities(_ values: NSOrderedSet)
-
-}
-
-// MARK: Generated accessors for attribute
-extension Hero {
-
-    @objc(addAttributeObject:)
-    @NSManaged public func addToAttribute(_ value: Attribute)
-
-    @objc(removeAttributeObject:)
-    @NSManaged public func removeFromAttribute(_ value: Attribute)
-
-    @objc(addAttribute:)
-    @NSManaged public func addToAttribute(_ values: NSSet)
-
-    @objc(removeAttribute:)
-    @NSManaged public func removeFromAttribute(_ values: NSSet)
+    @objc(removeAttributes:)
+    @NSManaged public func removeFromAttributes(_ values: NSSet)
 
 }
 
@@ -85,16 +47,51 @@ extension Hero {
 extension Hero {
 
     @objc(addRolesObject:)
-    @NSManaged public func addToRoles(_ value: ArrayValue)
+    @NSManaged public func addToRoles(_ value: ArrayItem)
 
     @objc(removeRolesObject:)
-    @NSManaged public func removeFromRoles(_ value: ArrayValue)
+    @NSManaged public func removeFromRoles(_ value: ArrayItem)
 
     @objc(addRoles:)
     @NSManaged public func addToRoles(_ values: NSSet)
 
     @objc(removeRoles:)
     @NSManaged public func removeFromRoles(_ values: NSSet)
+
+}
+
+// MARK: Generated accessors for talentNotes
+extension Hero {
+
+    @objc(insertObject:inTalentNotesAtIndex:)
+    @NSManaged public func insertIntoTalentNotes(_ value: Note, at idx: Int)
+
+    @objc(removeObjectFromTalentNotesAtIndex:)
+    @NSManaged public func removeFromTalentNotes(at idx: Int)
+
+    @objc(insertTalentNotes:atIndexes:)
+    @NSManaged public func insertIntoTalentNotes(_ values: [Note], at indexes: NSIndexSet)
+
+    @objc(removeTalentNotesAtIndexes:)
+    @NSManaged public func removeFromTalentNotes(at indexes: NSIndexSet)
+
+    @objc(replaceObjectInTalentNotesAtIndex:withObject:)
+    @NSManaged public func replaceTalentNotes(at idx: Int, with value: Note)
+
+    @objc(replaceTalentNotesAtIndexes:withTalentNotes:)
+    @NSManaged public func replaceTalentNotes(at indexes: NSIndexSet, with values: [Note])
+
+    @objc(addTalentNotesObject:)
+    @NSManaged public func addToTalentNotes(_ value: Note)
+
+    @objc(removeTalentNotesObject:)
+    @NSManaged public func removeFromTalentNotes(_ value: Note)
+
+    @objc(addTalentNotes:)
+    @NSManaged public func addToTalentNotes(_ values: NSOrderedSet)
+
+    @objc(removeTalentNotes:)
+    @NSManaged public func removeFromTalentNotes(_ values: NSOrderedSet)
 
 }
 

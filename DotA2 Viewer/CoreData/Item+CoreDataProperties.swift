@@ -2,7 +2,7 @@
 //  Item+CoreDataProperties.swift
 //  
 //
-//  Created by Casey McLewin on 2016-12-13.
+//  Created by Casey McLewin on 2017-04-10.
 //
 //
 
@@ -13,70 +13,52 @@ import CoreData
 extension Item {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Item> {
-        return NSFetchRequest<Item>(entityName: "Item");
+        return NSFetchRequest<Item>(entityName: "Item")
     }
 
-    @NSManaged public var cost: String?
-    @NSManaged public var lore: String?
-    @NSManaged public var type: String?
-    @NSManaged public var abilities: NSOrderedSet?
-    @NSManaged public var additionalInfo: NSSet?
+    @NSManaged public var cost: Double
+    @NSManaged public var details: [String:Any]
+    @NSManaged public var recipeCost: Double
+    @NSManaged public var type: String
+    @NSManaged public var additionalInfo: NSOrderedSet?
     @NSManaged public var availability: NSSet?
     @NSManaged public var buildsFrom: NSSet?
     @NSManaged public var buildsInto: NSSet?
-    @NSManaged public var details: NSSet?
-
-}
-
-// MARK: Generated accessors for abilities
-extension Item {
-
-    @objc(insertObject:inAbilitiesAtIndex:)
-    @NSManaged public func insertIntoAbilities(_ value: Ability, at idx: Int)
-
-    @objc(removeObjectFromAbilitiesAtIndex:)
-    @NSManaged public func removeFromAbilities(at idx: Int)
-
-    @objc(insertAbilities:atIndexes:)
-    @NSManaged public func insertIntoAbilities(_ values: [Ability], at indexes: NSIndexSet)
-
-    @objc(removeAbilitiesAtIndexes:)
-    @NSManaged public func removeFromAbilities(at indexes: NSIndexSet)
-
-    @objc(replaceObjectInAbilitiesAtIndex:withObject:)
-    @NSManaged public func replaceAbilities(at idx: Int, with value: Ability)
-
-    @objc(replaceAbilitiesAtIndexes:withAbilities:)
-    @NSManaged public func replaceAbilities(at indexes: NSIndexSet, with values: [Ability])
-
-    @objc(addAbilitiesObject:)
-    @NSManaged public func addToAbilities(_ value: Ability)
-
-    @objc(removeAbilitiesObject:)
-    @NSManaged public func removeFromAbilities(_ value: Ability)
-
-    @objc(addAbilities:)
-    @NSManaged public func addToAbilities(_ values: NSOrderedSet)
-
-    @objc(removeAbilities:)
-    @NSManaged public func removeFromAbilities(_ values: NSOrderedSet)
 
 }
 
 // MARK: Generated accessors for additionalInfo
 extension Item {
 
+    @objc(insertObject:inAdditionalInfoAtIndex:)
+    @NSManaged public func insertIntoAdditionalInfo(_ value: ArrayItem, at idx: Int)
+
+    @objc(removeObjectFromAdditionalInfoAtIndex:)
+    @NSManaged public func removeFromAdditionalInfo(at idx: Int)
+
+    @objc(insertAdditionalInfo:atIndexes:)
+    @NSManaged public func insertIntoAdditionalInfo(_ values: [ArrayItem], at indexes: NSIndexSet)
+
+    @objc(removeAdditionalInfoAtIndexes:)
+    @NSManaged public func removeFromAdditionalInfo(at indexes: NSIndexSet)
+
+    @objc(replaceObjectInAdditionalInfoAtIndex:withObject:)
+    @NSManaged public func replaceAdditionalInfo(at idx: Int, with value: ArrayItem)
+
+    @objc(replaceAdditionalInfoAtIndexes:withAdditionalInfo:)
+    @NSManaged public func replaceAdditionalInfo(at indexes: NSIndexSet, with values: [ArrayItem])
+
     @objc(addAdditionalInfoObject:)
-    @NSManaged public func addToAdditionalInfo(_ value: ArrayValue)
+    @NSManaged public func addToAdditionalInfo(_ value: ArrayItem)
 
     @objc(removeAdditionalInfoObject:)
-    @NSManaged public func removeFromAdditionalInfo(_ value: ArrayValue)
+    @NSManaged public func removeFromAdditionalInfo(_ value: ArrayItem)
 
     @objc(addAdditionalInfo:)
-    @NSManaged public func addToAdditionalInfo(_ values: NSSet)
+    @NSManaged public func addToAdditionalInfo(_ values: NSOrderedSet)
 
     @objc(removeAdditionalInfo:)
-    @NSManaged public func removeFromAdditionalInfo(_ values: NSSet)
+    @NSManaged public func removeFromAdditionalInfo(_ values: NSOrderedSet)
 
 }
 
@@ -84,10 +66,10 @@ extension Item {
 extension Item {
 
     @objc(addAvailabilityObject:)
-    @NSManaged public func addToAvailability(_ value: ArrayValue)
+    @NSManaged public func addToAvailability(_ value: ArrayItem)
 
     @objc(removeAvailabilityObject:)
-    @NSManaged public func removeFromAvailability(_ value: ArrayValue)
+    @NSManaged public func removeFromAvailability(_ value: ArrayItem)
 
     @objc(addAvailability:)
     @NSManaged public func addToAvailability(_ values: NSSet)
@@ -97,53 +79,19 @@ extension Item {
 
 }
 
-// MARK: Generated accessors for buildsFrom
-extension Item {
-
-    @objc(addBuildsFromObject:)
-    @NSManaged public func addToBuildsFrom(_ value: ArrayValue)
-
-    @objc(removeBuildsFromObject:)
-    @NSManaged public func removeFromBuildsFrom(_ value: ArrayValue)
-
-    @objc(addBuildsFrom:)
-    @NSManaged public func addToBuildsFrom(_ values: NSSet)
-
-    @objc(removeBuildsFrom:)
-    @NSManaged public func removeFromBuildsFrom(_ values: NSSet)
-
-}
-
 // MARK: Generated accessors for buildsInto
 extension Item {
 
     @objc(addBuildsIntoObject:)
-    @NSManaged public func addToBuildsInto(_ value: ArrayValue)
+    @NSManaged public func addToBuildsInto(_ value: ArrayItem)
 
     @objc(removeBuildsIntoObject:)
-    @NSManaged public func removeFromBuildsInto(_ value: ArrayValue)
+    @NSManaged public func removeFromBuildsInto(_ value: ArrayItem)
 
     @objc(addBuildsInto:)
     @NSManaged public func addToBuildsInto(_ values: NSSet)
 
     @objc(removeBuildsInto:)
     @NSManaged public func removeFromBuildsInto(_ values: NSSet)
-
-}
-
-// MARK: Generated accessors for details
-extension Item {
-
-    @objc(addDetailsObject:)
-    @NSManaged public func addToDetails(_ value: ItemDetail)
-
-    @objc(removeDetailsObject:)
-    @NSManaged public func removeFromDetails(_ value: ItemDetail)
-
-    @objc(addDetails:)
-    @NSManaged public func addToDetails(_ values: NSSet)
-
-    @objc(removeDetails:)
-    @NSManaged public func removeFromDetails(_ values: NSSet)
 
 }

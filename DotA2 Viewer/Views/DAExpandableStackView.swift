@@ -118,7 +118,7 @@ class DAExpandableStackView: UIStackView, DAExpandableProtocol {
         topSV.insertArrangedSubview(arrowView, at: 0)
         
         // add the subview
-        self.addArrangedSubviews(views: [subView])
+        self.uti_addArrangedSubviews(views: [subView])
         subView?.isHidden = !isExpanded
     }
     
