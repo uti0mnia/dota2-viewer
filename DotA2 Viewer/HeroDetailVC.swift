@@ -36,10 +36,6 @@ class HeroDetailVC: UIViewController, HeroHeaderViewDelegate {
         
         heroStretchHeaderView.delegate = self
         
-        // TODO: Remove
-        view.backgroundColor = UIColor.black
-        contentView.backgroundColor = UIColor.flatRed()
-        
         addConstraints()
     }
     

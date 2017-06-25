@@ -8,18 +8,30 @@
 
 import UIKit
 
-class ItemDetailVC: DADetailVC {
-    // MARK - Properties
-    fileprivate var item: Item!
+class ItemDetailVC: UIViewController {
+   
+    public var item: Item? {
+        didSet {
+            if view != nil {
+                updateView()
+            }
+        }
+    }
     
-    // MARK - Methods
-    override func viewDidLoad() {
-        // make sure we have an item
-        item = object as? Item
-        if (item == nil) { return }
+    private func updateView() {
+//        guard let hero = hero else {
+//            return
+//        }
+//        self.title = hero.name
+//        
+//        heroStretchHeaderView.imageView.image = UIImage(named: hero.imageName)
+//        ablilityVCV.abilities = hero.abilities?.array as? [Ability]
+//        basicTVC.hero = hero
+//        miscTVC.hero = hero
+//        talentTVC.talents = hero.talents.allObjects as? [Talent]
+//        
+//        swapChildViewController(to: basicTVC)
         
-        // Configure the VC
-        super.viewDidLoad()
     }
 }
 

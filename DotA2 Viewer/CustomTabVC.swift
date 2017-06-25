@@ -119,18 +119,18 @@ class CustomTabVC: DAUIViewController {
     }
     
     fileprivate func createDetail(for object: Object) -> DADetailVC? {
-        let sb = UIStoryboard(name: "Main", bundle: nil)
+//        let sb = UIStoryboard(name: "Main", bundle: nil)
 //        if let hero = object as? Hero {
 //            let vc = sb.instantiateViewController(withIdentifier: "HeroDetailVC") as! HeroDetailVC
 //            vc.object = hero
 //            return vc
 //        }
 //        
-        if let item = object as? Item {
-            let vc = sb.instantiateViewController(withIdentifier: "ItemDetailVC") as! ItemDetailVC
-            vc.object = item
-            return vc
-        }
+//        if let item = object as? Item {
+//            let vc = sb.instantiateViewController(withIdentifier: "ItemDetailVC") as! ItemDetailVC
+//            vc.object = item
+//            return vc
+//        }
         
         return nil
     }
@@ -153,12 +153,12 @@ class CustomTabVC: DAUIViewController {
 //        }
         
         // item segue
-        if segue.identifier == "showItem" {
-            if let item = selectedObject as? Item {
-                let vc = (segue.destination as! UINavigationController).topViewController as! ItemDetailVC
-                vc.object = item
-            }
-        }
+//        if segue.identifier == "showItem" {
+//            if let item = selectedObject as? Item {
+//                let vc = (segue.destination as! UINavigationController).topViewController as! ItemDetailVC
+//                vc.object = item
+//            }
+//        }
     }
 }
 
