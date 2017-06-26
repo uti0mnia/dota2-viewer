@@ -898,6 +898,8 @@
 		C9745D5E1EC577CC009537E4 /* HeroHeaderViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9745D5D1EC577CC009537E4 /* HeroHeaderViewDelegate.swift */; };
 		C9745D651EC7B86B009537E4 /* HeroAttributeViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9745D641EC7B86B009537E4 /* HeroAttributeViewDelegate.swift */; };
 		C9745D6B1EC8E262009537E4 /* HeroBasicTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9745D6A1EC8E262009537E4 /* HeroBasicTVC.swift */; };
+		C97E11631F0084BF00E35D1D /* ItemBuildView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97E11621F0084BF00E35D1D /* ItemBuildView.swift */; };
+		C97E11651F0089F200E35D1D /* ItemRecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97E11641F0089F200E35D1D /* ItemRecipeView.swift */; };
 		C98526701EFA27F100398D10 /* String+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = C985266F1EFA27F100398D10 /* String+Convenience.swift */; };
 		C98526721EFA299200398D10 /* UIStackView+AddArrangedSubviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98526711EFA299200398D10 /* UIStackView+AddArrangedSubviews.swift */; };
 		C98526741EFA2A0F00398D10 /* Int+NumberHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98526731EFA2A0F00398D10 /* Int+NumberHandling.swift */; };
@@ -1843,6 +1845,8 @@
 		C9745D5D1EC577CC009537E4 /* HeroHeaderViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HeroHeaderViewDelegate.swift; path = Views/HeroHeaderViewDelegate.swift; sourceTree = "<group>"; };
 		C9745D641EC7B86B009537E4 /* HeroAttributeViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroAttributeViewDelegate.swift; sourceTree = "<group>"; };
 		C9745D6A1EC8E262009537E4 /* HeroBasicTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroBasicTVC.swift; sourceTree = "<group>"; };
+		C97E11621F0084BF00E35D1D /* ItemBuildView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemBuildView.swift; sourceTree = "<group>"; };
+		C97E11641F0089F200E35D1D /* ItemRecipeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemRecipeView.swift; sourceTree = "<group>"; };
 		C985266F1EFA27F100398D10 /* String+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Convenience.swift"; sourceTree = "<group>"; };
 		C98526711EFA299200398D10 /* UIStackView+AddArrangedSubviews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStackView+AddArrangedSubviews.swift"; sourceTree = "<group>"; };
 		C98526731EFA2A0F00398D10 /* Int+NumberHandling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+NumberHandling.swift"; sourceTree = "<group>"; };
@@ -2037,6 +2041,7 @@
 				C957BBE91EEFA747008F756B /* Hero Misc */,
 				C9B1256F1EE1131900984F90 /* Ability Display */,
 				C9745D5F1EC7B0B0009537E4 /* Hero Details */,
+				C97E11611F00840F00E35D1D /* Recipe */,
 				C98526A21EFE246300398D10 /* Item Details */,
 				C92EC1381EA2CACC00FA01E1 /* Database */,
 				36FD565C1DA6E606007C5A9C /* Controller */,
@@ -3037,6 +3042,15 @@
 				C9B125721EE1182400984F90 /* KeyValueView.swift */,
 			);
 			name = "Hero Details";
+			sourceTree = "<group>";
+		};
+		C97E11611F00840F00E35D1D /* Recipe */ = {
+			isa = PBXGroup;
+			children = (
+				C97E11621F0084BF00E35D1D /* ItemBuildView.swift */,
+				C97E11641F0089F200E35D1D /* ItemRecipeView.swift */,
+			);
+			name = Recipe;
 			sourceTree = "<group>";
 		};
 		C98526A21EFE246300398D10 /* Item Details */ = {
@@ -4099,6 +4113,7 @@
 				C90A13591EE7BE7400D143B8 /* Fonts.swift in Sources */,
 				C9AEA2131E9C4629006FD974 /* Note+CoreDataClass.swift in Sources */,
 				C9AEA2041E9C4629006FD974 /* BaseStats+CoreDataProperties.swift in Sources */,
+				C97E11651F0089F200E35D1D /* ItemRecipeView.swift in Sources */,
 				C9AEA2091E9C4629006FD974 /* Object+CoreDataClass.swift in Sources */,
 				C9AEA21A1E9C4629006FD974 /* Ability+CoreDataProperties.swift in Sources */,
 				C957BBDF1EECE682008F756B /* Layout.swift in Sources */,
@@ -4152,6 +4167,7 @@
 				C90A13621EEA6CCB00D143B8 /* AbilityView.swift in Sources */,
 				C957BBE41EEE4081008F756B /* HeroTalentCell.swift in Sources */,
 				36C0C9621DA6E25800169394 /* AppDelegate.swift in Sources */,
+				C97E11631F0084BF00E35D1D /* ItemBuildView.swift in Sources */,
 				C94A26D21DD5593F00D9B054 /* DASlider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
