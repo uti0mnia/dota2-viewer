@@ -31,6 +31,8 @@ class HeroDetailVC: UIViewController, HeroHeaderViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        edgesForExtendedLayout = UIRectEdge()
+        
         heroHeaderView.backgroundColor = UIColor.flatBlack()
         contentView.backgroundColor = UIColor.flatBlack()
         

@@ -29,6 +29,7 @@ class ItemDetailViewController: UIViewController, ItemHeaderViewDelegate, ItemBa
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        edgesForExtendedLayout = UIRectEdge()
         
         itemHeaderView.backgroundColor = UIColor.flatForestGreen()
         contentView.backgroundColor = UIColor.flatForestGreen()
