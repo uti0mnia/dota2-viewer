@@ -29,8 +29,8 @@ class ItemDetailViewController: UIViewController, ItemHeaderViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        itemHeaderView.backgroundColor = UIColor.flatBlack()
-        contentView.backgroundColor = UIColor.flatBlack()
+        itemHeaderView.backgroundColor = UIColor.flatForestGreen()
+        contentView.backgroundColor = UIColor.flatForestGreen()
         
         view.addSubview(itemHeaderView)
         view.addSubview(contentView)

@@ -20,6 +20,7 @@ class AbilityView: UIView {
     private var abilityImageView = UIImageView()
     private var descriptionLabel = UILabel()
     
+    private var imageStackView = UIStackView()
     private var typeStackView: TypeKVStackView = {
         let sv = TypeKVStackView()
         sv.axis = .vertical
@@ -30,7 +31,7 @@ class AbilityView: UIView {
     private var dataStackView: DataKVStackView = {
         let sv = DataKVStackView()
         sv.axis = .vertical
-        sv.distribution = .fillEqually
+        sv.distribution = .fillProportionally
         sv.spacing = AbilityView.padding
         return sv
     }()
@@ -38,8 +39,8 @@ class AbilityView: UIView {
     private var modifierStackView: UIStackView = {
         let sv = UIStackView()
         sv.axis = .vertical
-        sv.spacing = AbilityView.padding
         sv.distribution = .fillProportionally
+        sv.spacing = AbilityView.padding
         return sv
     }()
     private var modifierLabels = [UILabel]()
@@ -48,7 +49,7 @@ class AbilityView: UIView {
         let sv = UIStackView()
         sv.axis = .vertical
         sv.distribution = .fillProportionally
-        sv.spacing = 8
+        sv.spacing = AbilityView.padding
         return sv
     }()
     private var cooldownView = KeyValueView()
@@ -69,7 +70,13 @@ class AbilityView: UIView {
     }
     public var abilityImage: UIImage? {
         didSet {
+            abilityImageView.removeFromSuperview()
+            
             abilityImageView.image = abilityImage
+            
+            if abilityImage != nil {
+                imageStackView.insertArrangedSubview(abilityImageView, at: 0)
+            }
         }
     }
     public var types: [ModifiableValue]? {
@@ -174,17 +181,24 @@ class AbilityView: UIView {
         
         // TODO: Add some of these fonts as defaults for label subclasses.
         nameLabel.font = Fonts.title
-        abilityImageView.contentMode = .scaleAspectFill
+        
+        abilityImageView.contentMode = .scaleAspectFit
         abilityImageView.clipsToBounds = true
+        
+        imageStackView.uti_addArrangedSubviews(views: [abilityImageView, typeStackView])
+        imageStackView.spacing = AbilityView.padding
+        
         descriptionLabel.numberOfLines = 0
+        
         cooldownView.isVertical = false
+        
         manaView.isVertical = false
+        
         notesLabel.numberOfLines = 0
         
         addSubview(nameLabel)
         addSubview(specialsLabel)
-        addSubview(abilityImageView)
-        addSubview(typeStackView)
+        addSubview(imageStackView)
         addSubview(descriptionLabel)
         addSubview(dataStackView)
         addSubview(modifierStackView)
@@ -193,15 +207,13 @@ class AbilityView: UIView {
         addConstraints()
     }
     
-    // MARK: - Layout
-    
     private func addConstraints() {
         let padding = AbilityView.padding
         
         nameLabel.snp.makeConstraints() { make in
             make.left.top.equalTo(self).inset(padding)
             make.right.lessThanOrEqualTo(specialsLabel.snp.left).offset(-padding)
-            make.bottom.equalTo(specialsLabel.snp.bottom)
+            make.bottom.equalTo(specialsLabel)
             make.height.equalTo(nameLabel.font.pointSize)
         }
         
@@ -209,22 +221,13 @@ class AbilityView: UIView {
             make.top.right.equalTo(self).inset(padding)
         }
         
-        typeStackView.snp.makeConstraints() { make in
+        imageStackView.snp.makeConstraints() { make in
+            make.left.right.equalTo(self).inset(padding)
             make.top.equalTo(nameLabel.snp.bottom).offset(padding)
-            make.right.equalTo(self).inset(padding)
         }
-        
-        abilityImageView.snp.makeConstraints() { make in
-            make.top.equalTo(nameLabel.snp.bottom).offset(padding)
-            make.left.equalTo(self).inset(padding)
-            make.right.equalTo(typeStackView.snp.left).offset(-padding)
-            make.bottom.equalTo(typeStackView.snp.bottom)
-        }
-        abilityImageView.setContentHuggingPriority(252, for: .horizontal)
-        abilityImageView.setContentCompressionResistancePriority(1000, for: .vertical)
         
         descriptionLabel.snp.makeConstraints() { make in
-            make.top.equalTo(abilityImageView.snp.bottom).offset(padding)
+            make.top.equalTo(imageStackView.snp.bottom).offset(padding)
             make.left.right.equalTo(self).inset(padding)
         }
         

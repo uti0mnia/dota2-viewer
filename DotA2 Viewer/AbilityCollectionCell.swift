@@ -54,7 +54,7 @@ class AbilityCollectionCell: UICollectionViewCell {
         scrollView.addSubview(abilityView)
         abilityView.snp.makeConstraints() { make in
             make.left.top.right.bottom.equalTo(scrollView)
-            make.width.equalTo(contentView.snp.width)
+            make.width.equalTo(scrollView)
         }
     }
 }

@@ -59,11 +59,15 @@ class ItemBasicView: UIView {
     
     private func commonInit() {
         availabilityLabel.textAlignment = .right
+        
         typeImageView.contentMode = .scaleAspectFit
-        typeImageView.setContentHuggingPriority(251, for: .horizontal)
+        typeImageView.setContentHuggingPriority(UILayoutPriorityDefaultHigh, for: .horizontal)
+        
         detailStack.axis = .vertical
         detailStack.distribution = .fillProportionally
+        
         additionalInfoLabel.numberOfLines = 0
+        
         loreLabel.numberOfLines = 0
         
         addSubview(costLabel)
@@ -80,13 +84,13 @@ class ItemBasicView: UIView {
         
         let typeStack = UIStackView(arrangedSubviews: [typeImageView, typeLabel])
         typeStack.alignment = .top
-        typeStack.distribution = .fillProportionally
+        typeStack.spacing = ItemBasicView.padding
         addSubview(typeStack)
         
         costLabel.snp.makeConstraints() { make in
             make.left.top.equalTo(self).inset(padding)
             make.right.lessThanOrEqualTo(availabilityLabel.snp.left).offset(-padding)
-            make.bottom.equalTo(availabilityLabel.snp.bottom)
+            make.bottom.equalTo(availabilityLabel)
             make.height.equalTo(costLabel.font.pointSize)
         }
         

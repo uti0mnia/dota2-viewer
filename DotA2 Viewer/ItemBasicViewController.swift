@@ -46,7 +46,7 @@ class ItemBasicViewController: UIViewController, RecipeBuildViewDelegate {
         scrollView.addSubview(basicView)
         basicView.snp.makeConstraints() { make in
             make.left.top.right.bottom.equalTo(scrollView)
-            make.width.equalTo(view.snp.width).priority(999)
+            make.width.equalTo(scrollView)
         }
     }
     
