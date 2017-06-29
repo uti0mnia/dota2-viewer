@@ -33,7 +33,7 @@ class RecipeBuildView: UIStackView {
                 }
                 
                 recipeParts[index].itemName = name
-                stackView.addArrangedSubview(recipeParts[index])
+                recipeStackView.addArrangedSubview(recipeParts[index])
             }
         }
     }
@@ -45,7 +45,7 @@ class RecipeBuildView: UIStackView {
     }
     
     private var recipeParts = [RecipePart]()
-    private var stackView = UIStackView()
+    private var recipeStackView = UIStackView()
     private var topLabel = UILabel()
     
     override init(frame: CGRect) {
@@ -65,9 +65,10 @@ class RecipeBuildView: UIStackView {
         distribution = .fillProportionally
         spacing = 8
         
-        stackView.distribution = .fillEqually
+        recipeStackView.distribution = .fillEqually
+        recipeStackView.spacing = 8
         
-        uti_addArrangedSubviews(views: [topLabel, stackView])
+        uti_addArrangedSubviews(views: [topLabel, recipeStackView])
     }
     
     private func createRecipePart() -> RecipePart {
