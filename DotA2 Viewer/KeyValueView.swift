@@ -17,7 +17,7 @@ class KeyValueView: UIView {
         let sv = UIStackView()
         
         sv.axis = .horizontal
-        sv.alignment = .fill
+        sv.alignment = .top
         sv.distribution = .fill
         sv.translatesAutoresizingMaskIntoConstraints = false
         
@@ -45,6 +45,8 @@ class KeyValueView: UIView {
     }
     
     private func commonInit() {
+        valueLabel.numberOfLines = 0
+        // TODO: Does this really do anything?
         valueLabel.setContentHuggingPriority(251, for: .horizontal)
         valueLabel.setContentHuggingPriority(251, for: .vertical)
         

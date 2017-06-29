@@ -59,6 +59,7 @@ class CustomTabVC: DAUIViewController {
     }
     fileprivate var entity = "Hero" { didSet { switchTableView() } }
     fileprivate var heroDetailVC = HeroDetailVC()
+    fileprivate var itemDetailViewController = ItemDetailViewController()
     
     
     // MARK - Methods
@@ -251,25 +252,15 @@ extension CustomTabVC: UITableViewDelegate, UITableViewDataSource {
         selectedObject = fetchedResultsController.object(at: indexPath)
         tableView.deselectRow(at: indexPath, animated: true)
         
-        if selectedObject is Item {
-            return
+        if let hero = selectedObject as? Hero {
+            heroDetailVC.hero = hero
+            showDetailViewController(heroDetailVC, sender: self)
         }
         
-        heroDetailVC.hero = selectedObject as! Hero
-        showDetailViewController(heroDetailVC, sender: self)
-        
-//        if UIDevice.current.userInterfaceIdiom == .pad {
-//            // for iPad
-//            let segue = selectedObject is Hero ? "showHero" : "showItem"
-//            self.performSegue(withIdentifier: segue, sender: self)
-//        } else {
-//            // for iPhone
-//            if let vc = createDetail(for: selectedObject) {
-//                showDetailViewController(vc, sender: self)
-//            }
-//        }
-        
-        
+        if let item = selectedObject as? Item {
+            itemDetailViewController.item = item
+            showDetailViewController(itemDetailViewController, sender: self)
+        }
     }
 }
 

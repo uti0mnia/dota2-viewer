@@ -13,7 +13,7 @@ import CoreData
 public class Note: NSManagedObject {
     public func prettify(depth: Int = 0) -> NSAttributedString {
         var tabs = String(repeating: "\t", count: depth)
-        tabs += "•"
+        tabs += "• "
         let currentNote = AttributedStringParser.parse(string: tabs + value)!
         let finalString = NSMutableAttributedString(attributedString: currentNote)
         
@@ -25,6 +25,17 @@ public class Note: NSManagedObject {
             }
         }
         
+        return finalString
+    }
+    
+    public static func prettify(_ notes: [Note]) -> NSAttributedString {
+        let finalString = NSMutableAttributedString()
+        for i in 0..<notes.count {
+            if i != 0 {
+                finalString.append(NSAttributedString.uti_newLine)
+            }
+            finalString.append(notes[i].prettify())
+        }
         return finalString
     }
 }

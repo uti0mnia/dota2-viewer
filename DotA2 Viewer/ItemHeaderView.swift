@@ -9,11 +9,29 @@
 import UIKit
 import SnapKit
 
-class HeroHeaderView: UIView {
+class ItemHeaderView: UIView {
     
-    weak var delegate: HeroHeaderViewDelegate?
+    weak var delegate: ItemHeaderViewDelegate?
     
-    public var imageView: UIImageView = {
+    public var item: Item? {
+        didSet {
+            detailsButton.removeFromSuperview()
+            abilitiesButton.removeFromSuperview()
+            
+            guard let item = item else {
+                return
+            }
+            
+            imageView.image = UIImage(named: item.imageName)
+            
+            if (item.abilities?.array as? [Ability]) != nil {
+                stackView.uti_addArrangedSubviews(views: [detailsButton, abilitiesButton])
+            }
+            
+        }
+    }
+    
+    private var imageView: UIImageView = {
         let iv = UIImageView()
         
         iv.clipsToBounds = true
@@ -24,10 +42,8 @@ class HeroHeaderView: UIView {
     }()
     
     private var stackView = UIStackView()
-    public var detailsButton = UIButton()
-    public var abilitiesButton = UIButton()
-    public var talentsButton = UIButton()
-    public var miscButton = UIButton()
+    private var detailsButton = UIButton()
+    private var abilitiesButton = UIButton()
     
     // TODO: Make into swipe gesture.
     private var tapGesture: UITapGestureRecognizer!
@@ -57,7 +73,7 @@ class HeroHeaderView: UIView {
     }
     
     private func initViews() {
-        stackView.uti_addArrangedSubviews(views: [detailsButton, abilitiesButton, talentsButton, miscButton])
+        stackView.uti_addArrangedSubviews(views: [detailsButton, abilitiesButton])
         stackView.distribution = .fillEqually
         
         uti_addSubviews([imageView, stackView])
@@ -69,14 +85,6 @@ class HeroHeaderView: UIView {
         abilitiesButton.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
         abilitiesButton.setTitle("Abilities", for: .normal)
         abilitiesButton.tag = 1
-        
-        talentsButton.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
-        talentsButton.setTitle("Talents", for: .normal)
-        talentsButton.tag = 2
-        
-        miscButton.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
-        miscButton.setTitle("Miscellaneous", for: .normal)
-        miscButton.tag = 3
     }
     
     private func addConstraints() {
@@ -103,12 +111,12 @@ class HeroHeaderView: UIView {
     }
     
     @objc private func buttonTapped(_ sender: UIButton) {
-        guard let tab = HeroDetailTab(rawValue: sender.tag) else {
+        guard let tab = ItemDetailTab(rawValue: sender.tag) else {
             assertionFailure("\(String(describing: self)) buttons not configured properly")
             return
         }
         
-        delegate?.heroHeaderView(self, didTapTab: tab)
+        delegate?.itemHeaderView(self, didTapTab: tab)
     }
     
 }

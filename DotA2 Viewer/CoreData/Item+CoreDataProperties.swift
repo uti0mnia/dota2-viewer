@@ -17,7 +17,7 @@ extension Item {
     }
 
     @NSManaged public var cost: Double
-    @NSManaged public var details: [String:Any]
+    @NSManaged public var details: [String: [String]]
     @NSManaged public var recipeCost: Double
     @NSManaged public var type: String
     @NSManaged public var additionalInfo: NSOrderedSet?

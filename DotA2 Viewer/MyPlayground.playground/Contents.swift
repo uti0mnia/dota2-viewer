@@ -2,6 +2,10 @@
 
 import UIKit
 
-for i in 0..<3 {
-    print((i + 2) % 3)
+struct KV {
+    var key: String
+    var value: String
 }
+
+let kvs = [KV(key: "k1", value: "v1"), KV(key: "k2", value: "v2")]
+print(kvs.map({ $0.key }))

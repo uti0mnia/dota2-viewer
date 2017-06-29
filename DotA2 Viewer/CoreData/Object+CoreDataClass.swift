@@ -22,4 +22,8 @@ public class Object: NSManagedObject {
     public var imageName: String {
         return name + ".png"
     }
+    
+    public static func imageNameFrom(_ name: String) -> String {
+        return name + ".png"
+    }
 }

@@ -148,13 +148,7 @@ class AbilityView: UIView {
                 return
             }
             
-            let finalString = NSMutableAttributedString()
-            for i in 0..<notes.count {
-                if i != 0 {
-                    finalString.append(NSAttributedString.uti_newLine)
-                }
-                finalString.append(notes[i].prettify())
-            }
+            let finalString = Note.prettify(notes)
 
             notesLabel.attributedText = finalString
             bottomStackView.addArrangedSubview(notesLabel)

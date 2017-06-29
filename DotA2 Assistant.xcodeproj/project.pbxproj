@@ -67,8 +67,8 @@
 		C90A793A1E021EE00068C79C /* DABackgroundColourStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90A79391E021EE00068C79C /* DABackgroundColourStackView.swift */; };
 		C90CE60A1DFCB67500C93539 /* DAExpandableStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90CE6091DFCB67500C93539 /* DAExpandableStackView.swift */; };
 		C90CE6101DFCC18F00C93539 /* DAExpandableTextStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90CE60F1DFCC18F00C93539 /* DAExpandableTextStackView.swift */; };
-		C90CE6141DFCCBA400C93539 /* ItemDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90CE6131DFCCBA400C93539 /* ItemDetailVC.swift */; };
-		C91470401DD916D5002A042C /* recipe.png in Resources */ = {isa = PBXBuildFile; fileRef = C914703F1DD916D5002A042C /* recipe.png */; };
+		C90CE6141DFCCBA400C93539 /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90CE6131DFCCBA400C93539 /* ItemDetailViewController.swift */; };
+		C91470401DD916D5002A042C /* Recipe.png in Resources */ = {isa = PBXBuildFile; fileRef = C914703F1DD916D5002A042C /* Recipe.png */; };
 		C9172C181DD13F9100DCF88F /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9172C171DD13F9100DCF88F /* Globals.swift */; };
 		C9172C211DD176BA00DCF88F /* dota2-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = C9172C201DD176BA00DCF88F /* dota2-logo.png */; };
 		C922FA8B1DD8AD27007B76F8 /* DALoreLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C922FA8A1DD8AD27007B76F8 /* DALoreLabel.swift */; };
@@ -898,12 +898,17 @@
 		C9745D5E1EC577CC009537E4 /* HeroHeaderViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9745D5D1EC577CC009537E4 /* HeroHeaderViewDelegate.swift */; };
 		C9745D651EC7B86B009537E4 /* HeroAttributeViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9745D641EC7B86B009537E4 /* HeroAttributeViewDelegate.swift */; };
 		C9745D6B1EC8E262009537E4 /* HeroBasicTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9745D6A1EC8E262009537E4 /* HeroBasicTVC.swift */; };
+		C97E11631F0084BF00E35D1D /* RecipeBuildView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97E11621F0084BF00E35D1D /* RecipeBuildView.swift */; };
+		C97E11651F0089F200E35D1D /* RecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97E11641F0089F200E35D1D /* RecipeView.swift */; };
 		C98526701EFA27F100398D10 /* String+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = C985266F1EFA27F100398D10 /* String+Convenience.swift */; };
 		C98526721EFA299200398D10 /* UIStackView+AddArrangedSubviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98526711EFA299200398D10 /* UIStackView+AddArrangedSubviews.swift */; };
 		C98526741EFA2A0F00398D10 /* Int+NumberHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98526731EFA2A0F00398D10 /* Int+NumberHandling.swift */; };
 		C98526961EFB7EBC00398D10 /* AbilityKVStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98526951EFB7EBC00398D10 /* AbilityKVStackView.swift */; };
 		C985269D1EFE0EC300398D10 /* AbiltyCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C985269C1EFE0EC300398D10 /* AbiltyCollectionViewController.swift */; };
 		C985269F1EFE0F0F00398D10 /* AbilityCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C985269E1EFE0F0F00398D10 /* AbilityCollectionCell.swift */; };
+		C98C55571F00A00900540DC0 /* ItemBasicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98C55561F00A00900540DC0 /* ItemBasicViewController.swift */; };
+		C98C55591F00C84300540DC0 /* ItemBasicViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98C55581F00C84300540DC0 /* ItemBasicViewControllerDelegate.swift */; };
+		C98C555D1F0356DD00540DC0 /* RecipeBuildViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98C555C1F0356DD00540DC0 /* RecipeBuildViewDelegate.swift */; };
 		C999EA081DE7D1C10036AF47 /* OptimusPrinceps.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C999EA061DE7D1C10036AF47 /* OptimusPrinceps.ttf */; };
 		C999EA091DE7D1C10036AF47 /* OptimusPrincepsSemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C999EA071DE7D1C10036AF47 /* OptimusPrincepsSemiBold.ttf */; };
 		C999EA0F1DE7DF680036AF47 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C999EA0E1DE7DF680036AF47 /* GoogleService-Info.plist */; };
@@ -935,6 +940,11 @@
 		C9B1256A1EDFC87800984F90 /* Double+StringFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B125691EDFC87800984F90 /* Double+StringFormat.swift */; };
 		C9B125731EE1182400984F90 /* KeyValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B125721EE1182400984F90 /* KeyValueView.swift */; };
 		C9B125771EE48A5800984F90 /* TALENT_UPGRADE.png in Resources */ = {isa = PBXBuildFile; fileRef = C9B125761EE48A5800984F90 /* TALENT_UPGRADE.png */; };
+		C9BB666E1F0358ED00E07ADB /* RecipePart.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BB666D1F0358ED00E07ADB /* RecipePart.swift */; };
+		C9BB66701F035EEB00E07ADB /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BB666F1F035EEB00E07ADB /* CoreDataManager.swift */; };
+		C9BB66721F03647700E07ADB /* ItemHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BB66711F03647700E07ADB /* ItemHeaderView.swift */; };
+		C9BB66741F03648A00E07ADB /* ItemHeaderViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BB66731F03648A00E07ADB /* ItemHeaderViewDelegate.swift */; };
+		C9BB66771F03707700E07ADB /* ItemBasicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BB66761F03707700E07ADB /* ItemBasicView.swift */; };
 		C9D558951EF2197D00D0E923 /* HeroAttributeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D558941EF2197D00D0E923 /* HeroAttributeSlider.swift */; };
 		C9D558B11EF2550700D0E923 /* dota2.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = C9D558AE1EF2550700D0E923 /* dota2.sqlite */; };
 		C9D558B21EF2550700D0E923 /* dota2.sqlite-shm in Resources */ = {isa = PBXBuildFile; fileRef = C9D558AF1EF2550700D0E923 /* dota2.sqlite-shm */; };
@@ -1008,8 +1018,8 @@
 		C90A79391E021EE00068C79C /* DABackgroundColourStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DABackgroundColourStackView.swift; path = Views/DABackgroundColourStackView.swift; sourceTree = "<group>"; };
 		C90CE6091DFCB67500C93539 /* DAExpandableStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DAExpandableStackView.swift; path = Views/DAExpandableStackView.swift; sourceTree = "<group>"; };
 		C90CE60F1DFCC18F00C93539 /* DAExpandableTextStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DAExpandableTextStackView.swift; path = Views/DAExpandableTextStackView.swift; sourceTree = "<group>"; };
-		C90CE6131DFCCBA400C93539 /* ItemDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailVC.swift; sourceTree = "<group>"; };
-		C914703F1DD916D5002A042C /* recipe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = recipe.png; path = images/recipe.png; sourceTree = "<group>"; };
+		C90CE6131DFCCBA400C93539 /* ItemDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
+		C914703F1DD916D5002A042C /* Recipe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Recipe.png; path = images/Recipe.png; sourceTree = "<group>"; };
 		C9172C171DD13F9100DCF88F /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		C9172C201DD176BA00DCF88F /* dota2-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dota2-logo.png"; sourceTree = "<group>"; };
 		C922FA8A1DD8AD27007B76F8 /* DALoreLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DALoreLabel.swift; sourceTree = "<group>"; };
@@ -1843,12 +1853,17 @@
 		C9745D5D1EC577CC009537E4 /* HeroHeaderViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HeroHeaderViewDelegate.swift; path = Views/HeroHeaderViewDelegate.swift; sourceTree = "<group>"; };
 		C9745D641EC7B86B009537E4 /* HeroAttributeViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroAttributeViewDelegate.swift; sourceTree = "<group>"; };
 		C9745D6A1EC8E262009537E4 /* HeroBasicTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroBasicTVC.swift; sourceTree = "<group>"; };
+		C97E11621F0084BF00E35D1D /* RecipeBuildView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeBuildView.swift; sourceTree = "<group>"; };
+		C97E11641F0089F200E35D1D /* RecipeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeView.swift; sourceTree = "<group>"; };
 		C985266F1EFA27F100398D10 /* String+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Convenience.swift"; sourceTree = "<group>"; };
 		C98526711EFA299200398D10 /* UIStackView+AddArrangedSubviews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStackView+AddArrangedSubviews.swift"; sourceTree = "<group>"; };
 		C98526731EFA2A0F00398D10 /* Int+NumberHandling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+NumberHandling.swift"; sourceTree = "<group>"; };
 		C98526951EFB7EBC00398D10 /* AbilityKVStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbilityKVStackView.swift; sourceTree = "<group>"; };
 		C985269C1EFE0EC300398D10 /* AbiltyCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbiltyCollectionViewController.swift; sourceTree = "<group>"; };
 		C985269E1EFE0F0F00398D10 /* AbilityCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbilityCollectionCell.swift; sourceTree = "<group>"; };
+		C98C55561F00A00900540DC0 /* ItemBasicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemBasicViewController.swift; sourceTree = "<group>"; };
+		C98C55581F00C84300540DC0 /* ItemBasicViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemBasicViewControllerDelegate.swift; sourceTree = "<group>"; };
+		C98C555C1F0356DD00540DC0 /* RecipeBuildViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeBuildViewDelegate.swift; sourceTree = "<group>"; };
 		C999EA061DE7D1C10036AF47 /* OptimusPrinceps.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = OptimusPrinceps.ttf; path = Fonts/OptimusPrinceps.ttf; sourceTree = "<group>"; };
 		C999EA071DE7D1C10036AF47 /* OptimusPrincepsSemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = OptimusPrincepsSemiBold.ttf; path = Fonts/OptimusPrincepsSemiBold.ttf; sourceTree = "<group>"; };
 		C999EA0E1DE7DF680036AF47 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -1881,6 +1896,11 @@
 		C9B125691EDFC87800984F90 /* Double+StringFormat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+StringFormat.swift"; sourceTree = "<group>"; };
 		C9B125721EE1182400984F90 /* KeyValueView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyValueView.swift; sourceTree = "<group>"; };
 		C9B125761EE48A5800984F90 /* TALENT_UPGRADE.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = TALENT_UPGRADE.png; path = "images/Ability Specials/TALENT_UPGRADE.png"; sourceTree = "<group>"; };
+		C9BB666D1F0358ED00E07ADB /* RecipePart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipePart.swift; sourceTree = "<group>"; };
+		C9BB666F1F035EEB00E07ADB /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		C9BB66711F03647700E07ADB /* ItemHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemHeaderView.swift; sourceTree = "<group>"; };
+		C9BB66731F03648A00E07ADB /* ItemHeaderViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemHeaderViewDelegate.swift; sourceTree = "<group>"; };
+		C9BB66761F03707700E07ADB /* ItemBasicView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemBasicView.swift; sourceTree = "<group>"; };
 		C9D558941EF2197D00D0E923 /* HeroAttributeSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroAttributeSlider.swift; sourceTree = "<group>"; };
 		C9D558AE1EF2550700D0E923 /* dota2.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = dota2.sqlite; sourceTree = "<group>"; };
 		C9D558AF1EF2550700D0E923 /* dota2.sqlite-shm */ = {isa = PBXFileReference; lastKnownFileType = file; path = "dota2.sqlite-shm"; sourceTree = "<group>"; };
@@ -1938,7 +1958,7 @@
 		363A46531E00731000BA5D97 /* Basic */ = {
 			isa = PBXGroup;
 			children = (
-				C914703F1DD916D5002A042C /* recipe.png */,
+				C914703F1DD916D5002A042C /* Recipe.png */,
 				36A292211DCA51CC006E96A8 /* Arcane.png */,
 				36A292221DCA51CC006E96A8 /* Armaments.png */,
 				36A292231DCA51CC006E96A8 /* Armor.png */,
@@ -2037,6 +2057,8 @@
 				C957BBE91EEFA747008F756B /* Hero Misc */,
 				C9B1256F1EE1131900984F90 /* Ability Display */,
 				C9745D5F1EC7B0B0009537E4 /* Hero Details */,
+				C97E11611F00840F00E35D1D /* Recipe */,
+				C9BB66751F03656000E07ADB /* Item Basics */,
 				C98526A21EFE246300398D10 /* Item Details */,
 				C92EC1381EA2CACC00FA01E1 /* Database */,
 				36FD565C1DA6E606007C5A9C /* Controller */,
@@ -2096,6 +2118,7 @@
 				C9AEA1F31E9C4629006FD974 /* Talent+CoreDataClass.swift */,
 				C9AEA1F41E9C4629006FD974 /* Talent+CoreDataProperties.swift */,
 				C9FEBF2D1DB299F2000CD4FF /* DotA2_Viewer.xcdatamodeld */,
+				C9BB666F1F035EEB00E07ADB /* CoreDataManager.swift */,
 			);
 			name = CoreData;
 			sourceTree = "<group>";
@@ -3039,10 +3062,23 @@
 			name = "Hero Details";
 			sourceTree = "<group>";
 		};
+		C97E11611F00840F00E35D1D /* Recipe */ = {
+			isa = PBXGroup;
+			children = (
+				C9BB666D1F0358ED00E07ADB /* RecipePart.swift */,
+				C97E11621F0084BF00E35D1D /* RecipeBuildView.swift */,
+				C98C555C1F0356DD00540DC0 /* RecipeBuildViewDelegate.swift */,
+				C97E11641F0089F200E35D1D /* RecipeView.swift */,
+			);
+			name = Recipe;
+			sourceTree = "<group>";
+		};
 		C98526A21EFE246300398D10 /* Item Details */ = {
 			isa = PBXGroup;
 			children = (
-				C90CE6131DFCCBA400C93539 /* ItemDetailVC.swift */,
+				C90CE6131DFCCBA400C93539 /* ItemDetailViewController.swift */,
+				C9BB66711F03647700E07ADB /* ItemHeaderView.swift */,
+				C9BB66731F03648A00E07ADB /* ItemHeaderViewDelegate.swift */,
 			);
 			name = "Item Details";
 			sourceTree = "<group>";
@@ -3081,6 +3117,16 @@
 				C985269C1EFE0EC300398D10 /* AbiltyCollectionViewController.swift */,
 			);
 			name = "Ability Display";
+			sourceTree = "<group>";
+		};
+		C9BB66751F03656000E07ADB /* Item Basics */ = {
+			isa = PBXGroup;
+			children = (
+				C9BB66761F03707700E07ADB /* ItemBasicView.swift */,
+				C98C55561F00A00900540DC0 /* ItemBasicViewController.swift */,
+				C98C55581F00C84300540DC0 /* ItemBasicViewControllerDelegate.swift */,
+			);
+			name = "Item Basics";
 			sourceTree = "<group>";
 		};
 		C9FB56731DBB1110000A0824 /* images */ = {
@@ -3716,7 +3762,7 @@
 				C94B17791E01C090008BF226 /* Reflection_Terrorblade.png in Resources */,
 				C94B17131E01C090008BF226 /* Lightning Bolt_Zeus.png in Resources */,
 				C94B19081E01C0D2008BF226 /* Windranger.png in Resources */,
-				C91470401DD916D5002A042C /* recipe.png in Resources */,
+				C91470401DD916D5002A042C /* Recipe.png in Resources */,
 				C94B169F1E01C090008BF226 /* Epicenter_Sand King.png in Resources */,
 				C94B17DA1E01C090008BF226 /* Stone Form_Visage.png in Resources */,
 				C94B18101E01C090008BF226 /* Vengeance Aura_Vengeful Spirit.png in Resources */,
@@ -4075,9 +4121,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9BB66721F03647700E07ADB /* ItemHeaderView.swift in Sources */,
 				C9AEA2071E9C4629006FD974 /* ModifiableValue+CoreDataClass.swift in Sources */,
 				C9B125671EDFC5AF00984F90 /* HeroDelegate.swift in Sources */,
 				C9AEA2181E9C4629006FD974 /* Hero+CoreDataProperties.swift in Sources */,
+				C98C55571F00A00900540DC0 /* ItemBasicViewController.swift in Sources */,
 				C94B1A391E01C4F7008BF226 /* DAIconLabel.swift in Sources */,
 				C9AEA20A1E9C4629006FD974 /* Object+CoreDataProperties.swift in Sources */,
 				C96EBB601DF244EF00D6FFD0 /* DANavigationController.swift in Sources */,
@@ -4099,6 +4147,7 @@
 				C90A13591EE7BE7400D143B8 /* Fonts.swift in Sources */,
 				C9AEA2131E9C4629006FD974 /* Note+CoreDataClass.swift in Sources */,
 				C9AEA2041E9C4629006FD974 /* BaseStats+CoreDataProperties.swift in Sources */,
+				C97E11651F0089F200E35D1D /* RecipeView.swift in Sources */,
 				C9AEA2091E9C4629006FD974 /* Object+CoreDataClass.swift in Sources */,
 				C9AEA21A1E9C4629006FD974 /* Ability+CoreDataProperties.swift in Sources */,
 				C957BBDF1EECE682008F756B /* Layout.swift in Sources */,
@@ -4111,6 +4160,7 @@
 				C98526961EFB7EBC00398D10 /* AbilityKVStackView.swift in Sources */,
 				C98526741EFA2A0F00398D10 /* Int+NumberHandling.swift in Sources */,
 				367E34E01DB7F9670037FA7B /* CustomTabVC.swift in Sources */,
+				C9BB66701F035EEB00E07ADB /* CoreDataManager.swift in Sources */,
 				C90CE60A1DFCB67500C93539 /* DAExpandableStackView.swift in Sources */,
 				C9AEA2081E9C4629006FD974 /* ModifiableValue+CoreDataProperties.swift in Sources */,
 				C9745D5C1EC57558009537E4 /* HeroHeaderView.swift in Sources */,
@@ -4120,13 +4170,16 @@
 				366A8A121DD1029F000406BF /* DAUIViewController.swift in Sources */,
 				C90A135E1EE9091800D143B8 /* Colours.swift in Sources */,
 				C9AEA2161E9C4629006FD974 /* ArrayItem+CoreDataProperties.swift in Sources */,
+				C9BB66771F03707700E07ADB /* ItemBasicView.swift in Sources */,
 				C9AEA2101E9C4629006FD974 /* MiscStats+CoreDataProperties.swift in Sources */,
 				C9AEA20E1E9C4629006FD974 /* Attribute+CoreDataProperties.swift in Sources */,
-				C90CE6141DFCCBA400C93539 /* ItemDetailVC.swift in Sources */,
+				C90CE6141DFCCBA400C93539 /* ItemDetailViewController.swift in Sources */,
 				C9AEA2121E9C4629006FD974 /* Item+CoreDataProperties.swift in Sources */,
 				C9FEBF2F1DB299F2000CD4FF /* DotA2_Viewer.xcdatamodeld in Sources */,
 				C9AEA2141E9C4629006FD974 /* Note+CoreDataProperties.swift in Sources */,
 				C957BBE81EEFA1BD008F756B /* HeroTalentTVC.swift in Sources */,
+				C98C555D1F0356DD00540DC0 /* RecipeBuildViewDelegate.swift in Sources */,
+				C9BB666E1F0358ED00E07ADB /* RecipePart.swift in Sources */,
 				366A8A0C1DD0F87F000406BF /* DAMainTableViewCell.swift in Sources */,
 				C9745D5E1EC577CC009537E4 /* HeroHeaderViewDelegate.swift in Sources */,
 				C9B1256A1EDFC87800984F90 /* Double+StringFormat.swift in Sources */,
@@ -4140,9 +4193,11 @@
 				C985269F1EFE0F0F00398D10 /* AbilityCollectionCell.swift in Sources */,
 				C9AEA2061E9C4629006FD974 /* Modifier+CoreDataProperties.swift in Sources */,
 				C957BBF31EEFB34C008F756B /* HeroBasicCell.swift in Sources */,
+				C98C55591F00C84300540DC0 /* ItemBasicViewControllerDelegate.swift in Sources */,
 				C9AEA2191E9C4629006FD974 /* Ability+CoreDataClass.swift in Sources */,
 				C90CE6101DFCC18F00C93539 /* DAExpandableTextStackView.swift in Sources */,
 				36C7DF241DC8F2C800251705 /* RSSFeedHelper.swift in Sources */,
+				C9BB66741F03648A00E07ADB /* ItemHeaderViewDelegate.swift in Sources */,
 				C9AEA2031E9C4629006FD974 /* BaseStats+CoreDataClass.swift in Sources */,
 				C957BBF11EEFB053008F756B /* HeroAttributeView.swift in Sources */,
 				C9AEA2171E9C4629006FD974 /* Hero+CoreDataClass.swift in Sources */,
@@ -4152,6 +4207,7 @@
 				C90A13621EEA6CCB00D143B8 /* AbilityView.swift in Sources */,
 				C957BBE41EEE4081008F756B /* HeroTalentCell.swift in Sources */,
 				36C0C9621DA6E25800169394 /* AppDelegate.swift in Sources */,
+				C97E11631F0084BF00E35D1D /* RecipeBuildView.swift in Sources */,
 				C94A26D21DD5593F00D9B054 /* DASlider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
