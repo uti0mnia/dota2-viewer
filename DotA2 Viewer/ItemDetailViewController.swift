@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ItemDetailViewController: UIViewController, ItemHeaderViewDelegate {
+class ItemDetailViewController: UIViewController, ItemHeaderViewDelegate, ItemBasicViewControllerDelegate {
    
     public var item: Item? {
         didSet {
@@ -29,6 +29,7 @@ class ItemDetailViewController: UIViewController, ItemHeaderViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         itemHeaderView.backgroundColor = UIColor.flatForestGreen()
         contentView.backgroundColor = UIColor.flatForestGreen()
         
@@ -36,6 +37,7 @@ class ItemDetailViewController: UIViewController, ItemHeaderViewDelegate {
         view.addSubview(contentView)
         
         itemHeaderView.delegate = self
+        basicViewController.delegate = self
         
         addConstraints()
     }
@@ -83,7 +85,16 @@ class ItemDetailViewController: UIViewController, ItemHeaderViewDelegate {
         
     }
     
+    // MARK: - ItemBasicViewControllerDelegate
+    
+    func itemBasicViewController(_ itemBasicViewController: ItemBasicViewController, didSelectItem item: Item) {
+        let nextViewController = ItemDetailViewController()
+        nextViewController.item = item
+        self.navigationController?.pushViewController(nextViewController, animated: true)
+    }
+    
     // MARK: - ItemHeaderViewDelegate
+    
     func itemHeaderView(_ itemHeaderView: ItemHeaderView, didTapTab tab: ItemDetailTab) {
         guard tab != currentTab else {
             return
@@ -103,46 +114,3 @@ class ItemDetailViewController: UIViewController, ItemHeaderViewDelegate {
         
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

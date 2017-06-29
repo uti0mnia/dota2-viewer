@@ -41,6 +41,7 @@ class ItemBasicView: UIView {
             }
             
             recipeView.item = item
+            
             loreLabel.text = item.lore
         }
     }

@@ -63,7 +63,6 @@ class ItemBasicViewController: UIViewController, RecipeBuildViewDelegate {
             print("Did tap on item: \(item.name)")
             
             delegate?.itemBasicViewController(self, didSelectItem: item)
-            // TODO: Maybe just push a new VC here on top of current one.
         }
     }
 }
