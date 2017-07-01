@@ -7,10 +7,9 @@
 //
 
 import UIKit
+import SnapKit
 
 class HeroDetailVC: UIViewController, HeroHeaderViewDelegate {
-    
-    
     
     public var hero: Hero? {
         didSet {
@@ -30,11 +29,10 @@ class HeroDetailVC: UIViewController, HeroHeaderViewDelegate {
     private var currentChildViewController: UIViewController?
     private var currentTab: HeroDetailTab = .basic
     
+    private var headerTopLayout: Constraint?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        edgesForExtendedLayout = UIRectEdge()
-        
         
         heroHeaderView.backgroundColor = UIColor.flatBlack()
         contentView.backgroundColor = UIColor.flatBlack()
@@ -45,6 +43,18 @@ class HeroDetailVC: UIViewController, HeroHeaderViewDelegate {
         heroHeaderView.delegate = self
         
         addConstraints()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        configureNavigationBar()
+    }
+    
+    private func configureNavigationBar() {
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.isTranslucent = true
     }
     
     private func updateView() {
@@ -66,7 +76,9 @@ class HeroDetailVC: UIViewController, HeroHeaderViewDelegate {
     
     private func addConstraints() {
         heroHeaderView.snp.makeConstraints() { make in
-            make.left.top.right.equalTo(view)
+            // Lower priority in case of dragging size.
+            headerTopLayout = make.top.equalTo(topLayoutGuide.snp.bottom).constraint
+            make.left.right.equalTo(view)
             make.bottom.equalTo(contentView.snp.top).priority(999)
         }
         
@@ -92,13 +104,8 @@ class HeroDetailVC: UIViewController, HeroHeaderViewDelegate {
         viewController.didMove(toParentViewController: self)
     }
     
-    @objc private func didPan(_ gesture: UIPanGestureRecognizer) {
-        if gesture.state == .ended {
-            print(gesture.velocity(in: gesture.view))
-        }
-    }
     
-    // MARK: - HeroStretchHeaderViewDelegate
+    // MARK: - HeroHeaderViewDelegate
     
     func heroHeaderView(_ headerView: HeroHeaderView, didTapTab tab: HeroDetailTab) {
         guard tab != currentTab else {
@@ -116,5 +123,24 @@ class HeroDetailVC: UIViewController, HeroHeaderViewDelegate {
         case .talent:
             swapChildViewController(to: talentViewController)
         }
+    }
+    
+    func heroHeaderView(_ headerView: HeroHeaderView, didChangeImageHeightTo height: CGFloat) {
+        guard let navBarHeight = navigationController?.navigationBar.bounds.height else {
+            headerTopLayout?.update(offset: 0)
+            return
+        }
+        
+        if headerView.bounds.height > ObjectHeaderView.maximumHeight {
+            headerTopLayout?.update(offset: 0)
+            return
+        }
+        
+        let effectiveHeight = headerView.bounds.height - headerView.minimumHeight
+        let effectiveMaxHeight = ObjectHeaderView.maximumHeight - headerView.minimumHeight
+        
+        let newOffset = navBarHeight * (effectiveHeight / effectiveMaxHeight - 1)
+        headerTopLayout?.update(offset: newOffset)
+        
     }
 }

@@ -6,7 +6,7 @@
 //  Copyright © 2017 self. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 public enum HeroDetailTab: Int {
     case basic = 0, ability, talent, misc
@@ -14,4 +14,6 @@ public enum HeroDetailTab: Int {
 
 protocol HeroHeaderViewDelegate: class {
     func heroHeaderView(_ headerView: HeroHeaderView, didTapTab tab: HeroDetailTab)
+    
+    func heroHeaderView(_ headerView: HeroHeaderView, didChangeImageHeightTo height: CGFloat)
 }

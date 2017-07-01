@@ -40,6 +40,12 @@ class HeroHeaderView: ObjectHeaderView {
         miscButton.tag = 3
     }
     
+    override func didPanOnView(_ gesture: UIPanGestureRecognizer) {
+        super.didPanOnView(gesture)
+        
+        delegate?.heroHeaderView(self, didChangeImageHeightTo: imageView.bounds.height)
+    }
+    
     @objc private func buttonTapped(_ sender: UIButton) {
         guard let tab = HeroDetailTab(rawValue: sender.tag) else {
             assertionFailure("\(String(describing: self)) buttons not configured properly")

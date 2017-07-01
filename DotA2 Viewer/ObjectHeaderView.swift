@@ -10,9 +10,8 @@ import UIKit
 
 class ObjectHeaderView: UIView {
     
-    private static let minimumHeight: CGFloat = 100
-    private static let maximumHeight: CGFloat = 250
-    private static let resizeToMinThreshhold: CGFloat = 180
+    public static let maximumHeight: CGFloat = 250
+    private static let resizeToMinThreshhold: CGFloat = 100
     private static let resizeToMaxThreshhold: CGFloat = 120
     private static let resizeTime: TimeInterval = 0.4
     
@@ -27,6 +26,10 @@ class ObjectHeaderView: UIView {
     }()
     
     public var stackView = UIStackView()
+    
+    public var minimumHeight: CGFloat {
+        return stackView.bounds.height + 64 // UINavigationBar height
+    }
     
     public var shouldShowButtons = true {
         didSet {
@@ -63,7 +66,7 @@ class ObjectHeaderView: UIView {
         addConstraints()
         
         let pan = UIPanGestureRecognizer(target: self, action: #selector(didPanOnView(_:)))
-        imageView.addGestureRecognizer(pan)
+        self.addGestureRecognizer(pan)
     }
     
     public func initViews() {
@@ -109,23 +112,27 @@ class ObjectHeaderView: UIView {
         }
     }
     
-    @objc private func didPanOnView(_ gesture: UIPanGestureRecognizer) {
+    @objc public func didPanOnView(_ gesture: UIPanGestureRecognizer) {
         switch gesture.state {
         case .began:
             heightBeforePan = self.bounds.height
         case .changed:
             let translate = gesture.translation(in: self).y
-            let newHeight = bounds.height + translate
+            var newHeight = bounds.height + translate
             gesture.setTranslation(CGPoint(), in: self)
+            
+            if newHeight < minimumHeight {
+                newHeight = minimumHeight
+            }
             
             self.snp.updateConstraints() { make in
                 make.height.equalTo(newHeight)
             }
         case .ended, .cancelled:
-            if bounds.height < ObjectHeaderView.minimumHeight || heightBeforePan >= ObjectHeaderView.resizeToMinThreshhold && bounds.height < ObjectHeaderView.resizeToMinThreshhold {
+            if bounds.height < minimumHeight {
                 animateToMinSize()
             }
-            if bounds.height > ObjectHeaderView.maximumHeight || heightBeforePan <= ObjectHeaderView.resizeToMaxThreshhold && bounds.height > ObjectHeaderView.resizeToMaxThreshhold {
+            if bounds.height > ObjectHeaderView.maximumHeight {
                 animateToMaxSize()
             }
         default:
@@ -133,9 +140,9 @@ class ObjectHeaderView: UIView {
         }
     }
     
-    private func animateToMinSize() {
+    public func animateToMinSize() {
         self.snp.updateConstraints() { make in
-            make.height.equalTo(ObjectHeaderView.minimumHeight)
+            make.height.equalTo(minimumHeight)
         }
         superview?.setNeedsLayout()
         
@@ -144,7 +151,7 @@ class ObjectHeaderView: UIView {
         }
     }
     
-    private func animateToMaxSize() {
+    public func animateToMaxSize() {
         self.snp.updateConstraints() { make in
             make.height.equalTo(ObjectHeaderView.maximumHeight)
         }

@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class CustomTabVC: DAUIViewController {
+class CustomTabVC: UIViewController {
     
     // MARK - Outlets
     @IBOutlet weak var tableView: DAMainTableView!

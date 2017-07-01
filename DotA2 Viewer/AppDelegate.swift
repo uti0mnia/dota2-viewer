@@ -26,7 +26,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
             splitViewController.preferredDisplayMode = .allVisible // on ipad the master is opened by default
         }
         
-        
         return true
     }
 
