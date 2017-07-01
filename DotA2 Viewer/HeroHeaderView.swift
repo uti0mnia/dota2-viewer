@@ -11,6 +11,12 @@ import SnapKit
 
 class HeroHeaderView: UIView {
     
+    private static let minimumHeight: CGFloat = 100
+    private static let maximumHeight: CGFloat = 250
+    private static let resizeToMinThreshhold: CGFloat = 180
+    private static let resizeToMaxThreshhold: CGFloat = 120
+    private static let resizeTime: TimeInterval = 0.4
+    
     weak var delegate: HeroHeaderViewDelegate?
     
     public var imageView: UIImageView = {
@@ -29,12 +35,7 @@ class HeroHeaderView: UIView {
     public var talentsButton = UIButton()
     public var miscButton = UIButton()
     
-    // TODO: Make into swipe gesture.
-    private var tapGesture: UITapGestureRecognizer!
-    private var isCollapsed = false
-    
-    public var maxHeight: CGFloat = 300
-    public var minHeight: CGFloat = 100
+    private var heightBeforePan: CGFloat = HeroHeaderView.maximumHeight
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -52,8 +53,8 @@ class HeroHeaderView: UIView {
         initViews()
         addConstraints()
         
-        tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTapOnView(_:)))
-        imageView.addGestureRecognizer(tapGesture)
+        let pan = UIPanGestureRecognizer(target: self, action: #selector(didPanOnView(_:)))
+        imageView.addGestureRecognizer(pan)
     }
     
     private func initViews() {
@@ -81,25 +82,64 @@ class HeroHeaderView: UIView {
     
     private func addConstraints() {
         imageView.snp.makeConstraints() { make in
-            make.left.equalTo(self)
-            make.top.equalTo(self)
-            make.right.equalTo(self)
+            make.left.top.right.equalTo(self)
             make.bottom.equalTo(stackView.snp.top)
         }
         
         stackView.snp.makeConstraints() { make in
-            make.left.equalTo(self)
-            make.right.equalTo(self)
-            make.bottom.equalTo(self)
+            make.left.bottom.right.equalTo(self)
         }
         
         self.snp.makeConstraints() { make in
-            make.height.equalTo(maxHeight)
+            make.height.equalTo(HeroHeaderView.maximumHeight)
+        }
+        
+    }
+    
+    @objc private func didPanOnView(_ gesture: UIPanGestureRecognizer) {
+        switch gesture.state {
+        case .began:
+            heightBeforePan = self.bounds.height
+        case .changed:
+            let translate = gesture.translation(in: self).y
+            let newHeight = bounds.height + translate
+            gesture.setTranslation(CGPoint(), in: self)
+            
+            self.snp.updateConstraints() { make in
+                make.height.equalTo(newHeight)
+            }
+        case .ended, .cancelled:
+            if bounds.height < HeroHeaderView.minimumHeight || heightBeforePan >= HeroHeaderView.resizeToMinThreshhold && bounds.height < HeroHeaderView.resizeToMinThreshhold {
+                animateToMinSize()
+            }
+            if bounds.height > HeroHeaderView.maximumHeight || heightBeforePan <= HeroHeaderView.resizeToMaxThreshhold && bounds.height > HeroHeaderView.resizeToMaxThreshhold {
+                animateToMaxSize()
+            }
+        default:
+            break
         }
     }
     
-    @objc private func didTapOnView(_ sender: UITapGestureRecognizer) {
-        print("Tapped on view!")
+    private func animateToMinSize() {
+        self.snp.updateConstraints() { make in
+            make.height.equalTo(HeroHeaderView.minimumHeight)
+        }
+        superview?.setNeedsLayout()
+
+        UIView.animate(withDuration: HeroHeaderView.resizeTime) {
+            self.superview?.layoutIfNeeded()
+        }
+    }
+    
+    private func animateToMaxSize() {
+        self.snp.updateConstraints() { make in
+            make.height.equalTo(HeroHeaderView.maximumHeight)
+        }
+        superview?.setNeedsLayout()
+        
+        UIView.animate(withDuration: HeroHeaderView.resizeTime) {
+            self.superview?.layoutIfNeeded()
+        }
     }
     
     @objc private func buttonTapped(_ sender: UIButton) {

@@ -12,4 +12,8 @@ class Layout {
     public static var abilityImageSize: CGSize {
         return CGSize(width: 128, height: 128)
     }
+    
+    public static var heroImageSize: CGSize {
+        return CGSize(width: 256, height: 144)
+    }
 }

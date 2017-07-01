@@ -10,6 +10,8 @@ import UIKit
 
 class HeroDetailVC: UIViewController, HeroHeaderViewDelegate {
     
+    
+    
     public var hero: Hero? {
         didSet {
             if view != nil {
@@ -32,6 +34,10 @@ class HeroDetailVC: UIViewController, HeroHeaderViewDelegate {
         super.viewDidLoad()
         
         edgesForExtendedLayout = UIRectEdge()
+        
+        let pan = UIPanGestureRecognizer(target: self, action: #selector(didPan(_:)))
+        heroHeaderView.addGestureRecognizer(pan)
+        heroHeaderView.isUserInteractionEnabled = true
         
         heroHeaderView.backgroundColor = UIColor.flatBlack()
         contentView.backgroundColor = UIColor.flatBlack()
@@ -57,6 +63,7 @@ class HeroDetailVC: UIViewController, HeroHeaderViewDelegate {
         talentViewController.talents = hero.talents.allObjects as? [Talent]
         
         swapChildViewController(to: basicViewController)
+        currentTab = .basic
         
     }
     
@@ -82,11 +89,16 @@ class HeroDetailVC: UIViewController, HeroHeaderViewDelegate {
         
         addChildViewController(viewController)
         contentView.addSubview(viewController.view)
-        viewController.view.frame = contentView.bounds // TODO: Fix this shit. ?? 
+        viewController.view.frame = contentView.bounds
         viewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         
         viewController.didMove(toParentViewController: self)
-        currentTab = .basic
+    }
+    
+    @objc private func didPan(_ gesture: UIPanGestureRecognizer) {
+        if gesture.state == .ended {
+            print(gesture.velocity(in: gesture.view))
+        }
     }
     
     // MARK: - HeroStretchHeaderViewDelegate
