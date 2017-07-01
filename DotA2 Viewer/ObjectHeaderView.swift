@@ -1,16 +1,20 @@
 //
-//  HeroStretchHeaderView.swift
+//  ObjectHeaderView.swift
 //  DotA2 Assistant
 //
-//  Created by Casey McLewin on 2017-05-11.
+//  Created by Casey McLewin on 2017-06-30.
 //  Copyright © 2017 self. All rights reserved.
 //
 
 import UIKit
-import SnapKit
 
-class HeroHeaderView: UIView {
-    weak var delegate: HeroHeaderViewDelegate?
+class ObjectHeaderView: UIView {
+    
+    private static let minimumHeight: CGFloat = 100
+    private static let maximumHeight: CGFloat = 250
+    private static let resizeToMinThreshhold: CGFloat = 180
+    private static let resizeToMaxThreshhold: CGFloat = 120
+    private static let resizeTime: TimeInterval = 0.4
     
     public var imageView: UIImageView = {
         let iv = UIImageView()
@@ -22,18 +26,25 @@ class HeroHeaderView: UIView {
         return iv
     }()
     
-    private var stackView = UIStackView()
-    public var detailsButton = UIButton()
-    public var abilitiesButton = UIButton()
-    public var talentsButton = UIButton()
-    public var miscButton = UIButton()
+    public var stackView = UIStackView()
     
-    // TODO: Make into swipe gesture.
-    private var tapGesture: UITapGestureRecognizer!
-    private var isCollapsed = false
+    public var shouldShowButtons = true {
+        didSet {
+            if oldValue == shouldShowButtons {
+                return
+            }
+            
+            if shouldShowButtons {
+                addSubview(stackView)
+            } else {
+                stackView.removeFromSuperview()
+            }
+            
+            setNewConstraints()
+        }
+    }
     
-    public var maxHeight: CGFloat = 300
-    public var minHeight: CGFloat = 100
+    private var heightBeforePan: CGFloat = ObjectHeaderView.maximumHeight
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -51,63 +62,97 @@ class HeroHeaderView: UIView {
         initViews()
         addConstraints()
         
-        tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTapOnView(_:)))
-        imageView.addGestureRecognizer(tapGesture)
+        let pan = UIPanGestureRecognizer(target: self, action: #selector(didPanOnView(_:)))
+        imageView.addGestureRecognizer(pan)
     }
     
-    private func initViews() {
-        stackView.uti_addArrangedSubviews(views: [detailsButton, abilitiesButton, talentsButton, miscButton])
+    public func initViews() {
         stackView.distribution = .fillEqually
         
         uti_addSubviews([imageView, stackView])
         
-        detailsButton.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
-        detailsButton.setTitle("Details", for: .normal)
-        detailsButton.tag = 0
-        
-        abilitiesButton.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
-        abilitiesButton.setTitle("Abilities", for: .normal)
-        abilitiesButton.tag = 1
-        
-        talentsButton.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
-        talentsButton.setTitle("Talents", for: .normal)
-        talentsButton.tag = 2
-        
-        miscButton.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
-        miscButton.setTitle("Miscellaneous", for: .normal)
-        miscButton.tag = 3
     }
     
     private func addConstraints() {
         imageView.snp.makeConstraints() { make in
-            make.left.equalTo(self)
-            make.top.equalTo(self)
-            make.right.equalTo(self)
+            make.left.top.right.equalTo(self)
             make.bottom.equalTo(stackView.snp.top)
         }
         
         stackView.snp.makeConstraints() { make in
-            make.left.equalTo(self)
-            make.right.equalTo(self)
-            make.bottom.equalTo(self)
+            make.left.bottom.right.equalTo(self)
         }
         
         self.snp.makeConstraints() { make in
-            make.height.equalTo(maxHeight)
-        }
-    }
-    
-    @objc private func didTapOnView(_ sender: UITapGestureRecognizer) {
-        print("Tapped on view!")
-    }
-    
-    @objc private func buttonTapped(_ sender: UIButton) {
-        guard let tab = HeroDetailTab(rawValue: sender.tag) else {
-            assertionFailure("HeroStretchHeaderView buttons not configured properly")
-            return
+            make.height.equalTo(ObjectHeaderView.maximumHeight)
         }
         
-        delegate?.heroHeaderView(self, didTapTab: tab)
+    }
+    
+    private func setNewConstraints() {
+        imageView.snp.removeConstraints()
+        stackView.snp.removeConstraints()
+        
+        imageView.snp.makeConstraints() { make in
+            make.left.top.right.equalTo(self)
+            if shouldShowButtons {
+                make.bottom.equalTo(stackView.snp.top)
+            } else {
+                make.bottom.equalTo(self)
+            }
+        }
+        
+        if shouldShowButtons {
+            stackView.snp.makeConstraints() { make in
+                make.left.bottom.right.equalTo(self)
+            }
+        }
+    }
+    
+    @objc private func didPanOnView(_ gesture: UIPanGestureRecognizer) {
+        switch gesture.state {
+        case .began:
+            heightBeforePan = self.bounds.height
+        case .changed:
+            let translate = gesture.translation(in: self).y
+            let newHeight = bounds.height + translate
+            gesture.setTranslation(CGPoint(), in: self)
+            
+            self.snp.updateConstraints() { make in
+                make.height.equalTo(newHeight)
+            }
+        case .ended, .cancelled:
+            if bounds.height < ObjectHeaderView.minimumHeight || heightBeforePan >= ObjectHeaderView.resizeToMinThreshhold && bounds.height < ObjectHeaderView.resizeToMinThreshhold {
+                animateToMinSize()
+            }
+            if bounds.height > ObjectHeaderView.maximumHeight || heightBeforePan <= ObjectHeaderView.resizeToMaxThreshhold && bounds.height > ObjectHeaderView.resizeToMaxThreshhold {
+                animateToMaxSize()
+            }
+        default:
+            break
+        }
+    }
+    
+    private func animateToMinSize() {
+        self.snp.updateConstraints() { make in
+            make.height.equalTo(ObjectHeaderView.minimumHeight)
+        }
+        superview?.setNeedsLayout()
+        
+        UIView.animate(withDuration: ObjectHeaderView.resizeTime) {
+            self.superview?.layoutIfNeeded()
+        }
+    }
+    
+    private func animateToMaxSize() {
+        self.snp.updateConstraints() { make in
+            make.height.equalTo(ObjectHeaderView.maximumHeight)
+        }
+        superview?.setNeedsLayout()
+        
+        UIView.animate(withDuration: ObjectHeaderView.resizeTime) {
+            self.superview?.layoutIfNeeded()
+        }
     }
     
 }

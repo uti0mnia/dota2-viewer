@@ -35,9 +35,6 @@ class HeroDetailVC: UIViewController, HeroHeaderViewDelegate {
         
         edgesForExtendedLayout = UIRectEdge()
         
-        let pan = UIPanGestureRecognizer(target: self, action: #selector(didPan(_:)))
-        heroHeaderView.addGestureRecognizer(pan)
-        heroHeaderView.isUserInteractionEnabled = true
         
         heroHeaderView.backgroundColor = UIColor.flatBlack()
         contentView.backgroundColor = UIColor.flatBlack()
@@ -70,7 +67,7 @@ class HeroDetailVC: UIViewController, HeroHeaderViewDelegate {
     private func addConstraints() {
         heroHeaderView.snp.makeConstraints() { make in
             make.left.top.right.equalTo(view)
-            make.bottom.equalTo(contentView.snp.top)
+            make.bottom.equalTo(contentView.snp.top).priority(999)
         }
         
         contentView.snp.makeConstraints() { make in

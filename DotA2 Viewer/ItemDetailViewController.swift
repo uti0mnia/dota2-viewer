@@ -49,7 +49,9 @@ class ItemDetailViewController: UIViewController, ItemHeaderViewDelegate, ItemBa
         }
         self.title = item.name
         
-        itemHeaderView.item = item
+        // We dont want to show the buttons
+        itemHeaderView.imageView.image = UIImage(named: item.imageName)
+        itemHeaderView.shouldShowButtons = !(item.abilities?.array as? [Ability] == nil || item.abilities!.array.count == 0)
         abilityCollectionViewController.abilities = item.abilities?.array as? [Ability]
         basicViewController.item = item
         
