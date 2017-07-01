@@ -68,12 +68,12 @@
 		C90CE60A1DFCB67500C93539 /* DAExpandableStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90CE6091DFCB67500C93539 /* DAExpandableStackView.swift */; };
 		C90CE6101DFCC18F00C93539 /* DAExpandableTextStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90CE60F1DFCC18F00C93539 /* DAExpandableTextStackView.swift */; };
 		C90CE6141DFCCBA400C93539 /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90CE6131DFCCBA400C93539 /* ItemDetailViewController.swift */; };
+		C9118AC11F076F78004A5277 /* Call of the Wild_ Boar_Beastmaster.png in Resources */ = {isa = PBXBuildFile; fileRef = C9118ABF1F076F78004A5277 /* Call of the Wild_ Boar_Beastmaster.png */; };
+		C9118AC21F076F78004A5277 /* Call of the Wild_ Hawk_Beastmaster.png in Resources */ = {isa = PBXBuildFile; fileRef = C9118AC01F076F78004A5277 /* Call of the Wild_ Hawk_Beastmaster.png */; };
 		C91470401DD916D5002A042C /* Recipe.png in Resources */ = {isa = PBXBuildFile; fileRef = C914703F1DD916D5002A042C /* Recipe.png */; };
 		C9172C181DD13F9100DCF88F /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9172C171DD13F9100DCF88F /* Globals.swift */; };
 		C9172C211DD176BA00DCF88F /* dota2-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = C9172C201DD176BA00DCF88F /* dota2-logo.png */; };
 		C922FA8B1DD8AD27007B76F8 /* DALoreLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C922FA8A1DD8AD27007B76F8 /* DALoreLabel.swift */; };
-		C923CF5B1EF0E44400971660 /* Call of the Wild (Boar)_Beastmaster.png in Resources */ = {isa = PBXBuildFile; fileRef = C923CF591EF0E44400971660 /* Call of the Wild (Boar)_Beastmaster.png */; };
-		C923CF5C1EF0E44400971660 /* Call of the Wild (Hawk)_Beastmaster.png in Resources */ = {isa = PBXBuildFile; fileRef = C923CF5A1EF0E44400971660 /* Call of the Wild (Hawk)_Beastmaster.png */; };
 		C923CF5E1EF0E5AE00971660 /* Aegis of the Immortal.png in Resources */ = {isa = PBXBuildFile; fileRef = C923CF5D1EF0E5AE00971660 /* Aegis of the Immortal.png */; };
 		C93028391DF3629F005EA297 /* HeroDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93028381DF3629F005EA297 /* HeroDetailVC.swift */; };
 		C94A26D21DD5593F00D9B054 /* DASlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94A26D11DD5593F00D9B054 /* DASlider.swift */; };
@@ -1020,6 +1020,8 @@
 		C90CE6091DFCB67500C93539 /* DAExpandableStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DAExpandableStackView.swift; path = Views/DAExpandableStackView.swift; sourceTree = "<group>"; };
 		C90CE60F1DFCC18F00C93539 /* DAExpandableTextStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DAExpandableTextStackView.swift; path = Views/DAExpandableTextStackView.swift; sourceTree = "<group>"; };
 		C90CE6131DFCCBA400C93539 /* ItemDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
+		C9118ABF1F076F78004A5277 /* Call of the Wild_ Boar_Beastmaster.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Call of the Wild_ Boar_Beastmaster.png"; path = "Abilities/Call of the Wild_ Boar_Beastmaster.png"; sourceTree = "<group>"; };
+		C9118AC01F076F78004A5277 /* Call of the Wild_ Hawk_Beastmaster.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Call of the Wild_ Hawk_Beastmaster.png"; path = "Abilities/Call of the Wild_ Hawk_Beastmaster.png"; sourceTree = "<group>"; };
 		C914703F1DD916D5002A042C /* Recipe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Recipe.png; path = images/Recipe.png; sourceTree = "<group>"; };
 		C9172C171DD13F9100DCF88F /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		C9172C201DD176BA00DCF88F /* dota2-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dota2-logo.png"; sourceTree = "<group>"; };
@@ -1081,8 +1083,6 @@
 		C94B14281E01C08E008BF226 /* Burrow_Nyx Assassin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Burrow_Nyx Assassin.png"; path = "Abilities/Burrow_Nyx Assassin.png"; sourceTree = "<group>"; };
 		C94B14291E01C08E008BF226 /* Burrowstrike_Sand King.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Burrowstrike_Sand King.png"; path = "Abilities/Burrowstrike_Sand King.png"; sourceTree = "<group>"; };
 		C94B142A1E01C08E008BF226 /* Call Down_Gyrocopter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Call Down_Gyrocopter.png"; path = "Abilities/Call Down_Gyrocopter.png"; sourceTree = "<group>"; };
-		C94B142B1E01C08E008BF226 /* Call of the Wild: Boar_Beastmaster.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Call of the Wild: Boar_Beastmaster.png"; path = "Abilities/Call of the Wild: Boar_Beastmaster.png"; sourceTree = "<group>"; };
-		C94B142C1E01C08E008BF226 /* Call of the Wild: Hawk_Beastmaster.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Call of the Wild: Hawk_Beastmaster.png"; path = "Abilities/Call of the Wild: Hawk_Beastmaster.png"; sourceTree = "<group>"; };
 		C94B142D1E01C08E008BF226 /* Cancel Dark Rift_Underlord.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Cancel Dark Rift_Underlord.png"; path = "Abilities/Cancel Dark Rift_Underlord.png"; sourceTree = "<group>"; };
 		C94B142E1E01C08E008BF226 /* Caustic Finale_Sand King.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Caustic Finale_Sand King.png"; path = "Abilities/Caustic Finale_Sand King.png"; sourceTree = "<group>"; };
 		C94B142F1E01C08E008BF226 /* Chain Frost_Lich.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Chain Frost_Lich.png"; path = "Abilities/Chain Frost_Lich.png"; sourceTree = "<group>"; };
@@ -2050,11 +2050,11 @@
 		36C0C9601DA6E25800169394 /* DotA2 Viewer */ = {
 			isa = PBXGroup;
 			children = (
-				C96391951F076427005CB7AC /* Object Superclasses */,
 				36C0C9651DA6E25800169394 /* Main.storyboard */,
 				C9B125651EDA5D8600984F90 /* MyPlayground.playground */,
 				C90A135C1EE7C7E500D143B8 /* Constants */,
 				36FD56461DA6E373007C5A9C /* CoreData */,
+				C96391951F076427005CB7AC /* Object Superclasses */,
 				C9B1256E1EE1130C00984F90 /* Hero Detail Display */,
 				C957BBE21EEE4066008F756B /* Hero Talent */,
 				C957BBE91EEFA747008F756B /* Hero Misc */,
@@ -2243,8 +2243,8 @@
 				C94B14281E01C08E008BF226 /* Burrow_Nyx Assassin.png */,
 				C94B14291E01C08E008BF226 /* Burrowstrike_Sand King.png */,
 				C94B142A1E01C08E008BF226 /* Call Down_Gyrocopter.png */,
-				C94B142B1E01C08E008BF226 /* Call of the Wild: Boar_Beastmaster.png */,
-				C94B142C1E01C08E008BF226 /* Call of the Wild: Hawk_Beastmaster.png */,
+				C9118ABF1F076F78004A5277 /* Call of the Wild_ Boar_Beastmaster.png */,
+				C9118AC01F076F78004A5277 /* Call of the Wild_ Hawk_Beastmaster.png */,
 				C94B142D1E01C08E008BF226 /* Cancel Dark Rift_Underlord.png */,
 				C94B142E1E01C08E008BF226 /* Caustic Finale_Sand King.png */,
 				C94B142F1E01C08E008BF226 /* Chain Frost_Lich.png */,
@@ -3239,7 +3239,6 @@
 				C94B16BE1E01C090008BF226 /* Flesh Heap_Pudge.png in Resources */,
 				C94B167B1E01C090008BF226 /* Dispel Magic_Brewmaster.png in Resources */,
 				C94B19D71E01C108008BF226 /* Glimmer Cape.png in Resources */,
-				C923CF5B1EF0E44400971660 /* Call of the Wild (Boar)_Beastmaster.png in Resources */,
 				C94B18AB1E01C0D2008BF226 /* Centaur Warrunner.png in Resources */,
 				C94B19D01E01C108008BF226 /* Eye of Skadi.png in Resources */,
 				C94B19EE1E01C108008BF226 /* Mantle of Intelligence.png in Resources */,
@@ -3430,7 +3429,6 @@
 				C94B18071E01C090008BF226 /* Unrefined Fireblast_Ogre Magi.png in Resources */,
 				C94B17961E01C090008BF226 /* Savage Roar_Lone Druid.png in Resources */,
 				C94B18F11E01C0D2008BF226 /* Spectre.png in Resources */,
-				C923CF5C1EF0E44400971660 /* Call of the Wild (Hawk)_Beastmaster.png in Resources */,
 				C94B173A1E01C090008BF226 /* Natural Order_Elder Titan.png in Resources */,
 				C94B16A11E01C090008BF226 /* Essence Shift_Slark.png in Resources */,
 				C94B18A81E01C0D2008BF226 /* Brewmaster.png in Resources */,
@@ -3633,6 +3631,7 @@
 				C94B189D1E01C0D2008BF226 /* Abaddon.png in Resources */,
 				C94B1A011E01C108008BF226 /* Phase Boots.png in Resources */,
 				C94B18B61E01C0D2008BF226 /* Dragon Knight.png in Resources */,
+				C9118AC11F076F78004A5277 /* Call of the Wild_ Boar_Beastmaster.png in Resources */,
 				C94B16C91E01C090008BF226 /* Fury Swipes_Ursa.png in Resources */,
 				C94B18D31E01C0D2008BF226 /* Mirana.png in Resources */,
 				C94B18C41E01C0D2008BF226 /* Juggernaut.png in Resources */,
@@ -3898,6 +3897,7 @@
 				C94B17521E01C090008BF226 /* Phantasm_Chaos Knight.png in Resources */,
 				C94B16E91E01C090008BF226 /* Hunter in the Night_Night Stalker.png in Resources */,
 				C94B16251E01C090008BF226 /* Avalanche_Tiny.png in Resources */,
+				C9118AC21F076F78004A5277 /* Call of the Wild_ Hawk_Beastmaster.png in Resources */,
 				C94B16951E01C090008BF226 /* EMP_Invoker.png in Resources */,
 				C94B17C71E01C090008BF226 /* Spirit Lance_Phantom Lancer.png in Resources */,
 				C94B16481E01C090008BF226 /* Chain Frost_Lich.png in Resources */,

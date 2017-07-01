@@ -20,10 +20,10 @@ public class Object: NSManagedObject {
     }
     
     public var imageName: String {
-        return name + ".png"
+        return name.replacingOccurrences(of: ":", with: "_") + ".png"
     }
     
     public static func imageNameFrom(_ name: String) -> String {
-        return name + ".png"
+        return name.replacingOccurrences(of: ":", with: "_") + ".png"
     }
 }

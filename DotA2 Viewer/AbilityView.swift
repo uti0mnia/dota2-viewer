@@ -186,6 +186,7 @@ class AbilityView: UIView {
         abilityImageView.clipsToBounds = true
         
         imageStackView.uti_addArrangedSubviews(views: [abilityImageView, typeStackView])
+        imageStackView.alignment = .top
         imageStackView.spacing = AbilityView.padding
         
         descriptionLabel.numberOfLines = 0

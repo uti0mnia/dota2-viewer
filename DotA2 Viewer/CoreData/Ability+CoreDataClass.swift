@@ -28,6 +28,6 @@ public class Ability: NSManagedObject {
     }
     
     public var imageName: String {
-        return String(format: "%@_%@", name, object.name)
+        return String(format: "%@_%@", name.replacingOccurrences(of: ":", with: "_"), object.name)
     }
 }
