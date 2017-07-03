@@ -20,4 +20,8 @@ class Layout {
     public static var statusBarHeight: CGFloat {
         return 20
     }
+    
+    public static var objectImageMinimumHeight: CGFloat {
+        return 64
+    }
 }

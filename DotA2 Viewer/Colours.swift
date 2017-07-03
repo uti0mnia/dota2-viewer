@@ -19,7 +19,7 @@ class Colours {
     }
     
     public static var defaultTextColours: UIColor {
-        return UIColor.flatWhiteDark()
+        return UIColor.flatWhiteDark
     }
     
 }

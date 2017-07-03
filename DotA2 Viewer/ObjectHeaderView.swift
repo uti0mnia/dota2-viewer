@@ -28,7 +28,7 @@ class ObjectHeaderView: UIView {
     public var stackView = UIStackView()
     
     public var minimumHeight: CGFloat {
-        return stackView.bounds.height + 64 // UINavigationBar height
+        return stackView.bounds.height + Layout.objectImageMinimumHeight
     }
     
     public var shouldShowButtons = true {
