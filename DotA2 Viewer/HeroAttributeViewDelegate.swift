@@ -7,5 +7,5 @@
 //
 
 protocol HeroAttributeViewDelegate: class {
-    func sliderDidChangeValue(_ newValue: Int)
+    func heroAttributeView(_ heroAttributeView: HeroAttributeView, sliderDidChangeValue newValue: Int)
 }

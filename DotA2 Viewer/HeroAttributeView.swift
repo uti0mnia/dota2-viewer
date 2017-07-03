@@ -118,7 +118,7 @@ class HeroAttributeView: UIView {
         
         if newValue != oldSliderValue {
             oldSliderValue = newValue
-            delegate?.sliderDidChangeValue(newValue)
+            delegate?.heroAttributeView(self, sliderDidChangeValue: newValue)
         }
     }
     

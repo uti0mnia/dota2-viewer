@@ -109,7 +109,7 @@ class HeroBasicViewController: UIViewController, UITableViewDataSource, HeroAttr
     
     // MARK: - HeroAttributeViewDelegate
     
-    public func sliderDidChangeValue(_ newValue: Int) {
+    func heroAttributeView(_ heroAttributeView: HeroAttributeView, sliderDidChangeValue newValue: Int) {
         hero?.level = newValue
     }
     
