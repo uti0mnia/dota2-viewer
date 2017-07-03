@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ItemDetailViewController: UIViewController, ItemHeaderViewDelegate, ItemBasicViewControllerDelegate {
+class ItemDetailViewController: ObjectDetailViewController, ItemHeaderViewDelegate, ItemBasicViewControllerDelegate {
    
     public var item: Item? {
         didSet {
@@ -18,29 +18,20 @@ class ItemDetailViewController: UIViewController, ItemHeaderViewDelegate, ItemBa
         }
     }
     
+    override public var objectHeaderView: ObjectHeaderView? {
+        return itemHeaderView
+    }
+    
     private var itemHeaderView = ItemHeaderView()
     private var abilityCollectionViewController = AbilityCollectionViewController()
     private var basicViewController = ItemBasicViewController()
     
-    private var contentView = UIView()
-    private var currentChildViewController: UIViewController?
     private var currentTab: ItemDetailTab = .basic
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        edgesForExtendedLayout = UIRectEdge()
-        
-        itemHeaderView.backgroundColor = UIColor.flatForestGreen()
-        contentView.backgroundColor = UIColor.flatForestGreen()
-        
-        view.addSubview(itemHeaderView)
-        view.addSubview(contentView)
-        
         itemHeaderView.delegate = self
-        basicViewController.delegate = self
-        
-        addConstraints()
     }
     
     private func updateView() {
@@ -57,35 +48,6 @@ class ItemDetailViewController: UIViewController, ItemHeaderViewDelegate, ItemBa
         
         swapChildViewController(to: basicViewController)
         currentTab = .basic
-    }
-    
-    private func addConstraints() {
-        itemHeaderView.snp.makeConstraints() { make in
-            make.left.top.right.equalTo(view)
-            make.bottom.equalTo(contentView.snp.top)
-        }
-        
-        contentView.snp.makeConstraints() { make in
-            make.left.bottom.right.equalTo(view)
-        }
-    }
-    
-    // TODO: Animate this stuff.
-    private func swapChildViewController(to viewController: UIViewController) {
-        
-        currentChildViewController?.willMove(toParentViewController: nil)
-        currentChildViewController?.view.removeFromSuperview()
-        currentChildViewController?.removeFromParentViewController()
-        
-        currentChildViewController = viewController
-        
-        addChildViewController(viewController)
-        contentView.addSubview(viewController.view)
-        viewController.view.frame = contentView.bounds // TODO: Fix this shit. ??
-        viewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        
-        viewController.didMove(toParentViewController: self)
-        
     }
     
     // MARK: - ItemBasicViewControllerDelegate
@@ -111,9 +73,5 @@ class ItemDetailViewController: UIViewController, ItemHeaderViewDelegate, ItemBa
             swapChildViewController(to: abilityCollectionViewController)
             
         }
-    }
-    
-    func itemHeaderViewDidTapOnImageView() {
-        
     }
 }

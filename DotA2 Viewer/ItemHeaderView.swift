@@ -11,7 +11,7 @@ import SnapKit
 
 class ItemHeaderView: ObjectHeaderView {
     
-    weak var delegate: ItemHeaderViewDelegate?
+    public weak var delegate: ItemHeaderViewDelegate?
     
     private var detailsButton = UIButton()
     private var abilitiesButton = UIButton()
@@ -28,6 +28,12 @@ class ItemHeaderView: ObjectHeaderView {
         abilitiesButton.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
         abilitiesButton.setTitle("Abilities", for: .normal)
         abilitiesButton.tag = 1
+    }
+    
+    override func didPanOnView(_ gesture: UIPanGestureRecognizer) {
+        super.didPanOnView(gesture)
+        
+        delegate?.objectHeaderView(self, didChangeImageHeightTo: imageView.bounds.height)
     }
     
     @objc private func buttonTapped(_ sender: UIButton) {

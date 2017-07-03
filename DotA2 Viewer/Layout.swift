@@ -16,4 +16,8 @@ class Layout {
     public static var heroImageSize: CGSize {
         return CGSize(width: 256, height: 144)
     }
+    
+    public static var statusBarHeight: CGFloat {
+        return 20
+    }
 }

@@ -6,13 +6,12 @@
 //  Copyright © 2017 self. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 public enum ItemDetailTab: Int {
     case basic = 0, ability
 }
 
-protocol ItemHeaderViewDelegate: class {
-    func itemHeaderViewDidTapOnImageView()
+protocol ItemHeaderViewDelegate: ObjectHeaderViewDelegate {
     func itemHeaderView(_ itemHeaderView: ItemHeaderView, didTapTab tab: ItemDetailTab)
 }

@@ -12,8 +12,6 @@ public enum HeroDetailTab: Int {
     case basic = 0, ability, talent, misc
 }
 
-protocol HeroHeaderViewDelegate: class {
+protocol HeroHeaderViewDelegate: ObjectHeaderViewDelegate {
     func heroHeaderView(_ headerView: HeroHeaderView, didTapTab tab: HeroDetailTab)
-    
-    func heroHeaderView(_ headerView: HeroHeaderView, didChangeImageHeightTo height: CGFloat)
 }

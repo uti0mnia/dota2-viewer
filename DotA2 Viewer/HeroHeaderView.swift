@@ -43,7 +43,7 @@ class HeroHeaderView: ObjectHeaderView {
     override func didPanOnView(_ gesture: UIPanGestureRecognizer) {
         super.didPanOnView(gesture)
         
-        delegate?.heroHeaderView(self, didChangeImageHeightTo: imageView.bounds.height)
+        delegate?.objectHeaderView(self, didChangeImageHeightTo: imageView.bounds.height)
     }
     
     @objc private func buttonTapped(_ sender: UIButton) {

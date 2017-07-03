@@ -30,8 +30,7 @@ class AbilityCollectionViewController: UIViewController, UICollectionViewDataSou
         collectionView.dataSource = self
         collectionView.register(AbilityCollectionCell.self, forCellWithReuseIdentifier: AbilityCollectionViewController.abilityReusableCell)
         
-        let size = CGSize(width: collectionView.bounds.width, height: collectionView.bounds.height)
-        collectionView.itemSize = size
+        collectionView.itemSize = collectionView.bounds.size
         collectionView.minimumLineSpacing = 0
         collectionView.showsVerticalScrollIndicator = false
         collectionView.showsHorizontalScrollIndicator = false

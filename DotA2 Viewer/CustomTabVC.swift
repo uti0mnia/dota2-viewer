@@ -67,6 +67,7 @@ class CustomTabVC: UIViewController {
         super.viewDidLoad()
         setup()
         
+        view.backgroundColor = UIColor.flatBlackColorDark()
         
         // perform the fetch
         do {

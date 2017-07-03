@@ -9,7 +9,7 @@
 import UIKit
 import SnapKit
 
-class HeroDetailVC: UIViewController, HeroHeaderViewDelegate {
+class HeroDetailVC: ObjectDetailViewController, HeroHeaderViewDelegate {
     
     public var hero: Hero? {
         didSet {
@@ -19,42 +19,22 @@ class HeroDetailVC: UIViewController, HeroHeaderViewDelegate {
         }
     }
     
+    override public var objectHeaderView: ObjectHeaderView {
+        return heroHeaderView
+    }
+    
     private var heroHeaderView = HeroHeaderView()
     private var abilityCollectionViewController = AbilityCollectionViewController()
     private var basicViewController = HeroBasicTVC()
     private var miscViewController = HeroMiscTVC()
     private var talentViewController = HeroTalentTVC()
     
-    private var contentView = UIView()
-    private var currentChildViewController: UIViewController?
     private var currentTab: HeroDetailTab = .basic
-    
-    private var headerTopLayout: Constraint?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        heroHeaderView.backgroundColor = UIColor.flatBlack()
-        contentView.backgroundColor = UIColor.flatBlack()
-        
-        view.addSubview(heroHeaderView)
-        view.addSubview(contentView)
-        
         heroHeaderView.delegate = self
-        
-        addConstraints()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        configureNavigationBar()
-    }
-    
-    private func configureNavigationBar() {
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.isTranslucent = true
     }
     
     private func updateView() {
@@ -74,37 +54,6 @@ class HeroDetailVC: UIViewController, HeroHeaderViewDelegate {
         
     }
     
-    private func addConstraints() {
-        heroHeaderView.snp.makeConstraints() { make in
-            // Lower priority in case of dragging size.
-            headerTopLayout = make.top.equalTo(topLayoutGuide.snp.bottom).constraint
-            make.left.right.equalTo(view)
-            make.bottom.equalTo(contentView.snp.top).priority(999)
-        }
-        
-        contentView.snp.makeConstraints() { make in
-            make.left.bottom.right.equalTo(view)
-        }
-    }
-    
-    // TODO: Animate this stuff.
-    private func swapChildViewController(to viewController: UIViewController) {
-        
-        currentChildViewController?.willMove(toParentViewController: nil)
-        currentChildViewController?.view.removeFromSuperview()
-        currentChildViewController?.removeFromParentViewController()
-        
-        currentChildViewController = viewController
-        
-        addChildViewController(viewController)
-        contentView.addSubview(viewController.view)
-        viewController.view.frame = contentView.bounds
-        viewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        
-        viewController.didMove(toParentViewController: self)
-    }
-    
-    
     // MARK: - HeroHeaderViewDelegate
     
     func heroHeaderView(_ headerView: HeroHeaderView, didTapTab tab: HeroDetailTab) {
@@ -123,24 +72,5 @@ class HeroDetailVC: UIViewController, HeroHeaderViewDelegate {
         case .talent:
             swapChildViewController(to: talentViewController)
         }
-    }
-    
-    func heroHeaderView(_ headerView: HeroHeaderView, didChangeImageHeightTo height: CGFloat) {
-        guard let navBarHeight = navigationController?.navigationBar.bounds.height else {
-            headerTopLayout?.update(offset: 0)
-            return
-        }
-        
-        if headerView.bounds.height > ObjectHeaderView.maximumHeight {
-            headerTopLayout?.update(offset: 0)
-            return
-        }
-        
-        let effectiveHeight = headerView.bounds.height - headerView.minimumHeight
-        let effectiveMaxHeight = ObjectHeaderView.maximumHeight - headerView.minimumHeight
-        
-        let newOffset = navBarHeight * (effectiveHeight / effectiveMaxHeight - 1)
-        headerTopLayout?.update(offset: newOffset)
-        
     }
 }

@@ -895,6 +895,8 @@
 		C95E86801E0369CE00822703 /* dota2.png in Resources */ = {isa = PBXBuildFile; fileRef = C95E867F1E0369CE00822703 /* dota2.png */; };
 		C96391971F076463005CB7AC /* ObjectHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96391961F076463005CB7AC /* ObjectHeaderView.swift */; };
 		C96EBB601DF244EF00D6FFD0 /* DANavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96EBB5F1DF244EF00D6FFD0 /* DANavigationController.swift */; };
+		C970639B1F09E13C008EF87B /* ObjectDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C970639A1F09E13C008EF87B /* ObjectDetailViewController.swift */; };
+		C970639D1F09E6AF008EF87B /* ObjectHeaderViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C970639C1F09E6AF008EF87B /* ObjectHeaderViewDelegate.swift */; };
 		C9745D5C1EC57558009537E4 /* HeroHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9745D5B1EC57558009537E4 /* HeroHeaderView.swift */; };
 		C9745D5E1EC577CC009537E4 /* HeroHeaderViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9745D5D1EC577CC009537E4 /* HeroHeaderViewDelegate.swift */; };
 		C9745D651EC7B86B009537E4 /* HeroAttributeViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9745D641EC7B86B009537E4 /* HeroAttributeViewDelegate.swift */; };
@@ -1851,6 +1853,8 @@
 		C96391961F076463005CB7AC /* ObjectHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectHeaderView.swift; sourceTree = "<group>"; };
 		C96EA1111DEE622800259AEF /* DotA2 Assistant.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = "DotA2 Assistant.entitlements"; path = "../DotA2 Assistant.entitlements"; sourceTree = "<group>"; };
 		C96EBB5F1DF244EF00D6FFD0 /* DANavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DANavigationController.swift; sourceTree = "<group>"; };
+		C970639A1F09E13C008EF87B /* ObjectDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectDetailViewController.swift; sourceTree = "<group>"; };
+		C970639C1F09E6AF008EF87B /* ObjectHeaderViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectHeaderViewDelegate.swift; sourceTree = "<group>"; };
 		C9745D5B1EC57558009537E4 /* HeroHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroHeaderView.swift; sourceTree = "<group>"; };
 		C9745D5D1EC577CC009537E4 /* HeroHeaderViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HeroHeaderViewDelegate.swift; path = Views/HeroHeaderViewDelegate.swift; sourceTree = "<group>"; };
 		C9745D641EC7B86B009537E4 /* HeroAttributeViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroAttributeViewDelegate.swift; sourceTree = "<group>"; };
@@ -3058,6 +3062,8 @@
 			isa = PBXGroup;
 			children = (
 				C96391961F076463005CB7AC /* ObjectHeaderView.swift */,
+				C970639C1F09E6AF008EF87B /* ObjectHeaderViewDelegate.swift */,
+				C970639A1F09E13C008EF87B /* ObjectDetailViewController.swift */,
 			);
 			name = "Object Superclasses";
 			sourceTree = "<group>";
@@ -4150,6 +4156,7 @@
 				C957BBED1EEFA920008F756B /* HeroMiscTVC.swift in Sources */,
 				C9745D6B1EC8E262009537E4 /* HeroBasicTVC.swift in Sources */,
 				C985269D1EFE0EC300398D10 /* AbiltyCollectionViewController.swift in Sources */,
+				C970639B1F09E13C008EF87B /* ObjectDetailViewController.swift in Sources */,
 				366A8A221DD24B71000406BF /* DAMainCellLabel.swift in Sources */,
 				C98526701EFA27F100398D10 /* String+Convenience.swift in Sources */,
 				C9AEA2111E9C4629006FD974 /* Item+CoreDataClass.swift in Sources */,
@@ -4172,6 +4179,7 @@
 				C98526741EFA2A0F00398D10 /* Int+NumberHandling.swift in Sources */,
 				367E34E01DB7F9670037FA7B /* CustomTabVC.swift in Sources */,
 				C9BB66701F035EEB00E07ADB /* CoreDataManager.swift in Sources */,
+				C970639D1F09E6AF008EF87B /* ObjectHeaderViewDelegate.swift in Sources */,
 				C90CE60A1DFCB67500C93539 /* DAExpandableStackView.swift in Sources */,
 				C9AEA2081E9C4629006FD974 /* ModifiableValue+CoreDataProperties.swift in Sources */,
 				C9745D5C1EC57558009537E4 /* HeroHeaderView.swift in Sources */,
