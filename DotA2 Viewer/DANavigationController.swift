@@ -13,7 +13,7 @@ class DANavigationController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.navigationBar.barTintColor = UIColor.flatBlack()
+        self.navigationBar.barTintColor = UIColor.flatBlack
     }
 
 }

@@ -28,7 +28,7 @@ class DADetailVC: DAUIViewController {
     
     internal func addSubviews() {
         // colours
-        self.view.backgroundColor = UIColor.flatBlack()
+        self.view.backgroundColor = UIColor.flatBlack
     }
     
     internal func setup() {

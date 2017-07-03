@@ -13,8 +13,8 @@ class DAUIViewController: UIViewController {
     // setting UI aspects
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.flatBlack()
-        UINavigationBar.appearance().backgroundColor = UIColor.flatBlack()
-        UINavigationBar.appearance().tintColor = UIColor.flatRed()
+        self.view.backgroundColor = UIColor.flatBlack
+        UINavigationBar.appearance().backgroundColor = UIColor.flatBlack
+        UINavigationBar.appearance().tintColor = UIColor.flatRed
     }
 }

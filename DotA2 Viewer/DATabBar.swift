@@ -26,9 +26,9 @@ class DATabBar: UITabBar {
     
     fileprivate func commonInit() {
         // set the colour
-        self.barTintColor = UIColor.flatBlack()
+        self.barTintColor = UIColor.flatBlack
         self.isTranslucent = false
-        self.tintColor = UIColor.flatRed()
+        self.tintColor = UIColor.flatRed
         for item in self.items ?? [] {
             item.setTitleTextAttributes([NSFontAttributeName: kDotaFontSmall], for: .normal)
         }

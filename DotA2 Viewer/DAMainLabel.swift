@@ -39,7 +39,7 @@ class DAMainLabel: DAPaddedLabel {
     
     fileprivate func commonInit() {
         // set the text colour
-        self.textColor = UIColor.flatWhite()
+        self.textColor = UIColor.flatWhite
         
         // the font
         if isBold {

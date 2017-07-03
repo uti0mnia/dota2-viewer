@@ -11,15 +11,15 @@ import ChameleonFramework
 class Colours {
     
     public static var modifierGreen: UIColor {
-        return UIColor(hexString: "#297c46")
+        return UIColor(hexString: "#297c46")!
     }
     
     public static var modifierRed: UIColor {
-        return UIColor(hexString: "#912828")
+        return UIColor(hexString: "#912828")!
     }
     
     public static var defaultTextColours: UIColor {
-        return UIColor.flatWhiteColorDark()
+        return UIColor.flatWhiteDark()
     }
     
 }

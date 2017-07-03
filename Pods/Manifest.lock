@@ -1,8 +1,8 @@
 PODS:
   - CenteredCollectionView (0.9.9)
-  - ChameleonFramework (2.1.0):
-    - ChameleonFramework/Default (= 2.1.0)
   - ChameleonFramework/Default (2.1.0)
+  - ChameleonFramework/Swift (2.1.0):
+    - ChameleonFramework/Default
   - Firebase/Core (3.9.0):
     - FirebaseAnalytics (= 3.5.1)
     - FirebaseCore (= 3.4.4)
@@ -31,10 +31,19 @@ PODS:
 
 DEPENDENCIES:
   - CenteredCollectionView
-  - ChameleonFramework
+  - ChameleonFramework/Swift (from `https://github.com/ViccAlexander/Chameleon.git`)
   - Firebase/Core
   - Firebase/Database
   - SnapKit (~> 3.2.0)
+
+EXTERNAL SOURCES:
+  ChameleonFramework:
+    :git: https://github.com/ViccAlexander/Chameleon.git
+
+CHECKOUT OPTIONS:
+  ChameleonFramework:
+    :commit: 6dd284bde21ea2e7f9fd89bc36f40df16e16369d
+    :git: https://github.com/ViccAlexander/Chameleon.git
 
 SPEC CHECKSUMS:
   CenteredCollectionView: 131a841da9fc7f783a24eea90fd361bc08699c5f
@@ -49,6 +58,6 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 2b2596cbb7186865e98cadf2b1e262d851c2b168
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
 
-PODFILE CHECKSUM: 881a5cbd24e79207064d4d378a2631baacec76f7
+PODFILE CHECKSUM: 604df42421dce6c7df6b46c908dddc6ccd3fd19f
 
 COCOAPODS: 1.2.1

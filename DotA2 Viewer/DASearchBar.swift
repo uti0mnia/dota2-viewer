@@ -29,8 +29,8 @@ class DASearchBar: UISearchBar {
     fileprivate func commonInit() {
         // set up style
         self.backgroundColor = UIColor.clear
-        self.textField?.textColor = UIColor.flatWhite()
-        self.tintColor = UIColor.flatWhite()
+        self.textField?.textColor = UIColor.flatWhite
+        self.tintColor = UIColor.flatWhite
         self.searchBarStyle = .minimal
         self.showsCancelButton = true
     }

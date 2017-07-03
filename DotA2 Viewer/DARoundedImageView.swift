@@ -33,7 +33,7 @@ class DARoundedImageView: UIImageView {
         
         // set the contour to be white
         self.layer.borderWidth = 0
-        self.layer.borderColor = UIColor.flatWhite().cgColor
+        self.layer.borderColor = UIColor.flatWhite.cgColor
     }
 
 }

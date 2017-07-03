@@ -25,7 +25,7 @@ class DALoreLabel: DAMultiLineLabel {
     }
     
     fileprivate func commonInit() {
-        self.textColor = UIColor.flatGray()
+        self.textColor = UIColor.flatGray
     }
 
 }

@@ -38,7 +38,9 @@ class ItemDetailViewController: ObjectDetailViewController, ItemHeaderViewDelega
         guard let item = item else {
             return
         }
-        self.title = item.name
+        
+        titleLabel.text = item.name
+        titleLabel.sizeToFit()
         
         // We dont want to show the buttons
         itemHeaderView.imageView.image = UIImage(named: item.imageName)

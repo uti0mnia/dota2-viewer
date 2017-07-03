@@ -46,8 +46,8 @@ class DASlider: UISlider {
     
     fileprivate func setup() {
         // set the properties
-        self.minimumTrackTintColor = UIColor.flatRed()
-        self.maximumTrackTintColor = UIColor.flatWhite()
+        self.minimumTrackTintColor = UIColor.flatRed
+        self.maximumTrackTintColor = UIColor.flatWhite
         self.thumbTintColor = UIColor.black
         self.setValue(1, animated: false)
         self.minimumValue = Float(numbers.first!)

@@ -41,7 +41,9 @@ class HeroDetailVC: ObjectDetailViewController, HeroHeaderViewDelegate {
         guard let hero = hero else {
             return
         }
-        self.title = hero.name
+        
+        titleLabel.text = hero.name
+        titleLabel.sizeToFit()
         
         heroHeaderView.imageView.image = UIImage(named: hero.imageName)
         abilityCollectionViewController.abilities = hero.abilities?.array as? [Ability]

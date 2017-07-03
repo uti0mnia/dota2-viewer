@@ -28,7 +28,7 @@ class DAMainCellLabel: DAMainLabel {
     
     
     fileprivate func commonInit() {
-        self.textColor = UIColor.flatLime()
+        self.textColor = UIColor.flatLime
         // set the font
         self.font = kDotaFontLarge
     }

@@ -20,14 +20,19 @@ class ObjectDetailViewController: UIViewController, ObjectHeaderViewDelegate {
     
     public var headerTopLayout: Constraint?
     
+    public let titleLabel = DAMainLabel(style: .title)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = UIColor.flatBlackColorDark()
+        view.backgroundColor = UIColor.flatBlackDark
         
         guard let objectHeaderView = objectHeaderView else {
             return
         }
+        
+        titleLabel.textAlignment = .center
+        navigationItem.titleView = titleLabel
         
         view.addSubview(objectHeaderView)
         view.addSubview(contentView)

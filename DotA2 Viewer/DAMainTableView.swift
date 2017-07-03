@@ -32,10 +32,10 @@ class DAMainTableView: UITableView {
         
         
         // set the colour
-        self.backgroundColor = UIColor.flatBlack()
-        self.sectionIndexColor = UIColor.flatRed()
-        self.sectionIndexTrackingBackgroundColor = UIColor.flatBlack()
-        self.sectionIndexBackgroundColor = UIColor.flatBlack()
+        self.backgroundColor = UIColor.flatBlack
+        self.sectionIndexColor = UIColor.flatRed
+        self.sectionIndexTrackingBackgroundColor = UIColor.flatBlack
+        self.sectionIndexBackgroundColor = UIColor.flatBlack
     }
 
 }
