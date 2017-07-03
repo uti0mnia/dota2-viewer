@@ -1,5 +1,5 @@
 //
-//  HeroBasicTVC.swift
+//  HeroBasicViewController.swift
 //  DotA2 Assistant
 //
 //  Created by Casey McLewin on 2017-05-14.
@@ -15,7 +15,7 @@ import SnapKit
  * This view controller is meant to handle basic details of a hero like attributes 
  * and stats. Most of the stats and the attributes can be changed with the slider.
  */
-class HeroBasicTVC: UIViewController, UITableViewDataSource, HeroAttributeViewDelegate, HeroDelegate {
+class HeroBasicViewController: UIViewController, UITableViewDataSource, HeroAttributeViewDelegate, HeroDelegate {
     
     private static let basicReuseIndentifier = "basicCell"
     
@@ -68,7 +68,7 @@ class HeroBasicTVC: UIViewController, UITableViewDataSource, HeroAttributeViewDe
     }
     
     private func commonInit() {
-        tableView.register(HeroBasicCell.self, forCellReuseIdentifier: HeroBasicTVC.basicReuseIndentifier)
+        tableView.register(HeroBasicCell.self, forCellReuseIdentifier: HeroBasicViewController.basicReuseIndentifier)
         tableView.dataSource = self
         
         attributeView.delegate = self
@@ -131,7 +131,7 @@ class HeroBasicTVC: UIViewController, UITableViewDataSource, HeroAttributeViewDe
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: HeroBasicTVC.basicReuseIndentifier,
+        let cell = tableView.dequeueReusableCell(withIdentifier: HeroBasicViewController.basicReuseIndentifier,
                                                  for: indexPath) as! HeroBasicCell
         configure(cell, at: indexPath)
         return cell

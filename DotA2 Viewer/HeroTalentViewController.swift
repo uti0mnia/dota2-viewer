@@ -1,5 +1,5 @@
 //
-//  HeroTalentTVC.swift
+//  HeroTalentViewController.swift
 //  DotA2 Assistant
 //
 //  Created by Casey McLewin on 2017-06-12.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HeroTalentTVC: UIViewController, UITableViewDataSource {
+class HeroTalentViewController: UIViewController, UITableViewDataSource {
     
     private static let talentReuseIdentifier = "talentCell"
     
@@ -32,7 +32,7 @@ class HeroTalentTVC: UIViewController, UITableViewDataSource {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 70
         
-        tableView.register(HeroTalentCell.self, forCellReuseIdentifier: HeroTalentTVC.talentReuseIdentifier)
+        tableView.register(HeroTalentCell.self, forCellReuseIdentifier: HeroTalentViewController.talentReuseIdentifier)
         tableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         
         tableView.dataSource = self
@@ -47,7 +47,7 @@ class HeroTalentTVC: UIViewController, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: HeroTalentTVC.talentReuseIdentifier, for: indexPath) as! HeroTalentCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: HeroTalentViewController.talentReuseIdentifier, for: indexPath) as! HeroTalentCell
         
         if let talent = talents?[indexPath.row] {
             cell.leftLabel.text = talent.left

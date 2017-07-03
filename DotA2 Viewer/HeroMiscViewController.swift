@@ -1,5 +1,5 @@
 //
-//  HeroMiscTVC.swift
+//  HeroMiscViewController.swift
 //  DotA2 Assistant
 //
 //  Created by Casey McLewin on 2017-06-12.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HeroMiscTVC: UIViewController, UITableViewDataSource {
+class HeroMiscViewController: UIViewController, UITableViewDataSource {
     
     private static let miscReuseIdentifier = "miscCell"
     
@@ -48,7 +48,7 @@ class HeroMiscTVC: UIViewController, UITableViewDataSource {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 200
         
-        tableView.register(HeroMiscCell.self, forCellReuseIdentifier: HeroMiscTVC.miscReuseIdentifier)
+        tableView.register(HeroMiscCell.self, forCellReuseIdentifier: HeroMiscViewController.miscReuseIdentifier)
         tableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         tableView.dataSource = self
         
@@ -62,7 +62,7 @@ class HeroMiscTVC: UIViewController, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: HeroMiscTVC.miscReuseIdentifier, for: indexPath) as! HeroMiscCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: HeroMiscViewController.miscReuseIdentifier, for: indexPath) as! HeroMiscCell
         
         if let key = keys?[indexPath.row] {
             cell.mainLabel.text = key

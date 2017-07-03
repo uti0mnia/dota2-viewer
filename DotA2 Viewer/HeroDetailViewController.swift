@@ -9,7 +9,7 @@
 import UIKit
 import SnapKit
 
-class HeroDetailVC: ObjectDetailViewController, HeroHeaderViewDelegate {
+class HeroDetailViewController: ObjectDetailViewController, HeroHeaderViewDelegate {
     
     public var hero: Hero? {
         didSet {
@@ -25,9 +25,9 @@ class HeroDetailVC: ObjectDetailViewController, HeroHeaderViewDelegate {
     
     private var heroHeaderView = HeroHeaderView()
     private var abilityCollectionViewController = AbilityCollectionViewController()
-    private var basicViewController = HeroBasicTVC()
-    private var miscViewController = HeroMiscTVC()
-    private var talentViewController = HeroTalentTVC()
+    private var basicViewController = HeroBasicViewController()
+    private var miscViewController = HeroMiscViewController()
+    private var talentViewController = HeroTalentViewController()
     
     private var currentTab: HeroDetailTab = .basic
     

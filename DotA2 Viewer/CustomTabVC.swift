@@ -58,7 +58,7 @@ class CustomTabVC: UIViewController {
         }
     }
     fileprivate var entity = "Hero" { didSet { switchTableView() } }
-    fileprivate var heroDetailVC = HeroDetailVC()
+    fileprivate var heroDetailVC = HeroDetailViewController()
     fileprivate var itemDetailViewController = ItemDetailViewController()
     
     

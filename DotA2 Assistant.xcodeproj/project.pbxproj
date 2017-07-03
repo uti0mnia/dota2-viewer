@@ -75,7 +75,7 @@
 		C9172C211DD176BA00DCF88F /* dota2-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = C9172C201DD176BA00DCF88F /* dota2-logo.png */; };
 		C922FA8B1DD8AD27007B76F8 /* DALoreLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C922FA8A1DD8AD27007B76F8 /* DALoreLabel.swift */; };
 		C923CF5E1EF0E5AE00971660 /* Aegis of the Immortal.png in Resources */ = {isa = PBXBuildFile; fileRef = C923CF5D1EF0E5AE00971660 /* Aegis of the Immortal.png */; };
-		C93028391DF3629F005EA297 /* HeroDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93028381DF3629F005EA297 /* HeroDetailVC.swift */; };
+		C93028391DF3629F005EA297 /* HeroDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93028381DF3629F005EA297 /* HeroDetailViewController.swift */; };
 		C94A26D21DD5593F00D9B054 /* DASlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94A26D11DD5593F00D9B054 /* DASlider.swift */; };
 		C94B16111E01C090008BF226 /* Acid Spray_Alchemist.png in Resources */ = {isa = PBXBuildFile; fileRef = C94B13F81E01C08E008BF226 /* Acid Spray_Alchemist.png */; };
 		C94B16121E01C090008BF226 /* Activate Fire Remnant_Ember Spirit.png in Resources */ = {isa = PBXBuildFile; fileRef = C94B13F91E01C08E008BF226 /* Activate Fire Remnant_Ember Spirit.png */; };
@@ -885,9 +885,9 @@
 		C95753CC1DD57FCF005C9F75 /* strength.png in Resources */ = {isa = PBXBuildFile; fileRef = C95753C61DD57FCF005C9F75 /* strength.png */; };
 		C957BBDF1EECE682008F756B /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C957BBDE1EECE682008F756B /* Layout.swift */; };
 		C957BBE41EEE4081008F756B /* HeroTalentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C957BBE31EEE4081008F756B /* HeroTalentCell.swift */; };
-		C957BBE81EEFA1BD008F756B /* HeroTalentTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C957BBE71EEFA1BD008F756B /* HeroTalentTVC.swift */; };
+		C957BBE81EEFA1BD008F756B /* HeroTalentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C957BBE71EEFA1BD008F756B /* HeroTalentViewController.swift */; };
 		C957BBEB1EEFA76B008F756B /* HeroMiscCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C957BBEA1EEFA76B008F756B /* HeroMiscCell.swift */; };
-		C957BBED1EEFA920008F756B /* HeroMiscTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C957BBEC1EEFA920008F756B /* HeroMiscTVC.swift */; };
+		C957BBED1EEFA920008F756B /* HeroMiscViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C957BBEC1EEFA920008F756B /* HeroMiscViewController.swift */; };
 		C957BBF11EEFB053008F756B /* HeroAttributeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C957BBF01EEFB053008F756B /* HeroAttributeView.swift */; };
 		C957BBF31EEFB34C008F756B /* HeroBasicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C957BBF21EEFB34C008F756B /* HeroBasicCell.swift */; };
 		C957BBF71EEFB77A008F756B /* HeroTalentLevelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C957BBF61EEFB77A008F756B /* HeroTalentLevelView.swift */; };
@@ -900,7 +900,7 @@
 		C9745D5C1EC57558009537E4 /* HeroHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9745D5B1EC57558009537E4 /* HeroHeaderView.swift */; };
 		C9745D5E1EC577CC009537E4 /* HeroHeaderViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9745D5D1EC577CC009537E4 /* HeroHeaderViewDelegate.swift */; };
 		C9745D651EC7B86B009537E4 /* HeroAttributeViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9745D641EC7B86B009537E4 /* HeroAttributeViewDelegate.swift */; };
-		C9745D6B1EC8E262009537E4 /* HeroBasicTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9745D6A1EC8E262009537E4 /* HeroBasicTVC.swift */; };
+		C9745D6B1EC8E262009537E4 /* HeroBasicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9745D6A1EC8E262009537E4 /* HeroBasicViewController.swift */; };
 		C97E11631F0084BF00E35D1D /* RecipeBuildView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97E11621F0084BF00E35D1D /* RecipeBuildView.swift */; };
 		C97E11651F0089F200E35D1D /* RecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97E11641F0089F200E35D1D /* RecipeView.swift */; };
 		C98526701EFA27F100398D10 /* String+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = C985266F1EFA27F100398D10 /* String+Convenience.swift */; };
@@ -1032,7 +1032,7 @@
 		C923CF5A1EF0E44400971660 /* Call of the Wild (Hawk)_Beastmaster.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Call of the Wild (Hawk)_Beastmaster.png"; path = "images/Abilities/Call of the Wild (Hawk)_Beastmaster.png"; sourceTree = "<group>"; };
 		C923CF5D1EF0E5AE00971660 /* Aegis of the Immortal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Aegis of the Immortal.png"; path = "images/Abilities/Aegis of the Immortal.png"; sourceTree = "<group>"; };
 		C923CF601EF0EA1700971660 /* DotA2_Assistant-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DotA2_Assistant-Bridging-Header.h"; sourceTree = "<group>"; };
-		C93028381DF3629F005EA297 /* HeroDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroDetailVC.swift; sourceTree = "<group>"; };
+		C93028381DF3629F005EA297 /* HeroDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroDetailViewController.swift; sourceTree = "<group>"; };
 		C94A26D11DD5593F00D9B054 /* DASlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DASlider.swift; path = Views/DASlider.swift; sourceTree = "<group>"; };
 		C94B13F81E01C08E008BF226 /* Acid Spray_Alchemist.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Acid Spray_Alchemist.png"; path = "Abilities/Acid Spray_Alchemist.png"; sourceTree = "<group>"; };
 		C94B13F91E01C08E008BF226 /* Activate Fire Remnant_Ember Spirit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Activate Fire Remnant_Ember Spirit.png"; path = "Abilities/Activate Fire Remnant_Ember Spirit.png"; sourceTree = "<group>"; };
@@ -1842,9 +1842,9 @@
 		C95753C61DD57FCF005C9F75 /* strength.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = strength.png; sourceTree = "<group>"; };
 		C957BBDE1EECE682008F756B /* Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
 		C957BBE31EEE4081008F756B /* HeroTalentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroTalentCell.swift; sourceTree = "<group>"; };
-		C957BBE71EEFA1BD008F756B /* HeroTalentTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroTalentTVC.swift; sourceTree = "<group>"; };
+		C957BBE71EEFA1BD008F756B /* HeroTalentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroTalentViewController.swift; sourceTree = "<group>"; };
 		C957BBEA1EEFA76B008F756B /* HeroMiscCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroMiscCell.swift; sourceTree = "<group>"; };
-		C957BBEC1EEFA920008F756B /* HeroMiscTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroMiscTVC.swift; sourceTree = "<group>"; };
+		C957BBEC1EEFA920008F756B /* HeroMiscViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroMiscViewController.swift; sourceTree = "<group>"; };
 		C957BBF01EEFB053008F756B /* HeroAttributeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroAttributeView.swift; sourceTree = "<group>"; };
 		C957BBF21EEFB34C008F756B /* HeroBasicCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroBasicCell.swift; sourceTree = "<group>"; };
 		C957BBF61EEFB77A008F756B /* HeroTalentLevelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HeroTalentLevelView.swift; path = Views/HeroTalentLevelView.swift; sourceTree = "<group>"; };
@@ -1858,7 +1858,7 @@
 		C9745D5B1EC57558009537E4 /* HeroHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroHeaderView.swift; sourceTree = "<group>"; };
 		C9745D5D1EC577CC009537E4 /* HeroHeaderViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HeroHeaderViewDelegate.swift; path = Views/HeroHeaderViewDelegate.swift; sourceTree = "<group>"; };
 		C9745D641EC7B86B009537E4 /* HeroAttributeViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroAttributeViewDelegate.swift; sourceTree = "<group>"; };
-		C9745D6A1EC8E262009537E4 /* HeroBasicTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroBasicTVC.swift; sourceTree = "<group>"; };
+		C9745D6A1EC8E262009537E4 /* HeroBasicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroBasicViewController.swift; sourceTree = "<group>"; };
 		C97E11621F0084BF00E35D1D /* RecipeBuildView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeBuildView.swift; sourceTree = "<group>"; };
 		C97E11641F0089F200E35D1D /* RecipeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeView.swift; sourceTree = "<group>"; };
 		C985266F1EFA27F100398D10 /* String+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Convenience.swift"; sourceTree = "<group>"; };
@@ -3044,7 +3044,7 @@
 			children = (
 				C957BBF61EEFB77A008F756B /* HeroTalentLevelView.swift */,
 				C957BBE31EEE4081008F756B /* HeroTalentCell.swift */,
-				C957BBE71EEFA1BD008F756B /* HeroTalentTVC.swift */,
+				C957BBE71EEFA1BD008F756B /* HeroTalentViewController.swift */,
 			);
 			name = "Hero Talent";
 			sourceTree = "<group>";
@@ -3053,7 +3053,7 @@
 			isa = PBXGroup;
 			children = (
 				C957BBEA1EEFA76B008F756B /* HeroMiscCell.swift */,
-				C957BBEC1EEFA920008F756B /* HeroMiscTVC.swift */,
+				C957BBEC1EEFA920008F756B /* HeroMiscViewController.swift */,
 			);
 			name = "Hero Misc";
 			sourceTree = "<group>";
@@ -3071,7 +3071,7 @@
 		C9745D5F1EC7B0B0009537E4 /* Hero Details */ = {
 			isa = PBXGroup;
 			children = (
-				C93028381DF3629F005EA297 /* HeroDetailVC.swift */,
+				C93028381DF3629F005EA297 /* HeroDetailViewController.swift */,
 				C9745D5B1EC57558009537E4 /* HeroHeaderView.swift */,
 				C9745D5D1EC577CC009537E4 /* HeroHeaderViewDelegate.swift */,
 				C9B125721EE1182400984F90 /* KeyValueView.swift */,
@@ -3118,7 +3118,7 @@
 			children = (
 				C957BBF01EEFB053008F756B /* HeroAttributeView.swift */,
 				C957BBF21EEFB34C008F756B /* HeroBasicCell.swift */,
-				C9745D6A1EC8E262009537E4 /* HeroBasicTVC.swift */,
+				C9745D6A1EC8E262009537E4 /* HeroBasicViewController.swift */,
 				C9745D641EC7B86B009537E4 /* HeroAttributeViewDelegate.swift */,
 				C9D558941EF2197D00D0E923 /* HeroAttributeSlider.swift */,
 			);
@@ -4153,8 +4153,8 @@
 				C9AEA20B1E9C4629006FD974 /* Talent+CoreDataClass.swift in Sources */,
 				C90A13641EEC49F900D143B8 /* UIView+AddSubviews.swift in Sources */,
 				366A8A091DD0F4F3000406BF /* DAMainLabel.swift in Sources */,
-				C957BBED1EEFA920008F756B /* HeroMiscTVC.swift in Sources */,
-				C9745D6B1EC8E262009537E4 /* HeroBasicTVC.swift in Sources */,
+				C957BBED1EEFA920008F756B /* HeroMiscViewController.swift in Sources */,
+				C9745D6B1EC8E262009537E4 /* HeroBasicViewController.swift in Sources */,
 				C985269D1EFE0EC300398D10 /* AbiltyCollectionViewController.swift in Sources */,
 				C970639B1F09E13C008EF87B /* ObjectDetailViewController.swift in Sources */,
 				366A8A221DD24B71000406BF /* DAMainCellLabel.swift in Sources */,
@@ -4184,7 +4184,7 @@
 				C9AEA2081E9C4629006FD974 /* ModifiableValue+CoreDataProperties.swift in Sources */,
 				C9745D5C1EC57558009537E4 /* HeroHeaderView.swift in Sources */,
 				C957BBF71EEFB77A008F756B /* HeroTalentLevelView.swift in Sources */,
-				C93028391DF3629F005EA297 /* HeroDetailVC.swift in Sources */,
+				C93028391DF3629F005EA297 /* HeroDetailViewController.swift in Sources */,
 				C9AEA2151E9C4629006FD974 /* ArrayItem+CoreDataClass.swift in Sources */,
 				366A8A121DD1029F000406BF /* DAUIViewController.swift in Sources */,
 				C90A135E1EE9091800D143B8 /* Colours.swift in Sources */,
@@ -4196,7 +4196,7 @@
 				C9AEA2121E9C4629006FD974 /* Item+CoreDataProperties.swift in Sources */,
 				C9FEBF2F1DB299F2000CD4FF /* DotA2_Viewer.xcdatamodeld in Sources */,
 				C9AEA2141E9C4629006FD974 /* Note+CoreDataProperties.swift in Sources */,
-				C957BBE81EEFA1BD008F756B /* HeroTalentTVC.swift in Sources */,
+				C957BBE81EEFA1BD008F756B /* HeroTalentViewController.swift in Sources */,
 				C98C555D1F0356DD00540DC0 /* RecipeBuildViewDelegate.swift in Sources */,
 				C96391971F076463005CB7AC /* ObjectHeaderView.swift in Sources */,
 				C9BB666E1F0358ED00E07ADB /* RecipePart.swift in Sources */,
