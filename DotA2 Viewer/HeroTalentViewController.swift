@@ -16,7 +16,8 @@ class HeroTalentViewController: UIViewController, UITableViewDataSource {
     public var talents: [Talent]? {
         didSet {
             if view != nil {
-                tableView.reloadData()
+                tableView.reloadVisibleIfPossible(with: .none)
+                tableView.scrollToRow(at: IndexPath.zero, at: .top, animated: false)
             }
         }
     }

@@ -20,6 +20,8 @@ class ItemBasicViewController: UIViewController, RecipeBuildViewDelegate {
     public var item: Item? {
         didSet {
             basicView.item = item
+            
+            scrollView.setContentOffset(CGPoint.zero, animated: false)
         }
     }
     

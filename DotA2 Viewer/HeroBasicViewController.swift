@@ -86,13 +86,9 @@ class HeroBasicViewController: UIViewController, UITableViewDataSource, HeroAttr
             heroData.removeAll(keepingCapacity: true)
         }
         
-        tableView.beginUpdates()
-        if let indexPaths = tableView.indexPathsForVisibleRows {
-            tableView.reloadRows(at: indexPaths, with: .none)
-        } else {
-            tableView.reloadData()
-        }
-        tableView.endUpdates()
+        tableView.reloadVisibleIfPossible(with: .none)
+        
+        tableView.scrollToRow(at: IndexPath.zero, at: .top, animated: false)
         
         attributeView.setPrimaryAttribute(primaryAttribute)
         attributeView.agilityLabel.text = hero?.agility.uti_string(1)

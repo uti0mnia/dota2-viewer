@@ -30,6 +30,8 @@ class AbilityCollectionCell: UICollectionViewCell {
             abilityView.cooldown = ability.cooldown
             abilityView.mana = ability.mana
             abilityView.notes = ability.notes?.array as? [Note]
+            
+            scrollView.setContentOffset(CGPoint.zero, animated: false)
         }
     }
     

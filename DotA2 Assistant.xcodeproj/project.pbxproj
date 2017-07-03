@@ -915,6 +915,8 @@
 		C999EA081DE7D1C10036AF47 /* OptimusPrinceps.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C999EA061DE7D1C10036AF47 /* OptimusPrinceps.ttf */; };
 		C999EA091DE7D1C10036AF47 /* OptimusPrincepsSemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C999EA071DE7D1C10036AF47 /* OptimusPrincepsSemiBold.ttf */; };
 		C999EA0F1DE7DF680036AF47 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C999EA0E1DE7DF680036AF47 /* GoogleService-Info.plist */; };
+		C99EF68A1F0A179400DA03BF /* UITableView+ReloadVisibleCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EF6891F0A179400DA03BF /* UITableView+ReloadVisibleCells.swift */; };
+		C99EF68C1F0A188600DA03BF /* IndexPath+Zero.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EF68B1F0A188600DA03BF /* IndexPath+Zero.swift */; };
 		C9AEA2031E9C4629006FD974 /* BaseStats+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AEA1EB1E9C4629006FD974 /* BaseStats+CoreDataClass.swift */; };
 		C9AEA2041E9C4629006FD974 /* BaseStats+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AEA1EC1E9C4629006FD974 /* BaseStats+CoreDataProperties.swift */; };
 		C9AEA2051E9C4629006FD974 /* Modifier+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AEA1ED1E9C4629006FD974 /* Modifier+CoreDataClass.swift */; };
@@ -1873,6 +1875,8 @@
 		C999EA061DE7D1C10036AF47 /* OptimusPrinceps.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = OptimusPrinceps.ttf; path = Fonts/OptimusPrinceps.ttf; sourceTree = "<group>"; };
 		C999EA071DE7D1C10036AF47 /* OptimusPrincepsSemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = OptimusPrincepsSemiBold.ttf; path = Fonts/OptimusPrincepsSemiBold.ttf; sourceTree = "<group>"; };
 		C999EA0E1DE7DF680036AF47 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		C99EF6891F0A179400DA03BF /* UITableView+ReloadVisibleCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+ReloadVisibleCells.swift"; sourceTree = "<group>"; };
+		C99EF68B1F0A188600DA03BF /* IndexPath+Zero.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IndexPath+Zero.swift"; sourceTree = "<group>"; };
 		C9AEA1EB1E9C4629006FD974 /* BaseStats+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "BaseStats+CoreDataClass.swift"; path = "CoreData/BaseStats+CoreDataClass.swift"; sourceTree = "<group>"; };
 		C9AEA1EC1E9C4629006FD974 /* BaseStats+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "BaseStats+CoreDataProperties.swift"; path = "CoreData/BaseStats+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C9AEA1ED1E9C4629006FD974 /* Modifier+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Modifier+CoreDataClass.swift"; path = "CoreData/Modifier+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -3109,6 +3113,8 @@
 				C985266F1EFA27F100398D10 /* String+Convenience.swift */,
 				C98526711EFA299200398D10 /* UIStackView+AddArrangedSubviews.swift */,
 				C98526731EFA2A0F00398D10 /* Int+NumberHandling.swift */,
+				C99EF6891F0A179400DA03BF /* UITableView+ReloadVisibleCells.swift */,
+				C99EF68B1F0A188600DA03BF /* IndexPath+Zero.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -4150,6 +4156,7 @@
 				C9AEA20C1E9C4629006FD974 /* Talent+CoreDataProperties.swift in Sources */,
 				C9745D651EC7B86B009537E4 /* HeroAttributeViewDelegate.swift in Sources */,
 				365F75541E042F6400F928B0 /* DADetailVC.swift in Sources */,
+				C99EF68C1F0A188600DA03BF /* IndexPath+Zero.swift in Sources */,
 				C9AEA20B1E9C4629006FD974 /* Talent+CoreDataClass.swift in Sources */,
 				C90A13641EEC49F900D143B8 /* UIView+AddSubviews.swift in Sources */,
 				366A8A091DD0F4F3000406BF /* DAMainLabel.swift in Sources */,
@@ -4189,6 +4196,7 @@
 				366A8A121DD1029F000406BF /* DAUIViewController.swift in Sources */,
 				C90A135E1EE9091800D143B8 /* Colours.swift in Sources */,
 				C9AEA2161E9C4629006FD974 /* ArrayItem+CoreDataProperties.swift in Sources */,
+				C99EF68A1F0A179400DA03BF /* UITableView+ReloadVisibleCells.swift in Sources */,
 				C9BB66771F03707700E07ADB /* ItemBasicView.swift in Sources */,
 				C9AEA2101E9C4629006FD974 /* MiscStats+CoreDataProperties.swift in Sources */,
 				C9AEA20E1E9C4629006FD974 /* Attribute+CoreDataProperties.swift in Sources */,

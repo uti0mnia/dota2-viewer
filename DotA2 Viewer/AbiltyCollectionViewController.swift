@@ -16,6 +16,8 @@ class AbilityCollectionViewController: UIViewController, UICollectionViewDataSou
     public var abilities: [Ability]? {
         didSet {
             collectionView.reloadData()
+            
+            collectionView.scrollTo(index: 0, animated: false)
         }
     }
     

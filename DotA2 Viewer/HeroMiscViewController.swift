@@ -22,7 +22,9 @@ class HeroMiscViewController: UIViewController, UITableViewDataSource {
             dict = hero.miscDictionary
             keys = Array(dict!.keys)
             
-            tableView.reloadData()
+            tableView.reloadVisibleIfPossible(with: .none)
+            
+            tableView.scrollToRow(at: IndexPath.zero, at: .top, animated: false)
         }
     }
     private var tableView: UITableView!
