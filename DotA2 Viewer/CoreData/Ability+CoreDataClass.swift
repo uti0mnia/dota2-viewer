@@ -17,15 +17,8 @@ public class Ability: NSManagedObject {
             return nil
         }
         
-        let finalString = NSMutableAttributedString()
-        for special in specials {
-            let attachment = NSTextAttachment()
-            attachment.image = UIImage(named: special)
-            attachment.bounds = Layout.textAttachmentBounds(for: Fonts.label)
-            finalString.append(NSAttributedString(attachment: attachment))
-        }
-        
-        return finalString
+        let finalString = "$" + specials.joined(separator: "$ $") + "$"
+        return AttributedStringParser.parse(string: finalString)
     }
     
     public var imageName: String {
