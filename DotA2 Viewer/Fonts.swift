@@ -43,6 +43,4 @@ class Fonts {
     public static var boldLabelAttribute: [String: Any] {
         return [NSFontAttributeName: Fonts.boldLabel]
     }
-    
-    
 }

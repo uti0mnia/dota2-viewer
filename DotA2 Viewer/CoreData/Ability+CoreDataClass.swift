@@ -21,6 +21,7 @@ public class Ability: NSManagedObject {
         for special in specials {
             let attachment = NSTextAttachment()
             attachment.image = UIImage(named: special)
+            attachment.bounds = Layout.textAttachmentBounds(for: Fonts.label)
             finalString.append(NSAttributedString(attachment: attachment))
         }
         

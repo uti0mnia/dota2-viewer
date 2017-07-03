@@ -24,4 +24,8 @@ class Layout {
     public static var objectImageMinimumHeight: CGFloat {
         return 64
     }
+    
+    public static func textAttachmentBounds(for font: UIFont) -> CGRect {
+    return CGRect(x: 0, y: font.descender, width: 20, height: 20)
+    }
 }
