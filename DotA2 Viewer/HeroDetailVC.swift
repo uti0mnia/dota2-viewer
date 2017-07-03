@@ -49,7 +49,7 @@ class HeroDetailVC: ObjectDetailViewController, HeroHeaderViewDelegate {
         abilityCollectionViewController.abilities = hero.abilities?.array as? [Ability]
         basicViewController.hero = hero
         miscViewController.hero = hero
-        talentViewController.talents = hero.talents.allObjects as? [Talent]
+        talentViewController.talents = hero.talents.array as? [Talent]
         
         swapChildViewController(to: basicViewController)
         currentTab = .basic
