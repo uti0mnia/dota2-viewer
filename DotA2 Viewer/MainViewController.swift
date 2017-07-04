@@ -53,7 +53,6 @@ class MainViewController: UIViewController, HeroListViewControllerDelegate, Item
     }
     
     @IBAction func searchButton(_ sender: UIBarButtonItem) {
-        currentChildViewController?.tableView.scrollRectToVisible(CGRect.zero, animated: true)
         currentChildViewController?.tableView.searchBar.becomeFirstResponder()
     }
     
@@ -64,9 +63,7 @@ class MainViewController: UIViewController, HeroListViewControllerDelegate, Item
     }
     
     @objc private func keyboardWillHide(_ notification: Notification) {
-        if let _ = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-            contentViewBottomConstraint?.update(offset: 0)
-        }
+        contentViewBottomConstraint?.update(offset: 0)
     }
     
     private func swapChildViewController(to viewController: ObjectListViewController) {
@@ -84,7 +81,7 @@ class MainViewController: UIViewController, HeroListViewControllerDelegate, Item
         viewController.view.frame = contentView.bounds
         viewController.view.frame.origin.x = x
         
-        UIView.animate(withDuration: 0.4, animations: {
+        UIView.animate(withDuration: 0.2, animations: {
             viewController.view.frame.origin.x = 0
             self.currentChildViewController?.view.frame.origin.x = -x
         }) { success in
