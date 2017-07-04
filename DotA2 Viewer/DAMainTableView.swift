@@ -11,31 +11,33 @@ import ChameleonFramework
 
 class DAMainTableView: UITableView {
 
-    var searchBar: DASearchBar!
+    public var searchBar: DASearchBar!
     
     override init(frame: CGRect, style: UITableViewStyle) {
         super.init(frame: frame, style: style)
-        self.commonInit()
+        
+        commonInit()
     }
     
     
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self.commonInit()
+        
+        commonInit()
     }
     
-    fileprivate func commonInit() {
-        // set the search bar
-        searchBar = DASearchBar(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: 44))
-        self.tableHeaderView = searchBar
+    private func commonInit() {
+        // Set the search bar.
+        searchBar = DASearchBar(frame: CGRect(x: 0, y: 0, width: bounds.width, height: 44))
+        searchBar.autoresizingMask = [.flexibleWidth]
+        tableHeaderView = searchBar
         
-        
-        // set the colour
-        self.backgroundColor = UIColor.flatBlack
-        self.sectionIndexColor = UIColor.flatRed
-        self.sectionIndexTrackingBackgroundColor = UIColor.flatBlack
-        self.sectionIndexBackgroundColor = UIColor.flatBlack
+        // Set the colour.
+        backgroundColor = UIColor.flatBlack
+        sectionIndexColor = UIColor.flatRed
+        sectionIndexTrackingBackgroundColor = UIColor.flatBlack
+        sectionIndexBackgroundColor = UIColor.flatBlack
     }
 
 }

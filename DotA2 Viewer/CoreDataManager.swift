@@ -13,7 +13,7 @@ class CoreDataManager {
     
     public static let shared = CoreDataManager()
     
-    private var moc = (UIApplication.shared.delegate as! AppDelegate).managedObjectContext
+    private(set) var sharedContext = (UIApplication.shared.delegate as! AppDelegate).managedObjectContext
     
     private init() {}
     
@@ -23,7 +23,7 @@ class CoreDataManager {
         let predicate = NSPredicate(format: "name == %@", name)
         request.predicate = predicate
         do {
-            let items = try moc.fetch(request)
+            let items = try sharedContext.fetch(request)
             return items.first
         } catch {
             print("Error fetching Item with name '\(name)': \(error.localizedDescription)")
