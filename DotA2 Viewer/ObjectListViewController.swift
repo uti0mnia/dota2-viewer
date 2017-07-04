@@ -81,12 +81,7 @@ class ObjectListViewController: UIViewController, UITableViewDataSource, UISearc
     
     public func configure(cell: DAMainTableViewCell, atIndexPath indexPath: IndexPath) {
         let obj = fetchedResultsController.object(at: indexPath)
-        
-        // TODO: Create a nicer way to do this.
-        // This way, there is no lag when swapping the itemListViewController in for the first time.
-        DispatchQueue.main.async {
-            cell.circleImageView.image = UIImage(named: obj.imageName)
-        }
+        cell.circleImageView.image = UIImage(named: obj.imageName)
         cell.mainLabel.text = obj.name
     }
     

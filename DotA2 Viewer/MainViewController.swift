@@ -30,6 +30,8 @@ class MainViewController: UIViewController, HeroListViewControllerDelegate, Item
         view.backgroundColor = UIColor.flatBlackDark
         view.addSubview(contentView)
         
+        // Find a better way to load this.
+        swapChildViewController(to: itemListViewController)
         swapChildViewController(to: heroListViewController)
         
         tabBar.selectedItem = tabBar.items?.first!
