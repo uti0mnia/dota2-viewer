@@ -9,9 +9,7 @@
 import UIKit
 
 class DAMainTableViewCell: UITableViewCell {
-    // MARK - Properties
-    /* Private */
-    fileprivate var fullSV: UIStackView = {
+    private var fullSV: UIStackView = {
         let sv = UIStackView()
         sv.axis = .horizontal
         sv.alignment = .fill
@@ -20,7 +18,7 @@ class DAMainTableViewCell: UITableViewCell {
         sv.translatesAutoresizingMaskIntoConstraints = false
         return sv
     }()
-    fileprivate var rightSV: UIStackView = {
+    private var rightSV: UIStackView = {
         let sv = UIStackView()
         sv.axis = .vertical
         sv.alignment = .leading
@@ -28,23 +26,21 @@ class DAMainTableViewCell: UITableViewCell {
         return sv
     }()
     
-    /* Public */
-    var circleImageView = DARoundedImageView()
-    var mainLabel = DAMainLabel(style: .medium)
-    var detailLabel = DAMultiLineLabel(style: .small)
+    public var circleImageView = DARoundedImageView()
+    public var mainLabel = DAMainLabel(style: .medium)
+    public var detailLabel = DAMultiLineLabel(style: .small)
     
-    // MARK - Initializers
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        self.setup()
+        
+        setup()
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK - Methods
-    fileprivate func setup() {
+    private func setup() {
         // setup the stack views
         rightSV.uti_addArrangedSubviews(views: [mainLabel, detailLabel])
         fullSV.uti_addArrangedSubviews(views: [circleImageView, rightSV])
@@ -63,10 +59,16 @@ class DAMainTableViewCell: UITableViewCell {
         
     }
     
-    fileprivate func createConstraints(_ format: String, views: [String: Any]) -> [NSLayoutConstraint] {
+    private func createConstraints(_ format: String, views: [String: Any]) -> [NSLayoutConstraint] {
         return NSLayoutConstraint.constraints(withVisualFormat: format, options: [], metrics: nil, views: views)
-        
     }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        circleImageView.image = nil
+    }
+    
 
 }
 
