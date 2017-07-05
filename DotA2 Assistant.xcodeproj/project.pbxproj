@@ -954,6 +954,9 @@
 		C9BB66721F03647700E07ADB /* ItemHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BB66711F03647700E07ADB /* ItemHeaderView.swift */; };
 		C9BB66741F03648A00E07ADB /* ItemHeaderViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BB66731F03648A00E07ADB /* ItemHeaderViewDelegate.swift */; };
 		C9BB66771F03707700E07ADB /* ItemBasicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BB66761F03707700E07ADB /* ItemBasicView.swift */; };
+		C9C6D26F1F0C98E10066973F /* HeroTalentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C6D26E1F0C98E10066973F /* HeroTalentView.swift */; };
+		C9C6D2711F0C99270066973F /* DATitleStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C6D2701F0C99270066973F /* DATitleStackView.swift */; };
+		C9C6D2731F0CA43E0066973F /* HeroTalentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C6D2721F0CA43E0066973F /* HeroTalentsView.swift */; };
 		C9D558951EF2197D00D0E923 /* HeroAttributeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D558941EF2197D00D0E923 /* HeroAttributeSlider.swift */; };
 		C9D558B11EF2550700D0E923 /* dota2.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = C9D558AE1EF2550700D0E923 /* dota2.sqlite */; };
 		C9D558B21EF2550700D0E923 /* dota2.sqlite-shm in Resources */ = {isa = PBXBuildFile; fileRef = C9D558AF1EF2550700D0E923 /* dota2.sqlite-shm */; };
@@ -1919,6 +1922,9 @@
 		C9BB66711F03647700E07ADB /* ItemHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemHeaderView.swift; sourceTree = "<group>"; };
 		C9BB66731F03648A00E07ADB /* ItemHeaderViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemHeaderViewDelegate.swift; sourceTree = "<group>"; };
 		C9BB66761F03707700E07ADB /* ItemBasicView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemBasicView.swift; sourceTree = "<group>"; };
+		C9C6D26E1F0C98E10066973F /* HeroTalentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroTalentView.swift; sourceTree = "<group>"; };
+		C9C6D2701F0C99270066973F /* DATitleStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DATitleStackView.swift; sourceTree = "<group>"; };
+		C9C6D2721F0CA43E0066973F /* HeroTalentsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroTalentsView.swift; sourceTree = "<group>"; };
 		C9D558941EF2197D00D0E923 /* HeroAttributeSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroAttributeSlider.swift; sourceTree = "<group>"; };
 		C9D558AE1EF2550700D0E923 /* dota2.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = dota2.sqlite; sourceTree = "<group>"; };
 		C9D558AF1EF2550700D0E923 /* dota2.sqlite-shm */ = {isa = PBXFileReference; lastKnownFileType = file; path = "dota2.sqlite-shm"; sourceTree = "<group>"; };
@@ -2176,6 +2182,7 @@
 				366A8A151DD103F1000406BF /* DATabBar.swift */,
 				364A6A581DC1136300FBE163 /* DAMultiLineLabel.swift */,
 				C94CAB631DD7CD4F00971BC5 /* DASearchBar.swift */,
+				C9C6D2701F0C99270066973F /* DATitleStackView.swift */,
 			);
 			name = "DA Classes";
 			sourceTree = "<group>";
@@ -3042,6 +3049,8 @@
 				C957BBF61EEFB77A008F756B /* HeroTalentLevelView.swift */,
 				C957BBE31EEE4081008F756B /* HeroTalentCell.swift */,
 				C957BBE71EEFA1BD008F756B /* HeroTalentViewController.swift */,
+				C9C6D26E1F0C98E10066973F /* HeroTalentView.swift */,
+				C9C6D2721F0CA43E0066973F /* HeroTalentsView.swift */,
 			);
 			name = "Hero Talent";
 			sourceTree = "<group>";
@@ -4216,6 +4225,7 @@
 				366A8A121DD1029F000406BF /* DAUIViewController.swift in Sources */,
 				C90A135E1EE9091800D143B8 /* Colours.swift in Sources */,
 				C9AEA2161E9C4629006FD974 /* ArrayItem+CoreDataProperties.swift in Sources */,
+				C9C6D2731F0CA43E0066973F /* HeroTalentsView.swift in Sources */,
 				C99EF68A1F0A179400DA03BF /* UITableView+ReloadVisibleCells.swift in Sources */,
 				C9BB66771F03707700E07ADB /* ItemBasicView.swift in Sources */,
 				C99EF69E1F0B57EF00DA03BF /* ItemListViewControllerDelegate.swift in Sources */,
@@ -4242,6 +4252,7 @@
 				C99EF6911F0B47D400DA03BF /* ObjectListViewController.swift in Sources */,
 				C9172C181DD13F9100DCF88F /* Globals.swift in Sources */,
 				C9AEA20D1E9C4629006FD974 /* Attribute+CoreDataClass.swift in Sources */,
+				C9C6D2711F0C99270066973F /* DATitleStackView.swift in Sources */,
 				C985269F1EFE0F0F00398D10 /* AbilityCollectionCell.swift in Sources */,
 				C9AEA2061E9C4629006FD974 /* Modifier+CoreDataProperties.swift in Sources */,
 				C957BBF31EEFB34C008F756B /* HeroBasicCell.swift in Sources */,
@@ -4260,6 +4271,7 @@
 				C957BBE41EEE4081008F756B /* HeroTalentCell.swift in Sources */,
 				36C0C9621DA6E25800169394 /* AppDelegate.swift in Sources */,
 				C97E11631F0084BF00E35D1D /* RecipeBuildView.swift in Sources */,
+				C9C6D26F1F0C98E10066973F /* HeroTalentView.swift in Sources */,
 				C94A26D21DD5593F00D9B054 /* DASlider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

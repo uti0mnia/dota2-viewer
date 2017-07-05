@@ -7,55 +7,36 @@
 //
 
 import UIKit
+import SnapKit
 
-class HeroTalentViewController: UIViewController, UITableViewDataSource {
+class HeroTalentViewController: UIViewController {
     
-    private static let talentReuseIdentifier = "talentCell"
+    private var scrollView = UIScrollView()
+    private var heroTalentsView = HeroTalentsView()
     
-    private var tableView: UITableView!
-    public var talents: [Talent]? {
+    public var hero: Hero? {
         didSet {
-            if view != nil {
-                tableView.reloadVisibleIfPossible(with: .none)
-                tableView.scrollToRow(at: IndexPath.zero, at: .top, animated: false)
-            }
+            heroTalentsView.talents = hero?.talents.array as? [Talent]
+            heroTalentsView.notes = hero?.talentNotes?.array as? [Note]
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = UIColor.brown
+        scrollView.alwaysBounceVertical = true
+        scrollView.showsVerticalScrollIndicator = false
         
-        tableView = UITableView(frame: view.bounds)
-        tableView.tableFooterView = UIView()
-        tableView.alwaysBounceVertical = false
-        tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 70
-        
-        tableView.register(HeroTalentCell.self, forCellReuseIdentifier: HeroTalentViewController.talentReuseIdentifier)
-        tableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        
-        tableView.dataSource = self
-        
-        view.addSubview(tableView)
-    }
-    
-    // MARK: - UITableViewDataSource
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return talents?.count ?? 0
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: HeroTalentViewController.talentReuseIdentifier, for: indexPath) as! HeroTalentCell
-        
-        if let talent = talents?[indexPath.row] {
-            cell.leftLabel.text = talent.left
-            cell.rightLabel.text = talent.right
-            cell.levelView.level = Int(talent.level)
+        view.addSubview(scrollView)
+        scrollView.snp.makeConstraints() { make in
+            make.left.top.right.bottom.equalTo(view).inset(8)
         }
         
-        return cell
+        scrollView.addSubview(heroTalentsView)
+        heroTalentsView.snp.makeConstraints() { make in
+            make.left.top.right.bottom.equalTo(scrollView)
+            make.width.equalTo(scrollView)
+        }
+        
     }
 }
