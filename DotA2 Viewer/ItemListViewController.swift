@@ -35,7 +35,7 @@ class ItemListViewController: ObjectListViewController, UITableViewDelegate {
         attachment.bounds = Layout.textAttachmentBounds(for: Fonts.subLabel)
         let attachmentAttString = NSAttributedString(attachment: attachment)
         
-        let details = item.recipeCost == 0 ? item.cost.uti_string(0) : " \(item.cost.uti_string(0)) (\(item.recipeCost.uti_string(0)))"
+        let details = item.recipeCost == 0 ? " \(item.cost.uti_string(0))" : " \(item.cost.uti_string(0)) (\(item.recipeCost.uti_string(0)))"
         let attributes = [NSFontAttributeName: Fonts.subLabel]
         let detailsAttString = NSAttributedString(string: details, attributes: attributes)
         
