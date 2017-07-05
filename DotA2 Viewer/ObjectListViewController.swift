@@ -13,8 +13,6 @@ class ObjectListViewController: UIViewController, UITableViewDataSource, UISearc
     
     private static let mainCellRuseIdendifier = "mainCell"
     
-    private var imageChache = NSCache<NSString, UIImage>()
-    
     private(set) var tableView = DAMainTableView()
     
     private var titleView = DAMainLabel(style: .title)
@@ -86,11 +84,7 @@ class ObjectListViewController: UIViewController, UITableViewDataSource, UISearc
         cell.mainLabel.text = obj.name
         
         DispatchQueue.global(qos: .userInteractive).async {
-            var image = self.imageChache.object(forKey: obj.name as NSString)
-            if image == nil {
-                image = UIImage(named: obj.imageName)
-                self.imageChache.setObject(image!, forKey: obj.name as NSString)
-            }
+            let image = UIImage(named: obj.imageName)
             
             DispatchQueue.main.async {
                 if self.tableView.indexPathsForVisibleRows?.contains(indexPath) ?? false {

@@ -36,7 +36,9 @@ class MainViewController: UIViewController, HeroListViewControllerDelegate, Item
         
         tabBar.selectedItem = tabBar.items?.first!
         
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: nil, style: .done, target: nil, action: nil)
+        let barButton = UIBarButtonItem()
+        barButton.title = ""
+        navigationItem.backBarButtonItem = barButton
         
         contentView.snp.makeConstraints() { make in
             make.left.top.right.equalTo(view)
