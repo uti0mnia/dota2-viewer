@@ -21,8 +21,16 @@ class AbilityCollectionCell: UICollectionViewCell {
             }
             
             abilityView.name = ability.name
-            abilityView.specials = ability.specialIcons
-            abilityView.abilityImage = UIImage(named: ability.imageName)
+            
+            DispatchQueue.global(qos: .userInitiated).async {
+                let image = UIImage(named: ability.imageName)
+                let specials = ability.specialIcons
+                
+                DispatchQueue.main.async {
+                    self.abilityView.abilityImage =  image
+                    self.abilityView.specials = specials
+                }
+            }
             abilityView.abilityDescription = ability.descrip
             abilityView.types = ability.types?.array as? [ModifiableValue]
             abilityView.data = ability.data?.array as? [ModifiableValue]
