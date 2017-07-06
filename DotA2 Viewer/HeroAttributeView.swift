@@ -29,7 +29,7 @@ class HeroAttributeView: UIView {
         
         sv.alignment = .fill
         sv.axis = .horizontal
-        sv.distribution = .equalSpacing
+        sv.distribution = .fillEqually
         
         return sv
     }()
