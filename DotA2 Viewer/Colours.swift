@@ -22,4 +22,7 @@ class Colours {
         return UIColor.flatWhiteDark
     }
     
+    public static var secondaryColour: UIColor {
+        return UIColor.flatWhite
+    }
 }
