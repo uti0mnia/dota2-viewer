@@ -3,6 +3,7 @@ PODS:
   - ChameleonFramework/Default (2.1.0)
   - ChameleonFramework/Swift (2.1.0):
     - ChameleonFramework/Default
+  - CHIPageControl/Jaloro (0.1.3)
   - Firebase/Core (3.9.0):
     - FirebaseAnalytics (= 3.5.1)
     - FirebaseCore (= 3.4.4)
@@ -32,6 +33,7 @@ PODS:
 DEPENDENCIES:
   - CenteredCollectionView
   - ChameleonFramework/Swift (from `https://github.com/ViccAlexander/Chameleon.git`)
+  - CHIPageControl/Jaloro
   - Firebase/Core
   - Firebase/Database
   - SnapKit (~> 3.2.0)
@@ -48,6 +50,7 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   CenteredCollectionView: 131a841da9fc7f783a24eea90fd361bc08699c5f
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
+  CHIPageControl: 2d3a0edacd7e3bc113bc88cbf187ba8f0b045548
   Firebase: ff77ffb77b317c3720fef57a60e9335cebf962e6
   FirebaseAnalytics: 6e58fc9b397664369ac7617fb0ba93fab6ba7b5b
   FirebaseCore: d0ed25f27b6f9158eccc439f1be6f92e81207e28
@@ -58,6 +61,6 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 2b2596cbb7186865e98cadf2b1e262d851c2b168
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
 
-PODFILE CHECKSUM: 604df42421dce6c7df6b46c908dddc6ccd3fd19f
+PODFILE CHECKSUM: a831f51d81c4fec41b8d0237a27306e1e8fe0cf2
 
 COCOAPODS: 1.2.1
