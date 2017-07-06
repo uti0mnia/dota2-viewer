@@ -10,5 +10,5 @@ target 'DotA2 Assistant' do
   pod 'Firebase/Database'
   pod 'SnapKit', '~> 3.2.0'
   pod "CenteredCollectionView"
-  pod 'CHIPageControl/Jaloro'
+  pod 'CHIPageControl', '~> 0.1.3'
 end

@@ -3,7 +3,23 @@ PODS:
   - ChameleonFramework/Default (2.1.0)
   - ChameleonFramework/Swift (2.1.0):
     - ChameleonFramework/Default
+  - CHIPageControl (0.1.3):
+    - CHIPageControl/Aji (= 0.1.3)
+    - CHIPageControl/Aleppo (= 0.1.3)
+    - CHIPageControl/Chimayo (= 0.1.3)
+    - CHIPageControl/Fresno (= 0.1.3)
+    - CHIPageControl/Jalapeno (= 0.1.3)
+    - CHIPageControl/Jaloro (= 0.1.3)
+    - CHIPageControl/Paprika (= 0.1.3)
+    - CHIPageControl/Puya (= 0.1.3)
+  - CHIPageControl/Aji (0.1.3)
+  - CHIPageControl/Aleppo (0.1.3)
+  - CHIPageControl/Chimayo (0.1.3)
+  - CHIPageControl/Fresno (0.1.3)
+  - CHIPageControl/Jalapeno (0.1.3)
   - CHIPageControl/Jaloro (0.1.3)
+  - CHIPageControl/Paprika (0.1.3)
+  - CHIPageControl/Puya (0.1.3)
   - Firebase/Core (3.9.0):
     - FirebaseAnalytics (= 3.5.1)
     - FirebaseCore (= 3.4.4)
@@ -33,7 +49,7 @@ PODS:
 DEPENDENCIES:
   - CenteredCollectionView
   - ChameleonFramework/Swift (from `https://github.com/ViccAlexander/Chameleon.git`)
-  - CHIPageControl/Jaloro
+  - CHIPageControl (~> 0.1.3)
   - Firebase/Core
   - Firebase/Database
   - SnapKit (~> 3.2.0)
@@ -61,6 +77,6 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 2b2596cbb7186865e98cadf2b1e262d851c2b168
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
 
-PODFILE CHECKSUM: a831f51d81c4fec41b8d0237a27306e1e8fe0cf2
+PODFILE CHECKSUM: 88e71512607707984247f9c6b1866a29d0975fa9
 
 COCOAPODS: 1.2.1
