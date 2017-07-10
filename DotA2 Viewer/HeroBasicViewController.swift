@@ -91,9 +91,9 @@ class HeroBasicViewController: UIViewController, UITableViewDataSource, HeroAttr
         tableView.scrollToRow(at: IndexPath.zero, at: .top, animated: false)
         
         attributeView.setPrimaryAttribute(primaryAttribute)
-        attributeView.agilityLabel.text = "\(hero?.agility.uti_string(1) ?? "") (+\(hero?.agilityGain.uti_string(1) ?? ""))"
-        attributeView.intelligenceLabel.text = "\(hero?.intelligence.uti_string(1) ?? "") (+\(hero?.intelligenceGain.uti_string(1) ?? ""))"
-        attributeView.strengthLabel.text = "\(hero?.strength.uti_string(1) ?? "") (+\(hero?.strengthGain.uti_string(1) ?? ""))"
+        attributeView.agilityLabel.text = "\(hero?.agility.u0_string(1) ?? "") (+\(hero?.agilityGain.u0_string(1) ?? ""))"
+        attributeView.intelligenceLabel.text = "\(hero?.intelligence.u0_string(1) ?? "") (+\(hero?.intelligenceGain.u0_string(1) ?? ""))"
+        attributeView.strengthLabel.text = "\(hero?.strength.u0_string(1) ?? "") (+\(hero?.strengthGain.u0_string(1) ?? ""))"
     }
     
     private func configure(_ cell: HeroBasicCell, at indexPath: IndexPath) {

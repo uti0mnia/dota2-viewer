@@ -98,8 +98,8 @@ class HeroAttributeView: UIView {
         let intelligenceSV = UIStackView(arrangedSubviews: [intelligenceIV, intelligenceLabel])
         intelligenceSV.axis = .vertical
         
-        topStackView.uti_addArrangedSubviews(views: [strengthSV, agilitySV, intelligenceSV])
-        self.uti_addSubviews([topStackView, slider])
+        topStackView.u0_addArrangedSubviews(views: [strengthSV, agilitySV, intelligenceSV])
+        self.u0_addSubviews([topStackView, slider])
         addConstraints()
     }
     

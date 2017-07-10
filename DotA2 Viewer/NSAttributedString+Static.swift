@@ -9,5 +9,5 @@
 import Foundation
 
 extension NSAttributedString {
-    static public let uti_newLine = NSAttributedString(string: "\n")
+    static public let u0_newLine = NSAttributedString(string: "\n")
 }

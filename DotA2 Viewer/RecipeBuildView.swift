@@ -68,7 +68,7 @@ class RecipeBuildView: UIStackView {
         recipeStackView.distribution = .fillEqually
         recipeStackView.spacing = 8
         
-        uti_addArrangedSubviews(views: [topLabel, recipeStackView])
+        u0_addArrangedSubviews(views: [topLabel, recipeStackView])
     }
     
     private func createRecipePart() -> RecipePart {

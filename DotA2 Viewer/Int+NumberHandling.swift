@@ -9,10 +9,10 @@
 import Foundation
 
 extension Int {
-    public var uti_nsDecimalValue: NSDecimalNumber {
+    public var u0_nsDecimalValue: NSDecimalNumber {
         return NSDecimalNumber(value: self)
     }
-    public var uti_doubleValue: Double {
+    public var u0_doubleValue: Double {
         return Double(self)
     }
 }

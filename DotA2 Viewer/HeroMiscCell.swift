@@ -43,7 +43,7 @@ class HeroMiscCell: UITableViewCell {
         
         backgroundColor = UIColor.clear
         
-        contentView.uti_addSubviews([mainLabel, subLabel])
+        contentView.u0_addSubviews([mainLabel, subLabel])
         
         mainLabel.snp.makeConstraints() { make in
             make.left.top.right.equalTo(contentView).inset(8)

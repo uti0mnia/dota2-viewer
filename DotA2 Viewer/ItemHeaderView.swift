@@ -19,7 +19,7 @@ class ItemHeaderView: ObjectHeaderView {
     public override func initViews() {
         super.initViews()
         
-        stackView.uti_addArrangedSubviews(views: [detailsButton, abilitiesButton])
+        stackView.u0_addArrangedSubviews(views: [detailsButton, abilitiesButton])
         
         detailsButton.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
         detailsButton.setTitle("Details", for: .normal)

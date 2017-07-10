@@ -51,7 +51,7 @@ class KeyValueView: UIView {
         valueLabel.setContentHuggingPriority(251, for: .vertical)
         
         addSubview(stackView)
-        stackView.uti_addArrangedSubviews(views: [keyLabel, valueLabel])
+        stackView.u0_addArrangedSubviews(views: [keyLabel, valueLabel])
         stackView.snp.makeConstraints() { make in
             make.left.top.right.bottom.equalTo(self).priority(999)
         }

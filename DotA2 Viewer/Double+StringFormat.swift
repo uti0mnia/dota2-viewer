@@ -10,7 +10,7 @@ import Foundation
 
 extension Double {
     // allows user to create a string from a Decimal with a number of decimals
-    public func uti_string(_ decimals: Int) -> String {
+    public func u0_string(_ decimals: Int) -> String {
         return String(format: "%.\(decimals)f", self)
     }
 }

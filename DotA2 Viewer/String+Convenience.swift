@@ -9,7 +9,7 @@
 import Foundation
 
 extension String {
-    public var uti_capitalized: String {
+    public var u0_capitalized: String {
         let first = String(characters.prefix(1)).capitalized
         let other = String(characters.dropFirst())
         return first + other

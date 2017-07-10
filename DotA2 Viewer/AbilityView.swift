@@ -202,7 +202,7 @@ class AbilityView: UIView {
         abilityImageView.contentMode = .scaleAspectFit
         abilityImageView.clipsToBounds = true
         
-        imageStackView.uti_addArrangedSubviews(views: [abilityImageView, typeStackView])
+        imageStackView.u0_addArrangedSubviews(views: [abilityImageView, typeStackView])
         imageStackView.alignment = .top
         imageStackView.spacing = AbilityView.padding
         

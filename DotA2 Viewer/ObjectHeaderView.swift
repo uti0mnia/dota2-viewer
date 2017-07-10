@@ -72,7 +72,7 @@ class ObjectHeaderView: UIView {
     public func initViews() {
         stackView.distribution = .fillEqually
         
-        uti_addSubviews([imageView, stackView])
+        u0_addSubviews([imageView, stackView])
         
     }
     

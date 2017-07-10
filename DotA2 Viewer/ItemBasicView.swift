@@ -28,8 +28,8 @@ class ItemBasicView: UIView {
                 return
             }
             
-            let costString = "Cost: \(item.cost.uti_string(0))"
-            costLabel.text = item.recipeCost == 0 ? costString : costString + " (\(item.recipeCost.uti_string(0)))"
+            let costString = "Cost: \(item.cost.u0_string(0))"
+            costLabel.text = item.recipeCost == 0 ? costString : costString + " (\(item.recipeCost.u0_string(0)))"
             availabilityLabel.attributedText = item.availabilityAttributedString
             typeImageView.image = UIImage(named: item.type)
             typeLabel.text = item.type
