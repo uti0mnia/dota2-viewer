@@ -32,11 +32,11 @@ class HeroListViewController: ObjectListViewController, UITableViewDelegate {
         
         let attachment = NSTextAttachment()
         attachment.image = UIImage(named: hero.primaryAttribute.heroAttribute.rawValue + ".png")
-        attachment.bounds = Layout.textAttachmentBounds(for: Fonts.subLabel)
+        attachment.bounds = Layout.textAttachmentBounds
         let attachmentAttString = NSAttributedString(attachment: attachment)
         
         let details = hero.misc.projectileSpeed == 0 ? " | Melee" : " | Ranged"
-        let attributes = [NSFontAttributeName: Fonts.subLabel]
+        let attributes = [NSFontAttributeName: Fonts.subtitle]
         let detailsAttString = NSAttributedString(string: details, attributes: attributes)
         
         let attString = NSMutableAttributedString()
@@ -58,6 +58,5 @@ class HeroListViewController: ObjectListViewController, UITableViewDelegate {
         }
         
         delegate?.heroListViewController(self, didSelectHero: hero)
-        
     }
 }

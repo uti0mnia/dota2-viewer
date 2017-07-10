@@ -28,7 +28,7 @@ class DAMainTableViewCell: UITableViewCell {
     
     public var circleImageView = DARoundedImageView()
     public var mainLabel = DAMainLabel(style: .medium)
-    public var detailLabel = DAMultiLineLabel(style: .small)
+    public var detailLabel = DALabel()
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)

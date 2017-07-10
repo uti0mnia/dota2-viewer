@@ -12,15 +12,16 @@ import SnapKit
 class HeroMiscCell: UITableViewCell {
     
     // TODO: Make label subclass for this.
-    private(set) var mainLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: 17)
+    private(set) var mainLabel: DALabel = {
+        let label = DALabel()
+        label.style = .title
         label.textAlignment = .center
         return label
     }()
-    private(set) var subLabel: UILabel = {
+    private(set) var subLabel: DALabel = {
         // TODO: Make NSParagraphStyle for this
-        let label = UILabel()
+        let label = DALabel()
+        label.style = .text
         label.numberOfLines = 0
         return label
     }()
@@ -38,7 +39,9 @@ class HeroMiscCell: UITableViewCell {
     }
     
     private func commonInit() {
-        self.isUserInteractionEnabled = false
+        isUserInteractionEnabled = false
+        
+        backgroundColor = UIColor.clear
         
         contentView.uti_addSubviews([mainLabel, subLabel])
         
@@ -50,6 +53,7 @@ class HeroMiscCell: UITableViewCell {
         subLabel.snp.makeConstraints() { make in
             make.left.bottom.right.equalTo(contentView).inset(8)
         }
+        
     }
     
 }

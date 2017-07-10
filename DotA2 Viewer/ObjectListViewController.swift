@@ -68,7 +68,7 @@ class ObjectListViewController: UIViewController, UITableViewDataSource, UISearc
         
         // Table view.
         tableView.frame = view.bounds
-        tableView.backgroundColor = UIColor.flatBlack
+        tableView.backgroundColor = Colours.primaryColour
         tableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         tableView.register(DAMainTableViewCell.self, forCellReuseIdentifier: ObjectListViewController.mainCellRuseIdendifier)
         tableView.estimatedRowHeight = 80

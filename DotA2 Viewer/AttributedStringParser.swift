@@ -68,7 +68,7 @@ class AttributedStringParser {
         if let image = UIImage(named: name) {
             let attachment = NSTextAttachment()
             attachment.image = image
-            attachment.bounds = Layout.textAttachmentBounds(for: Fonts.label)
+            attachment.bounds = Layout.textAttachmentBounds
             return NSAttributedString(attachment: attachment)
         }
         return nil

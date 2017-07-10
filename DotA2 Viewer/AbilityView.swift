@@ -15,10 +15,10 @@ class AbilityView: UIView {
     
     // MARK: Views
     
-    private var nameLabel = UILabel()
-    private var specialsLabel = UILabel()
+    private var nameLabel = DALabel(style: .title)
+    private var specialsLabel = DALabel(style: .subtitle)
     private var abilityImageView = UIImageView()
-    private var descriptionLabel = UILabel()
+    private var descriptionLabel = DALabel(style: .text)
     
     private var imageStackView = UIStackView()
     private var typeStackView: TypeKVStackView = {
@@ -43,7 +43,7 @@ class AbilityView: UIView {
         sv.spacing = AbilityView.padding
         return sv
     }()
-    private var modifierLabels = [UILabel]()
+    private var modifierLabels = [DALabel]()
     
     private var bottomStackView: UIStackView = {
         let sv = UIStackView()
@@ -54,7 +54,22 @@ class AbilityView: UIView {
     }()
     private var cooldownView = KeyValueView()
     private var manaView = KeyValueView()
-    private var notesLabel = UILabel()
+    private var notesLabel = DALabel(style: .text)
+    
+    private lazy var manaAttributedString: NSAttributedString = {
+        let attachment = NSTextAttachment()
+        attachment.image = UIImage(named: "mana")
+        let finalString = NSMutableAttributedString(string: "Mana", attributes: [NSFontAttributeName: Fonts.boldText])
+//        finalString.append(NSAttributedString(attachment: attachment))
+        return finalString
+    }()
+    private lazy var cooldownAttributedString: NSAttributedString = {
+        let attachment = NSTextAttachment()
+        attachment.image = UIImage(named: "cooldown")
+        let finalString = NSMutableAttributedString(string: "Cooldown", attributes: [NSFontAttributeName: Fonts.boldText])
+//        finalString.append(NSAttributedString(attachment: attachment))
+        return finalString
+    }()
     
     // MARK: - Variables
     
@@ -105,7 +120,7 @@ class AbilityView: UIView {
             let newLabelsCount = modifiers.count - modifierLabels.count
             if newLabelsCount > 0 {
                 for _ in 0..<newLabelsCount {
-                    let label = UILabel()
+                    let label = DALabel(style: .text)
                     label.numberOfLines = 0
                     modifierLabels.append(label)
                 }
@@ -129,7 +144,8 @@ class AbilityView: UIView {
                 return
             }
             
-            cooldown.write(to: cooldownView)
+            cooldownView.keyLabel.attributedText = cooldownAttributedString
+            cooldownView.valueLabel.attributedText = cooldown.getValuesAttributedString()
             bottomStackView.insertArrangedSubview(cooldownView, at: 0)
         }
     }
@@ -141,7 +157,8 @@ class AbilityView: UIView {
                 return
             }
             
-            mana.write(to: manaView)
+            manaView.keyLabel.attributedText = manaAttributedString
+            manaView.valueLabel.attributedText = mana.getValuesAttributedString()
             let index = cooldownView.superview != nil ? 1 : 0
             bottomStackView.insertArrangedSubview(manaView, at: index)
         }
@@ -192,8 +209,10 @@ class AbilityView: UIView {
         descriptionLabel.numberOfLines = 0
         
         cooldownView.isVertical = false
+        cooldownView.valueLabel.textAlignment = .right
         
         manaView.isVertical = false
+        manaView.valueLabel.textAlignment = .right
         
         notesLabel.numberOfLines = 0
         

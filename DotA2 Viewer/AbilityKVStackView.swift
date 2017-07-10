@@ -43,8 +43,7 @@ class AbilityKVStackView: UIStackView {
     }
     
     private func write(modifiableValue: ModifiableValue, to kvView: KeyValueView) {
-        kvView.keyLabel.attributedText = NSAttributedString(string: modifiableValue.name,
-                                                            attributes: Fonts.boldLabelAttribute)
+        kvView.keyLabel.text = modifiableValue.name
         kvView.valueLabel.attributedText = modifiableValue.getValuesAttributedString()
     }
     

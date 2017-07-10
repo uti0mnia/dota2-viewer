@@ -10,8 +10,8 @@ import UIKit
 
 public class HeroTalentLevelView: UIView {
     
-    private(set) var levelLabel: UILabel = {
-        let label = UILabel()
+    private(set) var levelLabel: DALabel = {
+        let label = DALabel(style: .subtitle)
         label.textAlignment = .center
         return label
     }()

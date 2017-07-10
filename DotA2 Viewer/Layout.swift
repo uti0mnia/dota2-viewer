@@ -25,8 +25,12 @@ class Layout {
         return 64
     }
     
-    public static func textAttachmentBounds(for font: UIFont) -> CGRect {
-        return CGRect(x: 0, y: font.descender, width: 20, height: 20)
+    public static var textAttachmentBounds: CGRect {
+        return CGRect(x: 0, y: Layout.attachmentDescender, width: 20, height: 20)
+    }
+    
+    public static var attachmentDescender: CGFloat {
+        return -6
     }
     
 }

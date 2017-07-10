@@ -32,11 +32,11 @@ class ItemListViewController: ObjectListViewController, UITableViewDelegate {
         
         let attachment = NSTextAttachment()
         attachment.image = UIImage(named: "coins.png")
-        attachment.bounds = Layout.textAttachmentBounds(for: Fonts.subLabel)
+        attachment.bounds = Layout.textAttachmentBounds
         let attachmentAttString = NSAttributedString(attachment: attachment)
         
         let details = item.recipeCost == 0 ? " \(item.cost.uti_string(0))" : " \(item.cost.uti_string(0)) (\(item.recipeCost.uti_string(0)))"
-        let attributes = [NSFontAttributeName: Fonts.subLabel]
+        let attributes = [NSFontAttributeName: Fonts.subtitle]
         let detailsAttString = NSAttributedString(string: details, attributes: attributes)
         
         let attString = NSMutableAttributedString()

@@ -11,7 +11,7 @@ import UIKit
 class HeroTalentsView: UIStackView {
     
     private var talentViews = [HeroTalentView]()
-    private var notesLabel = UILabel()
+    private var notesLabel = DALabel()
     
     public var talents: [Talent]? {
         didSet {
@@ -69,6 +69,8 @@ class HeroTalentsView: UIStackView {
         }
         
         notesLabel.numberOfLines = 0
+        notesLabel.textColor = Colours.secondaryColour
+        notesLabel.font = Fonts.text
         addArrangedSubview(notesLabel)
     }
 }

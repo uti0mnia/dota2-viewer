@@ -46,7 +46,7 @@ class RecipeBuildView: UIStackView {
     
     private var recipeParts = [RecipePart]()
     private var recipeStackView = UIStackView()
-    private var topLabel = UILabel()
+    private var topLabel = DALabel(style: .subtitle)
     
     override init(frame: CGRect) {
         super.init(frame: frame)

@@ -24,16 +24,13 @@
 		363A466F1E00827200BA5D97 /* PARTIAL_PIERCE_SPELL_IMMUNE.png in Resources */ = {isa = PBXBuildFile; fileRef = 363A46601E00827200BA5D97 /* PARTIAL_PIERCE_SPELL_IMMUNE.png */; };
 		363A46701E00827200BA5D97 /* PIERCE_SPELL_IMMUNE.png in Resources */ = {isa = PBXBuildFile; fileRef = 363A46611E00827200BA5D97 /* PIERCE_SPELL_IMMUNE.png */; };
 		363A46711E00827200BA5D97 /* UNIQUE_ATTACK_MODIFIER.png in Resources */ = {isa = PBXBuildFile; fileRef = 363A46621E00827200BA5D97 /* UNIQUE_ATTACK_MODIFIER.png */; };
-		364A6A591DC1136300FBE163 /* DAMultiLineLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364A6A581DC1136300FBE163 /* DAMultiLineLabel.swift */; };
 		365F75481E02E01D00F928B0 /* sidearrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 365F75471E02E01D00F928B0 /* sidearrow.png */; };
 		365F75561E0443D900F928B0 /* DAPaddedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365F75551E0443D900F928B0 /* DAPaddedLabel.swift */; };
 		366A8A091DD0F4F3000406BF /* DAMainLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366A8A081DD0F4F3000406BF /* DAMainLabel.swift */; };
 		366A8A0C1DD0F87F000406BF /* DAMainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366A8A0B1DD0F87F000406BF /* DAMainTableViewCell.swift */; };
 		366A8A0E1DD0F993000406BF /* DARoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366A8A0D1DD0F993000406BF /* DARoundedImageView.swift */; };
 		366A8A101DD100A8000406BF /* DAMainTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366A8A0F1DD100A8000406BF /* DAMainTableView.swift */; };
-		366A8A121DD1029F000406BF /* DAUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366A8A111DD1029F000406BF /* DAUIViewController.swift */; };
 		366A8A161DD103F1000406BF /* DATabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366A8A151DD103F1000406BF /* DATabBar.swift */; };
-		366A8A221DD24B71000406BF /* DAMainCellLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366A8A211DD24B71000406BF /* DAMainCellLabel.swift */; };
 		366A8A261DD24E8E000406BF /* radiance-semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 366A8A231DD24DB4000406BF /* radiance-semibold.ttf */; };
 		366A8A271DD24E99000406BF /* radiance.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 366A8A241DD24DB4000406BF /* radiance.ttf */; };
 		367E34E01DB7F9670037FA7B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367E34DF1DB7F9670037FA7B /* MainViewController.swift */; };
@@ -63,16 +60,12 @@
 		C90A13641EEC49F900D143B8 /* UIView+AddSubviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90A13631EEC49F900D143B8 /* UIView+AddSubviews.swift */; };
 		C90A79371E0218680068C79C /* SECRET_SHOP.png in Resources */ = {isa = PBXBuildFile; fileRef = C90A79351E0218680068C79C /* SECRET_SHOP.png */; };
 		C90A79381E0218680068C79C /* SIDE_SHOP.png in Resources */ = {isa = PBXBuildFile; fileRef = C90A79361E0218680068C79C /* SIDE_SHOP.png */; };
-		C90A793A1E021EE00068C79C /* DABackgroundColourStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90A79391E021EE00068C79C /* DABackgroundColourStackView.swift */; };
-		C90CE60A1DFCB67500C93539 /* DAExpandableStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90CE6091DFCB67500C93539 /* DAExpandableStackView.swift */; };
-		C90CE6101DFCC18F00C93539 /* DAExpandableTextStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90CE60F1DFCC18F00C93539 /* DAExpandableTextStackView.swift */; };
 		C90CE6141DFCCBA400C93539 /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90CE6131DFCCBA400C93539 /* ItemDetailViewController.swift */; };
 		C9118AC11F076F78004A5277 /* Call of the Wild_ Boar_Beastmaster.png in Resources */ = {isa = PBXBuildFile; fileRef = C9118ABF1F076F78004A5277 /* Call of the Wild_ Boar_Beastmaster.png */; };
 		C9118AC21F076F78004A5277 /* Call of the Wild_ Hawk_Beastmaster.png in Resources */ = {isa = PBXBuildFile; fileRef = C9118AC01F076F78004A5277 /* Call of the Wild_ Hawk_Beastmaster.png */; };
 		C91470401DD916D5002A042C /* Recipe.png in Resources */ = {isa = PBXBuildFile; fileRef = C914703F1DD916D5002A042C /* Recipe.png */; };
 		C9172C181DD13F9100DCF88F /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9172C171DD13F9100DCF88F /* Globals.swift */; };
 		C9172C211DD176BA00DCF88F /* dota2-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = C9172C201DD176BA00DCF88F /* dota2-logo.png */; };
-		C922FA8B1DD8AD27007B76F8 /* DALoreLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C922FA8A1DD8AD27007B76F8 /* DALoreLabel.swift */; };
 		C923CF5E1EF0E5AE00971660 /* Aegis of the Immortal.png in Resources */ = {isa = PBXBuildFile; fileRef = C923CF5D1EF0E5AE00971660 /* Aegis of the Immortal.png */; };
 		C93028391DF3629F005EA297 /* HeroDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93028381DF3629F005EA297 /* HeroDetailViewController.swift */; };
 		C94A26D21DD5593F00D9B054 /* DASlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94A26D11DD5593F00D9B054 /* DASlider.swift */; };
@@ -883,17 +876,15 @@
 		C95753CB1DD57FCF005C9F75 /* speed_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C95753C51DD57FCF005C9F75 /* speed_icon.png */; };
 		C95753CC1DD57FCF005C9F75 /* strength.png in Resources */ = {isa = PBXBuildFile; fileRef = C95753C61DD57FCF005C9F75 /* strength.png */; };
 		C957BBDF1EECE682008F756B /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C957BBDE1EECE682008F756B /* Layout.swift */; };
-		C957BBE41EEE4081008F756B /* HeroTalentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C957BBE31EEE4081008F756B /* HeroTalentCell.swift */; };
 		C957BBE81EEFA1BD008F756B /* HeroTalentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C957BBE71EEFA1BD008F756B /* HeroTalentViewController.swift */; };
 		C957BBEB1EEFA76B008F756B /* HeroMiscCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C957BBEA1EEFA76B008F756B /* HeroMiscCell.swift */; };
 		C957BBED1EEFA920008F756B /* HeroMiscViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C957BBEC1EEFA920008F756B /* HeroMiscViewController.swift */; };
 		C957BBF11EEFB053008F756B /* HeroAttributeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C957BBF01EEFB053008F756B /* HeroAttributeView.swift */; };
 		C957BBF31EEFB34C008F756B /* HeroBasicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C957BBF21EEFB34C008F756B /* HeroBasicCell.swift */; };
-		C957BBF71EEFB77A008F756B /* HeroTalentLevelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C957BBF61EEFB77A008F756B /* HeroTalentLevelView.swift */; };
 		C95E51DB1E0A142900A48965 /* Monkey King.png in Resources */ = {isa = PBXBuildFile; fileRef = C95E51DA1E0A142900A48965 /* Monkey King.png */; };
 		C95E86801E0369CE00822703 /* dota2.png in Resources */ = {isa = PBXBuildFile; fileRef = C95E867F1E0369CE00822703 /* dota2.png */; };
 		C96391971F076463005CB7AC /* ObjectHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96391961F076463005CB7AC /* ObjectHeaderView.swift */; };
-		C96EBB601DF244EF00D6FFD0 /* DANavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96EBB5F1DF244EF00D6FFD0 /* DANavigationController.swift */; };
+		C96F1ACB1F0F3E2600AE6B96 /* DALabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96F1ACA1F0F3E2600AE6B96 /* DALabel.swift */; };
 		C970639B1F09E13C008EF87B /* ObjectDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C970639A1F09E13C008EF87B /* ObjectDetailViewController.swift */; };
 		C970639D1F09E6AF008EF87B /* ObjectHeaderViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C970639C1F09E6AF008EF87B /* ObjectHeaderViewDelegate.swift */; };
 		C9745D5C1EC57558009537E4 /* HeroHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9745D5B1EC57558009537E4 /* HeroHeaderView.swift */; };
@@ -981,16 +972,13 @@
 		363A46601E00827200BA5D97 /* PARTIAL_PIERCE_SPELL_IMMUNE.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PARTIAL_PIERCE_SPELL_IMMUNE.png; path = "images/Ability Specials/PARTIAL_PIERCE_SPELL_IMMUNE.png"; sourceTree = "<group>"; };
 		363A46611E00827200BA5D97 /* PIERCE_SPELL_IMMUNE.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PIERCE_SPELL_IMMUNE.png; path = "images/Ability Specials/PIERCE_SPELL_IMMUNE.png"; sourceTree = "<group>"; };
 		363A46621E00827200BA5D97 /* UNIQUE_ATTACK_MODIFIER.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = UNIQUE_ATTACK_MODIFIER.png; path = "images/Ability Specials/UNIQUE_ATTACK_MODIFIER.png"; sourceTree = "<group>"; };
-		364A6A581DC1136300FBE163 /* DAMultiLineLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAMultiLineLabel.swift; sourceTree = "<group>"; };
 		365F75471E02E01D00F928B0 /* sidearrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sidearrow.png; sourceTree = "<group>"; };
 		365F75551E0443D900F928B0 /* DAPaddedLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DAPaddedLabel.swift; path = Views/DAPaddedLabel.swift; sourceTree = "<group>"; };
 		366A8A081DD0F4F3000406BF /* DAMainLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAMainLabel.swift; sourceTree = "<group>"; };
 		366A8A0B1DD0F87F000406BF /* DAMainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAMainTableViewCell.swift; sourceTree = "<group>"; };
 		366A8A0D1DD0F993000406BF /* DARoundedImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DARoundedImageView.swift; sourceTree = "<group>"; };
 		366A8A0F1DD100A8000406BF /* DAMainTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAMainTableView.swift; sourceTree = "<group>"; };
-		366A8A111DD1029F000406BF /* DAUIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAUIViewController.swift; sourceTree = "<group>"; };
 		366A8A151DD103F1000406BF /* DATabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DATabBar.swift; sourceTree = "<group>"; };
-		366A8A211DD24B71000406BF /* DAMainCellLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAMainCellLabel.swift; sourceTree = "<group>"; };
 		366A8A231DD24DB4000406BF /* radiance-semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "radiance-semibold.ttf"; path = "Fonts/radiance-semibold.ttf"; sourceTree = "<group>"; };
 		366A8A241DD24DB4000406BF /* radiance.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = radiance.ttf; path = Fonts/radiance.ttf; sourceTree = "<group>"; };
 		367E34DF1DB7F9670037FA7B /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -1026,16 +1014,12 @@
 		C90A13631EEC49F900D143B8 /* UIView+AddSubviews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+AddSubviews.swift"; sourceTree = "<group>"; };
 		C90A79351E0218680068C79C /* SECRET_SHOP.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SECRET_SHOP.png; sourceTree = "<group>"; };
 		C90A79361E0218680068C79C /* SIDE_SHOP.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SIDE_SHOP.png; sourceTree = "<group>"; };
-		C90A79391E021EE00068C79C /* DABackgroundColourStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DABackgroundColourStackView.swift; path = Views/DABackgroundColourStackView.swift; sourceTree = "<group>"; };
-		C90CE6091DFCB67500C93539 /* DAExpandableStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DAExpandableStackView.swift; path = Views/DAExpandableStackView.swift; sourceTree = "<group>"; };
-		C90CE60F1DFCC18F00C93539 /* DAExpandableTextStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DAExpandableTextStackView.swift; path = Views/DAExpandableTextStackView.swift; sourceTree = "<group>"; };
 		C90CE6131DFCCBA400C93539 /* ItemDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
 		C9118ABF1F076F78004A5277 /* Call of the Wild_ Boar_Beastmaster.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Call of the Wild_ Boar_Beastmaster.png"; path = "Abilities/Call of the Wild_ Boar_Beastmaster.png"; sourceTree = "<group>"; };
 		C9118AC01F076F78004A5277 /* Call of the Wild_ Hawk_Beastmaster.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Call of the Wild_ Hawk_Beastmaster.png"; path = "Abilities/Call of the Wild_ Hawk_Beastmaster.png"; sourceTree = "<group>"; };
 		C914703F1DD916D5002A042C /* Recipe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Recipe.png; path = images/Recipe.png; sourceTree = "<group>"; };
 		C9172C171DD13F9100DCF88F /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		C9172C201DD176BA00DCF88F /* dota2-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dota2-logo.png"; sourceTree = "<group>"; };
-		C922FA8A1DD8AD27007B76F8 /* DALoreLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DALoreLabel.swift; sourceTree = "<group>"; };
 		C923CF591EF0E44400971660 /* Call of the Wild (Boar)_Beastmaster.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Call of the Wild (Boar)_Beastmaster.png"; path = "images/Abilities/Call of the Wild (Boar)_Beastmaster.png"; sourceTree = "<group>"; };
 		C923CF5A1EF0E44400971660 /* Call of the Wild (Hawk)_Beastmaster.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Call of the Wild (Hawk)_Beastmaster.png"; path = "images/Abilities/Call of the Wild (Hawk)_Beastmaster.png"; sourceTree = "<group>"; };
 		C923CF5D1EF0E5AE00971660 /* Aegis of the Immortal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Aegis of the Immortal.png"; path = "images/Abilities/Aegis of the Immortal.png"; sourceTree = "<group>"; };
@@ -1849,18 +1833,16 @@
 		C95753C51DD57FCF005C9F75 /* speed_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = speed_icon.png; sourceTree = "<group>"; };
 		C95753C61DD57FCF005C9F75 /* strength.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = strength.png; sourceTree = "<group>"; };
 		C957BBDE1EECE682008F756B /* Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
-		C957BBE31EEE4081008F756B /* HeroTalentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroTalentCell.swift; sourceTree = "<group>"; };
 		C957BBE71EEFA1BD008F756B /* HeroTalentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroTalentViewController.swift; sourceTree = "<group>"; };
 		C957BBEA1EEFA76B008F756B /* HeroMiscCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroMiscCell.swift; sourceTree = "<group>"; };
 		C957BBEC1EEFA920008F756B /* HeroMiscViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroMiscViewController.swift; sourceTree = "<group>"; };
 		C957BBF01EEFB053008F756B /* HeroAttributeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroAttributeView.swift; sourceTree = "<group>"; };
 		C957BBF21EEFB34C008F756B /* HeroBasicCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroBasicCell.swift; sourceTree = "<group>"; };
-		C957BBF61EEFB77A008F756B /* HeroTalentLevelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HeroTalentLevelView.swift; path = Views/HeroTalentLevelView.swift; sourceTree = "<group>"; };
 		C95E51DA1E0A142900A48965 /* Monkey King.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Monkey King.png"; path = "heroes/Monkey King.png"; sourceTree = "<group>"; };
 		C95E867F1E0369CE00822703 /* dota2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dota2.png; sourceTree = "<group>"; };
 		C96391961F076463005CB7AC /* ObjectHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectHeaderView.swift; sourceTree = "<group>"; };
 		C96EA1111DEE622800259AEF /* DotA2 Assistant.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = "DotA2 Assistant.entitlements"; path = "../DotA2 Assistant.entitlements"; sourceTree = "<group>"; };
-		C96EBB5F1DF244EF00D6FFD0 /* DANavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DANavigationController.swift; sourceTree = "<group>"; };
+		C96F1ACA1F0F3E2600AE6B96 /* DALabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DALabel.swift; sourceTree = "<group>"; };
 		C970639A1F09E13C008EF87B /* ObjectDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectDetailViewController.swift; sourceTree = "<group>"; };
 		C970639C1F09E6AF008EF87B /* ObjectHeaderViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectHeaderViewDelegate.swift; sourceTree = "<group>"; };
 		C9745D5B1EC57558009537E4 /* HeroHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroHeaderView.swift; sourceTree = "<group>"; };
@@ -2165,24 +2147,17 @@
 		C923CF5F1EF0E71100971660 /* DA Classes */ = {
 			isa = PBXGroup;
 			children = (
-				366A8A111DD1029F000406BF /* DAUIViewController.swift */,
-				C90A79391E021EE00068C79C /* DABackgroundColourStackView.swift */,
-				C90CE6091DFCB67500C93539 /* DAExpandableStackView.swift */,
-				C90CE60F1DFCC18F00C93539 /* DAExpandableTextStackView.swift */,
 				C94B1A381E01C4F7008BF226 /* DAIconLabel.swift */,
-				C922FA8A1DD8AD27007B76F8 /* DALoreLabel.swift */,
 				366A8A0B1DD0F87F000406BF /* DAMainTableViewCell.swift */,
 				366A8A0F1DD100A8000406BF /* DAMainTableView.swift */,
 				366A8A081DD0F4F3000406BF /* DAMainLabel.swift */,
-				366A8A211DD24B71000406BF /* DAMainCellLabel.swift */,
-				C96EBB5F1DF244EF00D6FFD0 /* DANavigationController.swift */,
 				365F75551E0443D900F928B0 /* DAPaddedLabel.swift */,
 				366A8A0D1DD0F993000406BF /* DARoundedImageView.swift */,
 				C94A26D11DD5593F00D9B054 /* DASlider.swift */,
 				366A8A151DD103F1000406BF /* DATabBar.swift */,
-				364A6A581DC1136300FBE163 /* DAMultiLineLabel.swift */,
 				C94CAB631DD7CD4F00971BC5 /* DASearchBar.swift */,
 				C9C6D2701F0C99270066973F /* DATitleStackView.swift */,
+				C96F1ACA1F0F3E2600AE6B96 /* DALabel.swift */,
 			);
 			name = "DA Classes";
 			sourceTree = "<group>";
@@ -3046,8 +3021,6 @@
 		C957BBE21EEE4066008F756B /* Hero Talent */ = {
 			isa = PBXGroup;
 			children = (
-				C957BBF61EEFB77A008F756B /* HeroTalentLevelView.swift */,
-				C957BBE31EEE4081008F756B /* HeroTalentCell.swift */,
 				C957BBE71EEFA1BD008F756B /* HeroTalentViewController.swift */,
 				C9C6D26E1F0C98E10066973F /* HeroTalentView.swift */,
 				C9C6D2721F0CA43E0066973F /* HeroTalentsView.swift */,
@@ -4180,7 +4153,6 @@
 				C98C55571F00A00900540DC0 /* ItemBasicViewController.swift in Sources */,
 				C94B1A391E01C4F7008BF226 /* DAIconLabel.swift in Sources */,
 				C9AEA20A1E9C4629006FD974 /* Object+CoreDataProperties.swift in Sources */,
-				C96EBB601DF244EF00D6FFD0 /* DANavigationController.swift in Sources */,
 				366A8A101DD100A8000406BF /* DAMainTableView.swift in Sources */,
 				C9AEA20C1E9C4629006FD974 /* Talent+CoreDataProperties.swift in Sources */,
 				C9745D651EC7B86B009537E4 /* HeroAttributeViewDelegate.swift in Sources */,
@@ -4193,11 +4165,9 @@
 				C985269D1EFE0EC300398D10 /* AbiltyCollectionViewController.swift in Sources */,
 				C99EF6971F0B530500DA03BF /* HeroListViewControllerDelegate.swift in Sources */,
 				C970639B1F09E13C008EF87B /* ObjectDetailViewController.swift in Sources */,
-				366A8A221DD24B71000406BF /* DAMainCellLabel.swift in Sources */,
 				C98526701EFA27F100398D10 /* String+Convenience.swift in Sources */,
 				C9AEA2111E9C4629006FD974 /* Item+CoreDataClass.swift in Sources */,
 				C9D558951EF2197D00D0E923 /* HeroAttributeSlider.swift in Sources */,
-				C922FA8B1DD8AD27007B76F8 /* DALoreLabel.swift in Sources */,
 				C90A13591EE7BE7400D143B8 /* Fonts.swift in Sources */,
 				C9AEA2131E9C4629006FD974 /* Note+CoreDataClass.swift in Sources */,
 				C9AEA2041E9C4629006FD974 /* BaseStats+CoreDataProperties.swift in Sources */,
@@ -4206,23 +4176,18 @@
 				C9AEA21A1E9C4629006FD974 /* Ability+CoreDataProperties.swift in Sources */,
 				C957BBDF1EECE682008F756B /* Layout.swift in Sources */,
 				365F75561E0443D900F928B0 /* DAPaddedLabel.swift in Sources */,
-				364A6A591DC1136300FBE163 /* DAMultiLineLabel.swift in Sources */,
 				366A8A161DD103F1000406BF /* DATabBar.swift in Sources */,
 				C9B125731EE1182400984F90 /* KeyValueView.swift in Sources */,
-				C90A793A1E021EE00068C79C /* DABackgroundColourStackView.swift in Sources */,
 				C98526721EFA299200398D10 /* UIStackView+AddArrangedSubviews.swift in Sources */,
 				C98526961EFB7EBC00398D10 /* AbilityKVStackView.swift in Sources */,
 				C98526741EFA2A0F00398D10 /* Int+NumberHandling.swift in Sources */,
 				367E34E01DB7F9670037FA7B /* MainViewController.swift in Sources */,
 				C9BB66701F035EEB00E07ADB /* CoreDataManager.swift in Sources */,
 				C970639D1F09E6AF008EF87B /* ObjectHeaderViewDelegate.swift in Sources */,
-				C90CE60A1DFCB67500C93539 /* DAExpandableStackView.swift in Sources */,
 				C9AEA2081E9C4629006FD974 /* ModifiableValue+CoreDataProperties.swift in Sources */,
 				C9745D5C1EC57558009537E4 /* HeroHeaderView.swift in Sources */,
-				C957BBF71EEFB77A008F756B /* HeroTalentLevelView.swift in Sources */,
 				C93028391DF3629F005EA297 /* HeroDetailViewController.swift in Sources */,
 				C9AEA2151E9C4629006FD974 /* ArrayItem+CoreDataClass.swift in Sources */,
-				366A8A121DD1029F000406BF /* DAUIViewController.swift in Sources */,
 				C90A135E1EE9091800D143B8 /* Colours.swift in Sources */,
 				C9AEA2161E9C4629006FD974 /* ArrayItem+CoreDataProperties.swift in Sources */,
 				C9C6D2731F0CA43E0066973F /* HeroTalentsView.swift in Sources */,
@@ -4240,6 +4205,7 @@
 				C96391971F076463005CB7AC /* ObjectHeaderView.swift in Sources */,
 				C9BB666E1F0358ED00E07ADB /* RecipePart.swift in Sources */,
 				366A8A0C1DD0F87F000406BF /* DAMainTableViewCell.swift in Sources */,
+				C96F1ACB1F0F3E2600AE6B96 /* DALabel.swift in Sources */,
 				C99EF69C1F0B57D500DA03BF /* ItemListViewController.swift in Sources */,
 				C9745D5E1EC577CC009537E4 /* HeroHeaderViewDelegate.swift in Sources */,
 				C9B1256A1EDFC87800984F90 /* Double+StringFormat.swift in Sources */,
@@ -4258,7 +4224,6 @@
 				C957BBF31EEFB34C008F756B /* HeroBasicCell.swift in Sources */,
 				C98C55591F00C84300540DC0 /* ItemBasicViewControllerDelegate.swift in Sources */,
 				C9AEA2191E9C4629006FD974 /* Ability+CoreDataClass.swift in Sources */,
-				C90CE6101DFCC18F00C93539 /* DAExpandableTextStackView.swift in Sources */,
 				36C7DF241DC8F2C800251705 /* RSSFeedHelper.swift in Sources */,
 				C9BB66741F03648A00E07ADB /* ItemHeaderViewDelegate.swift in Sources */,
 				C9AEA2031E9C4629006FD974 /* BaseStats+CoreDataClass.swift in Sources */,
@@ -4268,7 +4233,6 @@
 				C90A135B1EE7C1E500D143B8 /* StringIcons.swift in Sources */,
 				366A8A0E1DD0F993000406BF /* DARoundedImageView.swift in Sources */,
 				C90A13621EEA6CCB00D143B8 /* AbilityView.swift in Sources */,
-				C957BBE41EEE4081008F756B /* HeroTalentCell.swift in Sources */,
 				36C0C9621DA6E25800169394 /* AppDelegate.swift in Sources */,
 				C97E11631F0084BF00E35D1D /* RecipeBuildView.swift in Sources */,
 				C9C6D26F1F0C98E10066973F /* HeroTalentView.swift in Sources */,

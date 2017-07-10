@@ -12,15 +12,15 @@ class ItemBasicView: UIView {
     
     private static let padding: CGFloat = 8
     
-    private var costLabel = UILabel()
-    private var availabilityLabel = UILabel()
+    private var costLabel = DALabel(style: .subtitle)
+    private var availabilityLabel = DALabel(style: .subtitle)
     private var typeImageView = UIImageView()
-    private var typeLabel = UILabel()
+    private var typeLabel = DALabel(style: .text)
     private var detailStack = UIStackView()
     private var detailViews = [KeyValueView]()
-    private var additionalInfoLabel = UILabel()
+    private var additionalInfoLabel = DALabel(style: .text)
     private var recipeView = RecipeView()
-    private var loreLabel = UILabel()
+    private var loreLabel = DALabel(style: .text)
     
     public var item: Item? {
         didSet {

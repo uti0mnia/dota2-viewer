@@ -12,8 +12,8 @@ import SnapKit
 class HeroTalentView: UIView {
     
     private var titleStackView = DATitleStackView()
-    private var leftLabel = UILabel()
-    private var rightLabel = UILabel()
+    private var leftLabel = DALabel()
+    private var rightLabel = DALabel()
     
     public var talent: Talent? {
         didSet {
@@ -41,10 +41,10 @@ class HeroTalentView: UIView {
     
     private func commonInit() {
         leftLabel.numberOfLines = 0
-        leftLabel.textAlignment = .center
+        leftLabel.textAlignment = .left
         
         rightLabel.numberOfLines = 0
-        rightLabel.textAlignment = .center
+        rightLabel.textAlignment = .right
         
         let stackView = UIStackView(arrangedSubviews: [leftLabel, rightLabel])
         stackView.alignment = .top

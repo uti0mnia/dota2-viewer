@@ -43,12 +43,20 @@ class HeroMiscViewController: UIViewController, UITableViewDataSource {
         commonInit()
     }
     
+    override func willMove(toParentViewController parent: UIViewController?) {
+        super.willMove(toParentViewController: parent)
+        
+        tableView.backgroundColor = Colours.primaryColour
+    }
+    
     private func commonInit() {
+        view.backgroundColor = Colours.primaryColour
+        
         tableView = UITableView(frame: self.view.bounds)
         tableView.tableFooterView = UIView()
         
         tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 200
+        tableView.estimatedRowHeight = 250
         
         tableView.register(HeroMiscCell.self, forCellReuseIdentifier: HeroMiscViewController.miscReuseIdentifier)
         tableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]

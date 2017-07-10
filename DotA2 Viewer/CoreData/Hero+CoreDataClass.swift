@@ -39,9 +39,12 @@ public class Hero: Object {
     }()
     
     // attributes
-    var intelligence: Double { return valueFor(attribute: attributes.object(at: 0) as! Attribute) }
-    var agility: Double { return valueFor(attribute: attributes.object(at: 1) as! Attribute) }
-    var strength: Double { return valueFor(attribute: attributes.object(at: 2) as! Attribute) }
+    public var intelligence: Double { return valueFor(attribute: attributes.object(at: 0) as! Attribute) }
+    public var intelligenceGain: Double { return (attributes.object(at: 0) as! Attribute).increment }
+    public var agility: Double { return valueFor(attribute: attributes.object(at: 1) as! Attribute) }
+    public var agilityGain: Double { return (attributes.object(at: 1) as! Attribute).increment }
+    public var strength: Double { return valueFor(attribute: attributes.object(at: 2) as! Attribute) }
+    public var strengthGain: Double { return (attributes.object(at: 2) as! Attribute).increment }
     
     // Base stats
     private var armour: Double { return base.armor + agility / 7 }

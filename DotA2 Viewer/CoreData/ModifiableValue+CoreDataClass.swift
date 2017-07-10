@@ -6,7 +6,7 @@
 //
 //
 
-import Foundation
+import UIKit
 import CoreData
 
 
@@ -42,8 +42,7 @@ public class ModifiableValue: NSManagedObject {
     }
     
     func write(to kvView: KeyValueView) {
-        kvView.keyLabel.attributedText = NSAttributedString(string: name,
-                                                            attributes: Fonts.boldLabelAttribute)
+        kvView.keyLabel.text = name
         kvView.valueLabel.attributedText = getValuesAttributedString()
     }
 }

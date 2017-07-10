@@ -11,8 +11,8 @@ import SnapKit
 
 class KeyValueView: UIView {
     
-    private(set) var keyLabel = UILabel()
-    private(set) var valueLabel = UILabel()
+    private(set) var keyLabel = DALabel(style: .text)
+    private(set) var valueLabel = DALabel(style: .text)
     private var stackView: UIStackView = {
         let sv = UIStackView()
         

@@ -12,35 +12,19 @@ import UIKit
 class Fonts {
     private init() {}
     
-    public static var titleSize: CGFloat {
-        return 20
-    }
-    
-    public static var labelSize: CGFloat {
-        return 16
-    }
-    
-    public static var subLabelSize: CGFloat {
-        return 14
-    }
-    
     public static var title: UIFont {
-        return UIFont.boldSystemFont(ofSize: Fonts.titleSize)
+        return UIFont.boldSystemFont(ofSize: 22)
     }
     
-    public static var label: UIFont {
-        return UIFont.systemFont(ofSize: Fonts.labelSize)
+    public static var subtitle: UIFont {
+        return UIFont.systemFont(ofSize: 18)
     }
     
-    public static var subLabel: UIFont {
-        return UIFont.systemFont(ofSize: Fonts.subLabelSize)
+    public static var text: UIFont {
+        return UIFont.systemFont(ofSize: 16)
     }
     
-    public static var boldLabel: UIFont {
-        return UIFont.boldSystemFont(ofSize: Fonts.labelSize)
-    }
-    
-    public static var boldLabelAttribute: [String: Any] {
-        return [NSFontAttributeName: Fonts.boldLabel]
+    public static var boldText: UIFont {
+        return UIFont.boldSystemFont(ofSize: 16)
     }
 }

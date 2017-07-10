@@ -16,9 +16,9 @@ class HeroAttributeView: UIView {
     private var slider: HeroAttributeSlider!
     private var oldSliderValue = 0
     
-    private(set) var strengthLabel = UILabel()
-    private(set) var agilityLabel = UILabel()
-    private(set) var intelligenceLabel = UILabel()
+    private(set) var strengthLabel = DALabel(style: .text)
+    private(set) var agilityLabel = DALabel(style: .text)
+    private(set) var intelligenceLabel = DALabel(style: .text)
     
     private var strengthIV: UIImageView!
     private var agilityIV: UIImageView!
@@ -86,7 +86,19 @@ class HeroAttributeView: UIView {
     }
     private func commonInit() {
         initView()
-        topStackView.uti_addArrangedSubviews(views: [strengthIV, strengthLabel, agilityIV, agilityLabel, intelligenceIV, intelligenceLabel])
+        
+        strengthLabel.textAlignment = .center
+        agilityLabel.textAlignment = .center
+        intelligenceLabel.textAlignment = .center
+        
+        let strengthSV = UIStackView(arrangedSubviews: [strengthIV, strengthLabel])
+        strengthSV.axis = .vertical
+        let agilitySV = UIStackView(arrangedSubviews: [agilityIV, agilityLabel])
+        agilitySV.axis = .vertical
+        let intelligenceSV = UIStackView(arrangedSubviews: [intelligenceIV, intelligenceLabel])
+        intelligenceSV.axis = .vertical
+        
+        topStackView.uti_addArrangedSubviews(views: [strengthSV, agilitySV, intelligenceSV])
         self.uti_addSubviews([topStackView, slider])
         addConstraints()
     }
