@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol HeroDelegate: class {
+public protocol HeroDelegate: class {
     func heroDidUpdateLevel()
 }

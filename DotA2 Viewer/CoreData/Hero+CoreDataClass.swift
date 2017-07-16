@@ -13,17 +13,17 @@ import UIKit
 
 public class Hero: Object {
     // some static constants
-    static private let HP_GAIN: Double = 20
-    static private let HP_REGEN_GAIN: Double = 0.03
-    static private let MANA_GAIN: Double = 12
-    static private let MANA_REGEN_GAIN: Double = 0.04
-    static private let SPELL_DAMAGE_GAIN: Double = 1/15
-    static private let ARMOUR_GAIN: Double = 1/7
+    private static let hpGain: Double = 20
+    private static let hpRegenGain: Double = 0.03
+    private static let manaGain: Double = 12
+    private static let manaRegenGain: Double = 0.04
+    private static let spellDamageGain: Double = 1/15
+    private static let armourGain: Double = 1/7
     
-    weak var delegate: HeroDelegate?
+    public weak var delegate: HeroDelegate?
     
     // properties
-    var level: Int = 1 {
+    public var level: Int = 1 {
         didSet {
             if self.level < 1 {
                 self.level = 1
@@ -34,7 +34,7 @@ public class Hero: Object {
             delegate?.heroDidUpdateLevel()
         }
     }
-    lazy var primaryAttribute: Attribute = {[unowned self] in
+    public lazy var primaryAttribute: Attribute = {[unowned self] in
         return (self.attributes.array as! [Attribute]).first(where: { $0.isPrimary })!
     }()
     
@@ -47,28 +47,28 @@ public class Hero: Object {
     public var strengthGain: Double { return (attributes.object(at: 2) as! Attribute).increment }
     
     // Base stats
-    private var armour: Double { return base.armor + agility / 7 }
-    private var attackPerSecond: Double { return (100 + agility) * 0.01 / misc.baseAttackTime }
-    private var hp: Double { return base.hp + strength * Hero.HP_GAIN }
-    private var hpRegen: Double { return base.hpRegen + strength * Hero.HP_REGEN_GAIN }
-    private var mana: Double { return base.mana + intelligence * Hero.MANA_GAIN }
-    private var manaRegen: Double { return base.manaRegen + intelligence * Hero.MANA_REGEN_GAIN }
-    private var damage: (min: Double, max: Double) {
+    public var armour: Double { return base.armor + agility * Hero.armourGain }
+    public var attackPerSecond: Double { return (100 + agility) * 0.01 / misc.baseAttackTime }
+    public var hp: Double { return base.hp + strength * Hero.hpGain }
+    public var hpRegen: Double { return base.hpRegen + strength * Hero.hpRegenGain }
+    public var mana: Double { return base.mana + intelligence * Hero.manaGain }
+    public var manaRegen: Double { return base.manaRegen + intelligence * Hero.manaRegenGain }
+    public var damage: (min: Double, max: Double) {
         let increment = valueFor(attribute: primaryAttribute)
         return (base.minDamage + increment, base.maxDamage + increment)
     }
-    private var spellDamage: Double { return base.spellDamage + intelligence * Hero.SPELL_DAMAGE_GAIN }
+    public var spellDamage: Double { return base.spellDamage + intelligence * Hero.spellDamageGain }
     
     // Misc Stats
-    private var attackAnimation: String { return misc.attackAnimation }
-    private var attackRange: Double { return misc.attackRange }
-    private var baseAttackTime: Double { return misc.baseAttackTime }
-    private var collisionSize: Double { return misc.collisionSize }
-    private var magicResistance: Double { return misc.magicResistance }
-    private var movementSpeed: Double { return misc.movementSpeed }
-    private var projectileSpeed: Double { return misc.projectileSpeed }
-    private var turnRate: Double { return misc.turnRate }
-    private var visionRange: String { return misc.visionRange }
+    public var attackAnimation: String { return misc.attackAnimation }
+    public var attackRange: Double { return misc.attackRange }
+    public var baseAttackTime: Double { return misc.baseAttackTime }
+    public var collisionSize: Double { return misc.collisionSize }
+    public var magicResistance: Double { return misc.magicResistance }
+    public var movementSpeed: Double { return misc.movementSpeed }
+    public var projectileSpeed: Double { return misc.projectileSpeed }
+    public var turnRate: Double { return misc.turnRate }
+    public var visionRange: String { return misc.visionRange }
     
     // Dictionary for data (mainly to make tableview data easier to present
     // This isn't really proper but it makes life infinitely better

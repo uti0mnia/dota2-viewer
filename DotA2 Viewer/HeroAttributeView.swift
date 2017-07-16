@@ -11,18 +11,22 @@ import SnapKit
 
 class HeroAttributeView: UIView {
     
+    private static let sliderPadding: CGFloat = 20
+    
     weak var delegate: HeroAttributeViewDelegate?
     
-    private var slider: HeroAttributeSlider!
+    private(set) var levelLabel = DALabel(style: .subtitle)
+    
+    private var slider = HeroAttributeSlider()
     private var oldSliderValue = 0
     
     private(set) var strengthLabel = DALabel(style: .text)
     private(set) var agilityLabel = DALabel(style: .text)
     private(set) var intelligenceLabel = DALabel(style: .text)
     
-    private var strengthIV: UIImageView!
-    private var agilityIV: UIImageView!
-    private var intelligenceIV: UIImageView!
+    private var strengthIV = UIImageView()
+    private var agilityIV = UIImageView()
+    private var intelligenceIV = UIImageView()
     
     private var topStackView: UIStackView = {
         let sv = UIStackView()
@@ -48,42 +52,6 @@ class HeroAttributeView: UIView {
         commonInit()
     }
     
-    private func initView() {
-        strengthIV = createImageView()
-        strengthIV.image = UIImage(named: "strength.png")
-        
-        agilityIV = createImageView()
-        agilityIV.image = UIImage(named: "agility.png")
-        
-        intelligenceIV = createImageView()
-        intelligenceIV.image = UIImage(named: "intelligence.png")
-        
-        slider = HeroAttributeSlider()
-        slider.addTarget(self, action: #selector(sliderDidChangeValue), for: .valueChanged)
-        
-        primaryAttributeLayer = CAShapeLayer()
-        primaryAttributeLayer.backgroundColor = UIColor.clear.cgColor
-        primaryAttributeLayer.frame = strengthIV.frame
-        primaryAttributeLayer.borderWidth = 3
-        primaryAttributeLayer.borderColor = UIColor.yellow.cgColor      // TODO: Change to gold.
-    }
-    
-    private func createImageView() -> UIImageView {
-        let iv = UIImageView()
-        iv.contentMode = .center
-        return iv
-    }
-    
-    private func addConstraints() {
-        topStackView.snp.makeConstraints() { make in
-            make.left.top.right.equalTo(self).inset(8).priority(999)
-            make.bottom.equalTo(slider.snp.top).offset(-8)
-        }
-        
-        slider.snp.makeConstraints() { make in
-            make.left.bottom.right.equalTo(self).inset(8).priority(999)
-        }
-    }
     private func commonInit() {
         initView()
         
@@ -99,16 +67,50 @@ class HeroAttributeView: UIView {
         intelligenceSV.axis = .vertical
         
         topStackView.u0_addArrangedSubviews(views: [strengthSV, agilitySV, intelligenceSV])
-        self.u0_addSubviews([topStackView, slider])
+        self.u0_addSubviews([levelLabel, topStackView, slider])
+        
         addConstraints()
     }
     
+    private func initView() {
+        levelLabel.textAlignment = .center
+        
+        strengthIV.contentMode = .center
+        strengthIV.image = UIImage(named: "strength.png")
+        
+        agilityIV.contentMode = .center
+        agilityIV.image = UIImage(named: "agility.png")
+        
+        intelligenceIV.contentMode = .center
+        intelligenceIV.image = UIImage(named: "intelligence.png")
+        
+        slider.addTarget(self, action: #selector(sliderDidChangeValue), for: .valueChanged)
+        
+        primaryAttributeLayer = CAShapeLayer()
+        primaryAttributeLayer.backgroundColor = UIColor.clear.cgColor
+        primaryAttributeLayer.frame = strengthIV.frame
+        primaryAttributeLayer.borderWidth = 3
+        primaryAttributeLayer.borderColor = UIColor.yellow.cgColor      // TODO: Change to gold.
+    }
     
-    public func setPrimaryAttribute(_ attribute: HeroAttribute?) {
-        guard let attribute = attribute else {
-            return
+    private func addConstraints() {
+        levelLabel.snp.makeConstraints() { make in
+            make.left.top.right.equalTo(self).inset(Layout.defaultPadding).priority(UILayoutPriorityDefaultHigh)
+            
+        }
+        topStackView.snp.makeConstraints() { make in
+            make.top.equalTo(levelLabel.snp.bottom).offset(Layout.defaultPadding)
+            make.left.right.equalTo(self).inset(Layout.defaultPadding).priority(UILayoutPriorityDefaultHigh)
+            make.bottom.equalTo(slider.snp.top).offset(-Layout.defaultPadding)
         }
         
+        slider.snp.makeConstraints() { make in
+            make.left.right.equalTo(self).inset(HeroAttributeView.sliderPadding).priority(UILayoutPriorityDefaultHigh)
+            make.bottom.equalTo(self).inset(Layout.defaultPadding).priority(UILayoutPriorityDefaultHigh)
+        }
+    }
+    
+    public func setPrimaryAttribute(_ attribute: HeroAttribute) {        
         switch attribute {
         case .agility:
             addPrimaryAttributeMask(to: agilityIV)
@@ -122,6 +124,10 @@ class HeroAttributeView: UIView {
     private func addPrimaryAttributeMask(to imageView: UIImageView) {
         primaryAttributeLayer.removeFromSuperlayer()
         imageView.layer.addSublayer(primaryAttributeLayer)
+    }
+    
+    public func resetSlider(animated: Bool) {
+        slider.setValue(0, animated: animated)
     }
     
     @objc func sliderDidChangeValue() {
