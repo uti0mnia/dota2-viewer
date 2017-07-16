@@ -33,4 +33,11 @@ class Layout {
         return -6
     }
     
+    public static var textLabelPreferredHeight: CGFloat {
+        return Layout.textAttachmentBounds.height + 2 * 5
+    }
+    
+    public static var defaultPadding: CGFloat {
+        return 8
+    }
 }
