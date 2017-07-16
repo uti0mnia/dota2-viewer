@@ -27,4 +27,8 @@ class Fonts {
     public static var boldText: UIFont {
         return UIFont.boldSystemFont(ofSize: 16)
     }
+    
+    public static var toastMessage: UIFont {
+        return UIFont.systemFont(ofSize: 16, weight: UIFontWeightMedium)
+    }
 }

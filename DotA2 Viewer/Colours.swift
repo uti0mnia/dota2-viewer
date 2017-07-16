@@ -29,4 +29,12 @@ class Colours {
     public static var primaryColour: UIColor {
         return UIColor.flatBlackDark
     }
+    
+    public static var toastMessage: UIColor {
+        return UIColor.flatBlack
+    }
+    
+    public static var toastBackground: UIColor {
+        return UIColor.flatWhite
+    }
 }

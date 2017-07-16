@@ -9,35 +9,25 @@
 import UIKit
 
 class Layout {
-    public static var abilityImageSize: CGSize {
-        return CGSize(width: 128, height: 128)
-    }
+    public static var abilityImageSize: CGSize = CGSize(width: 128, height: 128)
     
-    public static var heroImageSize: CGSize {
-        return CGSize(width: 256, height: 144)
-    }
+    public static var heroImageSize: CGSize = CGSize(width: 256, height: 144)
     
-    public static var statusBarHeight: CGFloat {
-        return 20
-    }
+    public static var statusBarHeight: CGFloat = 20
     
-    public static var objectImageMinimumHeight: CGFloat {
-        return 64
-    }
+    public static var objectImageMinimumHeight: CGFloat = 64
     
-    public static var textAttachmentBounds: CGRect {
-        return CGRect(x: 0, y: Layout.attachmentDescender, width: 20, height: 20)
-    }
+    public static var textAttachmentBounds: CGRect = CGRect(x: 0, y: Layout.attachmentDescender, width: 20, height: 20)
     
-    public static var attachmentDescender: CGFloat {
-        return -6
-    }
+    public static var attachmentDescender: CGFloat = -6
     
-    public static var textLabelPreferredHeight: CGFloat {
-        return Layout.textAttachmentBounds.height + 2 * 5
-    }
+    public static var textLabelPreferredHeight: CGFloat = Layout.textAttachmentBounds.height + 2 * 5
     
-    public static var defaultPadding: CGFloat {
-        return 8
-    }
+    public static let defaultPadding: CGFloat = 8
+    
+    public static let toastCornerRadius: CGFloat = 2
+    
+    public static let toastMargin = UIEdgeInsets(top: 4, left: 10, bottom: 4, right: 10)
+    
+    public static let toastMessageHeight: CGFloat = 60
 }

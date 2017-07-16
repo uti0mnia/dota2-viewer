@@ -9,9 +9,32 @@
 import UIKit
 import SnapKit
 
+public enum HeroBasicViewLabelType: Int {
+    case hp = 0, mana, damage, armour, spellDamage, attackPerSecond
+    
+    public var description: String {
+        switch self {
+        case .hp:
+            return "Health + Health Regen"
+        case .mana:
+            return "Mana + Mana Regen"
+        case .damage:
+            return "Damage"
+        case .armour:
+            return "Armour"
+        case .spellDamage:
+            return "Spell Damage"
+        case .attackPerSecond:
+            return "Attacks per second"
+        }
+    }
+}
+
 class HeroBasicView: UIView {
     
     private static let attributeViewHeight: CGFloat = 140
+    
+    public weak var delegate: HeroBasicViewDelegate?
     
     private(set) var attributeView = HeroAttributeView()
     
@@ -52,18 +75,30 @@ class HeroBasicView: UIView {
     }
     
     private func commonInit() {
-        hpView = makeDAIconLabel()
+        
+        hpView = createDAIconLabelView()
+        hpView?.tag = 0
         hpView?.icon = #imageLiteral(resourceName: "hp_icon.png") // hp_icon.png
-        manaView = makeDAIconLabel()
+        
+        manaView = createDAIconLabelView()
+        manaView?.tag = 1
         manaView?.icon = #imageLiteral(resourceName: "mana_icon.png") // mana_icon.png
-        damageView = makeDAIconLabel()
+        
+        damageView = createDAIconLabelView()
+        damageView?.tag = 2
         damageView?.icon = #imageLiteral(resourceName: "damage_icon.png") // damage_icon.png
-        armourView = makeDAIconLabel()
+        
+        armourView = createDAIconLabelView()
+        armourView?.tag = 3
         armourView?.icon = #imageLiteral(resourceName: "armour_icon.png") // armour_icon.png
-        spellDamageView = makeDAIconLabel()
-        spellDamageView?.icon = #imageLiteral(resourceName: "spell_damage_icon.png") // spell_damage_icon.png
-        attackPerSecondView = makeDAIconLabel()
-        attackPerSecondView?.icon = #imageLiteral(resourceName: "time_icon.png") // time_icon.png
+        
+        spellDamageView = createDAIconLabelView()
+        spellDamageView?.tag = 4
+        spellDamageView?.icon = #imageLiteral(resourceName: "spellDamage_icon.png") // spellDamage_icon.png
+        
+        attackPerSecondView = createDAIconLabelView()
+        attackPerSecondView?.tag = 5
+        attackPerSecondView?.icon = #imageLiteral(resourceName: "attackPerSecond_icon.png") // attackPerSecond_icon.png
         
         // TODO: Does this really look better?
         speedLabel.textAlignment = .center
@@ -118,11 +153,25 @@ class HeroBasicView: UIView {
         }
     }
     
-    private func makeDAIconLabel() -> DAIconLabelView {
+    private func createDAIconLabelView() -> DAIconLabelView {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(didTapOnLabelView(_:)))
+        
         let view = DAIconLabelView()
         view.iconPadding = 8
         view.iconSize = Layout.textAttachmentBounds.size
+        view.isUserInteractionEnabled = true
+        view.addGestureRecognizer(tap)
         return view
+    }
+    
+    @objc private func didTapOnLabelView(_ sender: UITapGestureRecognizer) {
+        guard let view = sender.view as? DAIconLabelView else {
+            return
+        }
+        
+        if let type = HeroBasicViewLabelType(rawValue: view.tag) {
+            delegate?.heroBasicView(self, didTapOnLabelWithType: type)
+        }
     }
     
 }

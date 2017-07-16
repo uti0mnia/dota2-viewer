@@ -45,6 +45,7 @@ PODS:
   - GoogleToolboxForMac/NSData+zlib (2.1.0):
     - GoogleToolboxForMac/Defines (= 2.1.0)
   - SnapKit (3.2.0)
+  - SwiftMessages (3.3.4)
 
 DEPENDENCIES:
   - CenteredCollectionView
@@ -53,6 +54,7 @@ DEPENDENCIES:
   - Firebase/Core
   - Firebase/Database
   - SnapKit (~> 3.2.0)
+  - SwiftMessages
 
 EXTERNAL SOURCES:
   ChameleonFramework:
@@ -76,7 +78,8 @@ SPEC CHECKSUMS:
   GoogleSymbolUtilities: 631ee17048aa5e9ab133470d768ea997a5ef9b96
   GoogleToolboxForMac: 2b2596cbb7186865e98cadf2b1e262d851c2b168
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
+  SwiftMessages: 1172842c4d4af818704f90c50ec8dc597e55c9af
 
-PODFILE CHECKSUM: 88e71512607707984247f9c6b1866a29d0975fa9
+PODFILE CHECKSUM: c39d07229e7925ce4cc17b215435b3467351092d
 
 COCOAPODS: 1.2.1

@@ -9,13 +9,14 @@
 import UIKit
 import CoreData
 import SnapKit
+import SwiftMessages
 
 
 /*
  * This view controller is meant to handle basic details of a hero like attributes 
  * and stats. Most of the stats and the attributes can be changed with the slider.
  */
-class HeroBasicViewController: UIViewController, HeroDelegate, HeroAttributeViewDelegate {
+class HeroBasicViewController: UIViewController, HeroDelegate, HeroAttributeViewDelegate, HeroBasicViewDelegate {
     
     private let heroBasicView = HeroBasicView()
     private let scrollView = UIScrollView()
@@ -69,6 +70,7 @@ class HeroBasicViewController: UIViewController, HeroDelegate, HeroAttributeView
         scrollView.addSubview(heroBasicView)
         scrollView.contentSize = CGSize(width: heroBasicView.bounds.width, height: heroBasicView.bounds.height)
         
+        heroBasicView.delegate = self
         heroBasicView.attributeView.delegate = self
     }
 
@@ -104,6 +106,11 @@ class HeroBasicViewController: UIViewController, HeroDelegate, HeroAttributeView
     
     func heroAttributeView(_ heroAttributeView: HeroAttributeView, sliderDidChangeValue newValue: Int) {
         hero?.level = newValue
+    }
+    
+     // MARK: - HeroBasicViewDelegate
+    func heroBasicView(_ heroBasicView: HeroBasicView, didTapOnLabelWithType type: HeroBasicViewLabelType) {
+        ToastManager.shared.displayToastMessage(type.description, on: self)
     }
     
 }
