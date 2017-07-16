@@ -11,5 +11,4 @@ target 'DotA2 Assistant' do
   pod 'SnapKit', '~> 3.2.0'
   pod "CenteredCollectionView"
   pod 'CHIPageControl', '~> 0.1.3'
-  pod 'SMIconLabel'
 end

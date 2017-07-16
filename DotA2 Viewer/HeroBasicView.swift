@@ -7,21 +7,20 @@
 //
 
 import UIKit
-import SMIconLabel
 import SnapKit
 
 class HeroBasicView: UIView {
     
-    private static let attributeViewHeight: CGFloat = 70
+    private static let attributeViewHeight: CGFloat = 140
     
     private(set) var attributeView = HeroAttributeView()
     
-    private(set) var hpLabel: SMIconLabel?
-    private(set) var manaLabel: SMIconLabel?
-    private(set) var damageLabel: SMIconLabel?
-    private(set) var armourLabel: SMIconLabel?
-    private(set) var spellDamageLabel: SMIconLabel?
-    private(set) var attackPerSecondLabel: SMIconLabel?
+    private(set) var hpView: DAIconLabelView?
+    private(set) var manaView: DAIconLabelView?
+    private(set) var damageView: DAIconLabelView?
+    private(set) var armourView: DAIconLabelView?
+    private(set) var spellDamageView: DAIconLabelView?
+    private(set) var attackPerSecondView: DAIconLabelView?
     
     private(set) var speedLabel = DALabel(style: .text)
     private(set) var turnRateLabel = DALabel(style: .text)
@@ -35,32 +34,36 @@ class HeroBasicView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
+        commonInit()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        
+        commonInit()
     }
     
     public static var preferredHeight: CGFloat {
         let labelHeight = Layout.textLabelPreferredHeight
         let padding = Layout.defaultPadding
         
-        return HeroBasicView.attributeViewHeight + 12 * labelHeight + 11 * padding
+        return HeroBasicView.attributeViewHeight + 12 * labelHeight + 14 * padding // padding for top and bottom
     }
     
     private func commonInit() {
-        hpLabel = makeSMIconLabel()
-        hpLabel?.icon = #imageLiteral(resourceName: "hp_icon.png") // hp_icon.png
-        manaLabel = makeSMIconLabel()
-        manaLabel?.icon = #imageLiteral(resourceName: "mana_icon.png") // mana_icon.png
-        damageLabel = makeSMIconLabel()
-        damageLabel?.icon = #imageLiteral(resourceName: "damage_icon.png") // damage_icon.png
-        armourLabel = makeSMIconLabel()
-        armourLabel?.icon = #imageLiteral(resourceName: "armour_icon.png") // armour_icon.png
-        spellDamageLabel = makeSMIconLabel()
-        spellDamageLabel?.icon = #imageLiteral(resourceName: "spell_damage_icon.png") // spell_damage_icon.png
-        attackPerSecondLabel = makeSMIconLabel()
-        attackPerSecondLabel?.icon = #imageLiteral(resourceName: "time_icon.png") // time_icon.png
+        hpView = makeDAIconLabel()
+        hpView?.icon = #imageLiteral(resourceName: "hp_icon.png") // hp_icon.png
+        manaView = makeDAIconLabel()
+        manaView?.icon = #imageLiteral(resourceName: "mana_icon.png") // mana_icon.png
+        damageView = makeDAIconLabel()
+        damageView?.icon = #imageLiteral(resourceName: "damage_icon.png") // damage_icon.png
+        armourView = makeDAIconLabel()
+        armourView?.icon = #imageLiteral(resourceName: "armour_icon.png") // armour_icon.png
+        spellDamageView = makeDAIconLabel()
+        spellDamageView?.icon = #imageLiteral(resourceName: "spell_damage_icon.png") // spell_damage_icon.png
+        attackPerSecondView = makeDAIconLabel()
+        attackPerSecondView?.icon = #imageLiteral(resourceName: "time_icon.png") // time_icon.png
         
         // TODO: Does this really look better?
         speedLabel.textAlignment = .center
@@ -73,43 +76,53 @@ class HeroBasicView: UIView {
         magicResistanceLabel.textAlignment = .center
         collisionSizeLabel.textAlignment = .center
         
-        uti_addSubviews([attributeView, hpLabel, manaLabel, damageLabel, armourLabel, spellDamageLabel, attackPerSecondLabel,
+        uti_addSubviews([attributeView, hpView, manaView, damageView, armourView, spellDamageView, attackPerSecondView,
                          speedLabel, turnRateLabel, visionRangeLabel, attackRangeLabel, projectileSpeedLabel,
                          attackAnimationLabel, baseAttackTimeLabel, magicResistanceLabel, collisionSizeLabel])
         
     }
     
     override func layoutSubviews() {
-        let leftX: CGFloat = 0
-        let rightX: CGFloat = (bounds.width + Layout.defaultPadding) / 2
+        
         let height: CGFloat = Layout.textLabelPreferredHeight
         let halfWidth: CGFloat = (bounds.width - Layout.defaultPadding) / 2
         let fullWidth: CGFloat = bounds.width
         
-        var currentY: CGFloat = 0
+        var currentY: CGFloat = Layout.defaultPadding
         
-        attributeView.frame = CGRect(x: leftX, y: currentY, width: fullWidth, height: HeroBasicView.attributeViewHeight)
+        attributeView.frame = CGRect(x: 0, y: currentY, width: fullWidth, height: HeroBasicView.attributeViewHeight)
         
         currentY += (HeroBasicView.attributeViewHeight + Layout.defaultPadding)
         
-        for (leftLabel, rightLabel) in [(hpLabel, manaLabel), (damageLabel, armourLabel), (spellDamageLabel, attackPerSecondLabel)] {
-            leftLabel?.frame = CGRect(x: leftX, y: currentY, width: halfWidth, height: height)
-            rightLabel?.frame = CGRect(x: rightX, y: currentY, width: halfWidth, height: height)
+        let labelSizeToFit = CGSize(width: halfWidth, height: height)
+        for (leftView, rightView) in [(hpView, manaView), (damageView, armourView), (spellDamageView, attackPerSecondView)] {
+            guard let leftView = leftView, let rightView = rightView else {
+                assertionFailure("HeroBasicView improper view intialization")
+                continue
+            }
+            
+            let leftViewSize = leftView.sizeThatFits(labelSizeToFit)
+            let leftX = bounds.width / 4 - leftViewSize.width / 2
+            leftView.frame = CGRect(x: leftX, y: currentY, width: halfWidth, height: height)
+            
+            let rightViewSize = rightView.sizeThatFits(labelSizeToFit)
+            let rightX = 3 * bounds.width / 4 - rightViewSize.width / 2
+            rightView.frame = CGRect(x: rightX, y: currentY, width: halfWidth, height: height)
+            
             currentY += (height + Layout.defaultPadding)
         }
         
         for label in [speedLabel, turnRateLabel, visionRangeLabel, attackRangeLabel, projectileSpeedLabel, attackAnimationLabel, baseAttackTimeLabel, magicResistanceLabel, collisionSizeLabel] {
-            label.frame = CGRect(x: leftX, y: currentY, width: fullWidth, height: height)
+            label.frame = CGRect(x: 0, y: currentY, width: fullWidth, height: height)
             currentY += (height + Layout.defaultPadding)
         }
     }
     
-    private func makeSMIconLabel() -> SMIconLabel {
-        let label = SMIconLabel()
-        label.iconPadding = 5
-        label.numberOfLines = 0
-        label.iconPosition = (.left, .top)
-        return label
+    private func makeDAIconLabel() -> DAIconLabelView {
+        let view = DAIconLabelView()
+        view.iconPadding = 8
+        view.iconSize = Layout.textAttachmentBounds.size
+        return view
     }
     
 }

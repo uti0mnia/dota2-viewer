@@ -15,12 +15,10 @@ import SnapKit
  * This view controller is meant to handle basic details of a hero like attributes 
  * and stats. Most of the stats and the attributes can be changed with the slider.
  */
-class HeroBasicViewController: UIViewController, UITableViewDataSource, HeroAttributeViewDelegate, HeroDelegate {
+class HeroBasicViewController: UIViewController, HeroDelegate, HeroAttributeViewDelegate {
     
-    private static let basicReuseIndentifier = "basicCell"
-    
-    private var tableView = UITableView()
-    private var attributeView = HeroAttributeView()
+    private let heroBasicView = HeroBasicView()
+    private let scrollView = UIScrollView()
     
     public var hero: Hero? {
         didSet {
@@ -30,17 +28,24 @@ class HeroBasicViewController: UIViewController, UITableViewDataSource, HeroAttr
             
             hero.delegate = self
             
-            heroData = hero.dataDictionary
-            heroDataKeys = Array(heroData.keys)
-            primaryAttribute = hero.primaryAttribute.heroAttribute
+            heroBasicView.attributeView.resetSlider(animated: false)
             
-            updateData()
+            heroBasicView.speedLabel.text = "Movement Speed: \(hero.movementSpeed.uti_string(0))"
+            heroBasicView.turnRateLabel.text = "Turn Rate: \(hero.turnRate)"
+            heroBasicView.visionRangeLabel.text = "Vision Range: \(hero.visionRange)"
+            heroBasicView.attackRangeLabel.text = "Attack Range: \(hero.attackRange.uti_string(0))"
+            
+            let projectileSpeed = hero.projectileSpeed == 0 ? "Instant" : "\(hero.projectileSpeed.uti_string(0))"
+            heroBasicView.projectileSpeedLabel.text = "Projectile Speed: " + projectileSpeed
+            
+            heroBasicView.attackAnimationLabel.text = "Attack Animation: \(hero.attackAnimation)"
+            heroBasicView.baseAttackTimeLabel.text = "Base Attack Time: \(hero.baseAttackTime)"
+            heroBasicView.magicResistanceLabel.text = "Magic Resistance: \(hero.magicResistance)"
+            heroBasicView.collisionSizeLabel.text = "Collision Size: \(hero.collisionSize.uti_string(0))"
+            
+            setHeroLevelDependentViews()
         }
     }
-    private var heroData = [String: [String: String]]()
-    private var heroDataKeys = [String]() // holds the keys in HeroData
-    
-    private var primaryAttribute: HeroAttribute?
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -54,89 +59,50 @@ class HeroBasicViewController: UIViewController, UITableViewDataSource, HeroAttr
         commonInit()
     }
     
-    private func addContraints() {
-        attributeView.translatesAutoresizingMaskIntoConstraints = false
-        attributeView.snp.makeConstraints() { make in
-            make.left.top.right.equalTo(view)
-            make.bottom.equalTo(tableView.snp.top)
-        }
-        
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.snp.makeConstraints() { make in
-            make.left.bottom.right.equalTo(view)
-        }
-    }
-    
     private func commonInit() {
-        tableView.register(HeroBasicCell.self, forCellReuseIdentifier: HeroBasicViewController.basicReuseIndentifier)
-        tableView.dataSource = self
+        view.addSubview(scrollView)
+        scrollView.snp.makeConstraints() { make in
+            make.left.top.right.bottom.equalTo(view)
+        }
         
-        attributeView.delegate = self
+        heroBasicView.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: HeroBasicView.preferredHeight)
+        scrollView.addSubview(heroBasicView)
+        scrollView.contentSize = CGSize(width: heroBasicView.bounds.width, height: heroBasicView.bounds.height)
         
-        view.addSubview(tableView)
-        view.addSubview(attributeView)
-        
-        addContraints()
+        heroBasicView.attributeView.delegate = self
     }
 
-    private func updateData() {
-        if let hero = hero {
-            heroData = hero.dataDictionary
-        } else {
-            heroData.removeAll(keepingCapacity: true)
+    private func setHeroLevelDependentViews() {
+        guard let hero = hero else {
+            return
         }
         
-        tableView.reloadVisibleIfPossible(with: .none)
+        heroBasicView.attributeView.levelLabel.text = "Level \(hero.level)"
         
-        tableView.scrollToRow(at: IndexPath.zero, at: .top, animated: false)
+        heroBasicView.attributeView.setPrimaryAttribute(hero.primaryAttribute.heroAttribute)
+        heroBasicView.attributeView.agilityLabel.text = "\(hero.agility.uti_string(1)) (+\(hero.agilityGain.uti_string(1)))"
+        heroBasicView.attributeView.intelligenceLabel.text = "\(hero.intelligence.uti_string(1)) (+\(hero.intelligenceGain.uti_string(1)))"
+        heroBasicView.attributeView.strengthLabel.text = "\(hero.strength.uti_string(1)) (+\(hero.strengthGain.uti_string(1)))"
         
-        attributeView.setPrimaryAttribute(primaryAttribute)
-        attributeView.agilityLabel.text = "\(hero?.agility.uti_string(1) ?? "") (+\(hero?.agilityGain.uti_string(1) ?? ""))"
-        attributeView.intelligenceLabel.text = "\(hero?.intelligence.uti_string(1) ?? "") (+\(hero?.intelligenceGain.uti_string(1) ?? ""))"
-        attributeView.strengthLabel.text = "\(hero?.strength.uti_string(1) ?? "") (+\(hero?.strengthGain.uti_string(1) ?? ""))"
+        heroBasicView.hpView?.label.text = "\(hero.hp.uti_string(0)) + \(hero.hpRegen.uti_string(2))"
+        heroBasicView.manaView?.label.text = "\(hero.mana.uti_string(0)) + \(hero.manaRegen.uti_string(2))"
+        heroBasicView.damageView?.label.text = "\(hero.damage.min.uti_string(0))-\(hero.damage.min.uti_string(0))"
+        heroBasicView.armourView?.label.text = "\(hero.armour.uti_string(2))"
+        heroBasicView.spellDamageView?.label.text = "\(hero.spellDamage.uti_string(2))"
+        heroBasicView.attackPerSecondView?.label.text = "\(hero.attackPerSecond.uti_string(2))"
     }
     
-    private func configure(_ cell: HeroBasicCell, at indexPath: IndexPath) {
-        // TODO: Make this actually readable.
-        // get the dictionary for the section so we can get good key/value pair
-        let dictSection = heroData[heroDataKeys[indexPath.section]]!
-        let keyText = Array(dictSection.keys)[indexPath.row] // the stat to display
-        let valueText = dictSection[keyText] // the value of the stat to display
-        
-        cell.kvView.keyLabel.text = keyText
-        cell.kvView.valueLabel.text = valueText
+    
+    // MARK: - HeroDelegate
+    
+    func heroDidUpdateLevel() {
+        setHeroLevelDependentViews()
     }
     
     // MARK: - HeroAttributeViewDelegate
     
     func heroAttributeView(_ heroAttributeView: HeroAttributeView, sliderDidChangeValue newValue: Int) {
         hero?.level = newValue
-    }
-    
-    // MARK: - UITableViewDataSource
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return heroDataKeys.count
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        assert(section < heroDataKeys.count, "Section out of bounds")
-        
-        let key = heroDataKeys[section]
-        return heroData[key]!.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: HeroBasicViewController.basicReuseIndentifier,
-                                                 for: indexPath) as! HeroBasicCell
-        configure(cell, at: indexPath)
-        return cell
-    }
-    
-    // MARK: - HeroDelegate
-    
-    func heroDidUpdateLevel() {
-        updateData()
     }
     
 }

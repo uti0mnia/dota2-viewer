@@ -13,11 +13,11 @@ class Fonts {
     private init() {}
     
     public static var title: UIFont {
-        return UIFont.boldSystemFont(ofSize: 22)
+        return UIFont.boldSystemFont(ofSize: 24)
     }
     
     public static var subtitle: UIFont {
-        return UIFont.systemFont(ofSize: 18)
+        return UIFont.systemFont(ofSize: 20)
     }
     
     public static var text: UIFont {
