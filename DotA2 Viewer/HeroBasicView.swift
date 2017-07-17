@@ -157,7 +157,7 @@ class HeroBasicView: UIView {
         let tap = UITapGestureRecognizer(target: self, action: #selector(didTapOnLabelView(_:)))
         
         let view = DAIconLabelView()
-        view.iconPadding = 8
+        view.iconPadding = Layout.defaultPadding
         view.iconSize = Layout.textAttachmentBounds.size
         view.isUserInteractionEnabled = true
         view.addGestureRecognizer(tap)

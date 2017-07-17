@@ -10,8 +10,6 @@ import UIKit
 
 class ItemBasicView: UIView {
     
-    private static let padding: CGFloat = 8
-    
     private var costLabel = DALabel(style: .subtitle)
     private var availabilityLabel = DALabel(style: .subtitle)
     private var typeImageView = UIImageView()
@@ -81,11 +79,11 @@ class ItemBasicView: UIView {
         addConstraints()
     }
     private func addConstraints() {
-        let padding = ItemBasicView.padding
+        let padding = Layout.defaultPadding
         
         let typeStack = UIStackView(arrangedSubviews: [typeImageView, typeLabel])
         typeStack.alignment = .top
-        typeStack.spacing = ItemBasicView.padding
+        typeStack.spacing = Layout.defaultPadding
         addSubview(typeStack)
         
         costLabel.snp.makeConstraints() { make in

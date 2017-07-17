@@ -11,10 +11,6 @@ import SnapKit
 
 class AbilityView: UIView {
     
-    private static let padding: CGFloat = 8
-    
-    // MARK: Views
-    
     private var nameLabel = DALabel(style: .title)
     private var specialsLabel = DALabel(style: .subtitle)
     private var abilityImageView = UIImageView()
@@ -25,14 +21,14 @@ class AbilityView: UIView {
         let sv = TypeKVStackView()
         sv.axis = .vertical
         sv.distribution = .fillEqually
-        sv.spacing = AbilityView.padding
+        sv.spacing = Layout.defaultPadding
         return sv
     }()
     private var dataStackView: DataKVStackView = {
         let sv = DataKVStackView()
         sv.axis = .vertical
         sv.distribution = .fillProportionally
-        sv.spacing = AbilityView.padding
+        sv.spacing = Layout.defaultPadding
         return sv
     }()
     
@@ -40,7 +36,7 @@ class AbilityView: UIView {
         let sv = UIStackView()
         sv.axis = .vertical
         sv.distribution = .fillProportionally
-        sv.spacing = AbilityView.padding
+        sv.spacing = Layout.defaultPadding
         return sv
     }()
     private var modifierLabels = [DALabel]()
@@ -49,7 +45,7 @@ class AbilityView: UIView {
         let sv = UIStackView()
         sv.axis = .vertical
         sv.distribution = .fillProportionally
-        sv.spacing = AbilityView.padding
+        sv.spacing = Layout.defaultPadding
         return sv
     }()
     private var cooldownView = KeyValueView()
@@ -204,7 +200,7 @@ class AbilityView: UIView {
         
         imageStackView.u0_addArrangedSubviews(views: [abilityImageView, typeStackView])
         imageStackView.alignment = .top
-        imageStackView.spacing = AbilityView.padding
+        imageStackView.spacing = Layout.defaultPadding
         
         descriptionLabel.numberOfLines = 0
         
@@ -228,7 +224,7 @@ class AbilityView: UIView {
     }
     
     private func addConstraints() {
-        let padding = AbilityView.padding
+        let padding = Layout.defaultPadding
         
         nameLabel.snp.makeConstraints() { make in
             make.left.top.equalTo(self).inset(padding)

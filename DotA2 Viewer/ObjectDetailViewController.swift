@@ -20,7 +20,7 @@ class ObjectDetailViewController: UIViewController, ObjectHeaderViewDelegate {
     
     public var headerTopLayout: Constraint?
     
-    public let titleLabel = DAMainLabel(style: .title)
+    public let titleLabel = DALabel(style: .title)
     
     override func viewDidLoad() {
         super.viewDidLoad()

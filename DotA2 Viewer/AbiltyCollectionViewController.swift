@@ -41,9 +41,9 @@ class AbilityCollectionViewController: UIViewController, UICollectionViewDataSou
         pageControl.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: controlHeight)
         pageControl.autoresizingMask = [.flexibleWidth]
         
-        pageControl.radius = 5
+        pageControl.radius = Layout.pageControlRadius
         pageControl.inactiveTransparency = -1
-        pageControl.borderWidth = 1
+        pageControl.borderWidth = Layout.pageControlBorderWidth
         pageControl.tintColor = Colours.secondaryColour
         
         view.addSubview(collectionView)

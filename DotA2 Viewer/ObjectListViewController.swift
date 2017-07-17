@@ -15,7 +15,7 @@ class ObjectListViewController: UIViewController, UITableViewDataSource, UISearc
     
     private(set) var tableView = DAMainTableView()
     
-    private var titleView = DAMainLabel(style: .title)
+    private var titleView = DALabel(style: .title)
     public var titleName: String? {
         didSet {
             titleView.text = titleName

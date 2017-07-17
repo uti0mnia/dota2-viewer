@@ -63,10 +63,10 @@ class RecipeBuildView: UIStackView {
     private func commonInit() {
         axis = .vertical
         distribution = .fillProportionally
-        spacing = 8
+        spacing = Layout.defaultPadding
         
         recipeStackView.distribution = .fillEqually
-        recipeStackView.spacing = 8
+        recipeStackView.spacing = Layout.defaultPadding
         
         u0_addArrangedSubviews(views: [topLabel, recipeStackView])
     }

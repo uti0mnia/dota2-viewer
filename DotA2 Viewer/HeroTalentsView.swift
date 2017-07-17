@@ -55,7 +55,7 @@ class HeroTalentsView: UIStackView {
     private func commonInit() {
         axis = .vertical
         distribution = .fillProportionally
-        spacing = 8
+        spacing = Layout.defaultPadding
         
         let topStack = UIStackView()
         topStack.axis = .vertical

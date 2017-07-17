@@ -10,7 +10,7 @@ import UIKit
 
 class DATitleStackView: UIStackView {
     
-    private var label = DAMainLabel(style: .large)
+    private var label = DALabel(style: .subtitle)
     private weak var currentSubview: UIView?
     
     public var title: String? {

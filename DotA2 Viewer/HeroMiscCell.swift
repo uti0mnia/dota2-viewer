@@ -46,12 +46,12 @@ class HeroMiscCell: UITableViewCell {
         contentView.u0_addSubviews([mainLabel, subLabel])
         
         mainLabel.snp.makeConstraints() { make in
-            make.left.top.right.equalTo(contentView).inset(8)
-            make.bottom.equalTo(subLabel.snp.top).offset(-8)
+            make.left.top.right.equalTo(contentView).inset(Layout.defaultPadding)
+            make.bottom.equalTo(subLabel.snp.top).offset(-Layout.defaultPadding)
         }
         
         subLabel.snp.makeConstraints() { make in
-            make.left.bottom.right.equalTo(contentView).inset(8)
+            make.left.bottom.right.equalTo(contentView).inset(Layout.defaultPadding)
         }
         
     }

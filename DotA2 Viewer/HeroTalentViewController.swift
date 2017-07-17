@@ -29,7 +29,7 @@ class HeroTalentViewController: UIViewController {
         
         view.addSubview(scrollView)
         scrollView.snp.makeConstraints() { make in
-            make.left.top.right.bottom.equalTo(view).inset(8)
+            make.left.top.right.bottom.equalTo(view).inset(Layout.defaultPadding)
         }
         
         scrollView.addSubview(heroTalentsView)

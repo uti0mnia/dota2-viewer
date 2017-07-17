@@ -48,12 +48,12 @@ class RecipeView: UIView {
         buildsFromView.topLabelText = "Builds From"
         
         buildsIntoView.snp.makeConstraints() { make in
-            make.left.top.right.equalTo(self).inset(8)
-            make.bottom.equalTo(buildsFromView.snp.top).offset(-8)
+            make.left.top.right.equalTo(self).inset(Layout.defaultPadding)
+            make.bottom.equalTo(buildsFromView.snp.top).offset(-Layout.defaultPadding)
         }
         
         buildsFromView.snp.makeConstraints() { make in
-            make.left.bottom.right.equalTo(self).inset(8)
+            make.left.bottom.right.equalTo(self).inset(Layout.defaultPadding)
         }
     }
 }

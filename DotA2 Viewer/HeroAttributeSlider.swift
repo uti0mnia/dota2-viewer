@@ -10,8 +10,6 @@ import UIKit
 
 class HeroAttributeSlider: UISlider {
     
-    public static let preferedHeight: CGFloat = 44
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
