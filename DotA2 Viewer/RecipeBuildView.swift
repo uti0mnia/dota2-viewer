@@ -18,8 +18,13 @@ class RecipeBuildView: UIStackView {
             recipeParts.forEach({ $0.removeFromSuperview() })
             topLabel.isHidden = true
             
-            guard let itemNames = itemNames, itemNames.count > 0 else {
+            guard var itemNames = itemNames, itemNames.count > 0 else {
                 return
+            }
+            
+            if let index = itemNames.index(of: "Recipe") {
+                let recipe = itemNames.remove(at: index)
+                itemNames.append(recipe)
             }
             
             topLabel.isHidden = false
