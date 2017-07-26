@@ -39,6 +39,7 @@ class ItemBasicViewController: UIViewController, RecipeBuildViewDelegate {
     
     private func commonInit() {
         basicView.setDelegateForRecipeView(self)
+        scrollView.alwaysBounceVertical = true
         
         view.addSubview(scrollView)
         scrollView.snp.makeConstraints() { make in
