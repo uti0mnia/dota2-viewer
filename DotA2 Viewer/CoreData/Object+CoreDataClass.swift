@@ -23,7 +23,15 @@ public class Object: NSManagedObject {
         return name.replacingOccurrences(of: ":", with: "_") + ".png"
     }
     
+    public var thumbnailName: String {
+        return name.replacingOccurrences(of: ":", with: "_") + "_thumbnail.png"
+    }
+    
     public static func imageNameFrom(_ name: String) -> String {
         return name.replacingOccurrences(of: ":", with: "_") + ".png"
+    }
+    
+    public static func thumbnailImageNameFrom(_ name: String) -> String {
+        return name.replacingOccurrences(of: ":", with: "_") + "_thumbnail.png"
     }
 }

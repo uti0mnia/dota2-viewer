@@ -82,17 +82,17 @@ class ObjectListViewController: UIViewController, UITableViewDataSource, UISearc
     public func configure(cell: DAMainTableViewCell, atIndexPath indexPath: IndexPath) {
         let obj = fetchedResultsController.object(at: indexPath)
         cell.mainLabel.text = obj.name
-        
-        DispatchQueue.global(qos: .userInteractive).async {
-            let image = UIImage(named: obj.imageName)
+        cell.circleImageView.image = UIImage(named: obj.thumbnailName)
+        //DispatchQueue.global(qos: .userInteractive).async {
+          //  let image = UIImage(named: obj.thumbnailName)
             
-            DispatchQueue.main.async {
-                if self.tableView.indexPathsForVisibleRows?.contains(indexPath) ?? false {
-                    let cell = self.tableView.cellForRow(at: indexPath) as! DAMainTableViewCell
-                    cell.circleImageView.image = image
-                }
-            }
-        }
+            //DispatchQueue.main.async {
+              //  if self.tableView.indexPathsForVisibleRows?.contains(indexPath) ?? false {
+                //    let cell = self.tableView.cellForRow(at: indexPath) as! DAMainTableViewCell
+                  //  cell.circleImageView.image = image
+            //    }
+          //  }
+        //}
     }
     
     // MARK: - UITableViewDataSource

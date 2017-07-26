@@ -10,30 +10,27 @@ import UIKit
 import ChameleonFramework
 
 class DARoundedImageView: UIImageView {
-    // MARK - Properties
-    fileprivate var radius: CGFloat!
+    public var radius: CGFloat = 6
     
-    init(frame: CGRect = CGRect(), radius: CGFloat = 2) {
-        self.radius = radius
+    override init(frame: CGRect) {
         super.init(frame: frame)
-        setup()
+        
+        commonInit()
     }
     
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
+        
+        commonInit()
     }
     
-    func setup() {
+    private func commonInit() {
         // set properties
         self.contentMode = .scaleAspectFill
         self.clipsToBounds = true
         
         // set the corners
         self.layer.cornerRadius = radius
-        
-        // set the contour to be white
-        self.layer.borderWidth = 0
-        self.layer.borderColor = Colours.secondaryColour.cgColor
     }
 
 }

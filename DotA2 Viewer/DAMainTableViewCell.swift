@@ -26,7 +26,7 @@ class DAMainTableViewCell: UITableViewCell {
         return sv
     }()
     
-    public var circleImageView = DARoundedImageView()
+    public var circleImageView = DARoundedImageView(frame: CGRect.zero)
     public var mainLabel = DALabel(style: .title)
     public var detailLabel = DALabel(style: .subtitle)
     
