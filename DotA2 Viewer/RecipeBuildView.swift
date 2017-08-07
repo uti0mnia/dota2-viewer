@@ -86,8 +86,9 @@ class RecipeBuildView: UIStackView {
     }
     
     @objc private func didTapOnRecipePart(_ sender: UITapGestureRecognizer) {
+        assert(sender.view is RecipePart, "tap gesture not configured properly.")
+        
         guard let recipePart = sender.view as? RecipePart else {
-            print("tap gesture not configured properly")
             return
         }
         

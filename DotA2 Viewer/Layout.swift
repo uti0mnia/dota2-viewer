@@ -35,4 +35,6 @@ class Layout {
     
     public static let pageControlBorderWidth: CGFloat = 1
     
+    public static let roundedRectangleRadius: CGFloat = 6
+    
 }

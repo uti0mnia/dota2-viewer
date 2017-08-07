@@ -9,6 +9,7 @@
 import UIKit
 
 class DAMainTableViewCell: UITableViewCell {
+    
     private var fullSV: UIStackView = {
         let sv = UIStackView()
         sv.axis = .horizontal

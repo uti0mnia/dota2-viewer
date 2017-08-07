@@ -9,13 +9,16 @@
 import UIKit
 
 class RecipePart: UIImageView {
+    
+    private static let borderWidth: CGFloat = 1
+    
     public var itemName: String? {
         didSet {
             guard let itemName = itemName else {
                 return
             }
             
-            self.image = UIImage(named: Item.imageNameFrom(itemName))
+            self.image = UIImage(named: Item.thumbnailImageNameFrom(itemName))
         }
     }
     
@@ -37,6 +40,10 @@ class RecipePart: UIImageView {
     
     private func commonInit() {
         contentMode = .scaleAspectFit
+        layer.cornerRadius = Layout.roundedRectangleRadius
+        
+        // layer.borderColor = Colours.secondaryColour.cgColor
+        // layer.borderWidth = RecipePart.borderWidth
     }
     
 }

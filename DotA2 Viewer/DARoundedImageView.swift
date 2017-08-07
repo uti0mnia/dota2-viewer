@@ -10,7 +10,6 @@ import UIKit
 import ChameleonFramework
 
 class DARoundedImageView: UIImageView {
-    public var radius: CGFloat = 6
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -30,7 +29,7 @@ class DARoundedImageView: UIImageView {
         self.clipsToBounds = true
         
         // set the corners
-        self.layer.cornerRadius = radius
+        self.layer.cornerRadius = Layout.roundedRectangleRadius
     }
 
 }
