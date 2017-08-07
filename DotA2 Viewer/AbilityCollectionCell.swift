@@ -27,7 +27,7 @@ class AbilityCollectionCell: UICollectionViewCell {
                 let specials = ability.specialIcons
                 
                 DispatchQueue.main.async {
-                    self.abilityView.abilityImage =  image
+                    self.abilityView.abilityImageView.image =  image
                     self.abilityView.specials = specials
                 }
             }

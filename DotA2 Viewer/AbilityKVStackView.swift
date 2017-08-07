@@ -31,7 +31,7 @@ class AbilityKVStackView: UIStackView {
             for index in 0..<values.count {
                 let view = kvViews[index]
                 write(modifiableValue: values[index], to: view)
-                self.addArrangedSubview(view)
+                addArrangedSubview(view)
             }
             
         }
@@ -54,6 +54,7 @@ class TypeKVStackView: AbilityKVStackView {
         let view = KeyValueView()
         view.isVertical = true
         view.keyLabel.textAlignment = .left
+        view.keyLabel.font = Fonts.boldText
         view.valueLabel.textAlignment = .left
         return view
     }
@@ -63,6 +64,7 @@ class DataKVStackView: AbilityKVStackView {
     override func createKVView() -> KeyValueView {
         let view = KeyValueView()
         view.keyLabel.textAlignment = .left
+        view.keyLabel.font = Fonts.boldText
         view.valueLabel.textAlignment = .right
         return view
     }

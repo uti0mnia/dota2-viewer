@@ -13,21 +13,17 @@ class KeyValueView: UIView {
     
     private(set) var keyLabel = DALabel(style: .text)
     private(set) var valueLabel = DALabel(style: .text)
-    private var stackView: UIStackView = {
-        let sv = UIStackView()
-        
-        sv.axis = .horizontal
-        sv.alignment = .top
-        sv.distribution = .fill
-        sv.translatesAutoresizingMaskIntoConstraints = false
-        
-        return sv
-    }()
+    
     public var isVertical = false {
         didSet {
-            stackView.axis = isVertical ? .vertical : .horizontal
+            if isVertical {
+                setVerticalConstraints()
+            } else{
+                setHorizontalConstraints()
+            }
         }
     }
+    
     public var isEmpty: Bool {
         return keyLabel.text == nil && valueLabel.text == nil
     }
@@ -45,15 +41,43 @@ class KeyValueView: UIView {
     }
     
     private func commonInit() {
+        keyLabel.numberOfLines = 0
         valueLabel.numberOfLines = 0
-        // TODO: Does this really do anything?
-        valueLabel.setContentHuggingPriority(251, for: .horizontal)
-        valueLabel.setContentHuggingPriority(251, for: .vertical)
         
-        addSubview(stackView)
-        stackView.u0_addArrangedSubviews(views: [keyLabel, valueLabel])
-        stackView.snp.makeConstraints() { make in
-            make.left.top.right.bottom.equalTo(self).priority(999)
+        addSubview(keyLabel)
+        addSubview(valueLabel)
+        
+        keyLabel.setContentCompressionResistancePriority(UILayoutPriorityDefaultLow, for: .horizontal)
+        setHorizontalConstraints()
+    }
+    
+    private func setVerticalConstraints() {
+        keyLabel.snp.removeConstraints()
+        valueLabel.snp.removeConstraints()
+        
+        keyLabel.snp.makeConstraints() { make in
+            make.left.top.right.equalToSuperview()
+        }
+        
+        valueLabel.snp.makeConstraints() { make in
+            make.left.bottom.right.equalToSuperview()
+            make.top.equalTo(keyLabel.snp.bottom)
+        }
+    }
+    
+    private func setHorizontalConstraints() {
+        keyLabel.snp.removeConstraints()
+        valueLabel.snp.removeConstraints()
+        
+        keyLabel.snp.makeConstraints() { make in
+            make.left.top.equalToSuperview()
+            make.bottom.lessThanOrEqualToSuperview()
+            make.right.lessThanOrEqualTo(valueLabel.snp.left).offset(-Layout.defaultPadding)
+        }
+        
+        valueLabel.snp.makeConstraints() { make in
+            make.top.right.equalToSuperview()
+            make.bottom.lessThanOrEqualToSuperview()
         }
     }
     

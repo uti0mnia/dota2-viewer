@@ -13,14 +13,24 @@ class AbilityView: UIView {
     
     private var nameLabel = DALabel(style: .title)
     private var specialsLabel = DALabel(style: .subtitle)
-    private var abilityImageView = UIImageView()
+    private(set) var abilityImageView = UIImageView() {
+        didSet {
+            if abilityImageView.image == nil {
+                abilityImageView.removeFromSuperview()
+            } else if abilityImageView.superview == nil {
+                imageStackView.insertArrangedSubview(abilityImageView, at: 0)
+            }
+        }
+    }
     private var descriptionLabel = DALabel(style: .text)
     
+    // This is for the stack view that holds the ability image and the TypeStackView.
+    // God I need to get better with names.
     private var imageStackView = UIStackView()
     private var typeStackView: TypeKVStackView = {
         let sv = TypeKVStackView()
         sv.axis = .vertical
-        sv.distribution = .fillEqually
+        sv.distribution = .fillProportionally
         sv.spacing = Layout.defaultPadding
         return sv
     }()
@@ -67,8 +77,6 @@ class AbilityView: UIView {
         return finalString
     }()
     
-    // MARK: - Variables
-    
     public var name: String? {
         didSet {
             nameLabel.text = name
@@ -77,17 +85,6 @@ class AbilityView: UIView {
     public var specials: NSAttributedString? {
         didSet {
             specialsLabel.attributedText = specials
-        }
-    }
-    public var abilityImage: UIImage? {
-        didSet {
-            abilityImageView.removeFromSuperview()
-            
-            abilityImageView.image = abilityImage
-            
-            if abilityImage != nil {
-                imageStackView.insertArrangedSubview(abilityImageView, at: 0)
-            }
         }
     }
     public var types: [ModifiableValue]? {
@@ -197,9 +194,10 @@ class AbilityView: UIView {
         
         abilityImageView.contentMode = .scaleAspectFit
         abilityImageView.clipsToBounds = true
+        abilityImageView.setContentHuggingPriority(UILayoutPriorityDefaultHigh, for: .horizontal)
         
         imageStackView.u0_addArrangedSubviews(views: [abilityImageView, typeStackView])
-        imageStackView.alignment = .top
+        imageStackView.alignment = .center
         imageStackView.spacing = Layout.defaultPadding
         
         descriptionLabel.numberOfLines = 0

@@ -15,11 +15,11 @@ class ObjectListViewController: UIViewController, UITableViewDataSource, UISearc
     
     private(set) var tableView = DAMainTableView()
     
-    private var titleView = DALabel(style: .title)
+    private var titleLabel = DALabel(style: .title)
     public var titleName: String? {
         didSet {
-            titleView.text = titleName
-            titleView.sizeToFit()
+            titleLabel.text = titleName
+            titleLabel.sizeToFit()
         }
     }
     
@@ -29,7 +29,7 @@ class ObjectListViewController: UIViewController, UITableViewDataSource, UISearc
     private(set) var fetchedResultsController: NSFetchedResultsController<Object>!
     
     override func willMove(toParentViewController parent: UIViewController?) {
-        parent?.navigationItem.titleView = titleView
+        parent?.navigationItem.titleView = titleLabel
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -45,6 +45,8 @@ class ObjectListViewController: UIViewController, UITableViewDataSource, UISearc
     }
     
     private func commonInit() {
+        titleLabel.u0_addWhiteTextShadow()
+        
         let request = NSFetchRequest<Object>(entityName: entity)
         let sort = NSSortDescriptor(key: "name", ascending: true)
         request.sortDescriptors = [sort]
