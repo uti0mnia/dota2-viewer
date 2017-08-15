@@ -1033,8 +1033,8 @@
 		C9A8E77F1F284F8000B25FD9 /* Jakiro.png in Resources */ = {isa = PBXBuildFile; fileRef = C9A8E69D1F284F8000B25FD9 /* Jakiro.png */; };
 		C9A8E7801F284F8000B25FD9 /* Juggernaut_thumbnail.png in Resources */ = {isa = PBXBuildFile; fileRef = C9A8E69E1F284F8000B25FD9 /* Juggernaut_thumbnail.png */; };
 		C9A8E7811F284F8000B25FD9 /* Juggernaut.png in Resources */ = {isa = PBXBuildFile; fileRef = C9A8E69F1F284F8000B25FD9 /* Juggernaut.png */; };
-		C9A8E7821F284F8000B25FD9 /* Keeper Of The Light_thumbnail.png in Resources */ = {isa = PBXBuildFile; fileRef = C9A8E6A01F284F8000B25FD9 /* Keeper Of The Light_thumbnail.png */; };
-		C9A8E7831F284F8000B25FD9 /* Keeper Of The Light.png in Resources */ = {isa = PBXBuildFile; fileRef = C9A8E6A11F284F8000B25FD9 /* Keeper Of The Light.png */; };
+		C9A8E7821F284F8000B25FD9 /* Keeper of the Light_thumbnail.png in Resources */ = {isa = PBXBuildFile; fileRef = C9A8E6A01F284F8000B25FD9 /* Keeper of the Light_thumbnail.png */; };
+		C9A8E7831F284F8000B25FD9 /* Keeper of the Light.png in Resources */ = {isa = PBXBuildFile; fileRef = C9A8E6A11F284F8000B25FD9 /* Keeper of the Light.png */; };
 		C9A8E7841F284F8000B25FD9 /* Kunkka_thumbnail.png in Resources */ = {isa = PBXBuildFile; fileRef = C9A8E6A21F284F8000B25FD9 /* Kunkka_thumbnail.png */; };
 		C9A8E7851F284F8000B25FD9 /* Kunkka.png in Resources */ = {isa = PBXBuildFile; fileRef = C9A8E6A31F284F8000B25FD9 /* Kunkka.png */; };
 		C9A8E7861F284F8000B25FD9 /* Legion Commander_thumbnail.png in Resources */ = {isa = PBXBuildFile; fileRef = C9A8E6A41F284F8000B25FD9 /* Legion Commander_thumbnail.png */; };
@@ -2257,8 +2257,8 @@
 		C9A8E69D1F284F8000B25FD9 /* Jakiro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Jakiro.png; path = heroes/Jakiro.png; sourceTree = "<group>"; };
 		C9A8E69E1F284F8000B25FD9 /* Juggernaut_thumbnail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Juggernaut_thumbnail.png; path = heroes/Juggernaut_thumbnail.png; sourceTree = "<group>"; };
 		C9A8E69F1F284F8000B25FD9 /* Juggernaut.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Juggernaut.png; path = heroes/Juggernaut.png; sourceTree = "<group>"; };
-		C9A8E6A01F284F8000B25FD9 /* Keeper Of The Light_thumbnail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Keeper Of The Light_thumbnail.png"; path = "heroes/Keeper Of The Light_thumbnail.png"; sourceTree = "<group>"; };
-		C9A8E6A11F284F8000B25FD9 /* Keeper Of The Light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Keeper Of The Light.png"; path = "heroes/Keeper Of The Light.png"; sourceTree = "<group>"; };
+		C9A8E6A01F284F8000B25FD9 /* Keeper of the Light_thumbnail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Keeper of the Light_thumbnail.png"; path = "heroes/Keeper of the Light_thumbnail.png"; sourceTree = "<group>"; };
+		C9A8E6A11F284F8000B25FD9 /* Keeper of the Light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Keeper of the Light.png"; path = "heroes/Keeper of the Light.png"; sourceTree = "<group>"; };
 		C9A8E6A21F284F8000B25FD9 /* Kunkka_thumbnail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Kunkka_thumbnail.png; path = heroes/Kunkka_thumbnail.png; sourceTree = "<group>"; };
 		C9A8E6A31F284F8000B25FD9 /* Kunkka.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Kunkka.png; path = heroes/Kunkka.png; sourceTree = "<group>"; };
 		C9A8E6A41F284F8000B25FD9 /* Legion Commander_thumbnail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Legion Commander_thumbnail.png"; path = "heroes/Legion Commander_thumbnail.png"; sourceTree = "<group>"; };
@@ -3346,8 +3346,8 @@
 				C9A8E69D1F284F8000B25FD9 /* Jakiro.png */,
 				C9A8E69E1F284F8000B25FD9 /* Juggernaut_thumbnail.png */,
 				C9A8E69F1F284F8000B25FD9 /* Juggernaut.png */,
-				C9A8E6A01F284F8000B25FD9 /* Keeper Of The Light_thumbnail.png */,
-				C9A8E6A11F284F8000B25FD9 /* Keeper Of The Light.png */,
+				C9A8E6A01F284F8000B25FD9 /* Keeper of the Light_thumbnail.png */,
+				C9A8E6A11F284F8000B25FD9 /* Keeper of the Light.png */,
 				C9A8E6A21F284F8000B25FD9 /* Kunkka_thumbnail.png */,
 				C9A8E6A31F284F8000B25FD9 /* Kunkka.png */,
 				C9A8E6A41F284F8000B25FD9 /* Legion Commander_thumbnail.png */,
@@ -4786,7 +4786,7 @@
 				C9A8E4611F284EBB00B25FD9 /* Blades of Attack.png in Resources */,
 				C9A8E4D01F284EBB00B25FD9 /* Iron Talon_thumbnail.png in Resources */,
 				C94B16FA1E01C090008BF226 /* Infernal Blade_Doom.png in Resources */,
-				C9A8E7831F284F8000B25FD9 /* Keeper Of The Light.png in Resources */,
+				C9A8E7831F284F8000B25FD9 /* Keeper of the Light.png in Resources */,
 				C9A8E4D31F284EBB00B25FD9 /* Javelin.png in Resources */,
 				C9A8E76E1F284F8000B25FD9 /* Ember Spirit_thumbnail.png in Resources */,
 				C94B16331E01C090008BF226 /* Blink Strike_Riki.png in Resources */,
@@ -4869,7 +4869,7 @@
 				C94B17DE1E01C090008BF226 /* Stop Sun Ray_Phoenix.png in Resources */,
 				C9A8E4F61F284EBB00B25FD9 /* Null Talisman_thumbnail.png in Resources */,
 				C9A8E53D1F284EBC00B25FD9 /* Shiva's Guard.png in Resources */,
-				C9A8E7821F284F8000B25FD9 /* Keeper Of The Light_thumbnail.png in Resources */,
+				C9A8E7821F284F8000B25FD9 /* Keeper of the Light_thumbnail.png in Resources */,
 				C94B1A371E01C477008BF226 /* coins.png in Resources */,
 				C94B17671E01C090008BF226 /* Primal Roar_Beastmaster.png in Resources */,
 				C9A8E75B1F284F8000B25FD9 /* Dark Seer.png in Resources */,
