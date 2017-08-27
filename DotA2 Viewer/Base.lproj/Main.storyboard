@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F2073" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="4iT-JB-6iD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="4iT-JB-6iD">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--DetailVC-->
+        <!--View Controller-->
         <scene sceneID="EZB-Ee-Ng9">
             <objects>
-                <viewController storyboardIdentifier="DetailVC" id="ifV-oI-FyM" customClass="DADetailVC" customModule="DotA2_Assistant" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailVC" id="ifV-oI-FyM" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="71q-ul-khF"/>
                         <viewControllerLayoutGuide type="bottom" id="bdm-5m-Ymp"/>
@@ -50,11 +50,11 @@
                         <viewControllerLayoutGuide type="bottom" id="WO6-Zn-fWE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="2lC-T3-oy4">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jXN-rz-piJ" customClass="DATabBar" customModule="DotA2_Assistant" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="554" width="375" height="49"/>
+                                <rect key="frame" x="0.0" y="618" width="375" height="49"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <items>
                                     <tabBarItem title="Heroes" image="Heroes" id="L5m-mH-MO1"/>
@@ -72,7 +72,6 @@
                             <constraint firstItem="WO6-Zn-fWE" firstAttribute="top" secondItem="jXN-rz-piJ" secondAttribute="bottom" id="iYR-Bu-2tJ"/>
                         </constraints>
                     </view>
-                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="Master" id="ZbA-zi-RVb">
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="AdG-vF-bVg">
                             <color key="tintColor" red="1" green="0.080182865994246288" blue="0.032913104229188028" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -92,10 +91,10 @@
         <!--Heroes-->
         <scene sceneID="QyQ-Dn-b98">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9FL-AS-YTq" customClass="DANavigationController" customModule="DotA2_Assistant" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9FL-AS-YTq" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Heroes" id="NUl-ZW-oRZ"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="RnW-Iu-fm3">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="RnW-Iu-fm3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.87139734455958551" green="0.03687937124292797" blue="0.051371898444097563" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -112,9 +111,9 @@
         <!--Navigation Controller-->
         <scene sceneID="mTk-dz-dFN">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0xi-1T-PpC" customClass="DANavigationController" customModule="DotA2_Assistant" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0xi-1T-PpC" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="w5g-ZC-18e">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="w5g-ZC-18e">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.88532221502590669" green="0.0" blue="0.16688224116154954" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

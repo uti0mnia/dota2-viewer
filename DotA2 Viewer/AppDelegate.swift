@@ -26,8 +26,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
             splitViewController.preferredDisplayMode = .allVisible // on ipad the master is opened by default
         }
         
-        UIApplication.shared.statusBarStyle = .lightContent
-        
         return true
     }
 
@@ -136,6 +134,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     }
     
     // MARK: - UISplitViewControllerDelegate
+    
     func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
         return true
     }

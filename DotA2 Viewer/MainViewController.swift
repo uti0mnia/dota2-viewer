@@ -27,7 +27,7 @@ class MainViewController: UIViewController, HeroListViewControllerDelegate, Item
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = UIColor.flatBlackDark
+        view.backgroundColor = Colours.primaryColour
         view.addSubview(contentView)
         
         // Find a better way to load this.
@@ -41,12 +41,20 @@ class MainViewController: UIViewController, HeroListViewControllerDelegate, Item
         navigationItem.backBarButtonItem = barButton
         
         contentView.snp.makeConstraints() { make in
-            make.left.top.right.equalTo(view)
+            make.left.right.equalTo(view)
+            make.top.equalTo(topLayoutGuide.snp.bottom)
             contentViewBottomConstraint = make.bottom.equalTo(tabBar.snp.top).constraint
         }
+        contentView.backgroundColor = Colours.primaryColour
         
         heroListViewController.delegate = self
         itemListViewController.delegate = self
+        
+        navigationController?.navigationBar.backgroundColor = UIColor.clear
+        
+        // Need to figure our why I need this.
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: .UIKeyboardDidShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: .UIKeyboardWillHide, object: nil)

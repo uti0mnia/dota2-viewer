@@ -34,10 +34,10 @@ class DAMainTableView: UITableView {
         tableHeaderView = searchBar
         
         // Set the colour.
-        backgroundColor = UIColor.flatBlack
-        sectionIndexColor = UIColor.flatRed
-        sectionIndexTrackingBackgroundColor = UIColor.flatBlack
-        sectionIndexBackgroundColor = UIColor.flatBlack
+        backgroundColor = Colours.primaryColour
+        sectionIndexColor = Colours.secondaryColour
+        sectionIndexTrackingBackgroundColor = Colours.primaryColour
+        sectionIndexBackgroundColor = Colours.primaryColour
     }
 
 }

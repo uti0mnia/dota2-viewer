@@ -25,7 +25,7 @@ class ObjectDetailViewController: UIViewController, ObjectHeaderViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = UIColor.flatBlackDark
+        view.backgroundColor = Colours.primaryColour
         
         guard let objectHeaderView = objectHeaderView else {
             return
@@ -42,10 +42,12 @@ class ObjectDetailViewController: UIViewController, ObjectHeaderViewDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+//        print(navigationController?.navigationBar.frame)
         
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.isTranslucent = true
+//        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+//        navigationController?.navigationBar.shadowImage = UIImage()
+//        navigationController?.navigationBar.isTranslucent = true
+//        navigationController?.navigationBar.backgroundColor = Colours.primaryColour
     }
     
     private func addConstraints() {
