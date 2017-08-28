@@ -38,7 +38,8 @@ class HeroAttributeView: UIView {
         return sv
     }()
     
-    private var primaryAttributeLayer: CALayer!
+    private var primaryAttributeView = UIView()
+    private var primaryAttributeLayer = CALayer()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -86,11 +87,28 @@ class HeroAttributeView: UIView {
         
         slider.addTarget(self, action: #selector(sliderDidChangeValue), for: .valueChanged)
         
-        primaryAttributeLayer = CAShapeLayer()
         primaryAttributeLayer.backgroundColor = UIColor.clear.cgColor
-        primaryAttributeLayer.frame = strengthIV.frame
-        primaryAttributeLayer.borderWidth = 3
-        primaryAttributeLayer.borderColor = UIColor.yellow.cgColor      // TODO: Change to gold.
+        primaryAttributeLayer.borderWidth = Layout.primaryAttributeBorderWidth
+        primaryAttributeLayer.borderColor = Colours.primaryAttributeBorderColour.cgColor
+        
+        
+
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        guard let imageSize = strengthIV.image?.size else {
+            return
+        }
+        
+        let offset = Layout.primaryAttributeBorderWidth
+        let x = (strengthIV.bounds.width - imageSize.width) / 2 - offset
+        let y = (strengthIV.bounds.height - imageSize.height) / 2 - offset
+        let width = imageSize.width + offset
+        let height = imageSize.height + offset
+        primaryAttributeLayer.frame = CGRect(x: x, y: y, width: width, height: height)
+        primaryAttributeLayer.cornerRadius = imageSize.height / 2
     }
     
     private func addConstraints() {
@@ -123,7 +141,7 @@ class HeroAttributeView: UIView {
     
     private func addPrimaryAttributeMask(to imageView: UIImageView) {
         primaryAttributeLayer.removeFromSuperlayer()
-        imageView.layer.addSublayer(primaryAttributeLayer)
+        imageView.layer.insertSublayer(primaryAttributeLayer, at: 0)
     }
     
     public func resetSlider(animated: Bool) {

@@ -43,4 +43,6 @@ class Layout {
     
     public static let segmentControlIndicatorRadius: CGFloat = 5
     
+    public static let primaryAttributeBorderWidth: CGFloat = 2
+    
 }

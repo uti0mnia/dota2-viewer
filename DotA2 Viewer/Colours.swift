@@ -45,4 +45,8 @@ class Colours {
     public static var segmentedControlBackground: UIColor {
         return highlightColour
     }
+    
+    public static var primaryAttributeBorderColour: UIColor {
+        return UIColor(hexString: "#daa520")! // Gold
+    }
 }
