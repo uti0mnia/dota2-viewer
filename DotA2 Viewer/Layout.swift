@@ -37,4 +37,10 @@ class Layout {
     
     public static let roundedRectangleRadius: CGFloat = 6
     
+    public static let segmentControlHeight: CGFloat = 44
+    
+    public static let segmentControlCornerRadius: CGFloat = 5
+    
+    public static let segmentControlIndicatorRadius: CGFloat = 5
+    
 }

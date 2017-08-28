@@ -89,6 +89,7 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "$BUILT_PRODUCTS_DIR/BetterSegmentedControl/BetterSegmentedControl.framework"
   install_framework "$BUILT_PRODUCTS_DIR/CHIPageControl/CHIPageControl.framework"
   install_framework "$BUILT_PRODUCTS_DIR/CenteredCollectionView/CenteredCollectionView.framework"
   install_framework "$BUILT_PRODUCTS_DIR/ChameleonFramework/ChameleonFramework.framework"
@@ -97,6 +98,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/SwiftMessages/SwiftMessages.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "$BUILT_PRODUCTS_DIR/BetterSegmentedControl/BetterSegmentedControl.framework"
   install_framework "$BUILT_PRODUCTS_DIR/CHIPageControl/CHIPageControl.framework"
   install_framework "$BUILT_PRODUCTS_DIR/CenteredCollectionView/CenteredCollectionView.framework"
   install_framework "$BUILT_PRODUCTS_DIR/ChameleonFramework/ChameleonFramework.framework"

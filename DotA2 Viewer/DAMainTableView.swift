@@ -35,7 +35,7 @@ class DAMainTableView: UITableView {
         
         // Set the colour.
         backgroundColor = Colours.primaryColour
-        sectionIndexColor = Colours.secondaryColour
+        sectionIndexColor = Colours.highlightColour
         sectionIndexTrackingBackgroundColor = Colours.primaryColour
         sectionIndexBackgroundColor = Colours.primaryColour
     }

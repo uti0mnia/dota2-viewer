@@ -19,7 +19,7 @@ public class Modifier: ArrayItem {
         case 1:
             return Colours.modifierRed
         default:
-            return Colours.defaultTextColours
+            return Colours.defaultTextColour
         }
     }
 }

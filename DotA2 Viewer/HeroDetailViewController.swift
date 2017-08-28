@@ -8,6 +8,7 @@
 
 import UIKit
 import SnapKit
+import BetterSegmentedControl
 
 class HeroDetailViewController: ObjectDetailViewController, HeroHeaderViewDelegate {
     
@@ -23,6 +24,17 @@ class HeroDetailViewController: ObjectDetailViewController, HeroHeaderViewDelega
         return heroHeaderView
     }
     
+    private var heroSegmentControl = BetterSegmentedControl(frame: CGRect.zero,
+                                                            titles: ["Details", "Abilities", "Talents", "Misc"],
+                                                            index: 0,
+                                                            backgroundColor: Colours.primaryColour,
+                                                            titleColor: Colours.defaultTextColour,
+                                                            indicatorViewBackgroundColor: Colours.secondaryColour,
+                                                            selectedTitleColor: Colours.defaultTextColour)
+    override var segmentControl: BetterSegmentedControl {
+        return heroSegmentControl
+    }
+    
     private var heroHeaderView = HeroHeaderView()
     private var abilityCollectionViewController = AbilityCollectionViewController()
     private var basicViewController = HeroBasicViewController()
@@ -35,6 +47,13 @@ class HeroDetailViewController: ObjectDetailViewController, HeroHeaderViewDelega
         super.viewDidLoad()
         
         heroHeaderView.delegate = self
+        
+        DispatchQueue.main.async {
+            self.abilityCollectionViewController.loadViewIfNeeded()
+            self.basicViewController.loadViewIfNeeded()
+            self.miscViewController.loadViewIfNeeded()
+            self.talentViewController.loadViewIfNeeded()
+        }
     }
     
     private func updateView() {
@@ -54,6 +73,21 @@ class HeroDetailViewController: ObjectDetailViewController, HeroHeaderViewDelega
         swapChildViewController(to: basicViewController)
         currentTab = .basic
         
+    }
+    
+    override public func viewControllerForControlIndex(_ index: UInt) -> UIViewController? {
+        switch index {
+        case 0:
+            return basicViewController
+        case 1:
+            return abilityCollectionViewController
+        case 2:
+            return talentViewController
+        case 3:
+            return miscViewController
+        default:
+            return nil
+        }
     }
     
     // MARK: - HeroHeaderViewDelegate

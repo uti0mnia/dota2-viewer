@@ -5,11 +5,12 @@
 target 'DotA2 Assistant' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
-  pod 'Firebase/Core'
+  pod 'BetterSegmentedControl', '~> 0.8'
+  pod "CenteredCollectionView"
   pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
+  pod 'CHIPageControl', '~> 0.1.3'
+  pod 'Firebase/Core'
   pod 'Firebase/Database'
   pod 'SnapKit', '~> 3.2.0'
-  pod "CenteredCollectionView"
-  pod 'CHIPageControl', '~> 0.1.3'
   pod 'SwiftMessages'
 end

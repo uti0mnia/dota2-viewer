@@ -8,6 +8,7 @@
 
 import UIKit
 import SnapKit
+import BetterSegmentedControl
 
 class ObjectDetailViewController: UIViewController, ObjectHeaderViewDelegate {
     
@@ -18,6 +19,10 @@ class ObjectDetailViewController: UIViewController, ObjectHeaderViewDelegate {
     private var contentView = UIView()
     private var currentChildViewController: UIViewController?
     
+    public var segmentControl: BetterSegmentedControl {
+        return BetterSegmentedControl()
+    }
+    
     public var headerTopLayout: Constraint?
     
     public let titleLabel = DALabel(style: .title)
@@ -27,39 +32,48 @@ class ObjectDetailViewController: UIViewController, ObjectHeaderViewDelegate {
         
         view.backgroundColor = Colours.primaryColour
         
-        guard let objectHeaderView = objectHeaderView else {
-            return
-        }
-        
         titleLabel.textAlignment = .center
         navigationItem.titleView = titleLabel
         
-        view.addSubview(objectHeaderView)
         view.addSubview(contentView)
+        
+        segmentControl.addTarget(self, action: #selector(controlValueDidChange(_:)), for: .valueChanged)
+        segmentControl.titleFont = Fonts.subtitle
+        segmentControl.titleColor = Colours.secondaryColour
+        
+        segmentControl.selectedTitleColor = Colours.secondaryColour
+        segmentControl.selectedTitleFont = Fonts.subtitle.bold
+        
+        segmentControl.cornerRadius = Layout.segmentControlCornerRadius
+        segmentControl.indicatorViewBackgroundColor = Colours.segmentedControlBackground
+        view.addSubview(segmentControl)
+        
+        automaticallyAdjustsScrollViewInsets = false
         
         addConstraints()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-//        print(navigationController?.navigationBar.frame)
-        
-//        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-//        navigationController?.navigationBar.shadowImage = UIImage()
-//        navigationController?.navigationBar.isTranslucent = true
-//        navigationController?.navigationBar.backgroundColor = Colours.primaryColour
-    }
-    
     private func addConstraints() {
-        objectHeaderView?.snp.makeConstraints() { make in
-            // Lower priority in case of dragging size.
-            headerTopLayout = make.top.equalTo(topLayoutGuide.snp.bottom).constraint
-            make.left.right.equalTo(view)
-            make.bottom.equalTo(contentView.snp.top).priority(999)
+        
+        segmentControl.snp.makeConstraints() { make in
+            make.top.equalTo(topLayoutGuide.snp.bottom)
+            make.left.right.equalTo(view).inset(Layout.defaultPadding)
+            make.height.equalTo(Layout.segmentControlHeight)
+            make.bottom.equalTo(contentView.snp.top)
         }
         
         contentView.snp.makeConstraints() { make in
             make.left.bottom.right.equalTo(view)
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        do {
+            try segmentControl.setIndex(0, animated: false)
+        } catch {
+            print("Error setting segmentControl to 0 wtf: \(error.localizedDescription)")
         }
     }
     
@@ -100,5 +114,15 @@ class ObjectDetailViewController: UIViewController, ObjectHeaderViewDelegate {
         headerTopLayout?.update(offset: newOffset)
     }
     
+    @objc private func controlValueDidChange(_ control: BetterSegmentedControl) {
+        if let vc = viewControllerForControlIndex(control.index) {
+            swapChildViewController(to: vc)
+        }
+    }
+    
+    public func viewControllerForControlIndex(_ index: UInt) -> UIViewController? {
+        // For subclasses.
+        return nil
+    }
     
 }

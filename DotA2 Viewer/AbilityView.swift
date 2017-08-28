@@ -65,14 +65,14 @@ class AbilityView: UIView {
     private lazy var manaAttributedString: NSAttributedString = {
         let attachment = NSTextAttachment()
         attachment.image = UIImage(named: "mana")
-        let finalString = NSMutableAttributedString(string: "Mana", attributes: [NSFontAttributeName: Fonts.boldText])
+        let finalString = NSMutableAttributedString(string: "Mana", attributes: [NSFontAttributeName: Fonts.text.bold])
 //        finalString.append(NSAttributedString(attachment: attachment))
         return finalString
     }()
     private lazy var cooldownAttributedString: NSAttributedString = {
         let attachment = NSTextAttachment()
         attachment.image = UIImage(named: "cooldown")
-        let finalString = NSMutableAttributedString(string: "Cooldown", attributes: [NSFontAttributeName: Fonts.boldText])
+        let finalString = NSMutableAttributedString(string: "Cooldown", attributes: [NSFontAttributeName: Fonts.text.bold])
 //        finalString.append(NSAttributedString(attachment: attachment))
         return finalString
     }()

@@ -54,7 +54,7 @@ class TypeKVStackView: AbilityKVStackView {
         let view = KeyValueView()
         view.isVertical = true
         view.keyLabel.textAlignment = .left
-        view.keyLabel.font = Fonts.boldText
+        view.keyLabel.font = Fonts.text.bold
         view.valueLabel.textAlignment = .left
         return view
     }
@@ -64,7 +64,7 @@ class DataKVStackView: AbilityKVStackView {
     override func createKVView() -> KeyValueView {
         let view = KeyValueView()
         view.keyLabel.textAlignment = .left
-        view.keyLabel.font = Fonts.boldText
+        view.keyLabel.font = Fonts.text.bold
         view.valueLabel.textAlignment = .right
         return view
     }

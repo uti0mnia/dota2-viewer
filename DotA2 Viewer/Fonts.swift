@@ -24,11 +24,13 @@ class Fonts {
         return UIFont.systemFont(ofSize: 16)
     }
     
-    public static var boldText: UIFont {
-        return UIFont.boldSystemFont(ofSize: 16)
-    }
-    
     public static var toastMessage: UIFont {
         return UIFont.systemFont(ofSize: 16, weight: UIFontWeightMedium)
+    }
+}
+
+extension UIFont {
+    public var bold: UIFont {
+        return UIFont.boldSystemFont(ofSize: self.pointSize)
     }
 }

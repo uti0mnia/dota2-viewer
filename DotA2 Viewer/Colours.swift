@@ -18,7 +18,7 @@ class Colours {
         return UIColor(hexString: "#912828")!
     }
     
-    public static var defaultTextColours: UIColor {
+    public static var defaultTextColour: UIColor {
         return UIColor.flatWhiteDark
     }
     
@@ -36,5 +36,13 @@ class Colours {
     
     public static var toastBackground: UIColor {
         return UIColor.flatWhite
+    }
+    
+    public static var highlightColour: UIColor {
+        return UIColor.flatRed
+    }
+    
+    public static var segmentedControlBackground: UIColor {
+        return highlightColour
     }
 }

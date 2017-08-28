@@ -61,6 +61,7 @@ class HeroBasicViewController: UIViewController, HeroDelegate, HeroAttributeView
     }
     
     private func commonInit() {
+        
         view.addSubview(scrollView)
         scrollView.snp.makeConstraints() { make in
             make.left.top.right.bottom.equalTo(view)
