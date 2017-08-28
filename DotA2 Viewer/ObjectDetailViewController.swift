@@ -80,12 +80,14 @@ class ObjectDetailViewController: UIViewController {
         }
         
         
-//        let image = UIImage(named: object?.imageName ?? "")
-//        navigationController?.navigationBar.alpha = 0
-//        navigationController?.navigationBar.setBackgroundImage(image, for: .default)
-//        UIView.animate(withDuration: Double(UINavigationControllerHideShowBarDuration)) {
-//            self.navigationController?.navigationBar.alpha = 1
-//        }
+        let image = UIImage(named: object?.imageName ?? "")
+        navigationController?.navigationBar.alpha = 0
+        navigationController?.navigationBar.setBackgroundImage(image, for: .default)
+        UIView.animate(withDuration: Double(UINavigationControllerHideShowBarDuration), animations: {
+            self.navigationController?.navigationBar.alpha = 1
+        }) { _ in
+            self.navigationController?.navigationBar.contentMode = .scaleAspectFill
+        }
     }
     
     // TODO: Animate this stuff.

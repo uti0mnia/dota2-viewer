@@ -45,6 +45,8 @@ class ItemDetailViewController: ObjectDetailViewController, ItemBasicViewControl
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        basicViewController.delegate = self
+        
         DispatchQueue.main.async {
             self.abilityCollectionViewController.loadViewIfNeeded()
             self.basicViewController.loadViewIfNeeded()
