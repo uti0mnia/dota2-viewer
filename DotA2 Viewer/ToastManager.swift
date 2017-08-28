@@ -11,7 +11,7 @@ import SwiftMessages
 
 class ToastManager {
     
-    private static let defaultDuration: TimeInterval = 3
+    private static let defaultDuration: TimeInterval = 2
     
     public static let shared = ToastManager()
     

@@ -111,7 +111,7 @@ class HeroBasicViewController: UIViewController, HeroDelegate, HeroAttributeView
     
      // MARK: - HeroBasicViewDelegate
     func heroBasicView(_ heroBasicView: HeroBasicView, didTapOnLabelWithType type: HeroBasicViewLabelType) {
-        ToastManager.shared.displayToastMessage(type.description, on: self)
+        ToastManager.shared.displayToastMessage(type.description)
     }
     
 }

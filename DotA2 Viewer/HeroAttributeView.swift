@@ -103,10 +103,10 @@ class HeroAttributeView: UIView {
         }
         
         let offset = Layout.primaryAttributeBorderWidth
-        let x = (strengthIV.bounds.width - imageSize.width) / 2 - offset
-        let y = (strengthIV.bounds.height - imageSize.height) / 2 - offset
-        let width = imageSize.width + offset
-        let height = imageSize.height + offset
+        let x = (strengthIV.bounds.width - imageSize.width - offset) / 2
+        let y = (strengthIV.bounds.height - imageSize.height - offset) / 2
+        let width = imageSize.width + offset / 2
+        let height = imageSize.height + offset / 2
         primaryAttributeLayer.frame = CGRect(x: x, y: y, width: width, height: height)
         primaryAttributeLayer.cornerRadius = imageSize.height / 2
     }
