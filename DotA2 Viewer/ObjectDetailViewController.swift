@@ -10,11 +10,7 @@ import UIKit
 import SnapKit
 import BetterSegmentedControl
 
-class ObjectDetailViewController: UIViewController, ObjectHeaderViewDelegate {
-    
-    public var objectHeaderView: ObjectHeaderView? {
-        return nil
-    }
+class ObjectDetailViewController: UIViewController {
     
     private var contentView = UIView()
     private var currentChildViewController: UIViewController?
@@ -92,26 +88,6 @@ class ObjectDetailViewController: UIViewController, ObjectHeaderViewDelegate {
         viewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         
         viewController.didMove(toParentViewController: self)
-    }
-    
-    // MARK: - ObjectHeaderViewDelegate
-    
-    func objectHeaderView(_ objectHeaderView: ObjectHeaderView, didChangeImageHeightTo height: CGFloat) {
-        guard let navBarHeight = navigationController?.navigationBar.bounds.height else {
-            headerTopLayout?.update(offset: 0)
-            return
-        }
-        
-        if objectHeaderView.bounds.height > ObjectHeaderView.maximumHeight {
-            headerTopLayout?.update(offset: 0)
-            return
-        }
-        
-        let effectiveHeight = objectHeaderView.bounds.height - objectHeaderView.minimumHeight
-        let effectiveMaxHeight = ObjectHeaderView.maximumHeight - objectHeaderView.minimumHeight
-        
-        let newOffset = navBarHeight * (effectiveHeight / effectiveMaxHeight - 1)
-        headerTopLayout?.update(offset: newOffset)
     }
     
     @objc private func controlValueDidChange(_ control: BetterSegmentedControl) {

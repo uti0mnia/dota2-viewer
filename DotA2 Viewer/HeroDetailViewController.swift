@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import BetterSegmentedControl
 
-class HeroDetailViewController: ObjectDetailViewController, HeroHeaderViewDelegate {
+class HeroDetailViewController: ObjectDetailViewController {
     
     public var hero: Hero? {
         didSet {
@@ -18,10 +18,6 @@ class HeroDetailViewController: ObjectDetailViewController, HeroHeaderViewDelega
                 updateView()
             }
         }
-    }
-    
-    override public var objectHeaderView: ObjectHeaderView {
-        return heroHeaderView
     }
     
     private var heroSegmentControl = BetterSegmentedControl(frame: CGRect.zero,
@@ -35,18 +31,13 @@ class HeroDetailViewController: ObjectDetailViewController, HeroHeaderViewDelega
         return heroSegmentControl
     }
     
-    private var heroHeaderView = HeroHeaderView()
     private var abilityCollectionViewController = AbilityCollectionViewController()
     private var basicViewController = HeroBasicViewController()
     private var miscViewController = HeroMiscViewController()
     private var talentViewController = HeroTalentViewController()
     
-    private var currentTab: HeroDetailTab = .basic
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        heroHeaderView.delegate = self
         
         DispatchQueue.main.async {
             self.abilityCollectionViewController.loadViewIfNeeded()
@@ -64,15 +55,12 @@ class HeroDetailViewController: ObjectDetailViewController, HeroHeaderViewDelega
         titleLabel.text = hero.name
         titleLabel.sizeToFit()
         
-        heroHeaderView.imageView.image = UIImage(named: hero.imageName)
         abilityCollectionViewController.abilities = hero.abilities?.array as? [Ability]
         basicViewController.hero = hero
         miscViewController.hero = hero
         talentViewController.hero = hero
         
         swapChildViewController(to: basicViewController)
-        currentTab = .basic
-        
     }
     
     override public func viewControllerForControlIndex(_ index: UInt) -> UIViewController? {
@@ -87,26 +75,6 @@ class HeroDetailViewController: ObjectDetailViewController, HeroHeaderViewDelega
             return miscViewController
         default:
             return nil
-        }
-    }
-    
-    // MARK: - HeroHeaderViewDelegate
-    
-    func heroHeaderView(_ headerView: HeroHeaderView, didTapTab tab: HeroDetailTab) {
-        guard tab != currentTab else {
-            return
-        }
-        currentTab = tab
-        
-        switch tab {
-        case .ability:
-            swapChildViewController(to: abilityCollectionViewController)
-        case .basic:
-            swapChildViewController(to: basicViewController)
-        case .misc:
-            swapChildViewController(to: miscViewController)
-        case .talent:
-            swapChildViewController(to: talentViewController)
         }
     }
 }

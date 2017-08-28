@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import BetterSegmentedControl
 
-class ItemDetailViewController: ObjectDetailViewController, ItemHeaderViewDelegate, ItemBasicViewControllerDelegate {
+class ItemDetailViewController: ObjectDetailViewController, ItemBasicViewControllerDelegate {
    
     public var item: Item? {
         didSet {
@@ -18,10 +18,6 @@ class ItemDetailViewController: ObjectDetailViewController, ItemHeaderViewDelega
                 updateView()
             }
         }
-    }
-    
-    override public var objectHeaderView: ObjectHeaderView? {
-        return itemHeaderView
     }
     
     private var itemSegmentControl = BetterSegmentedControl(frame: CGRect.zero,
@@ -35,16 +31,19 @@ class ItemDetailViewController: ObjectDetailViewController, ItemHeaderViewDelega
         return itemSegmentControl
     }
     
-    private var itemHeaderView = ItemHeaderView()
     private var abilityCollectionViewController = AbilityCollectionViewController()
     private var basicViewController = ItemBasicViewController()
     
-    private var currentTab: ItemDetailTab = .basic
+    private var titles: [String] {
+        if item?.abilities == nil || item?.abilities?.count == 0 {
+            return ["Details"]
+        }
+        
+        return ["Details", "Abilities"]
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        itemHeaderView.delegate = self
         
         DispatchQueue.main.async {
             self.abilityCollectionViewController.loadViewIfNeeded()
@@ -60,14 +59,12 @@ class ItemDetailViewController: ObjectDetailViewController, ItemHeaderViewDelega
         titleLabel.text = item.name
         titleLabel.sizeToFit()
         
-        // We dont want to show the buttons
-        itemHeaderView.imageView.image = UIImage(named: item.imageName)
-        itemHeaderView.shouldShowButtons = !(item.abilities?.array as? [Ability] == nil || item.abilities!.array.count == 0)
+        segmentControl.titles = self.titles
+        
         abilityCollectionViewController.abilities = item.abilities?.array as? [Ability]
         basicViewController.item = item
         
         swapChildViewController(to: basicViewController)
-        currentTab = .basic
     }
     
     override func viewControllerForControlIndex(_ index: UInt) -> UIViewController? {
@@ -87,22 +84,5 @@ class ItemDetailViewController: ObjectDetailViewController, ItemHeaderViewDelega
         let nextViewController = ItemDetailViewController()
         nextViewController.item = item
         self.navigationController?.pushViewController(nextViewController, animated: true)
-    }
-    
-    // MARK: - ItemHeaderViewDelegate
-    
-    func itemHeaderView(_ itemHeaderView: ItemHeaderView, didTapTab tab: ItemDetailTab) {
-        guard tab != currentTab else {
-            return
-        }
-        currentTab = tab
-        
-        switch tab {
-        case .basic:
-            swapChildViewController(to: basicViewController)
-        case .ability:
-            swapChildViewController(to: abilityCollectionViewController)
-            
-        }
     }
 }
