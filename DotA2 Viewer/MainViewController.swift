@@ -51,6 +51,7 @@ class MainViewController: UIViewController, HeroListViewControllerDelegate, Item
         itemListViewController.delegate = self
         
         navigationController?.navigationBar.backgroundColor = UIColor.clear
+        navigationController?.navigationBar.contentMode = .scaleAspectFill
         
         // Need to figure our why I need this.
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
@@ -121,6 +122,7 @@ class MainViewController: UIViewController, HeroListViewControllerDelegate, Item
     
     func heroListViewController(_ heroListViewController: HeroListViewController, didSelectHero hero: Hero) {
         heroDetailViewController.hero = hero
+        heroDetailViewController.object = hero
         showDetailViewController(heroDetailViewController, sender: nil)
     }
     

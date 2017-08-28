@@ -94,7 +94,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9FL-AS-YTq" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Heroes" id="NUl-ZW-oRZ"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="RnW-Iu-fm3">
+                    <navigationBar key="navigationBar" contentMode="scaleAspectFill" misplaced="YES" id="RnW-Iu-fm3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.87139734455958551" green="0.03687937124292797" blue="0.051371898444097563" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -113,7 +113,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0xi-1T-PpC" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="w5g-ZC-18e">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="w5g-ZC-18e">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.88532221502590669" green="0.0" blue="0.16688224116154954" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

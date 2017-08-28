@@ -12,6 +12,8 @@ import BetterSegmentedControl
 
 class ObjectDetailViewController: UIViewController {
     
+    public var object: Object?
+    
     private var contentView = UIView()
     private var currentChildViewController: UIViewController?
     
@@ -46,13 +48,17 @@ class ObjectDetailViewController: UIViewController {
         
         automaticallyAdjustsScrollViewInsets = false
         
+        // TODO: Change this to MainViewController.
+        let tap = UITapGestureRecognizer(target: self, action: #selector(didTapOnNavigationBar(_:)))
+        navigationController?.navigationBar.addGestureRecognizer(tap)
+        
         addConstraints()
     }
     
     private func addConstraints() {
         
         segmentControl.snp.makeConstraints() { make in
-            make.top.equalTo(topLayoutGuide.snp.bottom)
+            make.top.equalTo(topLayoutGuide.snp.bottom).offset(Layout.defaultPadding)
             make.left.right.equalTo(view).inset(Layout.defaultPadding)
             make.height.equalTo(Layout.segmentControlHeight)
             make.bottom.equalTo(contentView.snp.top)
@@ -66,10 +72,19 @@ class ObjectDetailViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        // Reset segmentControl.
         do {
             try segmentControl.setIndex(0, animated: false)
         } catch {
             print("Error setting segmentControl to 0 wtf: \(error.localizedDescription)")
+        }
+        
+        
+        let image = UIImage(named: object?.name ?? "")
+        navigationController?.navigationBar.alpha = 0
+        navigationController?.navigationBar.setBackgroundImage(image, for: .default)
+        UIView.animate(withDuration: Double(UINavigationControllerHideShowBarDuration)) {
+            self.navigationController?.navigationBar.alpha = 1
         }
     }
     
@@ -99,6 +114,10 @@ class ObjectDetailViewController: UIViewController {
     public func viewControllerForControlIndex(_ index: UInt) -> UIViewController? {
         // For subclasses.
         return nil
+    }
+    
+    @objc private func didTapOnNavigationBar(_ gesture: UITapGestureRecognizer) {
+        
     }
     
 }
