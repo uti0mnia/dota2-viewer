@@ -25,6 +25,8 @@ class ObjectDetailViewController: UIViewController {
     
     public let titleLabel = DALabel(style: .title)
     
+    private let imageView = UIImageView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -48,14 +50,19 @@ class ObjectDetailViewController: UIViewController {
         
         automaticallyAdjustsScrollViewInsets = false
         
-        // TODO: Change this to MainViewController.
-        let tap = UITapGestureRecognizer(target: self, action: #selector(didTapOnNavigationBar(_:)))
-        navigationController?.navigationBar.addGestureRecognizer(tap)
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
+        view.insertSubview(imageView, at: 0)
         
         addConstraints()
     }
     
     private func addConstraints() {
+        
+        imageView.snp.makeConstraints() { make in
+            make.left.top.right.equalToSuperview()
+            make.height.equalTo(Layout.navigationControllerHeight)
+        }
         
         segmentControl.snp.makeConstraints() { make in
             make.top.equalTo(topLayoutGuide.snp.bottom).offset(Layout.defaultPadding)
@@ -79,15 +86,7 @@ class ObjectDetailViewController: UIViewController {
             print("Error setting segmentControl to 0 wtf: \(error.localizedDescription)")
         }
         
-        
-        let image = UIImage(named: object?.imageName ?? "")
-        navigationController?.navigationBar.alpha = 0
-        navigationController?.navigationBar.setBackgroundImage(image, for: .default)
-        UIView.animate(withDuration: Double(UINavigationControllerHideShowBarDuration), animations: {
-            self.navigationController?.navigationBar.alpha = 1
-        }) { _ in
-            self.navigationController?.navigationBar.contentMode = .scaleAspectFill
-        }
+        imageView.image = UIImage(named: object?.imageName ?? "")
     }
     
     // TODO: Animate this stuff.
@@ -118,7 +117,7 @@ class ObjectDetailViewController: UIViewController {
         return nil
     }
     
-    @objc private func didTapOnNavigationBar(_ gesture: UITapGestureRecognizer) {
+    public func displayFullScreenObjectImage() {
         
     }
     
