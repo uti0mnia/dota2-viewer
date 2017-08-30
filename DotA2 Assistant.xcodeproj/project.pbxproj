@@ -66,6 +66,9 @@
 		C90CE6141DFCCBA400C93539 /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90CE6131DFCCBA400C93539 /* ItemDetailViewController.swift */; };
 		C9118AC11F076F78004A5277 /* Call of the Wild_ Boar_Beastmaster.png in Resources */ = {isa = PBXBuildFile; fileRef = C9118ABF1F076F78004A5277 /* Call of the Wild_ Boar_Beastmaster.png */; };
 		C9118AC21F076F78004A5277 /* Call of the Wild_ Hawk_Beastmaster.png in Resources */ = {isa = PBXBuildFile; fileRef = C9118AC01F076F78004A5277 /* Call of the Wild_ Hawk_Beastmaster.png */; };
+		C9141B241F573AB600605234 /* agility_primary.png in Resources */ = {isa = PBXBuildFile; fileRef = C9141B231F573AB600605234 /* agility_primary.png */; };
+		C9141B261F573ABE00605234 /* intelligence_primary.png in Resources */ = {isa = PBXBuildFile; fileRef = C9141B251F573ABE00605234 /* intelligence_primary.png */; };
+		C9141B281F573AC300605234 /* strength_primary.png in Resources */ = {isa = PBXBuildFile; fileRef = C9141B271F573AC300605234 /* strength_primary.png */; };
 		C91470401DD916D5002A042C /* Recipe.png in Resources */ = {isa = PBXBuildFile; fileRef = C914703F1DD916D5002A042C /* Recipe.png */; };
 		C9172C181DD13F9100DCF88F /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9172C171DD13F9100DCF88F /* Globals.swift */; };
 		C9172C211DD176BA00DCF88F /* dota2-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = C9172C201DD176BA00DCF88F /* dota2-logo.png */; };
@@ -1281,6 +1284,9 @@
 		C90CE6131DFCCBA400C93539 /* ItemDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
 		C9118ABF1F076F78004A5277 /* Call of the Wild_ Boar_Beastmaster.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Call of the Wild_ Boar_Beastmaster.png"; path = "Abilities/Call of the Wild_ Boar_Beastmaster.png"; sourceTree = "<group>"; };
 		C9118AC01F076F78004A5277 /* Call of the Wild_ Hawk_Beastmaster.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Call of the Wild_ Hawk_Beastmaster.png"; path = "Abilities/Call of the Wild_ Hawk_Beastmaster.png"; sourceTree = "<group>"; };
+		C9141B231F573AB600605234 /* agility_primary.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = agility_primary.png; sourceTree = "<group>"; };
+		C9141B251F573ABE00605234 /* intelligence_primary.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = intelligence_primary.png; sourceTree = "<group>"; };
+		C9141B271F573AC300605234 /* strength_primary.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = strength_primary.png; sourceTree = "<group>"; };
 		C914703F1DD916D5002A042C /* Recipe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Recipe.png; path = images/Recipe.png; sourceTree = "<group>"; };
 		C9172C171DD13F9100DCF88F /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		C9172C201DD176BA00DCF88F /* dota2-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dota2-logo.png"; sourceTree = "<group>"; };
@@ -2474,6 +2480,7 @@
 			children = (
 				C94CCB851F1B0F2200ED9F79 /* damage_icon.png */,
 				C95753C11DD57FCF005C9F75 /* agility.png */,
+				C9141B231F573AB600605234 /* agility_primary.png */,
 				C9A33F101F1B0B8D00547ACF /* armour_icon.png */,
 				C9A33F111F1B0B8D00547ACF /* hp_icon.png */,
 				C9A33F121F1B0B8D00547ACF /* mana_icon.png */,
@@ -2482,7 +2489,9 @@
 				C9A33F151F1B0B8D00547ACF /* attackPerSecond_icon.png */,
 				C974AADC1F19B824003B4C18 /* hp_icon.png */,
 				C95753C41DD57FCF005C9F75 /* intelligence.png */,
+				C9141B251F573ABE00605234 /* intelligence_primary.png */,
 				C95753C61DD57FCF005C9F75 /* strength.png */,
+				C9141B271F573AC300605234 /* strength_primary.png */,
 			);
 			name = Basic;
 			sourceTree = "<group>";
@@ -4697,6 +4706,7 @@
 				C9A8E5151F284EBB00B25FD9 /* Quelling Blade.png in Resources */,
 				C9A8E4861F284EBB00B25FD9 /* Daedalus_thumbnail.png in Resources */,
 				C94B16241E01C090008BF226 /* Atrophy Aura_Underlord.png in Resources */,
+				C9141B281F573AC300605234 /* strength_primary.png in Resources */,
 				C94B16651E01C090008BF226 /* Curse of Avernus_Abaddon.png in Resources */,
 				C9A8E47B1F284EBB00B25FD9 /* Circlet.png in Resources */,
 				C9A8E5401F284EBC00B25FD9 /* Skull Basher_thumbnail.png in Resources */,
@@ -5080,6 +5090,7 @@
 				C9A8E45F1F284EBB00B25FD9 /* Blade of Alacrity.png in Resources */,
 				C94B16F51E01C090008BF226 /* Illuminate_Keeper Of The Light.png in Resources */,
 				C94B16C71E01C090008BF226 /* Frostbite_Crystal Maiden.png in Resources */,
+				C9141B261F573ABE00605234 /* intelligence_primary.png in Resources */,
 				C9A8E7A71F284F8000B25FD9 /* Nature's Prophet.png in Resources */,
 				C9A8E4C91F284EBB00B25FD9 /* Hurricane Pike.png in Resources */,
 				C94B16311E01C090008BF226 /* Blade Fury_Juggernaut.png in Resources */,
@@ -5120,6 +5131,7 @@
 				C9A8E7FE1F284F8000B25FD9 /* Vengeful Spirit_thumbnail.png in Resources */,
 				C94B16741E01C090008BF226 /* Demonic Conversion_Enigma.png in Resources */,
 				C94B17C81E01C090008BF226 /* Spirit Siphon_Death Prophet.png in Resources */,
+				C9141B241F573AB600605234 /* agility_primary.png in Resources */,
 				C9A8E4F81F284EBB00B25FD9 /* Oblivion Staff_thumbnail.png in Resources */,
 				C9A8E5001F284EBB00B25FD9 /* Orb of Venom_thumbnail.png in Resources */,
 				C94B17651E01C090008BF226 /* Presence of the Dark Lord_Shadow Fiend.png in Resources */,

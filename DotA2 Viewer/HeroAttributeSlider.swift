@@ -26,6 +26,10 @@ class HeroAttributeSlider: UISlider {
         self.value = 1
         self.minimumValue = 1
         self.maximumValue = 25
+        
+        self.minimumTrackTintColor = Colours.highlightColour
+        self.maximumTrackTintColor = Colours.secondaryColour
+        self.thumbTintColor = Colours.secondaryColour
     }
     
 }

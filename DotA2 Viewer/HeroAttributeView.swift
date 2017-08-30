@@ -13,6 +13,13 @@ class HeroAttributeView: UIView {
     
     private static let sliderPadding: CGFloat = 20
     
+    private static let strengthName = "strength.png"
+    private static let strengthPrimaryName = "strength_primary.png"
+    private static let agilityName = "agility.png"
+    private static let agilityPrimaryName = "agility_primary.png"
+    private static let intelligenceName = "intelligence.png"
+    private static let intelligencePrimaryName = "intelligence_primary.png"
+    
     weak var delegate: HeroAttributeViewDelegate?
     
     private(set) var levelLabel = DALabel(style: .subtitle)
@@ -37,9 +44,6 @@ class HeroAttributeView: UIView {
         
         return sv
     }()
-    
-    private var primaryAttributeView = UIView()
-    private var primaryAttributeLayer = CALayer()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -77,38 +81,18 @@ class HeroAttributeView: UIView {
         levelLabel.textAlignment = .center
         
         strengthIV.contentMode = .center
-        strengthIV.image = UIImage(named: "strength.png")
-        
         agilityIV.contentMode = .center
-        agilityIV.image = UIImage(named: "agility.png")
-        
         intelligenceIV.contentMode = .center
-        intelligenceIV.image = UIImage(named: "intelligence.png")
+        
+        resetAttributeImages()
         
         slider.addTarget(self, action: #selector(sliderDidChangeValue), for: .valueChanged)
-        
-        primaryAttributeLayer.backgroundColor = UIColor.clear.cgColor
-        primaryAttributeLayer.borderWidth = Layout.primaryAttributeBorderWidth
-        primaryAttributeLayer.borderColor = Colours.primaryAttributeBorderColour.cgColor
-        
-        
-
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
-        guard let imageSize = strengthIV.image?.size else {
-            return
-        }
-        
-        let offset = Layout.primaryAttributeBorderWidth
-        let x = (strengthIV.bounds.width - imageSize.width - offset) / 2
-        let y = (strengthIV.bounds.height - imageSize.height - offset) / 2
-        let width = imageSize.width + offset / 2
-        let height = imageSize.height + offset / 2
-        primaryAttributeLayer.frame = CGRect(x: x, y: y, width: width, height: height)
-        primaryAttributeLayer.cornerRadius = imageSize.height / 2
+    private func resetAttributeImages() {
+        strengthIV.image = UIImage(named: HeroAttributeView.strengthName)
+        agilityIV.image = UIImage(named: HeroAttributeView.agilityName)
+        intelligenceIV.image = UIImage(named: HeroAttributeView.intelligenceName)
     }
     
     private func addConstraints() {
@@ -128,20 +112,18 @@ class HeroAttributeView: UIView {
         }
     }
     
-    public func setPrimaryAttribute(_ attribute: HeroAttribute) {        
+    public func setPrimaryAttribute(_ attribute: HeroAttribute) {
+        resetAttributeImages()
+        
         switch attribute {
         case .agility:
-            addPrimaryAttributeMask(to: agilityIV)
+            agilityIV.image = UIImage(named: HeroAttributeView.agilityPrimaryName)
         case .intelligence:
-            addPrimaryAttributeMask(to: intelligenceIV)
+            intelligenceIV.image = UIImage(named: HeroAttributeView.intelligencePrimaryName)
         case .strength:
-            addPrimaryAttributeMask(to: strengthIV)
+            strengthIV.image = UIImage(named: HeroAttributeView.strengthPrimaryName)
+            
         }
-    }
-    
-    private func addPrimaryAttributeMask(to imageView: UIImageView) {
-        primaryAttributeLayer.removeFromSuperlayer()
-        imageView.layer.insertSublayer(primaryAttributeLayer, at: 0)
     }
     
     public func resetSlider(animated: Bool) {
