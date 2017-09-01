@@ -10,12 +10,14 @@ import UIKit
 import SnapKit
 import BetterSegmentedControl
 
-class ObjectDetailViewController: UIViewController {
+class ObjectDetailViewController: UIViewController, FullScreenImageViewerViewControllerDelegate {
     
     public var object: Object?
     
     private var contentView = UIView()
     private var currentChildViewController: UIViewController?
+    
+    private var fullScreenImageViewController = FullScreenImageViewerViewController()
     
     public var segmentControl: BetterSegmentedControl {
         return BetterSegmentedControl()
@@ -31,6 +33,9 @@ class ObjectDetailViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = Colours.primaryColour
+        
+        fullScreenImageViewController.delegate = self
+        fullScreenImageViewController.modalTransitionStyle = .crossDissolve
         
         titleLabel.textAlignment = .center
         navigationItem.titleView = titleLabel
@@ -118,7 +123,17 @@ class ObjectDetailViewController: UIViewController {
     }
     
     public func displayFullScreenObjectImage() {
+        guard let image = imageView.image else {
+            return
+        }
         
+        fullScreenImageViewController.imageView.image = image
+        present(fullScreenImageViewController, animated: true, completion: nil)
+    }
+    
+    // MARK: - FullScreenImageViewerViewControllerDelegate
+    func fullScreenImageViewerViewControllerDidDismissImageView(_ fullScreenImageViewerViewController: FullScreenImageViewerViewController) {
+        dismiss(animated: true, completion: nil)
     }
     
 }

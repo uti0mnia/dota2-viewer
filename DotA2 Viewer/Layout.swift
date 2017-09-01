@@ -46,5 +46,4 @@ class Layout {
     public static let primaryAttributeBorderWidth: CGFloat = 2
     
     public static let navigationControllerHeight: CGFloat = 64
-    
 }

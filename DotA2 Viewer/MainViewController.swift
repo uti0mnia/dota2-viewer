@@ -21,6 +21,7 @@ class MainViewController: UIViewController, HeroListViewControllerDelegate, Item
     private var itemListViewController = ItemListViewController()
     
     private var currentChildViewController: ObjectListViewController?
+    private weak var currentDetailViewController: ObjectDetailViewController?
     
     private var contentViewBottomConstraint: Constraint?
     
@@ -53,12 +54,21 @@ class MainViewController: UIViewController, HeroListViewControllerDelegate, Item
         navigationController?.navigationBar.backgroundColor = UIColor.clear
         navigationController?.navigationBar.contentMode = .scaleAspectFill
         
-        // Need to figure our why I need this.
+        // Make navigation controller completely transparent
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
         
+        let tap = UITapGestureRecognizer(target: self, action: #selector(didTapOnNavigationBar(_:)))
+        navigationController?.navigationBar.addGestureRecognizer(tap)
+        
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: .UIKeyboardDidShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: .UIKeyboardWillHide, object: nil)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        currentDetailViewController = nil
     }
     
     deinit {
@@ -108,6 +118,16 @@ class MainViewController: UIViewController, HeroListViewControllerDelegate, Item
         
     }
     
+    @objc private func didTapOnNavigationBar(_ tap: UITapGestureRecognizer) {
+        guard let childDetailVC = currentDetailViewController else {
+            return
+        }
+        
+        if childDetailVC.isViewLoaded && childDetailVC.view.window != nil {
+            childDetailVC.displayFullScreenObjectImage()
+        }
+    }
+    
     // MARK: - UITabBarDelegate
     
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
@@ -123,6 +143,7 @@ class MainViewController: UIViewController, HeroListViewControllerDelegate, Item
     func heroListViewController(_ heroListViewController: HeroListViewController, didSelectHero hero: Hero) {
         heroDetailViewController.hero = hero
         heroDetailViewController.object = hero
+        currentDetailViewController = heroDetailViewController
         showDetailViewController(heroDetailViewController, sender: nil)
     }
     
@@ -130,6 +151,7 @@ class MainViewController: UIViewController, HeroListViewControllerDelegate, Item
     
     func itemListViewController(_ itemListViewController: ItemListViewController, didSelectItem item: Item) {
         itemDetailViewController.item = item
+        currentDetailViewController = itemDetailViewController
         showDetailViewController(itemDetailViewController, sender: nil)
     }
 }
