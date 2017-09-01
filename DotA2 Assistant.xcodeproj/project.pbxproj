@@ -69,6 +69,8 @@
 		C9141B241F573AB600605234 /* agility_primary.png in Resources */ = {isa = PBXBuildFile; fileRef = C9141B231F573AB600605234 /* agility_primary.png */; };
 		C9141B261F573ABE00605234 /* intelligence_primary.png in Resources */ = {isa = PBXBuildFile; fileRef = C9141B251F573ABE00605234 /* intelligence_primary.png */; };
 		C9141B281F573AC300605234 /* strength_primary.png in Resources */ = {isa = PBXBuildFile; fileRef = C9141B271F573AC300605234 /* strength_primary.png */; };
+		C9141B2B1F58E2A000605234 /* Keeper Of The Light_thumbnail.png in Resources */ = {isa = PBXBuildFile; fileRef = C9141B291F58E2A000605234 /* Keeper Of The Light_thumbnail.png */; };
+		C9141B2C1F58E2A000605234 /* Keeper Of The Light.png in Resources */ = {isa = PBXBuildFile; fileRef = C9141B2A1F58E2A000605234 /* Keeper Of The Light.png */; };
 		C91470401DD916D5002A042C /* Recipe.png in Resources */ = {isa = PBXBuildFile; fileRef = C914703F1DD916D5002A042C /* Recipe.png */; };
 		C9172C181DD13F9100DCF88F /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9172C171DD13F9100DCF88F /* Globals.swift */; };
 		C9172C211DD176BA00DCF88F /* dota2-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = C9172C201DD176BA00DCF88F /* dota2-logo.png */; };
@@ -1032,8 +1034,6 @@
 		C9A8E77F1F284F8000B25FD9 /* Jakiro.png in Resources */ = {isa = PBXBuildFile; fileRef = C9A8E69D1F284F8000B25FD9 /* Jakiro.png */; };
 		C9A8E7801F284F8000B25FD9 /* Juggernaut_thumbnail.png in Resources */ = {isa = PBXBuildFile; fileRef = C9A8E69E1F284F8000B25FD9 /* Juggernaut_thumbnail.png */; };
 		C9A8E7811F284F8000B25FD9 /* Juggernaut.png in Resources */ = {isa = PBXBuildFile; fileRef = C9A8E69F1F284F8000B25FD9 /* Juggernaut.png */; };
-		C9A8E7821F284F8000B25FD9 /* Keeper of the Light_thumbnail.png in Resources */ = {isa = PBXBuildFile; fileRef = C9A8E6A01F284F8000B25FD9 /* Keeper of the Light_thumbnail.png */; };
-		C9A8E7831F284F8000B25FD9 /* Keeper of the Light.png in Resources */ = {isa = PBXBuildFile; fileRef = C9A8E6A11F284F8000B25FD9 /* Keeper of the Light.png */; };
 		C9A8E7841F284F8000B25FD9 /* Kunkka_thumbnail.png in Resources */ = {isa = PBXBuildFile; fileRef = C9A8E6A21F284F8000B25FD9 /* Kunkka_thumbnail.png */; };
 		C9A8E7851F284F8000B25FD9 /* Kunkka.png in Resources */ = {isa = PBXBuildFile; fileRef = C9A8E6A31F284F8000B25FD9 /* Kunkka.png */; };
 		C9A8E7861F284F8000B25FD9 /* Legion Commander_thumbnail.png in Resources */ = {isa = PBXBuildFile; fileRef = C9A8E6A41F284F8000B25FD9 /* Legion Commander_thumbnail.png */; };
@@ -1096,8 +1096,8 @@
 		C9A8E7BF1F284F8000B25FD9 /* Pudge.png in Resources */ = {isa = PBXBuildFile; fileRef = C9A8E6DD1F284F8000B25FD9 /* Pudge.png */; };
 		C9A8E7C01F284F8000B25FD9 /* Pugna_thumbnail.png in Resources */ = {isa = PBXBuildFile; fileRef = C9A8E6DE1F284F8000B25FD9 /* Pugna_thumbnail.png */; };
 		C9A8E7C11F284F8000B25FD9 /* Pugna.png in Resources */ = {isa = PBXBuildFile; fileRef = C9A8E6DF1F284F8000B25FD9 /* Pugna.png */; };
-		C9A8E7C21F284F8000B25FD9 /* Queen of Pain_thumbnail.png in Resources */ = {isa = PBXBuildFile; fileRef = C9A8E6E01F284F8000B25FD9 /* Queen of Pain_thumbnail.png */; };
-		C9A8E7C31F284F8000B25FD9 /* Queen of Pain.png in Resources */ = {isa = PBXBuildFile; fileRef = C9A8E6E11F284F8000B25FD9 /* Queen of Pain.png */; };
+		C9A8E7C21F284F8000B25FD9 /* Queen Of Pain_thumbnail.png in Resources */ = {isa = PBXBuildFile; fileRef = C9A8E6E01F284F8000B25FD9 /* Queen Of Pain_thumbnail.png */; };
+		C9A8E7C31F284F8000B25FD9 /* Queen Of Pain.png in Resources */ = {isa = PBXBuildFile; fileRef = C9A8E6E11F284F8000B25FD9 /* Queen Of Pain.png */; };
 		C9A8E7C41F284F8000B25FD9 /* Razor_thumbnail.png in Resources */ = {isa = PBXBuildFile; fileRef = C9A8E6E21F284F8000B25FD9 /* Razor_thumbnail.png */; };
 		C9A8E7C51F284F8000B25FD9 /* Razor.png in Resources */ = {isa = PBXBuildFile; fileRef = C9A8E6E31F284F8000B25FD9 /* Razor.png */; };
 		C9A8E7C61F284F8000B25FD9 /* Riki_thumbnail.png in Resources */ = {isa = PBXBuildFile; fileRef = C9A8E6E41F284F8000B25FD9 /* Riki_thumbnail.png */; };
@@ -1287,6 +1287,8 @@
 		C9141B231F573AB600605234 /* agility_primary.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = agility_primary.png; sourceTree = "<group>"; };
 		C9141B251F573ABE00605234 /* intelligence_primary.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = intelligence_primary.png; sourceTree = "<group>"; };
 		C9141B271F573AC300605234 /* strength_primary.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = strength_primary.png; sourceTree = "<group>"; };
+		C9141B291F58E2A000605234 /* Keeper Of The Light_thumbnail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Keeper Of The Light_thumbnail.png"; path = "heroes/Keeper Of The Light_thumbnail.png"; sourceTree = "<group>"; };
+		C9141B2A1F58E2A000605234 /* Keeper Of The Light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Keeper Of The Light.png"; path = "heroes/Keeper Of The Light.png"; sourceTree = "<group>"; };
 		C914703F1DD916D5002A042C /* Recipe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Recipe.png; path = images/Recipe.png; sourceTree = "<group>"; };
 		C9172C171DD13F9100DCF88F /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		C9172C201DD176BA00DCF88F /* dota2-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dota2-logo.png"; sourceTree = "<group>"; };
@@ -2253,8 +2255,6 @@
 		C9A8E69D1F284F8000B25FD9 /* Jakiro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Jakiro.png; path = heroes/Jakiro.png; sourceTree = "<group>"; };
 		C9A8E69E1F284F8000B25FD9 /* Juggernaut_thumbnail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Juggernaut_thumbnail.png; path = heroes/Juggernaut_thumbnail.png; sourceTree = "<group>"; };
 		C9A8E69F1F284F8000B25FD9 /* Juggernaut.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Juggernaut.png; path = heroes/Juggernaut.png; sourceTree = "<group>"; };
-		C9A8E6A01F284F8000B25FD9 /* Keeper of the Light_thumbnail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Keeper of the Light_thumbnail.png"; path = "heroes/Keeper of the Light_thumbnail.png"; sourceTree = "<group>"; };
-		C9A8E6A11F284F8000B25FD9 /* Keeper of the Light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Keeper of the Light.png"; path = "heroes/Keeper of the Light.png"; sourceTree = "<group>"; };
 		C9A8E6A21F284F8000B25FD9 /* Kunkka_thumbnail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Kunkka_thumbnail.png; path = heroes/Kunkka_thumbnail.png; sourceTree = "<group>"; };
 		C9A8E6A31F284F8000B25FD9 /* Kunkka.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Kunkka.png; path = heroes/Kunkka.png; sourceTree = "<group>"; };
 		C9A8E6A41F284F8000B25FD9 /* Legion Commander_thumbnail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Legion Commander_thumbnail.png"; path = "heroes/Legion Commander_thumbnail.png"; sourceTree = "<group>"; };
@@ -2317,8 +2317,8 @@
 		C9A8E6DD1F284F8000B25FD9 /* Pudge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Pudge.png; path = heroes/Pudge.png; sourceTree = "<group>"; };
 		C9A8E6DE1F284F8000B25FD9 /* Pugna_thumbnail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Pugna_thumbnail.png; path = heroes/Pugna_thumbnail.png; sourceTree = "<group>"; };
 		C9A8E6DF1F284F8000B25FD9 /* Pugna.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Pugna.png; path = heroes/Pugna.png; sourceTree = "<group>"; };
-		C9A8E6E01F284F8000B25FD9 /* Queen of Pain_thumbnail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Queen of Pain_thumbnail.png"; path = "heroes/Queen of Pain_thumbnail.png"; sourceTree = "<group>"; };
-		C9A8E6E11F284F8000B25FD9 /* Queen of Pain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Queen of Pain.png"; path = "heroes/Queen of Pain.png"; sourceTree = "<group>"; };
+		C9A8E6E01F284F8000B25FD9 /* Queen Of Pain_thumbnail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Queen Of Pain_thumbnail.png"; path = "heroes/Queen Of Pain_thumbnail.png"; sourceTree = "<group>"; };
+		C9A8E6E11F284F8000B25FD9 /* Queen Of Pain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Queen Of Pain.png"; path = "heroes/Queen Of Pain.png"; sourceTree = "<group>"; };
 		C9A8E6E21F284F8000B25FD9 /* Razor_thumbnail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Razor_thumbnail.png; path = heroes/Razor_thumbnail.png; sourceTree = "<group>"; };
 		C9A8E6E31F284F8000B25FD9 /* Razor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Razor.png; path = heroes/Razor.png; sourceTree = "<group>"; };
 		C9A8E6E41F284F8000B25FD9 /* Riki_thumbnail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Riki_thumbnail.png; path = heroes/Riki_thumbnail.png; sourceTree = "<group>"; };
@@ -3343,8 +3343,8 @@
 				C9A8E69D1F284F8000B25FD9 /* Jakiro.png */,
 				C9A8E69E1F284F8000B25FD9 /* Juggernaut_thumbnail.png */,
 				C9A8E69F1F284F8000B25FD9 /* Juggernaut.png */,
-				C9A8E6A01F284F8000B25FD9 /* Keeper of the Light_thumbnail.png */,
-				C9A8E6A11F284F8000B25FD9 /* Keeper of the Light.png */,
+				C9141B291F58E2A000605234 /* Keeper Of The Light_thumbnail.png */,
+				C9141B2A1F58E2A000605234 /* Keeper Of The Light.png */,
 				C9A8E6A21F284F8000B25FD9 /* Kunkka_thumbnail.png */,
 				C9A8E6A31F284F8000B25FD9 /* Kunkka.png */,
 				C9A8E6A41F284F8000B25FD9 /* Legion Commander_thumbnail.png */,
@@ -3407,8 +3407,8 @@
 				C9A8E6DD1F284F8000B25FD9 /* Pudge.png */,
 				C9A8E6DE1F284F8000B25FD9 /* Pugna_thumbnail.png */,
 				C9A8E6DF1F284F8000B25FD9 /* Pugna.png */,
-				C9A8E6E01F284F8000B25FD9 /* Queen of Pain_thumbnail.png */,
-				C9A8E6E11F284F8000B25FD9 /* Queen of Pain.png */,
+				C9A8E6E01F284F8000B25FD9 /* Queen Of Pain_thumbnail.png */,
+				C9A8E6E11F284F8000B25FD9 /* Queen Of Pain.png */,
 				C9A8E6E21F284F8000B25FD9 /* Razor_thumbnail.png */,
 				C9A8E6E31F284F8000B25FD9 /* Razor.png */,
 				C9A8E6E41F284F8000B25FD9 /* Riki_thumbnail.png */,
@@ -4115,7 +4115,7 @@
 				C94B17F21E01C090008BF226 /* The Swarm_Weaver.png in Resources */,
 				C94B171D1E01C090008BF226 /* Maledict_Witch Doctor.png in Resources */,
 				C94B17381E01C090008BF226 /* Mystic Flare_Skywrath Mage.png in Resources */,
-				C9A8E7C31F284F8000B25FD9 /* Queen of Pain.png in Resources */,
+				C9A8E7C31F284F8000B25FD9 /* Queen Of Pain.png in Resources */,
 				C94B17A21E01C090008BF226 /* Shadow Walk_Bounty Hunter.png in Resources */,
 				C9A8E5591F284EBC00B25FD9 /* Tranquil Boots.png in Resources */,
 				C94B17E21E01C090008BF226 /* Summon Familiars_Visage.png in Resources */,
@@ -4231,7 +4231,7 @@
 				C94B16AD1E01C090008BF226 /* Feral Impulse_Lycan.png in Resources */,
 				C94B1A3D1E01D1BC008BF226 /* cooldown.png in Resources */,
 				C9A8E4BF1F284EBB00B25FD9 /* Heart of Tarrasque.png in Resources */,
-				C9A8E7C21F284F8000B25FD9 /* Queen of Pain_thumbnail.png in Resources */,
+				C9A8E7C21F284F8000B25FD9 /* Queen Of Pain_thumbnail.png in Resources */,
 				C9A8E7BF1F284F8000B25FD9 /* Pudge.png in Resources */,
 				C94B165E1E01C090008BF226 /* Coup de Grace_Phantom Assassin.png in Resources */,
 				C9A8E4E91F284EBB00B25FD9 /* Mithril Hammer.png in Resources */,
@@ -4494,6 +4494,7 @@
 				C9A8E5261F284EBB00B25FD9 /* Robe of the Magi_thumbnail.png in Resources */,
 				C9A8E5011F284EBB00B25FD9 /* Orb of Venom.png in Resources */,
 				C94B18031E01C090008BF226 /* Trap_Templar Assassin.png in Resources */,
+				C9141B2C1F58E2A000605234 /* Keeper Of The Light.png in Resources */,
 				C94B16DE1E01C090008BF226 /* Headshot_Sniper.png in Resources */,
 				C94B178D1E01C090008BF226 /* Rocket Flare_Clockwerk.png in Resources */,
 				C94B17CF1E01C090008BF226 /* Sprint_Slardar.png in Resources */,
@@ -4515,6 +4516,7 @@
 				C94B16891E01C090008BF226 /* Dual Breath_Jakiro.png in Resources */,
 				C94B16751E01C090008BF226 /* Demonic Purge_Shadow Demon.png in Resources */,
 				C9A8E4561F284EBB00B25FD9 /* Battle Fury_thumbnail.png in Resources */,
+				C9141B2B1F58E2A000605234 /* Keeper Of The Light_thumbnail.png in Resources */,
 				363A46691E00827200BA5D97 /* NO_PIERCE_SPELL_IMMUNE.png in Resources */,
 				C94B17541E01C090008BF226 /* Phantom Strike_Phantom Assassin.png in Resources */,
 				C94B16391E01C090008BF226 /* Blur_Phantom Assassin.png in Resources */,
@@ -4778,7 +4780,6 @@
 				C9A8E4611F284EBB00B25FD9 /* Blades of Attack.png in Resources */,
 				C9A8E4D01F284EBB00B25FD9 /* Iron Talon_thumbnail.png in Resources */,
 				C94B16FA1E01C090008BF226 /* Infernal Blade_Doom.png in Resources */,
-				C9A8E7831F284F8000B25FD9 /* Keeper of the Light.png in Resources */,
 				C9A8E4D31F284EBB00B25FD9 /* Javelin.png in Resources */,
 				C9A8E76E1F284F8000B25FD9 /* Ember Spirit_thumbnail.png in Resources */,
 				C94B16331E01C090008BF226 /* Blink Strike_Riki.png in Resources */,
@@ -4861,7 +4862,6 @@
 				C94B17DE1E01C090008BF226 /* Stop Sun Ray_Phoenix.png in Resources */,
 				C9A8E4F61F284EBB00B25FD9 /* Null Talisman_thumbnail.png in Resources */,
 				C9A8E53D1F284EBC00B25FD9 /* Shiva's Guard.png in Resources */,
-				C9A8E7821F284F8000B25FD9 /* Keeper of the Light_thumbnail.png in Resources */,
 				C94B1A371E01C477008BF226 /* coins.png in Resources */,
 				C94B17671E01C090008BF226 /* Primal Roar_Beastmaster.png in Resources */,
 				C9A8E75B1F284F8000B25FD9 /* Dark Seer.png in Resources */,
