@@ -9,10 +9,12 @@
 import UIKit
 import SnapKit
 
-class AbilityView: UIView {
+class AbilityView: UIView, AbilitySpecialViewDelegate {
+    
+    public weak var delegate: AbilityViewDelegate?
     
     private var nameLabel = DALabel(style: .title)
-    private var specialsLabel = DALabel(style: .subtitle)
+    private var specialsView = AbilitySpecialView()
     private(set) var abilityImageView = UIImageView() {
         didSet {
             if abilityImageView.image == nil {
@@ -63,6 +65,7 @@ class AbilityView: UIView {
     private var notesLabel = DALabel(style: .text)
     
     private lazy var manaAttributedString: NSAttributedString = {
+        // TODO: Cleanup.
         let attachment = NSTextAttachment()
         attachment.image = UIImage(named: "mana")
         let finalString = NSMutableAttributedString(string: "Mana", attributes: [NSFontAttributeName: Fonts.text.bold])
@@ -70,6 +73,7 @@ class AbilityView: UIView {
         return finalString
     }()
     private lazy var cooldownAttributedString: NSAttributedString = {
+        // TODO: Cleanup.
         let attachment = NSTextAttachment()
         attachment.image = UIImage(named: "cooldown")
         let finalString = NSMutableAttributedString(string: "Cooldown", attributes: [NSFontAttributeName: Fonts.text.bold])
@@ -82,9 +86,9 @@ class AbilityView: UIView {
             nameLabel.text = name
         }
     }
-    public var specials: NSAttributedString? {
+    public var specials: [String]? {
         didSet {
-            specialsLabel.attributedText = specials
+            specialsView.setSpecials(specials)
         }
     }
     public var types: [ModifiableValue]? {
@@ -187,10 +191,10 @@ class AbilityView: UIView {
     }
     
     private func commonInit() {
-        self.isUserInteractionEnabled = false
         
-        // TODO: Add some of these fonts as defaults for label subclasses.
         nameLabel.font = Fonts.title
+        
+        specialsView.delegate = self
         
         abilityImageView.contentMode = .scaleAspectFit
         abilityImageView.clipsToBounds = true
@@ -211,7 +215,7 @@ class AbilityView: UIView {
         notesLabel.numberOfLines = 0
         
         addSubview(nameLabel)
-        addSubview(specialsLabel)
+        addSubview(specialsView)
         addSubview(imageStackView)
         addSubview(descriptionLabel)
         addSubview(dataStackView)
@@ -226,13 +230,13 @@ class AbilityView: UIView {
         
         nameLabel.snp.makeConstraints() { make in
             make.left.top.equalTo(self).inset(padding)
-            make.right.lessThanOrEqualTo(specialsLabel.snp.left).offset(-padding)
-            make.bottom.equalTo(specialsLabel)
+            make.bottom.equalTo(specialsView)
             make.height.equalTo(nameLabel.font.pointSize)
         }
         
-        specialsLabel.snp.makeConstraints() { make in
+        specialsView.snp.makeConstraints() { make in
             make.top.right.equalTo(self).inset(padding)
+            make.left.equalTo(nameLabel.snp.right).offset(padding)
         }
         
         imageStackView.snp.makeConstraints() { make in
@@ -261,5 +265,11 @@ class AbilityView: UIView {
         }
         
         
+    }
+    
+    // MARK: - AbilitySpecialViewDelegate
+    
+    func abilitySpecialView(_ abilitySpecialView: AbilitySpecialView, didTapOnSpecial special: String) {
+        delegate?.abilityView(self, didTapOnSpecial: special)
     }
 }

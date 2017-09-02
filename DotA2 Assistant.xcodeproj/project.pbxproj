@@ -77,6 +77,10 @@
 		C91470401DD916D5002A042C /* Recipe.png in Resources */ = {isa = PBXBuildFile; fileRef = C914703F1DD916D5002A042C /* Recipe.png */; };
 		C9172C181DD13F9100DCF88F /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9172C171DD13F9100DCF88F /* Globals.swift */; };
 		C9172C211DD176BA00DCF88F /* dota2-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = C9172C201DD176BA00DCF88F /* dota2-logo.png */; };
+		C91B484A1F5AE56E00919267 /* AbilitySpecialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91B48491F5AE56E00919267 /* AbilitySpecialView.swift */; };
+		C91B484C1F5AF25500919267 /* AbilitySpecialViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91B484B1F5AF25500919267 /* AbilitySpecialViewDelegate.swift */; };
+		C91B484E1F5AF99600919267 /* AbilityViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91B484D1F5AF99600919267 /* AbilityViewDelegate.swift */; };
+		C91B48501F5AFA6700919267 /* AbilityCollectionCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91B484F1F5AFA6700919267 /* AbilityCollectionCellDelegate.swift */; };
 		C93028391DF3629F005EA297 /* HeroDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93028381DF3629F005EA297 /* HeroDetailViewController.swift */; };
 		C94A26D21DD5593F00D9B054 /* DASlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94A26D11DD5593F00D9B054 /* DASlider.swift */; };
 		C94B16111E01C090008BF226 /* Acid Spray_Alchemist.png in Resources */ = {isa = PBXBuildFile; fileRef = C94B13F81E01C08E008BF226 /* Acid Spray_Alchemist.png */; };
@@ -1298,6 +1302,10 @@
 		C914703F1DD916D5002A042C /* Recipe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Recipe.png; path = images/Recipe.png; sourceTree = "<group>"; };
 		C9172C171DD13F9100DCF88F /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		C9172C201DD176BA00DCF88F /* dota2-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dota2-logo.png"; sourceTree = "<group>"; };
+		C91B48491F5AE56E00919267 /* AbilitySpecialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbilitySpecialView.swift; sourceTree = "<group>"; };
+		C91B484B1F5AF25500919267 /* AbilitySpecialViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbilitySpecialViewDelegate.swift; sourceTree = "<group>"; };
+		C91B484D1F5AF99600919267 /* AbilityViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbilityViewDelegate.swift; sourceTree = "<group>"; };
+		C91B484F1F5AFA6700919267 /* AbilityCollectionCellDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbilityCollectionCellDelegate.swift; sourceTree = "<group>"; };
 		C923CF601EF0EA1700971660 /* DotA2_Assistant-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DotA2_Assistant-Bridging-Header.h"; sourceTree = "<group>"; };
 		C93028381DF3629F005EA297 /* HeroDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroDetailViewController.swift; sourceTree = "<group>"; };
 		C94A26D11DD5593F00D9B054 /* DASlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DASlider.swift; path = Views/DASlider.swift; sourceTree = "<group>"; };
@@ -3943,9 +3951,13 @@
 		C9B1256F1EE1131900984F90 /* Ability Display */ = {
 			isa = PBXGroup;
 			children = (
+				C91B48491F5AE56E00919267 /* AbilitySpecialView.swift */,
+				C91B484B1F5AF25500919267 /* AbilitySpecialViewDelegate.swift */,
 				C90A13611EEA6CCB00D143B8 /* AbilityView.swift */,
+				C91B484D1F5AF99600919267 /* AbilityViewDelegate.swift */,
 				C98526951EFB7EBC00398D10 /* AbilityKVStackView.swift */,
 				C985269E1EFE0F0F00398D10 /* AbilityCollectionCell.swift */,
+				C91B484F1F5AFA6700919267 /* AbilityCollectionCellDelegate.swift */,
 				C985269C1EFE0EC300398D10 /* AbiltyCollectionViewController.swift */,
 			);
 			name = "Ability Display";
@@ -5221,10 +5233,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9AEA2071E9C4629006FD974 /* ModifiableValue+CoreDataClass.swift in Sources */,
+				C91B484A1F5AE56E00919267 /* AbilitySpecialView.swift in Sources */,
 				C9B125671EDFC5AF00984F90 /* HeroDelegate.swift in Sources */,
 				C9AEA2181E9C4629006FD974 /* Hero+CoreDataProperties.swift in Sources */,
 				C9141B2E1F58E5DC00605234 /* FullScreenImageViewerViewController.swift in Sources */,
 				C98C55571F00A00900540DC0 /* ItemBasicViewController.swift in Sources */,
+				C91B48501F5AFA6700919267 /* AbilityCollectionCellDelegate.swift in Sources */,
 				C9AEA20A1E9C4629006FD974 /* Object+CoreDataProperties.swift in Sources */,
 				366A8A101DD100A8000406BF /* DAMainTableView.swift in Sources */,
 				C9AEA20C1E9C4629006FD974 /* Talent+CoreDataProperties.swift in Sources */,
@@ -5235,6 +5249,7 @@
 				C957BBED1EEFA920008F756B /* HeroMiscViewController.swift in Sources */,
 				C9745D6B1EC8E262009537E4 /* HeroBasicViewController.swift in Sources */,
 				C985269D1EFE0EC300398D10 /* AbiltyCollectionViewController.swift in Sources */,
+				C91B484E1F5AF99600919267 /* AbilityViewDelegate.swift in Sources */,
 				C99EF6971F0B530500DA03BF /* HeroListViewControllerDelegate.swift in Sources */,
 				C970639B1F09E13C008EF87B /* ObjectDetailViewController.swift in Sources */,
 				C98526701EFA27F100398D10 /* String+Convenience.swift in Sources */,
@@ -5289,6 +5304,7 @@
 				C90A13601EEA695E00D143B8 /* NSAttributedString+Static.swift in Sources */,
 				C90A13571EE66C0C00D143B8 /* AttributedStringParser.swift in Sources */,
 				C957BBEB1EEFA76B008F756B /* HeroMiscCell.swift in Sources */,
+				C91B484C1F5AF25500919267 /* AbilitySpecialViewDelegate.swift in Sources */,
 				C9AEA20F1E9C4629006FD974 /* MiscStats+CoreDataClass.swift in Sources */,
 				C99EF6911F0B47D400DA03BF /* ObjectListViewController.swift in Sources */,
 				C9172C181DD13F9100DCF88F /* Globals.swift in Sources */,

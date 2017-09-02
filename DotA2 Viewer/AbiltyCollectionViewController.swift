@@ -10,7 +10,7 @@ import UIKit
 import CenteredCollectionView
 import CHIPageControl
 
-class AbilityCollectionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class AbilityCollectionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, AbilityCollectionCellDelgate {
     
     private static let abilityReusableCell = "abilityCell"
     private static let pageControlHeight: CGFloat = 20
@@ -74,6 +74,7 @@ class AbilityCollectionViewController: UIViewController, UICollectionViewDataSou
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AbilityCollectionViewController.abilityReusableCell, for: indexPath) as! AbilityCollectionCell
+        cell.delegate = self
         cell.ability = abilities?[indexPath.row]
         return cell
     }
@@ -84,5 +85,13 @@ class AbilityCollectionViewController: UIViewController, UICollectionViewDataSou
         let pageWidth = self.collectionView.frame.size.width
         let progress = Double(self.collectionView.contentOffset.x / pageWidth)
         pageControl.progress = progress
+    }
+    
+    // MARK: - AbilityCollectionCellDelgate
+    
+    func abilityCollectionCell(_ abilityCollectionCell: AbilityCollectionCell, didTapOnSpecial special: String) {
+        if let message = Ability.specialDescriptions[special] {
+            ToastManager.shared.displayToastMessage(message)
+        }
     }
 }

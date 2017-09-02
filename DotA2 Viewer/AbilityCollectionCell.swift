@@ -9,7 +9,9 @@
 import UIKit
 import SnapKit
 
-class AbilityCollectionCell: UICollectionViewCell {
+class AbilityCollectionCell: UICollectionViewCell, AbilityViewDelegate {
+    
+    public weak var delegate: AbilityCollectionCellDelgate?
     
     private var scrollView = UIScrollView()
     private var abilityView = AbilityView()
@@ -21,16 +23,7 @@ class AbilityCollectionCell: UICollectionViewCell {
             }
             
             abilityView.name = ability.name
-            
-            DispatchQueue.global(qos: .userInitiated).async {
-                let image = UIImage(named: ability.imageName)
-                let specials = ability.specialIcons
-                
-                DispatchQueue.main.async {
-                    self.abilityView.abilityImageView.image =  image
-                    self.abilityView.specials = specials
-                }
-            }
+            abilityView.specials = ability.specials
             abilityView.abilityDescription = ability.descrip
             abilityView.types = ability.types?.array as? [ModifiableValue]
             abilityView.data = ability.data?.array as? [ModifiableValue]
@@ -56,6 +49,8 @@ class AbilityCollectionCell: UICollectionViewCell {
     }
     
     private func commonInit() {
+        abilityView.delegate = self
+        
         contentView.addSubview(scrollView)
         scrollView.snp.makeConstraints() { make in
             make.left.top.right.bottom.equalTo(contentView)
@@ -66,5 +61,11 @@ class AbilityCollectionCell: UICollectionViewCell {
             make.left.top.right.bottom.equalTo(scrollView)
             make.width.equalTo(scrollView)
         }
+    }
+    
+    // MARK: - AbilityViewDelegate
+    
+    func abilityView(_ abilityView: AbilityView, didTapOnSpecial special: String) {
+        delegate?.abilityCollectionCell(self, didTapOnSpecial: special)
     }
 }
