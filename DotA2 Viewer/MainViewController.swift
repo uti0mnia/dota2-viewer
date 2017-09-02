@@ -105,7 +105,7 @@ class MainViewController: UIViewController, HeroListViewControllerDelegate, Item
         viewController.view.frame = contentView.bounds
         viewController.view.frame.origin.x = x
         
-        UIView.animate(withDuration: 0.2, animations: {
+        UIView.animate(withDuration: Constants.defaultAnimationTime, animations: {
             viewController.view.frame.origin.x = 0
             self.currentChildViewController?.view.frame.origin.x = -x
         }) { success in
