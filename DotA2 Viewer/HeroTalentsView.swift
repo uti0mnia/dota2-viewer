@@ -11,6 +11,7 @@ import UIKit
 class HeroTalentsView: UIStackView {
     
     private var talentViews = [DASeparatedView]()
+    private var notesView = DATitleStackView()
     private var notesLabel = DALabel()
     
     public var talents: [Talent]? {
@@ -34,7 +35,7 @@ class HeroTalentsView: UIStackView {
     }
     public var notes: [Note]? {
         didSet {
-            notesLabel.removeFromSuperview()
+            notesView.removeFromSuperview()
             
             guard let notes = notes else {
                 return
@@ -42,7 +43,7 @@ class HeroTalentsView: UIStackView {
             
             notesLabel.attributedText = Note.prettify(notes)
             
-            addArrangedSubview(notesLabel)
+            addArrangedSubview(notesView)
         }
     }
     
@@ -76,9 +77,11 @@ class HeroTalentsView: UIStackView {
             topStack.addArrangedSubview(separatedView)
         }
         
+        notesView.titleLabel.text = "Notes"
+        notesView.setDetailView(notesLabel)
         notesLabel.numberOfLines = 0
         notesLabel.textColor = Colours.secondaryColour
         notesLabel.font = Fonts.text
-        addArrangedSubview(notesLabel)
+        addArrangedSubview(notesView)
     }
 }
