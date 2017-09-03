@@ -36,7 +36,7 @@ class DASeparatedView: UIView {
         
         titleLabel.snp.makeConstraints() { make in
             make.left.top.right.equalToSuperview()
-            make.bottom.equalTo(contentView.snp.top).inset(Layout.defaultPadding)
+            make.bottom.equalTo(contentView.snp.top).inset(-Layout.defaultPadding)
         }
         
         contentView.snp.makeConstraints() { make in

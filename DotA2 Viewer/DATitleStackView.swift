@@ -28,6 +28,7 @@ class DATitleStackView: UIStackView {
     private func commonInit() {
         axis = .vertical
         distribution = .fillProportionally
+        spacing = Layout.defaultPadding
         
         titleLabel.font = Fonts.subtitle.bold
         titleLabel.textAlignment = .center

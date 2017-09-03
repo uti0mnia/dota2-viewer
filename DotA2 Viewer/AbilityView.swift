@@ -70,6 +70,7 @@ class AbilityView: UIView, AbilitySpecialViewDelegate {
     }()
     private var cooldownView = KeyValueView()
     private var manaView = KeyValueView()
+    private var notesView = DATitleStackView()
     private var notesLabel = DALabel(style: .text)
     
     private lazy var manaAttributedString: NSAttributedString = {
@@ -170,8 +171,9 @@ class AbilityView: UIView, AbilitySpecialViewDelegate {
     }
     public var notes: [Note]? {
         didSet {
-            notesLabel.attributedText = nil
-            notesLabel.removeFromSuperview()
+//            notesLabel.attributedText = nil
+//            notesLabel.removeFromSuperview()
+            notesView.removeFromSuperview()
             
             guard let notes = notes else {
                 return
@@ -180,7 +182,7 @@ class AbilityView: UIView, AbilitySpecialViewDelegate {
             let finalString = Note.prettify(notes)
 
             notesLabel.attributedText = finalString
-            bottomStackView.addArrangedSubview(notesLabel)
+            bottomStackView.addArrangedSubview(notesView)
         }
     }
     
@@ -219,8 +221,11 @@ class AbilityView: UIView, AbilitySpecialViewDelegate {
         manaView.isVertical = false
         manaView.valueLabel.textAlignment = .right
         
+        // Splits Data and Notes.
         bottomStackView.addArrangedSubview(DASeparatorView())
         
+        notesView.titleLabel.text = "Notes"
+        notesView.setDetailView(notesLabel)
         notesLabel.numberOfLines = 0
         
         addSubview(nameLabel)
