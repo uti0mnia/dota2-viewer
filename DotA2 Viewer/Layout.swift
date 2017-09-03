@@ -47,5 +47,7 @@ class Layout {
     
     public static let navigationControllerHeight: CGFloat = 64
     
-    public static let abilitySpecialWidth: CGFloat = 20
+    public static let abilitySpecialViewSize = CGSize(width: 44, height: 44)
+    
+    public static let abilitySpecialImageSize = CGSize(width: 22, height: 22)
 }

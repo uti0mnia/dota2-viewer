@@ -13,9 +13,13 @@ class AbilitySpecialView: UIView {
     
     private class AbilitySpecialImageView: UIImageView {
         public var abilitySpecial: String?
+        
     }
     
-    private static let spacing: CGFloat = 10
+    private static var spacing: CGFloat {
+        let wanted: CGFloat = 10
+        return wanted  - (Layout.abilitySpecialViewSize.width - Layout.abilitySpecialImageSize.width)
+    }
     
     private var imageViews = [AbilitySpecialImageView]()
     
@@ -58,10 +62,14 @@ class AbilitySpecialView: UIView {
         
         var currentX = bounds.width
         for imageView in imageViews {
-            let width = Layout.abilitySpecialWidth
+            let width = Layout.abilitySpecialViewSize.width
             let x = currentX - width
             let frame = CGRect(x: x, y: 0, width: width, height: bounds.height)
             imageView.frame = frame
+            
+            let dx = (Layout.abilitySpecialViewSize.width - Layout.abilitySpecialImageSize.width) / 2
+            let dy = (Layout.abilitySpecialViewSize.height - Layout.abilitySpecialImageSize.height) / 2
+            imageView.bounds = imageView.frame.insetBy(dx: dx, dy: dy)
             
             currentX -= (width + AbilitySpecialView.spacing)
         }

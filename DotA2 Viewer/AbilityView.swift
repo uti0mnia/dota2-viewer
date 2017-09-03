@@ -245,12 +245,12 @@ class AbilityView: UIView, AbilitySpecialViewDelegate {
         nameLabel.snp.makeConstraints() { make in
             make.left.top.equalTo(self).inset(padding)
             make.bottom.equalTo(specialsView)
-            make.height.equalTo(nameLabel.font.pointSize)
         }
         
         specialsView.snp.makeConstraints() { make in
             make.top.right.equalTo(self).inset(padding)
             make.left.equalTo(nameLabel.snp.right).offset(padding)
+            make.height.equalTo(Layout.abilitySpecialViewSize.height)
         }
         
         imageSeparatedView.snp.makeConstraints() { make in
