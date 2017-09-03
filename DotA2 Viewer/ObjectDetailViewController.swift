@@ -37,6 +37,9 @@ class ObjectDetailViewController: UIViewController, FullScreenImageViewerViewCon
         
         titleLabel.textAlignment = .center
         navigationItem.titleView = titleLabel
+        navigationItem.titleView?.isUserInteractionEnabled = true
+        let tap = UITapGestureRecognizer(target: self, action: #selector(didTapOnTitleView(_:)))
+        navigationItem.titleView?.addGestureRecognizer(tap)
         
         view.addSubview(contentView)
         
@@ -122,7 +125,12 @@ class ObjectDetailViewController: UIViewController, FullScreenImageViewerViewCon
         present(fullScreenImageViewController, animated: true, completion: nil)
     }
     
+    @objc private func didTapOnTitleView(_ sender: UITapGestureRecognizer) {
+        displayFullScreenObjectImage()
+    }
+    
     // MARK: - FullScreenImageViewerViewControllerDelegate
+    
     func fullScreenImageViewerViewControllerDidDismissImageView(_ fullScreenImageViewerViewController: FullScreenImageViewerViewController) {
         dismiss(animated: true, completion: nil)
     }

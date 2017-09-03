@@ -22,7 +22,9 @@
                         <color key="backgroundColor" red="0.36227080352622915" green="0.36606691802902558" blue="0.36963649611398963" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <navigationItem key="navigationItem" id="ssI-vz-wRY"/>
+                    <navigationItem key="navigationItem" id="ssI-vz-wRY">
+                        <barButtonItem key="backBarButtonItem" title=" " id="tv4-AN-GS2"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Eec-w4-4Xs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -73,6 +75,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Master" id="ZbA-zi-RVb">
+                        <barButtonItem key="backBarButtonItem" title=" " id="iPy-eL-x2r"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="AdG-vF-bVg">
                             <color key="tintColor" red="1" green="0.080182865994246288" blue="0.032913104229188028" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
@@ -94,7 +97,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9FL-AS-YTq" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Heroes" id="NUl-ZW-oRZ"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleAspectFill" misplaced="YES" id="RnW-Iu-fm3">
+                    <navigationBar key="navigationBar" contentMode="scaleAspectFill" id="RnW-Iu-fm3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.87139734455958551" green="0.03687937124292797" blue="0.051371898444097563" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -113,7 +116,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0xi-1T-PpC" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="w5g-ZC-18e">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="w5g-ZC-18e">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.88532221502590669" green="0.0" blue="0.16688224116154954" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

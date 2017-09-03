@@ -37,10 +37,6 @@ class MainViewController: UIViewController, HeroListViewControllerDelegate, Item
         
         tabBar.selectedItem = tabBar.items?.first!
         
-        let barButton = UIBarButtonItem()
-        barButton.title = ""
-        navigationItem.backBarButtonItem = barButton
-        
         contentView.snp.makeConstraints() { make in
             make.left.right.equalTo(view)
             make.top.equalTo(topLayoutGuide.snp.bottom)
@@ -57,9 +53,6 @@ class MainViewController: UIViewController, HeroListViewControllerDelegate, Item
         // Make navigation controller completely transparent
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
-        
-        let tap = UITapGestureRecognizer(target: self, action: #selector(didTapOnNavigationBar(_:)))
-        navigationController?.navigationBar.addGestureRecognizer(tap)
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: .UIKeyboardDidShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: .UIKeyboardWillHide, object: nil)
@@ -116,16 +109,6 @@ class MainViewController: UIViewController, HeroListViewControllerDelegate, Item
             self.currentChildViewController = viewController
         }
         
-    }
-    
-    @objc private func didTapOnNavigationBar(_ tap: UITapGestureRecognizer) {
-        guard let childDetailVC = currentDetailViewController else {
-            return
-        }
-        
-        if childDetailVC.isViewLoaded && childDetailVC.view.window != nil {
-            childDetailVC.displayFullScreenObjectImage()
-        }
     }
     
     // MARK: - UITabBarDelegate
