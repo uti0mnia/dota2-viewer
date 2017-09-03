@@ -24,6 +24,7 @@ class AbilityCollectionCell: UICollectionViewCell, AbilityViewDelegate {
             
             abilityView.name = ability.name
             abilityView.specials = ability.specials
+            abilityView.abilityImageView.image = UIImage(named: ability.imageName)
             abilityView.abilityDescription = ability.descrip
             abilityView.types = ability.types?.array as? [ModifiableValue]
             abilityView.data = ability.data?.array as? [ModifiableValue]

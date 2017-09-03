@@ -23,8 +23,6 @@ class ObjectDetailViewController: UIViewController, FullScreenImageViewerViewCon
         return BetterSegmentedControl()
     }
     
-    public var headerTopLayout: Constraint?
-    
     public let titleLabel = DALabel(style: .title)
     
     private let imageView = UIImageView()
@@ -83,13 +81,6 @@ class ObjectDetailViewController: UIViewController, FullScreenImageViewerViewCon
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        // Reset segmentControl.
-        do {
-            try segmentControl.setIndex(0, animated: false)
-        } catch {
-            print("Error setting segmentControl to 0 wtf: \(error.localizedDescription)")
-        }
         
         imageView.image = UIImage(named: object?.imageName ?? "")
     }

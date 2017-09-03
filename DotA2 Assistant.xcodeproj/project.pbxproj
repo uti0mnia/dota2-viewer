@@ -20,7 +20,7 @@
 		363A466B1E00827200BA5D97 /* NOT_DISABLED_BY_BREAK.png in Resources */ = {isa = PBXBuildFile; fileRef = 363A465C1E00827200BA5D97 /* NOT_DISABLED_BY_BREAK.png */; };
 		363A466C1E00827200BA5D97 /* NOT_UNIQUE_ATTACK_MODIFIER.png in Resources */ = {isa = PBXBuildFile; fileRef = 363A465D1E00827200BA5D97 /* NOT_UNIQUE_ATTACK_MODIFIER.png */; };
 		363A466D1E00827200BA5D97 /* PARTIAL_BLOCKED_BY_LINKEN.png in Resources */ = {isa = PBXBuildFile; fileRef = 363A465E1E00827200BA5D97 /* PARTIAL_BLOCKED_BY_LINKEN.png */; };
-		363A466E1E00827200BA5D97 /* PARTIAL_DISABLE_BY_BREAK.png in Resources */ = {isa = PBXBuildFile; fileRef = 363A465F1E00827200BA5D97 /* PARTIAL_DISABLE_BY_BREAK.png */; };
+		363A466E1E00827200BA5D97 /* PARTIAL_DISABLE.png in Resources */ = {isa = PBXBuildFile; fileRef = 363A465F1E00827200BA5D97 /* PARTIAL_DISABLE.png */; };
 		363A466F1E00827200BA5D97 /* PARTIAL_PIERCE_SPELL_IMMUNE.png in Resources */ = {isa = PBXBuildFile; fileRef = 363A46601E00827200BA5D97 /* PARTIAL_PIERCE_SPELL_IMMUNE.png */; };
 		363A46701E00827200BA5D97 /* PIERCE_SPELL_IMMUNE.png in Resources */ = {isa = PBXBuildFile; fileRef = 363A46611E00827200BA5D97 /* PIERCE_SPELL_IMMUNE.png */; };
 		363A46711E00827200BA5D97 /* UNIQUE_ATTACK_MODIFIER.png in Resources */ = {isa = PBXBuildFile; fileRef = 363A46621E00827200BA5D97 /* UNIQUE_ATTACK_MODIFIER.png */; };
@@ -75,6 +75,8 @@
 		C9141B301F58E9A900605234 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9141B2F1F58E9A900605234 /* Constants.swift */; };
 		C9141B321F58EA6B00605234 /* FullScreenImageViewerViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9141B311F58EA6B00605234 /* FullScreenImageViewerViewControllerDelegate.swift */; };
 		C91470401DD916D5002A042C /* Recipe.png in Resources */ = {isa = PBXBuildFile; fileRef = C914703F1DD916D5002A042C /* Recipe.png */; };
+		C915FD2A1F5B0DEB00B30E1E /* DASeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C915FD291F5B0DEB00B30E1E /* DASeparatorView.swift */; };
+		C915FD2C1F5B17F700B30E1E /* DASeparatedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C915FD2B1F5B17F700B30E1E /* DASeparatedView.swift */; };
 		C9172C181DD13F9100DCF88F /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9172C171DD13F9100DCF88F /* Globals.swift */; };
 		C9172C211DD176BA00DCF88F /* dota2-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = C9172C201DD176BA00DCF88F /* dota2-logo.png */; };
 		C91B484A1F5AE56E00919267 /* AbilitySpecialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91B48491F5AE56E00919267 /* AbilitySpecialView.swift */; };
@@ -1239,7 +1241,7 @@
 		363A465C1E00827200BA5D97 /* NOT_DISABLED_BY_BREAK.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = NOT_DISABLED_BY_BREAK.png; path = "images/Ability Specials/NOT_DISABLED_BY_BREAK.png"; sourceTree = "<group>"; };
 		363A465D1E00827200BA5D97 /* NOT_UNIQUE_ATTACK_MODIFIER.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = NOT_UNIQUE_ATTACK_MODIFIER.png; path = "images/Ability Specials/NOT_UNIQUE_ATTACK_MODIFIER.png"; sourceTree = "<group>"; };
 		363A465E1E00827200BA5D97 /* PARTIAL_BLOCKED_BY_LINKEN.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PARTIAL_BLOCKED_BY_LINKEN.png; path = "images/Ability Specials/PARTIAL_BLOCKED_BY_LINKEN.png"; sourceTree = "<group>"; };
-		363A465F1E00827200BA5D97 /* PARTIAL_DISABLE_BY_BREAK.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PARTIAL_DISABLE_BY_BREAK.png; path = "images/Ability Specials/PARTIAL_DISABLE_BY_BREAK.png"; sourceTree = "<group>"; };
+		363A465F1E00827200BA5D97 /* PARTIAL_DISABLE.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PARTIAL_DISABLE.png; path = "images/Ability Specials/PARTIAL_DISABLE.png"; sourceTree = "<group>"; };
 		363A46601E00827200BA5D97 /* PARTIAL_PIERCE_SPELL_IMMUNE.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PARTIAL_PIERCE_SPELL_IMMUNE.png; path = "images/Ability Specials/PARTIAL_PIERCE_SPELL_IMMUNE.png"; sourceTree = "<group>"; };
 		363A46611E00827200BA5D97 /* PIERCE_SPELL_IMMUNE.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PIERCE_SPELL_IMMUNE.png; path = "images/Ability Specials/PIERCE_SPELL_IMMUNE.png"; sourceTree = "<group>"; };
 		363A46621E00827200BA5D97 /* UNIQUE_ATTACK_MODIFIER.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = UNIQUE_ATTACK_MODIFIER.png; path = "images/Ability Specials/UNIQUE_ATTACK_MODIFIER.png"; sourceTree = "<group>"; };
@@ -1300,6 +1302,8 @@
 		C9141B2F1F58E9A900605234 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C9141B311F58EA6B00605234 /* FullScreenImageViewerViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullScreenImageViewerViewControllerDelegate.swift; sourceTree = "<group>"; };
 		C914703F1DD916D5002A042C /* Recipe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Recipe.png; path = images/Recipe.png; sourceTree = "<group>"; };
+		C915FD291F5B0DEB00B30E1E /* DASeparatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DASeparatorView.swift; sourceTree = "<group>"; };
+		C915FD2B1F5B17F700B30E1E /* DASeparatedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DASeparatedView.swift; sourceTree = "<group>"; };
 		C9172C171DD13F9100DCF88F /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		C9172C201DD176BA00DCF88F /* dota2-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dota2-logo.png"; sourceTree = "<group>"; };
 		C91B48491F5AE56E00919267 /* AbilitySpecialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbilitySpecialView.swift; sourceTree = "<group>"; };
@@ -2543,7 +2547,7 @@
 				363A465C1E00827200BA5D97 /* NOT_DISABLED_BY_BREAK.png */,
 				363A465D1E00827200BA5D97 /* NOT_UNIQUE_ATTACK_MODIFIER.png */,
 				363A465E1E00827200BA5D97 /* PARTIAL_BLOCKED_BY_LINKEN.png */,
-				363A465F1E00827200BA5D97 /* PARTIAL_DISABLE_BY_BREAK.png */,
+				363A465F1E00827200BA5D97 /* PARTIAL_DISABLE.png */,
 				363A46601E00827200BA5D97 /* PARTIAL_PIERCE_SPELL_IMMUNE.png */,
 				363A46611E00827200BA5D97 /* PIERCE_SPELL_IMMUNE.png */,
 				C9B125761EE48A5800984F90 /* TALENT_UPGRADE.png */,
@@ -2717,6 +2721,8 @@
 				C94A26D11DD5593F00D9B054 /* DASlider.swift */,
 				366A8A151DD103F1000406BF /* DATabBar.swift */,
 				C9C6D2701F0C99270066973F /* DATitleStackView.swift */,
+				C915FD291F5B0DEB00B30E1E /* DASeparatorView.swift */,
+				C915FD2B1F5B17F700B30E1E /* DASeparatedView.swift */,
 			);
 			name = "DA Classes";
 			sourceTree = "<group>";
@@ -3951,14 +3957,14 @@
 		C9B1256F1EE1131900984F90 /* Ability Display */ = {
 			isa = PBXGroup;
 			children = (
+				C985269E1EFE0F0F00398D10 /* AbilityCollectionCell.swift */,
+				C91B484F1F5AFA6700919267 /* AbilityCollectionCellDelegate.swift */,
+				C985269C1EFE0EC300398D10 /* AbiltyCollectionViewController.swift */,
 				C91B48491F5AE56E00919267 /* AbilitySpecialView.swift */,
 				C91B484B1F5AF25500919267 /* AbilitySpecialViewDelegate.swift */,
 				C90A13611EEA6CCB00D143B8 /* AbilityView.swift */,
 				C91B484D1F5AF99600919267 /* AbilityViewDelegate.swift */,
 				C98526951EFB7EBC00398D10 /* AbilityKVStackView.swift */,
-				C985269E1EFE0F0F00398D10 /* AbilityCollectionCell.swift */,
-				C91B484F1F5AFA6700919267 /* AbilityCollectionCellDelegate.swift */,
-				C985269C1EFE0EC300398D10 /* AbiltyCollectionViewController.swift */,
 			);
 			name = "Ability Display";
 			sourceTree = "<group>";
@@ -4191,7 +4197,7 @@
 				C9A8E7741F284F8000B25FD9 /* Faceless Void_thumbnail.png in Resources */,
 				C94B16671E01C090008BF226 /* Dark Pact_Slark.png in Resources */,
 				C9A8E7BA1F284F8000B25FD9 /* Phoenix_thumbnail.png in Resources */,
-				363A466E1E00827200BA5D97 /* PARTIAL_DISABLE_BY_BREAK.png in Resources */,
+				363A466E1E00827200BA5D97 /* PARTIAL_DISABLE.png in Resources */,
 				C94B176E1E01C090008BF226 /* Quas_Invoker.png in Resources */,
 				C9A8E8121F284F8000B25FD9 /* Zeus_thumbnail.png in Resources */,
 				C9A8E79B1F284F8000B25FD9 /* Medusa.png in Resources */,
@@ -5233,6 +5239,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9AEA2071E9C4629006FD974 /* ModifiableValue+CoreDataClass.swift in Sources */,
+				C915FD2A1F5B0DEB00B30E1E /* DASeparatorView.swift in Sources */,
 				C91B484A1F5AE56E00919267 /* AbilitySpecialView.swift in Sources */,
 				C9B125671EDFC5AF00984F90 /* HeroDelegate.swift in Sources */,
 				C9AEA2181E9C4629006FD974 /* Hero+CoreDataProperties.swift in Sources */,
@@ -5259,6 +5266,7 @@
 				C9AEA2131E9C4629006FD974 /* Note+CoreDataClass.swift in Sources */,
 				C9AEA2041E9C4629006FD974 /* BaseStats+CoreDataProperties.swift in Sources */,
 				C97E11651F0089F200E35D1D /* RecipeView.swift in Sources */,
+				C915FD2C1F5B17F700B30E1E /* DASeparatedView.swift in Sources */,
 				C9AEA2091E9C4629006FD974 /* Object+CoreDataClass.swift in Sources */,
 				C9AEA21A1E9C4629006FD974 /* Ability+CoreDataProperties.swift in Sources */,
 				C957BBDF1EECE682008F756B /* Layout.swift in Sources */,

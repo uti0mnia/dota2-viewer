@@ -10,7 +10,7 @@ import UIKit
 
 class HeroTalentsView: UIStackView {
     
-    private var talentViews = [HeroTalentView]()
+    private var talentViews = [DASeparatedView]()
     private var notesLabel = DALabel()
     
     public var talents: [Talent]? {
@@ -22,7 +22,13 @@ class HeroTalentsView: UIStackView {
             assert(talents.count == talentViews.count, "Misconfigured HeroTalentsView")
             
             for index in 0..<talents.count {
-                talentViews[index].talent = talents[index]
+                let view  = talentViews[index].currentContentView
+                
+                assert(view is HeroTalentView, "Separated view contentView isn't HeroTalentView")
+                
+                if let talentView = view as? HeroTalentView {
+                    talentView.talent = talents[index]
+                }
             }
         }
     }
@@ -59,13 +65,15 @@ class HeroTalentsView: UIStackView {
         
         let topStack = UIStackView()
         topStack.axis = .vertical
-        topStack.distribution = .fillEqually
+        topStack.distribution = .fillProportionally
         addArrangedSubview(topStack)
         
         for _ in 0..<4 {
             let talentView = HeroTalentView()
-            talentViews.append(talentView)
-            topStack.addArrangedSubview(talentView)
+            let separatedView = DASeparatedView()
+            separatedView.setContentView(talentView)
+            talentViews.append(separatedView)
+            topStack.addArrangedSubview(separatedView)
         }
         
         notesLabel.numberOfLines = 0

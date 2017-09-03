@@ -24,10 +24,18 @@ class AbilityView: UIView, AbilitySpecialViewDelegate {
             }
         }
     }
-    private var descriptionLabel = DALabel(style: .text)
+    private var descriptionView: DASeparatedView = {
+        let view = DASeparatedView()
+        view.titleLabel.text = "Description"
+        let label = DALabel(style: .text)
+        label.numberOfLines = 0
+        view.setContentView(label)
+        return view
+    }()
     
     // This is for the stack view that holds the ability image and the TypeStackView.
     // God I need to get better with names.
+    private var imageSeparatedView = DASeparatedView()
     private var imageStackView = UIStackView()
     private var typeStackView: TypeKVStackView = {
         let sv = TypeKVStackView()
@@ -65,19 +73,11 @@ class AbilityView: UIView, AbilitySpecialViewDelegate {
     private var notesLabel = DALabel(style: .text)
     
     private lazy var manaAttributedString: NSAttributedString = {
-        // TODO: Cleanup.
-        let attachment = NSTextAttachment()
-        attachment.image = UIImage(named: "mana")
         let finalString = NSMutableAttributedString(string: "Mana", attributes: [NSFontAttributeName: Fonts.text.bold])
-//        finalString.append(NSAttributedString(attachment: attachment))
         return finalString
     }()
     private lazy var cooldownAttributedString: NSAttributedString = {
-        // TODO: Cleanup.
-        let attachment = NSTextAttachment()
-        attachment.image = UIImage(named: "cooldown")
         let finalString = NSMutableAttributedString(string: "Cooldown", attributes: [NSFontAttributeName: Fonts.text.bold])
-//        finalString.append(NSAttributedString(attachment: attachment))
         return finalString
     }()
     
@@ -98,7 +98,15 @@ class AbilityView: UIView, AbilitySpecialViewDelegate {
     }
     public var abilityDescription: String? {
         didSet {
-            descriptionLabel.text = abilityDescription
+            let view = descriptionView.currentContentView
+            
+            assert(view is DALabel, "Description subview isn't a DALbel.")
+            
+            if let label = view as? DALabel {
+                label.text = abilityDescription
+            }
+            
+            updateConstraints()
         }
     }
     public var data: [ModifiableValue]? {
@@ -203,8 +211,7 @@ class AbilityView: UIView, AbilitySpecialViewDelegate {
         imageStackView.u0_addArrangedSubviews(views: [abilityImageView, typeStackView])
         imageStackView.alignment = .center
         imageStackView.spacing = Layout.defaultPadding
-        
-        descriptionLabel.numberOfLines = 0
+        imageSeparatedView.setContentView(imageStackView)
         
         cooldownView.isVertical = false
         cooldownView.valueLabel.textAlignment = .right
@@ -212,12 +219,14 @@ class AbilityView: UIView, AbilitySpecialViewDelegate {
         manaView.isVertical = false
         manaView.valueLabel.textAlignment = .right
         
+        bottomStackView.addArrangedSubview(DASeparatorView())
+        
         notesLabel.numberOfLines = 0
         
         addSubview(nameLabel)
         addSubview(specialsView)
-        addSubview(imageStackView)
-        addSubview(descriptionLabel)
+        addSubview(imageSeparatedView)
+        addSubview(descriptionView)
         addSubview(dataStackView)
         addSubview(modifierStackView)
         addSubview(bottomStackView)
@@ -239,18 +248,18 @@ class AbilityView: UIView, AbilitySpecialViewDelegate {
             make.left.equalTo(nameLabel.snp.right).offset(padding)
         }
         
-        imageStackView.snp.makeConstraints() { make in
+        imageSeparatedView.snp.makeConstraints() { make in
             make.left.right.equalTo(self).inset(padding)
             make.top.equalTo(nameLabel.snp.bottom).offset(padding)
         }
         
-        descriptionLabel.snp.makeConstraints() { make in
-            make.top.equalTo(imageStackView.snp.bottom).offset(padding)
+        descriptionView.snp.makeConstraints() { make in
+            make.top.equalTo(imageSeparatedView.snp.bottom).offset(padding)
             make.left.right.equalTo(self).inset(padding)
         }
         
         dataStackView.snp.makeConstraints() { make in
-            make.top.equalTo(descriptionLabel.snp.bottom).offset(padding)
+            make.top.equalTo(descriptionView.snp.bottom).offset(padding)
             make.left.right.equalTo(self).inset(padding)
         }
         

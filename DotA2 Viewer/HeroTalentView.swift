@@ -21,7 +21,7 @@ class HeroTalentView: UIView {
                 return
             }
             
-            titleStackView.title = "Level \(talent.level)"
+            titleStackView.titleLabel.text = "Level \(talent.level)"
             leftLabel.text = talent.left
             rightLabel.text = talent.right
         }

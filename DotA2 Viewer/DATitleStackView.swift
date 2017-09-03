@@ -10,14 +10,8 @@ import UIKit
 
 class DATitleStackView: UIStackView {
     
-    private var label = DALabel(style: .subtitle)
+    private(set) var titleLabel = DALabel()
     private weak var currentSubview: UIView?
-    
-    public var title: String? {
-        didSet {
-            label.text = title
-        }
-    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -35,9 +29,9 @@ class DATitleStackView: UIStackView {
         axis = .vertical
         distribution = .fillProportionally
         
-        label.textAlignment = .center
-        
-        addArrangedSubview(label)
+        titleLabel.font = Fonts.subtitle.bold
+        titleLabel.textAlignment = .center
+        addArrangedSubview(titleLabel)
     }
     
     public func setDetailView(_ newView: UIView) {

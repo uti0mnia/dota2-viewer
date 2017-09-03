@@ -144,6 +144,11 @@ class MainViewController: UIViewController, HeroListViewControllerDelegate, Item
         heroDetailViewController.hero = hero
         heroDetailViewController.object = hero
         currentDetailViewController = heroDetailViewController
+        do {
+            try heroDetailViewController.segmentControl.setIndex(0, animated: false)
+        } catch {
+            print("Error setting segmentControl to 0 wtf: \(error.localizedDescription)")
+        }
         showDetailViewController(heroDetailViewController, sender: nil)
     }
     
@@ -152,6 +157,11 @@ class MainViewController: UIViewController, HeroListViewControllerDelegate, Item
     func itemListViewController(_ itemListViewController: ItemListViewController, didSelectItem item: Item) {
         itemDetailViewController.item = item
         currentDetailViewController = itemDetailViewController
+        do {
+            try itemDetailViewController.segmentControl.setIndex(0, animated: false)
+        } catch {
+            print("Error setting segmentControl to 0 wtf: \(error.localizedDescription)")
+        }
         showDetailViewController(itemDetailViewController, sender: nil)
     }
 }

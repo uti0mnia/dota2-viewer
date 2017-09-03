@@ -22,7 +22,7 @@ class HeroAttributeView: UIView {
     
     weak var delegate: HeroAttributeViewDelegate?
     
-    private(set) var levelLabel = DALabel(style: .subtitle)
+    private(set) var levelLabel = DALabel()
     
     private var slider = HeroAttributeSlider()
     private var oldSliderValue = 0
@@ -79,6 +79,7 @@ class HeroAttributeView: UIView {
     
     private func initView() {
         levelLabel.textAlignment = .center
+        levelLabel.font = Fonts.subtitle.bold
         
         strengthIV.contentMode = .center
         agilityIV.contentMode = .center
